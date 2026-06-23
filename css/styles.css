@@ -359,16 +359,35 @@ textarea:focus-visible {
 .footer-columns a { font-size: 15px; color: rgba(255,255,255,0.75); }
 .footer-columns a:hover { color: var(--color-white); }
 
-.footer-copyright {
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
   margin-top: 24px;
+}
+.footer-copyright {
+  margin-top: 0;
   font-size: 13px;
   color: rgba(255,255,255,0.5);
 }
+.footer-copyright a { color: rgba(255,255,255,0.65); text-decoration: underline; }
+.footer-copyright a:hover { color: var(--color-white); }
+
+.footer-social { display: flex; gap: 16px; }
+.footer-social a { color: rgba(255,255,255,0.65); display: inline-flex; }
+.footer-social a:hover { color: var(--color-teal); }
 
 /* ===== HERO ===== */
 .hero {
+  position: relative;
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
+  background-image: url('../images/hero-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: min(560px, 70vw) auto;
 }
 .hero--page .eyebrow { margin-bottom: 16px; }
 .hero h1 { margin-bottom: 20px; }
@@ -513,6 +532,7 @@ textarea:focus-visible {
   color: var(--color-purple);
 }
 .case-study-meta .divider { color: var(--color-lavender); font-weight: 400; }
+.case-study-meta a:hover { text-decoration: underline; }
 
 .case-study-card p { margin-bottom: 16px; }
 .case-study-card p:last-of-type { margin-bottom: 0; }
@@ -623,11 +643,63 @@ textarea:focus-visible {
 
 /* ===== COMING SOON (Commonality placeholder) ===== */
 .coming-soon {
+  position: relative;
   text-align: center;
   padding-block: calc(var(--section-padding) * 1.4);
+  background-image: url('../images/hero-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: min(560px, 70vw) auto;
 }
 .coming-soon .eyebrow { display: block; }
 .coming-soon p { max-width: 540px; margin: 16px auto 28px; color: var(--color-lavender); }
+
+/* ===== AUTHOR AVATAR (initials, no stock photography) ===== */
+.author-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-pink), var(--color-purple));
+  color: var(--color-white);
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+.author-avatar--sm {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+.author-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+.author-byline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== CATEGORY BADGE (blog taxonomy) ===== */
+.category-badge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-purple);
+  background: var(--tint-purple);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  margin-bottom: 16px;
+}
+.category-badge:hover { color: var(--color-white); background: var(--color-purple); }
 
 /* ===== PROSE (About) ===== */
 .prose { max-width: 720px; }

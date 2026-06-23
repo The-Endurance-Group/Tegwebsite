@@ -34,17 +34,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Free Automation form — placeholder, no backend wired up.
-     Replace with a real form handler (e.g. HubSpot Forms embed) when CRM integration is scoped. */
+  /* Free Automation form — submits to Formspree, forwards to csullivan@theendurancegroup.com */
   var form = document.getElementById('automation-form');
   var confirmation = document.getElementById('form-confirmation');
+  var formError = document.getElementById('form-error');
 
   if (form && confirmation) {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
-      form.hidden = true;
-      confirmation.hidden = false;
-      confirmation.focus();
+      if (formError) formError.hidden = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            form.hidden = true;
+            confirmation.hidden = false;
+            confirmation.focus();
+          } else if (formError) {
+            formError.hidden = false;
+          }
+        })
+        .catch(function () {
+          if (formError) formError.hidden = false;
+        });
     });
   }
 });

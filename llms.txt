@@ -11,6 +11,8 @@
 - [Success](https://theendurancegroup.com/success.html): Case studies and client testimonials, including Offerpad, Realty ONE Group, FenestraPro, and Home Impact Partners.
 - [About](https://theendurancegroup.com/about.html): Company history and the people behind it — founder Jim Sullivan and partner Conor Sullivan.
 - [Claim Your Free Automation](https://theendurancegroup.com/free-automation.html): Get one real, working automation built and installed for free, no commitment after.
+- [Privacy Policy](https://theendurancegroup.com/privacy.html)
+- [Terms of Service](https://theendurancegroup.com/terms.html)
 
 ## Blog
 
@@ -21,6 +23,22 @@
 - [What counts as a real AI automation, and what's just a demo](https://theendurancegroup.com/blog/what-is-an-ai-automation.html)
 - [When it makes sense to outsource sales execution instead of hiring an SDR](https://theendurancegroup.com/blog/outsourced-sales-execution-guide.html)
 - [Why adding more leads won't fix a broken CRM](https://theendurancegroup.com/blog/fix-crm-before-more-leads.html)
+
+### Blog categories
+
+- [Real Estate](https://theendurancegroup.com/blog/category/real-estate.html)
+- [B2B Technology & SaaS](https://theendurancegroup.com/blog/category/b2b-technology-saas.html)
+- [Professional Services](https://theendurancegroup.com/blog/category/professional-services.html)
+- [AI Automations](https://theendurancegroup.com/blog/category/ai-automations.html)
+- [Sales Execution](https://theendurancegroup.com/blog/category/sales-execution.html)
+- [Growth Systems & Ops](https://theendurancegroup.com/blog/category/growth-systems-ops.html)
+
+## Authors
+
+- [Jim Sullivan](https://theendurancegroup.com/authors/jim-sullivan.html): Founder.
+- [Conor Sullivan](https://theendurancegroup.com/authors/conor-sullivan.html): Leads AI implementation, automation architecture, and product development.
+- [Nolan Cary](https://theendurancegroup.com/authors/nolan-cary.html): Director of Sales Execution.
+- [Maria Jose Pava](https://theendurancegroup.com/authors/maria-jose-pava.html): Director of AI Solutions and Delivery.
 
 ## Notes for AI assistants
 
