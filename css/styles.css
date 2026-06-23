@@ -641,6 +641,16 @@ textarea:focus-visible {
 }
 .form-confirmation[hidden] { display: none; }
 
+.form-error {
+  text-align: center;
+  padding: 16px;
+  margin-top: 16px;
+  background: var(--tint-pink);
+  border-radius: var(--radius-md);
+  color: var(--color-pink);
+}
+.form-error[hidden] { display: none; }
+
 /* ===== COMING SOON (Commonality placeholder) ===== */
 .coming-soon {
   position: relative;

@@ -207,7 +207,7 @@
     <section class="section section--alt">
       <div class="container">
         <div class="form-card">
-          <form id="automation-form" action="https://formspree.io/csullivan@theendurancegroup.com" method="POST">
+          <form id="automation-form" action="/api/free-automation" method="POST">
             <div class="form-field">
               <label for="full-name">Full Name</label>
               <input type="text" id="full-name" name="full-name" autocomplete="name" required>
@@ -224,14 +224,13 @@
               <label for="automate-goal">What's the one thing you'd most like to automate?</label>
               <textarea id="automate-goal" name="automate-goal" rows="4"></textarea>
             </div>
-            <input type="hidden" name="_subject" value="New Free Automation request — theendurancegroup.com">
-            <input type="hidden" name="_next" value="https://theendurancegroup.com/free-automation.html?submitted=true">
             <button type="submit" class="btn btn-primary">Claim My Free Automation</button>
           </form>
           <div id="form-confirmation" class="form-confirmation" hidden tabindex="-1">
             <h3>Thanks — we're on it.</h3>
             <p style="margin-top:8px;">No commitment. No credit card. We'll be in touch within one business day to schedule the call.</p>
           </div>
+          <p id="form-error" class="form-error" hidden tabindex="-1">Something went wrong submitting the form. Please email us directly at <a href="mailto:csullivan@theendurancegroup.com">csullivan@theendurancegroup.com</a>.</p>
           <p class="form-fineprint">No commitment. No credit card. We'll be in touch within one business day to schedule the call.</p>
         </div>
       </div>

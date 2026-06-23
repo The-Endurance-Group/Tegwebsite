@@ -34,14 +34,52 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Free Automation form — submits to Formspree (real page post, no AJAX/CORS),
-     which redirects back here with ?submitted=true via the _next field. */
+  /* Free Automation form — submits same-origin to /api/free-automation.
+     JS-enabled browsers get an AJAX flow; without JS, the server redirects
+     back here with ?submitted=true or ?submitted=error. */
   var form = document.getElementById('automation-form');
   var confirmation = document.getElementById('form-confirmation');
+  var formError = document.getElementById('form-error');
 
-  if (form && confirmation && new URLSearchParams(window.location.search).get('submitted') === 'true') {
-    form.hidden = true;
-    confirmation.hidden = false;
-    confirmation.focus();
+  if (form && confirmation) {
+    var submitted = new URLSearchParams(window.location.search).get('submitted');
+    if (submitted === 'true') {
+      form.hidden = true;
+      confirmation.hidden = false;
+      confirmation.focus();
+    } else if (submitted === 'error' && formError) {
+      formError.hidden = false;
+      formError.focus();
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (formError) formError.hidden = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(new FormData(form)).toString(),
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Request failed');
+          return response.json();
+        })
+        .then(function (data) {
+          if (!data.ok) throw new Error('Submission failed');
+          form.hidden = true;
+          confirmation.hidden = false;
+          confirmation.focus();
+        })
+        .catch(function () {
+          if (formError) {
+            formError.hidden = false;
+            formError.focus();
+          }
+        });
+    });
   }
 });
