@@ -12,6 +12,22 @@ const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const RATE_LIMIT_MAX = 5;
 const rateLimitHits = new Map();
 
+const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001';
+const CHAT_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
+const CHAT_RATE_LIMIT_MAX = 30;
+const chatRateLimitHits = new Map();
+const SITE_KNOWLEDGE = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
+const CHAT_SYSTEM_PROMPT = [
+  'You are the AI assistant embedded on theendurancegroup.com, a B2B sales execution and AI automation consultancy in Portland, Maine.',
+  'Answer questions about the company using ONLY the information in SITE KNOWLEDGE below. Do not invent pricing, case studies, names, or facts that aren\'t in it.',
+  'If you don\'t know something, say so plainly and suggest scheduling a call.',
+  'Keep answers short (2-4 sentences) and conversational — this is a chat widget, not an essay.',
+  'For serious inquiries, point people to "Schedule a Call" (https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor) or the free automation offer (/free-automation.html).',
+  '',
+  '--- SITE KNOWLEDGE ---',
+  SITE_KNOWLEDGE,
+].join('\n');
+
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -65,14 +81,14 @@ function clientIp(req) {
   return req.socket.remoteAddress;
 }
 
-function isRateLimited(ip) {
+function isRateLimited(map, ip, windowMs, max) {
   var now = Date.now();
-  var hits = (rateLimitHits.get(ip) || []).filter(function (t) {
-    return now - t < RATE_LIMIT_WINDOW_MS;
+  var hits = (map.get(ip) || []).filter(function (t) {
+    return now - t < windowMs;
   });
   hits.push(now);
-  rateLimitHits.set(ip, hits);
-  return hits.length > RATE_LIMIT_MAX;
+  map.set(ip, hits);
+  return hits.length > max;
 }
 
 function logLead(fields, ip) {
@@ -149,7 +165,7 @@ async function handleLeadSubmission(req, res) {
       return;
     }
 
-    if (isRateLimited(ip)) {
+    if (isRateLimited(rateLimitHits, ip, RATE_LIMIT_WINDOW_MS, RATE_LIMIT_MAX)) {
       console.error('Rate limit exceeded for', ip);
       respond(false);
       return;
@@ -166,6 +182,77 @@ async function handleLeadSubmission(req, res) {
   } catch (err) {
     console.error('Lead submission failed:', err);
     respond(false);
+  }
+}
+
+async function callClaude(messages) {
+  var apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw new Error('ANTHROPIC_API_KEY is not configured');
+  }
+
+  var res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: ANTHROPIC_MODEL,
+      max_tokens: 400,
+      system: CHAT_SYSTEM_PROMPT,
+      messages: messages,
+    }),
+  });
+
+  if (!res.ok) {
+    var detail = await res.text().catch(function () { return ''; });
+    throw new Error('Anthropic API error ' + res.status + ': ' + detail);
+  }
+
+  var data = await res.json();
+  var textBlock = (data.content || []).find(function (block) { return block.type === 'text'; });
+  return textBlock ? textBlock.text : '';
+}
+
+async function handleChat(req, res) {
+  var ip = clientIp(req);
+
+  function respondJson(status, body) {
+    res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify(body));
+  }
+
+  try {
+    if (isRateLimited(chatRateLimitHits, ip, CHAT_RATE_LIMIT_WINDOW_MS, CHAT_RATE_LIMIT_MAX)) {
+      respondJson(429, { error: 'Too many messages. Please try again shortly.' });
+      return;
+    }
+
+    var raw = await readBody(req);
+    var body = JSON.parse(raw || '{}');
+    var messages = Array.isArray(body.messages) ? body.messages : [];
+
+    messages = messages
+      .slice(-20)
+      .filter(function (m) {
+        return m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string';
+      })
+      .map(function (m) {
+        return { role: m.role, content: m.content.slice(0, 2000) };
+      });
+
+    if (!messages.length || messages[messages.length - 1].role !== 'user') {
+      respondJson(400, { error: 'Invalid message' });
+      return;
+    }
+
+    var reply = await callClaude(messages);
+    respondJson(200, { reply: reply });
+  } catch (err) {
+    console.error('Chat request failed:', err);
+    respondJson(500, { error: 'Something went wrong.' });
   }
 }
 
@@ -193,8 +280,13 @@ function serveStatic(req, res) {
 }
 
 http.createServer((req, res) => {
-  if (req.method === 'POST' && req.url.split('?')[0] === '/api/free-automation') {
+  var urlPath = req.url.split('?')[0];
+  if (req.method === 'POST' && urlPath === '/api/free-automation') {
     handleLeadSubmission(req, res);
+    return;
+  }
+  if (req.method === 'POST' && urlPath === '/api/chat') {
+    handleChat(req, res);
     return;
   }
   serveStatic(req, res);
