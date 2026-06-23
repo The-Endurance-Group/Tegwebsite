@@ -850,7 +850,7 @@ textarea:focus-visible {
   padding: 10px 12px;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
-  font-size: 14px;
+  font-size: 16px;
   background: var(--bg-light);
 }
 .ai-chat-input:focus {
