@@ -23,6 +23,9 @@
 - [What counts as a real AI automation, and what's just a demo](https://theendurancegroup.com/blog/what-is-an-ai-automation.html)
 - [When it makes sense to outsource sales execution instead of hiring an SDR](https://theendurancegroup.com/blog/outsourced-sales-execution-guide.html)
 - [Why adding more leads won't fix a broken CRM](https://theendurancegroup.com/blog/fix-crm-before-more-leads.html)
+- [What Claude Skills are, and why we build inside Claude instead of a new app](https://theendurancegroup.com/blog/claude-skills.html)
+- [What custom GPTs are, and why we build inside ChatGPT instead of a new app](https://theendurancegroup.com/blog/openai-custom-gpts.html)
+- [What Gemini Gems are, and why we build inside Google Workspace instead of a new app](https://theendurancegroup.com/blog/gemini-gems.html)
 
 ### Blog categories
 
