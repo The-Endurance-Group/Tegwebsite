@@ -428,6 +428,11 @@ textarea:focus-visible {
   letter-spacing: 0.06em;
   color: var(--color-lavender);
 }
+.trust-strip-label {
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 4px;
+}
 .trust-strip img {
   height: 80px;
   width: auto;
