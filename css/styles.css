@@ -429,9 +429,9 @@ textarea:focus-visible {
   color: var(--color-lavender);
 }
 .trust-strip img {
-  height: 32px;
+  height: 80px;
   width: auto;
-  max-width: 160px;
+  max-width: 240px;
   object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.7;
