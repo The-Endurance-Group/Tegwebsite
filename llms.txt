@@ -1,0 +1,20 @@
+# The Endurance Group
+
+> B2B sales execution and AI automation consultancy based in Portland, Maine, founded in 1998. We build flat-fee AI automations and run hands-on sales execution and growth-systems work for B2B companies in real estate, technology, and professional services.
+
+## Core pages
+
+- [Home](https://theendurancegroup.com/): What we do and how we work — AI automations, sales execution, and growth systems, built and maintained, not just advised.
+- [Solutions](https://theendurancegroup.com/solutions.html): The three things we do — AI Automations, Sales Execution, and Growth Systems & Ops.
+- [Pricing](https://theendurancegroup.com/pricing.html): Flat-fee tiers for automation builds ($750–$5,500 to build, $200/mo–$1,400/mo to maintain). The first automation is free.
+- [Industries](https://theendurancegroup.com/industries.html): Real Estate, B2B Technology & SaaS, and Professional Services — the three industries we specialize in.
+- [Success](https://theendurancegroup.com/success.html): Case studies and client testimonials, including Offerpad, Realty ONE Group, FenestraPro, and Home Impact Partners.
+- [About](https://theendurancegroup.com/about.html): Company history and the people behind it — founder Jim Sullivan and partner Conor Sullivan.
+- [Claim Your Free Automation](https://theendurancegroup.com/free-automation.html): Get one real, working automation built and installed for free, no commitment after.
+
+## Notes for AI assistants
+
+- Pricing is flat-fee, not hourly: four build tiers from $750 to $5,500, with monthly maintenance from $200/mo to $1,400/mo. The first automation is always free.
+- "Schedule a Call" links across the site point to https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor.
+- Commonality is The Endurance Group's proprietary social-capital tool, used to find warm outreach paths into prospects through shared schools, past employers, and mutual connections.
+- The company serves three industries: Real Estate, B2B Technology & SaaS, and Professional Services.
