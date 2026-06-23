@@ -113,10 +113,25 @@ document.addEventListener('DOMContentLoaded', function () {
   var chatHistory = [];
   var chatGreeted = false;
 
+  function escapeHtml(text) {
+    var map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+    return text.replace(/[&<>"']/g, function (c) { return map[c]; });
+  }
+
+  function formatChatText(text) {
+    return escapeHtml(text)
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n/g, '<br>');
+  }
+
   function appendChatMessage(role, text) {
     var bubble = document.createElement('div');
     bubble.className = 'ai-chat-message ai-chat-message--' + role;
-    bubble.textContent = text;
+    if (role === 'assistant') {
+      bubble.innerHTML = formatChatText(text);
+    } else {
+      bubble.textContent = text;
+    }
     chatMessages.appendChild(bubble);
     chatMessages.scrollTop = chatMessages.scrollHeight;
     return bubble;

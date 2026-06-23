@@ -746,8 +746,8 @@ textarea:focus-visible {
 /* ===== AI CHAT WIDGET ===== */
 .ai-chat-widget {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
   z-index: 300;
 }
 
@@ -770,7 +770,7 @@ textarea:focus-visible {
   right: 0;
   bottom: 72px;
   width: min(340px, calc(100vw - 40px));
-  height: min(460px, calc(100vh - 140px));
+  height: min(460px, calc(100dvh - 140px));
   background: var(--color-white);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
@@ -780,6 +780,18 @@ textarea:focus-visible {
   overflow: hidden;
 }
 .ai-chat-panel[hidden] { display: none; }
+
+@media (max-width: 480px) {
+  .ai-chat-panel {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(84px + env(safe-area-inset-bottom));
+    top: calc(var(--header-height) + 12px);
+    width: auto;
+    height: auto;
+  }
+}
 
 .ai-chat-header {
   display: flex;
@@ -799,7 +811,9 @@ textarea:focus-visible {
 
 .ai-chat-messages {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 16px;
   display: flex;
   flex-direction: column;
