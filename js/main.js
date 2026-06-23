@@ -34,33 +34,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Free Automation form — submits to Formspree, forwards to csullivan@theendurancegroup.com */
+  /* Free Automation form — submits to Formspree (real page post, no AJAX/CORS),
+     which redirects back here with ?submitted=true via the _next field. */
   var form = document.getElementById('automation-form');
   var confirmation = document.getElementById('form-confirmation');
-  var formError = document.getElementById('form-error');
 
-  if (form && confirmation) {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      if (formError) formError.hidden = true;
-
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
-      })
-        .then(function (response) {
-          if (response.ok) {
-            form.hidden = true;
-            confirmation.hidden = false;
-            confirmation.focus();
-          } else if (formError) {
-            formError.hidden = false;
-          }
-        })
-        .catch(function () {
-          if (formError) formError.hidden = false;
-        });
-    });
+  if (form && confirmation && new URLSearchParams(window.location.search).get('submitted') === 'true') {
+    form.hidden = true;
+    confirmation.hidden = false;
+    confirmation.focus();
   }
 });
