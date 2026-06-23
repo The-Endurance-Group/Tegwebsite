@@ -427,6 +427,7 @@ textarea:focus-visible {
   margin-bottom: 12px;
 }
 .stat-callout p { color: rgba(255,255,255,0.9); max-width: 640px; margin: 0 auto; }
+.stat-callout .feature-link { color: var(--color-teal); }
 
 /* ===== FEATURE CARDS (what we do / solutions teasers) ===== */
 .feature-card {
