@@ -651,6 +651,14 @@ textarea:focus-visible {
 }
 .form-error[hidden] { display: none; }
 
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 /* ===== COMING SOON (Commonality placeholder) ===== */
 .coming-soon {
   position: relative;
