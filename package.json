@@ -1,0 +1,12 @@
+{
+  "name": "tegwebsite",
+  "private": true,
+  "version": "1.0.0",
+  "description": "The Endurance Group marketing site (static HTML/CSS/JS).",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
