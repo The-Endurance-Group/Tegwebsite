@@ -455,24 +455,6 @@ textarea:focus-visible {
   opacity: 1;
 }
 
-/* ===== STAT CALLOUT ===== */
-.stat-callout {
-  background: var(--color-purple);
-  color: var(--color-white);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  text-align: center;
-}
-.stat-callout .stat-number {
-  display: block;
-  font-size: clamp(40px, 6vw, 56px);
-  font-weight: 800;
-  color: var(--color-teal);
-  margin-bottom: 12px;
-}
-.stat-callout p { color: rgba(255,255,255,0.9); max-width: 640px; margin: 0 auto; }
-.stat-callout .feature-link { color: var(--color-teal); }
-
 /* ===== FEATURE CARDS (what we do / solutions teasers) ===== */
 .feature-card {
   background: var(--color-white);
