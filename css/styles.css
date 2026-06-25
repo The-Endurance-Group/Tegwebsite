@@ -551,6 +551,14 @@ textarea:focus-visible {
   font-size: 13px;
   color: var(--color-lavender);
 }
+.quote-card-logo {
+  display: block;
+  height: 22px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
 
 /* ===== CASE STUDY CARDS (Success page) ===== */
 .case-study-card {
