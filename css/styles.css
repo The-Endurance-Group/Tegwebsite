@@ -511,6 +511,14 @@ textarea:focus-visible {
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   padding: 28px 32px;
 }
+.testimonial-logo {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
 .testimonial blockquote {
   font-size: 18px;
   line-height: 1.55;
