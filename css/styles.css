@@ -393,11 +393,19 @@ textarea:focus-visible {
 .hero h1 { margin-bottom: 20px; }
 .hero .lede { margin-bottom: 0; font-size: clamp(17px, 2vw, 21px); }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 32px;
+}
+@media (min-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr 1fr; gap: 56px; }
+}
+
 .hero-intro-frame {
   position: relative;
   width: 100%;
-  max-width: 880px;
-  margin: 0 auto 40px;
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -455,15 +463,6 @@ textarea:focus-visible {
   padding: 40px;
   text-align: center;
 }
-.stat-callout-logo {
-  display: inline-flex;
-  align-items: center;
-  background: var(--color-white);
-  border-radius: var(--radius-md);
-  padding: 16px 28px;
-  margin-bottom: 24px;
-}
-.stat-callout-logo img { height: 80px; width: auto; max-width: 240px; }
 .stat-callout .stat-number {
   display: block;
   font-size: clamp(40px, 6vw, 56px);
