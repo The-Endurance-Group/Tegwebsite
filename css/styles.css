@@ -246,6 +246,7 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 .logo-strong { font-weight: 800; }
+.logo-img { display: block; height: 40px; width: auto; }
 
 .nav-toggle {
   display: flex;
