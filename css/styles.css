@@ -528,6 +528,61 @@ textarea:focus-visible {
 .icon-badge--teal { background: var(--tint-teal); color: var(--color-teal-dark); }
 .icon-badge--purple { background: var(--tint-purple); color: var(--color-purple); }
 
+/* ===== TOOL CAROUSEL (scrolling strip of tool icons, used on solutions.html) ===== */
+.tool-carousel-wrap {
+  overflow: hidden;
+  position: relative;
+  margin-top: 24px;
+}
+.tool-carousel-wrap::before, .tool-carousel-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 64px;
+  z-index: 1;
+  pointer-events: none;
+}
+.tool-carousel-wrap::before { left: 0; background: linear-gradient(90deg, var(--color-white), transparent); }
+.tool-carousel-wrap::after { right: 0; background: linear-gradient(270deg, var(--color-white), transparent); }
+.tool-carousel-track {
+  display: flex;
+  gap: 56px;
+  width: max-content;
+  animation: tool-carousel-scroll 26s linear infinite;
+}
+.tool-carousel-wrap:hover .tool-carousel-track { animation-play-state: paused; }
+.tool-carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  width: 100px;
+}
+.tool-carousel-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+}
+.tool-carousel-icon svg { width: 28px; height: 28px; }
+.tool-carousel-item span {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-lavender);
+  white-space: nowrap;
+}
+@keyframes tool-carousel-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tool-carousel-track { animation: none; }
+  .tool-carousel-wrap { overflow-x: auto; }
+}
+
 /* ===== EXAMPLE CALLOUT (sets a concrete example apart from surrounding prose) ===== */
 .example-callout {
   background: var(--bg-light);
