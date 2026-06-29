@@ -1,5 +1,5 @@
 /* =========================================================
-   THE ENDURANCE GROUP — SHARED STYLESHEET
+   THE ENDURANCE GROUP - SHARED STYLESHEET
    Mobile-first. Breakpoints: 480px / 768px / 1024px.
    ========================================================= */
 
@@ -740,7 +740,7 @@ textarea:focus-visible {
 .mt-0 { margin-top: 0; }
 
 /* =========================================================
-   ENGAGEMENT LAYER — scroll reveals, tabs, tool cards,
+   ENGAGEMENT LAYER - scroll reveals, tabs, tool cards,
    pricing examples, success timeline. Added 2026.
    ========================================================= */
 
@@ -755,7 +755,7 @@ textarea:focus-visible {
   opacity: 1;
   transform: none;
 }
-/* staggered children — set delays on the kids once the parent is visible */
+/* staggered children - set delays on the kids once the parent is visible */
 .reveal--stagger > * {
   opacity: 0;
   transform: translateY(26px);
@@ -872,7 +872,7 @@ textarea:focus-visible {
   }
 }
 
-/* panels — only the active one shows; on mobile all show stacked */
+/* panels - only the active one shows; on mobile all show stacked */
 .industry-panel[hidden] { display: none; }
 
 .industry-panel-head { margin-bottom: 28px; }

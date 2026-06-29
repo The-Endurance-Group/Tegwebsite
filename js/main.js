@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Scroll reveal — fade/slide sections in as they enter the viewport.
+  /* Scroll reveal - fade/slide sections in as they enter the viewport.
      Falls back to visible-by-default if IntersectionObserver is missing or
      the user prefers reduced motion. */
   var reveals = document.querySelectorAll('.reveal');
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /* Industry switcher — pill tabs (desktop) + native select (mobile) drive
+  /* Industry switcher - pill tabs (desktop) + native select (mobile) drive
      which industry panel is shown. Deep links like #technology still work. */
   var switcher = document.querySelector('.industry-switcher');
   if (switcher) {
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (initial) activateIndustry(initial, false);
   }
 
-  /* AI chat widget — same-origin to /api/chat, built into the DOM here so
+  /* AI chat widget - same-origin to /api/chat, built into the DOM here so
      every page picks it up without touching 27 HTML files individually. */
   var widget = document.createElement('div');
   widget.className = 'ai-chat-widget';
