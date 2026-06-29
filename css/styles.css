@@ -528,6 +528,23 @@ textarea:focus-visible {
 .icon-badge--teal { background: var(--tint-teal); color: var(--color-teal-dark); }
 .icon-badge--purple { background: var(--tint-purple); color: var(--color-purple); }
 
+/* ===== EXAMPLE CALLOUT (sets a concrete example apart from surrounding prose) ===== */
+.example-callout {
+  background: var(--bg-light);
+  border-left: 3px solid var(--color-pink);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin: 24px 0;
+}
+.example-callout strong {
+  display: block;
+  color: var(--color-pink);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
 /* ===== TAG LIST ===== */
 .tag-list {
   display: flex;
