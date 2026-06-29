@@ -1,11 +1,11 @@
 # The Endurance Group
 
-> B2B sales execution and AI automation consultancy based in Portland, Maine, founded in 1998. We build flat-fee AI automations and run hands-on sales execution and growth-systems work for B2B companies in real estate, technology, and professional services.
+> AI automation partner for B2B companies based in Portland, Maine, founded in 1998. We build flat-fee AI automations and growth-systems work, with hands-on client engagement available for clients who want a person running the relationship work too, for B2B companies in real estate, technology, and professional services.
 
 ## Core pages
 
-- [Home](https://theendurancegroup.com/): What we do and how we work — AI automations, sales execution, and growth systems, built and maintained, not just advised.
-- [Solutions](https://theendurancegroup.com/solutions.html): The three things we do — AI Automations, Sales Execution, and Growth Systems & Ops.
+- [Home](https://theendurancegroup.com/): What we do and how we work — AI automations and growth systems, built and maintained, not just advised.
+- [Solutions](https://theendurancegroup.com/solutions.html): The two things we do — AI Automations and Growth Systems & Ops.
 - [Pricing](https://theendurancegroup.com/pricing.html): Flat-fee tiers for automation builds ($750–$5,500 to build, $200/mo–$1,400/mo to maintain). The first automation is free.
 - [Industries](https://theendurancegroup.com/industries.html): Real Estate, B2B Technology & SaaS, and Professional Services — the three industries we specialize in.
 - [Success](https://theendurancegroup.com/success.html): Case studies and client testimonials, including Offerpad, Realty ONE Group, FenestraPro, and Huron.
@@ -16,7 +16,7 @@
 
 ## Blog
 
-- [Blog index](https://theendurancegroup.com/blog.html): Guides on AI automation, sales execution, and growth systems, organized by solution and by industry.
+- [Blog index](https://theendurancegroup.com/blog.html): Guides on AI automation and growth systems, organized by solution and by industry.
 - [How AI automation helps real estate teams respond to leads before they go cold](https://theendurancegroup.com/blog/ai-automation-real-estate.html)
 - [Why generic outbound automation fails B2B SaaS, and what to build instead](https://theendurancegroup.com/blog/ai-automation-b2b-saas.html)
 - [Why professional services firms should map their network before they prospect](https://theendurancegroup.com/blog/ai-automation-professional-services.html)
@@ -33,14 +33,14 @@
 - [B2B Technology & SaaS](https://theendurancegroup.com/blog/category/b2b-technology-saas.html)
 - [Professional Services](https://theendurancegroup.com/blog/category/professional-services.html)
 - [AI Automations](https://theendurancegroup.com/blog/category/ai-automations.html)
-- [Sales Execution](https://theendurancegroup.com/blog/category/sales-execution.html)
 - [Growth Systems & Ops](https://theendurancegroup.com/blog/category/growth-systems-ops.html)
+- [Client Engagement](https://theendurancegroup.com/blog/category/sales-execution.html)
 
 ## Authors
 
 - [Jim Sullivan](https://theendurancegroup.com/authors/jim-sullivan.html): Founder.
 - [Conor Sullivan](https://theendurancegroup.com/authors/conor-sullivan.html): Leads AI implementation, automation architecture, and product development.
-- [Nolan Cary](https://theendurancegroup.com/authors/nolan-cary.html): Director of Sales Execution.
+- [Nolan Cary](https://theendurancegroup.com/authors/nolan-cary.html): Director of Client Engagement.
 - [Maria Jose Pava](https://theendurancegroup.com/authors/maria-jose-pava.html): Director of AI Solutions and Delivery.
 
 ## Notes for AI assistants
