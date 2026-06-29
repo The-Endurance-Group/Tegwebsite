@@ -332,6 +332,7 @@ textarea:focus-visible {
   margin-bottom: 48px;
 }
 .footer-top .logo { color: var(--color-white); }
+.site-footer .logo-img { filter: brightness(0) invert(1); height: 36px; }
 .footer-tagline { margin-top: 16px; font-size: 17px; color: rgba(255,255,255,0.85); max-width: 480px; }
 .footer-address { margin-top: 12px; color: rgba(255,255,255,0.65); font-size: 15px; }
 
@@ -527,6 +528,39 @@ textarea:focus-visible {
 .icon-badge--pink { background: rgba(196, 94, 137, 0.18); color: var(--color-pink); }
 .icon-badge--teal { background: var(--tint-teal); color: var(--color-teal-dark); }
 .icon-badge--purple { background: var(--tint-purple); color: var(--color-purple); }
+
+/* ===== FAQ ACCORDION (pricing.html) ===== */
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-top: 1px solid var(--border-light); }
+.faq-item:last-child { border-bottom: 1px solid var(--border-light); }
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 4px;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  list-style: none;
+  gap: 16px;
+  line-height: 1.35;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after {
+  content: "+";
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-pink);
+  flex-shrink: 0;
+  line-height: 1;
+}
+details[open] .faq-q::after { content: "−"; }
+.faq-a {
+  padding: 0 4px 20px;
+  color: var(--color-lavender);
+  font-size: 16px;
+  margin: 0;
+}
 
 /* ===== TOOL CAROUSEL (scrolling strip of tool icons, used on solutions.html) ===== */
 .tool-carousel-wrap {

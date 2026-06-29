@@ -72,7 +72,7 @@
   <!-- SHARED HEADER: keep in sync across all pages -->
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="index.html"><img src="images/logo.png" alt="The Endurance Group" class="logo-img"></a>
+      <a class="logo" href="index.html"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -106,7 +106,7 @@
     </section>
 
     <!-- Functional Specialties -->
-    <section class="section section--alt">
+    <section id="sales-and-marketing" class="section section--alt">
       <div class="container">
         <span class="section-label reveal">Functional Specialties</span>
         <div class="specialty-grid reveal--stagger reveal">
@@ -137,11 +137,11 @@
     </section>
 
     <!-- Industry Depth -->
-    <section class="section">
+    <section id="industry-depth" class="section">
       <div class="container">
         <span class="section-label reveal">Industry Depth</span>
         <div class="grid grid--3 reveal--stagger reveal">
-          <div class="feature-card">
+          <div id="real-estate" class="feature-card">
             <h3>Real Estate</h3>
             <p>Agents, brokers, developers, property managers, investors, and lenders. We know the workflow and we know the tech stack.</p>
             <div class="tag-list">
@@ -154,7 +154,7 @@
               <cite>- Vin Ferrara, Founder · Home Impact Partners</cite>
             </div>
           </div>
-          <div class="feature-card">
+          <div id="b2b-technology" class="feature-card">
             <h3>B2B Technology</h3>
             <p>Sales-led growth, long sales cycles, and outbound programs that need automation without losing the human layer.</p>
             <div class="tag-list">
@@ -167,7 +167,7 @@
               <cite>- David Palmer, CEO &amp; Founder · FenestraPro</cite>
             </div>
           </div>
-          <div class="feature-card">
+          <div id="professional-services" class="feature-card">
             <h3>Professional Services</h3>
             <p>Firms that sell expertise - consultants, agencies, advisors - where the relationship is the product and follow-up determines outcomes.</p>
             <div class="tag-list">
@@ -203,7 +203,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
-        <a class="logo" href="index.html">THE <span class="logo-strong">ENDURANCE</span> GROUP</a>
+        <a class="logo" href="index.html"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
         <p class="footer-tagline">Your AI Automation Partner</p>
         <p class="footer-address">Portland, ME · (207) 846-6000</p>
       </div>
@@ -235,7 +235,10 @@
         <nav aria-label="Specialties">
           <h3>Specialties</h3>
           <ul>
-            <li><a href="specialties.html">Specialties</a></li>
+            <li><a href="specialties.html#sales-and-marketing">Sales &amp; Marketing</a></li>
+            <li><a href="specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="specialties.html#professional-services">Professional Services</a></li>
           </ul>
         </nav>
       </div>
