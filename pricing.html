@@ -141,7 +141,7 @@
     <!-- Free callout + pricing -->
     <section class="section section--alt">
       <div class="container">
-        <div class="free-callout">
+        <div class="free-callout reveal">
           <span class="eyebrow">Your first automation, free</span>
           <p>Tell us one thing your team still does by hand. We'll build it, install it with you, and you'll see it running before any money changes hands. No commitment after.</p>
           <div class="btn-group btn-group--center">
@@ -149,38 +149,74 @@
           </div>
         </div>
 
-        <p class="lede text-center" style="margin-inline:auto; margin-bottom:40px;">Partner with us to build and manage your automation portfolio. Every automation is one flat price, then we scale together through monthly strategy calls and ongoing support.</p>
+        <p class="lede text-center" style="margin-inline:auto; margin-bottom:40px;">Partner with us to build and manage your automation portfolio. One flat price per automation, then we scale together.</p>
 
-        <div class="pricing-card" style="max-width:460px; margin:0 auto 40px;">
-          <h3>Every automation</h3>
-          <div class="price-row"><span class="price-label">To build</span><span class="price-value">$750</span></div>
-          <div class="price-row"><span class="price-label">Monthly Care</span><span class="price-value">$99/mo</span></div>
-          <p class="pricing-scope">Care includes monitoring, fixes, and a monthly strategy call with our team to review performance and plan the next phase of your automation portfolio.</p>
-        </div>
-
-        <div class="pricing-card" style="max-width:760px; margin:0 auto;">
-          <h3>What this looks like in practice</h3>
-          <ul class="pricing-features">
-            <li>A new lead fills out your website form and gets automatically added to HubSpot, tagged by source, and assigned to the right rep.</li>
-            <li>A Claude skill that reads a prospect's LinkedIn URL and drafts a personalized first-touch outreach email before your team opens their inbox.</li>
-            <li>A HubSpot workflow that enrolls a lead based on behavior, sends a timed sequence of three personalized follow-ups, and notifies the rep when the lead replies.</li>
-            <li>A lead comes in through your website, gets enriched with company and contact data from Apollo, scored against your ICP criteria, added to HubSpot with full context, and triggers a personalized outreach sequence, all without a human touching it.</li>
-            <li>A system that pulls weekly sales activity from HubSpot, runs it through a Claude skill to generate a narrative performance summary, and emails it to leadership every Monday morning.</li>
-            <li>A Commonality-powered outreach system that maps your team's social capital against a target prospect list, identifies warm paths through shared schools and past employers, and drafts personalized outreach for each rep anchored to the specific connection they share.</li>
+        <div class="pricing-card reveal" style="max-width:520px; margin:0 auto 48px;">
+          <h3 style="margin-bottom:20px;">Every automation</h3>
+          <div class="price-headline">
+            <span class="price-big">$750</span>
+            <span class="price-unit">to build · one flat price</span>
+          </div>
+          <div class="price-headline" style="margin-bottom:20px;">
+            <span class="price-big">$99<span style="font-size:0.5em; font-weight:600;">/mo</span></span>
+            <span class="price-unit">Care, per automation</span>
+          </div>
+          <ul class="care-included">
+            <li><span class="care-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Ongoing monitoring</li>
+            <li><span class="care-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Fixes if it breaks</li>
+            <li><span class="care-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Monthly strategy call</li>
+            <li><span class="care-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>Plan what to build next</li>
           </ul>
         </div>
 
-        <p class="text-center" style="margin-top:32px; max-width:680px; margin-inline:auto; color:var(--color-lavender); font-size:14px;">This is our general pricing for the automations we build most often. Some AI solutions are more complex than what's typical for us — if what you have in mind falls outside our usual scope, we'll explain why and confirm any price difference with you in writing before we start.</p>
+        <div class="section-head section-head--center reveal" style="margin-bottom:24px;">
+          <span class="eyebrow">$750 each</span>
+          <h2>What an automation actually looks like</h2>
+        </div>
+        <div class="example-grid reveal--stagger reveal">
+          <div class="example-card">
+            <span class="example-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg></span>
+            <h4>Instant lead routing</h4>
+            <p>Website form fills land in HubSpot, tagged by source and assigned to the right rep automatically.</p>
+          </div>
+          <div class="example-card">
+            <span class="example-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></span>
+            <h4>LinkedIn-to-email drafts</h4>
+            <p>A Claude skill reads a prospect's LinkedIn and drafts a personalized first-touch email.</p>
+          </div>
+          <div class="example-card">
+            <span class="example-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="m8 8 4-4 4 4"/><path d="M12 4v12"/></svg></span>
+            <h4>Behavior-based follow-up</h4>
+            <p>A workflow enrolls a lead, sends three timed follow-ups, and pings the rep when they reply.</p>
+          </div>
+          <div class="example-card">
+            <span class="example-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
+            <h4>Enrich, score &amp; sequence</h4>
+            <p>Leads get enriched from Apollo, scored against your ICP, and dropped into outreach — untouched by a human.</p>
+          </div>
+          <div class="example-card">
+            <span class="example-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l3-4 4 3 5-7"/></svg></span>
+            <h4>Monday morning reporting</h4>
+            <p>Weekly HubSpot activity turned into a narrative summary and emailed to leadership automatically.</p>
+          </div>
+          <div class="example-card">
+            <span class="example-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="M10.5 9.5 6.5 15.5M13.5 9.5l4 6"/></svg></span>
+            <h4>Warm-path outreach</h4>
+            <p>Commonality maps your team's connections to a prospect list and drafts outreach anchored to each one.</p>
+          </div>
+        </div>
+
+        <p class="text-center reveal" style="margin-top:32px; max-width:680px; margin-inline:auto; color:var(--color-lavender); font-size:14px;">This is our general pricing for the automations we build most often. Some AI solutions are more complex than what's typical — if what you have in mind falls outside our usual scope, we'll explain why and confirm any price difference with you in writing before we start.</p>
       </div>
     </section>
 
     <!-- Care + sales execution callouts -->
     <section class="section">
       <div class="container">
-        <div class="grid grid--2">
+        <div class="grid grid--2 reveal">
           <div class="maintenance-callout">
-            <h3>What Care covers</h3>
-            <p style="margin-top:16px;">Monitoring, fixes if something breaks, and a monthly call with our team to review how the automation is performing and brainstorm what to improve or build next. Cancel anytime with two weeks' notice. Running more than one automation? Care is $99/mo per automation — the fees simply add together.</p>
+            <h3>Running more than one?</h3>
+            <p style="margin-top:16px;">Care is $99/mo per automation — the fees simply add together as your portfolio grows. Cancel anytime with two weeks' notice. Your automations are yours to keep either way.</p>
           </div>
           <div class="sales-callout">
             <h3>Need someone to actually run your outreach?</h3>
@@ -195,7 +231,7 @@
 
     <!-- Closing CTA -->
     <section class="section section--dark text-center">
-      <div class="container">
+      <div class="container reveal">
         <h2>Not sure if your idea fits our typical scope?</h2>
         <p class="lede" style="margin-inline:auto;">Tell us what you're trying to automate and we'll tell you honestly whether it's standard pricing or something we need to scope first.</p>
         <div class="btn-group btn-group--center">

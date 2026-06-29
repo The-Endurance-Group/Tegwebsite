@@ -132,67 +132,176 @@
 
     <!-- Hero -->
     <section class="hero hero--page section">
-      <div class="container">
+      <div class="container reveal">
         <span class="eyebrow">Industries</span>
         <h1>We go deep, not wide.</h1>
-        <p class="lede">We work across three industries where we have real proof, real relationships, and a genuine understanding of how the sales motion actually works. If you're outside these three, we're still worth a conversation, but these are where we're best.</p>
+        <p class="lede">We work across three industries where we have real proof, real relationships, and a genuine understanding of how the sales motion actually works. Pick yours below. If you're outside these three, we're still worth a conversation — but these are where we're best.</p>
       </div>
     </section>
 
-    <!-- Real Estate -->
-    <section id="real-estate" class="section section--alt">
+    <!-- Industry switcher + panels -->
+    <section class="section section--alt">
       <div class="container">
-        <div class="prose">
-          <span class="eyebrow">Industry 1</span>
-          <h2>Real Estate</h2>
-          <p>We've built and maintained AI systems for real estate brands including Offerpad and Realty ONE Group for over a year. The COO of a publicly traded real estate company and the VP of Growth Marketing at an 18,000-agent franchise have both trusted us with real work and real money. That's not a case study we wrote. That's a relationship that held.</p>
-          <p>We understand the MLS, the disclosure language, the fair housing exposure, and the way real estate sales actually work, which is different from generic B2B sales in ways that matter when you're building the system behind someone's pipeline.</p>
-          <p><strong>What we build for real estate:</strong> lead qualification and scoring, listing and property marketing content, outreach and follow-up automation, investor and LP communications, HubSpot and CRM implementation, and embedded SDR work for brokerages and developers who need pipeline, not just tools.</p>
-          <p><strong>Who we work with:</strong> agents and brokers, residential and commercial, developers, property managers, investors and funds, lenders and mortgage brokers.</p>
-          <div class="btn-group">
-            <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Schedule a Call</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- B2B Technology & SaaS -->
-    <section id="technology" class="section">
-      <div class="container">
-        <div class="prose">
-          <span class="eyebrow">Industry 2</span>
-          <h2>B2B Technology &amp; SaaS</h2>
-          <p>B2B SaaS sales has a specific shape: longer cycles, multiple stakeholders, outreach that has to be personalized enough to cut through but scalable enough to cover a real market. Generic automation breaks down here because the judgment calls matter more than the volume.</p>
-          <p>We build around the specifics of how SaaS companies actually sell, the ICP scoring, the multi-touch sequences, the content that supports a discovery call, the CRM hygiene that makes forecasting something you can trust. And when we run outreach, we use Commonality to find the warm paths your team already has into the accounts you're targeting, which changes the conversion rate considerably.</p>
-          <p><strong>What we build for B2B SaaS:</strong> ICP scoring and lead qualification, personalized outreach sequences, HubSpot implementation and optimization, pipeline reporting, content automation, and embedded SDR work for teams that need pipeline generation without adding headcount.</p>
-          <p><strong>Who we work with:</strong> seed through Series B companies building a repeatable sales motion, growth-stage teams hitting the limits of what founder-led sales can do, and RevOps teams that need the infrastructure to match the ambition.</p>
-          <div class="btn-group">
-            <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Schedule a Call</a>
+        <div class="industry-switcher reveal">
+          <!-- Mobile: jump menu -->
+          <div class="industry-select-wrap">
+            <label class="sr-only" for="industry-select">Choose an industry</label>
+            <select id="industry-select" class="industry-select">
+              <option value="real-estate">Real Estate</option>
+              <option value="technology">B2B Technology &amp; SaaS</option>
+              <option value="professional-services">Professional Services</option>
+            </select>
+          </div>
+          <!-- Desktop: pill tabs -->
+          <div class="industry-tablist" role="tablist" aria-label="Industries">
+            <button type="button" class="industry-tab" role="tab" data-target="real-estate" aria-selected="true" aria-controls="real-estate">Real Estate</button>
+            <button type="button" class="industry-tab" role="tab" data-target="technology" aria-selected="false" aria-controls="technology" tabindex="-1">B2B Technology &amp; SaaS</button>
+            <button type="button" class="industry-tab" role="tab" data-target="professional-services" aria-selected="false" aria-controls="professional-services" tabindex="-1">Professional Services</button>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Professional Services -->
-    <section id="professional-services" class="section section--alt">
-      <div class="container">
-        <div class="prose">
-          <span class="eyebrow">Industry 3</span>
-          <h2>Professional Services</h2>
-          <p>Professional services firms, consultancies, advisory practices, agencies, sell through relationships and reputation. The sales motion is slower, more personal, and almost entirely dependent on trust. Which means the AI has to be invisible and the human judgment has to be front and center.</p>
-          <p>We don't build spray-and-pray outreach for professional services firms. We build systems that help you identify who in your existing network is most likely to become a client right now, what to say to them, and how to stay visible to the right people without feeling like you're selling. That's what Commonality was built for, and it's where we see the highest response rates and the most durable relationships.</p>
-          <p><strong>What we build for professional services:</strong> network and social capital mapping, warm outreach systems, referral and relationship tracking, proposal and follow-up automation, CRM implementation for relationship-driven teams, and embedded business development work for firms that need someone to actually do the outreach.</p>
-          <p><strong>Who we work with:</strong> boutique consultancies, advisory firms, agencies, coaches, and fractional executives who sell through relationships and need a better system for finding and warming the right ones.</p>
-          <div class="btn-group">
+        <!-- Real Estate -->
+        <div id="real-estate" class="industry-panel" role="tabpanel" aria-label="Real Estate">
+          <div class="industry-panel-head reveal">
+            <span class="eyebrow">Industry 1</span>
+            <h2>Real Estate</h2>
+            <p class="industry-panel-lead">We've built and maintained AI systems for real estate brands including Offerpad and Realty ONE Group for over a year. We understand the MLS, the disclosure language, the fair housing exposure, and the way real estate sales actually work — which is different from generic B2B in ways that matter when you're building the system behind someone's pipeline.</p>
+          </div>
+          <div class="tool-grid reveal--stagger reveal">
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18l-7 8v6l-4 2v-8z"/></svg></span>
+              <h4>Lead qualification &amp; scoring</h4>
+              <p>Inbound leads enriched, scored against your criteria, and routed to the right agent automatically.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 14l2 2 4-4"/></svg></span>
+              <h4>Listing &amp; property marketing</h4>
+              <p>On-brand listing copy, property pages, and campaign content generated in minutes, not days.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></span>
+              <h4>Outreach &amp; follow-up</h4>
+              <p>Timed, personalized follow-up sequences that keep every lead warm without manual chasing.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="M10.5 9.5 6.5 15.5M13.5 9.5l4 6"/></svg></span>
+              <h4>Investor &amp; LP communications</h4>
+              <p>Update drafting and distribution that keeps investors and LPs informed on a consistent cadence.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+              <h4>HubSpot &amp; CRM implementation</h4>
+              <p>Your data migrated, your pipeline structured, and dashboards leadership can actually trust.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l3-4 4 3 5-7"/></svg></span>
+              <h4>Embedded SDR work</h4>
+              <p>We run the prospecting and booking motion alongside the system, not just hand it over.</p>
+            </div>
+          </div>
+          <p class="industry-who reveal"><strong>Who we work with:</strong> agents and brokers, residential and commercial, developers, property managers, investors and funds, lenders and mortgage brokers.</p>
+          <div class="btn-group reveal">
             <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Schedule a Call</a>
           </div>
         </div>
+
+        <!-- B2B Technology & SaaS -->
+        <div id="technology" class="industry-panel" role="tabpanel" aria-label="B2B Technology and SaaS" hidden>
+          <div class="industry-panel-head reveal">
+            <span class="eyebrow">Industry 2</span>
+            <h2>B2B Technology &amp; SaaS</h2>
+            <p class="industry-panel-lead">B2B SaaS sales has a specific shape: longer cycles, multiple stakeholders, outreach personalized enough to cut through but scalable enough to cover a real market. We build around how SaaS companies actually sell — and when we run outreach, we use Commonality to find the warm paths your team already has into target accounts.</p>
+          </div>
+          <div class="tool-grid reveal--stagger reveal">
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
+              <h4>ICP scoring &amp; qualification</h4>
+              <p>Every lead scored against your ideal customer profile so reps spend time on the right accounts.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></span>
+              <h4>Personalized outreach sequences</h4>
+              <p>Multi-touch sequences personalized at scale, drafted before your team opens their inbox.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+              <h4>HubSpot implementation</h4>
+              <p>CRM set up and optimized so your pipeline data is clean enough to forecast from.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l3-4 4 3 5-7"/></svg></span>
+              <h4>Pipeline reporting</h4>
+              <p>Automated performance summaries that land in leadership's inbox every Monday morning.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 14l2 2 4-4"/></svg></span>
+              <h4>Content automation</h4>
+              <p>Discovery-call support content and follow-ups generated from your messaging, on demand.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="M10.5 9.5 6.5 15.5M13.5 9.5l4 6"/></svg></span>
+              <h4>Embedded SDR work</h4>
+              <p>Pipeline generation without adding headcount — we work the top of funnel for you.</p>
+            </div>
+          </div>
+          <p class="industry-who reveal"><strong>Who we work with:</strong> seed through Series B companies building a repeatable sales motion, growth-stage teams hitting the limits of founder-led sales, and RevOps teams that need infrastructure to match the ambition.</p>
+          <div class="btn-group reveal">
+            <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Schedule a Call</a>
+          </div>
+        </div>
+
+        <!-- Professional Services -->
+        <div id="professional-services" class="industry-panel" role="tabpanel" aria-label="Professional Services" hidden>
+          <div class="industry-panel-head reveal">
+            <span class="eyebrow">Industry 3</span>
+            <h2>Professional Services</h2>
+            <p class="industry-panel-lead">Consultancies, advisory practices, and agencies sell through relationships and reputation. The motion is slower, more personal, almost entirely dependent on trust — so the AI has to be invisible and human judgment front and center. We build systems that surface who in your network is most likely to become a client right now, and what to say to them.</p>
+          </div>
+          <div class="tool-grid reveal--stagger reveal">
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="18" r="3"/><circle cx="19" cy="18" r="3"/><path d="M10.5 9.5 6.5 15.5M13.5 9.5l4 6"/></svg></span>
+              <h4>Social capital mapping</h4>
+              <p>Commonality maps your team's shared schools, employers, and connections into any target account.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></span>
+              <h4>Warm outreach systems</h4>
+              <p>Outreach anchored to a real shared connection, where we see the highest response rates.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
+              <h4>Referral &amp; relationship tracking</h4>
+              <p>Know who owes you an intro and who's gone cold, so no relationship slips through.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 14l2 2 4-4"/></svg></span>
+              <h4>Proposal &amp; follow-up automation</h4>
+              <p>Proposals drafted and follow-ups scheduled so momentum never depends on remembering.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+              <h4>CRM for relationship teams</h4>
+              <p>A CRM built around relationships and referrals, not a generic sales pipeline.</p>
+            </div>
+            <div class="tool-card">
+              <span class="tool-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l3-4 4 3 5-7"/></svg></span>
+              <h4>Embedded business development</h4>
+              <p>Someone to actually do the outreach when you'd rather be serving clients.</p>
+            </div>
+          </div>
+          <p class="industry-who reveal"><strong>Who we work with:</strong> boutique consultancies, advisory firms, agencies, coaches, and fractional executives who sell through relationships and need a better system for finding and warming the right ones.</p>
+          <div class="btn-group reveal">
+            <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Schedule a Call</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- Closing -->
     <section class="section section--dark text-center">
-      <div class="container">
+      <div class="container reveal">
         <h2>Outside these three?</h2>
         <p class="lede" style="margin-inline:auto;">We're worth a conversation if you're a B2B company where sales execution is the bottleneck and you're open to AI as part of the fix. Start with the free automation and we'll tell you honestly whether we're the right fit.</p>
         <div class="btn-group btn-group--center">

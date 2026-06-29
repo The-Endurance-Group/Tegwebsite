@@ -739,6 +739,297 @@ textarea:focus-visible {
 .text-center { text-align: center; }
 .mt-0 { margin-top: 0; }
 
+/* =========================================================
+   ENGAGEMENT LAYER — scroll reveals, tabs, tool cards,
+   pricing examples, success timeline. Added 2026.
+   ========================================================= */
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+/* staggered children — set delays on the kids once the parent is visible */
+.reveal--stagger > * {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal--stagger.is-visible > * { opacity: 1; transform: none; }
+.reveal--stagger.is-visible > *:nth-child(1) { transition-delay: 0.00s; }
+.reveal--stagger.is-visible > *:nth-child(2) { transition-delay: 0.08s; }
+.reveal--stagger.is-visible > *:nth-child(3) { transition-delay: 0.16s; }
+.reveal--stagger.is-visible > *:nth-child(4) { transition-delay: 0.24s; }
+.reveal--stagger.is-visible > *:nth-child(5) { transition-delay: 0.32s; }
+.reveal--stagger.is-visible > *:nth-child(6) { transition-delay: 0.40s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal--stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ===== ANIMATED GRADIENT ACCENT (hero / key sections) ===== */
+@keyframes teg-gradient-drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-accent {
+  position: relative;
+  overflow: hidden;
+}
+.gradient-accent::before {
+  content: "";
+  position: absolute;
+  inset: -40% -10% auto -10%;
+  height: 80%;
+  background: linear-gradient(120deg, var(--tint-pink), var(--tint-teal), var(--tint-purple), var(--tint-pink));
+  background-size: 300% 300%;
+  animation: teg-gradient-drift 18s ease infinite;
+  filter: blur(60px);
+  opacity: 0.9;
+  z-index: 0;
+  pointer-events: none;
+}
+.gradient-accent > * { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .gradient-accent::before { animation: none; }
+}
+
+/* ===== CARD HOVER LIFT (shared) ===== */
+.feature-card, .pricing-card, .tool-card, .example-card, .case-study-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.feature-card:hover, .tool-card:hover, .example-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(26,26,26,0.10);
+  border-color: var(--color-pink);
+}
+.case-study-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(26,26,26,0.10); }
+
+/* ===== INDUSTRY TABS / SWITCHER ===== */
+.industry-switcher { margin-bottom: 44px; }
+
+/* mobile: native select for quick jumping */
+.industry-select-wrap { position: relative; }
+.industry-select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 16px 48px 16px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-ink);
+  background: var(--color-white);
+  border: 2px solid var(--color-pink);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+.industry-select-wrap::after {
+  content: "";
+  position: absolute;
+  right: 20px; top: 50%;
+  width: 10px; height: 10px;
+  border-right: 2px solid var(--color-pink);
+  border-bottom: 2px solid var(--color-pink);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+/* desktop: pill tab bar */
+.industry-tablist { display: none; }
+
+@media (min-width: 768px) {
+  .industry-select-wrap { display: none; }
+  .industry-tablist {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px;
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 999px;
+  }
+  .industry-tab {
+    padding: 12px 26px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--color-lavender);
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+  }
+  .industry-tab:hover { color: var(--color-ink); }
+  .industry-tab[aria-selected="true"] {
+    background: var(--color-pink);
+    color: var(--color-white);
+    box-shadow: 0 4px 12px rgba(196,94,137,0.35);
+  }
+}
+
+/* panels — only the active one shows; on mobile all show stacked */
+.industry-panel[hidden] { display: none; }
+
+.industry-panel-head { margin-bottom: 28px; }
+.industry-panel-head .eyebrow { margin-bottom: 10px; }
+.industry-panel-lead { color: var(--color-lavender); max-width: 720px; }
+
+.industry-who {
+  margin-top: 8px;
+  font-size: 15px;
+  color: var(--color-lavender);
+}
+.industry-who strong { color: var(--color-ink); }
+
+/* ===== TOOL / PROJECT CARDS ===== */
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 28px;
+}
+@media (min-width: 600px) { .tool-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .tool-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.tool-card {
+  background: var(--color-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+.tool-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--tint-teal);
+  color: var(--color-teal-dark);
+  margin-bottom: 14px;
+}
+.tool-card-icon svg { width: 24px; height: 24px; }
+.tool-card:nth-child(3n+2) .tool-card-icon { background: var(--tint-pink); color: var(--color-pink); }
+.tool-card:nth-child(3n+3) .tool-card-icon { background: var(--tint-purple); color: var(--color-purple); }
+.tool-card h4 { margin-bottom: 8px; }
+.tool-card p { font-size: 14px; color: var(--color-lavender); margin: 0; }
+
+/* ===== PRICING EXAMPLE CARDS ===== */
+.example-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 8px;
+}
+@media (min-width: 600px) { .example-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .example-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.example-card {
+  background: var(--color-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.example-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--tint-pink);
+  color: var(--color-pink);
+}
+.example-card-icon svg { width: 22px; height: 22px; }
+.example-card:nth-child(3n+2) .example-card-icon { background: var(--tint-teal); color: var(--color-teal-dark); }
+.example-card:nth-child(3n+3) .example-card-icon { background: var(--tint-purple); color: var(--color-purple); }
+.example-card h4 { font-size: 16px; }
+.example-card p { font-size: 14px; color: var(--color-lavender); margin: 0; }
+
+/* "what's included in Care" icon row */
+.care-included {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+@media (min-width: 600px) { .care-included { grid-template-columns: repeat(2, 1fr); } }
+.care-included li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.care-included .care-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--tint-teal);
+  color: var(--color-teal-dark);
+}
+.care-included .care-tick svg { width: 17px; height: 17px; }
+
+/* headline price tag for the "every automation" card */
+.price-headline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 18px;
+  margin-bottom: 8px;
+}
+.price-headline .price-big {
+  font-size: clamp(34px, 6vw, 46px);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-ink);
+}
+.price-headline .price-unit { font-size: 15px; color: var(--color-lavender); font-weight: 600; }
+
+/* ===== SUCCESS TIMELINE ===== */
+.case-study-timeline { position: relative; }
+
+@media (min-width: 768px) {
+  .case-study-timeline { padding-left: 44px; }
+  .case-study-timeline::before {
+    content: "";
+    position: absolute;
+    left: 15px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-pink), var(--color-teal), var(--color-purple));
+    border-radius: 2px;
+  }
+  .case-study-timeline .case-study-card { position: relative; }
+  .case-study-timeline .case-study-card::before {
+    content: "";
+    position: absolute;
+    left: -37px; top: 38px;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--color-white);
+    border: 3px solid var(--color-pink);
+    box-shadow: 0 0 0 4px var(--bg-light);
+  }
+  .case-study-timeline .case-study-card:nth-child(3n+2)::before { border-color: var(--color-teal); }
+  .case-study-timeline .case-study-card:nth-child(3n+3)::before { border-color: var(--color-purple); }
+}
+
+/* accent top-border rotation so stacked cards don't read as identical */
+.case-study-card { border-top: 4px solid var(--color-pink); }
+.case-study-card:nth-child(3n+2) { border-top-color: var(--color-teal); }
+.case-study-card:nth-child(3n+3) { border-top-color: var(--color-purple); }
+
+/* AI CHAT WIDGET below stays last */
+
 /* ===== AI CHAT WIDGET ===== */
 .ai-chat-widget {
   position: fixed;

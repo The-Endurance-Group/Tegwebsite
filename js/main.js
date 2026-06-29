@@ -34,6 +34,89 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* Scroll reveal — fade/slide sections in as they enter the viewport.
+     Falls back to visible-by-default if IntersectionObserver is missing or
+     the user prefers reduced motion. */
+  var reveals = document.querySelectorAll('.reveal');
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reveals.length) {
+    if (prefersReduced || !('IntersectionObserver' in window)) {
+      reveals.forEach(function (el) { el.classList.add('is-visible'); });
+    } else {
+      var revealObserver = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      reveals.forEach(function (el) { revealObserver.observe(el); });
+    }
+  }
+
+  /* Industry switcher — pill tabs (desktop) + native select (mobile) drive
+     which industry panel is shown. Deep links like #technology still work. */
+  var switcher = document.querySelector('.industry-switcher');
+  if (switcher) {
+    var tabs = Array.prototype.slice.call(switcher.querySelectorAll('.industry-tab'));
+    var select = switcher.querySelector('.industry-select');
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.industry-panel'));
+    var isMobileView = function () { return window.matchMedia('(max-width: 767px)').matches; };
+
+    var activateIndustry = function (id, focusTab) {
+      panels.forEach(function (panel) {
+        // On mobile every panel stays visible (stacked); tabs are hidden there.
+        panel.hidden = isMobileView() ? false : (panel.id !== id);
+      });
+      tabs.forEach(function (tab) {
+        var selected = tab.getAttribute('data-target') === id;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        if (selected && focusTab) tab.focus();
+      });
+      if (select && select.value !== id) select.value = id;
+    };
+
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () {
+        var id = tab.getAttribute('data-target');
+        activateIndustry(id, false);
+        if (history.replaceState) history.replaceState(null, '', '#' + id);
+      });
+      // Arrow-key navigation across the tablist.
+      tab.addEventListener('keydown', function (event) {
+        var dir = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
+        if (!dir) return;
+        event.preventDefault();
+        var next = tabs[(i + dir + tabs.length) % tabs.length];
+        activateIndustry(next.getAttribute('data-target'), true);
+      });
+    });
+
+    if (select) {
+      select.addEventListener('change', function () {
+        activateIndustry(select.value, false);
+        var target = document.getElementById(select.value);
+        if (target) target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+      });
+    }
+
+    // Re-evaluate panel visibility when crossing the mobile/desktop boundary.
+    window.addEventListener('resize', function () {
+      var current = tabs.filter(function (t) { return t.getAttribute('aria-selected') === 'true'; })[0];
+      activateIndustry(current ? current.getAttribute('data-target') : panels[0].id, false);
+    });
+
+    // Honor a deep link on load, otherwise default to the first industry.
+    var initial = (location.hash && document.getElementById(location.hash.slice(1)) &&
+                   document.getElementById(location.hash.slice(1)).classList.contains('industry-panel'))
+                  ? location.hash.slice(1)
+                  : (tabs[0] && tabs[0].getAttribute('data-target'));
+    if (initial) activateIndustry(initial, false);
+  }
+
   /* AI chat widget — same-origin to /api/chat, built into the DOM here so
      every page picks it up without touching 27 HTML files individually. */
   var widget = document.createElement('div');
