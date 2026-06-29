@@ -456,6 +456,61 @@ textarea:focus-visible {
   opacity: 1;
 }
 
+/* ===== SPECIALTY CONTAINER (functional specialties) ===== */
+.specialty-container {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-white);
+}
+.specialty-card {
+  padding: 32px;
+  border-bottom: 1px solid var(--border-light);
+}
+.specialty-card:last-child {
+  border-bottom: none;
+}
+.specialty-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.specialty-header h3 {
+  margin: 0;
+  flex: 1;
+}
+.specialty-badge {
+  display: inline-block;
+  background: var(--color-pink);
+  color: var(--color-white);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.specialty-card p { color: var(--color-lavender); }
+
+/* ===== TAG LIST ===== */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.tag {
+  display: inline-block;
+  background: var(--bg-light);
+  color: var(--color-lavender);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
 /* ===== FEATURE CARDS (what we do / solutions teasers) ===== */
 .feature-card {
   background: var(--color-white);
