@@ -545,6 +545,55 @@ textarea:focus-visible {
   margin-bottom: 6px;
 }
 
+/* ===== POST SCROLLER (horizontal scroll-snap row for browsing all posts quickly) ===== */
+.post-scroller {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 4px 16px;
+  margin: 0 -4px;
+}
+.post-scroller-card {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+.post-scroller-card .eyebrow { margin-bottom: 10px; }
+.post-scroller-card h3 { font-size: 16px; line-height: 1.35; margin-bottom: 8px; }
+.post-scroller-card p { color: var(--color-lavender); font-size: 13px; flex-grow: 1; }
+
+.post-scroller-wrap { position: relative; }
+.post-scroller-nav {
+  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: #fff;
+  color: var(--color-ink);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(26,26,26,0.10);
+  transform: translateY(-50%);
+}
+.post-scroller-nav:hover { border-color: var(--color-pink); color: var(--color-pink); }
+.post-scroller-nav--prev { left: -16px; }
+.post-scroller-nav--next { right: -16px; }
+@media (min-width: 768px) {
+  .post-scroller-nav { display: flex; }
+}
+.post-scroller-card p { color: var(--color-lavender); font-size: 13px; flex-grow: 1; }
+
 /* ===== TAG LIST ===== */
 .tag-list {
   display: flex;
@@ -908,10 +957,10 @@ textarea:focus-visible {
 }
 
 /* ===== CARD HOVER LIFT (shared) ===== */
-.feature-card, .pricing-card, .tool-card, .example-card, .case-study-card {
+.feature-card, .pricing-card, .tool-card, .example-card, .case-study-card, .post-scroller-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
-.feature-card:hover, .tool-card:hover, .example-card:hover {
+.feature-card:hover, .tool-card:hover, .example-card:hover, .post-scroller-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 32px rgba(26,26,26,0.10);
   border-color: var(--color-pink);

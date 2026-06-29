@@ -56,6 +56,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /* Post scroller - lets desktop visitors use vertical wheel/trackpad input
+     to drive horizontal scroll, plus click-to-page arrow buttons. */
+  document.querySelectorAll('.post-scroller').forEach(function (scroller) {
+    scroller.addEventListener('wheel', function (event) {
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+      event.preventDefault();
+      scroller.scrollLeft += event.deltaY;
+    }, { passive: false });
+  });
+
+  document.querySelectorAll('[data-scroll-target]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var target = document.getElementById(button.getAttribute('data-scroll-target'));
+      if (!target) return;
+      var dir = button.classList.contains('post-scroller-nav--prev') ? -1 : 1;
+      var card = target.querySelector('.post-scroller-card');
+      var step = card ? card.getBoundingClientRect().width + 20 : 280;
+      target.scrollBy({ left: dir * step, behavior: prefersReduced ? 'auto' : 'smooth' });
+    });
+  });
+
   /* Industry switcher - pill tabs (desktop) + native select (mobile) drive
      which industry panel is shown. Deep links like #technology still work. */
   var switcher = document.querySelector('.industry-switcher');
