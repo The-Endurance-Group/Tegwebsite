@@ -1,11 +1,11 @@
 # The Endurance Group
 
-> AI automation partner for B2B companies based in Portland, Maine, founded in 1998. We build flat-fee AI automations and growth-systems work, with hands-on client engagement available for clients who want a person running the relationship work too, for B2B companies in real estate, technology, and professional services.
+> AI automation partner for B2B companies based in Portland, Maine, founded in 1998. We build flat-fee AI automations and offer AI strategy roadmapping, with hands-on client engagement available for clients who want a person running the relationship work too, for B2B companies in real estate, technology, and professional services.
 
 ## Core pages
 
-- [Home](https://theendurancegroup.com/): What we do and how we work — AI automations and growth systems, built and maintained, not just advised.
-- [Solutions](https://theendurancegroup.com/solutions.html): The two things we do — AI Automations and Growth Systems & Ops.
+- [Home](https://theendurancegroup.com/): What we do and how we work — AI automations and strategy, built and run, not just advised.
+- [Solutions](https://theendurancegroup.com/solutions.html): The two things we do — AI Automations and Strategy.
 - [Pricing](https://theendurancegroup.com/pricing.html): $750 flat to build each automation. TEG Membership, from $149/mo (Bronze, 1-3 automations) to $599/mo (Gold, 7+), keeps the whole portfolio running. The first automation is free.
 - [Industries](https://theendurancegroup.com/industries.html): Real Estate, B2B Technology & SaaS, and Professional Services — the three industries we specialize in.
 - [Success](https://theendurancegroup.com/success.html): Case studies and client testimonials, including Offerpad, Realty ONE Group, FenestraPro, and Huron.
@@ -16,7 +16,7 @@
 
 ## Blog
 
-- [Blog index](https://theendurancegroup.com/blog.html): Guides on AI automation and growth systems, organized by solution and by industry.
+- [Blog index](https://theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
 - [How AI automation helps real estate teams respond to leads before they go cold](https://theendurancegroup.com/blog/ai-automation-real-estate.html)
 - [Why generic outbound automation fails B2B SaaS, and what to build instead](https://theendurancegroup.com/blog/ai-automation-b2b-saas.html)
 - [Why professional services firms should map their network before they prospect](https://theendurancegroup.com/blog/ai-automation-professional-services.html)
@@ -33,7 +33,7 @@
 - [B2B Technology & SaaS](https://theendurancegroup.com/blog/category/b2b-technology-saas.html)
 - [Professional Services](https://theendurancegroup.com/blog/category/professional-services.html)
 - [AI Automations](https://theendurancegroup.com/blog/category/ai-automations.html)
-- [Growth Systems & Ops](https://theendurancegroup.com/blog/category/growth-systems-ops.html)
+- [Ops & CRM](https://theendurancegroup.com/blog/category/growth-systems-ops.html)
 - [Client Engagement](https://theendurancegroup.com/blog/category/sales-execution.html)
 
 ## Authors
@@ -47,5 +47,4 @@
 
 - Pricing is flat-fee, not hourly: $750 to build each automation, plus TEG Membership (Bronze $149/mo for 1-3 automations, Silver $299/mo for 4-6, Gold $599/mo for 7+) to keep them running. The first automation is always free.
 - "Schedule a Call" links across the site point to https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor.
-- Commonality is The Endurance Group's proprietary social-capital tool, used to find warm outreach paths into prospects through shared schools, past employers, and mutual connections.
 - The company serves three industries: Real Estate, B2B Technology & SaaS, and Professional Services.
