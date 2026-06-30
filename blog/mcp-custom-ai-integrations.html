@@ -106,10 +106,10 @@
     },
     {
       "@type": "Question",
-      "name": "What does it cost to build a custom MCP server?",
+      "name": "Can we use an existing MCP server and a custom one at the same time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A custom MCP server is scoped and priced as an automation build — flat $750 for straightforward integrations, more for complex multi-system servers. We always start with a scoping call to understand exactly what the server needs to do before quoting anything."
+        "text": "Yes. Most client setups use a mix — existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request."
       }
     }
   ]
@@ -185,21 +185,20 @@
 
           <h2>When we build a custom MCP server</h2>
           <p>We check for an existing server first. If one exists and covers what the client needs, we configure it and move on. But a few situations consistently push us toward building a custom server instead.</p>
-          <p>The most common: a client has a proprietary internal tool that no community server covers. We've built custom MCP servers for homegrown project management systems, industry-specific CRMs, and internal databases with schemas that wouldn't map cleanly to a generic SQL server. The MCP server we build is thin — it exposes exactly the operations the AI needs and nothing more. A partner at a professional services firm wanted to ask Claude "what's the status on the Harrington engagement?" and get a real answer from their internal system. We built an MCP server that read from their project database, surfaced the right fields, and handled the firm's specific naming conventions. The build took a few days; the partner now uses it every day.</p>
+          <p>The most common: a client has a proprietary internal tool that no community server covers. We've built custom MCP servers for homegrown project management systems, industry-specific CRMs, and internal databases with schemas that wouldn't map cleanly to a generic SQL server. The MCP server we build is thin — it exposes exactly the operations the AI needs and nothing more. A partner at a professional services firm wanted to ask Claude "what's the status on the Harrington engagement?" and get a real answer from their internal system. We built an MCP server that read from their project database, surfaced the right fields, and handled the firm's specific naming conventions. The partner now uses it every day.</p>
           <p>The second situation: an existing server exists but doesn't expose the right subset of data. Some open-source MCP servers are intentionally broad; they expose everything the underlying API offers. For a client with sensitive data, that's more access than we want to scope to an AI. A custom server lets us define exactly which records the AI can reach and what it can do with them.</p>
           <p>Third: the client needs to combine data from multiple sources into one coherent response. A single AI query might need to pull a contact record from HubSpot, check their recent email thread in Gmail, and look up their contract status in a spreadsheet — and surface all of that as one answer. A custom MCP server can orchestrate those calls and return a unified result, rather than asking the AI to stitch together three separate responses.</p>
 
           <h2>How we decide: existing versus custom</h2>
           <p>We start every MCP conversation with two questions: what does the AI need to read or do, and does an existing server cover exactly that? If the answer is yes, we configure the existing server and test it. If the answer is "mostly, but not quite," we look at whether the gap is small enough to work around or significant enough to warrant a custom build. If no server exists for the tool at all, we build one. The decision is always about what actually gets used in production — a perfectly designed integration that doesn't fit the client's real workflow isn't done, it's just deferred maintenance.</p>
-          <p>Either way, the build is scoped and priced the same as any other automation we deliver. First one is free, so you see it working before you commit. After that, it's a flat <a href="../pricing.html">$750 per automation</a>, with TEG Membership from $149/mo keeping everything running and updated as tools change their APIs.</p>
 
           <h2>Frequently asked questions</h2>
           <h3>Does our team need to be technical to use an MCP server?</h3>
           <p>Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically — your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background.</p>
           <h3>Is MCP the same as a connector or a Skill?</h3>
           <p>Not exactly. <a href="claude-chatgpt-connectors.html">Connectors</a> (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that — it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A <a href="claude-skills.html">Skill</a> defines how the AI behaves; MCP defines what it can reach.</p>
-          <h3>What does it cost to build a custom MCP server?</h3>
-          <p>A custom MCP server is scoped and priced as an automation build — flat $750 for straightforward integrations, more for complex multi-system servers. We always start with a scoping call to understand exactly what the server needs to do before quoting anything.</p>
+          <h3>Can we use an existing MCP server and a custom one at the same time?</h3>
+          <p>Yes. Most client setups use a mix — existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request.</p>
 
           <div class="btn-group">
             <a class="btn btn-primary" href="../how-to-get-started.html">Claim Your Free Automation</a>
