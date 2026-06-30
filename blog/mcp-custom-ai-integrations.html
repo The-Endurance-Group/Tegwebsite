@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP: How We Connect AI to the Tools Your Team Already Runs | The Endurance Group</title>
+  <meta name="description" content="The Model Context Protocol lets AI talk to your actual systems — HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.">
+  <link rel="canonical" href="https://theendurancegroup.com/blog/mcp-custom-ai-integrations.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="MCP: How We Connect AI to the Tools Your Team Already Runs | The Endurance Group">
+  <meta property="og:description" content="The Model Context Protocol lets AI talk to your actual systems — HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.">
+  <meta property="og:url" content="https://theendurancegroup.com/blog/mcp-custom-ai-integrations.html">
+  <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MCP: How We Connect AI to the Tools Your Team Already Runs | The Endurance Group">
+  <meta name="twitter:description" content="The Model Context Protocol lets AI talk to your actual systems — HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.">
+  <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://theendurancegroup.com/",
+    "logo": "https://theendurancegroup.com/images/og-default.png",
+    "image": "https://theendurancegroup.com/images/og-default.png",
+    "description": "AI automation and strategy for B2B companies in real estate, technology, and professional services.",
+    "foundingDate": "1998",
+    "priceRange": "$750-$5500",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "MCP: how we connect AI to the tools your team already runs",
+    "description": "The Model Context Protocol lets AI talk to your actual systems — HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.",
+    "image": "https://theendurancegroup.com/images/og-default.png",
+    "datePublished": "2026-06-30",
+    "dateModified": "2026-06-30",
+    "author": { "@type": "Person", "name": "Maria Jose Pava", "jobTitle": "Director of AI Solutions and Delivery" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": { "@type": "ImageObject", "url": "https://theendurancegroup.com/images/og-default.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://theendurancegroup.com/blog/mcp-custom-ai-integrations.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does our team need to be technical to use an MCP server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically — your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is MCP the same as a connector or a Skill?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not exactly. Connectors (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that — it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A Skill defines how the AI behaves; MCP defines what it can reach."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost to build a custom MCP server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A custom MCP server is scoped and priced as an automation build — flat $750 for straightforward integrations, more for complex multi-system servers. We always start with a scoping call to understand exactly what the server needs to do before quoting anything."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="../index.html"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">AI Automations</span>
+        <h1>MCP: how we connect AI to the tools your team already runs</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/maria-jose-pava.html">Maria Jose Pava</a></span>
+          <span class="divider">·</span>
+          <span>Director of AI Solutions and Delivery</span>
+          <span class="divider">·</span>
+          <span>June 30, 2026</span>
+        </div>
+        <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+          <p>Most AI integrations are built the same way: one team writes a custom connection between their AI tool and their CRM, and another team builds a completely different custom connection between a different AI tool and that same CRM, and neither one works with the other's setup. It's fragmented, slow to build, and expensive to maintain. MCP — the Model Context Protocol — was designed to solve that, and it's changed how we build AI integrations for clients.</p>
+
+          <h2>What MCP actually is</h2>
+          <p>MCP is an open protocol that Anthropic released in late 2024. It defines a standard way for AI models to communicate with external tools and data sources. Instead of every integration being a custom one-off, MCP creates a common language: any MCP-compatible AI can talk to any MCP-compatible server, and the connection works regardless of which AI you're using or which tool you're connecting to.</p>
+          <p>There are three pieces. The <strong>host</strong> is the AI application — Claude.ai, Claude Desktop, or any AI tool that's been built to support MCP. The <strong>client</strong> is built into the host and handles the back-and-forth communication. The <strong>server</strong> is a small service that sits in front of your tool — HubSpot, Slack, your database, whatever — and translates the AI's requests into API calls that the tool understands. When the AI needs to look something up or take an action, it talks to the server; the server talks to the tool; the result comes back to the AI.</p>
+
+          <h2>Existing MCP servers we use for clients</h2>
+          <p>The MCP ecosystem has grown quickly. For most common B2B tools, a server already exists — either published officially by the vendor or built and maintained by the open-source community. The ones we reach for most often:</p>
+          <ul>
+            <li><strong>HubSpot</strong> — read and write contacts, companies, deals, and activity history. Partners can ask "what's the last touchpoint on the Garrison account?" and get a real answer from live CRM data.</li>
+            <li><strong>Slack</strong> — search conversations, read channel history, send messages. Useful for automations that need to surface information from Slack or post updates back to it.</li>
+            <li><strong>GitHub</strong> — read repositories, open and update issues, review pull requests. For software clients, this means the AI can reference actual code and project state instead of a summary someone wrote.</li>
+            <li><strong>Google Drive and Docs</strong> — read, search, and in some cases write documents and spreadsheets stored in Drive.</li>
+            <li><strong>Notion</strong> — read and write pages and database records, useful for teams running their ops wiki or project tracker in Notion.</li>
+            <li><strong>Postgres and other databases</strong> — run structured queries directly against a database, which is often the cleanest way to give an AI access to operational data without building a full API layer first.</li>
+            <li><strong>Jira</strong> — read issue status, update fields, create tickets. We use this for professional services clients who track client work in Jira and want the AI to surface status without someone manually pulling reports.</li>
+          </ul>
+
+          <h2>When we build a custom MCP server</h2>
+          <p>We check for an existing server first. If one exists and covers what the client needs, we configure it and move on. But a few situations consistently push us toward building a custom server instead.</p>
+          <p>The most common: a client has a proprietary internal tool that no community server covers. We've built custom MCP servers for homegrown project management systems, industry-specific CRMs, and internal databases with schemas that wouldn't map cleanly to a generic SQL server. The MCP server we build is thin — it exposes exactly the operations the AI needs and nothing more. A partner at a professional services firm wanted to ask Claude "what's the status on the Harrington engagement?" and get a real answer from their internal system. We built an MCP server that read from their project database, surfaced the right fields, and handled the firm's specific naming conventions. The build took a few days; the partner now uses it every day.</p>
+          <p>The second situation: an existing server exists but doesn't expose the right subset of data. Some open-source MCP servers are intentionally broad; they expose everything the underlying API offers. For a client with sensitive data, that's more access than we want to scope to an AI. A custom server lets us define exactly which records the AI can reach and what it can do with them.</p>
+          <p>Third: the client needs to combine data from multiple sources into one coherent response. A single AI query might need to pull a contact record from HubSpot, check their recent email thread in Gmail, and look up their contract status in a spreadsheet — and surface all of that as one answer. A custom MCP server can orchestrate those calls and return a unified result, rather than asking the AI to stitch together three separate responses.</p>
+
+          <h2>How we decide: existing versus custom</h2>
+          <p>We start every MCP conversation with two questions: what does the AI need to read or do, and does an existing server cover exactly that? If the answer is yes, we configure the existing server and test it. If the answer is "mostly, but not quite," we look at whether the gap is small enough to work around or significant enough to warrant a custom build. If no server exists for the tool at all, we build one. The decision is always about what actually gets used in production — a perfectly designed integration that doesn't fit the client's real workflow isn't done, it's just deferred maintenance.</p>
+          <p>Either way, the build is scoped and priced the same as any other automation we deliver. First one is free, so you see it working before you commit. After that, it's a flat <a href="../pricing.html">$750 per automation</a>, with TEG Membership from $149/mo keeping everything running and updated as tools change their APIs.</p>
+
+          <h2>Frequently asked questions</h2>
+          <h3>Does our team need to be technical to use an MCP server?</h3>
+          <p>Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically — your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background.</p>
+          <h3>Is MCP the same as a connector or a Skill?</h3>
+          <p>Not exactly. <a href="claude-chatgpt-connectors.html">Connectors</a> (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that — it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A <a href="claude-skills.html">Skill</a> defines how the AI behaves; MCP defines what it can reach.</p>
+          <h3>What does it cost to build a custom MCP server?</h3>
+          <p>A custom MCP server is scoped and priced as an automation build — flat $750 for straightforward integrations, more for complex multi-system servers. We always start with a scoping call to understand exactly what the server needs to do before quoting anything.</p>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="../how-to-get-started.html">Claim Your Free Automation</a>
+            <a class="btn btn-secondary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Schedule a Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--3">
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="claude-chatgpt-connectors.html">Claude and ChatGPT connectors: give AI the right context without copy-pasting</a></h3>
+            <p>The simpler version: native integrations that let the AI read your files and CRM without any custom build.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="what-is-an-ai-automation.html">What counts as a real AI automation, and what's just a demo</a></h3>
+            <p>The difference between an automation that's actually running in production and one that only looks good in a meeting.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="claude-skills.html">What Claude Skills are, and why we build inside Claude instead of a new app</a></h3>
+            <p>How a packaged Skill teaches Claude your exact process, no new interface required.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="../index.html"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <p class="footer-tagline">Your AI Automation Partner</p>
+        <p class="footer-address">Portland, ME · (207) 846-6000</p>
+      </div>
+      <div class="footer-columns">
+        <nav aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="../solutions.html#ai-automations">AI Automations</a></li>
+            <li><a href="../solutions.html#strategy">Strategy</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Products">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Commonality</a></li>
+            <li><a href="https://coachonix.com" target="_blank" rel="noopener">Coachonix</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Specialties">
+          <h3>Specialties</h3>
+          <ul>
+            <li><a href="../specialties.html#sales-and-marketing">Sales &amp; Marketing</a></li>
+            <li><a href="../specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="../specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="../specialties.html#professional-services">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 The Endurance Group. All rights reserved. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p>
+        <div class="footer-social">
+        <a href="https://www.linkedin.com/company/the-endurance-group" target="_blank" rel="noopener" aria-label="The Endurance Group on LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5s-1.98-.9-1.98-2S1.9 1.5 3 1.5s1.98.9 1.98 2zM1.2 8.3h3.6V22H1.2V8.3zM8.4 8.3h3.45v1.87h.05c.48-.9 1.66-1.87 3.42-1.87 3.66 0 4.34 2.4 4.34 5.53V22h-3.6v-6.4c0-1.53-.03-3.5-2.14-3.5-2.14 0-2.47 1.67-2.47 3.39V22H8.4V8.3z"/></svg></a>
+        <a href="https://www.facebook.com/TheEnduranceGroupMaine/" target="_blank" rel="noopener" aria-label="The Endurance Group on Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.13 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.8 8.44-4.93 8.44-9.94z"/></svg></a>
+        <a href="https://www.instagram.com/theendurancegroup/" target="_blank" rel="noopener" aria-label="The Endurance Group on Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.59 1.8c.46-.16 1.26-.35 2.43-.4C9.29 1.34 9.67 1.33 12 1.33zM12 6.86A5.14 5.14 0 1 0 12 17.14 5.14 5.14 0 0 0 12 6.86zm0 8.48a3.34 3.34 0 1 1 0-6.68 3.34 3.34 0 0 1 0 6.68zm5.34-8.69a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
+        <a href="https://x.com/_EnduranceGroup" target="_blank" rel="noopener" aria-label="The Endurance Group on X"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.4 8.5L23 22h-6.9l-5.4-7-6.2 7H1.3l7.9-9L1 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw" target="_blank" rel="noopener" aria-label="The Endurance Group on YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 7.2s-.23-1.64-.94-2.36c-.9-.95-1.9-.95-2.36-1C16.9 3.6 12 3.6 12 3.6h-.01s-4.9 0-8.2.24c-.46.05-1.46.05-2.36 1-.71.72-.94 2.36-.94 2.36S.2 9.13.2 11.04v1.8c0 1.92.25 3.84.25 3.84s.23 1.64.94 2.36c.9.95 2.07.92 2.6 1.02C5.9 20.27 12 20.33 12 20.33s4.9-.01 8.2-.25c.46-.05 1.46-.05 2.36-1 .71-.72.94-2.36.94-2.36s.25-1.92.25-3.84v-1.8c0-1.92-.25-3.84-.25-3.84zM9.7 14.9V8.95l6.05 2.98-6.05 2.97z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
