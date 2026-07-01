@@ -602,6 +602,7 @@ details[open] .faq-q::after { content: "−"; }
   border-radius: 16px;
 }
 .tool-carousel-icon svg { width: 28px; height: 28px; }
+.tool-carousel-icon img { width: 38px; height: 38px; object-fit: contain; }
 .tool-carousel-item span {
   font-size: 13px;
   font-weight: 700;
