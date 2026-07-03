@@ -409,7 +409,7 @@
         <div class="ideas-input-wrap reveal">
           <label for="business-type" class="sr-only">Business type</label>
           <select id="business-type" class="ideas-type-select">
-            <option value="">What type of business are you? (select one)</option>
+            <option value="">What type of business are you?</option>
             <option value="Real Estate">Real Estate</option>
             <option value="Professional Services">Professional Services</option>
             <option value="Software / SaaS">Software / SaaS</option>
@@ -819,8 +819,7 @@
         showDetailAndButton();
       } else if (SUBTYPES[val]) {
         // Show sub-type dropdown; reveal detail + button once sub-type changes (or immediately)
-        subtypeSelect.innerHTML = '<option value="">Select a more specific type (optional)</option>'
-          + SUBTYPES[val].map(function(st) {
+        subtypeSelect.innerHTML = SUBTYPES[val].map(function(st) {
               return '<option value="' + escHtml(st) + '">' + escHtml(st) + '</option>';
             }).join('');
         subtypeWrap.hidden = false;
