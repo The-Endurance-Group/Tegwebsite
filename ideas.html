@@ -369,7 +369,6 @@
     .portfolio-category {
       border: 1px solid var(--color-border, #e2e8f0);
       border-radius: 12px;
-      overflow: hidden;
       background: var(--color-surface, #fff);
     }
 
@@ -383,10 +382,15 @@
       cursor: pointer;
       user-select: none;
       list-style: none;
+      border-radius: 12px;
     }
 
     .portfolio-category-header:hover {
       background: var(--color-surface-alt, #f8fafc);
+    }
+
+    details[open] > .portfolio-category-header {
+      border-radius: 12px 12px 0 0;
     }
 
     .portfolio-category-name {
