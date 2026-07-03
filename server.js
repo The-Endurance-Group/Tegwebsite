@@ -147,6 +147,11 @@ id: ebook-generator
 Title: eBook Generator
 What it is: Turns a single topic into a complete lead magnet eBook with intro, five surprising facts, myth-busting, actionable tips, FAQs, and a CTA — pulling only from approved neutral sources like WHO, Mayo Clinic, and government health bodies.
 Best for: Health and wellness brands, coaches, and practitioners building lead magnets
+
+id: housecall-pro-quickbooks-reconciliation
+Title: Housecall Pro to QuickBooks Reconciliation
+What it is: Reconciles invoices between Housecall Pro and QuickBooks, catching discrepancies automatically so books stay clean without manually cross-referencing both systems.
+Best for: Home service businesses, field service companies, property managers running both Housecall Pro and QuickBooks
 `.trim();
 
 const IDEAS_SYSTEM_PROMPT = [
@@ -349,7 +354,7 @@ async function handleIdeas(req, res) {
     var ideas = JSON.parse(jsonStr);
 
     // Sanitize: only allow known portfolio IDs through
-    var validIds = ['coachonix','commonality','invoice-reviewer','property-photo-analyzer','linkedin-sales-nav','rfp-identifier','rfp-filler','news-delivery','fdd-analyzer','onboarding-doc-analyzer','franchisee-identifier','sales-call-analyzer','live-sales-coach','real-estate-market-analysis','slide-deck-creator','proposal-generator','lead-research-dedup','salesforce-contact-cleanup','inbound-lead-router','google-form-hubspot-enrichment','agent-prospecting-tiering','onboarding-esignature-routing','podcast-newsletter-writer','ebook-generator'];
+    var validIds = ['coachonix','commonality','invoice-reviewer','property-photo-analyzer','linkedin-sales-nav','rfp-identifier','rfp-filler','news-delivery','fdd-analyzer','onboarding-doc-analyzer','franchisee-identifier','sales-call-analyzer','live-sales-coach','real-estate-market-analysis','slide-deck-creator','proposal-generator','lead-research-dedup','salesforce-contact-cleanup','inbound-lead-router','google-form-hubspot-enrichment','agent-prospecting-tiering','onboarding-esignature-routing','podcast-newsletter-writer','ebook-generator','housecall-pro-quickbooks-reconciliation'];
     if (Array.isArray(ideas.portfolio_matches)) {
       ideas.portfolio_matches = ideas.portfolio_matches
         .filter(function(m) { return m && validIds.includes(m.id); })
