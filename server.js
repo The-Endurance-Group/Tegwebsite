@@ -67,6 +67,46 @@ id: news-delivery
 Title: Personalized News and Research Delivery
 What it is: Sends each team member a personalized digest of relevant news, articles, and research matched to their practice area and current clients.
 Best for: consulting firms, advisory practices, law firms, financial services, any knowledge-intensive professional services firm
+
+id: fdd-analyzer
+Title: FDD Analyzer
+What it is: Reads a Franchise Disclosure Document (FDD), extracts the names and contact details of current franchise owners, and outputs a structured lead list for franchise development outreach.
+Best for: franchisors, franchise development teams, franchise brokers
+
+id: onboarding-doc-analyzer
+Title: Onboarding Document Analyzer
+What it is: Ingests a new franchisee's onboarding documents, extracts the fields required for CRM import, and pushes the structured data directly into HubSpot — eliminating manual data entry.
+Best for: franchise systems, franchise operations teams, multi-location businesses
+
+id: franchisee-identifier
+Title: Potential Franchisee Identifier
+What it is: Analyzes a target market using demographic, business, and financial data to surface the individuals in that area most likely to purchase a franchise, ranked by fit score.
+Best for: franchisors, franchise development teams expanding into new markets
+
+id: sales-call-analyzer
+Title: Sales Call Analyzer
+What it is: Ingests recorded sales calls, scores rep performance against a defined rubric, and sends immediate written feedback to the rep and their manager highlighting what worked and what to improve.
+Best for: B2B sales teams, sales managers, revenue operations, SDR programs
+
+id: live-sales-coach
+Title: Live Sales Coach
+What it is: Listens to a sales call in real time and surfaces in-the-moment guidance — how to handle the current objection, what question to ask next, relevant proof points to mention — visible only to the rep.
+Best for: B2B sales teams, SDRs, account executives, any team with a structured sales process
+
+id: real-estate-market-analysis
+Title: Real Estate Market Analysis
+What it is: Takes a street address and returns a consolidated report pulling census data, Google Maps context, and recent local news and legislation — giving buyers and agents everything they need to evaluate a location in one place.
+Best for: real estate agents, buyers, developers, investors, relocation consultants
+
+id: slide-deck-creator
+Title: Slide Deck Creator
+What it is: Takes a brief, a data set, or a document and generates a complete, structured slide deck — titles, talking points, and layout suggestions — ready to drop into PowerPoint or Google Slides.
+Best for: consultants, sales teams, executives, agencies, anyone who builds decks regularly
+
+id: proposal-generator
+Title: Proposal Generator
+What it is: Pulls from your past proposals, service descriptions, and client intake information to draft a tailored proposal document — scoped, priced, and formatted — for human review before sending.
+Best for: consulting firms, agencies, professional services firms, B2B sales teams closing custom engagements
 `.trim();
 
 const IDEAS_SYSTEM_PROMPT = [
@@ -269,7 +309,7 @@ async function handleIdeas(req, res) {
     var ideas = JSON.parse(jsonStr);
 
     // Sanitize: only allow known portfolio IDs through
-    var validIds = ['coachonix','commonality','invoice-reviewer','property-photo-analyzer','linkedin-sales-nav','rfp-identifier','rfp-filler','news-delivery'];
+    var validIds = ['coachonix','commonality','invoice-reviewer','property-photo-analyzer','linkedin-sales-nav','rfp-identifier','rfp-filler','news-delivery','fdd-analyzer','onboarding-doc-analyzer','franchisee-identifier','sales-call-analyzer','live-sales-coach','real-estate-market-analysis','slide-deck-creator','proposal-generator'];
     if (Array.isArray(ideas.portfolio_matches)) {
       ideas.portfolio_matches = ideas.portfolio_matches
         .filter(function(m) { return m && validIds.includes(m.id); })
