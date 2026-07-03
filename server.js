@@ -112,6 +112,41 @@ id: lead-research-dedup
 Title: Lead Research Dedup (Seamless + Attio)
 What it is: Checks your CRM before pulling new prospect data from Seamless, so you never burn enrichment credits on contacts you already have.
 Best for: B2B sales teams, business development, outbound-heavy teams
+
+id: salesforce-contact-cleanup
+Title: Salesforce Contact Cleanup
+What it is: Weekly n8n automation that processes bounced and duplicate contacts, then feeds clean update and delete files back into Salesforce's Data Import Wizard automatically.
+Best for: B2B sales teams, revenue operations, any team running Salesforce with data quality issues
+
+id: inbound-lead-router
+Title: AI Inbound Lead Router
+What it is: Catches inbound leads and routes them straight to the right sales rep automatically, replacing manual triage so no lead sits waiting.
+Best for: B2B sales teams, demand gen teams, any business with meaningful inbound volume
+
+id: google-form-hubspot-enrichment
+Title: Google Form to HubSpot Enrichment via OpenAI
+What it is: A Zapier workflow that takes a free-text field from a Google Form, sends it to OpenAI to classify or normalize the value, then writes the clean result back into the matching HubSpot property.
+Best for: Marketing and revenue operations teams using HubSpot who need clean, structured data from open-ended form fields
+
+id: agent-prospecting-tiering
+Title: Agent Prospecting Tiering System
+What it is: Pulls saved searches from Courted, splits agent prospects into high, mid, and low tiers, then routes mid-tier into HubSpot's Prospecting Agent for AI-personalized outreach while high-tier stays fully manual.
+Best for: Real estate teams and title companies using Courted and HubSpot for prospecting
+
+id: onboarding-esignature-routing
+Title: Onboarding Document E-Signature Routing
+What it is: A set of Zapier workflows tied to HubSpot that send onboarding documents and trigger next steps automatically when each one is signed. Built in English and Spanish versions.
+Best for: Franchise systems, multi-location businesses, any team onboarding new partners or clients at scale
+
+id: podcast-newsletter-writer
+Title: Podcast to Newsletter Writer
+What it is: Takes a podcast transcript and turns it into a complete, publish-ready Beehiiv newsletter — structured, formatted, and written in the host's voice.
+Best for: Podcasters, media brands, thought leaders turning audio content into written distribution
+
+id: ebook-generator
+Title: eBook Generator
+What it is: Turns a single topic into a complete lead magnet eBook with intro, five surprising facts, myth-busting, actionable tips, FAQs, and a CTA — pulling only from approved neutral sources like WHO, Mayo Clinic, and government health bodies.
+Best for: Health and wellness brands, coaches, and practitioners building lead magnets
 `.trim();
 
 const IDEAS_SYSTEM_PROMPT = [
@@ -314,7 +349,7 @@ async function handleIdeas(req, res) {
     var ideas = JSON.parse(jsonStr);
 
     // Sanitize: only allow known portfolio IDs through
-    var validIds = ['coachonix','commonality','invoice-reviewer','property-photo-analyzer','linkedin-sales-nav','rfp-identifier','rfp-filler','news-delivery','fdd-analyzer','onboarding-doc-analyzer','franchisee-identifier','sales-call-analyzer','live-sales-coach','real-estate-market-analysis','slide-deck-creator','proposal-generator','lead-research-dedup'];
+    var validIds = ['coachonix','commonality','invoice-reviewer','property-photo-analyzer','linkedin-sales-nav','rfp-identifier','rfp-filler','news-delivery','fdd-analyzer','onboarding-doc-analyzer','franchisee-identifier','sales-call-analyzer','live-sales-coach','real-estate-market-analysis','slide-deck-creator','proposal-generator','lead-research-dedup','salesforce-contact-cleanup','inbound-lead-router','google-form-hubspot-enrichment','agent-prospecting-tiering','onboarding-esignature-routing','podcast-newsletter-writer','ebook-generator'];
     if (Array.isArray(ideas.portfolio_matches)) {
       ideas.portfolio_matches = ideas.portfolio_matches
         .filter(function(m) { return m && validIds.includes(m.id); })
