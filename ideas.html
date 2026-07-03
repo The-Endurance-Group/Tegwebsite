@@ -358,6 +358,74 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Portfolio category collapsible sections */
+    .portfolio-categories {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .portfolio-category {
+      border: 1px solid var(--color-border, #e2e8f0);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--color-surface, #fff);
+    }
+
+    .portfolio-category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      width: 100%;
+      padding: 1.125rem 1.375rem;
+      background: none;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+    }
+
+    .portfolio-category-header::-webkit-details-marker { display: none; }
+
+    .portfolio-category-header:hover {
+      background: var(--color-surface-alt, #f8fafc);
+    }
+
+    .portfolio-category-name {
+      flex: 1;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-heading, #0f172a);
+    }
+
+    .portfolio-category-count {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--color-text-muted, #64748b);
+      background: var(--color-surface-alt, #f1f5f9);
+      padding: 0.25em 0.65em;
+      border-radius: 999px;
+    }
+
+    .portfolio-category-chevron {
+      flex-shrink: 0;
+      color: var(--color-text-muted, #94a3b8);
+      transition: transform 0.2s ease;
+    }
+
+    details[open] > summary .portfolio-category-chevron {
+      transform: rotate(180deg);
+    }
+
+    .portfolio-category-body {
+      padding: 0 1.375rem 1.375rem;
+      border-top: 1px solid var(--color-border, #e2e8f0);
+    }
+
+    .portfolio-category-body .portfolio-browse-grid {
+      padding-top: 1.25rem;
+    }
   </style>
 </head>
 <body>
@@ -488,135 +556,251 @@
           <p>Real automations and apps built for real clients. Every item on this list is something we've deployed and maintained.</p>
         </div>
 
-        <div class="portfolio-browse-grid reveal--stagger reveal">
+        <div class="portfolio-categories reveal">
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--app">App</span>
-            <h3 class="portfolio-card-title">Coachonix</h3>
-            <p class="portfolio-card-desc">AI coaching application for structured professional development, goal tracking, and accountability conversations.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Coaching practices, HR &amp; L&amp;D teams, professional training programs</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://coachonix.com" target="_blank" rel="noopener">Visit Coachonix →</a>
-          </div>
+          <!-- Apps & Products -->
+          <details class="portfolio-category" open>
+            <summary class="portfolio-category-header">
+              <span class="portfolio-category-name">Apps &amp; Products</span>
+              <span class="portfolio-category-count">2</span>
+              <svg class="portfolio-category-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="portfolio-category-body">
+              <div class="portfolio-browse-grid">
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--app">App</span>
-            <h3 class="portfolio-card-title">Commonality</h3>
-            <p class="portfolio-card-desc">Maps your team's social connections — shared schools, employers, associations — to find warm introductory paths into target accounts.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, business development, professional services firms</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Visit Commonality →</a>
-          </div>
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--app">App</span>
+                  <h3 class="portfolio-card-title">Coachonix</h3>
+                  <p class="portfolio-card-desc">AI coaching application for structured professional development, goal tracking, and accountability conversations.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Coaching practices, HR &amp; L&amp;D teams, professional training programs</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://coachonix.com" target="_blank" rel="noopener">Visit Coachonix →</a>
+                </div>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">Rental Invoice Reviewer</h3>
-            <p class="portfolio-card-desc">Reviews incoming property invoices against expected scope and vendor norms. Auto-approves routine ones, flags anything outside parameters for human sign-off.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Property managers, real estate investors, landlords with multiple units</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--app">App</span>
+                  <h3 class="portfolio-card-title">Commonality</h3>
+                  <p class="portfolio-card-desc">Maps your team's social connections — shared schools, employers, associations — to find warm introductory paths into target accounts.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, business development, professional services firms</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Visit Commonality →</a>
+                </div>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">Property Maintenance Photo Analyzer</h3>
-            <p class="portfolio-card-desc">Reviews photos of units and common areas, classifies maintenance issues by urgency, and drafts work order descriptions — without anyone manually reviewing each image.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Property managers, building owners, real estate companies with maintenance ops</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+              </div>
+            </div>
+          </details>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">LinkedIn Sales Navigator via Claude</h3>
-            <p class="portfolio-card-desc">Uses Claude to qualify and research prospects in Sales Navigator, surfacing the leads most worth pursuing without hours of manual review and note-taking.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, business development reps, outbound-heavy teams</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+          <!-- Sales & Prospecting -->
+          <details class="portfolio-category" open>
+            <summary class="portfolio-category-header">
+              <span class="portfolio-category-name">Sales &amp; Prospecting</span>
+              <span class="portfolio-category-count">5</span>
+              <svg class="portfolio-category-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="portfolio-category-body">
+              <div class="portfolio-browse-grid">
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">RFP Monitor &amp; Identifier</h3>
-            <p class="portfolio-card-desc">Watches procurement sources for RFPs matching your capabilities, scores each one for relevance, and alerts your team — so no opportunity slips through unread.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, agencies, government contractors, staffing companies</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--app">App</span>
+                  <h3 class="portfolio-card-title">Commonality</h3>
+                  <p class="portfolio-card-desc">Maps your team's social connections — shared schools, employers, associations — to find warm introductory paths into target accounts.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, business development, professional services firms</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Visit Commonality →</a>
+                </div>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">RFP Auto-Fill</h3>
-            <p class="portfolio-card-desc">Drafts RFP responses from your past proposals and capability statements, then highlights the gaps and custom sections for human review before submission.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, government contractors, professional services responding to multiple RFPs</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">LinkedIn Sales Navigator via Claude</h3>
+                  <p class="portfolio-card-desc">Uses Claude to qualify and research prospects in Sales Navigator, surfacing the leads most worth pursuing without hours of manual review and note-taking.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, business development reps, outbound-heavy teams</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">Personalized News &amp; Research Delivery</h3>
-            <p class="portfolio-card-desc">Sends each consultant or advisor a personalized digest of relevant news, journal articles, and industry updates matched to their practice area and current client list.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, advisory practices, law firms, financial services</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Sales Call Analyzer</h3>
+                  <p class="portfolio-card-desc">Ingests recorded sales calls, scores rep performance against a defined rubric, and sends immediate written feedback to the rep and their manager — highlighting what worked and what to improve.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, sales managers, revenue operations, SDR programs</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">FDD Analyzer</h3>
-            <p class="portfolio-card-desc">Reads a Franchise Disclosure Document, extracts current franchise owners' names and contact details, and outputs a structured lead list ready for outreach — no manual reading required.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Franchisors, franchise development teams, franchise brokers</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Live Sales Coach</h3>
+                  <p class="portfolio-card-desc">Listens to a sales call in real time and surfaces in-the-moment guidance — how to handle the current objection, what question to ask next, which proof points to mention — visible only to the rep.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, SDRs, account executives, any team with a structured sales process</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">Onboarding Document Analyzer</h3>
-            <p class="portfolio-card-desc">Ingests a new franchisee's onboarding documents, extracts every field needed for CRM import, and pushes the structured data directly into HubSpot — eliminating manual data entry at scale.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Franchise systems, franchise operations teams, multi-location businesses</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Potential Franchisee Identifier</h3>
+                  <p class="portfolio-card-desc">Analyzes a target market using demographic, business, and financial data to surface the individuals most likely to purchase a franchise — ranked by fit score and ready for outreach.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Franchisors and franchise development teams expanding into new markets</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">Potential Franchisee Identifier</h3>
-            <p class="portfolio-card-desc">Analyzes a target market using demographic, business, and financial data to surface the individuals most likely to purchase a franchise — ranked by fit score and ready for outreach.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Franchisors and franchise development teams expanding into new markets</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+              </div>
+            </div>
+          </details>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">Sales Call Analyzer</h3>
-            <p class="portfolio-card-desc">Ingests recorded sales calls, scores rep performance against a defined rubric, and sends immediate written feedback to the rep and their manager — highlighting what worked and what to improve.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, sales managers, revenue operations, SDR programs</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+          <!-- Real Estate -->
+          <details class="portfolio-category" open>
+            <summary class="portfolio-category-header">
+              <span class="portfolio-category-name">Real Estate</span>
+              <span class="portfolio-category-count">3</span>
+              <svg class="portfolio-category-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="portfolio-category-body">
+              <div class="portfolio-browse-grid">
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">Live Sales Coach</h3>
-            <p class="portfolio-card-desc">Listens to a sales call in real time and surfaces in-the-moment guidance — how to handle the current objection, what question to ask next, which proof points to mention — visible only to the rep.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, SDRs, account executives, any team with a structured sales process</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Rental Invoice Reviewer</h3>
+                  <p class="portfolio-card-desc">Reviews incoming property invoices against expected scope and vendor norms. Auto-approves routine ones, flags anything outside parameters for human sign-off.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Property managers, real estate investors, landlords with multiple units</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">Real Estate Market Analysis</h3>
-            <p class="portfolio-card-desc">Enter a street address and get a consolidated report pulling census data, Google Maps context, and recent local news and legislation — everything a buyer or agent needs to evaluate a location in one place.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Real estate agents, buyers, developers, investors, relocation consultants</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Property Maintenance Photo Analyzer</h3>
+                  <p class="portfolio-card-desc">Reviews photos of units and common areas, classifies maintenance issues by urgency, and drafts work order descriptions — without anyone manually reviewing each image.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Property managers, building owners, real estate companies with maintenance ops</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">Slide Deck Creator</h3>
-            <p class="portfolio-card-desc">Takes a brief, a dataset, or an existing document and generates a complete structured slide deck — titles, talking points, and layout suggestions — ready to drop into PowerPoint or Google Slides.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consultants, sales teams, executives, agencies, anyone who builds decks regularly</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Real Estate Market Analysis</h3>
+                  <p class="portfolio-card-desc">Enter a street address and get a consolidated report pulling census data, Google Maps context, and recent local news and legislation — everything a buyer or agent needs to evaluate a location in one place.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Real estate agents, buyers, developers, investors, relocation consultants</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
 
-          <div class="portfolio-card">
-            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
-            <h3 class="portfolio-card-title">Proposal Generator</h3>
-            <p class="portfolio-card-desc">Pulls from your past proposals, service descriptions, and client intake to draft a tailored, scoped, and priced proposal document — formatted and ready for human review before sending.</p>
-            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, agencies, professional services firms, B2B sales teams closing custom engagements</p>
-            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
-          </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Franchise & Multi-Location -->
+          <details class="portfolio-category" open>
+            <summary class="portfolio-category-header">
+              <span class="portfolio-category-name">Franchise &amp; Multi-Location</span>
+              <span class="portfolio-category-count">3</span>
+              <svg class="portfolio-category-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="portfolio-category-body">
+              <div class="portfolio-browse-grid">
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">FDD Analyzer</h3>
+                  <p class="portfolio-card-desc">Reads a Franchise Disclosure Document, extracts current franchise owners' names and contact details, and outputs a structured lead list ready for outreach — no manual reading required.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Franchisors, franchise development teams, franchise brokers</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Onboarding Document Analyzer</h3>
+                  <p class="portfolio-card-desc">Ingests a new franchisee's onboarding documents, extracts every field needed for CRM import, and pushes the structured data directly into HubSpot — eliminating manual data entry at scale.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Franchise systems, franchise operations teams, multi-location businesses</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Potential Franchisee Identifier</h3>
+                  <p class="portfolio-card-desc">Analyzes a target market using demographic, business, and financial data to surface the individuals most likely to purchase a franchise — ranked by fit score and ready for outreach.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Franchisors and franchise development teams expanding into new markets</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
+
+              </div>
+            </div>
+          </details>
+
+          <!-- Documents & Proposals -->
+          <details class="portfolio-category" open>
+            <summary class="portfolio-category-header">
+              <span class="portfolio-category-name">Documents &amp; Proposals</span>
+              <span class="portfolio-category-count">4</span>
+              <svg class="portfolio-category-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="portfolio-category-body">
+              <div class="portfolio-browse-grid">
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">RFP Monitor &amp; Identifier</h3>
+                  <p class="portfolio-card-desc">Watches procurement sources for RFPs matching your capabilities, scores each one for relevance, and alerts your team — so no opportunity slips through unread.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, agencies, government contractors, staffing companies</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">RFP Auto-Fill</h3>
+                  <p class="portfolio-card-desc">Drafts RFP responses from your past proposals and capability statements, then highlights the gaps and custom sections for human review before submission.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, government contractors, professional services responding to multiple RFPs</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Slide Deck Creator</h3>
+                  <p class="portfolio-card-desc">Takes a brief, a dataset, or an existing document and generates a complete structured slide deck — titles, talking points, and layout suggestions — ready to drop into PowerPoint or Google Slides.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consultants, sales teams, executives, agencies, anyone who builds decks regularly</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Proposal Generator</h3>
+                  <p class="portfolio-card-desc">Pulls from your past proposals, service descriptions, and client intake to draft a tailored, scoped, and priced proposal document — formatted and ready for human review before sending.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, agencies, professional services firms, B2B sales teams closing custom engagements</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
+
+              </div>
+            </div>
+          </details>
+
+          <!-- Research & Intelligence -->
+          <details class="portfolio-category" open>
+            <summary class="portfolio-category-header">
+              <span class="portfolio-category-name">Research &amp; Intelligence</span>
+              <span class="portfolio-category-count">3</span>
+              <svg class="portfolio-category-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="portfolio-category-body">
+              <div class="portfolio-browse-grid">
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Personalized News &amp; Research Delivery</h3>
+                  <p class="portfolio-card-desc">Sends each consultant or advisor a personalized digest of relevant news, journal articles, and industry updates matched to their practice area and current client list.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, advisory practices, law firms, financial services</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Real Estate Market Analysis</h3>
+                  <p class="portfolio-card-desc">Enter a street address and get a consolidated report pulling census data, Google Maps context, and recent local news and legislation — everything a buyer or agent needs to evaluate a location in one place.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Real estate agents, buyers, developers, investors, relocation consultants</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">LinkedIn Sales Navigator via Claude</h3>
+                  <p class="portfolio-card-desc">Uses Claude to qualify and research prospects in Sales Navigator, surfacing the leads most worth pursuing without hours of manual review and note-taking.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, business development reps, outbound-heavy teams</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+                </div>
+
+              </div>
+            </div>
+          </details>
 
         </div>
       </div>
