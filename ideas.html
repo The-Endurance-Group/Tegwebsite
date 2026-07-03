@@ -22,6 +22,9 @@
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="stylesheet" href="css/styles.css">
   <style>
+    /* Ensure [hidden] always wins over display rules in this stylesheet */
+    [hidden] { display: none !important; }
+
     /* Ideas page specific styles */
     .ideas-input-wrap {
       max-width: 640px;
