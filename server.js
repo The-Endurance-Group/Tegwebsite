@@ -107,6 +107,11 @@ id: proposal-generator
 Title: Proposal Generator
 What it is: Pulls from your past proposals, service descriptions, and client intake information to draft a tailored proposal document — scoped, priced, and formatted — for human review before sending.
 Best for: consulting firms, agencies, professional services firms, B2B sales teams closing custom engagements
+
+id: lead-research-dedup
+Title: Lead Research Dedup (Seamless + Attio)
+What it is: Checks your CRM before pulling new prospect data from Seamless, so you never burn enrichment credits on contacts you already have.
+Best for: B2B sales teams, business development, outbound-heavy teams
 `.trim();
 
 const IDEAS_SYSTEM_PROMPT = [
@@ -309,7 +314,7 @@ async function handleIdeas(req, res) {
     var ideas = JSON.parse(jsonStr);
 
     // Sanitize: only allow known portfolio IDs through
-    var validIds = ['coachonix','commonality','invoice-reviewer','property-photo-analyzer','linkedin-sales-nav','rfp-identifier','rfp-filler','news-delivery','fdd-analyzer','onboarding-doc-analyzer','franchisee-identifier','sales-call-analyzer','live-sales-coach','real-estate-market-analysis','slide-deck-creator','proposal-generator'];
+    var validIds = ['coachonix','commonality','invoice-reviewer','property-photo-analyzer','linkedin-sales-nav','rfp-identifier','rfp-filler','news-delivery','fdd-analyzer','onboarding-doc-analyzer','franchisee-identifier','sales-call-analyzer','live-sales-coach','real-estate-market-analysis','slide-deck-creator','proposal-generator','lead-research-dedup'];
     if (Array.isArray(ideas.portfolio_matches)) {
       ideas.portfolio_matches = ideas.portfolio_matches
         .filter(function(m) { return m && validIds.includes(m.id); })
