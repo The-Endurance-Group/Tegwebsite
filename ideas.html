@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automation Ideas for Your Business | The Endurance Group</title>
+  <meta name="description" content="See what AI automations The Endurance Group has built — and get personalized ideas for what we could build for your business.">
+  <link rel="canonical" href="https://theendurancegroup.com/ideas.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="Automation Ideas for Your Business | The Endurance Group">
+  <meta property="og:description" content="See what AI automations The Endurance Group has built — and get personalized ideas for what we could build for your business.">
+  <meta property="og:url" content="https://theendurancegroup.com/ideas.html">
+  <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Automation Ideas for Your Business | The Endurance Group">
+  <meta name="twitter:description" content="See what AI automations The Endurance Group has built — and get personalized ideas for what we could build for your business.">
+  <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Ideas page specific styles */
+    .ideas-input-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .ideas-textarea {
+      width: 100%;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 1rem;
+      line-height: 1.6;
+      padding: 1rem 1.25rem;
+      border: 2px solid var(--color-border, #e2e8f0);
+      border-radius: 8px;
+      background: var(--color-surface, #fff);
+      color: var(--color-text, #1a202c);
+      resize: vertical;
+      min-height: 110px;
+      transition: border-color 0.15s;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .ideas-textarea:focus {
+      outline: none;
+      border-color: var(--color-accent, #2563eb);
+    }
+
+    .ideas-textarea::placeholder {
+      color: var(--color-text-muted, #94a3b8);
+    }
+
+    .ideas-type-select {
+      width: 100%;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.875rem 1.25rem;
+      border: 2px solid var(--color-border, #e2e8f0);
+      border-radius: 8px;
+      background: var(--color-surface, #fff);
+      color: var(--color-text, #1a202c);
+      cursor: pointer;
+      display: block;
+      margin-bottom: 1rem;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      transition: border-color 0.15s;
+    }
+
+    .ideas-type-select:focus {
+      outline: none;
+      border-color: var(--color-accent, #2563eb);
+    }
+
+    .ideas-type-select option[value=""] {
+      color: var(--color-text-muted, #94a3b8);
+    }
+
+    .ideas-detail-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text, #374151);
+      margin-bottom: 0.5rem;
+    }
+
+    .ideas-hint {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted, #64748b);
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    #loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      margin-top: 1.5rem;
+      color: var(--color-text-muted, #64748b);
+      font-size: 0.9375rem;
+    }
+
+    .loading-dots {
+      display: inline-flex;
+      gap: 4px;
+    }
+
+    .loading-dots span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      animation: dot-bounce 1.2s infinite ease-in-out;
+    }
+
+    .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes dot-bounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-6px); opacity: 1; }
+    }
+
+    .ideas-error {
+      max-width: 640px;
+      margin: 1rem auto 0;
+      padding: 0.875rem 1.125rem;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 6px;
+      color: #b91c1c;
+      font-size: 0.9375rem;
+      text-align: center;
+    }
+
+    /* Results */
+    #results {
+      margin-top: 3rem;
+    }
+
+    .ideas-results-section {
+      margin-bottom: 3rem;
+    }
+
+    .ideas-results-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent, #2563eb);
+      margin-bottom: 0.5rem;
+    }
+
+    .ideas-results-heading {
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--color-heading, #0f172a);
+    }
+
+    .ideas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .idea-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #e2e8f0);
+      border-radius: 12px;
+      padding: 1.375rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+
+    .idea-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .idea-card--portfolio {
+      border-color: var(--color-accent, #2563eb);
+      border-width: 2px;
+    }
+
+    .idea-card-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2em 0.6em;
+      border-radius: 4px;
+      align-self: flex-start;
+      background: var(--color-surface-alt, #f1f5f9);
+      color: var(--color-text-muted, #64748b);
+    }
+
+    .idea-card--portfolio .idea-card-badge {
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    .idea-card-badge--sales     { background: #fff7ed; color: #c2410c; }
+    .idea-card-badge--operations { background: #f0fdf4; color: #15803d; }
+    .idea-card-badge--research   { background: #faf5ff; color: #7e22ce; }
+    .idea-card-badge--communications { background: #fff8f1; color: #b45309; }
+    .idea-card-badge--documents  { background: #ecfdf5; color: #047857; }
+
+    .idea-card-title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--color-heading, #0f172a);
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .idea-card-desc {
+      font-size: 0.9375rem;
+      color: var(--color-text, #374151);
+      line-height: 1.6;
+      margin: 0;
+      flex: 1;
+    }
+
+    .idea-card-reason {
+      font-size: 0.875rem;
+      color: var(--color-accent, #2563eb);
+      font-style: italic;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .idea-card-link {
+      margin-top: 0.5rem;
+      align-self: flex-start;
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Portfolio browse section */
+    .portfolio-browse-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .portfolio-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #e2e8f0);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .portfolio-card-type {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4em;
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2em 0.6em;
+      border-radius: 4px;
+      align-self: flex-start;
+    }
+
+    .portfolio-card-type--app {
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    .portfolio-card-type--automation {
+      background: #f0fdf4;
+      color: #15803d;
+    }
+
+    .portfolio-card-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-heading, #0f172a);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .portfolio-card-desc {
+      font-size: 0.9375rem;
+      color: var(--color-text, #374151);
+      line-height: 1.6;
+      margin: 0;
+      flex: 1;
+    }
+
+    .portfolio-card-bestfor {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted, #64748b);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .portfolio-card-bestfor strong {
+      color: var(--color-text, #374151);
+    }
+
+    .portfolio-card-link {
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    @media (max-width: 640px) {
+      .ideas-grid, .portfolio-browse-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="success.html">Success</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">What we can build for you</span>
+          <h1>See what's possible. Then see what we'd build for you.</h1>
+          <p class="lede">Browse automations and apps we've already built — or describe your business and we'll generate ideas specific to you, including anything from our portfolio that fits.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- See what's possible: generate ideas -->
+    <section class="section" id="generate">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">See what's possible</span>
+          <h2>Get personalized automation ideas</h2>
+          <p>Describe your business and we'll suggest what to build — pulling from our portfolio and generating ideas specific to you.</p>
+        </div>
+
+        <div class="ideas-input-wrap reveal">
+          <label for="business-type" class="sr-only">Business type</label>
+          <select id="business-type" class="ideas-type-select">
+            <option value="">What type of business are you? (select one)</option>
+            <option value="Real Estate">Real Estate</option>
+            <option value="Professional Services">Professional Services</option>
+            <option value="Software / SaaS">Software / SaaS</option>
+            <option value="other">Other (describe below)</option>
+          </select>
+
+          <label for="business-input" class="ideas-detail-label" id="detail-label">Tell us more about your business</label>
+          <textarea
+            id="business-input"
+            class="ideas-textarea"
+            placeholder="e.g. We manage about 80 rental properties and spend a lot of time on tenant communications, lease renewals, and reviewing maintenance invoices."
+            rows="3"
+            maxlength="1000"
+          ></textarea>
+          <button id="generate-btn" class="btn btn-primary" type="button">Generate ideas for my business</button>
+          <p class="ideas-hint">Ctrl+Enter to submit &nbsp;·&nbsp; The more specific, the better the ideas</p>
+        </div>
+
+        <div id="loading" hidden aria-live="polite" aria-label="Generating ideas">
+          <span>Thinking about your business</span>
+          <span class="loading-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        </div>
+
+        <div id="error-msg" class="ideas-error" hidden role="alert"></div>
+
+        <div id="results" hidden>
+          <!-- Portfolio matches (shown only if any returned) -->
+          <div id="portfolio-section" class="ideas-results-section" hidden>
+            <p class="ideas-results-label">From our portfolio</p>
+            <h2 class="ideas-results-heading">Things we've already built that fit your business</h2>
+            <div id="portfolio-cards" class="ideas-grid"></div>
+          </div>
+
+          <!-- Generated ideas (always shown with results) -->
+          <div id="ideas-section" class="ideas-results-section">
+            <p class="ideas-results-label">Ideas for your business</p>
+            <h2 class="ideas-results-heading">What we could build for you</h2>
+            <div id="idea-cards" class="ideas-grid"></div>
+          </div>
+
+          <div class="text-center" style="margin-top:2.5rem;">
+            <p style="margin-bottom:1rem;color:var(--color-text-muted,#64748b);">Any of these catch your eye? Let's talk about what it would take to build it.</p>
+            <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Schedule a call with Conor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we've built: browse the portfolio -->
+    <section class="section section--alt" id="portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label">What we've built</span>
+          <h2>Our portfolio</h2>
+          <p>Real automations and apps built for real clients. Every item on this list is something we've deployed and maintained.</p>
+        </div>
+
+        <div class="portfolio-browse-grid reveal--stagger reveal">
+
+          <div class="portfolio-card">
+            <span class="portfolio-card-type portfolio-card-type--app">App</span>
+            <h3 class="portfolio-card-title">Coachonix</h3>
+            <p class="portfolio-card-desc">AI coaching application for structured professional development, goal tracking, and accountability conversations.</p>
+            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Coaching practices, HR &amp; L&amp;D teams, professional training programs</p>
+            <a class="btn btn-secondary portfolio-card-link" href="https://coachonix.com" target="_blank" rel="noopener">Visit Coachonix →</a>
+          </div>
+
+          <div class="portfolio-card">
+            <span class="portfolio-card-type portfolio-card-type--app">App</span>
+            <h3 class="portfolio-card-title">Commonality</h3>
+            <p class="portfolio-card-desc">Maps your team's social connections — shared schools, employers, associations — to find warm introductory paths into target accounts.</p>
+            <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, business development, professional services firms</p>
+            <a class="btn btn-secondary portfolio-card-link" href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Visit Commonality →</a>
+          </div>
+
+          <div class="portfolio-card">
+            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+            <h3 class="portfolio-card-title">Rental Invoice Reviewer</h3>
+            <p class="portfolio-card-desc">Reviews incoming property invoices against expected scope and vendor norms. Auto-approves routine ones, flags anything outside parameters for human sign-off.</p>
+            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Property managers, real estate investors, landlords with multiple units</p>
+            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+          </div>
+
+          <div class="portfolio-card">
+            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+            <h3 class="portfolio-card-title">Property Maintenance Photo Analyzer</h3>
+            <p class="portfolio-card-desc">Reviews photos of units and common areas, classifies maintenance issues by urgency, and drafts work order descriptions — without anyone manually reviewing each image.</p>
+            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Property managers, building owners, real estate companies with maintenance ops</p>
+            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+          </div>
+
+          <div class="portfolio-card">
+            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+            <h3 class="portfolio-card-title">LinkedIn Sales Navigator via Claude</h3>
+            <p class="portfolio-card-desc">Uses Claude to qualify and research prospects in Sales Navigator, surfacing the leads most worth pursuing without hours of manual review and note-taking.</p>
+            <p class="portfolio-card-bestfor"><strong>Built for:</strong> B2B sales teams, business development reps, outbound-heavy teams</p>
+            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+          </div>
+
+          <div class="portfolio-card">
+            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+            <h3 class="portfolio-card-title">RFP Monitor &amp; Identifier</h3>
+            <p class="portfolio-card-desc">Watches procurement sources for RFPs matching your capabilities, scores each one for relevance, and alerts your team — so no opportunity slips through unread.</p>
+            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, agencies, government contractors, staffing companies</p>
+            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+          </div>
+
+          <div class="portfolio-card">
+            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+            <h3 class="portfolio-card-title">RFP Auto-Fill</h3>
+            <p class="portfolio-card-desc">Drafts RFP responses from your past proposals and capability statements, then highlights the gaps and custom sections for human review before submission.</p>
+            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, government contractors, professional services responding to multiple RFPs</p>
+            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+          </div>
+
+          <div class="portfolio-card">
+            <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+            <h3 class="portfolio-card-title">Personalized News &amp; Research Delivery</h3>
+            <p class="portfolio-card-desc">Sends each consultant or advisor a personalized digest of relevant news, journal articles, and industry updates matched to their practice area and current client list.</p>
+            <p class="portfolio-card-bestfor"><strong>Built for:</strong> Consulting firms, advisory practices, law firms, financial services</p>
+            <a class="btn btn-secondary portfolio-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="section section--dark text-center">
+      <div class="container reveal">
+        <h2>Don't see exactly what you need? That's usually the case — and that's the point.</h2>
+        <p class="lede" style="margin-inline:auto;max-width:540px;">We scope every build to your actual workflows, not a template. Tell us what's slowing your team down and we'll figure out what to build first.</p>
+        <div class="btn-group btn-group--center">
+          <a class="btn btn-primary" href="how-to-get-started.html">Get Your First Automation Free</a>
+          <a class="btn btn-secondary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Schedule a Call</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="index.html"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <p class="footer-tagline">Your AI Automation Partner</p>
+        <p class="footer-address">Portland, ME · (207) 846-6000</p>
+      </div>
+      <div class="footer-columns">
+        <nav aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="solutions.html#ai-automations">AI Automations</a></li>
+            <li><a href="solutions.html#strategy">Strategy</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Products">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Commonality</a></li>
+            <li><a href="https://coachonix.com" target="_blank" rel="noopener">Coachonix</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Specialties">
+          <h3>Specialties</h3>
+          <ul>
+            <li><a href="specialties.html#sales-and-marketing">Sales &amp; Marketing</a></li>
+            <li><a href="specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="specialties.html#professional-services">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="how-to-get-started.html">Get Started</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="success.html">Success</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 The Endurance Group. All rights reserved. · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+        <div class="footer-social">
+        <a href="https://www.linkedin.com/company/the-endurance-group" target="_blank" rel="noopener" aria-label="The Endurance Group on LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5s-1.98-.9-1.98-2S1.9 1.5 3 1.5s1.98.9 1.98 2zM1.2 8.3h3.6V22H1.2V8.3zM8.4 8.3h3.45v1.87h.05c.48-.9 1.66-1.87 3.42-1.87 3.66 0 4.34 2.4 4.34 5.53V22h-3.6v-6.4c0-1.53-.03-3.5-2.14-3.5-2.14 0-2.47 1.67-2.47 3.39V22H8.4V8.3z"/></svg></a>
+        <a href="https://www.facebook.com/TheEnduranceGroupMaine/" target="_blank" rel="noopener" aria-label="The Endurance Group on Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.13 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.8 8.44-4.93 8.44-9.94z"/></svg></a>
+        <a href="https://www.instagram.com/theendurancegroup/" target="_blank" rel="noopener" aria-label="The Endurance Group on Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.59 1.8c.46-.16 1.26-.35 2.43-.4C9.29 1.34 9.67 1.33 12 1.33zM12 6.86A5.14 5.14 0 1 0 12 17.14 5.14 5.14 0 0 0 12 6.86zm0 8.48a3.34 3.34 0 1 1 0-6.68 3.34 3.34 0 0 1 0 6.68zm5.34-8.69a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
+        <a href="https://x.com/_EnduranceGroup" target="_blank" rel="noopener" aria-label="The Endurance Group on X"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.4 8.5L23 22h-6.9l-5.4-7-6.2 7H1.3l7.9-9L1 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw" target="_blank" rel="noopener" aria-label="The Endurance Group on YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 7.2s-.23-1.64-.94-2.36c-.9-.95-1.9-.95-2.36-1C16.9 3.6 12 3.6 12 3.6h-.01s-4.9 0-8.2.24c-.46.05-1.46.05-2.36 1-.71.72-.94 2.36-.94 2.36S.2 9.13.2 11.04v1.8c0 1.92.25 3.84.25 3.84s.23 1.64.94 2.36c.9.95 2.07.92 2.6 1.02C5.9 20.27 12 20.33 12 20.33s4.9-.01 8.2-.25c.46-.05 1.46-.05 2.36-1 .71-.72.94-2.36.94-2.36s.25-1.92.25-3.84v-1.8c0-1.92-.25-3.84-.25-3.84zM9.7 14.9V8.95l6.05 2.98-6.05 2.97z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="js/main.js" defer></script>
+  <script>
+    // Client-side portfolio data (mirrors server.js IDEAS_PORTFOLIO_TEXT)
+    var PORTFOLIO = [
+      {
+        id: 'coachonix',
+        title: 'Coachonix',
+        description: 'AI coaching application for structured professional development, goal tracking, and accountability.',
+        type: 'app',
+        label: 'App',
+        url: 'https://coachonix.com',
+      },
+      {
+        id: 'commonality',
+        title: 'Commonality',
+        description: "Maps your team's social connections to find warm introductory paths into target accounts through shared schools, employers, and associations.",
+        type: 'app',
+        label: 'App',
+        url: 'https://commonality.theendurancegroup.com',
+      },
+      {
+        id: 'invoice-reviewer',
+        title: 'Rental Invoice Reviewer',
+        description: 'Reviews incoming property invoices against expected scope and vendor norms — auto-approves routine ones, flags anything outside parameters for sign-off.',
+        type: 'automation',
+        label: 'Automation',
+      },
+      {
+        id: 'property-photo-analyzer',
+        title: 'Property Maintenance Photo Analyzer',
+        description: 'Reviews photos of units and common areas, classifies maintenance issues by urgency, and drafts work order descriptions.',
+        type: 'automation',
+        label: 'Automation',
+      },
+      {
+        id: 'linkedin-sales-nav',
+        title: 'LinkedIn Sales Navigator via Claude',
+        description: 'Uses Claude to qualify and research prospects in Sales Navigator, surfacing the best leads without hours of manual review.',
+        type: 'automation',
+        label: 'Automation',
+      },
+      {
+        id: 'rfp-identifier',
+        title: 'RFP Monitor & Identifier',
+        description: 'Watches procurement sources for RFPs matching your capabilities, scores relevance, and alerts your team so no opportunity slips through.',
+        type: 'automation',
+        label: 'Automation',
+      },
+      {
+        id: 'rfp-filler',
+        title: 'RFP Auto-Fill',
+        description: "Drafts RFP responses from your past proposals and capability statements, then highlights gaps for human review before submission.",
+        type: 'automation',
+        label: 'Automation',
+      },
+      {
+        id: 'news-delivery',
+        title: 'Personalized News & Research Delivery',
+        description: 'Sends each team member a personalized digest of relevant news and research matched to their practice area and current clients.',
+        type: 'automation',
+        label: 'Automation',
+      },
+    ];
+
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function categoryClass(cat) {
+      var map = {
+        sales: 'idea-card-badge--sales',
+        operations: 'idea-card-badge--operations',
+        research: 'idea-card-badge--research',
+        communications: 'idea-card-badge--communications',
+        documents: 'idea-card-badge--documents',
+      };
+      return map[(cat || '').toLowerCase()] || '';
+    }
+
+    function setLoading(loading) {
+      var btn = document.getElementById('generate-btn');
+      var loadingEl = document.getElementById('loading');
+      btn.disabled = loading;
+      btn.textContent = loading ? 'Generating…' : 'Generate ideas for my business';
+      loadingEl.hidden = !loading;
+    }
+
+    function showError(msg) {
+      var el = document.getElementById('error-msg');
+      el.textContent = msg;
+      el.hidden = false;
+    }
+
+    function clearState() {
+      document.getElementById('results').hidden = true;
+      document.getElementById('error-msg').hidden = true;
+    }
+
+    function renderResults(data) {
+      var portfolioMatches = (data.portfolio_matches || []).map(function(m) {
+        var item = PORTFOLIO.find(function(p) { return p.id === m.id; });
+        return item ? Object.assign({}, item, { reason: m.reason }) : null;
+      }).filter(Boolean);
+
+      var newIdeas = (data.new_ideas || []).slice(0, 6);
+
+      var resultsEl = document.getElementById('results');
+      var portfolioSection = document.getElementById('portfolio-section');
+      var portfolioCards = document.getElementById('portfolio-cards');
+      var ideaCards = document.getElementById('idea-cards');
+
+      if (portfolioMatches.length > 0) {
+        portfolioSection.hidden = false;
+        portfolioCards.innerHTML = portfolioMatches.map(function(item) {
+          var linkHtml = item.url
+            ? '<a class="btn btn-secondary idea-card-link" href="' + escHtml(item.url) + '" target="_blank" rel="noopener">Try it →</a>'
+            : '<a class="btn btn-secondary idea-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us about this</a>';
+          return '<div class="idea-card idea-card--portfolio">'
+            + '<span class="idea-card-badge">' + escHtml(item.label) + '</span>'
+            + '<h3 class="idea-card-title">' + escHtml(item.title) + '</h3>'
+            + '<p class="idea-card-desc">' + escHtml(item.description) + '</p>'
+            + (item.reason ? '<p class="idea-card-reason">' + escHtml(item.reason) + '</p>' : '')
+            + linkHtml
+            + '</div>';
+        }).join('');
+      } else {
+        portfolioSection.hidden = true;
+      }
+
+      ideaCards.innerHTML = newIdeas.map(function(idea) {
+        var cat = idea.category || 'Automation';
+        return '<div class="idea-card idea-card--generated">'
+          + '<span class="idea-card-badge ' + categoryClass(cat) + '">' + escHtml(cat) + '</span>'
+          + '<h3 class="idea-card-title">' + escHtml(idea.title) + '</h3>'
+          + '<p class="idea-card-desc">' + escHtml(idea.description) + '</p>'
+          + '<a class="btn btn-secondary idea-card-link" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Ask us to build this</a>'
+          + '</div>';
+      }).join('');
+
+      resultsEl.hidden = false;
+      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Update label/placeholder when business type changes
+    var PLACEHOLDERS = {
+      'Real Estate': 'e.g. We manage 80 rental properties — most of our time goes to tenant communications, lease renewals, and reviewing maintenance invoices.',
+      'Professional Services': 'e.g. We\'re a 12-person consulting firm. We respond to 5-6 RFPs a month and spend hours researching clients before discovery calls.',
+      'Software / SaaS': 'e.g. We\'re a 20-person SaaS company. Our biggest bottlenecks are churn follow-up, onboarding new customers, and qualifying inbound leads.',
+      'other': 'Describe your business — what you do, how big your team is, and what\'s eating the most time.',
+    };
+
+    var DETAIL_LABELS = {
+      'Real Estate': 'Tell us more about your properties and team',
+      'Professional Services': 'Tell us more about your firm and workflows',
+      'Software / SaaS': 'Tell us more about your product and team',
+      'other': 'Describe your business',
+    };
+
+    document.getElementById('business-type').addEventListener('change', function() {
+      var val = this.value;
+      var textarea = document.getElementById('business-input');
+      var label = document.getElementById('detail-label');
+      if (val && PLACEHOLDERS[val]) {
+        textarea.placeholder = PLACEHOLDERS[val];
+        label.textContent = DETAIL_LABELS[val];
+      } else {
+        textarea.placeholder = 'e.g. We\'re a 15-person commercial real estate firm. We manage about 80 properties and spend a lot of time on tenant communications, lease renewals, and reviewing maintenance invoices.';
+        label.textContent = 'Tell us more about your business';
+      }
+    });
+
+    async function generateIdeas() {
+      var typeSelect = document.getElementById('business-type');
+      var selectedType = typeSelect.value;
+      var detail = document.getElementById('business-input').value.trim();
+
+      if (!selectedType) {
+        showError('Please select your business type first.');
+        typeSelect.focus();
+        return;
+      }
+
+      var businessDescription;
+      if (selectedType === 'other') {
+        if (detail.length < 10) {
+          showError('Please describe your business in a bit more detail.');
+          return;
+        }
+        businessDescription = detail;
+      } else {
+        businessDescription = detail.length >= 5
+          ? selectedType + ' company: ' + detail
+          : selectedType + ' company';
+      }
+
+      if (businessDescription.length < 5) {
+        showError('Please describe your business in a bit more detail first.');
+        return;
+      }
+
+      clearState();
+      setLoading(true);
+
+      try {
+        var res = await fetch('/api/ideas', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ businessDescription: businessDescription }),
+        });
+
+        var data = await res.json().catch(function() { return {}; });
+
+        if (!res.ok) {
+          showError(data.error || 'Something went wrong. Try again in a moment.');
+          return;
+        }
+
+        renderResults(data);
+      } catch (err) {
+        showError('Network error. Check your connection and try again.');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    document.getElementById('generate-btn').addEventListener('click', generateIdeas);
+    document.getElementById('business-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) generateIdeas();
+    });
+  </script>
+</body>
+</html>

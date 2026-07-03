@@ -9,6 +9,9 @@ const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-2025100
 const CHAT_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const CHAT_RATE_LIMIT_MAX = 30;
 const chatRateLimitHits = new Map();
+const IDEAS_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
+const IDEAS_RATE_LIMIT_MAX = 8;
+const ideasRateLimitHits = new Map();
 const SITE_KNOWLEDGE = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
 const CHAT_SYSTEM_PROMPT = [
   'You are the AI assistant embedded on theendurancegroup.com, a B2B sales execution and AI automation consultancy in Portland, Maine.',
@@ -22,6 +25,80 @@ const CHAT_SYSTEM_PROMPT = [
   '',
   '--- SITE KNOWLEDGE ---',
   SITE_KNOWLEDGE,
+].join('\n');
+
+const IDEAS_PORTFOLIO_TEXT = `
+id: coachonix
+Title: Coachonix App
+What it is: AI coaching application for professional development, goal tracking, and accountability. Live at coachonix.com.
+Best for: coaching practices, HR and L&D teams, professional training programs, organizations focused on employee development
+
+id: commonality
+Title: Commonality App
+What it is: Maps your team's social connections (shared schools, employers, associations) to find warm introductory paths into target prospects.
+Best for: B2B sales teams, business development, professional services firms doing relationship-based outreach
+
+id: invoice-reviewer
+Title: Rental Invoice Reviewer
+What it is: Reviews incoming property invoices against expected scope and vendor norms — auto-approves routine ones, flags outliers for human sign-off.
+Best for: property managers, real estate investors, landlords managing multiple units
+
+id: property-photo-analyzer
+Title: Property Maintenance Photo Analyzer
+What it is: Reviews photos of rental units and common areas, classifies maintenance issues by urgency, drafts work order descriptions.
+Best for: property managers, building owners, real estate companies with maintenance operations
+
+id: linkedin-sales-nav
+Title: LinkedIn Sales Navigator via Claude
+What it is: Uses Claude to qualify and research prospects in Sales Navigator, surfacing the best leads without hours of manual review.
+Best for: B2B sales teams, business development reps, anyone doing outbound prospecting
+
+id: rfp-identifier
+Title: RFP Monitor and Identifier
+What it is: Watches procurement sources for RFPs matching your capabilities, scores relevance, and alerts your team so no opportunity slips through.
+Best for: consulting firms, government contractors, agencies, staffing companies, any firm responding to formal procurement
+
+id: rfp-filler
+Title: RFP Auto-Fill
+What it is: Drafts RFP responses from your past proposals and capability statements, then highlights gaps for human review before submission.
+Best for: consulting firms, government contractors, professional services firms that respond to multiple RFPs per month
+
+id: news-delivery
+Title: Personalized News and Research Delivery
+What it is: Sends each team member a personalized digest of relevant news, articles, and research matched to their practice area and current clients.
+Best for: consulting firms, advisory practices, law firms, financial services, any knowledge-intensive professional services firm
+`.trim();
+
+const IDEAS_SYSTEM_PROMPT = [
+  'You are an AI automation consultant for The Endurance Group, a B2B AI automation firm.',
+  'Given a business description, do two things:',
+  '1. Identify which pre-built portfolio items are genuinely relevant to this specific business (0-3 items only — be selective, not exhaustive)',
+  '2. Generate exactly 4-5 NEW automation ideas tailored specifically to their business type and pain points',
+  '',
+  'PRE-BUILT PORTFOLIO:',
+  IDEAS_PORTFOLIO_TEXT,
+  '',
+  'CRITICAL: Return ONLY a raw JSON object. No markdown, no code fences, no explanation before or after.',
+  'Format:',
+  '{',
+  '  "portfolio_matches": [',
+  '    { "id": "invoice-reviewer", "reason": "One sentence explaining why this fits their specific business." }',
+  '  ],',
+  '  "new_ideas": [',
+  '    {',
+  '      "title": "Short descriptive title",',
+  '      "description": "Two sentences: what the automation does, and what specific problem it solves for this business.",',
+  '      "category": "Sales"',
+  '    }',
+  '  ]',
+  '}',
+  '',
+  'Rules for new_ideas:',
+  '- category must be one of: Sales, Operations, Research, Communications, Documents',
+  '- Be concrete — name the actual workflow, tool, or data source involved',
+  '- Do not suggest vague platitudes like "AI chatbot" or "data analytics dashboard"',
+  '- Each idea should be distinct from the others and from the portfolio matches',
+  '- Generate ideas a real automation engineer could actually build',
 ].join('\n');
 
 const MIME_TYPES = {
@@ -75,7 +152,7 @@ function isRateLimited(map, ip, windowMs, max) {
   return hits.length > max;
 }
 
-async function callClaude(messages) {
+async function callClaudeApi(systemPrompt, messages, maxTokens) {
   var apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     throw new Error('ANTHROPIC_API_KEY is not configured');
@@ -90,8 +167,8 @@ async function callClaude(messages) {
     },
     body: JSON.stringify({
       model: ANTHROPIC_MODEL,
-      max_tokens: 400,
-      system: CHAT_SYSTEM_PROMPT,
+      max_tokens: maxTokens || 400,
+      system: systemPrompt,
       messages: messages,
     }),
   });
@@ -104,6 +181,10 @@ async function callClaude(messages) {
   var data = await res.json();
   var textBlock = (data.content || []).find(function (block) { return block.type === 'text'; });
   return textBlock ? textBlock.text : '';
+}
+
+async function callClaude(messages) {
+  return callClaudeApi(CHAT_SYSTEM_PROMPT, messages, 400);
 }
 
 async function handleChat(req, res) {
@@ -146,6 +227,62 @@ async function handleChat(req, res) {
   }
 }
 
+async function handleIdeas(req, res) {
+  var ip = clientIp(req);
+
+  function respondJson(status, body) {
+    res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify(body));
+  }
+
+  try {
+    if (isRateLimited(ideasRateLimitHits, ip, IDEAS_RATE_LIMIT_WINDOW_MS, IDEAS_RATE_LIMIT_MAX)) {
+      respondJson(429, { error: 'Too many requests. Please try again in a few minutes.' });
+      return;
+    }
+
+    var raw = await readBody(req);
+    var body = JSON.parse(raw || '{}');
+    var businessDescription = typeof body.businessDescription === 'string'
+      ? body.businessDescription.trim().slice(0, 1000)
+      : '';
+
+    if (businessDescription.length < 10) {
+      respondJson(400, { error: 'Please describe your business in a bit more detail.' });
+      return;
+    }
+
+    var responseText = await callClaudeApi(
+      IDEAS_SYSTEM_PROMPT,
+      [{ role: 'user', content: 'Business description: ' + businessDescription }],
+      1400
+    );
+
+    // Strip markdown code fences if Claude adds them despite instructions
+    var jsonStr = responseText.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
+    var ideas = JSON.parse(jsonStr);
+
+    // Sanitize: only allow known portfolio IDs through
+    var validIds = ['coachonix','commonality','invoice-reviewer','property-photo-analyzer','linkedin-sales-nav','rfp-identifier','rfp-filler','news-delivery'];
+    if (Array.isArray(ideas.portfolio_matches)) {
+      ideas.portfolio_matches = ideas.portfolio_matches
+        .filter(function(m) { return m && validIds.includes(m.id); })
+        .slice(0, 3);
+    } else {
+      ideas.portfolio_matches = [];
+    }
+    if (!Array.isArray(ideas.new_ideas)) {
+      ideas.new_ideas = [];
+    }
+    ideas.new_ideas = ideas.new_ideas.slice(0, 6);
+
+    respondJson(200, ideas);
+  } catch (err) {
+    console.error('Ideas request failed:', err);
+    respondJson(500, { error: 'Something went wrong generating your ideas. Try again in a moment.' });
+  }
+}
+
 function serveStatic(req, res) {
   let urlPath = decodeURIComponent(req.url.split('?')[0]);
   if (urlPath.endsWith('/')) urlPath += 'index.html';
@@ -173,6 +310,10 @@ http.createServer((req, res) => {
   var urlPath = req.url.split('?')[0];
   if (req.method === 'POST' && urlPath === '/api/chat') {
     handleChat(req, res);
+    return;
+  }
+  if (req.method === 'POST' && urlPath === '/api/ideas') {
+    handleIdeas(req, res);
     return;
   }
   serveStatic(req, res);
