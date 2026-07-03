@@ -432,15 +432,17 @@
               maxlength="100">
           </div>
 
-          <label for="business-input" class="ideas-detail-label" id="detail-label">Tell us more about your business</label>
-          <textarea
-            id="business-input"
-            class="ideas-textarea"
-            placeholder="e.g. We manage about 80 rental properties and spend a lot of time on tenant communications, lease renewals, and reviewing maintenance invoices."
-            rows="3"
-            maxlength="1000"
-          ></textarea>
-          <button id="generate-btn" class="btn btn-primary" type="button">Generate ideas for my business</button>
+          <div id="detail-wrap" hidden>
+            <label for="business-input" class="ideas-detail-label" id="detail-label">Tell us more about your business</label>
+            <textarea
+              id="business-input"
+              class="ideas-textarea"
+              placeholder="e.g. We manage about 80 rental properties and spend a lot of time on tenant communications, lease renewals, and reviewing maintenance invoices."
+              rows="3"
+              maxlength="1000"
+            ></textarea>
+          </div>
+          <button id="generate-btn" class="btn btn-primary" type="button" hidden>Generate ideas for my business</button>
           <p class="ideas-hint">Ctrl+Enter to submit &nbsp;·&nbsp; The more specific, the better the ideas</p>
         </div>
 
@@ -783,8 +785,13 @@
       'Real Estate': 'e.g. We manage 80 rental properties — most of our time goes to tenant communications, lease renewals, and reviewing maintenance invoices.',
       'Professional Services': 'e.g. We respond to 5-6 RFPs a month and spend hours researching clients before discovery calls.',
       'Software / SaaS': 'e.g. Our biggest bottlenecks are churn follow-up, onboarding new customers, and qualifying inbound leads.',
-      'other': 'Any details about your team size, tools you use, and what's eating the most time? (optional)',
+      'other': 'Any details about your team size, tools you use, and what\'s eating the most time? (optional)',
     };
+
+    function showDetailAndButton() {
+      document.getElementById('detail-wrap').hidden = false;
+      document.getElementById('generate-btn').hidden = false;
+    }
 
     document.getElementById('business-type').addEventListener('change', function() {
       var val = this.value;
@@ -793,25 +800,34 @@
       var subtypeSelect = document.getElementById('business-subtype');
       var textarea = document.getElementById('business-input');
       var label = document.getElementById('detail-label');
+      var detailWrap = document.getElementById('detail-wrap');
+      var btn = document.getElementById('generate-btn');
 
+      // Reset all secondary fields
       subtypeWrap.hidden = true;
       customWrap.hidden = true;
+      detailWrap.hidden = true;
+      btn.hidden = true;
+
+      if (!val) return;
 
       if (val === 'other') {
+        // Show custom industry text input, then detail + button
         customWrap.hidden = false;
         textarea.placeholder = PLACEHOLDERS['other'];
-        label.textContent = 'Anything else that would help us tailor the ideas? (optional)';
-      } else if (val && SUBTYPES[val]) {
-        subtypeSelect.innerHTML = '<option value="">Pick a more specific type (optional)</option>'
+        label.textContent = 'Any other details? (optional)';
+        showDetailAndButton();
+      } else if (SUBTYPES[val]) {
+        // Show sub-type dropdown; reveal detail + button once sub-type changes (or immediately)
+        subtypeSelect.innerHTML = '<option value="">Select a more specific type (optional)</option>'
           + SUBTYPES[val].map(function(st) {
               return '<option value="' + escHtml(st) + '">' + escHtml(st) + '</option>';
             }).join('');
         subtypeWrap.hidden = false;
         textarea.placeholder = PLACEHOLDERS[val] || 'Tell us more about your team and workflows.';
         label.textContent = 'Any other details? (optional)';
-      } else {
-        textarea.placeholder = 'e.g. What does your team spend the most time on?';
-        label.textContent = 'Tell us more about your business';
+        // Reveal detail + button immediately after sub-type dropdown appears
+        showDetailAndButton();
       }
     });
 
