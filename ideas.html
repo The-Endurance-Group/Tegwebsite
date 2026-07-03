@@ -94,6 +94,30 @@
       margin-bottom: 0.5rem;
     }
 
+    .ideas-text-input {
+      width: 100%;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.875rem 1.25rem;
+      border: 2px solid var(--color-border, #e2e8f0);
+      border-radius: 8px;
+      background: var(--color-surface, #fff);
+      color: var(--color-text, #1a202c);
+      display: block;
+      margin-bottom: 1rem;
+      transition: border-color 0.15s;
+    }
+
+    .ideas-text-input:focus {
+      outline: none;
+      border-color: var(--color-accent, #2563eb);
+    }
+
+    .ideas-text-input::placeholder {
+      color: var(--color-text-muted, #94a3b8);
+    }
+
     .ideas-hint {
       font-size: 0.8125rem;
       color: var(--color-text-muted, #64748b);
@@ -389,8 +413,24 @@
             <option value="Real Estate">Real Estate</option>
             <option value="Professional Services">Professional Services</option>
             <option value="Software / SaaS">Software / SaaS</option>
-            <option value="other">Other (describe below)</option>
+            <option value="other">Other — I'll describe it</option>
           </select>
+
+          <!-- Sub-type dropdown: shown for named types -->
+          <div id="subtype-wrap" hidden>
+            <label for="business-subtype" class="sr-only">Industry sub-type</label>
+            <select id="business-subtype" class="ideas-type-select">
+              <option value="">Pick a more specific type (optional)</option>
+            </select>
+          </div>
+
+          <!-- Custom industry input: shown for "Other" -->
+          <div id="custom-industry-wrap" hidden>
+            <label for="custom-industry" class="ideas-detail-label">What's your industry?</label>
+            <input type="text" id="custom-industry" class="ideas-text-input"
+              placeholder="e.g. Healthcare, Logistics, Non-profit, Education…"
+              maxlength="100">
+          </div>
 
           <label for="business-input" class="ideas-detail-label" id="detail-label">Tell us more about your business</label>
           <textarea
@@ -733,59 +773,74 @@
       resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    // Update label/placeholder when business type changes
-    var PLACEHOLDERS = {
-      'Real Estate': 'e.g. We manage 80 rental properties — most of our time goes to tenant communications, lease renewals, and reviewing maintenance invoices.',
-      'Professional Services': 'e.g. We\'re a 12-person consulting firm. We respond to 5-6 RFPs a month and spend hours researching clients before discovery calls.',
-      'Software / SaaS': 'e.g. We\'re a 20-person SaaS company. Our biggest bottlenecks are churn follow-up, onboarding new customers, and qualifying inbound leads.',
-      'other': 'Describe your business — what you do, how big your team is, and what\'s eating the most time.',
+    var SUBTYPES = {
+      'Real Estate': ['Property Management', 'Commercial Real Estate', 'Residential Brokerage', 'Real Estate Investment', 'Mortgage / Lending', 'Development / Construction'],
+      'Professional Services': ['Consulting', 'Legal / Law Firm', 'Accounting / Finance', 'Staffing / Recruiting', 'Marketing Agency', 'Architecture / Engineering'],
+      'Software / SaaS': ['B2B SaaS', 'Industry-Specific Software', 'Developer Tools / APIs', 'Enterprise Software', 'Consumer / Prosumer App'],
     };
 
-    var DETAIL_LABELS = {
-      'Real Estate': 'Tell us more about your properties and team',
-      'Professional Services': 'Tell us more about your firm and workflows',
-      'Software / SaaS': 'Tell us more about your product and team',
-      'other': 'Describe your business',
+    var PLACEHOLDERS = {
+      'Real Estate': 'e.g. We manage 80 rental properties — most of our time goes to tenant communications, lease renewals, and reviewing maintenance invoices.',
+      'Professional Services': 'e.g. We respond to 5-6 RFPs a month and spend hours researching clients before discovery calls.',
+      'Software / SaaS': 'e.g. Our biggest bottlenecks are churn follow-up, onboarding new customers, and qualifying inbound leads.',
+      'other': 'Any details about your team size, tools you use, and what's eating the most time? (optional)',
     };
 
     document.getElementById('business-type').addEventListener('change', function() {
       var val = this.value;
+      var subtypeWrap = document.getElementById('subtype-wrap');
+      var customWrap = document.getElementById('custom-industry-wrap');
+      var subtypeSelect = document.getElementById('business-subtype');
       var textarea = document.getElementById('business-input');
       var label = document.getElementById('detail-label');
-      if (val && PLACEHOLDERS[val]) {
-        textarea.placeholder = PLACEHOLDERS[val];
-        label.textContent = DETAIL_LABELS[val];
+
+      subtypeWrap.hidden = true;
+      customWrap.hidden = true;
+
+      if (val === 'other') {
+        customWrap.hidden = false;
+        textarea.placeholder = PLACEHOLDERS['other'];
+        label.textContent = 'Anything else that would help us tailor the ideas? (optional)';
+      } else if (val && SUBTYPES[val]) {
+        subtypeSelect.innerHTML = '<option value="">Pick a more specific type (optional)</option>'
+          + SUBTYPES[val].map(function(st) {
+              return '<option value="' + escHtml(st) + '">' + escHtml(st) + '</option>';
+            }).join('');
+        subtypeWrap.hidden = false;
+        textarea.placeholder = PLACEHOLDERS[val] || 'Tell us more about your team and workflows.';
+        label.textContent = 'Any other details? (optional)';
       } else {
-        textarea.placeholder = 'e.g. We\'re a 15-person commercial real estate firm. We manage about 80 properties and spend a lot of time on tenant communications, lease renewals, and reviewing maintenance invoices.';
+        textarea.placeholder = 'e.g. What does your team spend the most time on?';
         label.textContent = 'Tell us more about your business';
       }
     });
 
     async function generateIdeas() {
-      var typeSelect = document.getElementById('business-type');
-      var selectedType = typeSelect.value;
+      var selectedType = document.getElementById('business-type').value;
+      var subtype = document.getElementById('business-subtype').value;
+      var customIndustry = document.getElementById('custom-industry').value.trim();
       var detail = document.getElementById('business-input').value.trim();
 
       if (!selectedType) {
         showError('Please select your business type first.');
-        typeSelect.focus();
+        document.getElementById('business-type').focus();
         return;
       }
 
       var businessDescription;
       if (selectedType === 'other') {
-        if (detail.length < 10) {
-          showError('Please describe your business in a bit more detail.');
+        if (customIndustry.length < 2) {
+          showError('Please tell us what industry you\'re in.');
+          document.getElementById('custom-industry').focus();
           return;
         }
-        businessDescription = detail;
+        businessDescription = customIndustry + (detail ? ': ' + detail : '');
       } else {
-        businessDescription = detail.length >= 5
-          ? selectedType + ' company: ' + detail
-          : selectedType + ' company';
+        var typePart = selectedType + (subtype ? ' — ' + subtype : '');
+        businessDescription = typePart + (detail ? ': ' + detail : '');
       }
 
-      if (businessDescription.length < 5) {
+      if (businessDescription.length < 3) {
         showError('Please describe your business in a bit more detail first.');
         return;
       }
