@@ -421,30 +421,26 @@ function handleContact(req, res) {
 
     console.log('[CONTACT]', JSON.stringify({name, email, company, message, ip, ts: new Date().toISOString()}));
 
-    var smtpHost = process.env.SMTP_HOST;
-    var smtpUser = process.env.SMTP_USER;
-    var smtpPass = process.env.SMTP_PASS;
-    if (smtpHost && smtpUser && smtpPass) {
-      try {
-        var nodemailer = require('nodemailer');
-        var transporter = nodemailer.createTransport({
-          host: smtpHost,
-          port: parseInt(process.env.SMTP_PORT || '587', 10),
-          secure: process.env.SMTP_SECURE === 'true',
-          auth: {user: smtpUser, pass: smtpPass}
-        });
-        transporter.sendMail({
-          from: '"TEG Contact Form" <' + smtpUser + '>',
-          to: 'csullivan@theendurancegroup.com',
-          replyTo: '"' + name.replace(/"/g, '') + '" <' + email + '>',
+    var resendKey = process.env.RESEND_API_KEY;
+    if (resendKey) {
+      fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + resendKey,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          from: 'TEG Website <noreply@theendurancegroup.com>',
+          to: ['csullivan@theendurancegroup.com'],
+          reply_to: email,
           subject: 'New message from ' + name + (company ? ' (' + company + ')' : ''),
           text: 'Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + (company || '—') + '\n\n' + message
-        }, function(err) {
-          if (err) console.error('[CONTACT] sendMail error:', err.message);
-        });
-      } catch(e) {
-        console.error('[CONTACT] nodemailer error:', e.message);
-      }
+        })
+      }).then(function(r) {
+        if (!r.ok) return r.text().then(function(t) { console.error('[CONTACT] Resend error', r.status, t); });
+      }).catch(function(err) {
+        console.error('[CONTACT] Resend error:', err.message);
+      });
     }
 
     res.writeHead(200, {'Content-Type': 'application/json'});
