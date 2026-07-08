@@ -24,6 +24,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .blog-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+    .blog-filter-btn{padding:6px 18px;border:1.5px solid var(--border);border-radius:99px;background:transparent;color:var(--text);cursor:pointer;font-size:14px;font-family:inherit;font-weight:500;transition:background .15s,border-color .15s,color .15s;}
+    .blog-filter-btn:hover{background:var(--bg-light);border-color:var(--accent);}
+    .blog-filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+    .blog-card.hidden{display:none;}
+    .blog-count{font-size:13px;color:var(--text-muted);margin-bottom:24px;}
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -168,7 +176,7 @@
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="success.html">Success</a></li>
           <li><a href="blog.html" aria-current="page">Blog</a></li>
-          <li><a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -181,137 +189,208 @@
     <section class="hero hero--page section">
       <div class="container">
         <span class="eyebrow">Blog</span>
-        <h1>Practical guides on AI automation, client engagement, and ops &amp; CRM work</h1>
-        <p class="lede">Written by the team that builds and runs this work for clients, organized by solution and by industry.</p>
+        <h1>Practical guides on AI automation, client engagement, and ops</h1>
+        <p class="lede">34 posts from the team that builds and runs this work for B2B clients. Pick a topic or read everything.</p>
       </div>
     </section>
 
-    <!-- All Posts -->
+    <!-- Blog Posts with Filter -->
     <section class="section">
       <div class="container">
-        <div class="section-head section-head--center reveal">
-          <span class="eyebrow">All Posts</span>
-          <h2>Browse everything we've written</h2>
-          <p class="lede" style="margin-inline:auto;">Every post, in one row. Drag, scroll, or use the arrows.</p>
+        <div class="blog-filter" role="group" aria-label="Filter posts by topic">
+          <button class="blog-filter-btn active" data-cat="all">All</button>
+          <button class="blog-filter-btn" data-cat="ai-automations">AI Automations</button>
+          <button class="blog-filter-btn" data-cat="growth-systems-ops">Ops &amp; CRM</button>
+          <button class="blog-filter-btn" data-cat="real-estate">Real Estate</button>
+          <button class="blog-filter-btn" data-cat="sales-execution">Client Engagement</button>
+          <button class="blog-filter-btn" data-cat="b2b-technology-saas">B2B Tech &amp; SaaS</button>
+          <button class="blog-filter-btn" data-cat="professional-services">Professional Services</button>
         </div>
-        <div class="post-scroller-wrap reveal">
-          <button type="button" class="post-scroller-nav post-scroller-nav--prev" data-scroll-target="all-posts-scroller" aria-label="Scroll to previous posts">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          </button>
-          <div class="post-scroller" id="all-posts-scroller">
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
-              <h3><a href="blog/what-is-an-ai-automation.html">What counts as a real AI automation, and what's just a demo</a></h3>
-              <p>The difference between an automation that's actually running in production and one that only looks good in a meeting.</p>
-            </div>
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
-              <h3><a href="blog/claude-skills.html">What Claude Skills are, and why we build inside Claude instead of a new app</a></h3>
-              <p>How a packaged Skill teaches Claude your exact process, no new interface required.</p>
-            </div>
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
-              <h3><a href="blog/openai-custom-gpts.html">What custom GPTs are, and why we build inside ChatGPT instead of a new app</a></h3>
-              <p>Putting your playbook inside the ChatGPT your team already opens every day.</p>
-            </div>
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
-              <h3><a href="blog/gemini-gems.html">What Gemini Gems are, and why we build inside Google Workspace instead of a new app</a></h3>
-              <p>Custom AI built right into Gmail, Docs, and Drive.</p>
-            </div>
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
-              <h3><a href="blog/claude-chatgpt-connectors.html">Claude and ChatGPT connectors: give AI the right context without copy-pasting</a></h3>
-              <p>Authorize the tools your team already uses and the AI reads from them — no pasting, no context gaps.</p>
-            </div>
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
-              <h3><a href="blog/mcp-custom-ai-integrations.html">MCP: how we connect AI to the tools your team already runs</a></h3>
-              <p>The open protocol we use to wire AI into HubSpot, Slack, Jira, and custom internal systems.</p>
-            </div>
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/sales-execution.html">Client Engagement</a>
-              <h3><a href="blog/outsourced-sales-execution-guide.html">When it makes sense to outsource sales execution instead of hiring an SDR</a></h3>
-              <p>Why warm-path outreach can outperform a templated outbound motion from day one.</p>
-            </div>
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/growth-systems-ops.html">Ops &amp; CRM</a>
-              <h3><a href="blog/fix-crm-before-more-leads.html">Why adding more leads won't fix a broken CRM</a></h3>
-              <p>How to tell if your systems, not your lead volume, are the real bottleneck.</p>
-            </div>
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/real-estate.html">Real Estate</a>
-              <h3><a href="blog/ai-automation-real-estate.html">How AI automation helps real estate teams respond to leads before they go cold</a></h3>
-              <p>Why speed and warm relationships both matter when a lead is deciding who to work with.</p>
-            </div>
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/b2b-technology-saas.html">B2B Technology &amp; SaaS</a>
-              <h3><a href="blog/ai-automation-b2b-saas.html">Why generic outbound automation fails B2B SaaS</a></h3>
-              <p>What actually moves pipeline for seed-through-Series-B teams.</p>
-            </div>
-            <div class="post-scroller-card">
-              <a class="eyebrow" href="blog/category/professional-services.html">Professional Services</a>
-              <h3><a href="blog/ai-automation-professional-services.html">Why professional services firms should map their network before they prospect</a></h3>
-              <p>How social capital mapping finds warm paths that already exist in your team's network.</p>
-            </div>
-          </div>
-          <button type="button" class="post-scroller-nav post-scroller-nav--next" data-scroll-target="all-posts-scroller" aria-label="Scroll to more posts">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </button>
-        </div>
-      </div>
-    </section>
+        <p class="blog-count" id="blog-count">34 posts</p>
+        <div class="grid grid--3 reveal--stagger reveal" id="blog-grid">
 
-    <!-- By Solution -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head section-head--center">
-          <span class="eyebrow">By Solution</span>
-          <h2>AI Automations, Client Engagement, and Ops &amp; CRM</h2>
-        </div>
-        <div class="grid grid--3">
-          <div class="feature-card">
+          <!-- AI Automations -->
+          <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/what-is-an-ai-automation.html">What counts as a real AI automation, and what's just a demo</a></h3>
-            <p>The difference between an automation that's actually running in production and one that only looks good in a meeting.</p>
+            <p>Not every 'AI automation' is actually running in production. Here's the difference between a real automation and a demo, and what each tier actually looks like.</p>
           </div>
-          <div class="feature-card">
-            <a class="eyebrow" href="blog/category/sales-execution.html">Client Engagement</a>
-            <h3><a href="blog/outsourced-sales-execution-guide.html">When it makes sense to outsource sales execution instead of hiring an SDR</a></h3>
-            <p>Why warm-path outreach can outperform a templated outbound motion from day one.</p>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/what-is-ai-workflow-automation.html">What is AI workflow automation? A plain-English guide</a></h3>
+            <p>AI workflow automation is a specific thing, not a catch-all for anything that uses AI. Here's what it actually means and when it applies to your business.</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/ai-tool-vs-ai-automation.html">The difference between an AI tool and an AI automation</a></h3>
+            <p>Buying an AI tool and building an AI automation are different things. One requires a subscription. The other requires a plan.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/what-to-automate-first.html">What to automate first when you're a small B2B team</a></h3>
+            <p>The hardest part of starting with AI automation isn't the technology. It's knowing where to start. Here's how we think about it.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/why-ai-projects-fail.html">Why AI projects fail: the adoption problem nobody talks about</a></h3>
+            <p>Most AI projects don't fail because the technology doesn't work. They fail because the team doesn't use it. Here's the pattern and how to break it.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/ai-lead-qualification-workflow.html">How to build a lead qualification workflow with AI</a></h3>
+            <p>Most lead qualification is either too manual or too blunt. AI can do it better — here's how to build a workflow that actually works.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/inbound-lead-routing-automation.html">Why inbound leads don't get followed up (and how automation fixes it)</a></h3>
+            <p>Most missed leads aren't a motivation problem — they're a routing problem. Here's how automated lead routing works and what it takes to build one that runs reliably.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/claude-skills.html">What Claude Skills are, and why we build inside Claude instead of a new app</a></h3>
+            <p>Claude Skills let Claude follow your team's exact process inside the chat you already use. Here's what they are and why we build automations with them.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/openai-custom-gpts.html">What custom GPTs are, and why we build inside ChatGPT instead of a new app</a></h3>
+            <p>Custom GPTs let your team run their own playbook inside ChatGPT, the tool they already open every day. Here's what they are and why we build with them.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/gemini-gems.html">What Gemini Gems are, and why we build inside Google Workspace instead of a new app</a></h3>
+            <p>Gemini Gems let you build custom AI inside Gmail, Docs, and Drive, no new app required. Here's what they are and why we build automations with them.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/claude-chatgpt-connectors.html">Claude and ChatGPT connectors: give AI the right context without copy-pasting</a></h3>
+            <p>Claude and ChatGPT both have native connectors that pull live data from Google Drive, HubSpot, Jira, and more. Here's what they are, how they differ, and when we use them.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/claude-vs-chatgpt-business-automation.html">Claude vs ChatGPT for business automation: what actually matters</a></h3>
+            <p>Claude and ChatGPT can both write, reason, and connect to your systems. Here's how to pick the right one for business automation.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/mcp-custom-ai-integrations.html">MCP: how we connect AI to the tools your team already runs</a></h3>
+            <p>The Model Context Protocol lets AI talk to your actual systems — HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/mcp-servers-for-business.html">What MCP servers are and what they mean for your business</a></h3>
+            <p>MCP gives AI assistants direct access to your tools without custom API code. Here's what that actually looks like for a B2B company.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/make-vs-zapier-vs-n8n.html">Make vs Zapier vs n8n: how to choose for B2B automation</a></h3>
+            <p>Three tools that all claim to automate anything. Here's the honest breakdown of Make, Zapier, and n8n for B2B teams.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/zapier-vs-n8n.html">Zapier vs n8n for B2B automation: which one fits your stack</a></h3>
+            <p>Zapier and n8n both connect your tools, but they're built for different teams. Here's how to choose between them for B2B automation.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/n8n-crm-ai-integration.html">How to use n8n to connect your CRM to AI</a></h3>
+            <p>n8n can pull data from your CRM, run it through an AI model, and act on the result — without a developer or a custom API build. Here's how it works.</p>
+          </div>
+
+          <!-- Ops & CRM -->
+          <div class="feature-card blog-card" data-category="growth-systems-ops">
             <a class="eyebrow" href="blog/category/growth-systems-ops.html">Ops &amp; CRM</a>
             <h3><a href="blog/fix-crm-before-more-leads.html">Why adding more leads won't fix a broken CRM</a></h3>
-            <p>How to tell if your systems, not your lead volume, are the real bottleneck.</p>
+            <p>More leads into a disorganized CRM just means more leads falling through the cracks. Here's how to tell if your systems, not your lead volume, are the real bottleneck.</p>
           </div>
-        </div>
-      </div>
-    </section>
+          <div class="feature-card blog-card" data-category="growth-systems-ops">
+            <a class="eyebrow" href="blog/category/growth-systems-ops.html">Ops &amp; CRM</a>
+            <h3><a href="blog/why-your-crm-fails.html">Why your team stops using the CRM after 90 days</a></h3>
+            <p>CRM adoption fails for the same reasons every time. Here's what's actually happening and what actually fixes it.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="growth-systems-ops">
+            <a class="eyebrow" href="blog/category/growth-systems-ops.html">Ops &amp; CRM</a>
+            <h3><a href="blog/hubspot-sequences-vs-ai-automation.html">HubSpot sequences vs AI automation: when to use which</a></h3>
+            <p>HubSpot sequences are built for sales reps. AI automation is built for systems. Understanding the difference helps you know which one to build.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="growth-systems-ops">
+            <a class="eyebrow" href="blog/category/growth-systems-ops.html">Ops &amp; CRM</a>
+            <h3><a href="blog/what-is-a-hubspot-sequence.html">What is a HubSpot sequence and when should you use one</a></h3>
+            <p>HubSpot sequences are one of the most useful tools in the platform, and one of the most misunderstood. Here's what they actually do and when they're the right choice.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="growth-systems-ops">
+            <a class="eyebrow" href="blog/category/growth-systems-ops.html">Ops &amp; CRM</a>
+            <h3><a href="blog/automate-lead-followup-hubspot.html">How to automate lead follow-up in HubSpot without losing the personal touch</a></h3>
+            <p>Automated follow-up gets a bad reputation because most of it is bad. Here's how to build HubSpot follow-up automation that actually feels personal.</p>
+          </div>
 
-    <!-- By Industry -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head section-head--center">
-          <span class="eyebrow">By Industry</span>
-          <h2>Real Estate, B2B Technology &amp; SaaS, and Professional Services</h2>
-        </div>
-        <div class="grid grid--3">
-          <div class="feature-card">
+          <!-- Real Estate -->
+          <div class="feature-card blog-card" data-category="real-estate">
             <a class="eyebrow" href="blog/category/real-estate.html">Real Estate</a>
             <h3><a href="blog/ai-automation-real-estate.html">How AI automation helps real estate teams respond to leads before they go cold</a></h3>
-            <p>Why speed and warm relationships both matter when a lead is deciding who to work with.</p>
+            <p>Real estate leads go cold in minutes, not days. Here's how AI automation and growth systems keep brokerages, developers, and lenders ahead of the response clock.</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card blog-card" data-category="real-estate">
+            <a class="eyebrow" href="blog/category/real-estate.html">Real Estate</a>
+            <h3><a href="blog/real-estate-lead-nurture-automation.html">How to keep real estate leads warm with automated nurture</a></h3>
+            <p>Most real estate leads aren't ready to move for months. Here's how to stay in front of them without manually following up forever.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="real-estate">
+            <a class="eyebrow" href="blog/category/real-estate.html">Real Estate</a>
+            <h3><a href="blog/ai-automation-property-management.html">AI automation for property management companies</a></h3>
+            <p>Property managers handle a lot of repetitive tenant communication and maintenance coordination. Here's where AI automation actually saves time.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="real-estate">
+            <a class="eyebrow" href="blog/category/real-estate.html">Real Estate</a>
+            <h3><a href="blog/ai-tools-commercial-real-estate.html">AI tools for commercial real estate brokers: what's actually useful</a></h3>
+            <p>Commercial real estate has specific workflow problems that AI handles well. Here's what's worth using and what's just noise.</p>
+          </div>
+
+          <!-- Client Engagement -->
+          <div class="feature-card blog-card" data-category="sales-execution">
+            <a class="eyebrow" href="blog/category/sales-execution.html">Client Engagement</a>
+            <h3><a href="blog/outsourced-sales-execution-guide.html">When it makes sense to outsource sales execution instead of hiring an SDR</a></h3>
+            <p>Hiring and ramping an SDR takes months. Here's when outsourced sales execution gets you pipeline faster, and how warm-path outreach changes response rates.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="sales-execution">
+            <a class="eyebrow" href="blog/category/sales-execution.html">Client Engagement</a>
+            <h3><a href="blog/hire-vs-automate.html">When to hire a sales rep vs when to automate</a></h3>
+            <p>The decision isn't binary. Here's how to think through when a person actually moves the needle and when a system handles it better.</p>
+          </div>
+
+          <!-- B2B Tech & SaaS -->
+          <div class="feature-card blog-card" data-category="b2b-technology-saas">
             <a class="eyebrow" href="blog/category/b2b-technology-saas.html">B2B Technology &amp; SaaS</a>
-            <h3><a href="blog/ai-automation-b2b-saas.html">Why generic outbound automation fails B2B SaaS</a></h3>
-            <p>What actually moves pipeline for seed-through-Series-B teams.</p>
+            <h3><a href="blog/ai-automation-b2b-saas.html">Why generic outbound automation fails B2B SaaS, and what to build instead</a></h3>
+            <p>B2B SaaS sales has longer cycles and more stakeholders than most automation accounts for. Here's what actually moves pipeline for seed-through-Series-B teams.</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card blog-card" data-category="b2b-technology-saas">
+            <a class="eyebrow" href="blog/category/b2b-technology-saas.html">B2B Technology &amp; SaaS</a>
+            <h3><a href="blog/saas-ai-reduce-churn.html">How SaaS companies use AI to reduce churn with better onboarding</a></h3>
+            <p>Most SaaS churn is decided in the first 30 days. Here's how AI automation helps you catch at-risk accounts before they're already gone.</p>
+          </div>
+
+          <!-- Professional Services -->
+          <div class="feature-card blog-card" data-category="professional-services">
             <a class="eyebrow" href="blog/category/professional-services.html">Professional Services</a>
             <h3><a href="blog/ai-automation-professional-services.html">Why professional services firms should map their network before they prospect</a></h3>
-            <p>How social capital mapping finds warm paths that already exist in your team's network.</p>
+            <p>Relationship-driven firms don't need more cold outreach. They need to know who in their existing network is already a warm path to their next client.</p>
           </div>
+          <div class="feature-card blog-card" data-category="professional-services">
+            <a class="eyebrow" href="blog/category/professional-services.html">Professional Services</a>
+            <h3><a href="blog/ai-automation-law-firms.html">AI automation for law firms and advisory practices</a></h3>
+            <p>Law firms and advisory practices have specific constraints around confidentiality and billing. Here's what AI automation can do within those constraints.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="professional-services">
+            <a class="eyebrow" href="blog/category/professional-services.html">Professional Services</a>
+            <h3><a href="blog/automate-client-onboarding-consulting.html">How to automate client onboarding for a consulting firm</a></h3>
+            <p>Client onboarding at most consulting firms involves the same steps every engagement. Here's how to automate the repeatable parts without losing the personal relationship.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="professional-services">
+            <a class="eyebrow" href="blog/category/professional-services.html">Professional Services</a>
+            <h3><a href="blog/fractional-executives-ai.html">How fractional executives use AI to manage more clients</a></h3>
+            <p>Fractional executives take on more client relationships than traditional hires. AI automation helps them stay present without being everywhere at once.</p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -358,7 +437,7 @@
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="success.html">Success</a></li>
             <li><a href="blog.html" aria-current="page">Blog</a></li>
-            <li><a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -377,5 +456,29 @@
   <!-- END SHARED FOOTER -->
 
   <script src="js/main.js" defer></script>
+  <script>
+    (function(){
+      var btns = document.querySelectorAll('.blog-filter-btn');
+      var cards = document.querySelectorAll('.blog-card');
+      var countEl = document.getElementById('blog-count');
+      btns.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          btns.forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          var cat = btn.dataset.cat;
+          var visible = 0;
+          cards.forEach(function(card){
+            if(cat === 'all' || card.dataset.category === cat){
+              card.classList.remove('hidden');
+              visible++;
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+          if(countEl) countEl.textContent = visible + (visible === 1 ? ' post' : ' posts');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

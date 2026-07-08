@@ -402,6 +402,56 @@ function serveStatic(req, res) {
   });
 }
 
+function handleContact(req, res) {
+  var ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown').split(',')[0].trim();
+  var body = '';
+  req.on('data', function(chunk) { body += chunk.toString(); });
+  req.on('end', function() {
+    var params = new URLSearchParams(body);
+    var name = (params.get('name') || '').slice(0, 200).trim();
+    var email = (params.get('email') || '').slice(0, 200).trim();
+    var company = (params.get('company') || '').slice(0, 200).trim();
+    var message = (params.get('message') || '').slice(0, 2000).trim();
+
+    if (!name || !email || !message) {
+      res.writeHead(400, {'Content-Type': 'application/json'});
+      res.end(JSON.stringify({ok: false, error: 'Missing required fields'}));
+      return;
+    }
+
+    console.log('[CONTACT]', JSON.stringify({name, email, company, message, ip, ts: new Date().toISOString()}));
+
+    var smtpHost = process.env.SMTP_HOST;
+    var smtpUser = process.env.SMTP_USER;
+    var smtpPass = process.env.SMTP_PASS;
+    if (smtpHost && smtpUser && smtpPass) {
+      try {
+        var nodemailer = require('nodemailer');
+        var transporter = nodemailer.createTransport({
+          host: smtpHost,
+          port: parseInt(process.env.SMTP_PORT || '587', 10),
+          secure: process.env.SMTP_SECURE === 'true',
+          auth: {user: smtpUser, pass: smtpPass}
+        });
+        transporter.sendMail({
+          from: '"TEG Contact Form" <' + smtpUser + '>',
+          to: 'csullivan@theendurancegroup.com',
+          replyTo: '"' + name.replace(/"/g, '') + '" <' + email + '>',
+          subject: 'New message from ' + name + (company ? ' (' + company + ')' : ''),
+          text: 'Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + (company || '—') + '\n\n' + message
+        }, function(err) {
+          if (err) console.error('[CONTACT] sendMail error:', err.message);
+        });
+      } catch(e) {
+        console.error('[CONTACT] nodemailer error:', e.message);
+      }
+    }
+
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify({ok: true}));
+  });
+}
+
 http.createServer((req, res) => {
   var urlPath = req.url.split('?')[0];
   if (req.method === 'POST' && urlPath === '/api/chat') {
@@ -410,6 +460,10 @@ http.createServer((req, res) => {
   }
   if (req.method === 'POST' && urlPath === '/api/ideas') {
     handleIdeas(req, res);
+    return;
+  }
+  if (req.method === 'POST' && urlPath === '/api/contact') {
+    handleContact(req, res);
     return;
   }
   serveStatic(req, res);
