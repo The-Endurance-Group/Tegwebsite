@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How to Use n8n to Connect Your CRM to AI | The Endurance Group</title>
-  <meta name="description" content="n8n can pull data from your CRM, run it through an AI model, and act on the result — without a developer or a custom API build. Here's how it works.">
+  <meta name="description" content="n8n can pull data from your CRM, run it through an AI model, and act on the result, without a developer or a custom API build. Here's how it works.">
   <link rel="canonical" href="https://theendurancegroup.com/blog/n8n-crm-ai-integration.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
   <meta property="og:title" content="How to Use n8n to Connect Your CRM to AI | The Endurance Group">
-  <meta property="og:description" content="n8n can pull data from your CRM, run it through an AI model, and act on the result — without a developer or a custom API build. Here's how it works.">
+  <meta property="og:description" content="n8n can pull data from your CRM, run it through an AI model, and act on the result, without a developer or a custom API build. Here's how it works.">
   <meta property="og:url" content="https://theendurancegroup.com/blog/n8n-crm-ai-integration.html">
   <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="How to Use n8n to Connect Your CRM to AI | The Endurance Group">
-  <meta name="twitter:description" content="n8n can pull data from your CRM, run it through an AI model, and act on the result — without a developer or a custom API build. Here's how it works.">
+  <meta name="twitter:description" content="n8n can pull data from your CRM, run it through an AI model, and act on the result, without a developer or a custom API build. Here's how it works.">
   <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,7 +70,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How to use n8n to connect your CRM to AI",
-    "description": "n8n can pull data from your CRM, run it through an AI model, and act on the result — without a developer or a custom API build. Here's how it works.",
+    "description": "n8n can pull data from your CRM, run it through an AI model, and act on the result, without a developer or a custom API build. Here's how it works.",
     "image": "https://theendurancegroup.com/images/og-default.png",
     "datePublished": "2026-07-03",
     "dateModified": "2026-07-03",
@@ -101,7 +101,7 @@
       "name": "Do I need an AI API key?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most AI nodes in n8n, yes — you'll need a Claude or OpenAI API key. We handle the setup as part of the build."
+        "text": "For most AI nodes in n8n, yes, you'll need a Claude or OpenAI API key. We handle the setup as part of the build."
       }
     },
     {
@@ -109,7 +109,7 @@
       "name": "What if the AI makes a mistake?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We always build human checkpoints into the workflow for anything consequential — the AI flags or drafts, and a person approves before anything gets sent or changed."
+        "text": "We always build human checkpoints into the workflow for anything consequential, the AI flags or drafts, and a person approves before anything gets sent or changed."
       }
     }
   ]
@@ -166,31 +166,31 @@
     <section class="section section--alt">
       <div class="container">
         <div class="prose">
-          <p>Your CRM holds the data. AI tools know how to reason about it. The problem is that they don't talk to each other by default — and most teams either leave that gap open or try to close it manually. n8n is the layer in the middle that connects them without requiring a developer or a custom API project.</p>
+          <p>Your CRM holds the data. AI tools know how to reason about it. The problem is that they don't talk to each other by default, and most teams either leave that gap open or try to close it manually. n8n is the layer in the middle that connects them without requiring a developer or a custom API project.</p>
 
           <h2>Why CRM data and AI don't connect themselves</h2>
-          <p>AI tools like Claude or ChatGPT don't have access to your HubSpot or Salesforce data unless you give it to them. CRMs don't ship with AI reasoning built in — they store and organize records, they don't analyze them. Connecting the two requires middleware: a system that reads data from the CRM, passes it to the AI, and then does something useful with the response.</p>
+          <p>AI tools like Claude or ChatGPT don't have access to your HubSpot or Salesforce data unless you give it to them. CRMs don't ship with AI reasoning built in, they store and organize records, they don't analyze them. Connecting the two requires middleware: a system that reads data from the CRM, passes it to the AI, and then does something useful with the response.</p>
           <p>That's not a limitation of either tool. It's just how APIs work. The gap is bridgeable; it just needs something to bridge it. n8n is one of the best tools for that job.</p>
 
           <h2>What n8n does in the middle</h2>
-          <p>n8n is a workflow automation tool that can poll or receive data from your CRM on a trigger — a new contact created, a deal stage changed, a form submitted — then pass that data to an AI API as part of a structured prompt. The AI processes the data and returns a result. n8n takes that result and acts on it: writing back to the CRM, sending a notification, updating a field, or routing the record somewhere.</p>
+          <p>n8n is a workflow automation tool that can poll or receive data from your CRM on a trigger, a new contact created, a deal stage changed, a form submitted, then pass that data to an AI API as part of a structured prompt. The AI processes the data and returns a result. n8n takes that result and acts on it: writing back to the CRM, sending a notification, updating a field, or routing the record somewhere.</p>
           <p>The whole chain runs without manual intervention. You define the trigger, the logic, and what the AI is supposed to do with the data. Then it runs on its own. This is what makes it a real automation rather than a one-time experiment.</p>
 
           <h2>A real example: enriching new contacts automatically</h2>
-          <p>Here's a build we've done more than once: a new contact is created in HubSpot. n8n detects the trigger and pulls the contact's name, company, and email domain. It sends that data to Claude with a prompt asking for a brief research summary — industry, company size, likely use case. Claude returns the summary as structured text. n8n writes that text into a notes field on the HubSpot contact record.</p>
+          <p>Here's a build we've done more than once: a new contact is created in HubSpot. n8n detects the trigger and pulls the contact's name, company, and email domain. It sends that data to Claude with a prompt asking for a brief research summary, industry, company size, likely use case. Claude returns the summary as structured text. n8n writes that text into a notes field on the HubSpot contact record.</p>
           <p>The result: every new contact arrives with context already attached, before a rep ever looks at the record. No one had to do the research. No one had to copy and paste between tools. The workflow runs in the background every time the trigger fires.</p>
 
           <h2>What you need before you build this</h2>
           <p>Four things: a CRM with API access (HubSpot, Salesforce, Pipedrive, and most major CRMs qualify), an AI API key for whichever model you're using, an n8n instance either cloud-hosted or self-hosted, and a clear definition of what you want the AI to actually do with the data. That last one matters more than the technical setup. The clearer the instruction, the better the output.</p>
-          <p>If you're not sure what the workflow should do, that's the right conversation to have before building anything. We scope this on an initial call so the build actually solves something worth solving — and we deliver the first one free so you can see it running before any budget changes hands.</p>
+          <p>If you're not sure what the workflow should do, that's the right conversation to have before building anything. We scope this on an initial call so the build actually solves something worth solving, and we deliver the first one free so you can see it running before any budget changes hands.</p>
 
           <h2>Frequently asked questions</h2>
           <h3>Does this work with HubSpot?</h3>
           <p>Yes. HubSpot has solid n8n support and it's one of the most common combinations we build.</p>
           <h3>Do I need an AI API key?</h3>
-          <p>For most AI nodes in n8n, yes — you'll need a Claude or OpenAI API key. We handle the setup as part of the build.</p>
+          <p>For most AI nodes in n8n, yes, you'll need a Claude or OpenAI API key. We handle the setup as part of the build.</p>
           <h3>What if the AI makes a mistake?</h3>
-          <p>We always build human checkpoints into the workflow for anything consequential — the AI flags or drafts, and a person approves before anything gets sent or changed.</p>
+          <p>We always build human checkpoints into the workflow for anything consequential, the AI flags or drafts, and a person approves before anything gets sent or changed.</p>
 
           <div class="btn-group">
             <a class="btn btn-primary" href="../how-to-get-started.html">Claim Your Free Automation</a>

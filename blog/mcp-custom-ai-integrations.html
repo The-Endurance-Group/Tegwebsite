@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MCP: How We Connect AI to the Tools Your Team Already Runs | The Endurance Group</title>
-  <meta name="description" content="The Model Context Protocol lets AI talk to your actual systems — HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.">
+  <meta name="description" content="The Model Context Protocol lets AI talk to your actual systems, HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.">
   <link rel="canonical" href="https://theendurancegroup.com/blog/mcp-custom-ai-integrations.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
   <meta property="og:title" content="MCP: How We Connect AI to the Tools Your Team Already Runs | The Endurance Group">
-  <meta property="og:description" content="The Model Context Protocol lets AI talk to your actual systems — HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.">
+  <meta property="og:description" content="The Model Context Protocol lets AI talk to your actual systems, HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.">
   <meta property="og:url" content="https://theendurancegroup.com/blog/mcp-custom-ai-integrations.html">
   <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MCP: How We Connect AI to the Tools Your Team Already Runs | The Endurance Group">
-  <meta name="twitter:description" content="The Model Context Protocol lets AI talk to your actual systems — HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.">
+  <meta name="twitter:description" content="The Model Context Protocol lets AI talk to your actual systems, HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.">
   <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +69,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "MCP: how we connect AI to the tools your team already runs",
-    "description": "The Model Context Protocol lets AI talk to your actual systems — HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.",
+    "description": "The Model Context Protocol lets AI talk to your actual systems, HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.",
     "image": "https://theendurancegroup.com/images/og-default.png",
     "datePublished": "2026-06-30",
     "dateModified": "2026-06-30",
@@ -92,7 +92,7 @@
       "name": "Does our team need to be technical to use an MCP server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically — your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background."
+        "text": "Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically, your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background."
       }
     },
     {
@@ -100,7 +100,7 @@
       "name": "Is MCP the same as a connector or a Skill?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not exactly. Connectors (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that — it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A Skill defines how the AI behaves; MCP defines what it can reach."
+        "text": "Not exactly. Connectors (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that, it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A Skill defines how the AI behaves; MCP defines what it can reach."
       }
     },
     {
@@ -108,7 +108,7 @@
       "name": "Can we use an existing MCP server and a custom one at the same time?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Most client setups use a mix — existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request."
+        "text": "Yes. Most client setups use a mix, existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request."
       }
     }
   ]
@@ -165,40 +165,40 @@
     <section class="section section--alt">
       <div class="container">
         <div class="prose">
-          <p>Most AI integrations are built the same way: one team writes a custom connection between their AI tool and their CRM, and another team builds a completely different custom connection between a different AI tool and that same CRM, and neither one works with the other's setup. It's fragmented, slow to build, and expensive to maintain. MCP — the Model Context Protocol — was designed to solve that, and it's changed how we build AI integrations for clients.</p>
+          <p>Most AI integrations are built the same way: one team writes a custom connection between their AI tool and their CRM, and another team builds a completely different custom connection between a different AI tool and that same CRM, and neither one works with the other's setup. It's fragmented, slow to build, and expensive to maintain. MCP, the Model Context Protocol, was designed to solve that, and it's changed how we build AI integrations for clients.</p>
 
           <h2>What MCP actually is</h2>
           <p>MCP is an open protocol that Anthropic released in late 2024. It defines a standard way for AI models to communicate with external tools and data sources. Instead of every integration being a custom one-off, MCP creates a common language: any MCP-compatible AI can talk to any MCP-compatible server, and the connection works regardless of which AI you're using or which tool you're connecting to.</p>
-          <p>There are three pieces. The <strong>host</strong> is the AI application — Claude.ai, Claude Desktop, or any AI tool that's been built to support MCP. The <strong>client</strong> is built into the host and handles the back-and-forth communication. The <strong>server</strong> is a small service that sits in front of your tool — HubSpot, Slack, your database, whatever — and translates the AI's requests into API calls that the tool understands. When the AI needs to look something up or take an action, it talks to the server; the server talks to the tool; the result comes back to the AI.</p>
+          <p>There are three pieces. The <strong>host</strong> is the AI application, Claude.ai, Claude Desktop, or any AI tool that's been built to support MCP. The <strong>client</strong> is built into the host and handles the back-and-forth communication. The <strong>server</strong> is a small service that sits in front of your tool, HubSpot, Slack, your database, whatever, and translates the AI's requests into API calls that the tool understands. When the AI needs to look something up or take an action, it talks to the server; the server talks to the tool; the result comes back to the AI.</p>
 
           <h2>Existing MCP servers we use for clients</h2>
-          <p>The MCP ecosystem has grown quickly. For most common B2B tools, a server already exists — either published officially by the vendor or built and maintained by the open-source community. The ones we reach for most often:</p>
+          <p>The MCP ecosystem has grown quickly. For most common B2B tools, a server already exists, either published officially by the vendor or built and maintained by the open-source community. The ones we reach for most often:</p>
           <ul>
-            <li><strong>HubSpot</strong> — read and write contacts, companies, deals, and activity history. Partners can ask "what's the last touchpoint on the Garrison account?" and get a real answer from live CRM data.</li>
-            <li><strong>Slack</strong> — search conversations, read channel history, send messages. Useful for automations that need to surface information from Slack or post updates back to it.</li>
-            <li><strong>GitHub</strong> — read repositories, open and update issues, review pull requests. For software clients, this means the AI can reference actual code and project state instead of a summary someone wrote.</li>
-            <li><strong>Google Drive and Docs</strong> — read, search, and in some cases write documents and spreadsheets stored in Drive.</li>
-            <li><strong>Notion</strong> — read and write pages and database records, useful for teams running their ops wiki or project tracker in Notion.</li>
-            <li><strong>Postgres and other databases</strong> — run structured queries directly against a database, which is often the cleanest way to give an AI access to operational data without building a full API layer first.</li>
-            <li><strong>Jira</strong> — read issue status, update fields, create tickets. We use this for professional services clients who track client work in Jira and want the AI to surface status without someone manually pulling reports.</li>
+            <li><strong>HubSpot</strong>, read and write contacts, companies, deals, and activity history. Partners can ask "what's the last touchpoint on the Garrison account?" and get a real answer from live CRM data.</li>
+            <li><strong>Slack</strong>, search conversations, read channel history, send messages. Useful for automations that need to surface information from Slack or post updates back to it.</li>
+            <li><strong>GitHub</strong>, read repositories, open and update issues, review pull requests. For software clients, this means the AI can reference actual code and project state instead of a summary someone wrote.</li>
+            <li><strong>Google Drive and Docs</strong>, read, search, and in some cases write documents and spreadsheets stored in Drive.</li>
+            <li><strong>Notion</strong>, read and write pages and database records, useful for teams running their ops wiki or project tracker in Notion.</li>
+            <li><strong>Postgres and other databases</strong>, run structured queries directly against a database, which is often the cleanest way to give an AI access to operational data without building a full API layer first.</li>
+            <li><strong>Jira</strong>, read issue status, update fields, create tickets. We use this for professional services clients who track client work in Jira and want the AI to surface status without someone manually pulling reports.</li>
           </ul>
 
           <h2>When we build a custom MCP server</h2>
           <p>We check for an existing server first. If one exists and covers what the client needs, we configure it and move on. But a few situations consistently push us toward building a custom server instead.</p>
-          <p>The most common: a client has a proprietary internal tool that no community server covers. We've built custom MCP servers for homegrown project management systems, industry-specific CRMs, and internal databases with schemas that wouldn't map cleanly to a generic SQL server. The MCP server we build is thin — it exposes exactly the operations the AI needs and nothing more. A partner at a professional services firm wanted to ask Claude "what's the status on the Harrington engagement?" and get a real answer from their internal system. We built an MCP server that read from their project database, surfaced the right fields, and handled the firm's specific naming conventions. The partner now uses it every day.</p>
+          <p>The most common: a client has a proprietary internal tool that no community server covers. We've built custom MCP servers for homegrown project management systems, industry-specific CRMs, and internal databases with schemas that wouldn't map cleanly to a generic SQL server. The MCP server we build is thin, it exposes exactly the operations the AI needs and nothing more. A partner at a professional services firm wanted to ask Claude "what's the status on the Harrington engagement?" and get a real answer from their internal system. We built an MCP server that read from their project database, surfaced the right fields, and handled the firm's specific naming conventions. The partner now uses it every day.</p>
           <p>The second situation: an existing server exists but doesn't expose the right subset of data. Some open-source MCP servers are intentionally broad; they expose everything the underlying API offers. For a client with sensitive data, that's more access than we want to scope to an AI. A custom server lets us define exactly which records the AI can reach and what it can do with them.</p>
-          <p>Third: the client needs to combine data from multiple sources into one coherent response. A single AI query might need to pull a contact record from HubSpot, check their recent email thread in Gmail, and look up their contract status in a spreadsheet — and surface all of that as one answer. A custom MCP server can orchestrate those calls and return a unified result, rather than asking the AI to stitch together three separate responses.</p>
+          <p>Third: the client needs to combine data from multiple sources into one coherent response. A single AI query might need to pull a contact record from HubSpot, check their recent email thread in Gmail, and look up their contract status in a spreadsheet, and surface all of that as one answer. A custom MCP server can orchestrate those calls and return a unified result, rather than asking the AI to stitch together three separate responses.</p>
 
           <h2>How we decide: existing versus custom</h2>
-          <p>We start every MCP conversation with two questions: what does the AI need to read or do, and does an existing server cover exactly that? If the answer is yes, we configure the existing server and test it. If the answer is "mostly, but not quite," we look at whether the gap is small enough to work around or significant enough to warrant a custom build. If no server exists for the tool at all, we build one. The decision is always about what actually gets used in production — a perfectly designed integration that doesn't fit the client's real workflow isn't done, it's just deferred maintenance.</p>
+          <p>We start every MCP conversation with two questions: what does the AI need to read or do, and does an existing server cover exactly that? If the answer is yes, we configure the existing server and test it. If the answer is "mostly, but not quite," we look at whether the gap is small enough to work around or significant enough to warrant a custom build. If no server exists for the tool at all, we build one. The decision is always about what actually gets used in production, a perfectly designed integration that doesn't fit the client's real workflow isn't done, it's just deferred maintenance.</p>
 
           <h2>Frequently asked questions</h2>
           <h3>Does our team need to be technical to use an MCP server?</h3>
-          <p>Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically — your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background.</p>
+          <p>Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically, your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background.</p>
           <h3>Is MCP the same as a connector or a Skill?</h3>
-          <p>Not exactly. <a href="claude-chatgpt-connectors.html">Connectors</a> (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that — it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A <a href="claude-skills.html">Skill</a> defines how the AI behaves; MCP defines what it can reach.</p>
+          <p>Not exactly. <a href="claude-chatgpt-connectors.html">Connectors</a> (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that, it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A <a href="claude-skills.html">Skill</a> defines how the AI behaves; MCP defines what it can reach.</p>
           <h3>Can we use an existing MCP server and a custom one at the same time?</h3>
-          <p>Yes. Most client setups use a mix — existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request.</p>
+          <p>Yes. Most client setups use a mix, existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request.</p>
 
           <div class="btn-group">
             <a class="btn btn-primary" href="../how-to-get-started.html">Claim Your Free Automation</a>

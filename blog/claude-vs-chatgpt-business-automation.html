@@ -166,22 +166,22 @@
     <section class="section section--alt">
       <div class="container">
         <div class="prose">
-          <p>The question most people ask is "which AI is smarter?" That's not the right question for business automation. What matters is whether the model does the specific job reliably, at the volume you need, at a cost that makes sense. Claude and ChatGPT are both capable — the choice depends on the task, not the brand.</p>
+          <p>The question most people ask is "which AI is smarter?" That's not the right question for business automation. What matters is whether the model does the specific job reliably, at the volume you need, at a cost that makes sense. Claude and ChatGPT are both capable, the choice depends on the task, not the brand.</p>
 
           <h2>Why the "which is smarter" question misses the point</h2>
-          <p>In automation, the AI is one node in a workflow. It receives data, processes it according to a prompt, and returns an output. The question isn't which model scores higher on a benchmark — it's which one produces the right output for your specific prompt, returns it in the structured format your workflow expects, and does so consistently at scale. API reliability, context window size, tool-calling support, and structured output handling matter more than general intelligence rankings.</p>
+          <p>In automation, the AI is one node in a workflow. It receives data, processes it according to a prompt, and returns an output. The question isn't which model scores higher on a benchmark, it's which one produces the right output for your specific prompt, returns it in the structured format your workflow expects, and does so consistently at scale. API reliability, context window size, tool-calling support, and structured output handling matter more than general intelligence rankings.</p>
           <p>Both models have gotten good enough that the differences are often marginal. The edge cases are where you notice them. That's why we test both on the actual prompt before committing to one.</p>
 
           <h2>Where Claude tends to have the edge</h2>
-          <p>Claude handles longer documents better — its context window is large enough to process full contracts, lengthy email threads, or multi-page reports without losing coherence. It also tends to follow precise, detailed instructions more faithfully without drifting into creative interpretation of what you asked for. For tasks involving structured data extraction, document analysis, or following strict output formats, Claude's instruction-following behavior makes it easier to build reliable automations around.</p>
+          <p>Claude handles longer documents better, its context window is large enough to process full contracts, lengthy email threads, or multi-page reports without losing coherence. It also tends to follow precise, detailed instructions more faithfully without drifting into creative interpretation of what you asked for. For tasks involving structured data extraction, document analysis, or following strict output formats, Claude's instruction-following behavior makes it easier to build reliable automations around.</p>
           <p>If your automation involves ingesting long inputs or producing output that has to match a specific schema every time, Claude is often the more predictable choice.</p>
 
           <h2>Where ChatGPT tends to have the edge</h2>
-          <p>ChatGPT has a broader plugin and integration ecosystem, and most third-party tools that offer AI connectivity built it for OpenAI first. If you're building inside a platform that has native ChatGPT support, that's a real practical advantage — less setup work on the integration side. ChatGPT also tends to handle conversational flows slightly better, which matters if the automation involves a back-and-forth dialogue rather than a single structured prompt.</p>
-          <p>For teams where end users interact directly with the AI component — asking follow-up questions, for example — ChatGPT's conversational feel tends to land better.</p>
+          <p>ChatGPT has a broader plugin and integration ecosystem, and most third-party tools that offer AI connectivity built it for OpenAI first. If you're building inside a platform that has native ChatGPT support, that's a real practical advantage, less setup work on the integration side. ChatGPT also tends to handle conversational flows slightly better, which matters if the automation involves a back-and-forth dialogue rather than a single structured prompt.</p>
+          <p>For teams where end users interact directly with the AI component, asking follow-up questions, for example, ChatGPT's conversational feel tends to land better.</p>
 
           <h2>How we actually decide</h2>
-          <p>We write the prompt, run it through both models on real data from your use case, and compare outputs. The one that produces better results for your specific task wins. That's it. We're not committed to either platform, and neither should you be — the goal is an automation that works, not a vendor relationship.</p>
+          <p>We write the prompt, run it through both models on real data from your use case, and compare outputs. The one that produces better results for your specific task wins. That's it. We're not committed to either platform, and neither should you be, the goal is an automation that works, not a vendor relationship.</p>
           <p>In some builds, we use both: Claude for the document analysis step, ChatGPT for a conversational interface layer, or vice versa. The workflow doesn't care which model runs each node as long as the output is right.</p>
 
           <h2>Frequently asked questions</h2>

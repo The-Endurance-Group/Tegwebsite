@@ -92,7 +92,7 @@
       "name": "Do connectors replace a full automation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Connectors are a read layer — they give the AI context so it can answer better. A full automation handles multi-step workflows, writes data back to systems, and runs without a person starting each conversation. Most clients end up using both."
+        "text": "No. Connectors are a read layer, they give the AI context so it can answer better. A full automation handles multi-step workflows, writes data back to systems, and runs without a person starting each conversation. Most clients end up using both."
       }
     },
     {
@@ -100,7 +100,7 @@
       "name": "Do Claude and ChatGPT connectors work with each other's apps?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No — each platform's connectors only work inside that platform. Claude's integrations live in claude.ai; ChatGPT's connectors live in ChatGPT. If your team uses both tools, you'd set up connectors in each one separately."
+        "text": "No, each platform's connectors only work inside that platform. Claude's integrations live in claude.ai; ChatGPT's connectors live in ChatGPT. If your team uses both tools, you'd set up connectors in each one separately."
       }
     },
     {
@@ -108,7 +108,7 @@
       "name": "Is connector access secure?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Connectors use OAuth — you authorize specific read access to specific apps, the same way you'd authorize any SaaS tool. The AI only sees what you've scoped to it, and you can revoke access at any time from your account settings."
+        "text": "Connectors use OAuth, you authorize specific read access to specific apps, the same way you'd authorize any SaaS tool. The AI only sees what you've scoped to it, and you can revoke access at any time from your account settings."
       }
     }
   ]
@@ -165,31 +165,31 @@
     <section class="section section--alt">
       <div class="container">
         <div class="prose">
-          <p>The most common complaint I hear from teams that have tried AI: "It gives great answers, but it doesn't know anything about our business." That's usually a context problem, not a model problem. The AI is answering from general knowledge because nobody has given it access to your actual information. Claude and ChatGPT both have a native way to fix that — connectors — and most teams haven't turned them on yet.</p>
+          <p>The most common complaint I hear from teams that have tried AI: "It gives great answers, but it doesn't know anything about our business." That's usually a context problem, not a model problem. The AI is answering from general knowledge because nobody has given it access to your actual information. Claude and ChatGPT both have a native way to fix that, connectors, and most teams haven't turned them on yet.</p>
 
           <h2>What a connector actually is</h2>
-          <p>A connector is an authorization you grant inside the AI platform that lets it read from a specific external source — your Google Drive, your HubSpot, your Jira board, your internal wiki. Once you authorize it, the AI can search and reference that source in the middle of a conversation without you having to paste anything in. You ask a question, the AI pulls the relevant context from where it actually lives, and it answers with that.</p>
-          <p>This is different from a <a href="claude-skills.html">Claude Skill</a> or a <a href="openai-custom-gpts.html">custom GPT</a>, which define how the AI behaves. Connectors define what it can see. The two work together — a Skill tells the AI what process to follow, a connector gives it the live data to follow that process with.</p>
+          <p>A connector is an authorization you grant inside the AI platform that lets it read from a specific external source, your Google Drive, your HubSpot, your Jira board, your internal wiki. Once you authorize it, the AI can search and reference that source in the middle of a conversation without you having to paste anything in. You ask a question, the AI pulls the relevant context from where it actually lives, and it answers with that.</p>
+          <p>This is different from a <a href="claude-skills.html">Claude Skill</a> or a <a href="openai-custom-gpts.html">custom GPT</a>, which define how the AI behaves. Connectors define what it can see. The two work together, a Skill tells the AI what process to follow, a connector gives it the live data to follow that process with.</p>
 
           <h2>Claude's integrations</h2>
-          <p>Anthropic calls these "Integrations" inside claude.ai settings, available on Pro, Team, and Enterprise plans. Once you authorize one, it shows up as a source Claude can reference in any conversation. The current list covers the tools most B2B teams already run: Google Drive, GitHub, Jira, Confluence, HubSpot, Dropbox, Linear, Sentry, and Asana, with more being added. The HubSpot integration is one we use constantly — it means a partner can ask "what's the deal stage on the Morrison account?" and Claude looks it up in HubSpot instead of the partner having to pull it up themselves.</p>
+          <p>Anthropic calls these "Integrations" inside claude.ai settings, available on Pro, Team, and Enterprise plans. Once you authorize one, it shows up as a source Claude can reference in any conversation. The current list covers the tools most B2B teams already run: Google Drive, GitHub, Jira, Confluence, HubSpot, Dropbox, Linear, Sentry, and Asana, with more being added. The HubSpot integration is one we use constantly, it means a partner can ask "what's the deal stage on the Morrison account?" and Claude looks it up in HubSpot instead of the partner having to pull it up themselves.</p>
 
           <h2>ChatGPT's connectors</h2>
-          <p>ChatGPT's version lives in the same place: account settings, under "Connected apps." The current set includes Google Drive, Microsoft OneDrive and SharePoint, Notion, and Box. ChatGPT also treats its built-in tools — web search, code execution, image generation — as connectors you can enable or disable per conversation. For teams running Microsoft 365, the SharePoint connector alone is worth setting up: ask ChatGPT to summarize a proposal or find a contract clause, and it reads directly from SharePoint instead of you digging through folders.</p>
+          <p>ChatGPT's version lives in the same place: account settings, under "Connected apps." The current set includes Google Drive, Microsoft OneDrive and SharePoint, Notion, and Box. ChatGPT also treats its built-in tools, web search, code execution, image generation, as connectors you can enable or disable per conversation. For teams running Microsoft 365, the SharePoint connector alone is worth setting up: ask ChatGPT to summarize a proposal or find a contract clause, and it reads directly from SharePoint instead of you digging through folders.</p>
 
           <h2>How we use connectors for clients</h2>
           <p>We treat connectors as the fastest way to make an AI immediately useful inside a team's existing workflow. The process is straightforward: identify which two or three sources the team references most, authorize them, and the AI goes from knowing nothing about the client's business to being able to answer real questions from real data. For a professional services firm, that might be Google Drive (for client deliverables and proposals) plus HubSpot (for deal and contact history). For a software company, it might be GitHub plus Jira plus Notion. The AI stops being a general-purpose tool and starts behaving like a colleague who actually knows the context.</p>
 
           <h2>When connectors aren't enough</h2>
-          <p>Connectors are a read layer. They let the AI pull information during a conversation; they don't write data back, trigger workflows, or run without a human starting the chat. If your goal is to automatically update CRM records, generate a report on a schedule, or route inbound leads without anyone asking the AI to do it — that's a full automation, not a connector. Connectors are where we often start with a new client because the setup is quick and the value is immediate. From there, we layer in automations that actually do work in the background. The <a href="what-is-an-ai-automation.html">distinction between the two</a> is worth understanding before you decide which path to take.</p>
+          <p>Connectors are a read layer. They let the AI pull information during a conversation; they don't write data back, trigger workflows, or run without a human starting the chat. If your goal is to automatically update CRM records, generate a report on a schedule, or route inbound leads without anyone asking the AI to do it, that's a full automation, not a connector. Connectors are where we often start with a new client because the setup is quick and the value is immediate. From there, we layer in automations that actually do work in the background. The <a href="what-is-an-ai-automation.html">distinction between the two</a> is worth understanding before you decide which path to take.</p>
 
           <h2>Frequently asked questions</h2>
           <h3>Do connectors replace a full automation?</h3>
-          <p>No. Connectors are a read layer — they give the AI context so it can answer better. A full automation handles multi-step workflows, writes data back to systems, and runs without a person starting each conversation. Most clients end up using both.</p>
+          <p>No. Connectors are a read layer, they give the AI context so it can answer better. A full automation handles multi-step workflows, writes data back to systems, and runs without a person starting each conversation. Most clients end up using both.</p>
           <h3>Do Claude and ChatGPT connectors work with each other's apps?</h3>
-          <p>No — each platform's connectors only work inside that platform. Claude's integrations live in claude.ai; ChatGPT's connectors live in ChatGPT. If your team uses both tools, you'd set up connectors in each one separately.</p>
+          <p>No, each platform's connectors only work inside that platform. Claude's integrations live in claude.ai; ChatGPT's connectors live in ChatGPT. If your team uses both tools, you'd set up connectors in each one separately.</p>
           <h3>Is connector access secure?</h3>
-          <p>Connectors use OAuth — you authorize specific read access to specific apps, the same way you'd authorize any SaaS tool. The AI only sees what you've scoped to it, and you can revoke access at any time from your account settings.</p>
+          <p>Connectors use OAuth, you authorize specific read access to specific apps, the same way you'd authorize any SaaS tool. The AI only sees what you've scoped to it, and you can revoke access at any time from your account settings.</p>
 
           <div class="btn-group">
             <a class="btn btn-primary" href="../how-to-get-started.html">Claim Your Free Automation</a>
@@ -219,7 +219,7 @@
           <div class="feature-card">
             <span class="eyebrow">AI Automations</span>
             <h3><a href="mcp-custom-ai-integrations.html">MCP: how we connect AI to the tools your team already runs</a></h3>
-            <p>The protocol underneath connectors — and when we build custom ones instead of using what exists.</p>
+            <p>The protocol underneath connectors, and when we build custom ones instead of using what exists.</p>
           </div>
         </div>
       </div>
