@@ -93,7 +93,7 @@
       "name": "How many follow-ups should an automated sequence have?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For inbound leads, 3–5 with decreasing urgency is usually right. For cold outreach, fewer is better — one or two good touches beat five mediocre ones."
+        "text": "For inbound leads, 3–5 with decreasing urgency is usually right. For cold outreach, fewer is better, one or two good touches beat five mediocre ones."
       }
     },
     {
@@ -101,7 +101,7 @@
       "name": "How do we keep it from sounding robotic?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Branching on behavior is the bigger lever. A follow-up that references what someone downloaded or clicked is fundamentally different from one that doesn't — and the difference is obvious to the recipient."
+        "text": "Branching on behavior is the bigger lever. A follow-up that references what someone downloaded or clicked is fundamentally different from one that doesn't, and the difference is obvious to the recipient."
       }
     },
     {
@@ -169,32 +169,32 @@
           <p>The reason automated follow-up has a bad reputation is not that automation is the problem. It's that most automated follow-up is generic, poorly timed, and structured in a way that makes it obvious no one thought about the recipient. That's a content and logic problem, not a technology problem. The technology is fine.</p>
 
           <h2>Why automated follow-up fails most of the time</h2>
-          <p>The typical failure pattern: generic message sent from a no-reply address, wrong timing relative to what the lead actually did, no branching based on behavior, same message whether the lead downloaded a pricing guide or signed up for a free trial. The automation is technically working — the emails are going out — but the output is bad and the lead can tell.</p>
+          <p>The typical failure pattern: generic message sent from a no-reply address, wrong timing relative to what the lead actually did, no branching based on behavior, same message whether the lead downloaded a pricing guide or signed up for a free trial. The automation is technically working, the emails are going out, but the output is bad and the lead can tell.</p>
           <p>The fix isn't to make the emails sound more human with better copywriting. It's to make the messages actually relevant to what each lead did. Relevance is the lever, and automation is what makes relevance scalable.</p>
 
           <h2>What HubSpot can do natively</h2>
-          <p>HubSpot has solid native follow-up tools. Sequences handle rep-driven outreach — a rep enrolls a contact and a defined series of emails and tasks runs on a schedule. Workflows handle contact property-triggered automation — a lead fills out a form, a property changes, a list membership updates, and an email goes out. Smart send timing adjusts delivery based on when each contact is most likely to open. Personalization tokens pull in contact and company data.</p>
-          <p>For straightforward follow-up — thank you email after a form fill, reminder about a webinar, basic post-download nurture — HubSpot's native tools are sufficient. You don't need to build anything custom for simple use cases.</p>
+          <p>HubSpot has solid native follow-up tools. Sequences handle rep-driven outreach, a rep enrolls a contact and a defined series of emails and tasks runs on a schedule. Workflows handle contact property-triggered automation, a lead fills out a form, a property changes, a list membership updates, and an email goes out. Smart send timing adjusts delivery based on when each contact is most likely to open. Personalization tokens pull in contact and company data.</p>
+          <p>For straightforward follow-up, thank you email after a form fill, reminder about a webinar, basic post-download nurture, HubSpot's native tools are sufficient. You don't need to build anything custom for simple use cases.</p>
 
           <h2>Where AI makes the difference</h2>
-          <p>HubSpot's personalization tokens can pull in a name and company. That's table stakes. What they can't do is generate a message that references the specific thing a lead downloaded, the page they spent time on, or the answer they gave in a form — in natural language, at scale, for every contact.</p>
-          <p>AI can. When a lead downloads a specific guide, the follow-up can reference that guide specifically — what the lead is probably trying to solve, what the next useful resource is, what conversation makes sense to have next. That level of specificity is what makes a follow-up read as personal rather than automated. We connect HubSpot's workflow triggers to an AI model that drafts the message based on lead-specific data, then either sends it automatically or queues it for rep review depending on lead score and intent signals.</p>
+          <p>HubSpot's personalization tokens can pull in a name and company. That's table stakes. What they can't do is generate a message that references the specific thing a lead downloaded, the page they spent time on, or the answer they gave in a form, in natural language, at scale, for every contact.</p>
+          <p>AI can. When a lead downloads a specific guide, the follow-up can reference that guide specifically, what the lead is probably trying to solve, what the next useful resource is, what conversation makes sense to have next. That level of specificity is what makes a follow-up read as personal rather than automated. We connect HubSpot's workflow triggers to an AI model that drafts the message based on lead-specific data, then either sends it automatically or queues it for rep review depending on lead score and intent signals.</p>
 
           <h2>What the setup actually looks like</h2>
           <p>Lead submits a form. The HubSpot workflow triggers immediately. Lead source, form answers, and any known behavioral data get passed to an AI model, which generates a follow-up message. That message goes out within minutes of the form submission. Two more touches queue for days three and five, each branching based on whether the lead has replied or taken any action. If a reply comes in, the sequence pauses and routes to the rep. If the lead clicks a pricing page between touches, that behavior triggers a "hot lead" alert and bumps the contact to the rep's call queue.</p>
-          <p>This is a mid-complexity build — not a single workflow, but not a massive custom system either. It typically takes one to two weeks to scope, build, and test. The <a href="../pricing.html">pricing page</a> covers what this tier of build looks like in practice.</p>
+          <p>This is a mid-complexity build, not a single workflow, but not a massive custom system either. It typically takes one to two weeks to scope, build, and test. The <a href="../pricing.html">pricing page</a> covers what this tier of build looks like in practice.</p>
 
           <h2>Frequently asked questions</h2>
           <h3>How many follow-ups should an automated sequence have?</h3>
-          <p>For inbound leads, 3–5 with decreasing urgency is usually right. For cold outreach, fewer is better — one or two good touches beat five mediocre ones.</p>
+          <p>For inbound leads, 3–5 with decreasing urgency is usually right. For cold outreach, fewer is better, one or two good touches beat five mediocre ones.</p>
           <h3>How do we keep it from sounding robotic?</h3>
-          <p>Branching on behavior is the bigger lever. A follow-up that references what someone downloaded or clicked is fundamentally different from one that doesn't — and the difference is obvious to the recipient.</p>
+          <p>Branching on behavior is the bigger lever. A follow-up that references what someone downloaded or clicked is fundamentally different from one that doesn't, and the difference is obvious to the recipient.</p>
           <h3>Can this work without Sales Hub?</h3>
           <p>Some of it. HubSpot's free CRM supports basic contact properties and list triggers. For sequences you need Sales Hub. For AI-enhanced messaging, you can build on top of the free tier with the right integration.</p>
 
           <div class="btn-group">
             <a class="btn btn-primary" href="../how-to-get-started.html">Claim Your Free Automation</a>
-            <a class="btn btn-secondary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Schedule a Call</a>
+            <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>
           </div>
         </div>
       </div>

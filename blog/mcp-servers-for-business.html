@@ -101,7 +101,7 @@
       "name": "Is this the same as a plugin or API integration?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. MCP is a protocol — a standardized way for AI models to talk to external systems in real time. Plugins were platform-specific and fragmented. MCP is designed to work across models and tools."
+        "text": "No. MCP is a protocol, a standardized way for AI models to talk to external systems in real time. Plugins were platform-specific and fragmented. MCP is designed to work across models and tools."
       }
     },
     {
@@ -166,35 +166,35 @@
     <section class="section section--alt">
       <div class="container">
         <div class="prose">
-          <p>MCP stands for Model Context Protocol. It's a standard that lets AI assistants connect to external tools and take actions inside them — without requiring a custom integration for each one. If you've been watching the AI space and wondering why everyone is suddenly talking about MCP servers, this is the explanation.</p>
+          <p>MCP stands for Model Context Protocol. It's a standard that lets AI assistants connect to external tools and take actions inside them, without requiring a custom integration for each one. If you've been watching the AI space and wondering why everyone is suddenly talking about MCP servers, this is the explanation.</p>
 
           <h2>The problem MCP solves</h2>
-          <p>Every business tool has its own API. Connecting an AI model to your CRM, your calendar, your email, and your project management system used to mean building a separate integration for each one — different authentication, different data formats, different endpoints. That's engineering work, and most companies don't have the capacity to do it at the pace AI tools are moving.</p>
-          <p>MCP is a standardized protocol that changes the equation. Instead of each tool requiring a custom integration, any tool that implements MCP can talk to any AI model that supports it using the same standard. Build once, connect everywhere — that's the promise, and it's increasingly the reality.</p>
+          <p>Every business tool has its own API. Connecting an AI model to your CRM, your calendar, your email, and your project management system used to mean building a separate integration for each one, different authentication, different data formats, different endpoints. That's engineering work, and most companies don't have the capacity to do it at the pace AI tools are moving.</p>
+          <p>MCP is a standardized protocol that changes the equation. Instead of each tool requiring a custom integration, any tool that implements MCP can talk to any AI model that supports it using the same standard. Build once, connect everywhere, that's the promise, and it's increasingly the reality.</p>
 
           <h2>What an MCP server actually does</h2>
-          <p>An MCP server sits between an AI model and an external tool. It exposes the tool's capabilities — read data, create records, send messages, update fields — in a format the AI can understand and call. When you're talking to an AI assistant that has MCP connections, the assistant can pull data from your CRM in the same conversation where it drafts an email and schedules a follow-up task. It's not switching tabs; it's calling the tools directly.</p>
-          <p>The server also handles permissions — it controls what the AI can and can't do in each connected tool. That's important. You want the AI to be able to read a deal record without being able to delete your entire contact database.</p>
+          <p>An MCP server sits between an AI model and an external tool. It exposes the tool's capabilities, read data, create records, send messages, update fields, in a format the AI can understand and call. When you're talking to an AI assistant that has MCP connections, the assistant can pull data from your CRM in the same conversation where it drafts an email and schedules a follow-up task. It's not switching tabs; it's calling the tools directly.</p>
+          <p>The server also handles permissions, it controls what the AI can and can't do in each connected tool. That's important. You want the AI to be able to read a deal record without being able to delete your entire contact database.</p>
 
           <h2>What this looks like in practice for a B2B team</h2>
-          <p>Concretely: your AI assistant can pull up the last three interactions with a prospect from your CRM, check their open deal status, look at the notes from the last call, and draft a follow-up email — all in one prompt, without you leaving the chat interface or copying data between windows. If you ask it to schedule a call, it can check your calendar and create the event. If you ask it to log a note, it writes directly to the CRM record.</p>
-          <p>This is the workflow that MCP makes possible. It's not theoretical — teams are running this today. The tooling is mature enough to build on, and the productivity impact for anyone doing high-volume relationship work is real.</p>
+          <p>Concretely: your AI assistant can pull up the last three interactions with a prospect from your CRM, check their open deal status, look at the notes from the last call, and draft a follow-up email, all in one prompt, without you leaving the chat interface or copying data between windows. If you ask it to schedule a call, it can check your calendar and create the event. If you ask it to log a note, it writes directly to the CRM record.</p>
+          <p>This is the workflow that MCP makes possible. It's not theoretical, teams are running this today. The tooling is mature enough to build on, and the productivity impact for anyone doing high-volume relationship work is real.</p>
 
           <h2>What it doesn't do</h2>
-          <p>MCP is not a shortcut around bad data. If your CRM records are incomplete or inconsistently maintained, the AI will work with what's there and the output will reflect that. It also still requires proper setup — you need to configure which tools connect, what permissions the AI has in each, and what it's allowed to do autonomously versus what requires approval. The AI is only as useful as the instructions and permissions you give it.</p>
+          <p>MCP is not a shortcut around bad data. If your CRM records are incomplete or inconsistently maintained, the AI will work with what's there and the output will reflect that. It also still requires proper setup, you need to configure which tools connect, what permissions the AI has in each, and what it's allowed to do autonomously versus what requires approval. The AI is only as useful as the instructions and permissions you give it.</p>
           <p>It's a significant capability upgrade, not a magic fix. The teams that get the most value from MCP are the ones who do the setup work upfront: clean data, clear permissions, and defined use cases before they hand the wheel to the AI.</p>
 
           <h2>Frequently asked questions</h2>
           <h3>Do I need to run my own MCP server?</h3>
           <p>Not necessarily. Many tools already have MCP support built in or as an add-on. When they don't, we can build a lightweight server that connects them.</p>
           <h3>Is this the same as a plugin or API integration?</h3>
-          <p>No. MCP is a protocol — a standardized way for AI models to talk to external systems in real time. Plugins were platform-specific and fragmented. MCP is designed to work across models and tools.</p>
+          <p>No. MCP is a protocol, a standardized way for AI models to talk to external systems in real time. Plugins were platform-specific and fragmented. MCP is designed to work across models and tools.</p>
           <h3>Which AI tools support MCP?</h3>
           <p>Claude and GitHub Copilot have the most mature MCP support right now. OpenAI and others are following.</p>
 
           <div class="btn-group">
             <a class="btn btn-primary" href="../how-to-get-started.html">Claim Your Free Automation</a>
-            <a class="btn btn-secondary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener">Schedule a Call</a>
+            <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>
           </div>
         </div>
       </div>

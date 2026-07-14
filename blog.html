@@ -26,11 +26,11 @@
   <link rel="stylesheet" href="css/styles.css">
   <style>
     .blog-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
-    .blog-filter-btn{padding:6px 18px;border:1.5px solid var(--border);border-radius:99px;background:transparent;color:var(--text);cursor:pointer;font-size:14px;font-family:inherit;font-weight:500;transition:background .15s,border-color .15s,color .15s;}
-    .blog-filter-btn:hover{background:var(--bg-light);border-color:var(--accent);}
-    .blog-filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+    .blog-filter-btn{padding:6px 18px;border:1.5px solid #d1d5db;border-radius:99px;background:transparent;color:var(--color-ink);cursor:pointer;font-size:14px;font-family:inherit;font-weight:500;transition:background .15s,border-color .15s,color .15s;}
+    .blog-filter-btn:hover{background:rgba(112,66,130,0.07);border-color:var(--color-purple);}
+    .blog-filter-btn.active{background:var(--color-purple);border-color:var(--color-purple);color:#fff;}
     .blog-card.hidden{display:none;}
-    .blog-count{font-size:13px;color:var(--text-muted);margin-bottom:24px;}
+    .blog-count{font-size:13px;color:#6b7280;margin-bottom:24px;}
   </style>
   <script type="application/ld+json">
   {
@@ -196,7 +196,7 @@
       <div class="container">
         <span class="eyebrow">Blog</span>
         <h1>Practical guides on AI automation, client engagement, and ops</h1>
-        <p class="lede">35 posts from the team that builds and runs this work for B2B clients. Pick a topic or read everything.</p>
+        <p class="lede">Posts from the team that builds and runs this work for B2B clients. Pick a topic or read everything.</p>
       </div>
     </section>
 
@@ -244,12 +244,12 @@
           <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/ai-lead-qualification-workflow.html">How to build a lead qualification workflow with AI</a></h3>
-            <p>Most lead qualification is either too manual or too blunt. AI can do it better — here's how to build a workflow that actually works.</p>
+            <p>Most lead qualification is either too manual or too blunt. AI can do it better, here's how to build a workflow that actually works.</p>
           </div>
           <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/inbound-lead-routing-automation.html">Why inbound leads don't get followed up (and how automation fixes it)</a></h3>
-            <p>Most missed leads aren't a motivation problem — they're a routing problem. Here's how automated lead routing works and what it takes to build one that runs reliably.</p>
+            <p>Most missed leads aren't a motivation problem, they're a routing problem. Here's how automated lead routing works and what it takes to build one that runs reliably.</p>
           </div>
           <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
@@ -279,7 +279,7 @@
           <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/mcp-custom-ai-integrations.html">MCP: how we connect AI to the tools your team already runs</a></h3>
-            <p>The Model Context Protocol lets AI talk to your actual systems — HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.</p>
+            <p>The Model Context Protocol lets AI talk to your actual systems, HubSpot, Slack, Jira, your internal tools. Here's how we use existing MCP servers and build custom ones for clients.</p>
           </div>
           <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
@@ -299,7 +299,7 @@
           <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/n8n-crm-ai-integration.html">How to use n8n to connect your CRM to AI</a></h3>
-            <p>n8n can pull data from your CRM, run it through an AI model, and act on the result — without a developer or a custom API build. Here's how it works.</p>
+            <p>n8n can pull data from your CRM, run it through an AI model, and act on the result, without a developer or a custom API build. Here's how it works.</p>
           </div>
 
           <!-- Ops & CRM -->
@@ -472,6 +472,7 @@
       var btns = document.querySelectorAll('.blog-filter-btn');
       var cards = document.querySelectorAll('.blog-card');
       var countEl = document.getElementById('blog-count');
+      if(countEl) countEl.textContent = cards.length + (cards.length === 1 ? ' post' : ' posts');
       btns.forEach(function(btn){
         btn.addEventListener('click', function(){
           btns.forEach(function(b){ b.classList.remove('active'); });
