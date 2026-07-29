@@ -644,6 +644,68 @@
       line-height: 1.65;
     }
 
+    /* ── Hero animated grid background ── */
+    .cs-hero { position: relative; overflow: hidden; }
+    .cs-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(196,94,137,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196,94,137,0.045) 1px, transparent 1px);
+      background-size: 48px 48px;
+      animation: cs-grid-pan 22s linear infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .cs-hero .container,
+    .cs-hero .cs-deadline-strip { position: relative; z-index: 1; }
+    @keyframes cs-grid-pan { to { background-position: 48px 48px; } }
+
+    /* ── Hero staggered entrance ── */
+    @keyframes cs-up {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .cs-hero .eyebrow      { animation: cs-up 0.6s ease both; }
+    .cs-hero h1            { animation: cs-up 0.65s 0.1s ease both; }
+    .cs-hero .lede         { animation: cs-up 0.65s 0.22s ease both; }
+    .cs-hero .btn-group    { animation: cs-up 0.65s 0.34s ease both; }
+    .cs-deadline-strip .cs-ds-item:nth-child(1) { animation: cs-up 0.5s 0.50s ease both; }
+    .cs-deadline-strip .cs-ds-item:nth-child(2) { animation: cs-up 0.5s 0.58s ease both; }
+    .cs-deadline-strip .cs-ds-item:nth-child(3) { animation: cs-up 0.5s 0.66s ease both; }
+    .cs-deadline-strip .cs-ds-item:nth-child(4) { animation: cs-up 0.5s 0.74s ease both; }
+
+    /* ── Word cycle ── */
+    .cs-word-cycle { color: var(--color-pink); display: inline; }
+    .cs-word-exit  { animation: cs-exit 0.28s ease forwards; }
+    .cs-word-enter { animation: cs-enter 0.4s ease forwards; }
+    @keyframes cs-exit  { to   { opacity: 0; transform: translateY(-14px); } }
+    @keyframes cs-enter {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Deadline-strip dot pulse ── */
+    .cs-ds-dot { animation: cs-dot-pulse 2.4s ease-in-out infinite; }
+    @keyframes cs-dot-pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%      { transform: scale(1.6); opacity: 0.55; }
+    }
+
+    /* ── Phase vertical-line grow (triggered via JS) ── */
+    .cs-phases::before { transform: scaleY(0); transform-origin: top center; transition: transform 1.2s ease; }
+    .cs-phases.is-animated::before { transform: scaleY(1); }
+
+    /* ── Reduced-motion kill-switch ── */
+    @media (prefers-reduced-motion: reduce) {
+      .cs-hero::before,
+      .cs-hero .eyebrow, .cs-hero h1, .cs-hero .lede, .cs-hero .btn-group,
+      .cs-deadline-strip .cs-ds-item, .cs-ds-dot,
+      .cs-word-exit, .cs-word-enter { animation: none !important; }
+      .cs-phases::before { transform: scaleY(1) !important; transition: none !important; }
+    }
+
     /* Responsive */
     @media (max-width: 720px) {
       .cs-deliverables,
@@ -697,7 +759,7 @@
     <section class="section cs-hero">
       <div class="container">
         <span class="eyebrow">Live in 14 days · Done-for-you, no code</span>
-        <h1>We build your team's Claude<br>operating system.<br>Your people just use it.</h1>
+        <h1>We build your team's Claude<br><span class="cs-word-cycle" id="csWordCycle">operating system</span>.<br>Your people just use it.</h1>
         <p class="lede">We turn Claude from a blank-slate chatbot into a shared workspace that already knows your business, and runs your team's recurring work the same way, every time.</p>
         <div class="btn-group">
           <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
@@ -726,7 +788,7 @@
 
     <!-- Problem -->
     <section class="section section--dark cs-problem">
-      <div class="container">
+      <div class="container reveal">
         <p class="cs-section-label">The problem</p>
         <h2>The problem isn't Claude.<br>It's the blank slate, and it hits the whole team.</h2>
         <p>Every person, every conversation starts from zero. Context gets re-pasted, output is generic and inconsistent across people, and the business never builds a shared system. The missing layer is shared context plus structure. A non-technical team shouldn't have to build that, so we do.</p>
@@ -736,11 +798,11 @@
     <!-- Buildout -->
     <section class="section cs-buildout" id="buildout">
       <div class="container">
-        <div class="cs-buildout-intro">
+        <div class="cs-buildout-intro reveal">
           <p class="cs-section-label">The buildout</p>
           <h2>A fully configured Claude workspace, built and handed over.</h2>
         </div>
-        <div class="cs-deliverables">
+        <div class="cs-deliverables reveal--stagger reveal">
 
           <div class="cs-deliverable">
             <span class="cs-del-num" aria-hidden="true">01</span>
@@ -777,12 +839,12 @@
     <!-- How it works -->
     <section class="section section--alt cs-how">
       <div class="container">
-        <div class="cs-how-intro">
+        <div class="cs-how-intro reveal">
           <p class="cs-section-label">How it works · 14-day build</p>
           <h2>Six phases in fourteen days, from discovery to a workspace your team owns.</h2>
         </div>
 
-        <div class="cs-phases">
+        <div class="cs-phases" id="csPhases">
 
           <div class="cs-phase">
             <div class="cs-phase-node active">0</div>
@@ -841,13 +903,13 @@
     <!-- Pricing -->
     <section class="section cs-pricing">
       <div class="container">
-        <div class="cs-pricing-intro">
+        <div class="cs-pricing-intro reveal">
           <p class="cs-section-label">Pricing</p>
           <h2>One package. One price.</h2>
           <p>Everything your team needs to go from blank slate to a working AI operating system.</p>
         </div>
 
-        <div class="cs-price-main">
+        <div class="cs-price-main reveal">
           <p class="cs-price-label">The buildout · fixed · live in 14 days</p>
           <div class="cs-price-amount"><sup>$</sup>6,000</div>
           <ul class="cs-price-includes">
@@ -864,7 +926,7 @@
           </div>
         </div>
 
-        <div class="cs-price-addons">
+        <div class="cs-price-addons reveal--stagger reveal">
           <div class="cs-price-addon">
             <p class="cs-addon-name">Extra workflows</p>
             <p class="cs-addon-price">$750 <span style="font-size:0.8rem; font-weight:500; color:var(--color-lavender)">each</span></p>
@@ -881,7 +943,7 @@
 
     <!-- ROI -->
     <section class="section section--dark cs-roi">
-      <div class="container">
+      <div class="container reveal">
         <p class="cs-section-label">Net cost</p>
         <p class="cs-roi-stat">On average, teams recover <em>9 to 10 hours</em> per recurring workflow.<br>That's roughly <em>$22,500 in time saved</em> per workflow, per year.</p>
         <p>10 hours × 50 weeks × $45/hr, annualized. The buildout pays for itself before the retainer starts.</p>
@@ -891,11 +953,11 @@
     <!-- Before / After -->
     <section class="section cs-ba">
       <div class="container">
-        <div class="cs-ba-intro">
+        <div class="cs-ba-intro reveal">
           <p class="cs-section-label">The transformation</p>
           <h2>Before, and after.</h2>
         </div>
-        <div class="cs-ba-grid">
+        <div class="cs-ba-grid reveal--stagger reveal">
           <div class="cs-ba-col cs-ba-col--before">
             <div class="cs-ba-col-head">
               <div class="cs-ba-badge cs-ba-badge--before">−</div>
@@ -929,13 +991,13 @@
     <!-- Why us -->
     <section class="section section--alt cs-why">
       <div class="container">
-        <div class="cs-why-intro">
+        <div class="cs-why-intro reveal">
           <p class="cs-section-label">Why us</p>
           <h2>Prompt packs teach one person a skill. We build a system the whole team uses.</h2>
           <p>The value is shared workflow architecture, done for you, that lives on after handover — not a library of prompts someone still has to assemble. We set it up and your people just use it. That's the whole point. Twenty-five years of B2B operations work means we understand the recurring work your team actually does, not just how the technology works.</p>
         </div>
 
-        <div class="cs-not-grid">
+        <div class="cs-not-grid reveal--stagger reveal">
           <div class="cs-not-card">
             <p class="cs-not-label">Not this</p>
             <h3>Custom software</h3>
@@ -960,25 +1022,25 @@
       <div class="container">
         <p class="cs-section-label">What clients say</p>
 
-        <div class="cs-testimonial">
+        <div class="cs-testimonial reveal">
           <img src="images/clients/biproxi.webp" alt="Biproxi Capital Network" style="height:32px; width:auto; margin-bottom:20px; opacity:0.6; filter:grayscale(100%);">
           <blockquote>"Conor and Maria have been an absolute pleasure to work with. From our first conversation, Conor took the time to understand our business, the challenges we were trying to solve, and how custom Claude skills could help streamline our workflows. He came back with thoughtful, tailored solutions that directly addressed our needs and executed everything quickly and flawlessly. The entire process was collaborative, efficient, and exceeded our expectations."</blockquote>
           <cite><strong>Gieriet Bowen</strong>, Director of Investor Relations · Biproxi Capital Network</cite>
         </div>
 
-        <div class="cs-testimonial" style="margin-top:48px; padding-top:48px; border-top:1px solid var(--border-light,#E7E2E5);">
+        <div class="cs-testimonial reveal" style="margin-top:48px; padding-top:48px; border-top:1px solid var(--border-light,#E7E2E5);">
           <img src="images/clients/offerpad.webp" alt="Offerpad" style="height:28px; width:auto; margin-bottom:20px; opacity:0.6; filter:grayscale(100%);">
           <blockquote>"TEG has been a great AI partner for us. They helped us build a suite of AI tools for our sales team and develop back-office automations that eliminated hours of manual work. They've worked across multiple teams and delivered consistently. They know how to scope, build, and iterate without a lot of hand-holding."</blockquote>
           <cite><strong>Chris Carpenter</strong>, COO · Offerpad</cite>
         </div>
 
-        <div class="cs-testimonial" style="margin-top:48px; padding-top:48px; border-top:1px solid var(--border-light,#E7E2E5);">
+        <div class="cs-testimonial reveal" style="margin-top:48px; padding-top:48px; border-top:1px solid var(--border-light,#E7E2E5);">
           <img src="images/clients/market-savvy.webp" alt="Market Savvy" style="height:28px; width:auto; margin-bottom:20px; opacity:0.6; filter:grayscale(100%);">
           <blockquote>"TEG has helped us create a high-powered, unique and time-saving tool for our health and medical clients worldwide. With HealthPost Genius, practices can create a month's worth of compliant social media posts in minutes."</blockquote>
           <cite><strong>Megan Walker</strong>, Founder · Market Savvy</cite>
         </div>
 
-        <div class="cs-case" style="margin-top:64px;">
+        <div class="cs-case reveal" style="margin-top:64px;">
           <p class="cs-case-label">Case study · Benchmark Human Capital</p>
           <h3>An AI that knows the US tax code inside and out.</h3>
           <p>Benchmark Human Capital engaged TEG to build an AI deeply trained on US tax law for their consulting practice — giving their team a tool that enhances client service and creates a clear differentiator in the market. The system is embedded in their workflows and runs without manual intervention.</p>
@@ -1002,7 +1064,7 @@
 
     <!-- Final CTA -->
     <section class="section section--dark cs-cta">
-      <div class="container">
+      <div class="container reveal">
         <h2>Stop re-explaining your business in every chat.</h2>
         <p>Book a 30-minute discovery call. We'll map the five workflows worth automating first, and you'll leave with a clear picture of what gets built and in what order.</p>
         <div class="btn-group btn-group--center">
@@ -1071,5 +1133,40 @@
   </footer>
 
   <script src="js/main.js" defer></script>
+  <script>
+  (function () {
+    /* ── Word cycle ── */
+    var cycleEl = document.getElementById('csWordCycle');
+    if (cycleEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var words = ['operating system', 'AI workspace', 'shared knowledge layer', 'done-for-you setup'];
+      var idx = 0;
+      function nextWord() {
+        cycleEl.classList.add('cs-word-exit');
+        setTimeout(function () {
+          idx = (idx + 1) % words.length;
+          cycleEl.textContent = words[idx];
+          cycleEl.classList.remove('cs-word-exit');
+          cycleEl.classList.add('cs-word-enter');
+          setTimeout(function () { cycleEl.classList.remove('cs-word-enter'); }, 400);
+        }, 280);
+      }
+      setInterval(nextWord, 3200);
+    }
+
+    /* ── Phase line grow on scroll ── */
+    var phasesEl = document.getElementById('csPhases');
+    if (phasesEl && 'IntersectionObserver' in window) {
+      var phaseObs = new IntersectionObserver(function (entries, obs) {
+        if (entries[0].isIntersecting) {
+          phasesEl.classList.add('is-animated');
+          obs.disconnect();
+        }
+      }, { threshold: 0.2 });
+      phaseObs.observe(phasesEl);
+    } else if (phasesEl) {
+      phasesEl.classList.add('is-animated');
+    }
+  }());
+  </script>
 </body>
 </html>
