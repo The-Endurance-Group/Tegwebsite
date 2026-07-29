@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Setup for Teams | The Endurance Group</title>
+  <meta name="description" content="We build your team's Claude operating system in 14 days. Done-for-you, no code. Your people just use it.">
+  <link rel="canonical" href="https://theendurancegroup.com/claude-setup.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="Claude Setup for Teams | The Endurance Group">
+  <meta property="og:description" content="We build your team's Claude operating system in 14 days. Done-for-you, no code. Your people just use it.">
+  <meta property="og:url" content="https://theendurancegroup.com/claude-setup.html">
+  <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Setup for Teams | The Endurance Group">
+  <meta name="twitter:description" content="We build your team's Claude operating system in 14 days. Done-for-you, no code.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon-network.png">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ── Page-specific: Claude Setup ── */
+
+    /* Hero overrides */
+    .cs-hero {
+      padding-top: 80px;
+      padding-bottom: 0;
+    }
+    .cs-hero .container {
+      max-width: 760px;
+      text-align: center;
+    }
+    .cs-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.13;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-wrap: balance;
+    }
+    .cs-hero .lede {
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-size: 1.1rem;
+      line-height: 1.65;
+    }
+    .cs-hero .btn-group {
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+
+    /* 14-day deadline strip */
+    .cs-deadline-strip {
+      margin-top: 60px;
+      background: var(--color-ink);
+      color: var(--color-white);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cs-deadline-strip .cs-ds-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+    .cs-deadline-strip .cs-ds-item strong {
+      color: var(--color-white);
+    }
+    .cs-deadline-strip .cs-ds-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-pink);
+      flex-shrink: 0;
+    }
+
+    /* Section labels */
+    .cs-section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-lavender);
+      margin-bottom: 20px;
+    }
+    .section--dark .cs-section-label {
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* Problem section */
+    .cs-problem {
+      padding: 96px 0;
+    }
+    .cs-problem .container {
+      max-width: 680px;
+      text-align: center;
+    }
+    .cs-problem h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      text-wrap: balance;
+    }
+    .cs-problem p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+      margin: 0 auto;
+    }
+
+    /* Buildout section */
+    .cs-buildout {
+      padding: 96px 0;
+    }
+    .cs-buildout-intro {
+      max-width: 600px;
+      margin-bottom: 64px;
+    }
+    .cs-buildout-intro h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .cs-deliverables {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--border-light, #E7E2E5);
+      border: 1px solid var(--border-light, #E7E2E5);
+    }
+    .cs-deliverable {
+      background: var(--color-white);
+      padding: 36px 32px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cs-del-num {
+      position: absolute;
+      top: -8px;
+      right: 16px;
+      font-size: 80px;
+      font-weight: 800;
+      color: var(--color-pink);
+      opacity: 0.07;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      font-variant-numeric: tabular-nums;
+    }
+    .cs-del-index {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-pink);
+      margin-bottom: 12px;
+    }
+    .cs-deliverable h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-ink);
+    }
+    .cs-deliverable p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--color-lavender);
+      margin: 0;
+    }
+
+    /* How it works */
+    .cs-how {
+      padding: 96px 0;
+    }
+    .cs-how-intro {
+      max-width: 560px;
+      margin-bottom: 64px;
+    }
+    .cs-how-intro h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .cs-phases {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 800px;
+      position: relative;
+    }
+    .cs-phases::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border-light, #E7E2E5);
+    }
+    .cs-phase {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px 24px 24px 0;
+      border-bottom: 1px solid var(--border-light, #E7E2E5);
+    }
+    .cs-phase:nth-child(even) {
+      padding-left: 40px;
+    }
+    .cs-phase:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+    .cs-phase-node {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-white);
+      border: 2px solid var(--border-light, #E7E2E5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--color-lavender);
+      font-variant-numeric: tabular-nums;
+      position: relative;
+      z-index: 1;
+    }
+    .cs-phase-node.active {
+      background: var(--color-pink);
+      border-color: var(--color-pink);
+      color: var(--color-white);
+    }
+    .cs-phase-content {
+      padding-top: 12px;
+    }
+    .cs-phase-content h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--color-ink);
+    }
+    .cs-phase-content p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--color-lavender);
+      margin: 0;
+    }
+    .cs-phase-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--tint-teal, rgba(101,182,174,0.12));
+      color: var(--color-teal-dark, #4E9A92);
+      padding: 3px 8px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+
+    /* Pricing */
+    .cs-pricing {
+      padding: 96px 0;
+    }
+    .cs-pricing .container {
+      max-width: 700px;
+      text-align: center;
+    }
+    .cs-pricing-intro h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .cs-pricing-intro p {
+      color: var(--color-lavender);
+      margin-bottom: 48px;
+    }
+    .cs-price-main {
+      background: var(--color-purple);
+      color: var(--color-white);
+      padding: 48px 48px 40px;
+      text-align: left;
+      margin-bottom: 2px;
+    }
+    .cs-price-main .cs-price-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 8px;
+    }
+    .cs-price-main .cs-price-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 4px;
+    }
+    .cs-price-amount {
+      font-size: clamp(2.6rem, 6vw, 3.8rem);
+      font-weight: 800;
+      color: var(--color-white);
+      line-height: 1;
+      margin-bottom: 28px;
+      font-variant-numeric: tabular-nums;
+    }
+    .cs-price-amount sup {
+      font-size: 0.45em;
+      vertical-align: super;
+      font-weight: 600;
+    }
+    .cs-price-includes {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+    }
+    .cs-price-includes li {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.85);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+    .cs-price-includes li::before {
+      content: '→';
+      color: var(--color-teal);
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-size: 0.8rem;
+    }
+    .cs-price-addons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .cs-price-addon {
+      background: var(--bg-light, #F8F6F7);
+      padding: 24px 28px;
+      text-align: left;
+    }
+    .cs-price-addon .cs-addon-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-ink);
+      margin-bottom: 4px;
+    }
+    .cs-price-addon .cs-addon-price {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-purple);
+      margin-bottom: 6px;
+    }
+    .cs-price-addon p {
+      font-size: 0.82rem;
+      color: var(--color-lavender);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ROI section */
+    .cs-roi {
+      padding: 64px 0;
+    }
+    .cs-roi .container {
+      max-width: 640px;
+      text-align: center;
+    }
+    .cs-roi-stat {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      color: var(--color-white);
+    }
+    .cs-roi-stat em {
+      color: var(--color-teal);
+      font-style: normal;
+    }
+    .cs-roi p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Before / After */
+    .cs-ba {
+      padding: 96px 0;
+    }
+    .cs-ba-intro {
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+    .cs-ba-intro h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .cs-ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border-light, #E7E2E5);
+      border: 1px solid var(--border-light, #E7E2E5);
+    }
+    .cs-ba-col {
+      padding: 40px 36px;
+      background: var(--color-white);
+    }
+    .cs-ba-col-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .cs-ba-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .cs-ba-badge--before {
+      background: rgba(196,94,137,0.12);
+      color: var(--color-pink);
+    }
+    .cs-ba-badge--after {
+      background: rgba(101,182,174,0.15);
+      color: var(--color-teal-dark, #4E9A92);
+    }
+    .cs-ba-col-head h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .cs-ba-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .cs-ba-list li {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--color-ink);
+    }
+    .cs-ba-list li::before {
+      font-weight: 800;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+    .cs-ba-col--before .cs-ba-list li {
+      color: var(--color-lavender);
+    }
+    .cs-ba-col--before .cs-ba-list li::before {
+      content: '−';
+      color: var(--color-pink);
+    }
+    .cs-ba-col--after .cs-ba-list li::before {
+      content: '+';
+      color: var(--color-teal-dark, #4E9A92);
+    }
+
+    /* Why us */
+    .cs-why {
+      padding: 96px 0;
+    }
+    .cs-why-intro {
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+    .cs-why-intro h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .cs-why-intro p {
+      color: var(--color-lavender);
+      line-height: 1.7;
+    }
+    .cs-not-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border-light, #E7E2E5);
+      border: 1px solid var(--border-light, #E7E2E5);
+      margin-top: 40px;
+    }
+    .cs-not-card {
+      background: var(--bg-light, #F8F6F7);
+      padding: 28px 28px 24px;
+    }
+    .cs-not-card .cs-not-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-lavender);
+      margin-bottom: 10px;
+    }
+    .cs-not-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-ink);
+    }
+    .cs-not-card p {
+      font-size: 0.85rem;
+      color: var(--color-lavender);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Testimonial */
+    .cs-proof {
+      padding: 96px 0;
+    }
+    .cs-proof .container {
+      max-width: 760px;
+    }
+    .cs-testimonial {
+      margin-bottom: 64px;
+    }
+    .cs-testimonial blockquote {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--color-ink);
+      margin: 0 0 24px;
+      text-wrap: balance;
+      position: relative;
+      padding-left: 24px;
+      border-left: 3px solid var(--color-pink);
+    }
+    .cs-testimonial cite {
+      font-size: 0.875rem;
+      color: var(--color-lavender);
+      font-style: normal;
+      padding-left: 24px;
+    }
+    .cs-testimonial cite strong {
+      color: var(--color-ink);
+    }
+
+    /* Case study metrics */
+    .cs-case {
+      border: 1px solid var(--border-light, #E7E2E5);
+      padding: 40px;
+    }
+    .cs-case-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-lavender);
+      margin-bottom: 12px;
+    }
+    .cs-case h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .cs-case p {
+      color: var(--color-lavender);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      max-width: 560px;
+      margin-bottom: 32px;
+    }
+    .cs-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border-light, #E7E2E5);
+    }
+    .cs-metric {
+      background: var(--color-white);
+      padding: 24px;
+    }
+    .cs-metric-val {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-purple);
+      line-height: 1;
+      margin-bottom: 6px;
+      font-variant-numeric: tabular-nums;
+    }
+    .cs-metric-desc {
+      font-size: 0.8rem;
+      color: var(--color-lavender);
+      line-height: 1.4;
+    }
+
+    /* Final CTA */
+    .cs-cta {
+      padding: 96px 0;
+    }
+    .cs-cta .container {
+      max-width: 620px;
+      text-align: center;
+    }
+    .cs-cta h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.2;
+      color: var(--color-white);
+    }
+    .cs-cta p {
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 36px;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .cs-deliverables,
+      .cs-ba-grid,
+      .cs-price-addons,
+      .cs-not-grid,
+      .cs-metrics,
+      .cs-phases {
+        grid-template-columns: 1fr;
+      }
+      .cs-phases::before { display: none; }
+      .cs-phase:nth-child(even) { padding-left: 0; }
+      .cs-phase:nth-last-child(-n+2) { border-bottom: 1px solid var(--border-light, #E7E2E5); }
+      .cs-phase:last-child { border-bottom: none; }
+      .cs-price-main { padding: 32px 24px; }
+      .cs-price-includes { grid-template-columns: 1fr; }
+      .cs-case { padding: 28px 20px; }
+      .cs-ba-col { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="solutions.html" aria-current="page">Solutions</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="ideas.html">Ideas</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="success.html">Success</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="section cs-hero">
+      <div class="container">
+        <span class="eyebrow">Live in 14 days · Done-for-you, no code</span>
+        <h1>We build your team's Claude<br>operating system.<br>Your people just use it.</h1>
+        <p class="lede">We turn Claude from a blank-slate chatbot into a shared workspace that already knows your business, and runs your team's recurring work the same way, every time.</p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
+          <a class="btn btn-secondary" href="#buildout">See what's included →</a>
+        </div>
+      </div>
+      <div class="cs-deadline-strip">
+        <div class="cs-ds-item">
+          <span class="cs-ds-dot"></span>
+          <span><strong>14 days from kickoff to live</strong></span>
+        </div>
+        <div class="cs-ds-item">
+          <span class="cs-ds-dot"></span>
+          <span><strong>No exceptions</strong></span>
+        </div>
+        <div class="cs-ds-item">
+          <span class="cs-ds-dot"></span>
+          <span><strong>No code required</strong></span>
+        </div>
+        <div class="cs-ds-item">
+          <span class="cs-ds-dot"></span>
+          <span><strong>30-day support included</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section section--dark cs-problem">
+      <div class="container">
+        <p class="cs-section-label">The problem</p>
+        <h2>The problem isn't Claude.<br>It's the blank slate, and it hits the whole team.</h2>
+        <p>Every person, every conversation starts from zero. Context gets re-pasted, output is generic and inconsistent across people, and the business never builds a shared system. The missing layer is shared context plus structure. A non-technical team shouldn't have to build that, so we do.</p>
+      </div>
+    </section>
+
+    <!-- Buildout -->
+    <section class="section cs-buildout" id="buildout">
+      <div class="container">
+        <div class="cs-buildout-intro">
+          <p class="cs-section-label">The buildout</p>
+          <h2>A fully configured Claude workspace, built and handed over.</h2>
+        </div>
+        <div class="cs-deliverables">
+
+          <div class="cs-deliverable">
+            <span class="cs-del-num" aria-hidden="true">01</span>
+            <p class="cs-del-index">01</p>
+            <h3>Projects setup</h3>
+            <p>Structured Claude Projects per business area, so everyone works from the same context.</p>
+          </div>
+
+          <div class="cs-deliverable">
+            <span class="cs-del-num" aria-hidden="true">02</span>
+            <p class="cs-del-index">02</p>
+            <h3>Knowledge files</h3>
+            <p>Your business encoded once: offers, ICP, voice, processes. This kills the blank slate for everyone.</p>
+          </div>
+
+          <div class="cs-deliverable">
+            <span class="cs-del-num" aria-hidden="true">03</span>
+            <p class="cs-del-index">03</p>
+            <h3>State files &amp; trackers</h3>
+            <p>A living tracker of priorities, open items and decisions, so the team knows where things stand.</p>
+          </div>
+
+          <div class="cs-deliverable">
+            <span class="cs-del-num" aria-hidden="true">04</span>
+            <p class="cs-del-index">04</p>
+            <h3>Connected tools</h3>
+            <p>Privacy-safe access to Gmail, Drive, Slack, Notion, calendar. Real data, no copy-paste.</p>
+          </div>
+
+          <div class="cs-deliverable">
+            <span class="cs-del-num" aria-hidden="true">05</span>
+            <p class="cs-del-index">05</p>
+            <h3>SOPs packaged as Skills</h3>
+            <p>Your top 5 recurring workflows, run the same way by anyone, every time.</p>
+          </div>
+
+          <div class="cs-deliverable">
+            <span class="cs-del-num" aria-hidden="true">06</span>
+            <p class="cs-del-index">06</p>
+            <h3>Decision frameworks</h3>
+            <p>How your team makes recurring calls, encoded. Claude recommends, your team decides.</p>
+          </div>
+
+          <div class="cs-deliverable">
+            <span class="cs-del-num" aria-hidden="true">07</span>
+            <p class="cs-del-index">07</p>
+            <h3>Weekly review protocol</h3>
+            <p>A repeatable routine that keeps the workspace alive instead of going stale.</p>
+          </div>
+
+          <div class="cs-deliverable">
+            <span class="cs-del-num" aria-hidden="true">08</span>
+            <p class="cs-del-index">08</p>
+            <h3>Export &amp; backup routines</h3>
+            <p>Scheduled exports and a local copy, so the team's work is never lost.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section--alt cs-how">
+      <div class="container">
+        <div class="cs-how-intro">
+          <p class="cs-section-label">How it works · 14-day build</p>
+          <h2>Seven phases in fourteen days, from discovery to a workspace your team owns.</h2>
+        </div>
+
+        <div class="cs-phases">
+
+          <div class="cs-phase">
+            <div class="cs-phase-node active">0</div>
+            <div class="cs-phase-content">
+              <h3>Discovery</h3>
+              <p>Context interview, gather docs, pick the top 5 workflows, and run a privacy check.</p>
+            </div>
+          </div>
+
+          <div class="cs-phase">
+            <div class="cs-phase-node">1</div>
+            <div class="cs-phase-content">
+              <span class="cs-phase-tag">Billing</span>
+              <h3>Plan &amp; billing optimisation</h3>
+              <p>Right-size the team's Claude plans to optimise billing against actual usage.</p>
+            </div>
+          </div>
+
+          <div class="cs-phase">
+            <div class="cs-phase-node">2</div>
+            <div class="cs-phase-content">
+              <h3>Architecture</h3>
+              <p>Design the structure, files, Skills and connectors. Leadership approves the plan.</p>
+            </div>
+          </div>
+
+          <div class="cs-phase">
+            <div class="cs-phase-node">3</div>
+            <div class="cs-phase-content">
+              <h3>Build</h3>
+              <p>Projects, files, SOP Skills, decision frameworks and connectors, all configured.</p>
+            </div>
+          </div>
+
+          <div class="cs-phase">
+            <div class="cs-phase-node">4</div>
+            <div class="cs-phase-content">
+              <h3>Reliability layer</h3>
+              <p>Export and backup routine plus the weekly review protocol that keeps it alive.</p>
+            </div>
+          </div>
+
+          <div class="cs-phase">
+            <div class="cs-phase-node">5</div>
+            <div class="cs-phase-content">
+              <h3>Handover &amp; training</h3>
+              <p>Two live team sessions, recordings yours to keep forever, plus a full walkthrough.</p>
+            </div>
+          </div>
+
+          <div class="cs-phase">
+            <div class="cs-phase-node">6</div>
+            <div class="cs-phase-content">
+              <span class="cs-phase-tag">Included</span>
+              <h3>30-day support</h3>
+              <p>Email support from handover, plus a check-in call to refine the workspace.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section cs-pricing">
+      <div class="container">
+        <div class="cs-pricing-intro">
+          <p class="cs-section-label">Pricing</p>
+          <h2>One package. One price.</h2>
+          <p>Everything your team needs to go from blank slate to a working AI operating system.</p>
+        </div>
+
+        <div class="cs-price-main">
+          <p class="cs-price-label">The buildout · fixed · live in 14 days</p>
+          <div class="cs-price-amount"><sup>$</sup>7,500</div>
+          <ul class="cs-price-includes">
+            <li>Projects &amp; knowledge files</li>
+            <li>5 recurring workflows as Skills</li>
+            <li>State files &amp; decision frameworks</li>
+            <li>Tool connectors (Gmail, Drive, Slack, Notion)</li>
+            <li>Export &amp; backup routine</li>
+            <li>Weekly review protocol</li>
+            <li>Phase 1 billing optimisation</li>
+            <li>Two live training sessions</li>
+            <li>Recordings yours to keep forever</li>
+            <li>30-day email support included</li>
+          </ul>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
+          </div>
+        </div>
+
+        <div class="cs-price-addons">
+          <div class="cs-price-addon">
+            <p class="cs-addon-name">Extra workflows</p>
+            <p class="cs-addon-price">~$1,000 <span style="font-size:0.8rem; font-weight:500; color:var(--color-lavender)">each</span></p>
+            <p>Any workflow beyond the 5 included, added as a Skill.</p>
+          </div>
+          <div class="cs-price-addon">
+            <p class="cs-addon-name">Ongoing retainer</p>
+            <p class="cs-addon-price">$750 <span style="font-size:0.8rem; font-weight:500; color:var(--color-lavender)">/mo</span></p>
+            <p>Continued support and plan reviews after the 30-day window.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI -->
+    <section class="section section--dark cs-roi">
+      <div class="container">
+        <p class="cs-section-label">Net cost</p>
+        <p class="cs-roi-stat">On average, teams recover <em>9 to 10 hours</em> per recurring workflow.<br>That's roughly <em>$22,500 in time saved</em> per workflow, per year.</p>
+        <p>10 hours × 50 weeks × $45/hr, annualized. The buildout pays for itself before the retainer starts.</p>
+      </div>
+    </section>
+
+    <!-- Before / After -->
+    <section class="section cs-ba">
+      <div class="container">
+        <div class="cs-ba-intro">
+          <p class="cs-section-label">The transformation</p>
+          <h2>Before, and after.</h2>
+        </div>
+        <div class="cs-ba-grid">
+          <div class="cs-ba-col cs-ba-col--before">
+            <div class="cs-ba-col-head">
+              <div class="cs-ba-badge cs-ba-badge--before">−</div>
+              <h3>Before</h3>
+            </div>
+            <ul class="cs-ba-list">
+              <li>AI used inconsistently, or barely at all.</li>
+              <li>Only the owner extracts any value from Claude.</li>
+              <li>Everyone re-explains the business from scratch.</li>
+              <li>Output varies depending on who's prompting.</li>
+              <li>The subscription is quietly underused.</li>
+            </ul>
+          </div>
+          <div class="cs-ba-col cs-ba-col--after">
+            <div class="cs-ba-col-head">
+              <div class="cs-ba-badge cs-ba-badge--after">+</div>
+              <h3>After</h3>
+            </div>
+            <ul class="cs-ba-list">
+              <li>Anyone runs the same workflows, consistent output.</li>
+              <li>Value distributed across the team, not just the founder.</li>
+              <li>One shared workspace that already knows the business.</li>
+              <li>Every recurring task runs the same way, every time.</li>
+              <li>Connected to your tools, backed up, reviewed weekly.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section class="section section--alt cs-why">
+      <div class="container">
+        <div class="cs-why-intro">
+          <p class="cs-section-label">Why us</p>
+          <h2>Prompt packs teach one person a skill. We build a system the whole team uses.</h2>
+          <p>The value is shared workflow architecture, done for you, that lives on after handover — not a library of prompts someone still has to assemble. We set it up and your people just use it. That's the whole point. Twenty-five years of B2B operations work means we understand the recurring work your team actually does, not just how the technology works.</p>
+        </div>
+
+        <div class="cs-not-grid">
+          <div class="cs-not-card">
+            <p class="cs-not-label">Not this</p>
+            <h3>Custom software</h3>
+            <p>Bespoke automation pipelines are a separate offer. This is a configured Claude workspace, not a development project.</p>
+          </div>
+          <div class="cs-not-card">
+            <p class="cs-not-label">Not this</p>
+            <h3>A managed service</h3>
+            <p>Ongoing management lives in the retainer, which is optional. The workspace is yours to own and operate after handover.</p>
+          </div>
+          <div class="cs-not-card">
+            <p class="cs-not-label">Not this</p>
+            <h3>Employee replacement</h3>
+            <p>Human-in-the-loop stays, always. We encode how your team makes decisions — Claude recommends, your people decide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof -->
+    <section class="section cs-proof">
+      <div class="container">
+        <p class="cs-section-label">Proof</p>
+
+        <div class="cs-testimonial">
+          <blockquote>"The team understood our business faster than consultants who'd worked with us for months. The workspace they built isn't a tool we have to manage — it's a system that just runs. Our whole team uses it now, not just me."</blockquote>
+          <cite><strong>A TEG client</strong> — add your testimonial here</cite>
+        </div>
+
+        <div class="cs-case">
+          <p class="cs-case-label">Case study</p>
+          <h3>Manual research that used to take days. Now done in hours.</h3>
+          <p>A professional services client with years of manual research processes engaged TEG to build a Claude workspace that encodes their methodology, runs their weekly review automatically, and handles recurring research tasks on demand without anyone in the loop.</p>
+          <div class="cs-metrics">
+            <div class="cs-metric">
+              <div class="cs-metric-val">Days→hrs</div>
+              <div class="cs-metric-desc">Processing time reduced from days to hours</div>
+            </div>
+            <div class="cs-metric">
+              <div class="cs-metric-val">5 SOPs</div>
+              <div class="cs-metric-desc">Recurring workflows packaged as Claude Skills</div>
+            </div>
+            <div class="cs-metric">
+              <div class="cs-metric-val">100%</div>
+              <div class="cs-metric-desc">Team adoption — not just the founder</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section--dark cs-cta">
+      <div class="container">
+        <h2>Stop re-explaining your business in every chat.</h2>
+        <p>Book a 30-minute discovery call. We'll map the five workflows worth automating first, and you'll leave with a clear picture of what gets built and in what order.</p>
+        <div class="btn-group btn-group--center">
+          <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
+          <a class="btn btn-secondary" href="solutions.html">See all solutions</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="index.html"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <p class="footer-tagline">Your AI Automation Partner</p>
+        <p class="footer-address">Portland, ME · (207) 846-6000</p>
+      </div>
+      <div class="footer-columns">
+        <nav aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="solutions.html#ai-automations">AI Automations</a></li>
+            <li><a href="solutions.html#strategy">Strategy</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Products">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Commonality</a></li>
+            <li><a href="https://coachonix.com" target="_blank" rel="noopener">Coachonix</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Specialties">
+          <h3>Specialties</h3>
+          <ul>
+            <li><a href="specialties.html#sales-and-marketing">Sales &amp; Marketing</a></li>
+            <li><a href="specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="specialties.html#professional-services">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="how-to-get-started.html">Get Started</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="success.html">Success</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 The Endurance Group. All rights reserved. · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/the-endurance-group" target="_blank" rel="noopener" aria-label="The Endurance Group on LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5s-1.98-.9-1.98-2S1.9 1.5 3 1.5s1.98.9 1.98 2zM1.2 8.3h3.6V22H1.2V8.3zM8.4 8.3h3.45v1.87h.05c.48-.9 1.66-1.87 3.42-1.87 3.66 0 4.34 2.4 4.34 5.53V22h-3.6v-6.4c0-1.53-.03-3.5-2.14-3.5-2.14 0-2.47 1.67-2.47 3.39V22H8.4V8.3z"/></svg></a>
+          <a href="https://www.facebook.com/TheEnduranceGroupMaine/" target="_blank" rel="noopener" aria-label="The Endurance Group on Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.13 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.8 8.44-4.93 8.44-9.94z"/></svg></a>
+          <a href="https://www.instagram.com/theendurancegroup/" target="_blank" rel="noopener" aria-label="The Endurance Group on Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.59 1.8c.46-.16 1.26-.35 2.43-.4C9.29 1.34 9.67 1.33 12 1.33zM12 6.86A5.14 5.14 0 1 0 12 17.14 5.14 5.14 0 0 0 12 6.86zm0 8.48a3.34 3.34 0 1 1 0-6.68 3.34 3.34 0 0 1 0 6.68zm5.34-8.69a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
+          <a href="https://x.com/_EnduranceGroup" target="_blank" rel="noopener" aria-label="The Endurance Group on X"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.4 8.5L23 22h-6.9l-5.4-7-6.2 7H1.3l7.9-9L1 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw" target="_blank" rel="noopener" aria-label="The Endurance Group on YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 7.2s-.23-1.64-.94-2.36c-.9-.95-1.9-.95-2.36-1C16.9 3.6 12 3.6 12 3.6h-.01s-4.9 0-8.2.24c-.46.05-1.46.05-2.36 1-.71.72-.94 2.36-.94 2.36S.2 9.13.2 11.04v1.8c0 1.92.25 3.84.25 3.84s.23 1.64.94 2.36c.9.95 2.07.92 2.6 1.02C5.9 20.27 12 20.33 12 20.33s4.9-.01 8.2-.25c.46-.05 1.46-.05 2.36-1 .71-.72.94-2.36.94-2.36s.25-1.92.25-3.84v-1.8c0-1.92-.25-3.84-.25-3.84zM9.7 14.9V8.95l6.05 2.98-6.05 2.97z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
