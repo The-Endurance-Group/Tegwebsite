@@ -379,6 +379,7 @@
     /* ROI section */
     .cs-roi {
       padding: 64px 0;
+      background: var(--tint-teal, rgba(101,182,174,0.12));
     }
     .cs-roi .container {
       max-width: 640px;
@@ -389,15 +390,15 @@
       font-weight: 800;
       line-height: 1.3;
       margin-bottom: 16px;
-      color: var(--color-white);
+      color: var(--color-ink);
     }
     .cs-roi-stat em {
-      color: var(--color-teal);
+      color: var(--color-teal-dark, #4E9A92);
       font-style: normal;
     }
     .cs-roi p {
       font-size: 0.95rem;
-      color: rgba(255,255,255,0.7);
+      color: var(--color-lavender);
       line-height: 1.7;
       margin: 0;
     }
@@ -760,7 +761,7 @@
       <div class="container">
         <span class="eyebrow">Live in 14 days · Done-for-you, no code</span>
         <h1>We build your team's Claude<br><span class="cs-word-cycle" id="csWordCycle">operating system</span>.<br>Your people just use it.</h1>
-        <p class="lede">We turn Claude from a blank-slate chatbot into a shared workspace that already knows your business, and runs your team's recurring work the same way, every time.</p>
+        <p class="lede">We turn Claude from a blank chatbot into a shared workspace that already knows your business — and runs your team's recurring work the same way, every time.</p>
         <div class="btn-group">
           <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
           <a class="btn btn-secondary" href="#buildout">See what's included →</a>
@@ -790,8 +791,8 @@
     <section class="section section--dark cs-problem">
       <div class="container reveal">
         <p class="cs-section-label">The problem</p>
-        <h2>The problem isn't Claude.<br>It's the blank slate, and it hits the whole team.</h2>
-        <p>Every person, every conversation starts from zero. Context gets re-pasted, output is generic and inconsistent across people, and the business never builds a shared system. The missing layer is shared context plus structure. A non-technical team shouldn't have to build that, so we do.</p>
+        <h2>The problem isn't Claude.<br>It's that nobody sets it up right for the whole team.</h2>
+        <p>Every person starts from scratch, every time. Context gets re-typed, output quality depends on who's prompting, and no shared knowledge ever accumulates. The layer that's missing is structure — a workspace that already knows your business and applies it consistently. That's not something a non-technical team should have to build themselves.</p>
       </div>
     </section>
 
@@ -799,8 +800,8 @@
     <section class="section cs-buildout" id="buildout">
       <div class="container">
         <div class="cs-buildout-intro reveal">
-          <p class="cs-section-label">The buildout</p>
-          <h2>A fully configured Claude workspace, built and handed over.</h2>
+          <p class="cs-section-label">What you get</p>
+          <h2>A production-ready Claude workspace, configured and delivered.</h2>
         </div>
         <div class="cs-deliverables reveal--stagger reveal">
 
@@ -808,28 +809,28 @@
             <span class="cs-del-num" aria-hidden="true">01</span>
             <p class="cs-del-index">01</p>
             <h3>Projects setup</h3>
-            <p>Structured Claude Projects per business area, so everyone works from the same context.</p>
+            <p>Dedicated Claude Projects per team or function, so every conversation starts with the right context already loaded.</p>
           </div>
 
           <div class="cs-deliverable">
             <span class="cs-del-num" aria-hidden="true">02</span>
             <p class="cs-del-index">02</p>
             <h3>Knowledge files</h3>
-            <p>Your business encoded once: offers, ICP, voice, processes. This kills the blank slate for everyone.</p>
+            <p>Your business intelligence captured once — positioning, voice, offers, and process — automatically available in every session.</p>
           </div>
 
           <div class="cs-deliverable">
             <span class="cs-del-num" aria-hidden="true">03</span>
             <p class="cs-del-index">03</p>
             <h3>Connected tools</h3>
-            <p>Privacy-safe access to Gmail, Drive, Slack, Notion, calendar. Real data, no copy-paste.</p>
+            <p>Direct connections to Gmail, Google Drive, Slack, Notion, and calendar. Claude reads what it needs — no manual copy-paste.</p>
           </div>
 
           <div class="cs-deliverable">
             <span class="cs-del-num" aria-hidden="true">04</span>
             <p class="cs-del-index">04</p>
             <h3>SOPs packaged as Skills</h3>
-            <p>Your top 5 recurring workflows, run the same way by anyone, every time.</p>
+            <p>Your five highest-frequency workflows turned into Claude Skills — consistent output, any team member, every time.</p>
           </div>
 
         </div>
@@ -840,8 +841,8 @@
     <section class="section section--alt cs-how">
       <div class="container">
         <div class="cs-how-intro reveal">
-          <p class="cs-section-label">How it works · 14-day build</p>
-          <h2>Six phases in fourteen days, from discovery to a workspace your team owns.</h2>
+          <p class="cs-section-label">The process · 14 days</p>
+          <h2>Six phases in fourteen days, from kickoff to a workspace your team owns.</h2>
         </div>
 
         <div class="cs-phases" id="csPhases">
@@ -850,16 +851,15 @@
             <div class="cs-phase-node active">0</div>
             <div class="cs-phase-content">
               <h3>Discovery</h3>
-              <p>Context interview, gather docs, pick the top 5 workflows, and run a privacy check.</p>
+              <p>Intake call, document collection, and selection of your five highest-value workflows.</p>
             </div>
           </div>
 
           <div class="cs-phase">
             <div class="cs-phase-node">1</div>
             <div class="cs-phase-content">
-              <span class="cs-phase-tag">Billing</span>
-              <h3>Plan &amp; billing optimisation</h3>
-              <p>Right-size the team's Claude plans to optimise billing against actual usage.</p>
+              <h3>Plan &amp; billing review</h3>
+              <p>We review your team's Claude plan structure and right-size seats and tiers before build starts.</p>
             </div>
           </div>
 
@@ -867,7 +867,7 @@
             <div class="cs-phase-node">2</div>
             <div class="cs-phase-content">
               <h3>Architecture</h3>
-              <p>Design the structure, files, Skills and connectors. Leadership approves the plan.</p>
+              <p>We map the workspace — Projects, files, Skills, and connections — and get sign-off before touching anything.</p>
             </div>
           </div>
 
@@ -875,7 +875,7 @@
             <div class="cs-phase-node">3</div>
             <div class="cs-phase-content">
               <h3>Build</h3>
-              <p>Projects, knowledge files, SOP Skills and connectors, all configured.</p>
+              <p>Everything gets built: Projects, knowledge base, Skills, and tool connections wired in.</p>
             </div>
           </div>
 
@@ -883,7 +883,7 @@
             <div class="cs-phase-node">4</div>
             <div class="cs-phase-content">
               <h3>Handover &amp; training</h3>
-              <p>Two live team sessions, recordings yours to keep forever, plus a full walkthrough.</p>
+              <p>Two live sessions with your team, full walkthrough, and recordings kept permanently.</p>
             </div>
           </div>
 
@@ -892,127 +892,10 @@
             <div class="cs-phase-content">
               <span class="cs-phase-tag">Included</span>
               <h3>30-day support</h3>
-              <p>Email support from handover, plus a check-in call to refine the workspace.</p>
+              <p>Direct email support throughout the first month, plus a follow-up call to tune the workspace.</p>
             </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="section cs-pricing">
-      <div class="container">
-        <div class="cs-pricing-intro reveal">
-          <p class="cs-section-label">Pricing</p>
-          <h2>One package. One price.</h2>
-          <p>Everything your team needs to go from blank slate to a working AI operating system.</p>
-        </div>
-
-        <div class="cs-price-main reveal">
-          <p class="cs-price-label">The buildout · fixed · live in 14 days</p>
-          <div class="cs-price-amount"><sup>$</sup>6,000</div>
-          <ul class="cs-price-includes">
-            <li>Projects &amp; knowledge files</li>
-            <li>5 recurring workflows as Skills</li>
-            <li>Tool connectors (Gmail, Drive, Slack, Notion)</li>
-            <li>Phase 1 billing optimisation</li>
-            <li>Two live training sessions</li>
-            <li>Recordings yours to keep forever</li>
-            <li>30-day email support included</li>
-          </ul>
-          <div class="btn-group">
-            <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
-          </div>
-        </div>
-
-        <div class="cs-price-addons reveal--stagger reveal">
-          <div class="cs-price-addon">
-            <p class="cs-addon-name">Extra workflows</p>
-            <p class="cs-addon-price">$750 <span style="font-size:0.8rem; font-weight:500; color:var(--color-lavender)">each</span></p>
-            <p>Any workflow beyond the 5 included, added as a Skill.</p>
-          </div>
-          <div class="cs-price-addon">
-            <p class="cs-addon-name">Ongoing retainer</p>
-            <p class="cs-addon-price">$150 <span style="font-size:0.8rem; font-weight:500; color:var(--color-lavender)">/mo</span></p>
-            <p>Ongoing maintenance and a monthly strategy meeting to keep the workspace current.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ROI -->
-    <section class="section section--dark cs-roi">
-      <div class="container reveal">
-        <p class="cs-section-label">Net cost</p>
-        <p class="cs-roi-stat">On average, teams recover <em>9 to 10 hours</em> per recurring workflow.<br>That's roughly <em>$22,500 in time saved</em> per workflow, per year.</p>
-        <p>10 hours × 50 weeks × $45/hr, annualized. The buildout pays for itself before the retainer starts.</p>
-      </div>
-    </section>
-
-    <!-- Before / After -->
-    <section class="section cs-ba">
-      <div class="container">
-        <div class="cs-ba-intro reveal">
-          <p class="cs-section-label">The transformation</p>
-          <h2>Before, and after.</h2>
-        </div>
-        <div class="cs-ba-grid reveal--stagger reveal">
-          <div class="cs-ba-col cs-ba-col--before">
-            <div class="cs-ba-col-head">
-              <div class="cs-ba-badge cs-ba-badge--before">−</div>
-              <h3>Before</h3>
-            </div>
-            <ul class="cs-ba-list">
-              <li>AI used inconsistently, or barely at all.</li>
-              <li>Only the owner extracts any value from Claude.</li>
-              <li>Everyone re-explains the business from scratch.</li>
-              <li>Output varies depending on who's prompting.</li>
-              <li>The subscription is quietly underused.</li>
-            </ul>
-          </div>
-          <div class="cs-ba-col cs-ba-col--after">
-            <div class="cs-ba-col-head">
-              <div class="cs-ba-badge cs-ba-badge--after">+</div>
-              <h3>After</h3>
-            </div>
-            <ul class="cs-ba-list">
-              <li>Anyone runs the same workflows, consistent output.</li>
-              <li>Value distributed across the team, not just the founder.</li>
-              <li>One shared workspace that already knows the business.</li>
-              <li>Every recurring task runs the same way, every time.</li>
-              <li>Connected to your tools, backed up, reviewed weekly.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why us -->
-    <section class="section section--alt cs-why">
-      <div class="container">
-        <div class="cs-why-intro reveal">
-          <p class="cs-section-label">Why us</p>
-          <h2>Prompt packs teach one person a skill. We build a system the whole team uses.</h2>
-          <p>The value is shared workflow architecture, done for you, that lives on after handover — not a library of prompts someone still has to assemble. We set it up and your people just use it. That's the whole point. Twenty-five years of B2B operations work means we understand the recurring work your team actually does, not just how the technology works.</p>
-        </div>
-
-        <div class="cs-not-grid reveal--stagger reveal">
-          <div class="cs-not-card">
-            <p class="cs-not-label">Not this</p>
-            <h3>Custom software</h3>
-            <p>Bespoke automation pipelines are a separate offer. This is a configured Claude workspace, not a development project.</p>
-          </div>
-          <div class="cs-not-card">
-            <p class="cs-not-label">Not this</p>
-            <h3>A managed service</h3>
-            <p>Ongoing management lives in the retainer, which is optional. The workspace is yours to own and operate after handover.</p>
-          </div>
-          <div class="cs-not-card">
-            <p class="cs-not-label">Not this</p>
-            <h3>Employee replacement</h3>
-            <p>Human-in-the-loop stays, always. We encode how your team makes decisions — Claude recommends, your people decide.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -1024,7 +907,7 @@
 
         <div class="cs-testimonial reveal">
           <img src="images/clients/biproxi.webp" alt="Biproxi Capital Network" style="height:32px; width:auto; margin-bottom:20px; opacity:0.6; filter:grayscale(100%);">
-          <blockquote>"Conor and Maria have been an absolute pleasure to work with. From our first conversation, Conor took the time to understand our business, the challenges we were trying to solve, and how custom Claude skills could help streamline our workflows. He came back with thoughtful, tailored solutions that directly addressed our needs and executed everything quickly and flawlessly. The entire process was collaborative, efficient, and exceeded our expectations."</blockquote>
+          <blockquote>"Conor took the time to understand our business and the challenges we were trying to solve — and came back with thoughtful, tailored solutions that directly addressed our needs. Execution was quick and flawless. The entire process was collaborative, efficient, and exceeded our expectations."</blockquote>
           <cite><strong>Gieriet Bowen</strong>, Director of Investor Relations · Biproxi Capital Network</cite>
         </div>
 
@@ -1042,23 +925,140 @@
 
         <div class="cs-case reveal" style="margin-top:64px;">
           <p class="cs-case-label">Case study · Benchmark Human Capital</p>
-          <h3>An AI that knows the US tax code inside and out.</h3>
-          <p>Benchmark Human Capital engaged TEG to build an AI deeply trained on US tax law for their consulting practice — giving their team a tool that enhances client service and creates a clear differentiator in the market. The system is embedded in their workflows and runs without manual intervention.</p>
+          <h3>A custom AI built around US tax law, embedded in their practice.</h3>
+          <p>Benchmark Human Capital came to TEG to build an AI deeply trained on US tax code for their consulting team — giving advisors a tool that sharpens client service and creates a clear differentiator. The system runs inside their existing workflows without any manual intervention.</p>
           <div class="cs-metrics">
             <div class="cs-metric">
               <div class="cs-metric-val">1 build</div>
-              <div class="cs-metric-desc">From spec to deployed AI, end to end</div>
+              <div class="cs-metric-desc">From spec to deployed, end to end</div>
             </div>
             <div class="cs-metric">
               <div class="cs-metric-val">Domain-specific</div>
-              <div class="cs-metric-desc">Deep US tax code knowledge encoded once, used every time</div>
+              <div class="cs-metric-desc">Deep tax knowledge encoded once, available in every client session</div>
             </div>
             <div class="cs-metric">
-              <div class="cs-metric-val">Enhanced</div>
-              <div class="cs-metric-desc">Client service offering and a clear growth strategy</div>
+              <div class="cs-metric-val">Live</div>
+              <div class="cs-metric-desc">Embedded in their practice and running without manual oversight</div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Before / After -->
+    <section class="section cs-ba">
+      <div class="container">
+        <div class="cs-ba-intro reveal">
+          <p class="cs-section-label">Before and after</p>
+          <h2>What changes when there's a system.</h2>
+        </div>
+        <div class="cs-ba-grid reveal--stagger reveal">
+          <div class="cs-ba-col cs-ba-col--before">
+            <div class="cs-ba-col-head">
+              <div class="cs-ba-badge cs-ba-badge--before">−</div>
+              <h3>Before</h3>
+            </div>
+            <ul class="cs-ba-list">
+              <li>AI adopted by one or two people — the rest of the team doesn't engage.</li>
+              <li>Only the founder or power user gets consistent results.</li>
+              <li>Every session starts with the same copy-pasted context dump.</li>
+              <li>Output quality depends entirely on who's typing the prompt.</li>
+              <li>The Claude subscription sits mostly idle.</li>
+            </ul>
+          </div>
+          <div class="cs-ba-col cs-ba-col--after">
+            <div class="cs-ba-col-head">
+              <div class="cs-ba-badge cs-ba-badge--after">+</div>
+              <h3>After</h3>
+            </div>
+            <ul class="cs-ba-list">
+              <li>Consistent results across the team, regardless of who's running the workflow.</li>
+              <li>Every team member gets value — not just the one who figured it out first.</li>
+              <li>A shared workspace pre-loaded with everything Claude needs to know.</li>
+              <li>Recurring tasks run the same way, every time, by anyone.</li>
+              <li>Live connections to your real tools — no copy-paste, no context drift.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section class="section section--alt cs-why">
+      <div class="container">
+        <div class="cs-why-intro reveal">
+          <p class="cs-section-label">Why us</p>
+          <h2>Prompt libraries teach one person. We build something the whole team runs.</h2>
+          <p>We're not selling you a collection of prompts to figure out yourself. We configure a shared workspace, hand it over ready to use, and leave. Twenty-five years inside B2B teams means we understand the recurring work that actually needs to get done — not just how to operate the tools.</p>
+        </div>
+
+        <div class="cs-not-grid reveal--stagger reveal">
+          <div class="cs-not-card">
+            <p class="cs-not-label">Not this</p>
+            <h3>Custom software</h3>
+            <p>We're not writing code or building custom pipelines. This is a configured Claude workspace — the distinction matters.</p>
+          </div>
+          <div class="cs-not-card">
+            <p class="cs-not-label">Not this</p>
+            <h3>A managed service</h3>
+            <p>You own the workspace after handover. The retainer is optional ongoing support — not a requirement for things to keep working.</p>
+          </div>
+          <div class="cs-not-card">
+            <p class="cs-not-label">Not this</p>
+            <h3>Employee replacement</h3>
+            <p>Claude augments your team's judgment, it doesn't replace it. We encode your decision logic — your people still make the calls.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section cs-pricing">
+      <div class="container">
+        <div class="cs-pricing-intro reveal">
+          <p class="cs-section-label">Pricing</p>
+          <h2>One package. One price.</h2>
+          <p>Everything your team needs to go from zero context to a workspace that works without hand-holding.</p>
+        </div>
+
+        <div class="cs-price-main reveal">
+          <p class="cs-price-label">The buildout · fixed · live in 14 days</p>
+          <div class="cs-price-amount"><sup>$</sup>6,000</div>
+          <ul class="cs-price-includes">
+            <li>Team Projects and knowledge base</li>
+            <li>Five workflows built as Claude Skills</li>
+            <li>Integrations: Gmail, Google Drive, Slack, Notion</li>
+            <li>Claude plan review and seat optimisation</li>
+            <li>Two live handover sessions with your team</li>
+            <li>Session recordings kept permanently</li>
+            <li>Thirty days of direct support post-handover</li>
+          </ul>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
+          </div>
+        </div>
+
+        <div class="cs-price-addons reveal--stagger reveal">
+          <div class="cs-price-addon">
+            <p class="cs-addon-name">Additional workflows</p>
+            <p class="cs-addon-price">$750 <span style="font-size:0.8rem; font-weight:500; color:var(--color-lavender)">each</span></p>
+            <p>Any workflow beyond the five included, added as a Skill.</p>
+          </div>
+          <div class="cs-price-addon">
+            <p class="cs-addon-name">Ongoing retainer</p>
+            <p class="cs-addon-price">$150 <span style="font-size:0.8rem; font-weight:500; color:var(--color-lavender)">/mo</span></p>
+            <p>Monthly strategy session and maintenance to keep the workspace current as your team grows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI -->
+    <section class="section cs-roi">
+      <div class="container reveal">
+        <p class="cs-section-label">The math</p>
+        <p class="cs-roi-stat">A single automated workflow typically recovers <em>9 to 10 hours</em> per week across the team.<br>At a conservative $45/hr, that's roughly <em>$22,500 back per workflow, per year.</em></p>
+        <p>The setup pays for itself well before the retainer starts.</p>
       </div>
     </section>
 
@@ -1066,7 +1066,7 @@
     <section class="section section--dark cs-cta">
       <div class="container reveal">
         <h2>Stop re-explaining your business in every chat.</h2>
-        <p>Book a 30-minute discovery call. We'll map the five workflows worth automating first, and you'll leave with a clear picture of what gets built and in what order.</p>
+        <p>Book a 30-minute call. We'll identify the five workflows worth starting with and you'll leave with a clear build order — and a real sense of what this looks like for your team.</p>
         <div class="btn-group btn-group--center">
           <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
           <a class="btn btn-secondary" href="solutions.html">See all solutions</a>
