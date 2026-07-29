@@ -760,8 +760,8 @@
     <section class="section cs-hero">
       <div class="container">
         <span class="eyebrow">For Claude Teams subscribers · Live in 14 days</span>
-        <h1>Your team has Claude.<br>We build the <span class="cs-word-cycle" id="csWordCycle">operating system</span><br>around it.</h1>
-        <p class="lede">Most teams buy Claude Teams and never get past one or two power users. We build the workspace, the shared context, and the workflows that make it actually useful for everyone on the team.</p>
+        <h1>Claude is only as useful as<br>the setup behind it.</h1>
+        <p class="lede">We build the workspace your team actually needs — shared context, connected tools, and repeatable workflows — so anyone can get consistent results, not just the person who figured it out first.</p>
         <div class="btn-group">
           <a class="btn btn-primary" href="contact.html">Book a discovery call</a>
           <a class="btn btn-secondary" href="#buildout">See what's included →</a>
@@ -1115,24 +1115,6 @@
   <script src="js/main.js" defer></script>
   <script>
   (function () {
-    /* ── Word cycle ── */
-    var cycleEl = document.getElementById('csWordCycle');
-    if (cycleEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var words = ['operating system', 'workspace', 'command center', 'knowledge base'];
-      var idx = 0;
-      function nextWord() {
-        cycleEl.classList.add('cs-word-exit');
-        setTimeout(function () {
-          idx = (idx + 1) % words.length;
-          cycleEl.textContent = words[idx];
-          cycleEl.classList.remove('cs-word-exit');
-          cycleEl.classList.add('cs-word-enter');
-          setTimeout(function () { cycleEl.classList.remove('cs-word-enter'); }, 400);
-        }, 280);
-      }
-      setInterval(nextWord, 3200);
-    }
-
     /* ── Phase line grow on scroll ── */
     var phasesEl = document.getElementById('csPhases');
     if (phasesEl && 'IntersectionObserver' in window) {
