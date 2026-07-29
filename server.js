@@ -462,6 +462,9 @@ http.createServer((req, res) => {
     handleContact(req, res);
     return;
   }
+  if (urlPath === '/claude-setup') {
+    req.url = '/claude-setup.html';
+  }
   serveStatic(req, res);
 }).listen(PORT, '0.0.0.0', () => {
   console.log(`Serving The Endurance Group site on port ${PORT}`);
