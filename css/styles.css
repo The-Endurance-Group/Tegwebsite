@@ -1344,6 +1344,7 @@ details[open] .faq-q::after { content: "−"; }
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   padding: 16px;
   display: flex;
@@ -1357,6 +1358,8 @@ details[open] .faq-q::after { content: "−"; }
   border-radius: var(--radius-md);
   font-size: 14px;
   line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .ai-chat-message--assistant {
   align-self: flex-start;

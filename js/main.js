@@ -179,10 +179,22 @@ document.addEventListener('DOMContentLoaded', function () {
       .replace(/\n/g, '<br>');
   }
 
-  function appendChatMessage(role, text) {
+  function appendChatMessage(role, text, animate) {
     var bubble = document.createElement('div');
     bubble.className = 'ai-chat-message ai-chat-message--' + role;
-    if (role === 'assistant') {
+    if (role === 'assistant' && animate && text) {
+      var i = 0;
+      var interval = setInterval(function () {
+        i++;
+        bubble.textContent = text.slice(0, i);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        if (i >= text.length) {
+          clearInterval(interval);
+          bubble.innerHTML = formatChatText(text);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+      }, 14);
+    } else if (role === 'assistant') {
       bubble.innerHTML = formatChatText(text);
     } else {
       bubble.textContent = text;
@@ -197,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chatToggle.setAttribute('aria-expanded', 'true');
     if (!chatGreeted) {
       chatGreeted = true;
-      appendChatMessage('assistant', "Hi! I can answer questions about The Endurance Group, what we build, and how pricing works. Ask away, or schedule a call anytime.");
+      appendChatMessage('assistant', "Hi! I can answer questions about The Endurance Group, what we build, and how pricing works. Ask away, or schedule a call anytime.", true);
     }
     chatInput.focus();
   }
@@ -234,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(function (data) {
         pending.remove();
-        appendChatMessage('assistant', data.reply);
+        appendChatMessage('assistant', data.reply, true);
         chatHistory.push({ role: 'assistant', content: data.reply });
       })
       .catch(function () {
