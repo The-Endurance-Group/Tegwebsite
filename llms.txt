@@ -19,6 +19,7 @@
 ## Blog
 
 - [Blog index](https://theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [How Biproxi Uses AI to Find Investors Their Competitors Can't](https://theendurancegroup.com/blog/biproxi-investor-discovery.html)
 - [How AI automation helps real estate teams respond to leads before they go cold](https://theendurancegroup.com/blog/ai-automation-real-estate.html)
 - [Why generic outbound automation fails B2B SaaS, and what to build instead](https://theendurancegroup.com/blog/ai-automation-b2b-saas.html)
 - [Why professional services firms should map their network before they prospect](https://theendurancegroup.com/blog/ai-automation-professional-services.html)
