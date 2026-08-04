@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How We Use Hiring Signals to Find Companies Ready to Buy AI | The Endurance Group</title>
+  <meta name="description" content="We built a prospect finder that starts with a job posting instead of a company list. Here's the insight behind it and how the automation works.">
+  <link rel="canonical" href="https://theendurancegroup.com/blog/ai-prospect-finder-hiring-signal.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="How We Use Hiring Signals to Find Companies Ready to Buy AI | The Endurance Group">
+  <meta property="og:description" content="We built a prospect finder that starts with a job posting instead of a company list. Here's the insight behind it and how the automation works.">
+  <meta property="og:url" content="https://theendurancegroup.com/blog/ai-prospect-finder-hiring-signal.html">
+  <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How We Use Hiring Signals to Find Companies Ready to Buy AI | The Endurance Group">
+  <meta name="twitter:description" content="We built a prospect finder that starts with a job posting instead of a company list. Here's the insight behind it and how the automation works.">
+  <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .dl-gate {
+      border: 1.5px solid var(--border-light, #E7E2E5);
+      border-radius: 6px;
+      padding: 28px 28px 24px;
+      margin: 36px 0;
+      background: rgba(101, 182, 174, 0.05);
+    }
+    .dl-gate-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-teal-dark, #4E9A92);
+      margin: 0 0 10px;
+    }
+    .dl-gate h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+    .dl-gate-desc {
+      font-size: 0.875rem;
+      color: var(--color-lavender);
+      margin: 0 0 20px;
+    }
+    .dl-gate-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .dl-gate-form input[type="email"] {
+      flex: 1 1 220px;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border-light, #E7E2E5);
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--color-ink);
+      outline: none;
+      transition: border-color .15s;
+      min-width: 0;
+    }
+    .dl-gate-form input[type="email"]:focus { border-color: var(--color-teal); }
+    .dl-gate-form button {
+      padding: 10px 20px;
+      background: var(--color-teal);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .15s;
+    }
+    .dl-gate-form button:hover { background: var(--color-teal-dark, #4E9A92); }
+    .dl-gate-form button:disabled { opacity: 0.6; cursor: default; }
+    .dl-gate-success {
+      display: none;
+      font-size: 0.9rem;
+      color: var(--color-teal-dark, #4E9A92);
+      font-weight: 600;
+      margin-top: 12px;
+    }
+    .dl-gate-error {
+      display: none;
+      font-size: 0.85rem;
+      color: var(--color-pink);
+      margin-top: 8px;
+    }
+    @media (prefers-color-scheme: dark) {
+      .dl-gate-form input[type="email"] { background: #1e1e1e; color: #f0f0f0; }
+    }
+    :root[data-theme="dark"] .dl-gate-form input[type="email"] { background: #1e1e1e; color: #f0f0f0; }
+    :root[data-theme="light"] .dl-gate-form input[type="email"] { background: #fff; color: var(--color-ink); }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://theendurancegroup.com/",
+    "logo": "https://theendurancegroup.com/images/og-default.png",
+    "image": "https://theendurancegroup.com/images/og-default.png",
+    "description": "AI automation and strategy for B2B companies in real estate, technology, and professional services.",
+    "foundingDate": "1998",
+    "priceRange": "$750-$6000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": { "@type": "Person", "name": "Jim Sullivan" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How We Use Hiring Signals to Find Companies Ready to Buy AI",
+    "description": "We built a prospect finder that starts with a job posting instead of a company list. Here's the insight behind it and how the automation works.",
+    "image": "https://theendurancegroup.com/images/og-default.png",
+    "datePublished": "2026-08-04",
+    "dateModified": "2026-08-04",
+    "author": { "@type": "Person", "name": "Conor Sullivan", "jobTitle": "Vice President" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": { "@type": "ImageObject", "url": "https://theendurancegroup.com/images/og-default.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://theendurancegroup.com/blog/ai-prospect-finder-hiring-signal.html" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="../index.html"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../ideas.html">Ideas</a></li>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">AI Automations</span>
+        <h1>How We Use Hiring Signals to Find Companies Ready to Buy AI</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Vice President</span>
+          <span class="divider">·</span>
+          <span>August 4, 2026</span>
+        </div>
+        <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p>One of the harder things about selling AI automation is that most companies aren't ready. Not because they don't want it, but because the buy-in hasn't fully landed. Maybe leadership approved something in theory but the person who'd actually use it every day hasn't been brought in. Maybe the tech team is on board but nobody's signed off on a budget yet. Either way, you end up in conversations that drag on or quietly die.</p>
+
+          <p>So I've been thinking about what a clean buy-in signal actually looks like, something that tells you the decision has already been made, not just that it's on someone's list.</p>
+
+          <p>The best one I've found: a company actively hiring for an AI Engineer or Automation Manager.</p>
+
+          <p>If someone is posting that job, the buy-in already happened. Both sides of the table agreed they needed someone. The budget was approved. A job description was written, reviewed, and posted. That's not a company that might get to AI someday. That's a company that's already moving.</p>
+
+          <h2>Why most prospecting misses this signal</h2>
+
+          <p>Standard outbound prospecting starts from a company list filtered by industry, headcount, or revenue. Those filters tell you who fits your general profile. They tell you almost nothing about where a company actually is in their decision process.</p>
+
+          <p>Filtering by job postings is different. You're not just filtering by who they are. You're filtering by what they're doing right now. The hiring signal tells you the internal decision has already been made, which means you're not trying to manufacture urgency from scratch. You're showing up at the right moment.</p>
+
+          <p>Most people have this data available and just aren't using it that way.</p>
+
+          <h2>How the filter actually works</h2>
+
+          <p>I built a system that pulls active job postings for roles like "AI Engineer" and "Automation Manager," then runs each result through our ICP criteria: industry, company size, a few other things.</p>
+
+          <p>The filter that matters most here is dropping native tech companies. A software company or a company with a full engineering org doesn't need an outside AI partner. They have engineers. What I'm looking for is a company in a non-tech industry, or a business without a dedicated technical team, that has just decided they need AI. That's the gap.</p>
+
+          <p>What's left after filtering is a short list of real companies with a demonstrated, live pain point and no in-house team to solve it.</p>
+
+          <h2>What happens once a company qualifies</h2>
+
+          <p>The automation doesn't stop at the list. For each qualifying company, it finds the person the new hire would actually report to. If a company is hiring for an AI role, there's a manager or VP somewhere who signed off on that req. That's the right contact: the person who owns the problem, not someone who'll pass the message along.</p>
+
+          <p>From there, it drafts a short personalized outreach note based on the role they're hiring for, and logs everything into our CRM with a follow-up task. Nothing sits in a spreadsheet waiting for someone to action it. It goes straight into the pipeline with a next step already attached.</p>
+
+          <h2>Download the Skill</h2>
+
+          <p>I built this as a Claude Skill. If you want to see how it's structured, you can download it below.</p>
+
+          <div class="dl-gate" id="dl-gate">
+            <p class="dl-gate-label">Free download</p>
+            <h3>TEG Prospect Finder Skill</h3>
+            <p class="dl-gate-desc">A Claude Skill that finds companies hiring for AI roles, filters them against your ICP, identifies the right contact, drafts outreach, and logs to CRM. Drop your email and the file downloads automatically.</p>
+            <form class="dl-gate-form" id="dl-gate-form" novalidate>
+              <input type="email" id="dl-email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address">
+              <button type="submit" id="dl-btn">Download</button>
+            </form>
+            <p class="dl-gate-success" id="dl-success">Downloading now. Check your downloads folder.</p>
+            <p class="dl-gate-error" id="dl-error">Something went wrong. Try refreshing or email us directly.</p>
+          </div>
+
+          <h2>If you want to see it in action</h2>
+
+          <p>I'm sharing this because I think more teams should be using hiring signals as a prospecting filter, not just firmographics. If you want to talk through how something like this could work for your business, reach out. Not a pitch, just a conversation.</p>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="../contact.html">Schedule a Call</a>
+            <a class="btn btn-secondary" href="../how-to-get-started.html">Claim Your Free Automation</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="claude-skills.html">What Claude Skills are, and why we build inside Claude instead of a new app</a></h3>
+            <p>How Claude Skills work, what they can do for a B2B team, and how we build one from scratch.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="what-is-an-ai-automation.html">What counts as a real AI automation, and what's just a demo</a></h3>
+            <p>The difference between an automation that's actually running in production and one that only looks good in a meeting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="../index.html"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <p class="footer-tagline">Your AI Automation Partner</p>
+        <p class="footer-address">Portland, ME · (207) 846-6000</p>
+      </div>
+      <div class="footer-columns">
+        <nav aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="../solutions.html#ai-automations">AI Automations</a></li>
+            <li><a href="../solutions.html#strategy">Strategy</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Products">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Commonality</a></li>
+            <li><a href="https://coachonix.com" target="_blank" rel="noopener">Coachonix</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Specialties">
+          <h3>Specialties</h3>
+          <ul>
+            <li><a href="../specialties.html#sales-and-marketing">Sales &amp; Marketing</a></li>
+            <li><a href="../specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="../specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="../specialties.html#professional-services">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved.</p>
+        <ul class="footer-legal">
+          <li><a href="../privacy.html">Privacy Policy</a></li>
+          <li><a href="../terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('dl-gate-form');
+      var emailInput = document.getElementById('dl-email');
+      var btn = document.getElementById('dl-btn');
+      var success = document.getElementById('dl-success');
+      var error = document.getElementById('dl-error');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = emailInput.value.trim();
+        if (!email || !email.includes('@')) {
+          emailInput.focus();
+          return;
+        }
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        error.style.display = 'none';
+
+        fetch('/api/download-skill', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, skill: 'teg-prospect-finder' })
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (data.ok) {
+              success.style.display = 'block';
+              form.style.display = 'none';
+              var a = document.createElement('a');
+              a.href = '/downloads/teg-prospect-finder.skill';
+              a.download = 'teg-prospect-finder.skill';
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+            } else {
+              throw new Error(data.error || 'failed');
+            }
+          })
+          .catch(function () {
+            btn.disabled = false;
+            btn.textContent = 'Download';
+            error.style.display = 'block';
+          });
+      });
+    }());
+  </script>
+</body>
+</html>

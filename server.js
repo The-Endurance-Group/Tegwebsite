@@ -448,6 +448,41 @@ function handleContact(req, res) {
   });
 }
 
+function handleDownloadSkill(req, res) {
+  var ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown').split(',')[0].trim();
+  readBody(req).then(function(body) {
+    var data;
+    try { data = JSON.parse(body); } catch(e) { data = {}; }
+    var email = (data.email || '').slice(0, 200).trim();
+    if (!email || !email.includes('@')) {
+      res.writeHead(400, {'Content-Type': 'application/json'});
+      res.end(JSON.stringify({ok: false, error: 'Valid email required'}));
+      return;
+    }
+    var skill = (data.skill || 'teg-prospect-finder').replace(/[^a-z0-9-]/g, '');
+    console.log('[DOWNLOAD]', JSON.stringify({skill, email, ip, ts: new Date().toISOString()}));
+    var resendKey = process.env.RESEND_API_KEY;
+    if (resendKey) {
+      fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + resendKey, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          from: 'TEG Website <noreply@theendurancegroup.com>',
+          to: ['csullivan@theendurancegroup.com'],
+          reply_to: email,
+          subject: 'Skill download: ' + skill,
+          text: 'Someone downloaded the ' + skill + ' skill.\n\nEmail: ' + email + '\nIP: ' + ip + '\nTime: ' + new Date().toISOString()
+        })
+      }).catch(function(err) { console.error('[DOWNLOAD] Resend error:', err.message); });
+    }
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify({ok: true}));
+  }).catch(function() {
+    res.writeHead(400, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify({ok: false, error: 'Bad request'}));
+  });
+}
+
 http.createServer((req, res) => {
   var urlPath = req.url.split('?')[0];
   if (req.method === 'POST' && urlPath === '/api/chat') {
@@ -460,6 +495,10 @@ http.createServer((req, res) => {
   }
   if (req.method === 'POST' && urlPath === '/api/contact') {
     handleContact(req, res);
+    return;
+  }
+  if (req.method === 'POST' && urlPath === '/api/download-skill') {
+    handleDownloadSkill(req, res);
     return;
   }
   if (urlPath === '/claude-setup') {
