@@ -13,6 +13,7 @@
 - [About](https://theendurancegroup.com/about.html): Company history and the people behind it - President Jim Sullivan and Vice President Conor Sullivan.
 - [How to Get Started](https://theendurancegroup.com/how-to-get-started.html): It starts with one call. From there, TEG either builds a free automation or runs a free private team training, no cost, no contract either way.
 - [Claude Setup for Teams](https://theendurancegroup.com/claude-setup): For teams already on Claude Teams who aren't getting full value from their subscription. TEG builds the shared workspace, knowledge base, connected tools, and repeatable workflows in 14 days for a flat $6,000. Includes a plan audit, team workshops to identify the highest-impact workflows, Projects and knowledge base setup, five workflows built as Claude Skills, integrations with existing tools (email, Slack, Notion, Drive, etc.), two live handover sessions, and 30 days of direct support. Optional add-ons: additional workflows at $750 each, ongoing retainer at $299/mo.
+- [Operational Reconciliation](https://theendurancegroup.com/operations): AI automations that check incoming data (invoices, documents, photos) against your system of record, flag discrepancies, and route exceptions before they become problems. Three common patterns: document review, vendor/invoice validation, and pre-deadline gap detection. Pricing matches site-wide: $750 to build, TEG Membership from $149/mo.
 - [Privacy Policy](https://theendurancegroup.com/privacy.html)
 - [Terms of Service](https://theendurancegroup.com/terms.html)
 

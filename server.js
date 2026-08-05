@@ -504,6 +504,9 @@ http.createServer((req, res) => {
   if (urlPath === '/claude-setup') {
     req.url = '/claude-setup.html';
   }
+  if (urlPath === '/operations') {
+    req.url = '/operations.html';
+  }
   serveStatic(req, res);
 }).listen(PORT, '0.0.0.0', () => {
   console.log(`Serving The Endurance Group site on port ${PORT}`);
