@@ -65,6 +65,35 @@
     }
   }
   </script>
+  <style>
+    /* Pattern comparison cards */
+    .pattern-compare-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 36px 0; }
+    @media (min-width: 768px) { .pattern-compare-grid { grid-template-columns: repeat(3, 1fr); } }
+    .pattern-card { background: var(--color-white); border: 1px solid var(--border-light); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+    .pattern-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-lavender); padding: 10px 14px; border-bottom: 1px solid var(--border-light); background: var(--bg-light); }
+    .pattern-card-docs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-light); flex: 1; }
+    .mock-doc, .mock-photo { background: var(--color-white); font-size: 10px; line-height: 1.5; }
+    .mock-doc-head { padding: 5px 10px; font-weight: 700; font-size: 9px; letter-spacing: 0.06em; color: white; text-transform: uppercase; }
+    .mock-doc-head--pink { background: var(--color-pink); }
+    .mock-doc-head--teal { background: var(--color-teal-dark); }
+    .mock-doc-rows { padding: 8px 10px; display: flex; flex-direction: column; gap: 5px; }
+    .mock-row { display: flex; justify-content: space-between; gap: 4px; font-size: 10px; }
+    .mock-row-key { color: var(--color-lavender); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .mock-row-val { font-weight: 700; white-space: nowrap; text-align: right; }
+    .mock-row-val--ok { color: var(--color-teal-dark); }
+    .mock-row-val--flag { color: var(--color-pink); }
+    .mock-photo-img { height: 64px; background: #d0ccd4; overflow: hidden; display: flex; align-items: flex-end; }
+    .mock-photo-img svg { width: 100%; height: auto; }
+    .mock-photo-rows { padding: 8px 10px; display: flex; flex-direction: column; gap: 5px; }
+    .pattern-card-result { font-size: 11px; font-weight: 700; text-align: center; padding: 8px 14px; border-top: 1px solid var(--border-light); }
+    .pattern-card-result--ok { background: rgba(101,182,174,0.10); color: var(--color-teal-dark); }
+    .pattern-card-result--flag { background: rgba(196,94,137,0.08); color: var(--color-pink); }
+
+    /* Testimonial pull quote */
+    .ops-pull-quote { text-align: center; padding: 0 0 28px; }
+    .ops-pull-quote p { font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; font-style: italic; color: var(--color-teal-dark); max-width: 480px; margin-inline: auto; line-height: 1.3; }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -124,18 +153,97 @@
     <!-- The pattern -->
     <section class="section section--alt">
       <div class="container">
-        <div class="prose reveal">
+        <div class="prose reveal" style="max-width:720px;">
           <div class="icon-badge icon-badge--teal">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
           </div>
           <span class="eyebrow">The pattern</span>
           <h2>The same underlying problem across every operation</h2>
-          <p>Most operational accuracy problems share a structure: something comes in from the outside world, and someone has to manually verify it against what a system already knows. An invoice against a property record. A vendor photo against a work order. A document against a checklist of required fields. A record against what was expected to be filed by a deadline.</p>
-          <p>The check itself isn't complicated. It's just tedious, time-consuming, and easy to miss when the volume is high. That's exactly the kind of work AI automation handles well.</p>
-          <p>We build the automation that does the check automatically: reads the input, compares it against your system of record, identifies what matches and what doesn't, and either resolves it or routes the exception to a human. What used to take an afternoon of cross-referencing takes seconds, and nothing slips through because someone was busy.</p>
+          <p>Most operational accuracy problems share a structure: something comes in from the outside world, and someone has to manually verify it against what a system already knows. The check isn't complicated — it's tedious, time-consuming, and easy to miss when the volume is high.</p>
+        </div>
+        <div class="pattern-compare-grid reveal">
+          <!-- Invoice vs Property Record -->
+          <div class="pattern-card">
+            <div class="pattern-card-label">Invoice → Property Record</div>
+            <div class="pattern-card-docs">
+              <div class="mock-doc">
+                <div class="mock-doc-head mock-doc-head--pink">Invoice #4821</div>
+                <div class="mock-doc-rows">
+                  <div class="mock-row"><span class="mock-row-key">Property</span><span class="mock-row-val">123 Oak St</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Amount</span><span class="mock-row-val">$2,840</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Work type</span><span class="mock-row-val">Pool svc</span></div>
+                </div>
+              </div>
+              <div class="mock-doc">
+                <div class="mock-doc-head mock-doc-head--teal">Property Record</div>
+                <div class="mock-doc-rows">
+                  <div class="mock-row"><span class="mock-row-key">Address</span><span class="mock-row-val mock-row-val--ok">✓ Match</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Budget</span><span class="mock-row-val mock-row-val--ok">✓ Match</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Scope</span><span class="mock-row-val mock-row-val--flag">⚠ Diff</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-card-result pattern-card-result--flag">1 discrepancy flagged &amp; routed</div>
+          </div>
+          <!-- Vendor Photo vs Work Order -->
+          <div class="pattern-card">
+            <div class="pattern-card-label">Vendor Photo → Work Order</div>
+            <div class="pattern-card-docs">
+              <div class="mock-photo">
+                <div class="mock-photo-img">
+                  <svg viewBox="0 0 120 64" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <rect width="120" height="64" fill="#d0ccd4"/>
+                    <circle cx="96" cy="16" r="12" fill="#b8b0bc" opacity="0.5"/>
+                    <path d="M0 64 Q30 36 60 48 Q90 60 120 38 L120 64Z" fill="#c0bac4"/>
+                    <path d="M0 64 Q20 52 50 58 L0 64Z" fill="#b0aab4"/>
+                  </svg>
+                </div>
+                <div class="mock-photo-rows">
+                  <div class="mock-row"><span class="mock-row-key">Unit</span><span class="mock-row-val">4B</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Type</span><span class="mock-row-val">Landscaping</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Date</span><span class="mock-row-val">Today</span></div>
+                </div>
+              </div>
+              <div class="mock-doc">
+                <div class="mock-doc-head mock-doc-head--teal">Work Order #77</div>
+                <div class="mock-doc-rows">
+                  <div class="mock-row"><span class="mock-row-key">Unit</span><span class="mock-row-val mock-row-val--ok">✓ 4B</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Type</span><span class="mock-row-val mock-row-val--ok">✓ Match</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Status</span><span class="mock-row-val mock-row-val--ok">✓ Done</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-card-result pattern-card-result--ok">Matched · logged automatically</div>
+          </div>
+          <!-- Document vs Required Fields -->
+          <div class="pattern-card">
+            <div class="pattern-card-label">Document → Required Fields</div>
+            <div class="pattern-card-docs">
+              <div class="mock-doc">
+                <div class="mock-doc-head mock-doc-head--pink">Submission</div>
+                <div class="mock-doc-rows">
+                  <div class="mock-row"><span class="mock-row-key">Client name</span><span class="mock-row-val mock-row-val--ok">✓</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Signature</span><span class="mock-row-val mock-row-val--ok">✓</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Exhibit A</span><span class="mock-row-val mock-row-val--flag">Missing</span></div>
+                </div>
+              </div>
+              <div class="mock-doc">
+                <div class="mock-doc-head mock-doc-head--teal">Required Fields</div>
+                <div class="mock-doc-rows">
+                  <div class="mock-row"><span class="mock-row-key">Client name</span><span class="mock-row-val mock-row-val--ok">✓ OK</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Signature</span><span class="mock-row-val mock-row-val--ok">✓ OK</span></div>
+                  <div class="mock-row"><span class="mock-row-key">Exhibit A</span><span class="mock-row-val mock-row-val--flag">⚠ Gap</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="pattern-card-result pattern-card-result--flag">1 gap detected &amp; routed to reviewer</div>
+          </div>
+        </div>
+        <div class="prose reveal" style="max-width:720px;">
+          <p>We build the automation that does the check: reads the input, compares it against your system of record, resolves what matches, and routes the rest to a human with the context they need to act. What used to take an afternoon takes seconds, and nothing slips through because someone was busy.</p>
           <div class="example-callout">
             <strong>How it works in plain terms</strong>
-            Something arrives (an invoice, a document, a photo, a submission). The automation reads it, checks it against what your system says should be there, and flags anything that's off. If it matches, it logs and moves on. If it doesn't, it routes the exception to the right person with the context they need to fix it.
+            Something arrives (an invoice, a document, a photo). The automation reads it, checks it against what your system says should be there, and flags anything that's off. If it matches, it logs and moves on. If it doesn't, it routes the exception to the right person with enough context to fix it.
           </div>
         </div>
       </div>
@@ -185,6 +293,9 @@
           <span class="eyebrow">What clients say</span>
           <h2>The hours add up fast when it's done by hand</h2>
         </div>
+        <div class="ops-pull-quote reveal">
+          <p>"This saves me 2 hours a day."</p>
+        </div>
         <div class="testimonial reveal" style="max-width:800px; margin-inline:auto; margin-bottom:32px;">
           <img class="testimonial-logo" src="images/clients/offerpad.webp" alt="Offerpad">
           <blockquote>TEG has been a great AI partner for us. They helped us build a suite of AI tools for our sales team and develop back-office automations that eliminated hours of manual work. They've worked across multiple teams and delivered consistently; they know how to scope, build, and iterate without a lot of hand-holding. Highly recommend.</blockquote>
@@ -203,28 +314,28 @@
       </div>
     </section>
 
-    <!-- How it works -->
+    <!-- How we work -->
     <section class="section">
       <div class="container">
         <div class="section-head section-head--center reveal">
-          <span class="eyebrow">How we build it</span>
-          <h2>Three steps to a running reconciliation automation</h2>
+          <span class="eyebrow">How we work</span>
+          <h2>We start by watching you do it manually</h2>
         </div>
         <div class="grid grid--3 reveal--stagger reveal">
           <div class="feature-card">
             <span class="feature-num">1</span>
-            <h3>Map the input and the record</h3>
-            <p>We start by understanding what's coming in, what your system of record contains, and what a match looks like versus a discrepancy. This shapes everything: what the automation reads, what it checks against, and what counts as an exception worth routing.</p>
+            <h3>We understand what you're doing now</h3>
+            <p>A screen share or a quick personal walkthrough — we want to see the actual process. What comes in, where it goes, what you're checking against. Fifteen minutes of that is worth more than an hour of back-and-forth trying to describe it.</p>
           </div>
           <div class="feature-card">
             <span class="feature-num">2</span>
-            <h3>Build the check and the routing logic</h3>
-            <p>We build the automation that reads the input, runs the comparison, and handles the output. Matches get logged. Exceptions get routed to the right person with the context they need, not just a flag, but enough information to actually act on it.</p>
+            <h3>We map out the automation, and you approve every step</h3>
+            <p>Don't want it to send an automatic email to the vendor? Prefer it to drop a draft in your inbox instead? Totally fine. We build it the way you actually want to work — not the way we assume you should.</p>
           </div>
           <div class="feature-card">
             <span class="feature-num">3</span>
-            <h3>You see discrepancies before they cost you</h3>
-            <p>Once it's running, nothing waits in someone's inbox to be manually reviewed. Gaps get caught when there's still time to fix them. Your team stops doing the cross-referencing and starts handling the exceptions, which is the part that actually needs a person.</p>
+            <h3>We refine until it's right</h3>
+            <p>Not working perfectly right away? We edit it. This isn't a hand-off. We stay on the automation until it does exactly what it's supposed to do — and if something changes down the road, we adjust it.</p>
           </div>
         </div>
       </div>
