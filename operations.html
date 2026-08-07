@@ -88,6 +88,19 @@
     .ops-reassurance-list { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
     .ops-reassurance-list li { font-size: 16px; line-height: 1.65; color: var(--color-lavender); padding-left: 16px; border-left: 3px solid var(--color-teal); }
     .ops-reassurance-list li strong { color: var(--color-ink); font-weight: 700; }
+
+    /* Two questions section */
+    .twoq-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 40px 0 0; }
+    @media (min-width: 768px) { .twoq-grid { grid-template-columns: 1fr 1fr; } }
+    .twoq-card { background: var(--color-white); border: 1px solid var(--border-light); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 20px; }
+    .twoq-q { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-lavender); margin: 0; }
+    .twoq-chain { display: flex; flex-wrap: wrap; gap: 6px 4px; align-items: baseline; }
+    .twoq-chain span { font-size: 15px; font-weight: 600; color: var(--color-ink); }
+    .twoq-chain .twoq-sep { color: var(--color-pink); font-weight: 700; font-size: 13px; }
+    .twoq-answer { font-size: 19px; font-style: italic; color: var(--color-ink); line-height: 1.5; margin: 0; }
+    .twoq-tag { font-size: 13px; color: var(--color-teal-dark); font-weight: 600; margin: 0; margin-top: auto; }
+    .twoq-resolution { margin-top: 44px; border-top: 1px solid var(--border-light); padding-top: 36px; }
+    .twoq-resolution p { font-size: clamp(21px, 2.5vw, 30px); font-weight: 700; color: var(--color-ink); line-height: 1.3; max-width: 600px; }
   </style>
 
   <script type="application/ld+json">
@@ -180,83 +193,35 @@
       </div>
     </section>
 
-    <!-- 3. Pattern section with visual examples -->
+    <!-- 3. Two questions -->
     <section class="section section--alt">
       <div class="container">
-        <div class="reveal" style="max-width:720px;">
-          <span class="eyebrow">What it catches</span>
-          <h2>Three things that fall through in every operation</h2>
-          <p class="lede" style="margin-top:12px;">Not because anyone is careless — because checking manually at volume is the wrong tool for the job.</p>
+        <div class="section-head reveal" style="max-width:640px;">
+          <span class="eyebrow">What we hear on every call</span>
+          <h2>Two questions we ask every ops manager.</h2>
         </div>
-        <div class="pattern-compare-grid reveal">
-          <div class="pattern-card">
-            <div class="pattern-card-label">Invoice → Property Record</div>
-            <div class="pattern-card-docs">
-              <div class="mock-doc">
-                <div class="mock-doc-head mock-doc-head--pink">Invoice #4821</div>
-                <div class="mock-doc-rows">
-                  <div class="mock-row"><span class="mock-row-key">Property</span><span class="mock-row-val">123 Oak St</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Amount</span><span class="mock-row-val">$2,840</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Work type</span><span class="mock-row-val">Pool svc</span></div>
-                </div>
-              </div>
-              <div class="mock-doc">
-                <div class="mock-doc-head mock-doc-head--teal">Property Record</div>
-                <div class="mock-doc-rows">
-                  <div class="mock-row"><span class="mock-row-key">Address</span><span class="mock-row-val mock-row-val--ok">✓ Match</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Budget</span><span class="mock-row-val mock-row-val--ok">✓ Match</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Scope</span><span class="mock-row-val mock-row-val--flag">⚠ Diff</span></div>
-                </div>
-              </div>
+        <div class="twoq-grid reveal--stagger reveal">
+          <div class="twoq-card">
+            <p class="twoq-q">What's something at your job you hate doing?</p>
+            <div class="twoq-chain">
+              <span>Go to email</span><span class="twoq-sep">→</span>
+              <span>Download the photo</span><span class="twoq-sep">→</span>
+              <span>Open the system</span><span class="twoq-sep">→</span>
+              <span>Enter the findings</span><span class="twoq-sep">→</span>
+              <span>Back to email</span><span class="twoq-sep">→</span>
+              <span>Send the vendor reply</span>
             </div>
-            <div class="pattern-card-result pattern-card-result--flag">1 discrepancy flagged &amp; routed</div>
+            <p class="twoq-tag">We build the automation that runs this — without anyone doing it.</p>
           </div>
-          <div class="pattern-card">
-            <div class="pattern-card-label">CRM Record → Stage Requirements</div>
-            <div class="pattern-card-docs">
-              <div class="mock-doc">
-                <div class="mock-doc-head mock-doc-head--pink">Deal Record</div>
-                <div class="mock-doc-rows">
-                  <div class="mock-row"><span class="mock-row-key">Company</span><span class="mock-row-val">Acme Corp</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Stage</span><span class="mock-row-val">Proposal</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Close date</span><span class="mock-row-val">—</span></div>
-                </div>
-              </div>
-              <div class="mock-doc">
-                <div class="mock-doc-head mock-doc-head--teal">Stage Checklist</div>
-                <div class="mock-doc-rows">
-                  <div class="mock-row"><span class="mock-row-key">Company</span><span class="mock-row-val mock-row-val--ok">✓ OK</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Stage</span><span class="mock-row-val mock-row-val--ok">✓ OK</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Close date</span><span class="mock-row-val mock-row-val--flag">⚠ Missing</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="pattern-card-result pattern-card-result--flag">1 gap flagged before pipeline review</div>
-          </div>
-          <div class="pattern-card">
-            <div class="pattern-card-label">Document → Required Fields</div>
-            <div class="pattern-card-docs">
-              <div class="mock-doc">
-                <div class="mock-doc-head mock-doc-head--pink">Submission</div>
-                <div class="mock-doc-rows">
-                  <div class="mock-row"><span class="mock-row-key">Client name</span><span class="mock-row-val mock-row-val--ok">✓</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Signature</span><span class="mock-row-val mock-row-val--ok">✓</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Exhibit A</span><span class="mock-row-val mock-row-val--flag">Missing</span></div>
-                </div>
-              </div>
-              <div class="mock-doc">
-                <div class="mock-doc-head mock-doc-head--teal">Required Fields</div>
-                <div class="mock-doc-rows">
-                  <div class="mock-row"><span class="mock-row-key">Client name</span><span class="mock-row-val mock-row-val--ok">✓ OK</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Signature</span><span class="mock-row-val mock-row-val--ok">✓ OK</span></div>
-                  <div class="mock-row"><span class="mock-row-key">Exhibit A</span><span class="mock-row-val mock-row-val--flag">⚠ Gap</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="pattern-card-result pattern-card-result--flag">1 gap detected &amp; routed to reviewer</div>
+          <div class="twoq-card">
+            <p class="twoq-q">If you had unlimited time, what would you do with it?</p>
+            <p class="twoq-answer">"Monitor every university's RFP page daily — catch updates the moment they post."</p>
+            <p class="twoq-tag">We build that too.</p>
           </div>
         </div>
-        <p class="pattern-note reveal">These aren't edge cases. They're what happens when a team at volume has to rely on someone remembering to check. The automation doesn't have a busy week — your team does, and now they can spend it on the work that actually requires them.</p>
+        <div class="twoq-resolution reveal">
+          <p>Now imagine what you could do when both of those are automated.</p>
+        </div>
       </div>
     </section>
 
