@@ -76,9 +76,10 @@
     .pricing-note { font-size: 13px; color: var(--color-lavender); margin-top: 12px; }
     .pricing-note strong { color: var(--color-ink); }
 
-    /* Hero resolution line + ICP note */
+    /* Hero resolution line + text link */
     .hero-resolution { font-size: clamp(18px, 2vw, 22px); font-weight: 700; color: var(--color-teal-dark); margin: 0 0 24px; line-height: 1.35; }
-    .hero-icp { font-size: 13px; color: var(--color-lavender); margin-top: 20px; font-style: italic; max-width: 520px; }
+    .hero-text-link { display: inline-block; font-size: 14px; color: var(--color-lavender); text-decoration: underline; padding: 4px 0; align-self: center; }
+    .hero-text-link:hover { color: var(--color-ink); }
   </style>
 
   <script type="application/ld+json">
@@ -144,14 +145,14 @@
     <!-- 1. Hero -->
     <section class="hero hero--page section">
       <div class="container reveal">
+        <span class="eyebrow">For teams manually filing vendor photos and invoices</span>
         <h1>Twelve browser tabs. A downloads folder full of photos named IMG_4821. A spreadsheet with three versions open at once.</h1>
         <p class="hero-resolution">If this is your afternoon, we build the automation that ends it.</p>
-        <p class="lede">Messy inputs arrive every day — vendor invoices that don't match the property record, photos submitted but never logged against the work order, forms that cleared your inbox without a required signature. We build the automation that catches each mismatch before it becomes your problem. No new tools for your team, no format changes for your vendors.</p>
+        <p class="lede">We catch the mismatch before it becomes your problem.</p>
         <div class="btn-group">
           <a class="btn btn-primary" href="how-to-get-started.html">Get Your First Automation Free</a>
-          <a class="btn btn-secondary" href="contact.html">Schedule a Call</a>
+          <a class="hero-text-link" href="contact.html">Schedule a Call</a>
         </div>
-        <p class="hero-icp">Built for teams manually downloading, renaming, and filing vendor emails into folders and spreadsheets.</p>
         <hr class="hero-divider">
       </div>
     </section>
