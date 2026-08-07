@@ -83,6 +83,11 @@
     .hero-resolution { font-size: clamp(18px, 2vw, 22px); font-weight: 700; color: var(--color-teal-dark); margin: 0 0 24px; line-height: 1.35; }
     .hero-text-link { display: inline-block; font-size: 14px; color: var(--color-lavender); text-decoration: underline; padding: 4px 0; align-self: center; }
     .hero-text-link:hover { color: var(--color-ink); }
+
+    /* Consolidated reassurance list */
+    .ops-reassurance-list { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
+    .ops-reassurance-list li { font-size: 16px; line-height: 1.65; color: var(--color-lavender); padding-left: 16px; border-left: 3px solid var(--color-teal); }
+    .ops-reassurance-list li strong { color: var(--color-ink); font-weight: 700; }
   </style>
 
   <script type="application/ld+json">
@@ -151,9 +156,9 @@
         <span class="eyebrow">For teams manually filing vendor photos and invoices</span>
         <h1>Twelve browser tabs. A downloads folder full of photos named IMG_4821. A spreadsheet with three versions open at once.</h1>
         <p class="hero-resolution">If this is your afternoon, we build the automation that ends it.</p>
-        <p class="lede">We catch the mismatch before it becomes your problem.</p>
+        <p class="lede">We catch the mismatch before it becomes your problem. Your team gets the afternoon back.</p>
         <div class="btn-group">
-          <a class="btn btn-primary" href="how-to-get-started.html">Get Your First Automation Free</a>
+          <a class="btn btn-primary" href="how-to-get-started.html">We'll Build the First One Free</a>
           <a class="hero-text-link" href="contact.html">Schedule a Call</a>
         </div>
         <hr class="hero-divider">
@@ -293,20 +298,8 @@
       </div>
     </section>
 
-    <!-- 5. One pattern, every department -->
+    <!-- 5. Client proof / Testimonials -->
     <section class="section section--alt">
-      <div class="container">
-        <div class="reveal" style="max-width:720px;">
-          <span class="eyebrow">Scale within your org</span>
-          <h2>One pattern, every department</h2>
-          <p class="lede">The same reconciliation problem shows up everywhere data changes hands between people or systems — sales handoffs, invoice approvals, renovation sign-offs, disposition paperwork. Different department, same shape of problem.</p>
-          <p style="font-size:16px; line-height:1.7; color:var(--color-lavender); margin-top:16px;">Once it's running on your invoice reconciliation, your finance team will ask for the same thing on their end. Your disposition coordinator will want it for sign-offs. We've already seen this pattern at Offerpad — and because we already know how your systems connect, each new check gets built faster than the last. You end up looking good for introducing it.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. Client proof / Testimonials -->
-    <section class="section">
       <div class="container">
         <div class="section-head section-head--center reveal">
           <span class="eyebrow">Proof</span>
@@ -323,38 +316,34 @@
           <cite>— Chris Carpenter, Chief Operating Officer · Offerpad</cite>
         </div>
         <div class="btn-group btn-group--center reveal" style="margin-top:40px;">
-          <a class="btn btn-primary" href="how-to-get-started.html">Get Your First Automation Free</a>
+          <a class="btn btn-primary" href="how-to-get-started.html">We'll Build the First One Free</a>
           <a class="hero-text-link" href="contact.html">Schedule a Call</a>
         </div>
       </div>
     </section>
 
-    <!-- 7. You don't have to switch tools -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="reveal" style="max-width:680px;">
-          <h2>You don't have to switch tools</h2>
-          <p class="lede">You didn't sign up to be the person who manually saves every vendor photo to the right folder. We handle that part. If it's a spreadsheet today, it's still a spreadsheet — we just make sure it's never wrong. No new dashboard to learn, no migration.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. Your vendors don't have to change anything -->
+    <!-- 6. One pattern, every department -->
     <section class="section">
       <div class="container">
-        <div class="reveal" style="max-width:680px;">
-          <h2>Your vendors don't have to change anything</h2>
-          <p class="lede">Vendors send things however they send them — links, photos buried in an email, inconsistent formats. We handle whatever comes in and flag anything we genuinely can't process. No vendor training, no new format to enforce.</p>
+        <div class="reveal" style="max-width:720px;">
+          <span class="eyebrow">What happens next</span>
+          <h2>One pattern, every department</h2>
+          <p class="lede">The same reconciliation problem shows up everywhere data changes hands between people or systems — sales handoffs, invoice approvals, renovation sign-offs, disposition paperwork. Different department, same shape of problem.</p>
+          <p style="font-size:16px; line-height:1.7; color:var(--color-lavender); margin-top:16px;">Once it's running on your invoice reconciliation, your finance team will ask for the same thing on their end. Your disposition coordinator will want it for sign-offs. We've already seen this pattern at Offerpad — and because we already know how your systems connect, each new check gets built faster than the last. You end up looking good for introducing it.</p>
         </div>
       </div>
     </section>
 
-    <!-- 9. You stay in control -->
+    <!-- 7. Reassurance -->
     <section class="section section--alt">
       <div class="container">
-        <div class="reveal" style="max-width:680px;">
-          <h2>You stay in control</h2>
-          <p class="lede">The automation runs on the schedule that fits your team's workflow and won't conflict with someone actively working in a file. Anything that doesn't match gets flagged and routed to a specific person with context — nothing is silently dropped.</p>
+        <div class="reveal" style="max-width:720px;">
+          <h2>Built into what you already use</h2>
+          <ul class="ops-reassurance-list">
+            <li><strong>You don't have to switch tools.</strong> If it's a spreadsheet today, it's still a spreadsheet — we just make sure it's never wrong. No new dashboard to learn, no migration.</li>
+            <li><strong>Your vendors don't have to change anything.</strong> Vendors send things however they send them — links, photos buried in an email, inconsistent formats. We handle whatever comes in and flag anything we genuinely can't process.</li>
+            <li><strong>You stay in control.</strong> Anything that doesn't match gets flagged and routed to a specific person with context. Nothing is silently dropped, and nothing runs until you approve how it handles exceptions.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -376,7 +365,7 @@
           <div class="feature-card">
             <span class="feature-num">2</span>
             <h3>We work through the setup with you</h3>
-            <p>A screen share or a personal walkthrough. We map what comes in, what it gets checked against, and exactly how you want exceptions handled. You approve how it runs before we build it — including whether it sends anything automatically or just flags for you.</p>
+            <p>A screen share or a personal walkthrough. We map what comes in, what it gets checked against, and exactly how you want exceptions handled. You approve how it runs before we build it — including whether it sends anything automatically or just flags for you. Most first sessions run 30–45 minutes.</p>
           </div>
           <div class="feature-card">
             <span class="feature-num">3</span>
@@ -413,13 +402,13 @@
       </div>
     </section>
 
-    <!-- 8. Footer CTA -->
+    <!-- Footer CTA -->
     <section class="section section--dark text-center">
       <div class="container reveal">
-        <h2>If your team is manually cross-checking records, we can build the first automation this month — at no cost.</h2>
-        <p class="lede" style="margin-top:20px; margin-inline:auto;">The first one is free. We build it, connect it to your existing systems, and hand it over running.</p>
+        <h2>If you've read this far, you have a process in mind.</h2>
+        <p class="lede" style="margin-top:20px; margin-inline:auto;">Tell us what it is. We'll scope it, build the first check, and hand it over running — no contract, no obligation to continue.</p>
         <div class="btn-group btn-group--center">
-          <a class="btn btn-primary" href="how-to-get-started.html">Get Your First Automation Free</a>
+          <a class="btn btn-primary" href="how-to-get-started.html">We'll Build the First One Free</a>
           <a class="btn btn-secondary" href="contact.html">Schedule a Call</a>
         </div>
       </div>
