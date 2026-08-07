@@ -76,6 +76,9 @@
     .pricing-note { font-size: 13px; color: var(--color-lavender); margin-top: 12px; }
     .pricing-note strong { color: var(--color-ink); }
 
+    /* Pull quote attribution */
+    .ops-pull-quote cite { display: block; font-size: 13px; font-weight: 600; font-style: normal; color: var(--color-lavender); margin-top: 8px; letter-spacing: 0.03em; }
+
     /* Hero resolution line + text link */
     .hero-resolution { font-size: clamp(18px, 2vw, 22px); font-weight: 700; color: var(--color-teal-dark); margin: 0 0 24px; line-height: 1.35; }
     .hero-text-link { display: inline-block; font-size: 14px; color: var(--color-lavender); text-decoration: underline; padding: 4px 0; align-self: center; }
@@ -157,7 +160,23 @@
       </div>
     </section>
 
-    <!-- 2. Pattern section with visual examples -->
+    <!-- 2. Trust strip -->
+    <section class="section" style="padding-top:24px; padding-bottom:40px;">
+      <div class="container">
+        <div class="trust-strip reveal">
+          <span class="trust-strip-label">Trusted by teams at</span>
+          <img src="images/clients/offerpad.webp" alt="Offerpad">
+          <img src="images/clients/realty-one-group.webp" alt="Realty ONE Group">
+          <img src="images/clients/huron.webp" alt="Huron">
+          <img src="images/clients/fenestrapro.webp" alt="FenestraPro">
+          <img src="images/clients/biproxi.webp" alt="Biproxi Capital Network">
+          <img src="images/clients/edify.webp" alt="Edify Software">
+          <img src="images/clients/united-way.webp" alt="United Way of Western Connecticut">
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Pattern section with visual examples -->
     <section class="section section--alt">
       <div class="container">
         <div class="reveal" style="max-width:720px;">
@@ -243,38 +262,8 @@
       </div>
     </section>
 
-    <!-- 3. You don't have to switch tools -->
+    <!-- 4. Three workflows we build repeatedly -->
     <section class="section">
-      <div class="container">
-        <div class="reveal" style="max-width:680px;">
-          <h2>You don't have to switch tools</h2>
-          <p class="lede">You didn't sign up to be the person who manually saves every vendor photo to the right folder. We handle that part. If it's a spreadsheet today, it's still a spreadsheet — we just make sure it's never wrong. No new dashboard to learn, no migration.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. Your vendors don't have to change anything -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="reveal" style="max-width:680px;">
-          <h2>Your vendors don't have to change anything</h2>
-          <p class="lede">Vendors send things however they send them — links, photos buried in an email, inconsistent formats. We handle whatever comes in and flag anything we genuinely can't process. No vendor training, no new format to enforce.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. You stay in control -->
-    <section class="section">
-      <div class="container">
-        <div class="reveal" style="max-width:680px;">
-          <h2>You stay in control</h2>
-          <p class="lede">The automation runs on the schedule that fits your team's workflow and won't conflict with someone actively working in a file. Anything that doesn't match gets flagged and routed to a specific person with context — nothing is silently dropped.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. Three workflows we build repeatedly -->
-    <section class="section section--alt">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Where we work</span>
@@ -304,43 +293,68 @@
       </div>
     </section>
 
-    <!-- 7. One pattern, every department -->
-    <section class="section">
+    <!-- 5. One pattern, every department -->
+    <section class="section section--alt">
       <div class="container">
         <div class="reveal" style="max-width:720px;">
           <span class="eyebrow">Scale within your org</span>
           <h2>One pattern, every department</h2>
           <p class="lede">The same reconciliation problem shows up everywhere data changes hands between people or systems — sales handoffs, invoice approvals, renovation sign-offs, disposition paperwork. Different department, same shape of problem.</p>
-          <p style="font-size:16px; line-height:1.7; color:var(--color-lavender); margin-top:16px;">Once we've built the check for one team, the next one moves faster because we already understand how your organization works — which systems connect, how your data is structured, what your exception-handling looks like. Each additional automation costs less to build than the one before it.</p>
+          <p style="font-size:16px; line-height:1.7; color:var(--color-lavender); margin-top:16px;">Once it's running on your invoice reconciliation, your finance team will ask for the same thing on their end. Your disposition coordinator will want it for sign-offs. We've already seen this pattern at Offerpad — and because we already know how your systems connect, each new check gets built faster than the last. You end up looking good for introducing it.</p>
         </div>
       </div>
     </section>
 
-    <!-- 8. Client proof / Testimonials -->
-    <section class="section section--alt">
+    <!-- 6. Client proof / Testimonials -->
+    <section class="section">
       <div class="container">
         <div class="section-head section-head--center reveal">
           <span class="eyebrow">Proof</span>
           <h2>Four departments. One client. Same pattern.</h2>
           <p class="lede" style="margin-inline:auto; max-width:640px;">At Offerpad, we built this same check across sales, finance, renovations, and disposition — different data, same problem shape. Once one team had it running, the next moved faster.</p>
         </div>
-        <div class="trust-strip reveal">
-          <span class="trust-strip-label">Trusted by teams at</span>
-          <img src="images/clients/offerpad.webp" alt="Offerpad">
-          <img src="images/clients/realty-one-group.webp" alt="Realty ONE Group">
-          <img src="images/clients/huron.webp" alt="Huron">
-          <img src="images/clients/fenestrapro.webp" alt="FenestraPro">
-          <img src="images/clients/biproxi.webp" alt="Biproxi Capital Network">
-          <img src="images/clients/edify.webp" alt="Edify Software">
-          <img src="images/clients/united-way.webp" alt="United Way of Western Connecticut">
-        </div>
         <div class="ops-pull-quote reveal">
           <p>"This saves me 2 hours a day."</p>
+          <cite>— Operations Manager, Offerpad</cite>
         </div>
         <div class="testimonial reveal" style="max-width:800px; margin-inline:auto;">
           <img class="testimonial-logo" src="images/clients/offerpad.webp" alt="Offerpad">
           <blockquote>They helped us develop back-office automations that eliminated hours of manual work. They've worked across multiple teams and delivered consistently — they know how to scope, build, and iterate without a lot of hand-holding.</blockquote>
           <cite>— Chris Carpenter, Chief Operating Officer · Offerpad</cite>
+        </div>
+        <div class="btn-group btn-group--center reveal" style="margin-top:40px;">
+          <a class="btn btn-primary" href="how-to-get-started.html">Get Your First Automation Free</a>
+          <a class="hero-text-link" href="contact.html">Schedule a Call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. You don't have to switch tools -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="reveal" style="max-width:680px;">
+          <h2>You don't have to switch tools</h2>
+          <p class="lede">You didn't sign up to be the person who manually saves every vendor photo to the right folder. We handle that part. If it's a spreadsheet today, it's still a spreadsheet — we just make sure it's never wrong. No new dashboard to learn, no migration.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Your vendors don't have to change anything -->
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="max-width:680px;">
+          <h2>Your vendors don't have to change anything</h2>
+          <p class="lede">Vendors send things however they send them — links, photos buried in an email, inconsistent formats. We handle whatever comes in and flag anything we genuinely can't process. No vendor training, no new format to enforce.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. You stay in control -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="reveal" style="max-width:680px;">
+          <h2>You stay in control</h2>
+          <p class="lede">The automation runs on the schedule that fits your team's workflow and won't conflict with someone actively working in a file. Anything that doesn't match gets flagged and routed to a specific person with context — nothing is silently dropped.</p>
         </div>
       </div>
     </section>
@@ -351,6 +365,7 @@
         <div class="section-head section-head--center reveal">
           <span class="eyebrow">How it starts</span>
           <h2>The first one is free. Everything after that is flat-fee.</h2>
+          <p class="lede" style="margin-inline:auto;">We've built these for ops teams at Offerpad, Huron, and Realty ONE Group. Here's how we start with yours.</p>
         </div>
         <div class="grid grid--3 reveal--stagger reveal">
           <div class="feature-card">
@@ -366,7 +381,7 @@
           <div class="feature-card">
             <span class="feature-num">3</span>
             <h3>TEG Membership keeps it running</h3>
-            <p>Ongoing maintenance, fixes, and adjustments are included in your monthly membership — not billed separately. If your process changes or a vendor switches formats, we update it. You're not left maintaining it yourself.</p>
+            <p>TEG Membership is our flat-rate maintenance plan — ongoing fixes, adjustments, and updates covered in one monthly fee, not billed separately. If your process changes or a vendor switches formats, we update it. You're not left maintaining it yourself.</p>
           </div>
         </div>
       </div>
