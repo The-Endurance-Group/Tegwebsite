@@ -3,27 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Operational Reconciliation | The Endurance Group</title>
-  <meta name="description" content="We build AI automations that check incoming data against your system of record, flag what doesn't match, and route it before it becomes a problem. No more manual cross-checking.">
+  <title>AI Automation for Ops Teams | The Endurance Group</title>
+  <meta name="description" content="We build automations that catch what manual cross-checking misses — vendor invoices that don't match records, photos never logged, forms missing a signature. No new tools, no vendor training required.">
   <link rel="canonical" href="https://theendurancegroup.com/operations">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Endurance Group">
-  <meta property="og:title" content="Operational Reconciliation | The Endurance Group">
-  <meta property="og:description" content="We build AI automations that check incoming data against your system of record, flag what doesn't match, and route it before it becomes a problem. No more manual cross-checking.">
+  <meta property="og:title" content="AI Automation for Ops Teams | The Endurance Group">
+  <meta property="og:description" content="We build the automation that catches what manual cross-checking misses before it becomes your problem. No new tools. No vendor training.">
   <meta property="og:url" content="https://theendurancegroup.com/operations">
   <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Operational Reconciliation | The Endurance Group">
-  <meta name="twitter:description" content="We build AI automations that check incoming data against your system of record, flag what doesn't match, and route it before it becomes a problem.">
+  <meta name="twitter:title" content="AI Automation for Ops Teams | The Endurance Group">
+  <meta name="twitter:description" content="We build the automation that catches what manual cross-checking misses before it becomes your problem.">
   <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon-network.png">
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Pattern comparison cards */
+    .pattern-compare-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 36px 0; }
+    @media (min-width: 768px) { .pattern-compare-grid { grid-template-columns: repeat(3, 1fr); } }
+    .pattern-card { background: var(--color-white); border: 1px solid var(--border-light); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+    .pattern-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-lavender); padding: 10px 14px; border-bottom: 1px solid var(--border-light); background: var(--bg-light); }
+    .pattern-card-docs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-light); flex: 1; }
+    .mock-doc, .mock-photo { background: var(--color-white); font-size: 10px; line-height: 1.5; }
+    .mock-doc-head { padding: 5px 10px; font-weight: 700; font-size: 9px; letter-spacing: 0.06em; color: white; text-transform: uppercase; }
+    .mock-doc-head--pink { background: var(--color-pink); }
+    .mock-doc-head--teal { background: var(--color-teal-dark); }
+    .mock-doc-rows, .mock-photo-rows { padding: 8px 10px; display: flex; flex-direction: column; gap: 5px; }
+    .mock-row { display: flex; justify-content: space-between; gap: 4px; font-size: 10px; }
+    .mock-row-key { color: var(--color-lavender); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .mock-row-val { font-weight: 700; white-space: nowrap; text-align: right; }
+    .mock-row-val--ok { color: var(--color-teal-dark); }
+    .mock-row-val--flag { color: var(--color-pink); }
+    .mock-photo-img { height: 64px; background: #d0ccd4; overflow: hidden; display: flex; align-items: flex-end; }
+    .mock-photo-img svg { width: 100%; height: auto; }
+    .pattern-card-result { font-size: 11px; font-weight: 700; text-align: center; padding: 8px 14px; border-top: 1px solid var(--border-light); }
+    .pattern-card-result--ok { background: rgba(101,182,174,0.10); color: var(--color-teal-dark); }
+    .pattern-card-result--flag { background: rgba(196,94,137,0.08); color: var(--color-pink); }
+
+    /* Ops reassurance cards */
+    .ops-card { background: var(--color-white); border: 1px solid var(--border-light); border-radius: 12px; padding: 32px; }
+    .ops-card-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; margin-bottom: 16px; }
+    .ops-card-icon svg { width: 20px; height: 20px; }
+    .ops-card-icon--teal { background: var(--tint-teal); color: var(--color-teal-dark); }
+    .ops-card-icon--purple { background: var(--tint-purple); color: var(--color-purple); }
+    .ops-card-icon--pink { background: rgba(196,94,137,0.12); color: var(--color-pink); }
+    .ops-card h3 { font-size: 19px; margin-bottom: 12px; line-height: 1.25; }
+    .ops-card p { color: var(--color-lavender); font-size: 15px; line-height: 1.65; }
+
+    /* Industry cards */
+    .industry-card { background: var(--color-white); border: 1px solid var(--border-light); border-radius: 12px; padding: 32px; }
+    .industry-card .industry-eyebrow { display: inline-block; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal-dark); margin-bottom: 12px; }
+    .industry-card h3 { font-size: 20px; margin-bottom: 12px; }
+    .industry-card p { color: var(--color-lavender); font-size: 15px; line-height: 1.65; }
+    .industry-card .industry-example { margin-top: 16px; padding: 14px 16px; background: var(--bg-light); border-left: 3px solid var(--color-teal); border-radius: 0 8px 8px 0; font-size: 13px; color: var(--color-lavender); font-style: italic; }
+
+    /* Testimonial pull quote */
+    .ops-pull-quote { text-align: center; padding: 0 0 28px; }
+    .ops-pull-quote p { font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; font-style: italic; color: var(--color-teal-dark); max-width: 480px; margin-inline: auto; line-height: 1.3; }
+
+    /* Pattern section closing note */
+    .pattern-note { font-size: 15px; color: var(--color-lavender); max-width: 680px; margin-top: 32px; line-height: 1.65; }
+
+    /* Pricing note */
+    .pricing-note { font-size: 13px; color: var(--color-lavender); margin-top: 12px; }
+    .pricing-note strong { color: var(--color-ink); }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,70 +99,19 @@
     },
     "telephone": "+1-207-846-6000",
     "areaServed": "US",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "17:00"
-    },
     "sameAs": [
       "https://www.linkedin.com/company/the-endurance-group",
       "https://www.facebook.com/TheEnduranceGroupMaine/",
       "https://www.instagram.com/theendurancegroup/",
-      "https://x.com/_EnduranceGroup",
-      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+      "https://x.com/_EnduranceGroup"
     ],
-    "founder": {
-      "@type": "Person",
-      "name": "Jim Sullivan"
-    }
-  }
-  </script>
-  <style>
-    /* Pattern comparison cards */
-    .pattern-compare-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 36px 0; }
-    @media (min-width: 768px) { .pattern-compare-grid { grid-template-columns: repeat(3, 1fr); } }
-    .pattern-card { background: var(--color-white); border: 1px solid var(--border-light); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
-    .pattern-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-lavender); padding: 10px 14px; border-bottom: 1px solid var(--border-light); background: var(--bg-light); }
-    .pattern-card-docs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-light); flex: 1; }
-    .mock-doc, .mock-photo { background: var(--color-white); font-size: 10px; line-height: 1.5; }
-    .mock-doc-head { padding: 5px 10px; font-weight: 700; font-size: 9px; letter-spacing: 0.06em; color: white; text-transform: uppercase; }
-    .mock-doc-head--pink { background: var(--color-pink); }
-    .mock-doc-head--teal { background: var(--color-teal-dark); }
-    .mock-doc-rows { padding: 8px 10px; display: flex; flex-direction: column; gap: 5px; }
-    .mock-row { display: flex; justify-content: space-between; gap: 4px; font-size: 10px; }
-    .mock-row-key { color: var(--color-lavender); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .mock-row-val { font-weight: 700; white-space: nowrap; text-align: right; }
-    .mock-row-val--ok { color: var(--color-teal-dark); }
-    .mock-row-val--flag { color: var(--color-pink); }
-    .mock-photo-img { height: 64px; background: #d0ccd4; overflow: hidden; display: flex; align-items: flex-end; }
-    .mock-photo-img svg { width: 100%; height: auto; }
-    .mock-photo-rows { padding: 8px 10px; display: flex; flex-direction: column; gap: 5px; }
-    .pattern-card-result { font-size: 11px; font-weight: 700; text-align: center; padding: 8px 14px; border-top: 1px solid var(--border-light); }
-    .pattern-card-result--ok { background: rgba(101,182,174,0.10); color: var(--color-teal-dark); }
-    .pattern-card-result--flag { background: rgba(196,94,137,0.08); color: var(--color-pink); }
-
-    /* Testimonial pull quote */
-    .ops-pull-quote { text-align: center; padding: 0 0 28px; }
-    .ops-pull-quote p { font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; font-style: italic; color: var(--color-teal-dark); max-width: 480px; margin-inline: auto; line-height: 1.3; }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Operational Reconciliation Automation",
-    "serviceType": "AI Automation",
-    "provider": { "@type": "Organization", "name": "The Endurance Group", "url": "https://theendurancegroup.com/" },
-    "description": "AI automations that check incoming data against your system of record, flag discrepancies, and route exceptions before they become problems.",
-    "url": "https://theendurancegroup.com/operations"
+    "founder": { "@type": "Person", "name": "Jim Sullivan" }
   }
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- SHARED HEADER: keep in sync across all pages -->
   <header class="site-header">
     <div class="container">
       <a class="logo" href="index.html"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
@@ -132,16 +134,15 @@
       </nav>
     </div>
   </header>
-  <!-- END SHARED HEADER -->
 
   <main id="main-content">
 
-    <!-- Hero -->
+    <!-- 1. Hero -->
     <section class="hero hero--page section">
       <div class="container reveal">
-        <span class="eyebrow">Operational Reconciliation</span>
-        <h1>Your system of record is only as good as what's in it.</h1>
-        <p class="lede">Messy inputs arrive every day: invoices, photos, documents, emails. When someone checks them manually, it takes hours and things get missed. We automate the check, flag what doesn't match, and route exceptions to the right person — before a missed line item or wrong record becomes a real problem.</p>
+        <span class="eyebrow">For Ops Teams</span>
+        <h1>The stuff your team checks by hand, twice, and still misses.</h1>
+        <p class="lede">Vendor invoices that don't match the property record. Photos submitted but never logged against the work order. Forms that made it through without a required signature. We build the automation that catches it before it becomes your problem.</p>
         <div class="btn-group">
           <a class="btn btn-primary" href="how-to-get-started.html">Get Your First Automation Free</a>
           <a class="btn btn-secondary" href="contact.html">Schedule a Call</a>
@@ -150,19 +151,14 @@
       </div>
     </section>
 
-    <!-- The pattern -->
+    <!-- 2. Pattern section with visual examples -->
     <section class="section section--alt">
       <div class="container">
-        <div class="prose reveal" style="max-width:720px;">
-          <div class="icon-badge icon-badge--teal">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-          </div>
-          <span class="eyebrow">The pattern</span>
-          <h2>The same underlying problem across every operation</h2>
-          <p>Most operational accuracy problems share a structure: something comes in from the outside world, and someone has to manually verify it against what a system already knows. The check isn't complicated — it's tedious, time-consuming, and easy to miss when the volume is high.</p>
+        <div class="reveal" style="max-width:720px;">
+          <span class="eyebrow">What it catches</span>
+          <h2>Three things that fall through in every operation</h2>
         </div>
         <div class="pattern-compare-grid reveal">
-          <!-- Invoice vs Property Record -->
           <div class="pattern-card">
             <div class="pattern-card-label">Invoice → Property Record</div>
             <div class="pattern-card-docs">
@@ -185,7 +181,6 @@
             </div>
             <div class="pattern-card-result pattern-card-result--flag">1 discrepancy flagged &amp; routed</div>
           </div>
-          <!-- Vendor Photo vs Work Order -->
           <div class="pattern-card">
             <div class="pattern-card-label">Vendor Photo → Work Order</div>
             <div class="pattern-card-docs">
@@ -215,7 +210,6 @@
             </div>
             <div class="pattern-card-result pattern-card-result--ok">Matched · logged automatically</div>
           </div>
-          <!-- Document vs Required Fields -->
           <div class="pattern-card">
             <div class="pattern-card-label">Document → Required Fields</div>
             <div class="pattern-card-docs">
@@ -239,139 +233,160 @@
             <div class="pattern-card-result pattern-card-result--flag">1 gap detected &amp; routed to reviewer</div>
           </div>
         </div>
-        <div class="prose reveal" style="max-width:720px;">
-          <p>We build the automation that does the check: reads the input, compares it against your system of record, resolves what matches, and routes the rest to a human with the context they need to act. What used to take an afternoon takes seconds, and nothing slips through because someone was busy.</p>
-          <div class="example-callout">
-            <strong>How it works in plain terms</strong>
-            Something arrives (an invoice, a document, a photo). The automation reads it, checks it against what your system says should be there, and flags anything that's off. If it matches, it logs and moves on. If it doesn't, it routes the exception to the right person with enough context to fix it.
-          </div>
-        </div>
+        <p class="pattern-note reveal">These aren't edge cases. They're the things that slip through on a high-volume week when someone was busy or assumed someone else had checked. The automation doesn't have a busy week.</p>
       </div>
     </section>
 
-    <!-- Workflow examples -->
+    <!-- 3. Ops reassurances: no tool switch / vendor / nothing silent -->
     <section class="section">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">What this looks like in practice</span>
-          <h2>Three workflows we build repeatedly</h2>
-          <p class="lede">These aren't the only versions. They're the patterns that come up most often across the teams we work with.</p>
+          <span class="eyebrow">How it fits your team</span>
+          <h2>Built around the way your operation already works</h2>
         </div>
         <div class="grid grid--3 reveal--stagger reveal">
-          <div class="feature-card">
-            <div class="icon-badge icon-badge--pink">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <div class="ops-card">
+            <div class="ops-card-icon ops-card-icon--teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
             </div>
-            <h3>Document review against a system of record</h3>
-            <p>Documents arrive: reports, submissions, completed forms. The automation reads each one and checks it against what your system says should be there. Missing required fields, wrong values, and inconsistencies surface immediately instead of during a review weeks later.</p>
-            <p style="margin-top:12px; font-size:0.875rem; color:var(--color-lavender);">Common inputs: PDFs, forms, structured reports. Common systems: databases, CRMs, property records, client files.</p>
+            <h3>You don't have to switch tools</h3>
+            <p>The automation fills in whatever system you're already using — the spreadsheet, the property database, the CRM. No new dashboard to learn, no migration, no retraining the team. It works with what's already there.</p>
           </div>
-          <div class="feature-card">
-            <div class="icon-badge icon-badge--teal">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          <div class="ops-card">
+            <div class="ops-card-icon ops-card-icon--purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
             </div>
-            <h3>Vendor and invoice validation</h3>
-            <p>Invoices arrive from vendors. The automation matches line items against expected costs and your internal records using whatever key makes sense for your operation: address, project ID, account number. It surfaces what matches, what doesn't, and what's missing, before anything gets approved.</p>
-            <p style="margin-top:12px; font-size:0.875rem; color:var(--color-lavender);">Common inputs: invoices, receipts, vendor reports. Common systems: accounting software, property databases, project management tools.</p>
+            <h3>Your vendors don't have to change anything</h3>
+            <p>Vendors send things however they send them — photos in email bodies, PDFs through links, invoices in whatever format they use. The automation handles what comes in and flags what it can't match. No vendor training, no new format required.</p>
           </div>
-          <div class="feature-card">
-            <div class="icon-badge icon-badge--purple">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <div class="ops-card">
+            <div class="ops-card-icon ops-card-icon--pink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
             </div>
-            <h3>Pre-deadline gap detection</h3>
-            <p>Before a submission deadline, review cycle, or audit window, the automation scans your records and flags what's incomplete, missing, or past due. Your team spends their time fixing the gaps, not finding them. The exceptions land in front of the right person with enough lead time to act.</p>
-            <p style="margin-top:12px; font-size:0.875rem; color:var(--color-lavender);">Common inputs: internal records, status logs, required document lists. Common systems: CRMs, compliance trackers, project databases.</p>
+            <h3>Nothing gets missed silently</h3>
+            <p>Runs on the schedule that fits your team's workflow — it won't conflict with someone actively working in a file. Anything that doesn't match gets flagged and routed to a specific person, with the context they need to act on it. Not a vague alert. Not a silent drop.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- 4. Client proof -->
     <section class="section section--alt">
       <div class="container">
         <div class="section-head section-head--center reveal">
-          <span class="eyebrow">What clients say</span>
-          <h2>The hours add up fast when it's done by hand</h2>
+          <span class="eyebrow">Who uses it</span>
+          <h2>Teams that used to do this manually</h2>
+        </div>
+        <div class="trust-strip reveal">
+          <span class="trust-strip-label">Trusted by teams at</span>
+          <img src="images/clients/offerpad.webp" alt="Offerpad">
+          <img src="images/clients/realty-one-group.webp" alt="Realty ONE Group">
+          <img src="images/clients/huron.webp" alt="Huron">
+          <img src="images/clients/fenestrapro.webp" alt="FenestraPro">
+          <img src="images/clients/biproxi.webp" alt="Biproxi Capital Network">
+          <img src="images/clients/edify.webp" alt="Edify Software">
+          <img src="images/clients/united-way.webp" alt="United Way of Western Connecticut">
         </div>
         <div class="ops-pull-quote reveal">
           <p>"This saves me 2 hours a day."</p>
         </div>
-        <div class="testimonial reveal" style="max-width:800px; margin-inline:auto; margin-bottom:32px;">
+        <div class="testimonial reveal" style="max-width:800px; margin-inline:auto;">
           <img class="testimonial-logo" src="images/clients/offerpad.webp" alt="Offerpad">
-          <blockquote>TEG has been a great AI partner for us. They helped us build a suite of AI tools for our sales team and develop back-office automations that eliminated hours of manual work. They've worked across multiple teams and delivered consistently; they know how to scope, build, and iterate without a lot of hand-holding. Highly recommend.</blockquote>
+          <blockquote>They helped us develop back-office automations that eliminated hours of manual work. They've worked across multiple teams and delivered consistently — they know how to scope, build, and iterate without a lot of hand-holding.</blockquote>
           <cite>— Chris Carpenter, Chief Operating Officer · Offerpad</cite>
         </div>
-        <div class="grid grid--2 reveal" style="max-width:800px; margin-inline:auto;">
-          <div class="quote-card">
-            <blockquote>TEG has helped us create a high-powered, unique and time-saving tool for our health and medical clients worldwide.</blockquote>
-            <cite>Megan Walker, Founder · Market Savvy</cite>
+      </div>
+    </section>
+
+    <!-- 5. Industries -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Where we work</span>
+          <h2>Built for these operations specifically</h2>
+          <p class="lede">The specifics differ by industry. The underlying problem — manual cross-checking at volume — is the same.</p>
+        </div>
+        <div class="grid grid--3 reveal--stagger reveal">
+          <div class="industry-card">
+            <span class="industry-eyebrow">Real Estate</span>
+            <h3>Renovation &amp; Portfolio Ops</h3>
+            <p>High-volume vendor activity means a constant stream of invoices, photos, and work orders that need to match up. When they're checked manually, things slip.</p>
+            <div class="industry-example">Vendor invoice and photo reconciliation for a national iBuyer's reno team — invoice line items matched against property records by address, flagged before approval.</div>
           </div>
-          <div class="quote-card">
-            <blockquote>Their expertise and innovative approach have streamlined our grant application, saving us invaluable time and resources.</blockquote>
-            <cite>Trish Tomlinson, Board Member · United Way of Western Connecticut</cite>
+          <div class="industry-card">
+            <span class="industry-eyebrow">B2B Technology &amp; SaaS</span>
+            <h3>Contract &amp; Compliance Ops</h3>
+            <p>Incoming agreements, vendor contracts, and compliance documents need to clear a checklist before they go to legal or finance. Manual review at scale creates backlogs and gaps.</p>
+            <div class="industry-example">Automated document intake checking for required fields, missing signatures, and non-standard terms — flagged before they reach the review queue.</div>
+          </div>
+          <div class="industry-card">
+            <span class="industry-eyebrow">Professional Services</span>
+            <h3>Deliverable &amp; Filing Ops</h3>
+            <p>Deadlines are fixed, and the cost of a missed filing or incomplete submission lands on the ops person who was supposed to check. Finding gaps after the fact is the worst version of this problem.</p>
+            <div class="industry-example">Pre-deadline completeness scans that surface what's missing and route it to the responsible person with enough lead time to fix it.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- How we work -->
-    <section class="section">
+    <!-- 6. How it works -->
+    <section class="section section--alt">
       <div class="container">
         <div class="section-head section-head--center reveal">
-          <span class="eyebrow">How we work</span>
-          <h2>We start by watching you do it manually</h2>
+          <span class="eyebrow">How it starts</span>
+          <h2>The first one is free. Everything after that is flat-fee.</h2>
         </div>
         <div class="grid grid--3 reveal--stagger reveal">
           <div class="feature-card">
             <span class="feature-num">1</span>
-            <h3>We understand what you're doing now</h3>
-            <p>A screen share or a quick personal walkthrough — we want to see the actual process. What comes in, where it goes, what you're checking against. Fifteen minutes of that is worth more than an hour of back-and-forth trying to describe it.</p>
+            <h3>We build your first automation at no cost</h3>
+            <p>Pick one process — something your team runs manually every week. We build the check, connect it to your existing systems, and hand it over running. No contract, no obligation to continue.</p>
           </div>
           <div class="feature-card">
             <span class="feature-num">2</span>
-            <h3>We map out the automation, and you approve every step</h3>
-            <p>Don't want it to send an automatic email to the vendor? Prefer it to drop a draft in your inbox instead? Totally fine. We build it the way you actually want to work — not the way we assume you should.</p>
+            <h3>We work through the setup with you</h3>
+            <p>A screen share or a personal walkthrough. We map what comes in, what it gets checked against, and exactly how you want exceptions handled. You approve how it runs before we build it — including whether it sends anything automatically or just flags for you.</p>
           </div>
           <div class="feature-card">
             <span class="feature-num">3</span>
-            <h3>We refine until it's right</h3>
-            <p>Not working perfectly right away? We edit it. This isn't a hand-off. We stay on the automation until it does exactly what it's supposed to do — and if something changes down the road, we adjust it.</p>
+            <h3>TEG Membership keeps it running</h3>
+            <p>Ongoing maintenance, fixes, and adjustments are included in your monthly membership — not billed separately. If your process changes or a vendor switches formats, we update it. You're not left maintaining it yourself.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Pricing (matches site-wide) -->
+    <!-- 7. Pricing -->
     <section class="section section--tint-teal">
       <div class="container">
         <div class="section-head section-head--center reveal">
-          <span class="eyebrow">Simple pricing</span>
+          <span class="eyebrow">Pricing</span>
           <h2>No hourly billing. No surprises.</h2>
-          <p class="lede" style="margin-inline:auto;">Your first automation is free. Every one after that is $750 to build, then TEG Membership keeps your whole portfolio running for one flat monthly fee.</p>
+          <p class="lede" style="margin-inline:auto;">Your first automation is free. Every one after that is $750 to build. TEG Membership keeps your whole portfolio running for one flat monthly fee — maintenance and fixes included.</p>
         </div>
-        <div class="grid grid--2 reveal--stagger reveal" style="max-width:560px; margin-inline:auto;">
+        <div class="grid grid--2 reveal" style="max-width:560px; margin-inline:auto;">
           <div class="pricing-card">
             <h3>To build</h3>
             <div class="price-row"><span class="price-label">Every automation</span><span class="price-value">$750</span></div>
-            <p class="pricing-scope">One flat price, no tiers.</p>
+            <p class="pricing-scope">One flat price. No tiers based on complexity.</p>
           </div>
           <div class="pricing-card">
             <h3>TEG Membership</h3>
             <div class="price-row"><span class="price-label">Starts at</span><span class="price-value">$149/mo</span></div>
-            <p class="pricing-scope">Covers your whole portfolio, strategy calls, maintenance, and fixes included.</p>
+            <p class="pricing-scope">Covers your whole portfolio. Maintenance, fixes, and adjustments included — not billed separately.</p>
           </div>
         </div>
-        <div class="btn-group btn-group--center">
+        <div class="btn-group btn-group--center reveal" style="margin-top:32px;">
           <a class="btn btn-secondary--teal btn-secondary" href="pricing.html">See Full Pricing</a>
         </div>
       </div>
     </section>
 
-    <!-- Closing CTA -->
+    <!-- 8. Footer CTA -->
     <section class="section section--dark text-center">
       <div class="container reveal">
-        <h2>Every hour your team spends manually cross-checking is an hour they're also one missed line item away from a mistake.</h2>
-        <p class="lede" style="margin-top:20px; margin-inline:auto;">We build the automation that handles the check, catches the discrepancy, and routes it — so your team only touches the exceptions that actually need a person.</p>
+        <h2>If your team is manually cross-checking records, we can build the first automation this month — at no cost.</h2>
+        <p class="lede" style="margin-top:20px; margin-inline:auto;">The first one is free. We build it, connect it to your existing systems, and hand it over running.</p>
         <div class="btn-group btn-group--center">
           <a class="btn btn-primary" href="how-to-get-started.html">Get Your First Automation Free</a>
           <a class="btn btn-secondary" href="contact.html">Schedule a Call</a>
@@ -381,7 +396,6 @@
 
   </main>
 
-  <!-- SHARED FOOTER: keep in sync across all pages -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
@@ -432,7 +446,6 @@
       </div>
     </div>
   </footer>
-  <!-- END SHARED FOOTER -->
 
   <script src="js/main.js"></script>
 </body>
