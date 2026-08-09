@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Ops Team Is Doing Work a Computer Should Handle | The Endurance Group</title>
-  <meta name="description" content="Your ops team is spending hours every week on checks a computer should run. We build the automation that gives those hours back, so your people can focus on work that actually moves the business.">
+  <title>Your Team Is Doing Work a Computer Should Handle | The Endurance Group</title>
+  <meta name="description" content="Your ops team is spending hours every week on work a computer should handle. We build the automation that gives those hours back, so your people can focus on work that actually moves the business.">
   <link rel="canonical" href="https://theendurancegroup.com/operations">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Endurance Group">
-  <meta property="og:title" content="Your Ops Team Is Doing Work a Computer Should Handle | The Endurance Group">
+  <meta property="og:title" content="Your Team Is Doing Work a Computer Should Handle | The Endurance Group">
   <meta property="og:description" content="Your ops team is spending hours every week on checks a computer should run. We build the automation that gives those hours back, so your people can focus on work that actually moves the business.">
   <meta property="og:url" content="https://theendurancegroup.com/operations">
   <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
@@ -16,7 +16,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Your Ops Team Is Doing Work a Computer Should Handle | The Endurance Group">
+  <meta name="twitter:title" content="Your Team Is Doing Work a Computer Should Handle | The Endurance Group">
   <meta name="twitter:description" content="Your ops team is spending hours every week on checks a computer should run. We build the automation that gives those hours back.">
   <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,6 +123,14 @@
 
     /* Industry card: example before paragraph */
     .industry-card .industry-example + p { margin-top: 14px; }
+
+    /* Testimonial grid cards */
+    .testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .testimonial-grid { grid-template-columns: repeat(3, 1fr); } }
+    .testimonial-card { background: var(--color-white); border: 1px solid var(--border-light); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+    .testimonial-card blockquote { font-size: 15px; font-style: italic; color: var(--color-lavender); line-height: 1.65; margin: 0; flex: 1; }
+    .testimonial-card cite { font-size: 12px; font-weight: 600; font-style: normal; color: var(--color-ink); letter-spacing: 0.02em; }
+    .testimonial-card .testimonial-card-logo { height: 22px; width: auto; max-width: 120px; object-fit: contain; object-position: left; }
   </style>
 
   <script type="application/ld+json">
@@ -189,7 +197,7 @@
     <section class="hero hero--page section">
       <div class="container reveal">
         <span class="eyebrow">For operations leaders at growing companies</span>
-        <h1>Your team is spending hours every week on checks a computer should run.</h1>
+        <h1>Your team is spending hours every week on work a computer should handle.</h1>
         <p class="hero-resolution">We build the automations that handle the checking, routing, monitoring, and reconciling: the work that runs every week whether anyone has time for it or not.</p>
         <div class="hero-stats">
           <div class="hero-stat">
@@ -218,17 +226,10 @@
       <div class="container">
         <div class="trust-strip reveal">
           <span class="trust-strip-label">Trusted by teams at</span>
-          <img src="images/clients/realty-one-group.webp" alt="Realty ONE Group">
           <img src="images/clients/offerpad.webp" alt="Offerpad">
+          <img src="images/clients/realty-one-group.webp" alt="Realty ONE Group">
           <img src="images/clients/huron.webp" alt="Huron">
-          <img src="images/clients/fenestrapro.webp" alt="FenestraPro">
-          <img src="images/clients/cuny.webp" alt="CUNY">
-          <img src="images/clients/edify.webp" alt="Edify Software">
-          <img src="images/clients/united-way.webp" alt="United Way of Western Connecticut">
-          <img src="images/clients/saltgrid.webp" alt="SaltGrid">
-          <img src="images/clients/vividcloud.webp" alt="VividCloud">
           <img src="images/clients/connolly-brothers.webp" alt="Connolly Brothers">
-          <img src="images/clients/biproxi.webp" alt="Biproxi Capital Network">
         </div>
       </div>
     </section>
@@ -272,7 +273,7 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Where we work</span>
-          <h2>Workflows we build repeatedly</h2>
+          <h2>Four workflows your team is still running by hand</h2>
           <p class="lede">The specifics differ by industry. The underlying problem is the same: capable people spending time on work a system should handle.</p>
         </div>
         <div class="grid grid--2 reveal--stagger reveal">
@@ -328,6 +329,44 @@
       </div>
     </section>
 
+    <!-- Additional testimonials -->
+    <section class="section">
+      <div class="container">
+        <div class="testimonial-grid reveal--stagger reveal">
+          <div class="testimonial-card">
+            <img class="testimonial-card-logo" src="images/clients/realty-one-group.webp" alt="Realty ONE Group">
+            <blockquote>"Working with The Endurance Group on our HubSpot implementation was absolutely amazing. They introduced a new LinkedIn outreach solution that has been a fantastic addition to our prospecting strategy. TEG totally exceeded our expectations."</blockquote>
+            <cite>Sevag Sarkissian, VP Growth Marketing · Realty ONE Group</cite>
+          </div>
+          <div class="testimonial-card">
+            <img class="testimonial-card-logo" src="images/clients/biproxi.webp" alt="Biproxi Capital Network">
+            <blockquote>"They came back with thoughtful, tailored solutions that directly addressed our needs and executed everything quickly and flawlessly. The entire process was collaborative, efficient, and exceeded our expectations."</blockquote>
+            <cite>Gieriet Bowen, Director of Investor Relations · Biproxi Capital Network</cite>
+          </div>
+          <div class="testimonial-card">
+            <img class="testimonial-card-logo" src="images/clients/market-savvy.webp" alt="Market Savvy">
+            <blockquote>"TEG has helped us create a high-powered, unique and time-saving tool for our health and medical clients worldwide."</blockquote>
+            <cite>Megan Walker, Founder · Market Savvy</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reassurance -->
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="max-width:720px;">
+          <h2>Your team keeps working the way they work. Unless there's a better way.</h2>
+          <ul class="ops-reassurance-list">
+            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="16" height="14" rx="1.5"/><path d="M2 8h16M8 3v14"/></svg><span><strong>No new platform required to start.</strong> We connect to the tools you're already using. If a better system emerges from the work (replacing a three-step manual flow with one Claude skill, or surfacing data inside your team's ChatGPT), we build that too. But day one requires nothing new.</span></li>
+            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="16" height="12" rx="1.5"/><path d="M2 7l8 5 8-5"/></svg><span><strong>Vendors send things however they send them.</strong> Links, photos buried in emails, inconsistent formats. We handle whatever comes in and flag anything we can't process.</span></li>
+            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.5a5.5 5.5 0 015.5 5.5v3.5l1.5 2.5h-14l1.5-2.5V8A5.5 5.5 0 0110 2.5z"/><path d="M8.5 16a1.5 1.5 0 003 0"/></svg><span><strong>Every flag goes to the right person, with context.</strong> Your team knows what was checked and what needs attention. Nothing is silently dropped, and nothing runs until you've approved how exceptions are handled.</span></li>
+            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h12M4 8l3-3M4 8l3 3M16 12H4M16 12l-3-3M16 12l-3 3"/></svg><span><strong>If a better system exists, we build that instead.</strong> We can replace a three-system manual workflow with a single Claude skill, design an MCP that surfaces your data directly inside your team's ChatGPT or Copilot, or build a custom interface around how your team actually works. Your current tools aren't sacred.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- How it works -->
     <section class="section section--alt">
       <div class="container">
@@ -350,24 +389,10 @@
           <div class="feature-card">
             <span class="feature-num">3</span>
             <h3>TEG Membership keeps it running</h3>
-            <p>One flat monthly fee covers your whole automation portfolio. If your process changes or a vendor switches formats, we update it. Your team doesn't maintain it or inherit it when something breaks.</p>
+            <p>TEG Membership is our flat-rate service plan. One monthly fee covers your entire automation portfolio: maintenance, updates, and fixes included. When your process changes or a vendor switches formats, we update it. Your team doesn't own it or fix it when something breaks.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Reassurance -->
-    <section class="section">
-      <div class="container">
-        <div class="reveal" style="max-width:720px;">
-          <h2>Your team keeps working the way they work. Unless there's a better way.</h2>
-          <ul class="ops-reassurance-list">
-            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="16" height="14" rx="1.5"/><path d="M2 8h16M8 3v14"/></svg><span><strong>No new platform required to start.</strong> We connect to the tools you're already using. If a better system emerges from the work (replacing a three-step manual flow with one Claude skill, or surfacing data inside your team's ChatGPT), we build that too. But day one requires nothing new.</span></li>
-            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="16" height="12" rx="1.5"/><path d="M2 7l8 5 8-5"/></svg><span><strong>Vendors send things however they send them.</strong> Links, photos buried in emails, inconsistent formats. We handle whatever comes in and flag anything we can't process.</span></li>
-            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.5a5.5 5.5 0 015.5 5.5v3.5l1.5 2.5h-14l1.5-2.5V8A5.5 5.5 0 0110 2.5z"/><path d="M8.5 16a1.5 1.5 0 003 0"/></svg><span><strong>Every flag goes to the right person, with context.</strong> Your team knows what was checked and what needs attention. Nothing is silently dropped, and nothing runs until you've approved how exceptions are handled.</span></li>
-            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h12M4 8l3-3M4 8l3 3M16 12H4M16 12l-3-3M16 12l-3 3"/></svg><span><strong>If a better system exists, we build that instead.</strong> We can replace a three-system manual workflow with a single Claude skill, design an MCP that surfaces your data directly inside your team's ChatGPT or Copilot, or build a custom interface around how your team actually works. Your current tools aren't sacred.</span></li>
-          </ul>
-        </div>
+        <p class="pattern-note reveal" style="margin-top:32px; text-align:center; margin-inline:auto;">We start 2–3 new builds a month. If you have a process in mind, the time to reach out is now.</p>
       </div>
     </section>
 
@@ -412,7 +437,7 @@
     <section class="section section--dark text-center">
       <div class="container reveal">
         <h2>If you've read this far, you have a process in mind.</h2>
-        <p class="lede" style="margin-top:20px; margin-inline:auto;">Tell us what it is. We'll scope it, build the first check, and hand it over running. No contract, no obligation to continue.</p>
+        <p class="lede" style="margin-top:20px; margin-inline:auto;">Tell us what it is. We'll scope it, build the first automation, and hand it over running. No contract, no obligation to continue.</p>
         <div class="btn-group btn-group--center">
           <a class="btn btn-primary" href="how-to-get-started.html">We'll Build the First One Free</a>
           <a class="btn btn-secondary" href="contact.html">Schedule a Call</a>
