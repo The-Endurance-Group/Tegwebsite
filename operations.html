@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Ops Team Is Doing Work a Computer Should Handle | The Endurance Group</title>
+  <title>Your Team Is Doing Work a Computer Should Handle | The Endurance Group</title>
   <meta name="description" content="Your ops team is spending hours every week on work a computer should handle. We build the automation that gives those hours back, so your people can focus on work that actually moves the business.">
   <link rel="canonical" href="https://theendurancegroup.com/operations">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Endurance Group">
-  <meta property="og:title" content="Your Ops Team Is Doing Work a Computer Should Handle | The Endurance Group">
+  <meta property="og:title" content="Your Team Is Doing Work a Computer Should Handle | The Endurance Group">
   <meta property="og:description" content="Your ops team is spending hours every week on checks a computer should run. We build the automation that gives those hours back, so your people can focus on work that actually moves the business.">
   <meta property="og:url" content="https://theendurancegroup.com/operations">
   <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
@@ -16,7 +16,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Your Ops Team Is Doing Work a Computer Should Handle | The Endurance Group">
+  <meta name="twitter:title" content="Your Team Is Doing Work a Computer Should Handle | The Endurance Group">
   <meta name="twitter:description" content="Your ops team is spending hours every week on checks a computer should run. We build the automation that gives those hours back.">
   <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,6 +123,14 @@
 
     /* Industry card: example before paragraph */
     .industry-card .industry-example + p { margin-top: 14px; }
+
+    /* Testimonial grid cards */
+    .testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .testimonial-grid { grid-template-columns: repeat(3, 1fr); } }
+    .testimonial-card { background: var(--color-white); border: 1px solid var(--border-light); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+    .testimonial-card blockquote { font-size: 15px; font-style: italic; color: var(--color-lavender); line-height: 1.65; margin: 0; flex: 1; }
+    .testimonial-card cite { font-size: 12px; font-weight: 600; font-style: normal; color: var(--color-ink); letter-spacing: 0.02em; }
+    .testimonial-card .testimonial-card-logo { height: 22px; width: auto; max-width: 120px; object-fit: contain; object-position: left; }
   </style>
 
   <script type="application/ld+json">
@@ -317,6 +325,29 @@
         <div class="btn-group btn-group--center reveal" style="margin-top:40px;">
           <a class="btn btn-primary" href="how-to-get-started.html">We'll Build the First One Free</a>
           <a class="hero-text-link" href="contact.html">Schedule a Call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional testimonials -->
+    <section class="section">
+      <div class="container">
+        <div class="testimonial-grid reveal--stagger reveal">
+          <div class="testimonial-card">
+            <img class="testimonial-card-logo" src="images/clients/realty-one-group.webp" alt="Realty ONE Group">
+            <blockquote>"Working with The Endurance Group on our HubSpot implementation was absolutely amazing. They introduced a new LinkedIn outreach solution that has been a fantastic addition to our prospecting strategy. TEG totally exceeded our expectations."</blockquote>
+            <cite>Sevag Sarkissian, VP Growth Marketing · Realty ONE Group</cite>
+          </div>
+          <div class="testimonial-card">
+            <img class="testimonial-card-logo" src="images/clients/biproxi.webp" alt="Biproxi Capital Network">
+            <blockquote>"They came back with thoughtful, tailored solutions that directly addressed our needs and executed everything quickly and flawlessly. The entire process was collaborative, efficient, and exceeded our expectations."</blockquote>
+            <cite>Gieriet Bowen, Director of Investor Relations · Biproxi Capital Network</cite>
+          </div>
+          <div class="testimonial-card">
+            <img class="testimonial-card-logo" src="images/clients/market-savvy.webp" alt="Market Savvy">
+            <blockquote>"TEG has helped us create a high-powered, unique and time-saving tool for our health and medical clients worldwide."</blockquote>
+            <cite>Megan Walker, Founder · Market Savvy</cite>
+          </div>
         </div>
       </div>
     </section>
