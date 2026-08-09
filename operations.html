@@ -124,6 +124,9 @@
     /* Industry card: example before paragraph */
     .industry-card .industry-example + p { margin-top: 14px; }
 
+    /* Objection cards */
+    .objection-q { font-size: clamp(18px, 2.5vw, 21px); font-weight: 800; font-style: italic; color: var(--color-ink); line-height: 1.25; margin: 0 0 16px; }
+
     /* Testimonial grid cards */
     .testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
     @media (min-width: 768px) { .testimonial-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -347,6 +350,26 @@
             <img class="testimonial-card-logo" src="images/clients/market-savvy.webp" alt="Market Savvy">
             <blockquote>"TEG has helped us create a high-powered, unique and time-saving tool for our health and medical clients worldwide."</blockquote>
             <cite>Megan Walker, Founder · Market Savvy</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objection handling -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal" style="max-width:640px;">
+          <span class="eyebrow">We hear this before almost every call</span>
+          <h2>Two things cross every ops leader's mind before they reach out.</h2>
+        </div>
+        <div class="grid grid--2 reveal--stagger reveal">
+          <div class="ops-card">
+            <p class="objection-q">"Couldn't we just use Zapier?"</p>
+            <p>Yes, for simple stable connections between two systems. Where it falls apart: when the workflow has logic in it, when a vendor changes how they send data, or when the person who built it leaves. At that point, no one owns it. The automation gets abandoned and the manual work comes back. We build workflows that handle exceptions, conditionals, and the stuff Zapier can't. More importantly: we own it. When something changes, we fix it.</p>
+          </div>
+          <div class="ops-card">
+            <p class="objection-q">"Our IT team said they'd handle it."</p>
+            <p>They might. The problem is prioritization. Ops automation isn't infrastructure, so it doesn't get treated like infrastructure. Even if it gets built, maintenance falls to whoever's available, which usually means it doesn't get maintained. When something breaks and nobody's accountable for it, the ops team finds out the hard way. We sit specifically in the ops workflow layer. That's the whole job.</p>
           </div>
         </div>
       </div>
