@@ -86,19 +86,20 @@
 
     /* Consolidated reassurance list */
     .ops-reassurance-list { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
-    .ops-reassurance-list li { font-size: 16px; line-height: 1.65; color: var(--color-lavender); padding-left: 16px; border-left: 3px solid var(--color-teal); }
+    .ops-reassurance-list li { font-size: 16px; line-height: 1.65; color: var(--color-lavender); padding-left: 16px; border-left: 3px solid var(--color-teal); display: flex; align-items: flex-start; gap: 12px; }
     .ops-reassurance-list li strong { color: var(--color-ink); font-weight: 700; }
+    .ops-reassurance-icon { flex-shrink: 0; width: 20px; height: 20px; color: var(--color-teal-dark); margin-top: 3px; }
 
     /* Two questions section */
     .twoq-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 40px 0 0; }
     @media (min-width: 768px) { .twoq-grid { grid-template-columns: 1fr 1fr; } }
     .twoq-card { background: var(--color-white); border: 1px solid var(--border-light); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 20px; }
-    .twoq-q { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-lavender); margin: 0; }
-    .twoq-chain { display: flex; flex-wrap: wrap; gap: 6px 4px; align-items: baseline; }
-    .twoq-chain span { font-size: 15px; font-weight: 600; color: var(--color-ink); }
+    .twoq-q { font-size: 16px; font-weight: 700; color: var(--color-ink); margin: 0; line-height: 1.35; }
+    .twoq-chain { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .twoq-chain > span:not(.twoq-sep) { font-size: 14px; font-weight: 600; color: var(--color-ink); background: var(--bg-light); border: 1px solid var(--border-light); border-radius: 4px; padding: 4px 10px; }
     .twoq-chain .twoq-sep { color: var(--color-pink); font-weight: 700; font-size: 13px; }
     .twoq-answer { font-size: 19px; font-style: italic; color: var(--color-ink); line-height: 1.5; margin: 0; }
-    .twoq-example-lead { font-size: 12px; font-style: italic; color: var(--color-lavender); margin: 0; }
+    .twoq-example-lead { display: inline-flex; align-items: center; font-size: 11px; font-style: normal; font-weight: 700; color: var(--color-teal-dark); background: rgba(101,182,174,0.10); padding: 3px 10px; border-radius: 4px; letter-spacing: 0.02em; margin: 0; }
     .twoq-tag { font-size: 13px; color: var(--color-teal-dark); font-weight: 600; margin: 0; margin-top: auto; }
     .twoq-resolution { margin-top: 44px; border-top: 1px solid var(--border-light); padding-top: 36px; }
     .twoq-resolution p { font-size: clamp(21px, 2.5vw, 30px); font-weight: 700; color: var(--color-ink); line-height: 1.3; max-width: 600px; }
@@ -113,6 +114,15 @@
     .app-badge--quickbooks { background: rgba(44,160,28,0.12); color: #1B7A10; }
     .app-badge--housecall { background: rgba(26,148,214,0.12); color: #1271A3; }
     .app-badge--internal { background: rgba(100,93,105,0.10); color: var(--color-lavender); }
+
+    /* Hero stats */
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 20px 40px; margin: 24px 0 28px; }
+    .hero-stat { display: flex; flex-direction: column; gap: 4px; }
+    .hero-stat-num { font-size: 28px; font-weight: 800; color: var(--color-ink); line-height: 1; font-variant-numeric: tabular-nums; }
+    .hero-stat-label { font-size: 12px; color: var(--color-lavender); font-weight: 500; line-height: 1.3; max-width: 130px; }
+
+    /* Industry card: example before paragraph */
+    .industry-card .industry-example + p { margin-top: 14px; }
   </style>
 
   <script type="application/ld+json">
@@ -181,6 +191,20 @@
         <span class="eyebrow">For operations leaders at growing companies</span>
         <h1>Your team is spending hours every week on checks a computer should run.</h1>
         <p class="hero-resolution">We automate the manual cross-checking, so your people can focus on work that actually moves the business.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">2 hrs/day</span>
+            <span class="hero-stat-label">recovered by one Offerpad ops leader</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">$0</span>
+            <span class="hero-stat-label">to build the first automation</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">~2 weeks</span>
+            <span class="hero-stat-label">from first call to live</span>
+          </div>
+        </div>
         <div class="btn-group">
           <a class="btn btn-primary" href="how-to-get-started.html">We'll Build the First One Free</a>
           <a class="hero-text-link" href="contact.html">Schedule a Call</a>
@@ -255,26 +279,26 @@
           <div class="industry-card">
             <span class="industry-eyebrow">Accounting &amp; Finance</span>
             <h3>Accounting &amp; Invoice Ops</h3>
-            <p>Accounting teams at high-volume operators are reconciling vendor, move, and utility invoices against property records manually, one address at a time. At scale, that's a part-time job. And when something slips through, the ops team catches it after the fact.</p>
             <div class="industry-example"><div class="app-badges"><span class="app-badge app-badge--n8n"><img src="images/tools/n8n.svg" class="app-badge-logo" alt="">n8n</span><span class="app-badge-arrow">→</span><span class="app-badge app-badge--internal">Property Master</span></div>Utility invoice reconciliation for Offerpad's accounting team: vendor and move invoices matched against the Property Master by address, built from the process Colleen walked us through. Discrepancies flagged before anything closes.</div>
+            <p>Accounting teams at high-volume operators are reconciling vendor, move, and utility invoices against property records manually, one address at a time. At scale, that's a part-time job. And when something slips through, the ops team catches it after the fact.</p>
           </div>
           <div class="industry-card">
             <span class="industry-eyebrow">Sales &amp; Revenue Ops</span>
             <h3>Pipeline &amp; CRM Ops</h3>
-            <p>CRM data drifts: contacts go stale, deals skip stages, workflow triggers fire on incomplete records. When pipeline hygiene falls to the ops team manually, it either doesn't get done or slows everything down.</p>
             <div class="industry-example"><div class="app-badges"><span class="app-badge app-badge--hubspot"><img src="images/tools/hubspot.svg" class="app-badge-logo" alt="">HubSpot</span></div>Realty ONE Group's sales ops team was cleaning CRM records manually before every pipeline review. We built the HubSpot workflow that does it automatically. The team got those hours back for coaching and deal strategy.</div>
+            <p>CRM data drifts: contacts go stale, deals skip stages, workflow triggers fire on incomplete records. When pipeline hygiene falls to the ops team manually, it either doesn't get done or slows everything down.</p>
           </div>
           <div class="industry-card">
             <span class="industry-eyebrow">Field Service &amp; Home Services</span>
             <h3>Dispatch &amp; Billing Ops</h3>
-            <p>Every completed job creates a chain of updates: invoice, time log, customer record, accounting entry. When those don't sync automatically, someone is manually reconciling two systems at the end of every week.</p>
             <div class="industry-example"><div class="app-badges"><span class="app-badge app-badge--housecall"><img src="images/tools/housecallpro.svg" class="app-badge-logo" alt="">Housecall Pro</span><span class="app-badge-arrow">→</span><span class="app-badge app-badge--quickbooks"><img src="images/tools/quickbooks.svg" class="app-badge-logo" alt="">QuickBooks</span></div>Automated reconciliation for a home services company. Discrepancies caught in seconds, books clean without anyone cross-referencing both systems by hand.</div>
+            <p>Every completed job creates a chain of updates: invoice, time log, customer record, accounting entry. When those don't sync automatically, someone is manually reconciling two systems at the end of every week.</p>
           </div>
           <div class="industry-card">
             <span class="industry-eyebrow">Professional Services</span>
             <h3>Deliverable &amp; Filing Ops</h3>
-            <p>Deadlines are fixed, and a missed filing or incomplete deliverable means the ops team is fixing it under pressure. Pre-deadline completeness checks catch the gap when there's still time, not after the client call.</p>
             <div class="industry-example"><div class="app-badges"><span class="app-badge app-badge--n8n"><img src="images/tools/n8n.svg" class="app-badge-logo" alt="">n8n</span></div>Pre-deadline deliverable scan for a management consulting firm. Checks each deliverable for missing sections, open comments, and unsigned approvals 48 hours before the client delivery date, then routes gaps to the responsible consultant.</div>
+            <p>Deadlines are fixed, and a missed filing or incomplete deliverable means the ops team is fixing it under pressure. Pre-deadline completeness checks catch the gap when there's still time, not after the client call.</p>
           </div>
         </div>
       </div>
@@ -316,7 +340,7 @@
           <div class="feature-card">
             <span class="feature-num">1</span>
             <h3>Tell us what your team checks manually every week</h3>
-            <p>A screen share or a personal walkthrough, usually 30–45 minutes. We map what comes in, what it needs to be checked against, and exactly how you want exceptions handled. You approve how it runs before we build anything, including whether it flags for review or sends automatically.</p>
+            <p>A 30–45 minute screen share. We map what comes in, what it gets checked against, and exactly how you want exceptions handled. You approve before we build anything.</p>
           </div>
           <div class="feature-card">
             <span class="feature-num">2</span>
@@ -326,7 +350,7 @@
           <div class="feature-card">
             <span class="feature-num">3</span>
             <h3>TEG Membership keeps it running</h3>
-            <p>TEG Membership is our flat-rate maintenance plan: ongoing fixes, adjustments, and updates covered in one monthly fee. If your process changes or a vendor switches formats, we update it. Your team doesn't maintain it, and they don't inherit it when something breaks. That time stays with them.</p>
+            <p>One flat monthly fee covers your whole automation portfolio. If your process changes or a vendor switches formats, we update it. Your team doesn't maintain it or inherit it when something breaks.</p>
           </div>
         </div>
       </div>
@@ -338,10 +362,10 @@
         <div class="reveal" style="max-width:720px;">
           <h2>Your team keeps working the way they work. Unless there's a better way.</h2>
           <ul class="ops-reassurance-list">
-            <li><strong>Same tools, better data.</strong> If it's a spreadsheet today, it's still a spreadsheet. We just make sure it's never wrong. No new dashboard to learn, no migration required.</li>
-            <li><strong>Vendors send things however they send them.</strong> Links, photos buried in emails, inconsistent formats. We handle whatever comes in and flag anything we can't process.</li>
-            <li><strong>Every flag goes to the right person, with context.</strong> Your team knows what was checked and what needs attention. Nothing is silently dropped, and nothing runs until you've approved how exceptions are handled.</li>
-            <li><strong>If a better system exists, we build that instead.</strong> We can replace a three-system manual workflow with a single Claude skill, design an MCP that surfaces your data directly inside your team's ChatGPT or Copilot, or build a custom interface around how your team actually works. Your current tools aren't sacred.</li>
+            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="16" height="14" rx="1.5"/><path d="M2 8h16M8 3v14"/></svg><span><strong>Same tools, better data.</strong> If it's a spreadsheet today, it's still a spreadsheet. We just make sure it's never wrong. No new dashboard to learn, no migration required.</span></li>
+            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="16" height="12" rx="1.5"/><path d="M2 7l8 5 8-5"/></svg><span><strong>Vendors send things however they send them.</strong> Links, photos buried in emails, inconsistent formats. We handle whatever comes in and flag anything we can't process.</span></li>
+            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2.5a5.5 5.5 0 015.5 5.5v3.5l1.5 2.5h-14l1.5-2.5V8A5.5 5.5 0 0110 2.5z"/><path d="M8.5 16a1.5 1.5 0 003 0"/></svg><span><strong>Every flag goes to the right person, with context.</strong> Your team knows what was checked and what needs attention. Nothing is silently dropped, and nothing runs until you've approved how exceptions are handled.</span></li>
+            <li><svg class="ops-reassurance-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h12M4 8l3-3M4 8l3 3M16 12H4M16 12l-3-3M16 12l-3 3"/></svg><span><strong>If a better system exists, we build that instead.</strong> We can replace a three-system manual workflow with a single Claude skill, design an MCP that surfaces your data directly inside your team's ChatGPT or Copilot, or build a custom interface around how your team actually works. Your current tools aren't sacred.</span></li>
           </ul>
         </div>
       </div>
