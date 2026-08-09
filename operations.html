@@ -94,7 +94,7 @@
     .twoq-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin: 40px 0 0; }
     @media (min-width: 768px) { .twoq-grid { grid-template-columns: 1fr 1fr; } }
     .twoq-card { background: var(--color-white); border: 1px solid var(--border-light); border-radius: 12px; padding: 32px; display: flex; flex-direction: column; gap: 20px; }
-    .twoq-q { font-size: 16px; font-weight: 700; color: var(--color-ink); margin: 0; line-height: 1.35; }
+    .twoq-q { font-size: clamp(20px, 3vw, 24px); font-weight: 800; color: var(--color-ink); margin: 0; line-height: 1.25; }
     .twoq-chain { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
     .twoq-chain > span:not(.twoq-sep) { font-size: 14px; font-weight: 600; color: var(--color-ink); background: var(--bg-light); border: 1px solid var(--border-light); border-radius: 4px; padding: 4px 10px; }
     .twoq-chain .twoq-sep { color: var(--color-pink); font-weight: 700; font-size: 13px; }
@@ -194,7 +194,7 @@
         <div class="hero-stats">
           <div class="hero-stat">
             <span class="hero-stat-num">2 hrs/day</span>
-            <span class="hero-stat-label">recovered by one Offerpad ops leader</span>
+            <span class="hero-stat-label">recovered by one ops leader we work with</span>
           </div>
           <div class="hero-stat">
             <span class="hero-stat-num">$0</span>
@@ -243,7 +243,7 @@
         <div class="twoq-grid reveal--stagger reveal">
           <div class="twoq-card">
             <p class="twoq-q">What's something at your job you hate doing?</p>
-            <p class="twoq-example-lead">One answer, from an Offerpad ops leader:</p>
+            <p class="twoq-example-lead">One answer, from a real estate ops leader:</p>
             <div class="twoq-chain">
               <span>Go to email</span><span class="twoq-sep">→</span>
               <span>Download the photo</span><span class="twoq-sep">→</span>
@@ -279,7 +279,7 @@
           <div class="industry-card">
             <span class="industry-eyebrow">Accounting &amp; Finance</span>
             <h3>Accounting &amp; Invoice Ops</h3>
-            <div class="industry-example"><div class="app-badges"><span class="app-badge app-badge--n8n"><img src="images/tools/n8n.svg" class="app-badge-logo" alt="">n8n</span><span class="app-badge-arrow">→</span><span class="app-badge app-badge--internal">Property Master</span></div>Utility invoice reconciliation for Offerpad's accounting team: vendor and move invoices matched against the Property Master by address, built from the process Colleen walked us through. Discrepancies flagged before anything closes.</div>
+            <div class="industry-example"><div class="app-badges"><span class="app-badge app-badge--n8n"><img src="images/tools/n8n.svg" class="app-badge-logo" alt="">n8n</span><span class="app-badge-arrow">→</span><span class="app-badge app-badge--internal">Property Master</span></div>Utility invoice reconciliation for a high-volume real estate operator: vendor and move invoices matched against the Property Master by address. Discrepancies flagged before anything closes.</div>
             <p>Accounting teams at high-volume operators are reconciling vendor, move, and utility invoices against property records manually, one address at a time. At scale, that's a part-time job. And when something slips through, the ops team catches it after the fact.</p>
           </div>
           <div class="industry-card">
@@ -334,7 +334,7 @@
         <div class="section-head section-head--center reveal">
           <span class="eyebrow">How it starts</span>
           <h2>From conversation to running automation, usually within the same month.</h2>
-          <p class="lede" style="margin-inline:auto;">We've built these for ops teams at Offerpad, Huron, and Realty ONE Group. Here's how we start with yours.</p>
+          <p class="lede" style="margin-inline:auto;">We've built these for ops teams at Huron, Realty ONE Group, and others. Here's how we start with yours.</p>
         </div>
         <div class="grid grid--3 reveal--stagger reveal">
           <div class="feature-card">
