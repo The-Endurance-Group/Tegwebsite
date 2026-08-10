@@ -381,7 +381,8 @@ async function handleIdeas(req, res) {
 
 function serveStatic(req, res) {
   let urlPath = decodeURIComponent(req.url.split('?')[0]);
-  if (urlPath.endsWith('/')) urlPath += 'index.html';
+  if (urlPath === '/') urlPath = '/operations.html';
+  else if (urlPath.endsWith('/')) urlPath += 'index.html';
 
   const filePath = path.normalize(path.join(ROOT, urlPath));
   if (!filePath.startsWith(ROOT)) {
