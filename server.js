@@ -382,6 +382,11 @@ async function handleIdeas(req, res) {
 function serveStatic(req, res) {
   let urlPath = decodeURIComponent(req.url.split('?')[0]);
   if (urlPath === '/') urlPath = '/operations.html';
+  else if (urlPath === '/index.html' || urlPath === '/index') {
+    res.writeHead(301, { Location: '/' });
+    res.end();
+    return;
+  }
   else if (urlPath.endsWith('/')) urlPath += 'index.html';
 
   const filePath = path.normalize(path.join(ROOT, urlPath));
