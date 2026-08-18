@@ -576,11 +576,20 @@
           <div class="portfolio-category">
             <button class="portfolio-category-header" aria-expanded="false" type="button">
               <span class="portfolio-category-name">Apps &amp; Products</span>
-              <span class="portfolio-category-count">2</span>
+              <span class="portfolio-category-count">3</span>
               <svg class="portfolio-category-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="portfolio-category-body">
               <div class="portfolio-browse-grid">
+
+                <div class="portfolio-card">
+                  <span class="portfolio-card-type portfolio-card-type--automation">Automation</span>
+                  <h3 class="portfolio-card-title">Website Editor via Claude</h3>
+                  <p class="portfolio-card-stat">Update pages, publish posts, and deploy to production through a conversation</p>
+                  <p class="portfolio-card-desc">Connects Claude directly to your website's GitHub repository and deployment pipeline. Update copy, publish blog posts, add images, and push live changes by describing what you want in plain language. No CMS, no dev handoff, no ticket queue.</p>
+                  <p class="portfolio-card-bestfor"><strong>Built for:</strong> Marketing teams, business owners, and agencies who need to move fast on content without waiting on a developer</p>
+                  <a class="btn btn-secondary portfolio-card-link" href="contact.html">Ask us about this</a>
+                </div>
 
                 <div class="portfolio-card">
                   <span class="portfolio-card-type portfolio-card-type--app">App</span>
@@ -1006,6 +1015,13 @@
   <script>
     // Client-side portfolio data (mirrors server.js IDEAS_PORTFOLIO_TEXT)
     var PORTFOLIO = [
+      {
+        id: 'website-editor',
+        title: 'Website Editor via Claude',
+        description: "Connects Claude directly to your website's GitHub repository and deployment pipeline. Update copy, publish blog posts, add images, and push live changes by describing what you want in plain language.",
+        type: 'automation',
+        label: 'Automation',
+      },
       {
         id: 'coachonix',
         title: 'Coachonix',
