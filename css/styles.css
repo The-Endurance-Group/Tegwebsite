@@ -374,19 +374,9 @@ textarea:focus-visible {
     white-space: nowrap;
     font-size: 15px;
   }
-  /* Bridge the gap so hover isn't lost when moving from trigger to dropdown */
-  .nav-has-dropdown::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 8px;
-  }
   .nav-dropdown {
     position: absolute;
-    top: calc(100% + 6px);
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     min-width: 196px;
@@ -1557,14 +1547,14 @@ details[open] .faq-q::after { content: "−"; }
   top: 31px;
   left: 12.5%;
   right: 12.5%;
-}
-.process-track--3 .process-track-line {
-  left: 16.67%;
-  right: 16.67%;
   height: 2px;
   background: var(--border-light);
   pointer-events: none;
   z-index: 0;
+}
+.process-track--3 .process-track-line {
+  left: 16.67%;
+  right: 16.67%;
 }
 .process-track-line-fill {
   position: absolute;
