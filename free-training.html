@@ -126,7 +126,6 @@
           <div class="example-callout">
             <strong>What the session looks like</strong>
             You send us one thing you'd like Claude to do better for your team. We show you the prompt structure, the Skill setup, or the workflow tweak that makes it work. You leave with something you can use the same day.
-            <!-- PLACEHOLDER: If you have a specific stat for session satisfaction, time-to-value, or adoption lift from past training sessions, replace this sentence with it. Do not add without a verified number. -->
           </div>
         </div>
       </div>
@@ -141,52 +140,13 @@
           <p class="lede" style="margin-inline:auto;">We'll send one short prep question after you book so the session is useful from the first minute.</p>
         </div>
 
-        <!-- CALENDLY EMBED GOES HERE -->
-        <!-- Replace the placeholder div below with the actual Calendly inline widget script.
-             Recommended Calendly embed type: inline widget (not popup), so booking happens
-             on this page without navigation.
-
-             If passing UTM params to Calendly, add utm_source, utm_medium, utm_campaign,
-             utm_content, and utm_term as query params on the Calendly URL. You can read
-             them from the landing page URL via URLSearchParams and append them dynamically
-             (see the script block below this div).
-
-             Example embed code structure:
-             <div class="calendly-inline-widget"
-               data-url="https://calendly.com/YOUR_LINK?hide_landing_page_details=1&hide_gdpr_banner=1"
-               style="min-width:320px;height:700px;">
-             </div>
-             <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-        -->
-        <div class="reveal" style="background:var(--color-white);border:1px solid var(--border-light);border-radius:16px;min-height:480px;display:flex;align-items:center;justify-content:center;margin-top:40px;padding:48px 24px;text-align:center;">
-          <div>
-            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="var(--color-lavender)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-bottom:16px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <p style="font-size:16px;font-weight:600;color:var(--color-ink);margin-bottom:8px;">Scheduling widget coming soon</p>
-            <p style="font-size:14px;color:var(--color-lavender);max-width:320px;margin:0 auto 24px;">In the meantime, reach out directly and we'll get you on the calendar.</p>
-            <a class="btn btn-primary" href="contact.html">Contact Us to Book</a>
-          </div>
+        <div class="reveal" style="margin-top:40px;">
+          <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?embed=true"></div>
+          <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
         </div>
-        <!-- END CALENDLY EMBED PLACEHOLDER -->
 
       </div>
     </section>
-
-    <!-- UTM param forwarding script -->
-    <!-- When wiring up the real Calendly embed, uncomment and adapt this script
-         to forward UTM parameters from the landing URL into the Calendly widget URL
-         so attribution data carries through to the booking.
-    <script>
-      (function() {
-        var params = new URLSearchParams(window.location.search);
-        var utmKeys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
-        var utmPairs = [];
-        utmKeys.forEach(function(k) {
-          if (params.get(k)) utmPairs.push(k + '=' + encodeURIComponent(params.get(k)));
-        });
-        // Append utmPairs to the Calendly widget data-url attribute before the widget loads.
-      })();
-    </script>
-    -->
 
   </main>
 
