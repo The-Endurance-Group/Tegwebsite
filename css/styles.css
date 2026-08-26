@@ -1551,11 +1551,16 @@ details[open] .faq-q::after { content: "−"; }
   margin-top: 56px;
   position: relative;
 }
+.process-track--3 { grid-template-columns: repeat(3, 1fr); }
 .process-track-line {
   position: absolute;
   top: 31px;
   left: 12.5%;
   right: 12.5%;
+}
+.process-track--3 .process-track-line {
+  left: 16.67%;
+  right: 16.67%;
   height: 2px;
   background: var(--border-light);
   pointer-events: none;
