@@ -1567,7 +1567,6 @@ details[open] .faq-q::after { content: "−"; }
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 1s cubic-bezier(0.4,0,0.2,1) 0.15s;
-  z-index: 1;
 }
 .process-track--3::before,
 .process-track--3::after {
