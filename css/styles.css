@@ -388,6 +388,16 @@ textarea:focus-visible {
     display: none;
   }
   .nav-has-dropdown[data-open] .nav-dropdown { display: block; }
+  /* Invisible bridge keeps cursor "inside" the <li> while moving to the panel */
+  .nav-has-dropdown[data-open]::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -24px;
+    right: -24px;
+    height: 16px;
+    z-index: 299;
+  }
   .nav-dropdown a {
     display: block;
     padding: 10px 18px;
@@ -1540,29 +1550,31 @@ details[open] .faq-q::after { content: "−"; }
   position: relative;
 }
 .process-track--3 { grid-template-columns: repeat(3, 1fr); }
-.process-track-line {
+.process-track::before,
+.process-track::after {
+  content: '';
   position: absolute;
   top: 31px;
   left: 12.5%;
   right: 12.5%;
   height: 2px;
-  background: var(--border-light);
   pointer-events: none;
   z-index: 0;
 }
-.process-track--3 .process-track-line {
-  left: 16.67%;
-  right: 16.67%;
-}
-.process-track-line-fill {
-  position: absolute;
-  inset: 0;
+.process-track::before { background: var(--border-light); }
+.process-track::after {
   background: var(--color-pink);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 1s cubic-bezier(0.4,0,0.2,1) 0.15s;
+  z-index: 1;
 }
-.process-track.is-visible .process-track-line-fill { transform: scaleX(1); }
+.process-track--3::before,
+.process-track--3::after {
+  left: 16.67%;
+  right: 16.67%;
+}
+.process-track.is-visible::after { transform: scaleX(1); }
 .process-step {
   display: flex;
   flex-direction: column;
@@ -1606,7 +1618,8 @@ details[open] .faq-q::after { content: "−"; }
 .process-step-body p { font-size: 14px; color: var(--color-lavender); line-height: 1.5; }
 @media (max-width: 767px) {
   .process-track { grid-template-columns: 1fr; }
-  .process-track-line { display: none; }
+  .process-track::before,
+  .process-track::after { display: none; }
   .process-step {
     flex-direction: row;
     text-align: left;
@@ -1629,7 +1642,7 @@ details[open] .faq-q::after { content: "−"; }
 }
 @media (prefers-reduced-motion: reduce) {
   .process-step { opacity: 1 !important; transform: none !important; transition: none !important; }
-  .process-track-line-fill { transition: none !important; transform: scaleX(1) !important; }
+  .process-track::after { transition: none !important; transform: scaleX(1) !important; }
   .process-icon, .process-icon svg { transition: none !important; }
 }
 
