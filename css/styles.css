@@ -1644,7 +1644,7 @@ details[open] .faq-q::after { content: "−"; }
   .process-icon, .process-icon svg { transition: none !important; }
 }
 
-/* ===== STEP CARDS (numbered process cards — replaces process-track and process-flow) ===== */
+/* ===== STEP CARDS (numbered process cards) ===== */
 .step-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1661,15 +1661,7 @@ details[open] .faq-q::after { content: "−"; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
 }
-.step-cards.is-visible .step-card { opacity: 1; transform: none; }
-.step-cards.is-visible .step-card:nth-child(1) { transition-delay: 0.05s; }
-.step-cards.is-visible .step-card:nth-child(2) { transition-delay: 0.2s; }
-.step-cards.is-visible .step-card:nth-child(3) { transition-delay: 0.35s; }
-.step-cards.is-visible .step-card:nth-child(4) { transition-delay: 0.5s; }
 .step-num {
   font-size: 11px;
   font-weight: 700;
@@ -1678,23 +1670,17 @@ details[open] .faq-q::after { content: "−"; }
   color: var(--color-pink);
   margin-bottom: 16px;
 }
-.step-card .process-icon { margin-bottom: 16px; }
-.step-cards.is-visible .step-card:nth-child(1) .process-icon { border-color: var(--color-pink); background: var(--tint-pink); transition-delay: 0.15s; }
-.step-cards.is-visible .step-card:nth-child(1) .process-icon svg { color: var(--color-pink); transition-delay: 0.15s; }
-.step-cards.is-visible .step-card:nth-child(2) .process-icon { border-color: var(--color-pink); background: var(--tint-pink); transition-delay: 0.3s; }
-.step-cards.is-visible .step-card:nth-child(2) .process-icon svg { color: var(--color-pink); transition-delay: 0.3s; }
-.step-cards.is-visible .step-card:nth-child(3) .process-icon { border-color: var(--color-pink); background: var(--tint-pink); transition-delay: 0.45s; }
-.step-cards.is-visible .step-card:nth-child(3) .process-icon svg { color: var(--color-pink); transition-delay: 0.45s; }
-.step-cards.is-visible .step-card:nth-child(4) .process-icon { border-color: var(--color-pink); background: var(--tint-pink); transition-delay: 0.6s; }
-.step-cards.is-visible .step-card:nth-child(4) .process-icon svg { color: var(--color-pink); transition-delay: 0.6s; }
+.step-card .process-icon {
+  margin-bottom: 16px;
+  border-color: var(--color-pink);
+  background: var(--tint-pink);
+}
+.step-card .process-icon svg { color: var(--color-pink); }
 @media (max-width: 767px) {
   .step-cards, .step-cards--4 { grid-template-columns: 1fr; gap: 12px; }
   .step-card { flex-direction: row; text-align: left; align-items: flex-start; gap: 16px; padding: 20px; }
   .step-card .process-icon { flex-shrink: 0; margin-bottom: 0; }
   .step-num { margin-bottom: 6px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .step-card { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 
 /* ===== STAT CHIPS (how-to-get-started.html) ===== */
