@@ -374,6 +374,16 @@ textarea:focus-visible {
     white-space: nowrap;
     font-size: 15px;
   }
+  /* Bridge the gap so hover isn't lost when moving from trigger to dropdown */
+  .nav-has-dropdown::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 8px;
+  }
   .nav-dropdown {
     position: absolute;
     top: calc(100% + 6px);
