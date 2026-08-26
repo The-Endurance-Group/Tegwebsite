@@ -34,19 +34,34 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Nav dropdowns — CSS :hover handles open on desktop; JS manages click-toggle
-     (keyboard/touch) and click-outside closing only. No mouseleave timers. */
+  /* Nav dropdowns */
   document.querySelectorAll('.nav-has-dropdown').forEach(function(item) {
     var trigger = item.querySelector('.nav-dropdown-trigger');
+    var panel = item.querySelector('.nav-dropdown');
     if (!trigger) return;
 
+    var closeTimer = null;
+
     function openDropdown() {
+      clearTimeout(closeTimer);
       item.setAttribute('data-open', '');
       trigger.setAttribute('aria-expanded', 'true');
     }
     function closeDropdown() {
       item.removeAttribute('data-open');
       trigger.setAttribute('aria-expanded', 'false');
+    }
+    function scheduleClose() {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(closeDropdown, 1200);
+    }
+
+    item.addEventListener('mouseenter', openDropdown);
+    item.addEventListener('mouseleave', scheduleClose);
+
+    if (panel) {
+      panel.addEventListener('mouseenter', openDropdown);
+      panel.addEventListener('mouseleave', scheduleClose);
     }
 
     trigger.addEventListener('click', function(e) {
