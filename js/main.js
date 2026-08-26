@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Nav dropdowns */
   document.querySelectorAll('.nav-has-dropdown').forEach(function(item) {
     var trigger = item.querySelector('.nav-dropdown-trigger');
+    var panel = item.querySelector('.nav-dropdown');
     if (!trigger) return;
 
     var closeTimer = null;
@@ -51,14 +52,21 @@ document.addEventListener('DOMContentLoaded', function () {
       trigger.setAttribute('aria-expanded', 'false');
     }
     function scheduleClose() {
-      closeTimer = setTimeout(closeDropdown, 120);
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(closeDropdown, 400);
     }
 
-    // Hover open/close — mouseenter/leave on the whole item (includes the
-    // absolutely-positioned dropdown panel) so hover is maintained as the
-    // cursor moves from the trigger button into the panel.
+    // Open when cursor enters the item; schedule close when it leaves.
     item.addEventListener('mouseenter', openDropdown);
     item.addEventListener('mouseleave', scheduleClose);
+
+    // The panel is absolutely positioned so browsers may fire mouseleave on
+    // the <li> when the cursor crosses into the panel even though the panel
+    // is a DOM child. Listening to the panel directly cancels the close timer.
+    if (panel) {
+      panel.addEventListener('mouseenter', openDropdown);
+      panel.addEventListener('mouseleave', scheduleClose);
+    }
 
     // Click toggles for keyboard users and touch devices.
     trigger.addEventListener('click', function(e) {
