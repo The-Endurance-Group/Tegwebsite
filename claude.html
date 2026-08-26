@@ -111,55 +111,6 @@
     }
     .why-item h3 { margin-bottom: 8px; font-size: 17px; }
     .why-item p { font-size: 15px; color: var(--color-lavender); line-height: 1.6; margin: 0; }
-    .product-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 40px;
-    }
-    .product-chip {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--color-white);
-      border: 1px solid var(--border-light);
-      border-radius: 10px;
-      padding: 12px 18px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--color-ink);
-    }
-    .product-chip svg { color: var(--color-teal-dark); flex-shrink: 0; }
-    .stat-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      border: 1px solid var(--border-light);
-      border-radius: 14px;
-      overflow: hidden;
-      margin-top: 48px;
-    }
-    .stat-cell {
-      flex: 1;
-      min-width: 140px;
-      padding: 28px 24px;
-      border-right: 1px solid var(--border-light);
-      text-align: center;
-    }
-    .stat-cell:last-child { border-right: none; }
-    .stat-cell-num {
-      font-size: clamp(22px, 4vw, 32px);
-      font-weight: 800;
-      color: var(--color-purple);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .stat-cell-label {
-      font-size: 12px;
-      color: var(--color-lavender);
-      font-weight: 500;
-      line-height: 1.4;
-    }
     .how-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -310,25 +261,37 @@
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="section section--alt" style="padding-top: 0;">
+    <!-- Testimonials -->
+    <section class="section section--alt">
       <div class="container">
-        <div class="stat-row reveal">
-          <div class="stat-cell">
-            <div class="stat-cell-num">Claude</div>
-            <div class="stat-cell-label">Partner Network<br>Member</div>
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Proof</span>
+          <h2>Teams that brought us in to build.</h2>
+        </div>
+        <div class="ops-pull-quote reveal">
+          <p>"This saves me 2 hours a day."</p>
+          <cite>Operations Leader, Offerpad</cite>
+        </div>
+        <div class="testimonial reveal" style="max-width:800px; margin-inline:auto;">
+          <img class="testimonial-logo" src="images/clients/offerpad.webp" alt="Offerpad">
+          <blockquote>They helped us develop back-office automations that eliminated hours of manual work. They've worked across multiple teams and delivered consistently. They know how to scope, build, and iterate without a lot of hand-holding.</blockquote>
+          <cite>Chris Carpenter, Chief Operating Officer · Offerpad</cite>
+        </div>
+        <div class="testimonial-grid reveal--stagger reveal" style="margin-top: 40px;">
+          <div class="testimonial-card">
+            <img class="testimonial-card-logo" src="images/clients/realty-one-group.webp" alt="Realty ONE Group">
+            <blockquote>"Working with The Endurance Group was absolutely amazing. They introduced solutions that have been a fantastic addition to our prospecting strategy. TEG totally exceeded our expectations."</blockquote>
+            <cite>Sevag Sarkissian, VP Growth Marketing · Realty ONE Group</cite>
           </div>
-          <div class="stat-cell">
-            <div class="stat-cell-num">14</div>
-            <div class="stat-cell-label">Days from kickoff<br>to first live workflow</div>
+          <div class="testimonial-card">
+            <img class="testimonial-card-logo" src="images/clients/biproxi.webp" alt="Biproxi Capital Network">
+            <blockquote>"They came back with thoughtful, tailored solutions that directly addressed our needs and executed everything quickly and flawlessly. The entire process was collaborative, efficient, and exceeded our expectations."</blockquote>
+            <cite>Gieriet Bowen, Director of Investor Relations · Biproxi Capital Network</cite>
           </div>
-          <div class="stat-cell">
-            <div class="stat-cell-num">B2B</div>
-            <div class="stat-cell-label">Teams working faster<br>and more effectively</div>
-          </div>
-          <div class="stat-cell">
-            <div class="stat-cell-num">$0</div>
-            <div class="stat-cell-label">First automation,<br>built free</div>
+          <div class="testimonial-card">
+            <img class="testimonial-card-logo" src="images/clients/market-savvy.webp" alt="Market Savvy">
+            <blockquote>"TEG has helped us create a high-powered, unique and time-saving tool for our health and medical clients worldwide."</blockquote>
+            <cite>Megan Walker, Founder · Market Savvy</cite>
           </div>
         </div>
       </div>
@@ -451,44 +414,8 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head section-head--center reveal">
-          <span class="eyebrow">Proof</span>
-          <h2>Teams that brought us in to build.</h2>
-        </div>
-        <div class="ops-pull-quote reveal">
-          <p>"This saves me 2 hours a day."</p>
-          <cite>Operations Leader, Offerpad</cite>
-        </div>
-        <div class="testimonial reveal" style="max-width:800px; margin-inline:auto;">
-          <img class="testimonial-logo" src="images/clients/offerpad.webp" alt="Offerpad">
-          <blockquote>They helped us develop back-office automations that eliminated hours of manual work. They've worked across multiple teams and delivered consistently. They know how to scope, build, and iterate without a lot of hand-holding.</blockquote>
-          <cite>Chris Carpenter, Chief Operating Officer · Offerpad</cite>
-        </div>
-        <div class="testimonial-grid reveal--stagger reveal" style="margin-top: 40px;">
-          <div class="testimonial-card">
-            <img class="testimonial-card-logo" src="images/clients/realty-one-group.webp" alt="Realty ONE Group">
-            <blockquote>"Working with The Endurance Group was absolutely amazing. They introduced solutions that have been a fantastic addition to our prospecting strategy. TEG totally exceeded our expectations."</blockquote>
-            <cite>Sevag Sarkissian, VP Growth Marketing · Realty ONE Group</cite>
-          </div>
-          <div class="testimonial-card">
-            <img class="testimonial-card-logo" src="images/clients/biproxi.webp" alt="Biproxi Capital Network">
-            <blockquote>"They came back with thoughtful, tailored solutions that directly addressed our needs and executed everything quickly and flawlessly. The entire process was collaborative, efficient, and exceeded our expectations."</blockquote>
-            <cite>Gieriet Bowen, Director of Investor Relations · Biproxi Capital Network</cite>
-          </div>
-          <div class="testimonial-card">
-            <img class="testimonial-card-logo" src="images/clients/market-savvy.webp" alt="Market Savvy">
-            <blockquote>"TEG has helped us create a high-powered, unique and time-saving tool for our health and medical clients worldwide."</blockquote>
-            <cite>Megan Walker, Founder · Market Savvy</cite>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Case studies -->
-    <section class="section">
+    <section class="section section--alt">
       <div class="container">
         <div class="section-head reveal" style="max-width: 600px;">
           <span class="eyebrow">From the blog</span>
@@ -519,43 +446,6 @@
             <h3>MCP: How We Connect AI to the Tools Your Team Already Runs</h3>
             <p>What MCP servers do, how they give Claude access to your live data, and what a real integration looks like in practice.</p>
             <a href="blog/mcp-custom-ai-integrations.html">Read the post →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Products we deploy -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal" style="max-width: 560px;">
-          <span class="eyebrow">Anthropic product expertise</span>
-          <h2>Every Claude product, deployed properly.</h2>
-          <p style="margin-top: 12px; color: var(--color-lavender); font-size: 16px;">Claude is more than an API. We know the full product surface and which piece of it solves your specific problem.</p>
-        </div>
-        <div class="product-row reveal--stagger reveal">
-          <div class="product-chip">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            Claude Cowork
-          </div>
-          <div class="product-chip">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Claude Code
-          </div>
-          <div class="product-chip">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Claude Skills
-          </div>
-          <div class="product-chip">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-            MCP Integrations
-          </div>
-          <div class="product-chip">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            Claude API
-          </div>
-          <div class="product-chip">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
-            Team Training
           </div>
         </div>
       </div>
