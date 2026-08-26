@@ -454,6 +454,87 @@ function handleContact(req, res) {
   });
 }
 
+async function handleApply(req, res) {
+  function respondJson(status, body) {
+    res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify(body));
+  }
+
+  try {
+    var chunks = [];
+    var size = 0;
+    var MAX = 10 * 1024 * 1024; // 10 MB (file encoded as base64 is ~33% larger)
+    await new Promise(function (resolve, reject) {
+      req.on('data', function (chunk) {
+        size += chunk.length;
+        if (size > MAX) { reject(new Error('Body too large')); req.destroy(); return; }
+        chunks.push(chunk);
+      });
+      req.on('end', resolve);
+      req.on('error', reject);
+    });
+
+    var data = JSON.parse(Buffer.concat(chunks).toString('utf8'));
+    var name = (data.name || '').slice(0, 200).trim();
+    var email = (data.email || '').slice(0, 200).trim();
+    var github = (data.github || '').slice(0, 500).trim();
+    var proficiency = (data.proficiency || '').slice(0, 500).trim();
+    var notes = (data.notes || '').slice(0, 2000).trim();
+    var resumeDataUrl = typeof data.resume === 'string' ? data.resume : '';
+    var resumeName = (data.resumeName || 'resume.pdf').replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 200);
+
+    if (!name || !email || !github) {
+      respondJson(400, { error: 'Name, email, and GitHub URL are required.' });
+      return;
+    }
+
+    var ip = clientIp(req);
+    console.log('[APPLY]', JSON.stringify({ name, email, github, ip, ts: new Date().toISOString() }));
+
+    var resendKey = process.env.RESEND_API_KEY;
+    if (resendKey) {
+      var emailBody = {
+        from: 'TEG Website <noreply@theendurancegroup.com>',
+        to: ['csullivan@theendurancegroup.com'],
+        reply_to: email,
+        subject: 'Fellowship Application: ' + name,
+        text: [
+          'Name: ' + name,
+          'Email: ' + email,
+          'GitHub: ' + github,
+          'English proficiency: ' + (proficiency || '—'),
+          'Notes: ' + (notes || '—'),
+          '',
+          'IP: ' + ip,
+          'Time: ' + new Date().toISOString()
+        ].join('\n')
+      };
+
+      if (resumeDataUrl.startsWith('data:')) {
+        var commaIdx = resumeDataUrl.indexOf(',');
+        if (commaIdx !== -1) {
+          emailBody.attachments = [{ content: resumeDataUrl.slice(commaIdx + 1), filename: resumeName }];
+        }
+      }
+
+      var r = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + resendKey, 'Content-Type': 'application/json' },
+        body: JSON.stringify(emailBody)
+      });
+      if (!r.ok) {
+        var detail = await r.text().catch(function () { return ''; });
+        console.error('[APPLY] Resend error', r.status, detail);
+      }
+    }
+
+    respondJson(200, { ok: true });
+  } catch (err) {
+    console.error('[APPLY] Error:', err.message);
+    respondJson(500, { error: 'Something went wrong. Please try again.' });
+  }
+}
+
 function handleDownloadSkill(req, res) {
   var ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown').split(',')[0].trim();
   readBody(req).then(function(body) {
@@ -501,6 +582,10 @@ http.createServer((req, res) => {
   }
   if (req.method === 'POST' && urlPath === '/api/contact') {
     handleContact(req, res);
+    return;
+  }
+  if (req.method === 'POST' && urlPath === '/api/apply') {
+    handleApply(req, res);
     return;
   }
   if (req.method === 'POST' && urlPath === '/api/download-skill') {

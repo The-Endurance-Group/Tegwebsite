@@ -319,28 +319,143 @@
     <!-- Apply -->
     <section class="section section--alt">
       <div class="container">
-        <div class="apply-box reveal">
+        <div class="apply-box reveal" id="apply-box">
           <span class="eyebrow" style="display: block; margin-bottom: 16px;">Ready to apply</span>
-          <h3>Send us your application</h3>
-          <p>Email the three things below to get started. We'll follow up with next steps for candidates who are a good fit.</p>
-          <div class="apply-items">
-            <div class="apply-item">
-              <div class="apply-item-num">1</div>
-              <span>Your <strong>CV</strong> showing your major, university, and relevant coursework</span>
+          <h3>Apply for the Fellowship</h3>
+          <p>Fill out the form below. We'll follow up with next steps for candidates who are a good fit.</p>
+
+          <form id="apply-form" novalidate>
+            <div class="apply-field">
+              <label for="af-name">Full name <span aria-hidden="true">*</span></label>
+              <input type="text" id="af-name" name="name" required autocomplete="name" placeholder="Jane Smith">
             </div>
-            <div class="apply-item">
-              <div class="apply-item-num">2</div>
-              <span>A link to your <strong>GitHub</strong>, including any Claude or Anthropic-related projects</span>
+            <div class="apply-field">
+              <label for="af-email">Email address <span aria-hidden="true">*</span></label>
+              <input type="email" id="af-email" name="email" required autocomplete="email" placeholder="jane@example.com">
             </div>
-            <div class="apply-item">
-              <div class="apply-item-num">3</div>
-              <span><strong>English proficiency evidence:</strong> a TOEFL score, or the school or university where you studied in English</span>
+            <div class="apply-field">
+              <label for="af-github">GitHub profile URL <span aria-hidden="true">*</span></label>
+              <input type="url" id="af-github" name="github" required placeholder="https://github.com/yourhandle">
             </div>
+            <div class="apply-field">
+              <label for="af-resume">CV / Resume <span aria-hidden="true">*</span> <span class="apply-field-hint">PDF, DOC, or DOCX. Max 8 MB.</span></label>
+              <input type="file" id="af-resume" name="resume" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            </div>
+            <div class="apply-field">
+              <label for="af-proficiency">English proficiency <span aria-hidden="true">*</span> <span class="apply-field-hint">TOEFL score, or school where you studied in English.</span></label>
+              <input type="text" id="af-proficiency" name="proficiency" required placeholder="e.g. TOEFL 105, or Studied at XYZ University in English">
+            </div>
+            <div class="apply-field">
+              <label for="af-notes">Anything else you'd like us to know <span class="apply-field-hint">(optional)</span></label>
+              <textarea id="af-notes" name="notes" rows="4" placeholder="Claude or Anthropic projects you're proud of, relevant experience, etc."></textarea>
+            </div>
+            <div id="apply-error" class="apply-msg apply-msg--error" hidden></div>
+            <button type="submit" class="btn btn-primary" id="apply-submit">Submit Application</button>
+          </form>
+
+          <div id="apply-success" hidden style="text-align:center; padding: 24px 0;">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-bottom:16px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3 style="margin-bottom:8px;">Application received.</h3>
+            <p style="color:var(--color-lavender);">We'll be in touch if your application is a good fit.</p>
           </div>
-          <a class="btn btn-primary" href="mailto:csullivan@theendurancegroup.com?subject=Claude%20Certification%20Fellowship%20Application">Apply Now</a>
         </div>
       </div>
     </section>
+
+    <style>
+      .apply-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; text-align: left; }
+      .apply-field label { font-size: 14px; font-weight: 600; color: var(--color-ink); }
+      .apply-field label span[aria-hidden] { color: var(--color-pink); }
+      .apply-field-hint { font-weight: 400; color: var(--color-lavender); font-size: 13px; }
+      .apply-field input[type="text"],
+      .apply-field input[type="email"],
+      .apply-field input[type="url"],
+      .apply-field textarea { width: 100%; padding: 10px 14px; border: 1.5px solid var(--border-light); border-radius: 8px; font-size: 15px; font-family: inherit; color: var(--color-ink); background: var(--color-white); box-sizing: border-box; transition: border-color 0.15s; }
+      .apply-field input:focus, .apply-field textarea:focus { outline: none; border-color: var(--color-teal); }
+      .apply-field input[type="file"] { padding: 8px; font-size: 14px; }
+      .apply-msg { padding: 12px 16px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; }
+      .apply-msg--error { background: #fef2f2; color: #b91c1c; border: 1px solid #fca5a5; }
+      #apply-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    </style>
+
+    <script>
+      (function () {
+        var form = document.getElementById('apply-form');
+        var submitBtn = document.getElementById('apply-submit');
+        var errorBox = document.getElementById('apply-error');
+        var successBox = document.getElementById('apply-success');
+
+        function showError(msg) {
+          errorBox.textContent = msg;
+          errorBox.hidden = false;
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit Application';
+        }
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          errorBox.hidden = true;
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+
+          var name = form.elements['name'].value.trim();
+          var email = form.elements['email'].value.trim();
+          var github = form.elements['github'].value.trim();
+          var proficiency = form.elements['proficiency'].value.trim();
+          var notes = form.elements['notes'].value.trim();
+          var fileInput = form.elements['resume'];
+          var file = fileInput.files[0];
+
+          if (!name || !email || !github || !proficiency) {
+            showError('Please fill in all required fields.');
+            return;
+          }
+          if (!file) {
+            showError('Please attach your CV or resume.');
+            return;
+          }
+          if (file.size > 8 * 1024 * 1024) {
+            showError('File is too large. Please keep it under 8 MB.');
+            return;
+          }
+
+          var reader = new FileReader();
+          reader.onload = function () {
+            var payload = {
+              name: name,
+              email: email,
+              github: github,
+              proficiency: proficiency,
+              notes: notes,
+              resume: reader.result,
+              resumeName: file.name
+            };
+
+            fetch('/api/apply', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+              if (data.ok) {
+                form.hidden = true;
+                successBox.hidden = false;
+              } else {
+                showError(data.error || 'Something went wrong. Try again.');
+              }
+            })
+            .catch(function () {
+              showError('Network error. Check your connection and try again.');
+            });
+          };
+          reader.onerror = function () {
+            showError('Could not read the file. Try a different format.');
+          };
+          reader.readAsDataURL(file);
+        });
+      })();
+    </script>
 
   </main>
 
