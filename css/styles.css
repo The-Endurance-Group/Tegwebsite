@@ -378,7 +378,7 @@ textarea:focus-visible {
     position: absolute;
     top: calc(100% - 2px);
     left: 0;
-    min-width: 240px;
+    min-width: 280px;
     background: var(--color-white);
     border: 1px solid var(--border-light);
     border-radius: 8px;
