@@ -341,12 +341,16 @@
               <input type="url" id="af-github" name="github" required placeholder="https://github.com/yourhandle">
             </div>
             <div class="apply-field">
-              <label for="af-resume">CV / Resume <span aria-hidden="true">*</span> <span class="apply-field-hint">PDF, DOC, or DOCX. Max 8 MB.</span></label>
-              <input type="file" id="af-resume" name="resume" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+              <label for="af-linkedin">LinkedIn profile URL <span class="apply-field-hint">(LinkedIn or resume required)</span></label>
+              <input type="url" id="af-linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+            </div>
+            <div class="apply-field">
+              <label for="af-resume">CV / Resume <span class="apply-field-hint">PDF, DOC, or DOCX. Max 8 MB. (LinkedIn or resume required)</span></label>
+              <input type="file" id="af-resume" name="resume" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
             </div>
             <div class="apply-field">
               <label for="af-proficiency">English proficiency <span aria-hidden="true">*</span> <span class="apply-field-hint">TOEFL score, or school where you studied in English.</span></label>
-              <input type="text" id="af-proficiency" name="proficiency" required placeholder="e.g. TOEFL 105, or Studied at XYZ University in English">
+              <textarea id="af-proficiency" name="proficiency" required rows="4" placeholder="e.g. TOEFL 105, or Studied at XYZ University in English"></textarea>
             </div>
             <div class="apply-field">
               <label for="af-notes">Anything else you'd like us to know <span class="apply-field-hint">(optional)</span></label>
@@ -404,6 +408,7 @@
           var name = form.elements['name'].value.trim();
           var email = form.elements['email'].value.trim();
           var github = form.elements['github'].value.trim();
+          var linkedin = form.elements['linkedin'].value.trim();
           var proficiency = form.elements['proficiency'].value.trim();
           var notes = form.elements['notes'].value.trim();
           var fileInput = form.elements['resume'];
@@ -413,25 +418,25 @@
             showError('Please fill in all required fields.');
             return;
           }
-          if (!file) {
-            showError('Please attach your CV or resume.');
+          if (!linkedin && !file) {
+            showError('Please provide a LinkedIn profile URL or attach your CV/resume.');
             return;
           }
-          if (file.size > 8 * 1024 * 1024) {
+          if (file && file.size > 8 * 1024 * 1024) {
             showError('File is too large. Please keep it under 8 MB.');
             return;
           }
 
-          var reader = new FileReader();
-          reader.onload = function () {
+          function sendPayload(resumeDataUrl, resumeName) {
             var payload = {
               name: name,
               email: email,
               github: github,
+              linkedin: linkedin,
               proficiency: proficiency,
               notes: notes,
-              resume: reader.result,
-              resumeName: file.name
+              resume: resumeDataUrl || '',
+              resumeName: resumeName || ''
             };
 
             fetch('/api/apply', {
@@ -451,11 +456,16 @@
             .catch(function () {
               showError('Network error. Check your connection and try again.');
             });
-          };
-          reader.onerror = function () {
-            showError('Could not read the file. Try a different format.');
-          };
-          reader.readAsDataURL(file);
+          }
+
+          if (file) {
+            var reader = new FileReader();
+            reader.onload = function () { sendPayload(reader.result, file.name); };
+            reader.onerror = function () { showError('Could not read the file. Try a different format.'); };
+            reader.readAsDataURL(file);
+          } else {
+            sendPayload('', '');
+          }
         });
       })();
     </script>

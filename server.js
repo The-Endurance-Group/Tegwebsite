@@ -478,10 +478,11 @@ async function handleApply(req, res) {
     var name = (data.name || '').slice(0, 200).trim();
     var email = (data.email || '').slice(0, 200).trim();
     var github = (data.github || '').slice(0, 500).trim();
-    var proficiency = (data.proficiency || '').slice(0, 500).trim();
+    var linkedin = (data.linkedin || '').slice(0, 500).trim();
+    var proficiency = (data.proficiency || '').slice(0, 2000).trim();
     var notes = (data.notes || '').slice(0, 2000).trim();
     var resumeDataUrl = typeof data.resume === 'string' ? data.resume : '';
-    var resumeName = (data.resumeName || 'resume.pdf').replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 200);
+    var resumeName = (data.resumeName || '').replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 200);
 
     if (!name || !email || !github) {
       respondJson(400, { error: 'Name, email, and GitHub URL are required.' });
@@ -489,7 +490,7 @@ async function handleApply(req, res) {
     }
 
     var ip = clientIp(req);
-    console.log('[APPLY]', JSON.stringify({ name, email, github, ip, ts: new Date().toISOString() }));
+    console.log('[APPLY]', JSON.stringify({ name, email, github, linkedin, ip, ts: new Date().toISOString() }));
 
     var resendKey = process.env.RESEND_API_KEY;
     if (resendKey) {
@@ -502,6 +503,7 @@ async function handleApply(req, res) {
           'Name: ' + name,
           'Email: ' + email,
           'GitHub: ' + github,
+          'LinkedIn: ' + (linkedin || '—'),
           'English proficiency: ' + (proficiency || '—'),
           'Notes: ' + (notes || '—'),
           '',
@@ -510,7 +512,7 @@ async function handleApply(req, res) {
         ].join('\n')
       };
 
-      if (resumeDataUrl.startsWith('data:')) {
+      if (resumeDataUrl.startsWith('data:') && resumeName) {
         var commaIdx = resumeDataUrl.indexOf(',');
         if (commaIdx !== -1) {
           emailBody.attachments = [{ content: resumeDataUrl.slice(commaIdx + 1), filename: resumeName }];
