@@ -514,7 +514,9 @@ http.createServer((req, res) => {
     req.url = '/operations.html';
   }
   if (urlPath === '/claude') {
-    req.url = '/claude.html';
+    res.writeHead(301, { Location: '/' });
+    res.end();
+    return;
   }
   // Extensionless URLs: rewrite /foo → /foo.html when no extension present
   if (urlPath !== '/' && !path.extname(urlPath)) {
