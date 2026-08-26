@@ -513,6 +513,9 @@ http.createServer((req, res) => {
   if (urlPath === '/operations') {
     req.url = '/operations.html';
   }
+  if (urlPath === '/claude') {
+    req.url = '/claude.html';
+  }
   // Extensionless URLs: rewrite /foo → /foo.html when no extension present
   if (urlPath !== '/' && !path.extname(urlPath)) {
     req.url = urlPath + '.html';
