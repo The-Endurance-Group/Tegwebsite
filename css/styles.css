@@ -388,16 +388,7 @@ textarea:focus-visible {
     display: none;
   }
   .nav-has-dropdown[data-open] .nav-dropdown { display: block; }
-  /* Wide invisible bridge so diagonal cursor movement doesn't break hover */
-  .nav-has-dropdown[data-open]::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: -100px;
-    right: -100px;
-    height: 20px;
-    z-index: 299;
-  }
+
   .nav-dropdown a {
     display: block;
     padding: 10px 18px;

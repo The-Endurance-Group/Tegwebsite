@@ -34,16 +34,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Nav dropdowns */
+  /* Nav dropdowns — hover opens, click-outside closes (no mouseleave timer) */
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-has-dropdown')) {
+      document.querySelectorAll('.nav-has-dropdown[data-open]').forEach(function(el) {
+        el.removeAttribute('data-open');
+        var t = el.querySelector('.nav-dropdown-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
   document.querySelectorAll('.nav-has-dropdown').forEach(function(item) {
     var trigger = item.querySelector('.nav-dropdown-trigger');
-    var panel = item.querySelector('.nav-dropdown');
     if (!trigger) return;
 
-    var closeTimer = null;
-
     function openDropdown() {
-      clearTimeout(closeTimer);
       item.setAttribute('data-open', '');
       trigger.setAttribute('aria-expanded', 'true');
     }
@@ -51,18 +57,12 @@ document.addEventListener('DOMContentLoaded', function () {
       item.removeAttribute('data-open');
       trigger.setAttribute('aria-expanded', 'false');
     }
-    function scheduleClose() {
-      clearTimeout(closeTimer);
-      closeTimer = setTimeout(closeDropdown, 1200);
-    }
 
-    item.addEventListener('mouseenter', openDropdown);
-    item.addEventListener('mouseleave', scheduleClose);
+    trigger.addEventListener('mouseenter', openDropdown);
 
-    if (panel) {
-      panel.addEventListener('mouseenter', openDropdown);
-      panel.addEventListener('mouseleave', scheduleClose);
-    }
+    document.querySelectorAll('.nav-list > li').forEach(function(sibling) {
+      if (sibling !== item) sibling.addEventListener('mouseenter', closeDropdown);
+    });
 
     trigger.addEventListener('click', function(e) {
       e.stopPropagation();
@@ -71,10 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     item.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') { closeDropdown(); trigger.focus(); }
-    });
-
-    document.addEventListener('click', function(e) {
-      if (!item.contains(e.target)) closeDropdown();
     });
   });
 
