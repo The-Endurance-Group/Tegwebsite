@@ -513,6 +513,10 @@ http.createServer((req, res) => {
   if (urlPath === '/operations') {
     req.url = '/operations.html';
   }
+  // Extensionless URLs: rewrite /foo → /foo.html when no extension present
+  if (urlPath !== '/' && !path.extname(urlPath)) {
+    req.url = urlPath + '.html';
+  }
   serveStatic(req, res);
 }).listen(PORT, '0.0.0.0', () => {
   console.log(`Serving The Endurance Group site on port ${PORT}`);
