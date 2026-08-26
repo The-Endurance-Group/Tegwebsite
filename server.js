@@ -403,7 +403,14 @@ function serveStatic(req, res) {
       return;
     }
     const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, { 'Content-Type': MIME_TYPES[ext] || 'application/octet-stream' });
+    const isHtml = ext === '.html' || ext === '';
+    const headers = { 'Content-Type': MIME_TYPES[ext] || 'application/octet-stream' };
+    if (isHtml) {
+      headers['Cache-Control'] = 'no-cache, must-revalidate';
+    } else {
+      headers['Cache-Control'] = 'public, max-age=31536000, immutable';
+    }
+    res.writeHead(200, headers);
     res.end(data);
   });
 }
