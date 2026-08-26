@@ -34,16 +34,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Nav dropdowns */
+  /* Nav dropdowns — CSS :hover handles open on desktop; JS manages click-toggle
+     (keyboard/touch) and click-outside closing only. No mouseleave timers. */
   document.querySelectorAll('.nav-has-dropdown').forEach(function(item) {
     var trigger = item.querySelector('.nav-dropdown-trigger');
-    var panel = item.querySelector('.nav-dropdown');
     if (!trigger) return;
 
-    var closeTimer = null;
-
     function openDropdown() {
-      clearTimeout(closeTimer);
       item.setAttribute('data-open', '');
       trigger.setAttribute('aria-expanded', 'true');
     }
@@ -51,24 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
       item.removeAttribute('data-open');
       trigger.setAttribute('aria-expanded', 'false');
     }
-    function scheduleClose() {
-      clearTimeout(closeTimer);
-      closeTimer = setTimeout(closeDropdown, 400);
-    }
 
-    // Open when cursor enters the item; schedule close when it leaves.
-    item.addEventListener('mouseenter', openDropdown);
-    item.addEventListener('mouseleave', scheduleClose);
-
-    // The panel is absolutely positioned so browsers may fire mouseleave on
-    // the <li> when the cursor crosses into the panel even though the panel
-    // is a DOM child. Listening to the panel directly cancels the close timer.
-    if (panel) {
-      panel.addEventListener('mouseenter', openDropdown);
-      panel.addEventListener('mouseleave', scheduleClose);
-    }
-
-    // Click toggles for keyboard users and touch devices.
     trigger.addEventListener('click', function(e) {
       e.stopPropagation();
       item.hasAttribute('data-open') ? closeDropdown() : openDropdown();
