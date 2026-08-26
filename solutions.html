@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solutions | The Endurance Group</title>
-  <meta name="description" content="Four ways to work with TEG: a full Claude environment buildout, targeted Skill and MCP builds, ongoing training and maintenance, or a custom Claude-powered application.">
+  <meta name="description" content="Project-based Claude implementation: a full environment buildout, targeted Skill and MCP builds, team training and maintenance, or a custom Claude-powered application. TEG owns delivery.">
   <link rel="canonical" href="https://theendurancegroup.com/solutions">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Endurance Group">
   <meta property="og:title" content="Solutions | The Endurance Group">
-  <meta property="og:description" content="Four ways to work with TEG: a full Claude environment buildout, targeted Skill and MCP builds, ongoing training and maintenance, or a custom Claude-powered application.">
+  <meta property="og:description" content="Project-based Claude implementation: a full environment buildout, targeted Skill and MCP builds, team training and maintenance, or a custom Claude-powered application. TEG owns delivery.">
   <meta property="og:url" content="https://theendurancegroup.com/solutions">
   <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -123,7 +123,13 @@
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="about.html">About</a></li>
-          <li><a href="solutions.html" aria-current="page">Solutions</a></li>
+          <li class="nav-has-dropdown">
+            <button class="nav-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="nav-caret" aria-hidden="true">&#9660;</span></button>
+          <ul class="nav-dropdown" role="menu">
+            <li><a href="solutions.html" aria-current="page" role="menuitem">Project-Based Service</a></li>
+            <li><a href="staff-augmentation.html" role="menuitem">Staff Augmentation</a></li>
+          </ul>
+        </li>
           <li><a href="specialties.html">Specialties</a></li>
           <li><a href="ideas.html">Ideas</a></li>
           <li><a href="pricing.html">Pricing</a></li>
@@ -142,49 +148,10 @@
     <!-- Hero -->
     <section class="hero hero--page section">
       <div class="container reveal">
-        <span class="eyebrow">Solutions</span>
-        <h1>Two ways to engage. Four services to build with.</h1>
-        <p class="lede">Hand the work to us, or embed a certified developer directly on your team. Either way, the implementation gets done right.</p>
+        <span class="eyebrow">Project-Based Service</span>
+        <h1>Four ways to work with us.</h1>
+        <p class="lede">Whether you're starting from zero, extending what you already have, or building a standalone application, we scope each engagement to where you are. TEG owns delivery. You get a finished result.</p>
         <hr class="hero-divider">
-      </div>
-    </section>
-
-    <!-- Collaboration Models -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head reveal" style="max-width:600px;">
-          <span class="eyebrow">Collaboration Models</span>
-          <h2>Choose how you want to work with us.</h2>
-        </div>
-        <div class="grid grid--2 reveal--stagger reveal" style="margin-top:40px;">
-          <div class="feature-card">
-            <div class="icon-badge icon-badge--pink">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-            </div>
-            <h3>Project-Based Service</h3>
-            <p>TEG owns the outcome. We scope, build, and deliver: a full Claude environment, individual Skills and MCPs, team training, or a custom application. You get a finished result with no internal technical overhead required.</p>
-            <p style="margin-top:12px;"><a href="#initial-setup" style="font-weight:700; color:var(--color-teal-dark); text-decoration:none;">See the four project-based services below →</a></p>
-          </div>
-          <div class="feature-card">
-            <div class="icon-badge icon-badge--teal">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </div>
-            <h3>Staff Augmentation</h3>
-            <p>TEG places a Claude-certified developer or architect from our <a href="fellowship.html">Fellowship bench</a> directly on your team. You pay TEG a single hourly rate. TEG employs and manages the contractor. Best for teams with internal technical leadership that need certified hands.</p>
-            <p style="margin-top:12px;"><a href="staff-augmentation.html" style="font-weight:700; color:var(--color-teal-dark); text-decoration:none;">Learn about Staff Augmentation →</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Project-Based Services heading -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal" style="max-width:600px;">
-          <span class="eyebrow">Project-Based Services</span>
-          <h2>Four services, each scoped to your situation.</h2>
-          <p style="margin-top:12px; color:var(--color-lavender); font-size:16px;">TEG owns delivery. You get a finished result.</p>
-        </div>
       </div>
     </section>
 

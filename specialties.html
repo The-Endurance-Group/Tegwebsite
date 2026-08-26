@@ -84,7 +84,13 @@
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="about.html">About</a></li>
-          <li><a href="solutions.html">Solutions</a></li>
+          <li class="nav-has-dropdown">
+            <button class="nav-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false">Solutions <span class="nav-caret" aria-hidden="true">&#9660;</span></button>
+          <ul class="nav-dropdown" role="menu">
+            <li><a href="solutions.html" role="menuitem">Project-Based Service</a></li>
+            <li><a href="staff-augmentation.html" role="menuitem">Staff Augmentation</a></li>
+          </ul>
+        </li>
           <li><a href="specialties.html" aria-current="page">Specialties</a></li>
           <li><a href="ideas.html">Ideas</a></li>
           <li><a href="pricing.html">Pricing</a></li>

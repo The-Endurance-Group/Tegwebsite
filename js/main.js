@@ -34,6 +34,37 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* Nav dropdowns */
+  document.querySelectorAll('.nav-has-dropdown').forEach(function(item) {
+    var trigger = item.querySelector('.nav-dropdown-trigger');
+    if (!trigger) return;
+
+    function openDropdown() {
+      item.setAttribute('data-open', '');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+    function closeDropdown() {
+      item.removeAttribute('data-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+    function toggleDropdown() {
+      item.hasAttribute('data-open') ? closeDropdown() : openDropdown();
+    }
+
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleDropdown();
+    });
+
+    item.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') { closeDropdown(); trigger.focus(); }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!item.contains(e.target)) closeDropdown();
+    });
+  });
+
   /* Scroll reveal - fade/slide sections in as they enter the viewport.
      Falls back to visible-by-default if IntersectionObserver is missing or
      the user prefers reduced motion. */

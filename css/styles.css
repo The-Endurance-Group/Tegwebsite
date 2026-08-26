@@ -301,6 +301,52 @@ textarea:focus-visible {
 .nav-list a:hover,
 .nav-list a[aria-current="page"] { color: var(--color-pink); }
 
+/* ===== NAV DROPDOWN ===== */
+.nav-has-dropdown { position: relative; }
+
+.nav-dropdown-trigger {
+  display: block;
+  padding: 14px 0;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid var(--border-light);
+  background: none;
+  color: var(--color-ink);
+  font-family: inherit;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+}
+.nav-dropdown-trigger:hover { color: var(--color-pink); }
+
+.nav-caret {
+  font-size: 9px;
+  margin-left: 3px;
+  display: inline-block;
+  transition: transform 0.2s;
+  vertical-align: middle;
+}
+.nav-has-dropdown[data-open] .nav-caret { transform: rotate(180deg); }
+
+/* Mobile: inline sub-list */
+.nav-dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 16px;
+  display: none;
+}
+.nav-has-dropdown[data-open] .nav-dropdown { display: block; }
+.nav-dropdown a {
+  display: block;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-light);
+}
+.nav-dropdown li:last-child a { border-bottom: none; }
+
 @media (min-width: 768px) {
   .nav-toggle { display: none; }
   .primary-nav {
@@ -320,6 +366,39 @@ textarea:focus-visible {
     padding: 8px 0;
     border-bottom: none;
   }
+
+  /* Desktop dropdown */
+  .nav-dropdown-trigger {
+    padding: 8px 0;
+    border-bottom: none;
+    white-space: nowrap;
+    font-size: 15px;
+  }
+  .nav-dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 196px;
+    background: var(--color-white);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    padding: 6px 0;
+    z-index: 300;
+    display: none;
+  }
+  .nav-has-dropdown:hover .nav-dropdown,
+  .nav-has-dropdown[data-open] .nav-dropdown { display: block; }
+  .nav-dropdown a {
+    display: block;
+    padding: 10px 18px;
+    font-size: 14px;
+    white-space: nowrap;
+    border-bottom: none;
+  }
+  .nav-dropdown li:last-child a { border-bottom: none; }
+  .nav-dropdown a:hover { color: var(--color-pink); background: var(--bg-light); }
 }
 
 /* ===== FOOTER ===== */
