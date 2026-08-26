@@ -247,6 +247,8 @@ textarea:focus-visible {
 }
 .logo-strong { font-weight: 800; }
 .logo-img { display: block; height: 40px; width: auto; }
+.header-brand { display: flex; align-items: center; gap: 12px; }
+.header-claude-mark { display: block; height: 30px; width: auto; }
 
 .nav-toggle {
   display: flex;
