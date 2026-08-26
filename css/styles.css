@@ -388,7 +388,6 @@ textarea:focus-visible {
     z-index: 300;
     display: none;
   }
-  .nav-has-dropdown:hover .nav-dropdown,
   .nav-has-dropdown[data-open] .nav-dropdown { display: block; }
   .nav-dropdown a {
     display: block;

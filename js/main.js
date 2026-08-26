@@ -39,7 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var trigger = item.querySelector('.nav-dropdown-trigger');
     if (!trigger) return;
 
+    var closeTimer = null;
+
     function openDropdown() {
+      clearTimeout(closeTimer);
       item.setAttribute('data-open', '');
       trigger.setAttribute('aria-expanded', 'true');
     }
@@ -47,13 +50,20 @@ document.addEventListener('DOMContentLoaded', function () {
       item.removeAttribute('data-open');
       trigger.setAttribute('aria-expanded', 'false');
     }
-    function toggleDropdown() {
-      item.hasAttribute('data-open') ? closeDropdown() : openDropdown();
+    function scheduleClose() {
+      closeTimer = setTimeout(closeDropdown, 120);
     }
 
+    // Hover open/close — mouseenter/leave on the whole item (includes the
+    // absolutely-positioned dropdown panel) so hover is maintained as the
+    // cursor moves from the trigger button into the panel.
+    item.addEventListener('mouseenter', openDropdown);
+    item.addEventListener('mouseleave', scheduleClose);
+
+    // Click toggles for keyboard users and touch devices.
     trigger.addEventListener('click', function(e) {
       e.stopPropagation();
-      toggleDropdown();
+      item.hasAttribute('data-open') ? closeDropdown() : openDropdown();
     });
 
     item.addEventListener('keydown', function(e) {
