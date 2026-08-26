@@ -34,45 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* Nav dropdowns — hover opens, click-outside closes (no mouseleave timer) */
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.nav-has-dropdown')) {
-      document.querySelectorAll('.nav-has-dropdown[data-open]').forEach(function(el) {
-        el.removeAttribute('data-open');
-        var t = el.querySelector('.nav-dropdown-trigger');
-        if (t) t.setAttribute('aria-expanded', 'false');
-      });
-    }
-  });
-
-  document.querySelectorAll('.nav-has-dropdown').forEach(function(item) {
-    var trigger = item.querySelector('.nav-dropdown-trigger');
-    if (!trigger) return;
-
-    function openDropdown() {
-      item.setAttribute('data-open', '');
-      trigger.setAttribute('aria-expanded', 'true');
-    }
-    function closeDropdown() {
-      item.removeAttribute('data-open');
-      trigger.setAttribute('aria-expanded', 'false');
-    }
-
-    trigger.addEventListener('mouseenter', openDropdown);
-
-    document.querySelectorAll('.nav-list > li').forEach(function(sibling) {
-      if (sibling !== item) sibling.addEventListener('mouseenter', closeDropdown);
-    });
-
-    trigger.addEventListener('click', function(e) {
-      e.stopPropagation();
-      item.hasAttribute('data-open') ? closeDropdown() : openDropdown();
-    });
-
-    item.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') { closeDropdown(); trigger.focus(); }
-    });
-  });
 
   /* Scroll reveal - fade/slide sections in as they enter the viewport.
      Falls back to visible-by-default if IntersectionObserver is missing or
