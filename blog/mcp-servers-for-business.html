@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What MCP Servers Are and What They Mean for Your Business | The Endurance Group</title>
-  <meta name="description" content="MCP gives AI assistants direct access to your tools without custom API code. Here's what that actually looks like for a B2B company.">
+  <meta name="description" content="MCP (Model Context Protocol) lets Claude connect directly to your tools. TEG, an Anthropic Claude Partner, explains what MCP servers are and how to use them for B2B.">
   <link rel="canonical" href="https://theendurancegroup.com/blog/mcp-servers-for-business.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
   <meta property="og:title" content="What MCP Servers Are and What They Mean for Your Business | The Endurance Group">
-  <meta property="og:description" content="MCP gives AI assistants direct access to your tools without custom API code. Here's what that actually looks like for a B2B company.">
+  <meta property="og:description" content="MCP (Model Context Protocol) lets Claude connect directly to your tools. TEG, an Anthropic Claude Partner, explains what MCP servers are and how to use them for B2B.">
   <meta property="og:url" content="https://theendurancegroup.com/blog/mcp-servers-for-business.html">
   <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="What MCP Servers Are and What They Mean for Your Business | The Endurance Group">
-  <meta name="twitter:description" content="MCP gives AI assistants direct access to your tools without custom API code. Here's what that actually looks like for a B2B company.">
+  <meta name="twitter:description" content="MCP (Model Context Protocol) lets Claude connect directly to your tools. TEG, an Anthropic Claude Partner, explains what MCP servers are and how to use them for B2B.">
   <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,6 +88,22 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is MCP (Model Context Protocol)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MCP stands for Model Context Protocol. It's a standard that lets AI assistants like Claude connect to external tools and take actions inside them — without requiring a custom integration for each tool. It's a standardized protocol so any tool that implements MCP can talk to any AI model that supports it using the same standard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get an MCP server set up for my business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TEG, an official Anthropic Claude Partner, builds and configures MCP servers for B2B teams. We check whether an existing MCP server covers your tool first. If one exists, we configure it. If not, we build a lightweight custom server. The setup is included in our Claude Skills and MCPs service, starting at $750."
+      }
+    },
     {
       "@type": "Question",
       "name": "Do I need to run my own MCP server?",
@@ -167,8 +183,9 @@
       <div class="container">
         <div class="prose">
           <p>MCP stands for Model Context Protocol. It's a standard that lets AI assistants connect to external tools and take actions inside them, without requiring a custom integration for each one. If you've been watching the AI space and wondering why everyone is suddenly talking about MCP servers, this is the explanation.</p>
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We build and configure <a href="../project-based.html#skills-mcps">MCP servers and Claude Skills</a> for B2B teams. Claude has the most mature MCP support of any AI platform right now.</em></p>
 
-          <h2>The problem MCP solves</h2>
+          <h2>What problem does MCP solve?</h2>
           <p>Every business tool has its own API. Connecting an AI model to your CRM, your calendar, your email, and your project management system used to mean building a separate integration for each one, different authentication, different data formats, different endpoints. That's engineering work, and most companies don't have the capacity to do it at the pace AI tools are moving.</p>
           <p>MCP is a standardized protocol that changes the equation. Instead of each tool requiring a custom integration, any tool that implements MCP can talk to any AI model that supports it using the same standard. Build once, connect everywhere, that's the promise, and it's increasingly the reality.</p>
 
@@ -180,7 +197,7 @@
           <p>Concretely: your AI assistant can pull up the last three interactions with a prospect from your CRM, check their open deal status, look at the notes from the last call, and draft a follow-up email, all in one prompt, without you leaving the chat interface or copying data between windows. If you ask it to schedule a call, it can check your calendar and create the event. If you ask it to log a note, it writes directly to the CRM record.</p>
           <p>This is the workflow that MCP makes possible. It's not theoretical, teams are running this today. The tooling is mature enough to build on, and the productivity impact for anyone doing high-volume relationship work is real.</p>
 
-          <h2>What it doesn't do</h2>
+          <h2>What are MCP's limitations?</h2>
           <p>MCP is not a shortcut around bad data. If your CRM records are incomplete or inconsistently maintained, the AI will work with what's there and the output will reflect that. It also still requires proper setup, you need to configure which tools connect, what permissions the AI has in each, and what it's allowed to do autonomously versus what requires approval. The AI is only as useful as the instructions and permissions you give it.</p>
           <p>It's a significant capability upgrade, not a magic fix. The teams that get the most value from MCP are the ones who do the setup work upfront: clean data, clear permissions, and defined use cases before they hand the wheel to the AI.</p>
 
