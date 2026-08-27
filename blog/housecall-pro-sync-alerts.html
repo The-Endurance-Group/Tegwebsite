@@ -139,7 +139,7 @@
 
           <h2>The problem</h2>
           <p>The sync alerts feed was flagging a lot of things that weren't actually problems. A job gets finished and paid, but the technician forgets to hit "Finish" in the app right away, and the job gets tagged "possible late finish." Multiply that across a normal week of jobs, and the office was spending hours manually rechecking flags that almost always turned out to be fine.</p>
-          <p>Worse, the noise cut both ways. With so many false positives to wade through, genuine issues — a job marked paid that was never actually completed — sometimes slipped through the same review process instead of getting caught.</p>
+          <p>Worse, the noise cut both ways. With so many false positives to wade through, genuine issues (a job marked paid that was never actually completed) sometimes slipped through the same review process instead of getting caught.</p>
 
           <h2>Why the obvious fix didn't work</h2>
           <p>Our first instinct was to pull the data straight from Housecall Pro's API and build cleaner logic on top of it. That's usually the fastest path. This time it wasn't an option: the API doesn't expose the specific fields the sync alert logic actually depends on, like the exact completion timestamp on a job versus when it was scheduled.</p>
@@ -150,7 +150,7 @@
           <ul>
             <li><strong>Push it through.</strong> Paid, completed, dates line up. No action needed.</li>
             <li><strong>Ignore it.</strong> Not paid yet, so there's nothing to reconcile.</li>
-            <li><strong>Flag for real review.</strong> Something genuinely doesn't add up, with the specific reason attached — paid but not marked complete, completion timing off, or the job was modified after it was already marked done.</li>
+            <li><strong>Flag for real review.</strong> Something genuinely doesn't add up, with the specific reason attached: paid but not marked complete, completion timing off, or modified after it was already marked done.</li>
           </ul>
 
           <h2>Getting it right</h2>
@@ -160,7 +160,7 @@
           <p>The office no longer spends hours rechecking flags that were never really problems, and the cases that do need a human now come with a clear reason attached instead of a vague warning. Just as important, the false positives that used to bury the real issues aren't crowding them out anymore.</p>
 
           <h2>The takeaway</h2>
-          <p>Not every integration problem gets solved with API access. When a system doesn't expose what you need on the back end, sometimes the answer is building something that reads the front end the way a person would — carefully, read-only, and tuned against how the team actually works rather than how the software assumes they work.</p>
+          <p>Not every integration problem gets solved with API access. When a system doesn't expose what you need on the back end, sometimes the answer is building something that reads the front end the way a person would: carefully, read-only, and tuned against how the team actually works rather than how the software assumes they work.</p>
           <p>If you're dealing with a similar gap between what your software shows you and what your team actually needs from it, we'd be glad to talk through how we'd approach it.</p>
 
           <div class="btn-group">
@@ -181,7 +181,7 @@
           <div class="feature-card">
             <span class="eyebrow">AI Automations</span>
             <h3><a href="what-is-an-ai-automation.html">What counts as a real AI automation, and what's just a demo</a></h3>
-            <p>A practical definition of what makes an automation real — and the difference between something that works once and something that holds up over time.</p>
+            <p>A practical definition of what makes an automation real, and the difference between something that works once and something that holds up over time.</p>
           </div>
           <div class="feature-card">
             <span class="eyebrow">AI Automations</span>

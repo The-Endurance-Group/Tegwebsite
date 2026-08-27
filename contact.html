@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | The Endurance Group</title>
-  <meta name="description" content="Get in touch with The Endurance Group. Send us a message or book a meeting with Conor Sullivan directly.">
+  <meta name="description" content="Start a conversation about Claude implementation. Send us a message or book a call directly. We'll tell you honestly what makes sense for your team.">
   <link rel="canonical" href="https://theendurancegroup.com/contact.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Endurance Group">
   <meta property="og:title" content="Contact | The Endurance Group">
-  <meta property="og:description" content="Get in touch with The Endurance Group. Send us a message or book a meeting with Conor Sullivan directly.">
+  <meta property="og:description" content="Start a conversation about Claude implementation. Send us a message or book a call directly. We'll tell you honestly what makes sense for your team.">
   <meta property="og:url" content="https://theendurancegroup.com/contact.html">
   <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact | The Endurance Group">
-  <meta name="twitter:description" content="Get in touch with The Endurance Group. Send us a message or book a meeting with Conor Sullivan directly.">
+  <meta name="twitter:description" content="Start a conversation about Claude implementation. Send us a message or book a call directly. We'll tell you honestly what makes sense for your team.">
   <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +37,12 @@
     .contact-or{display:flex;align-items:center;gap:12px;margin:40px 0 32px;color:var(--text-muted);font-size:14px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
     .contact-or::before,.contact-or::after{content:'';flex:1;height:1px;background:var(--border);}
     .meetings-iframe-container{min-height:620px;}
+    .inquiry-type-group{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+    .inquiry-type-group label{display:flex;align-items:center;gap:8px;padding:10px 16px;border:1.5px solid var(--border);border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;transition:border-color .15s,background .15s;}
+    .inquiry-type-group label:has(input:checked){border-color:var(--accent);background:var(--bg-light);}
+    .inquiry-type-group input[type="radio"]{accent-color:var(--accent);}
+    .inquiry-fields{display:none;}
+    .inquiry-fields.visible{display:block;}
   </style>
 </head>
 <body>
@@ -45,7 +51,10 @@
   <!-- SHARED HEADER: keep in sync across all pages -->
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="/"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -61,6 +70,7 @@
           <li><a href="success.html">Success</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="fellowship.html">Careers</a></li>
         </ul>
       </nav>
     </div>
@@ -73,8 +83,8 @@
     <section class="hero hero--page section">
       <div class="container">
         <span class="eyebrow">Contact</span>
-        <h1>Tell us what your team is doing manually.</h1>
-        <p class="lede">Describe the process even roughly. We'll come back with how we'd automate it and what it would take to get it running.</p>
+        <h1>Tell us where your team is with Claude.</h1>
+        <p class="lede">Whether you're starting from zero or already using Claude and want more from it? Send us a message or book a call. We'll tell you honestly what makes sense.</p>
       </div>
     </section>
 
@@ -86,9 +96,16 @@
           <!-- Left: Email Form -->
           <div>
             <h2 style="margin-bottom:8px;">Send us a message</h2>
-            <p style="color:var(--text-muted);margin-bottom:32px;">We'll get back to you within one business day.</p>
+            <p style="color:var(--text-muted);margin-bottom:32px;">Tell us where you are and what you're trying to solve. We'll get back to you within one business day.</p>
 
             <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-group">
+                <label>What are you looking for? <span aria-hidden="true">*</span></label>
+                <div class="inquiry-type-group" id="inquiry-type-group" role="group" aria-label="Inquiry type">
+                  <label><input type="radio" name="inquiry_type" value="project" id="type-project"> Project-Based Service</label>
+                  <label><input type="radio" name="inquiry_type" value="staffaug" id="type-staffaug"> Staff Augmentation</label>
+                </div>
+              </div>
               <div class="form-group">
                 <label for="contact-name">Your name <span aria-hidden="true">*</span></label>
                 <input type="text" id="contact-name" name="name" required autocomplete="name" placeholder="Jane Smith">
@@ -101,10 +118,49 @@
                 <label for="contact-company">Company</label>
                 <input type="text" id="contact-company" name="company" autocomplete="organization" placeholder="Acme Inc.">
               </div>
-              <div class="form-group">
-                <label for="contact-message">What's on your mind? <span aria-hidden="true">*</span></label>
-                <textarea id="contact-message" name="message" required placeholder="Tell us what you're working on and what you need help with."></textarea>
+
+              <!-- Project-Based fields -->
+              <div class="inquiry-fields" id="fields-project">
+                <div class="form-group">
+                  <label for="contact-message">What are you trying to solve? <span aria-hidden="true">*</span></label>
+                  <textarea id="contact-message" name="message" placeholder="Where is your team with Claude right now? What workflows or problems are you trying to address? How large is your team?"></textarea>
+                </div>
               </div>
+
+              <!-- Staff Augmentation fields -->
+              <div class="inquiry-fields" id="fields-staffaug">
+                <div class="form-group">
+                  <label for="sa-headcount">How many contractors do you need? <span aria-hidden="true">*</span></label>
+                  <select id="sa-headcount" name="sa_headcount">
+                    <option value="">Select…</option>
+                    <option value="1">1</option>
+                    <option value="2-3">2–3</option>
+                    <option value="4+">4 or more</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="sa-level">Certification level needed <span aria-hidden="true">*</span></label>
+                  <select id="sa-level" name="sa_level">
+                    <option value="">Select…</option>
+                    <option value="developer">Claude Certified Developer</option>
+                    <option value="architect">Claude Certified Architect</option>
+                    <option value="either">Either, let TEG recommend</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="sa-duration">Estimated engagement length</label>
+                  <input type="text" id="sa-duration" name="sa_duration" placeholder="e.g. 3 months, ongoing">
+                </div>
+                <div class="form-group">
+                  <label for="sa-startdate">Target start date</label>
+                  <input type="text" id="sa-startdate" name="sa_startdate" placeholder="e.g. immediately, September 2026">
+                </div>
+                <div class="form-group">
+                  <label for="sa-notes">Anything else we should know?</label>
+                  <textarea id="sa-notes" name="sa_notes" placeholder="Tech stack, internal team structure, specific skills you need, anything that helps us match you to the right contractor."></textarea>
+                </div>
+              </div>
+
               <button type="submit" class="btn btn-primary" id="contact-submit">Send message</button>
               <div class="contact-success" id="contact-success" role="alert">
                 <strong>Got it, thanks.</strong> We'll be in touch within one business day. If you need a faster response, use the booking link on the right.
@@ -114,8 +170,8 @@
 
           <!-- Right: Book a meeting -->
           <div>
-            <h2 style="margin-bottom:8px;">Or book a meeting</h2>
-            <p style="color:var(--text-muted);margin-bottom:32px;">Pick a time that works and we'll come prepared, no intro call needed.</p>
+            <h2 style="margin-bottom:8px;">Or book a call</h2>
+            <p style="color:var(--text-muted);margin-bottom:32px;">Pick a time that works. We'll come prepared. No intro needed, just tell us where you are in the form or show up and we'll figure it out together.</p>
             <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?embed=true"></div>
           </div>
 
@@ -130,15 +186,17 @@
     <div class="container">
       <div class="footer-top">
         <a class="logo" href="/"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
-        <p class="footer-tagline">Your AI Automation Partner</p>
+        <p class="footer-tagline">Your Claude Implementation Partner</p>
         <p class="footer-address">16 Middle St, 2nd Floor · Portland, ME 04101 · (207) 846-6000</p>
       </div>
       <div class="footer-columns">
         <nav aria-label="Solutions">
           <h3>Solutions</h3>
           <ul>
-            <li><a href="solutions.html#ai-automations">AI Automations</a></li>
-            <li><a href="solutions.html#strategy">Strategy</a></li>
+            <li><a href="project-based.html#initial-setup">Claude Initial Setup</a></li>
+            <li><a href="project-based.html#skills-mcps">Skills &amp; MCPs</a></li>
+            <li><a href="project-based.html#team-training">Training &amp; Maintenance</a></li>
+            <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
           </ul>
         </nav>
         <nav aria-label="Products">
@@ -166,6 +224,8 @@
             <li><a href="success.html">Success</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html" aria-current="page">Contact</a></li>
+            <li><a href="fellowship.html">Careers</a></li>
+            <li><a href="free-training.html">Free Training Session</a></li>
           </ul>
         </nav>
       </div>
@@ -190,13 +250,46 @@
       var form = document.getElementById('contact-form');
       var submitBtn = document.getElementById('contact-submit');
       var successDiv = document.getElementById('contact-success');
+      var fieldsProject = document.getElementById('fields-project');
+      var fieldsStaffaug = document.getElementById('fields-staffaug');
       if (!form) return;
+
+      function showFields(type) {
+        fieldsProject.classList.toggle('visible', type === 'project');
+        fieldsStaffaug.classList.toggle('visible', type === 'staffaug');
+      }
+
+      form.querySelectorAll('[name="inquiry_type"]').forEach(function(radio) {
+        radio.addEventListener('change', function() { showFields(this.value); });
+      });
+
+      // Auto-select from URL param: contact.html?type=staffaug
+      var params = new URLSearchParams(window.location.search);
+      var typeParam = params.get('type');
+      if (typeParam === 'staffaug') {
+        var r = document.getElementById('type-staffaug');
+        if (r) { r.checked = true; showFields('staffaug'); }
+      } else if (typeParam === 'project') {
+        var r = document.getElementById('type-project');
+        if (r) { r.checked = true; showFields('project'); }
+      }
+
       form.addEventListener('submit', function(e){
         e.preventDefault();
+        var inquiryType = (form.querySelector('[name="inquiry_type"]:checked') || {}).value || '';
         var name = form.querySelector('[name="name"]').value.trim();
         var email = form.querySelector('[name="email"]').value.trim();
-        var message = form.querySelector('[name="message"]').value.trim();
-        if (!name || !email || !message) return;
+        if (!name || !email || !inquiryType) return;
+
+        if (inquiryType === 'project') {
+          var msg = form.querySelector('[name="message"]').value.trim();
+          if (!msg) return;
+        } else if (inquiryType === 'staffaug') {
+          var headcount = form.querySelector('[name="sa_headcount"]').value;
+          var level = form.querySelector('[name="sa_level"]').value;
+          if (!headcount || !level) return;
+        }
+
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending…';
         var body = new URLSearchParams(new FormData(form)).toString();
@@ -204,7 +297,10 @@
           .then(function(r){ return r.json(); })
           .then(function(data){
             if (data.ok) {
-              form.querySelectorAll('input,textarea').forEach(function(el){ el.value = ''; });
+              form.querySelectorAll('input,textarea,select').forEach(function(el){ el.value = ''; });
+              form.querySelectorAll('[name="inquiry_type"]').forEach(function(r){ r.checked = false; });
+              fieldsProject.classList.remove('visible');
+              fieldsStaffaug.classList.remove('visible');
               successDiv.classList.add('visible');
               submitBtn.textContent = 'Sent';
             } else {

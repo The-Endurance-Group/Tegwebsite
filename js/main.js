@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+
   /* Scroll reveal - fade/slide sections in as they enter the viewport.
      Falls back to visible-by-default if IntersectionObserver is missing or
      the user prefers reduced motion. */

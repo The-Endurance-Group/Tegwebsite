@@ -247,6 +247,8 @@ textarea:focus-visible {
 }
 .logo-strong { font-weight: 800; }
 .logo-img { display: block; height: 40px; width: auto; }
+.header-brand { display: flex; align-items: center; gap: 12px; }
+.header-claude-mark { display: block; height: 30px; width: auto; }
 
 .nav-toggle {
   display: flex;
@@ -299,6 +301,7 @@ textarea:focus-visible {
 .nav-list a:hover,
 .nav-list a[aria-current="page"] { color: var(--color-pink); }
 
+
 @media (min-width: 768px) {
   .nav-toggle { display: none; }
   .primary-nav {
@@ -318,6 +321,7 @@ textarea:focus-visible {
     padding: 8px 0;
     border-bottom: none;
   }
+
 }
 
 /* ===== FOOTER ===== */
@@ -1457,9 +1461,11 @@ details[open] .faq-q::after { content: "−"; }
 .process-track {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
   margin-top: 56px;
   position: relative;
 }
+.process-track--3 { grid-template-columns: repeat(3, 1fr); }
 .process-track-line {
   position: absolute;
   top: 31px;
@@ -1469,6 +1475,10 @@ details[open] .faq-q::after { content: "−"; }
   background: var(--border-light);
   pointer-events: none;
   z-index: 0;
+}
+.process-track--3 .process-track-line {
+  left: 16.67%;
+  right: 16.67%;
 }
 .process-track-line-fill {
   position: absolute;
@@ -1547,6 +1557,45 @@ details[open] .faq-q::after { content: "−"; }
   .process-step { opacity: 1 !important; transform: none !important; transition: none !important; }
   .process-track-line-fill { transition: none !important; transform: scaleX(1) !important; }
   .process-icon, .process-icon svg { transition: none !important; }
+}
+
+/* ===== STEP CARDS (numbered process cards) ===== */
+.step-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.step-cards--4 { grid-template-columns: repeat(4, 1fr); }
+.step-card {
+  background: var(--color-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 28px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.step-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-pink);
+  margin-bottom: 16px;
+}
+.step-card .process-icon {
+  margin-bottom: 16px;
+  border-color: var(--color-pink);
+  background: var(--tint-pink);
+}
+.step-card .process-icon svg { color: var(--color-pink); }
+@media (max-width: 767px) {
+  .step-cards, .step-cards--4 { grid-template-columns: 1fr; gap: 12px; }
+  .step-card { flex-direction: row; text-align: left; align-items: flex-start; gap: 16px; padding: 20px; }
+  .step-card .process-icon { flex-shrink: 0; margin-bottom: 0; }
+  .step-num { margin-bottom: 6px; }
 }
 
 /* ===== STAT CHIPS (how-to-get-started.html) ===== */
