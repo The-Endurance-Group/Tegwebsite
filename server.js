@@ -572,6 +572,7 @@ async function assessApplicant(applicant) {
     'RECOMMENDED NEXT STEP: [one sentence — invite to interview / request GitHub samples / pass]',
     '',
     'Keep the total assessment under 200 words. Be direct. This is for internal review only.',
+    'Use plain text only — no markdown, no **bold**, no asterisks, no headers with #. Just plain sentences and dashes for bullets.',
   ].join('\n');
 
   var userContent;
