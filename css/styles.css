@@ -301,6 +301,15 @@ textarea:focus-visible {
 .nav-list a:hover,
 .nav-list a[aria-current="page"] { color: var(--color-pink); }
 
+.nav-cta {
+  display: inline-block;
+  background: var(--color-pink);
+  color: #fff !important;
+  border-radius: 6px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--color-purple) !important; color: #fff !important; }
 
 @media (min-width: 768px) {
   .nav-toggle { display: none; }
@@ -320,6 +329,11 @@ textarea:focus-visible {
   .nav-list a {
     padding: 8px 0;
     border-bottom: none;
+  }
+  .nav-list .nav-cta {
+    padding: 8px 16px;
+    border-bottom: none;
+    margin-left: 4px;
   }
 
 }
