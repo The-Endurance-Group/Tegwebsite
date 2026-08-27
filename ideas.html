@@ -359,6 +359,150 @@
       }
     }
 
+    /* ── Conversational interview ── */
+    .chat-window {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .chat-messages {
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      margin-bottom: 1.5rem;
+      min-height: 60px;
+    }
+
+    .chat-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.625rem;
+    }
+
+    .chat-row--claude { justify-content: flex-start; }
+    .chat-row--user   { justify-content: flex-end; }
+
+    .chat-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .chat-bubble {
+      max-width: 78%;
+      padding: 0.75rem 1.125rem;
+      font-size: 1rem;
+      line-height: 1.55;
+      border-radius: 18px;
+    }
+
+    .chat-bubble--claude {
+      background: var(--bg-light);
+      color: var(--color-ink);
+      border-radius: 4px 18px 18px 18px;
+    }
+
+    .chat-bubble--user {
+      background: var(--color-purple);
+      color: #fff;
+      border-radius: 18px 4px 18px 18px;
+    }
+
+    .chat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.875rem;
+    }
+
+    .chat-chip {
+      padding: 0.45rem 1rem;
+      border: 2px solid var(--color-purple);
+      border-radius: 20px;
+      background: transparent;
+      color: var(--color-purple);
+      font-family: inherit;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s;
+    }
+
+    .chat-chip:hover, .chat-chip:focus {
+      background: var(--color-purple);
+      color: #fff;
+      outline: none;
+    }
+
+    .chat-input-row {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .chat-text-input {
+      flex: 1;
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      border: 2px solid #E7E2E5;
+      border-radius: 8px;
+      color: var(--color-ink);
+      background: #fff;
+      transition: border-color 0.15s;
+    }
+
+    .chat-text-input:focus {
+      outline: none;
+      border-color: var(--color-purple);
+    }
+
+    .chat-text-input:disabled {
+      background: var(--bg-light);
+      color: var(--color-lavender);
+    }
+
+    .chat-send-btn {
+      flex-shrink: 0;
+    }
+
+    .chat-skip {
+      display: block;
+      text-align: center;
+      margin-top: 0.625rem;
+      font-size: 0.875rem;
+      color: var(--color-lavender);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: underline;
+      font-family: inherit;
+      padding: 0;
+    }
+
+    .chat-skip:hover { color: var(--color-ink); }
+
+    .chat-thinking {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0.625rem 0.875rem;
+      background: var(--bg-light);
+      border-radius: 4px 18px 18px 18px;
+    }
+
+    .chat-thinking span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-lavender);
+      animation: dot-bounce 1.2s infinite ease-in-out;
+    }
+
+    .chat-thinking span:nth-child(2) { animation-delay: 0.2s; }
+    .chat-thinking span:nth-child(3) { animation-delay: 0.4s; }
+
     /* Portfolio category collapsible sections */
     .portfolio-categories {
       display: flex;
@@ -477,9 +621,9 @@
     <section class="section section--alt">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">What we can build for you</span>
-          <h1>See what we'd build in Claude for your team.</h1>
-          <p class="lede">Describe what your team is doing manually. We'll tell you what Claude Skill, MCP, or workflow we'd build, including anything from our existing portfolio that fits your operation.</p>
+          <span class="eyebrow">Claude Implementation Roadmap</span>
+          <h1>Build your team's Claude automation roadmap.</h1>
+          <p class="lede">Answer four quick questions and we'll identify the highest-value automations to build in Claude for your operation — including anything from our portfolio that already fits.</p>
         </div>
       </div>
     </section>
@@ -487,60 +631,25 @@
     <!-- See what's possible: generate ideas -->
     <section class="section" id="generate">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">See what's possible</span>
-          <h2>Get personalized automation ideas</h2>
-          <p>Describe your business and we'll suggest what to build, pulling from our portfolio and generating ideas specific to you.</p>
+        <!-- Conversational interview -->
+        <div class="chat-window" id="chat-window">
+          <div class="chat-messages" id="chat-messages" aria-live="polite" aria-label="Conversation"></div>
+
+          <div id="chat-controls">
+            <div class="chat-chips" id="chat-chips"></div>
+            <div class="chat-input-row">
+              <input type="text" id="chat-input" class="chat-text-input"
+                     placeholder="Type your answer…" maxlength="300"
+                     aria-label="Your answer" autocomplete="off">
+              <button id="chat-send" class="btn btn-primary chat-send-btn" type="button">Send</button>
+            </div>
+            <button type="button" id="chat-skip" class="chat-skip" hidden>Skip this one</button>
+          </div>
         </div>
 
-        <div class="ideas-input-wrap reveal">
-          <label for="business-type" class="sr-only">Business type</label>
-          <select id="business-type" class="ideas-type-select">
-            <option value="">What type of business are you?</option>
-            <option value="Real Estate">Real Estate</option>
-            <option value="Professional Services">Professional Services</option>
-            <option value="Software / SaaS">Software / SaaS</option>
-            <option value="other">Other, I'll describe it</option>
-          </select>
+        <div id="error-msg" class="ideas-error" hidden role="alert" style="max-width:640px;margin:1rem auto 0;"></div>
 
-          <!-- Sub-type dropdown: shown for named types -->
-          <div id="subtype-wrap" hidden>
-            <label for="business-subtype" class="sr-only">Industry sub-type</label>
-            <select id="business-subtype" class="ideas-type-select">
-              <option value="">Pick a more specific type (optional)</option>
-            </select>
-          </div>
-
-          <!-- Custom industry input: shown for "Other" -->
-          <div id="custom-industry-wrap" hidden>
-            <label for="custom-industry" class="ideas-detail-label">What's your industry?</label>
-            <input type="text" id="custom-industry" class="ideas-text-input"
-              placeholder="e.g. Healthcare, Logistics, Non-profit, Education…"
-              maxlength="100">
-          </div>
-
-          <div id="detail-wrap" hidden>
-            <label for="business-input" class="ideas-detail-label" id="detail-label">Tell us more about your business</label>
-            <textarea
-              id="business-input"
-              class="ideas-textarea"
-              placeholder="e.g. We manage about 80 rental properties and spend a lot of time on tenant communications, lease renewals, and reviewing maintenance invoices."
-              rows="3"
-              maxlength="1000"
-            ></textarea>
-          </div>
-          <button id="generate-btn" class="btn btn-primary" type="button" hidden style="display:block; margin-inline:auto;">Generate ideas for my business</button>
-          <p class="ideas-hint">Ctrl+Enter to submit &nbsp;·&nbsp; The more specific, the better the ideas</p>
-        </div>
-
-        <div id="loading" hidden aria-live="polite" aria-label="Generating ideas">
-          <span>Thinking about your business</span>
-          <span class="loading-dots" aria-hidden="true"><span></span><span></span><span></span></span>
-        </div>
-
-        <div id="error-msg" class="ideas-error" hidden role="alert"></div>
-
-        <div id="results" hidden>
+        <div id="results" hidden style="margin-top:3rem;">
           <!-- Portfolio matches (shown only if any returned) -->
           <div id="portfolio-section" class="ideas-results-section" hidden>
             <p class="ideas-results-label">From our portfolio</p>
@@ -551,13 +660,16 @@
           <!-- Generated ideas (always shown with results) -->
           <div id="ideas-section" class="ideas-results-section">
             <p class="ideas-results-label">Ideas for your business</p>
-            <h2 class="ideas-results-heading">What we could build for you</h2>
+            <h2 class="ideas-results-heading">What we'd build for you</h2>
             <div id="idea-cards" class="ideas-grid"></div>
           </div>
 
           <div class="text-center" style="margin-top:2.5rem;">
-            <p style="margin-bottom:1rem;color:var(--color-lavender);">Any of these catch your eye? Let's talk about what it would take to build it in Claude.</p>
-            <a class="btn btn-primary" href="contact.html">Schedule a Call</a>
+            <p style="margin-bottom:1rem;color:var(--color-lavender);">Any of these catch your eye? Book a free training session and we'll walk through what it would take to build it.</p>
+            <div class="btn-group btn-group--center">
+              <a class="btn btn-primary" href="free-training.html">Book a Free Training Session</a>
+              <a class="btn btn-secondary" href="contact.html">Schedule a Call</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1181,12 +1293,188 @@
       return map[(cat || '').toLowerCase()] || '';
     }
 
-    function setLoading(loading) {
-      var btn = document.getElementById('generate-btn');
-      var loadingEl = document.getElementById('loading');
-      btn.disabled = loading;
-      btn.textContent = loading ? 'Generating…' : 'Generate ideas for my business';
-      loadingEl.hidden = !loading;
+    // ── Conversational interview ──────────────────────────────────────────────
+
+    var QUESTIONS = [
+      {
+        text: "What type of business are you in?",
+        chips: ["Real Estate", "Property Management", "Professional Services", "B2B SaaS", "Other"],
+        placeholder: "Or type your industry…",
+        key: "industry"
+      },
+      {
+        text: "Got it. How big is your team, and what's your role?",
+        placeholder: "e.g. 12 people, I run operations",
+        key: "team"
+      },
+      {
+        text: "What takes the most time in a typical week — the work that feels like it should be automated?",
+        placeholder: "e.g. Manual lead qualification, generating reports, reviewing invoices…",
+        key: "pain"
+      },
+      {
+        text: "Last one: what tools does your team run? CRM, email platform, anything core to your workflow.",
+        placeholder: "e.g. HubSpot, Gmail, Slack, a custom property system…",
+        key: "tools",
+        skippable: true
+      }
+    ];
+
+    var convo = { step: 0, answers: {}, active: true };
+
+    var messagesEl  = document.getElementById('chat-messages');
+    var controlsEl  = document.getElementById('chat-controls');
+    var chipsEl     = document.getElementById('chat-chips');
+    var inputEl     = document.getElementById('chat-input');
+    var sendBtn     = document.getElementById('chat-send');
+    var skipBtn     = document.getElementById('chat-skip');
+
+    function addBubble(text, role) {
+      var row = document.createElement('div');
+      row.className = 'chat-row chat-row--' + role;
+
+      if (role === 'claude') {
+        var avatar = document.createElement('img');
+        avatar.src = 'images/claude-logo.jpg';
+        avatar.alt = 'TEG';
+        avatar.className = 'chat-avatar';
+        row.appendChild(avatar);
+      }
+
+      var bubble = document.createElement('div');
+      bubble.className = 'chat-bubble chat-bubble--' + role;
+      bubble.textContent = text;
+      row.appendChild(bubble);
+
+      messagesEl.appendChild(row);
+      row.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return row;
+    }
+
+    function addThinking() {
+      var row = document.createElement('div');
+      row.className = 'chat-row chat-row--claude';
+
+      var avatar = document.createElement('img');
+      avatar.src = 'images/claude-logo.jpg';
+      avatar.alt = 'TEG';
+      avatar.className = 'chat-avatar';
+      row.appendChild(avatar);
+
+      var dots = document.createElement('div');
+      dots.className = 'chat-thinking';
+      dots.setAttribute('aria-label', 'Thinking');
+      dots.innerHTML = '<span></span><span></span><span></span>';
+      row.appendChild(dots);
+
+      messagesEl.appendChild(row);
+      row.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return row;
+    }
+
+    function setControlsDisabled(disabled) {
+      inputEl.disabled = disabled;
+      sendBtn.disabled = disabled;
+      chipsEl.querySelectorAll('.chat-chip').forEach(function(c) { c.disabled = disabled; });
+    }
+
+    function showQuestion(q) {
+      chipsEl.innerHTML = '';
+      skipBtn.hidden = true;
+      inputEl.value = '';
+      inputEl.placeholder = q.placeholder || 'Type your answer…';
+
+      if (q.chips) {
+        q.chips.forEach(function(label) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'chat-chip';
+          btn.textContent = label;
+          btn.addEventListener('click', function() { submitAnswer(label); });
+          chipsEl.appendChild(btn);
+        });
+      }
+
+      if (q.skippable) {
+        skipBtn.hidden = false;
+      }
+
+      setControlsDisabled(false);
+      inputEl.focus();
+    }
+
+    function askNext() {
+      if (convo.step >= QUESTIONS.length) {
+        runGeneration();
+        return;
+      }
+      var q = QUESTIONS[convo.step];
+      var thinkingRow = addThinking();
+      setTimeout(function() {
+        thinkingRow.remove();
+        addBubble(q.text, 'claude');
+        showQuestion(q);
+      }, 600);
+    }
+
+    function submitAnswer(text) {
+      if (!convo.active) return;
+      text = (text || '').trim();
+      if (!text && !QUESTIONS[convo.step].skippable) return;
+
+      setControlsDisabled(true);
+      chipsEl.innerHTML = '';
+      skipBtn.hidden = true;
+
+      if (text) {
+        addBubble(text, 'user');
+        convo.answers[QUESTIONS[convo.step].key] = text;
+      }
+
+      convo.step++;
+      askNext();
+    }
+
+    async function runGeneration() {
+      convo.active = false;
+      controlsEl.style.display = 'none';
+
+      var thinkingRow = addThinking();
+      var thinking2   = addBubble('Putting together your roadmap…', 'claude');
+
+      var desc = [
+        convo.answers.industry && ('Industry: ' + convo.answers.industry),
+        convo.answers.team     && ('Team: '     + convo.answers.team),
+        convo.answers.pain     && ('Pain points: ' + convo.answers.pain),
+        convo.answers.tools    && ('Tools: '    + convo.answers.tools),
+      ].filter(Boolean).join('. ');
+
+      try {
+        var res = await fetch('/api/ideas', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ businessDescription: desc }),
+        });
+
+        var data = await res.json().catch(function() { return {}; });
+
+        thinkingRow.remove();
+        thinking2.remove();
+
+        if (!res.ok) {
+          addBubble("Something went wrong on our end. Try refreshing and going again.", 'claude');
+          showError(data.error || 'Something went wrong. Try again in a moment.');
+          return;
+        }
+
+        addBubble("Here's your Claude automation roadmap. Anything here that resonates, let us know and we'll scope it out.", 'claude');
+        renderResults(data);
+
+      } catch (err) {
+        thinkingRow.remove();
+        thinking2.remove();
+        addBubble("Network error — check your connection and try refreshing.", 'claude');
+      }
     }
 
     function showError(msg) {
@@ -1195,10 +1483,26 @@
       el.hidden = false;
     }
 
-    function clearState() {
-      document.getElementById('results').hidden = true;
-      document.getElementById('error-msg').hidden = true;
-    }
+    // Send handlers
+    sendBtn.addEventListener('click', function() { submitAnswer(inputEl.value); });
+    inputEl.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') submitAnswer(inputEl.value);
+    });
+    skipBtn.addEventListener('click', function() { submitAnswer(''); });
+
+    // Start the conversation
+    (function() {
+      var thinkingRow = addThinking();
+      setTimeout(function() {
+        thinkingRow.remove();
+        addBubble("Hi — I'm going to ask you four quick questions so we can put together a Claude automation roadmap for your team.", 'claude');
+        setTimeout(function() {
+          askNext();
+        }, 400);
+      }, 500);
+    })();
+
+    // ── Results renderer ─────────────────────────────────────────────────────
 
     function renderResults(data) {
       var portfolioMatches = (data.portfolio_matches || []).map(function(m) {
@@ -1244,121 +1548,6 @@
       resultsEl.hidden = false;
       resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-
-    var SUBTYPES = {
-      'Real Estate': ['Property Management', 'Commercial Real Estate', 'Residential Brokerage', 'Real Estate Investment', 'Mortgage / Lending', 'Development / Construction'],
-      'Professional Services': ['Consulting', 'Legal / Law Firm', 'Accounting / Finance', 'Staffing / Recruiting', 'Marketing Agency', 'Architecture / Engineering'],
-      'Software / SaaS': ['B2B SaaS', 'Industry-Specific Software', 'Developer Tools / APIs', 'Enterprise Software', 'Consumer / Prosumer App'],
-    };
-
-    var PLACEHOLDERS = {
-      'Real Estate': 'e.g. We manage 80 rental properties, most of our time goes to tenant communications, lease renewals, and reviewing maintenance invoices.',
-      'Professional Services': 'e.g. We respond to 5-6 RFPs a month and spend hours researching clients before discovery calls.',
-      'Software / SaaS': 'e.g. Our biggest bottlenecks are churn follow-up, onboarding new customers, and qualifying inbound leads.',
-      'other': 'Any details about your team size, tools you use, and what\'s eating the most time? (optional)',
-    };
-
-    function showDetailAndButton() {
-      document.getElementById('detail-wrap').hidden = false;
-      document.getElementById('generate-btn').hidden = false;
-    }
-
-    document.getElementById('business-type').addEventListener('change', function() {
-      var val = this.value;
-      var subtypeWrap = document.getElementById('subtype-wrap');
-      var customWrap = document.getElementById('custom-industry-wrap');
-      var subtypeSelect = document.getElementById('business-subtype');
-      var textarea = document.getElementById('business-input');
-      var label = document.getElementById('detail-label');
-      var detailWrap = document.getElementById('detail-wrap');
-      var btn = document.getElementById('generate-btn');
-
-      // Reset all secondary fields
-      subtypeWrap.hidden = true;
-      customWrap.hidden = true;
-      detailWrap.hidden = true;
-      btn.hidden = true;
-
-      if (!val) return;
-
-      if (val === 'other') {
-        // Show custom industry text input, then detail + button
-        customWrap.hidden = false;
-        textarea.placeholder = PLACEHOLDERS['other'];
-        label.textContent = 'Any other details? (optional)';
-        showDetailAndButton();
-      } else if (SUBTYPES[val]) {
-        // Show sub-type dropdown; reveal detail + button once sub-type changes (or immediately)
-        subtypeSelect.innerHTML = SUBTYPES[val].map(function(st) {
-              return '<option value="' + escHtml(st) + '">' + escHtml(st) + '</option>';
-            }).join('');
-        subtypeWrap.hidden = false;
-        textarea.placeholder = PLACEHOLDERS[val] || 'Tell us more about your team and workflows.';
-        label.textContent = 'Any other details? (optional)';
-        // Reveal detail + button immediately after sub-type dropdown appears
-        showDetailAndButton();
-      }
-    });
-
-    async function generateIdeas() {
-      var selectedType = document.getElementById('business-type').value;
-      var subtype = document.getElementById('business-subtype').value;
-      var customIndustry = document.getElementById('custom-industry').value.trim();
-      var detail = document.getElementById('business-input').value.trim();
-
-      if (!selectedType) {
-        showError('Please select your business type first.');
-        document.getElementById('business-type').focus();
-        return;
-      }
-
-      var businessDescription;
-      if (selectedType === 'other') {
-        if (customIndustry.length < 2) {
-          showError('Please tell us what industry you\'re in.');
-          document.getElementById('custom-industry').focus();
-          return;
-        }
-        businessDescription = customIndustry + (detail ? ': ' + detail : '');
-      } else {
-        var typePart = selectedType + (subtype ? ', ' + subtype : '');
-        businessDescription = typePart + (detail ? ': ' + detail : '');
-      }
-
-      if (businessDescription.length < 3) {
-        showError('Please describe your business in a bit more detail first.');
-        return;
-      }
-
-      clearState();
-      setLoading(true);
-
-      try {
-        var res = await fetch('/api/ideas', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ businessDescription: businessDescription }),
-        });
-
-        var data = await res.json().catch(function() { return {}; });
-
-        if (!res.ok) {
-          showError(data.error || 'Something went wrong. Try again in a moment.');
-          return;
-        }
-
-        renderResults(data);
-      } catch (err) {
-        showError('Network error. Check your connection and try again.');
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    document.getElementById('generate-btn').addEventListener('click', generateIdeas);
-    document.getElementById('business-input').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) generateIdeas();
-    });
 
     // Portfolio category toggle, starts expanded, collapses on click
     document.querySelectorAll('.portfolio-category-header').forEach(function(btn) {
