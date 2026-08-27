@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claude and ChatGPT Connectors: Give AI the Right Context Without Copy-Pasting | The Endurance Group</title>
-  <meta name="description" content="Claude and ChatGPT both have native connectors that pull live data from Google Drive, HubSpot, Jira, and more. Here's what they are, how they differ, and when we use them for clients.">
+  <meta name="description" content="Claude integrations give AI live access to your real data. TEG, an Anthropic Claude Partner, explains how Claude connectors work and when to use them vs. full MCP automations.">
   <link rel="canonical" href="https://theendurancegroup.com/blog/claude-chatgpt-connectors.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
   <meta property="og:title" content="Claude and ChatGPT Connectors: Give AI the Right Context Without Copy-Pasting | The Endurance Group">
-  <meta property="og:description" content="Claude and ChatGPT both have native connectors that pull live data from Google Drive, HubSpot, Jira, and more. Here's what they are, how they differ, and when we use them for clients.">
+  <meta property="og:description" content="Claude integrations give AI live access to your real data. TEG, an Anthropic Claude Partner, explains how Claude connectors work and when to use them vs. full MCP automations.">
   <meta property="og:url" content="https://theendurancegroup.com/blog/claude-chatgpt-connectors.html">
   <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Claude and ChatGPT Connectors: Give AI the Right Context Without Copy-Pasting | The Endurance Group">
-  <meta name="twitter:description" content="Claude and ChatGPT both have native connectors that pull live data from Google Drive, HubSpot, Jira, and more. Here's what they are, how they differ, and when we use them for clients.">
+  <meta name="twitter:description" content="Claude integrations give AI live access to your real data. TEG, an Anthropic Claude Partner, explains how Claude connectors work and when to use them vs. full MCP automations.">
   <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,6 +87,22 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Claude integrations (connectors)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude integrations (called 'Integrations' in claude.ai settings) are authorizations you grant inside Claude that let it read from external sources like Google Drive, HubSpot, Jira, GitHub, Confluence, Dropbox, Linear, Sentry, and Asana. Once authorized, Claude can search and reference those sources mid-conversation without you pasting anything in. Available on Claude Pro, Team, and Enterprise plans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a Claude connector and an MCP server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Connectors are user-level authorizations that let Claude read from specific sources during a conversation. MCP (Model Context Protocol) is the developer-level protocol underneath — it defines how AI models and external tools communicate. A connector may use MCP under the hood. TEG, as an Anthropic Claude Partner, configures both: connectors for quick read access, MCP servers for deeper or write-back integrations."
+      }
+    },
     {
       "@type": "Question",
       "name": "Do connectors replace a full automation?",
@@ -166,21 +182,22 @@
       <div class="container">
         <div class="prose">
           <p>The most common complaint I hear from teams that have tried AI: "It gives great answers, but it doesn't know anything about our business." That's usually a context problem, not a model problem. The AI is answering from general knowledge because nobody has given it access to your actual information. Claude and ChatGPT both have a native way to fix that, connectors, and most teams haven't turned them on yet.</p>
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We configure Claude integrations and <a href="../project-based.html#skills-mcps">build MCP servers</a> that connect Claude to your actual business systems — as part of a full <a href="../project-based.html#initial-setup">Claude initial setup</a> or as a standalone service.</em></p>
 
           <h2>What a connector actually is</h2>
           <p>A connector is an authorization you grant inside the AI platform that lets it read from a specific external source, your Google Drive, your HubSpot, your Jira board, your internal wiki. Once you authorize it, the AI can search and reference that source in the middle of a conversation without you having to paste anything in. You ask a question, the AI pulls the relevant context from where it actually lives, and it answers with that.</p>
           <p>This is different from a <a href="claude-skills.html">Claude Skill</a> or a <a href="openai-custom-gpts.html">custom GPT</a>, which define how the AI behaves. Connectors define what it can see. The two work together, a Skill tells the AI what process to follow, a connector gives it the live data to follow that process with.</p>
 
-          <h2>Claude's integrations</h2>
+          <h2>What are Claude's native integrations?</h2>
           <p>Anthropic calls these "Integrations" inside claude.ai settings, available on Pro, Team, and Enterprise plans. Once you authorize one, it shows up as a source Claude can reference in any conversation. The current list covers the tools most B2B teams already run: Google Drive, GitHub, Jira, Confluence, HubSpot, Dropbox, Linear, Sentry, and Asana, with more being added. The HubSpot integration is one we use constantly, it means a partner can ask "what's the deal stage on the Morrison account?" and Claude looks it up in HubSpot instead of the partner having to pull it up themselves.</p>
 
-          <h2>ChatGPT's connectors</h2>
+          <h2>What are ChatGPT's native connectors?</h2>
           <p>ChatGPT's version lives in the same place: account settings, under "Connected apps." The current set includes Google Drive, Microsoft OneDrive and SharePoint, Notion, and Box. ChatGPT also treats its built-in tools, web search, code execution, image generation, as connectors you can enable or disable per conversation. For teams running Microsoft 365, the SharePoint connector alone is worth setting up: ask ChatGPT to summarize a proposal or find a contract clause, and it reads directly from SharePoint instead of you digging through folders.</p>
 
-          <h2>How we use connectors for clients</h2>
+          <h2>How does TEG use Claude connectors for clients?</h2>
           <p>We treat connectors as the fastest way to make an AI immediately useful inside a team's existing workflow. The process is straightforward: identify which two or three sources the team references most, authorize them, and the AI goes from knowing nothing about the client's business to being able to answer real questions from real data. For a professional services firm, that might be Google Drive (for client deliverables and proposals) plus HubSpot (for deal and contact history). For a software company, it might be GitHub plus Jira plus Notion. The AI stops being a general-purpose tool and starts behaving like a colleague who actually knows the context.</p>
 
-          <h2>When connectors aren't enough</h2>
+          <h2>When aren't Claude connectors enough?</h2>
           <p>Connectors are a read layer. They let the AI pull information during a conversation; they don't write data back, trigger workflows, or run without a human starting the chat. If your goal is to automatically update CRM records, generate a report on a schedule, or route inbound leads without anyone asking the AI to do it, that's a full automation, not a connector. Connectors are where we often start with a new client because the setup is quick and the value is immediate. From there, we layer in automations that actually do work in the background. The <a href="what-is-an-ai-automation.html">distinction between the two</a> is worth understanding before you decide which path to take.</p>
 
           <h2>Frequently asked questions</h2>
