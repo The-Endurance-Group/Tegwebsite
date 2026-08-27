@@ -461,6 +461,198 @@ function handleContact(req, res) {
   });
 }
 
+async function fetchGitHubData(githubUrl) {
+  try {
+    var username = githubUrl
+      .replace(/^https?:\/\/(www\.)?github\.com\//i, '')
+      .replace(/^@/, '')
+      .split('/')[0]
+      .trim();
+    if (!username) return null;
+
+    var headers = { 'User-Agent': 'TEG-Fellowship-App' };
+    var ghToken = process.env.GITHUB_TOKEN;
+    if (ghToken) headers['Authorization'] = 'token ' + ghToken;
+
+    var [profileRes, reposRes] = await Promise.all([
+      fetch('https://api.github.com/users/' + username, { headers: headers }),
+      fetch('https://api.github.com/users/' + username + '/repos?sort=updated&per_page=8', { headers: headers }),
+    ]);
+
+    if (!profileRes.ok) return { error: 'GitHub profile not found for: ' + username };
+
+    var profile = await profileRes.json();
+    var repos = reposRes.ok ? await reposRes.json() : [];
+
+    var repoSummary = repos
+      .filter(function(r) { return !r.fork; })
+      .slice(0, 6)
+      .map(function(r) {
+        return '  - ' + r.name +
+          (r.language ? ' [' + r.language + ']' : '') +
+          (r.stargazers_count ? ' ⭐' + r.stargazers_count : '') +
+          (r.description ? ': ' + r.description.slice(0, 120) : '');
+      }).join('\n');
+
+    return {
+      username: username,
+      name: profile.name || username,
+      bio: profile.bio || '',
+      company: profile.company || '',
+      location: profile.location || '',
+      publicRepos: profile.public_repos,
+      followers: profile.followers,
+      createdAt: profile.created_at ? profile.created_at.slice(0, 10) : '',
+      repoSummary: repoSummary,
+    };
+  } catch (err) {
+    return { error: 'GitHub fetch failed: ' + err.message };
+  }
+}
+
+async function assessApplicant(applicant) {
+  var { name, email, github, linkedin, proficiency, notes, resumeDataUrl, resumeName, githubData } = applicant;
+
+  var ghSection = '';
+  if (githubData && !githubData.error) {
+    ghSection = [
+      'GITHUB (@' + githubData.username + '):',
+      '  Name: ' + githubData.name,
+      '  Bio: ' + (githubData.bio || '—'),
+      '  Company: ' + (githubData.company || '—'),
+      '  Location: ' + (githubData.location || '—'),
+      '  Public repos: ' + githubData.publicRepos + '  |  Followers: ' + githubData.followers,
+      '  Account created: ' + githubData.createdAt,
+      '  Recent non-fork repos:',
+      githubData.repoSummary || '  (none)',
+    ].join('\n');
+  } else if (githubData && githubData.error) {
+    ghSection = 'GITHUB: ' + githubData.error;
+  } else {
+    ghSection = 'GITHUB: not available';
+  }
+
+  var systemPrompt = [
+    'You are reviewing a fellowship application for The Endurance Group, a Claude AI implementation firm in Portland, Maine.',
+    'The fellowship covers both Claude Certified Developer and Architect exam fees, then brings the candidate on as a paid contractor on real client projects.',
+    '',
+    'We are looking for candidates who:',
+    '- Have real, demonstrable experience building with Claude, Anthropic APIs, MCPs, Claude Skills, or Claude Code',
+    '- Are comfortable with REST APIs, JSON, and have shipped and deployed real code',
+    '- Write professional, clear English with no grammar issues',
+    '- Show genuine technical curiosity about AI and automation',
+    '- Have a track record of finishing things: deployed apps, maintained repos, real-world usage',
+    '',
+    'Red flags: no real Claude/AI experience, only course certificates, vague answers, no shipped code, unclear English.',
+    '',
+    'APPLICANT:',
+    'Name: ' + name,
+    'Email: ' + email,
+    'GitHub URL: ' + github,
+    'LinkedIn: ' + (linkedin || 'not provided'),
+    '',
+    'Their answer to "Describe your hands-on Claude or Anthropic API experience":',
+    proficiency || '(no answer provided)',
+    '',
+    'Additional notes from applicant:',
+    notes || '(none)',
+    '',
+    ghSection,
+    '',
+    'Write a blunt, internal-only assessment in this format:',
+    '',
+    'VERDICT: [STRONG FIT / POSSIBLE FIT / UNLIKELY FIT]',
+    '',
+    'STRENGTHS:',
+    '- (bullet points)',
+    '',
+    'CONCERNS:',
+    '- (bullet points)',
+    '',
+    'RECOMMENDED NEXT STEP: [one sentence — invite to interview / request GitHub samples / pass]',
+    '',
+    'Keep the total assessment under 200 words. Be direct. This is for internal review only.',
+  ].join('\n');
+
+  var userContent;
+  if (resumeDataUrl && resumeDataUrl.startsWith('data:application/pdf') && resumeDataUrl.includes(',')) {
+    var base64Pdf = resumeDataUrl.split(',')[1];
+    userContent = [
+      {
+        type: 'document',
+        source: { type: 'base64', media_type: 'application/pdf', data: base64Pdf },
+      },
+      {
+        type: 'text',
+        text: 'Assess this fellowship applicant. Their resume is attached above. Use it along with the GitHub data and self-reported experience in your evaluation.',
+      },
+    ];
+  } else {
+    var resumeNote = resumeDataUrl
+      ? 'A resume was uploaded (' + (resumeName || 'unknown format') + ') but it could not be parsed — it may be a .doc or .docx file.'
+      : 'No resume was provided.';
+    userContent = 'Assess this fellowship applicant. ' + resumeNote;
+  }
+
+  return callClaudeApi(systemPrompt, [{ role: 'user', content: userContent }], 700);
+}
+
+async function sendFellowshipNotification(applicant, assessment) {
+  var resendKey = process.env.RESEND_API_KEY;
+  if (!resendKey) return;
+
+  var { name, email, github, linkedin, proficiency, notes, resumeDataUrl, resumeName, ip } = applicant;
+
+  var emailText = [
+    '════════════════════════════════',
+    'CLAUDE ASSESSMENT',
+    '════════════════════════════════',
+    assessment,
+    '',
+    '════════════════════════════════',
+    'APPLICATION DETAILS',
+    '════════════════════════════════',
+    'Name:     ' + name,
+    'Email:    ' + email,
+    'GitHub:   ' + github,
+    'LinkedIn: ' + (linkedin || '—'),
+    '',
+    'Claude/API experience:',
+    proficiency || '—',
+    '',
+    'Additional notes:',
+    notes || '—',
+    '',
+    'IP: ' + ip,
+    'Time: ' + new Date().toISOString(),
+  ].join('\n');
+
+  var emailBody = {
+    from: 'TEG Website <noreply@theendurancegroup.com>',
+    to: ['csullivan@theendurancegroup.com'],
+    reply_to: email,
+    subject: 'Fellowship Application: ' + name,
+    text: emailText,
+  };
+
+  if (resumeDataUrl && resumeDataUrl.startsWith('data:') && resumeName) {
+    var commaIdx = resumeDataUrl.indexOf(',');
+    if (commaIdx !== -1) {
+      emailBody.attachments = [{ content: resumeDataUrl.slice(commaIdx + 1), filename: resumeName }];
+    }
+  }
+
+  var r = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { 'Authorization': 'Bearer ' + resendKey, 'Content-Type': 'application/json' },
+    body: JSON.stringify(emailBody),
+  });
+  if (!r.ok) {
+    var detail = await r.text().catch(function () { return ''; });
+    console.error('[APPLY] Resend error', r.status, detail);
+  }
+}
+
 async function handleApply(req, res) {
   function respondJson(status, body) {
     res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -499,45 +691,35 @@ async function handleApply(req, res) {
     var ip = clientIp(req);
     console.log('[APPLY]', JSON.stringify({ name, email, github, linkedin, ip, ts: new Date().toISOString() }));
 
-    var resendKey = process.env.RESEND_API_KEY;
-    if (resendKey) {
-      var emailBody = {
-        from: 'TEG Website <noreply@theendurancegroup.com>',
-        to: ['csullivan@theendurancegroup.com'],
-        reply_to: email,
-        subject: 'Fellowship Application: ' + name,
-        text: [
-          'Name: ' + name,
-          'Email: ' + email,
-          'GitHub: ' + github,
-          'LinkedIn: ' + (linkedin || '—'),
-          'English proficiency: ' + (proficiency || '—'),
-          'Notes: ' + (notes || '—'),
-          '',
-          'IP: ' + ip,
-          'Time: ' + new Date().toISOString()
-        ].join('\n')
-      };
+    // Respond immediately so the applicant doesn't wait for Claude analysis
+    respondJson(200, { ok: true });
 
-      if (resumeDataUrl.startsWith('data:') && resumeName) {
-        var commaIdx = resumeDataUrl.indexOf(',');
-        if (commaIdx !== -1) {
-          emailBody.attachments = [{ content: resumeDataUrl.slice(commaIdx + 1), filename: resumeName }];
+    // Run analysis and notification in the background
+    var applicant = { name, email, github, linkedin, proficiency, notes, resumeDataUrl, resumeName, ip };
+
+    (async function () {
+      try {
+        var githubData = await fetchGitHubData(github);
+        applicant.githubData = githubData;
+
+        var assessment = await assessApplicant(applicant).catch(function (err) {
+          console.error('[APPLY] Claude assessment failed:', err.message);
+          return '(Claude assessment failed: ' + err.message + ')';
+        });
+
+        await sendFellowshipNotification(applicant, assessment);
+        console.log('[APPLY] Notification sent for', email);
+      } catch (err) {
+        console.error('[APPLY] Background notification failed:', err.message);
+        // Fallback: try sending without assessment
+        try {
+          await sendFellowshipNotification(applicant, '(Assessment unavailable — see application details below.)');
+        } catch (e2) {
+          console.error('[APPLY] Fallback notification also failed:', e2.message);
         }
       }
+    })();
 
-      var r = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: { 'Authorization': 'Bearer ' + resendKey, 'Content-Type': 'application/json' },
-        body: JSON.stringify(emailBody)
-      });
-      if (!r.ok) {
-        var detail = await r.text().catch(function () { return ''; });
-        console.error('[APPLY] Resend error', r.status, detail);
-      }
-    }
-
-    respondJson(200, { ok: true });
   } catch (err) {
     console.error('[APPLY] Error:', err.message);
     respondJson(500, { error: 'Something went wrong. Please try again.' });
