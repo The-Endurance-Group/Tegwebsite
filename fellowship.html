@@ -322,9 +322,9 @@
     <section class="section section--alt">
       <div class="container">
         <div class="apply-box reveal" id="apply-box">
-          <span class="eyebrow" style="display: block; margin-bottom: 16px;">Ready to apply</span>
-          <h3>Apply for the Fellowship</h3>
-          <p>Fill out the form below. We'll follow up with next steps for candidates who are a good fit.</p>
+          <span class="eyebrow" id="apply-eyebrow" style="display: block; margin-bottom: 16px;">Ready to apply</span>
+          <h3 id="apply-heading">Apply for the Fellowship</h3>
+          <p id="apply-subhead">Fill out the form below. We'll follow up with next steps for candidates who are a good fit.</p>
 
           <form id="apply-form" novalidate>
             <div class="apply-field">
@@ -359,8 +359,8 @@
             <button type="submit" class="btn btn-primary" id="apply-submit">Submit Application</button>
           </form>
 
-          <div id="apply-success" hidden style="text-align:center; padding: 24px 0;">
-            <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-bottom:16px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div id="apply-success" hidden style="text-align:center; padding: 32px 0; display:flex; flex-direction:column; align-items:center;">
+            <svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-bottom:20px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             <h3 style="margin-bottom:8px;">Application received.</h3>
             <p style="color:var(--color-lavender);">We'll be in touch if your application is a good fit.</p>
           </div>
@@ -447,6 +447,9 @@
             .then(function (data) {
               if (data.ok) {
                 form.hidden = true;
+                document.getElementById('apply-eyebrow').hidden = true;
+                document.getElementById('apply-heading').hidden = true;
+                document.getElementById('apply-subhead').hidden = true;
                 successBox.hidden = false;
               } else {
                 showError(data.error || 'Something went wrong. Try again.');
