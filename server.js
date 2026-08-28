@@ -511,7 +511,7 @@ async function fetchGitHubData(githubUrl) {
 }
 
 async function assessApplicant(applicant) {
-  var { name, email, github, linkedin, proficiency, notes, resumeDataUrl, resumeName, githubData } = applicant;
+  var { name, email, github, linkedin, claudeExperience, proficiency, notes, resumeDataUrl, resumeName, githubData } = applicant;
 
   var ghSection = '';
   if (githubData && !githubData.error) {
@@ -552,6 +552,9 @@ async function assessApplicant(applicant) {
     'LinkedIn: ' + (linkedin || 'not provided'),
     '',
     'Their answer to "Describe your hands-on Claude or Anthropic API experience":',
+    claudeExperience || '(no answer provided)',
+    '',
+    'English proficiency:',
     proficiency || '(no answer provided)',
     '',
     'Additional notes from applicant:',
@@ -602,7 +605,7 @@ async function sendFellowshipNotification(applicant, assessment) {
   var resendKey = process.env.RESEND_API_KEY;
   if (!resendKey) return;
 
-  var { name, email, github, linkedin, proficiency, notes, resumeDataUrl, resumeName, ip } = applicant;
+  var { name, email, github, linkedin, claudeExperience, proficiency, notes, resumeDataUrl, resumeName, ip } = applicant;
 
   var emailText = [
     '════════════════════════════════',
@@ -619,6 +622,9 @@ async function sendFellowshipNotification(applicant, assessment) {
     'LinkedIn: ' + (linkedin || '—'),
     '',
     'Claude/API experience:',
+    claudeExperience || '—',
+    '',
+    'English proficiency:',
     proficiency || '—',
     '',
     'Additional notes:',
@@ -679,6 +685,7 @@ async function handleApply(req, res) {
     var email = (data.email || '').slice(0, 200).trim();
     var github = (data.github || '').slice(0, 500).trim();
     var linkedin = (data.linkedin || '').slice(0, 500).trim();
+    var claudeExperience = (data.claudeExperience || '').slice(0, 2000).trim();
     var proficiency = (data.proficiency || '').slice(0, 2000).trim();
     var notes = (data.notes || '').slice(0, 2000).trim();
     var resumeDataUrl = typeof data.resume === 'string' ? data.resume : '';
@@ -696,7 +703,7 @@ async function handleApply(req, res) {
     respondJson(200, { ok: true });
 
     // Run analysis and notification in the background
-    var applicant = { name, email, github, linkedin, proficiency, notes, resumeDataUrl, resumeName, ip };
+    var applicant = { name, email, github, linkedin, claudeExperience, proficiency, notes, resumeDataUrl, resumeName, ip };
 
     (async function () {
       try {

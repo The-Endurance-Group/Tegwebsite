@@ -348,12 +348,16 @@
               <input type="file" id="af-resume" name="resume" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
             </div>
             <div class="apply-field">
+              <label for="af-claude-exp">Claude or Anthropic API experience <span aria-hidden="true">*</span> <span class="apply-field-hint">Describe hands-on work: apps built, APIs used, MCPs, Skills, etc.</span></label>
+              <textarea id="af-claude-exp" name="claudeExperience" required rows="5" placeholder="e.g. Built a lead qualification tool using the Anthropic Messages API with tool use. Deployed via Node.js backend on Railway."></textarea>
+            </div>
+            <div class="apply-field">
               <label for="af-proficiency">English proficiency <span aria-hidden="true">*</span> <span class="apply-field-hint">TOEFL score, or school where you studied in English.</span></label>
-              <textarea id="af-proficiency" name="proficiency" required rows="4" placeholder="e.g. TOEFL 105, or Studied at XYZ University in English"></textarea>
+              <textarea id="af-proficiency" name="proficiency" required rows="3" placeholder="e.g. TOEFL 105, or Studied at XYZ University in English"></textarea>
             </div>
             <div class="apply-field">
               <label for="af-notes">Anything else you'd like us to know <span class="apply-field-hint">(optional)</span></label>
-              <textarea id="af-notes" name="notes" rows="4" placeholder="Claude or Anthropic projects you're proud of, relevant experience, etc."></textarea>
+              <textarea id="af-notes" name="notes" rows="4" placeholder="Links to projects, GitHub repos, or anything else relevant."></textarea>
             </div>
             <div id="apply-error" class="apply-msg apply-msg--error" hidden></div>
             <button type="submit" class="btn btn-primary" id="apply-submit">Submit Application</button>
@@ -408,12 +412,13 @@
           var email = form.elements['email'].value.trim();
           var github = form.elements['github'].value.trim();
           var linkedin = form.elements['linkedin'].value.trim();
+          var claudeExperience = form.elements['claudeExperience'].value.trim();
           var proficiency = form.elements['proficiency'].value.trim();
           var notes = form.elements['notes'].value.trim();
           var fileInput = form.elements['resume'];
           var file = fileInput.files[0];
 
-          if (!name || !email || !github || !proficiency) {
+          if (!name || !email || !github || !claudeExperience || !proficiency) {
             showError('Please fill in all required fields.');
             return;
           }
@@ -432,6 +437,7 @@
               email: email,
               github: github,
               linkedin: linkedin,
+              claudeExperience: claudeExperience,
               proficiency: proficiency,
               notes: notes,
               resume: resumeDataUrl || '',
