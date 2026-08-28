@@ -311,6 +311,17 @@ textarea:focus-visible {
 }
 .nav-cta:hover { background: var(--color-purple) !important; color: #fff !important; }
 
+/* Mobile: override block/full-width behavior for the CTA item */
+.nav-list .nav-cta {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0 4px;
+  border-bottom: none;
+}
+.nav-list li:has(.nav-cta) {
+  border-bottom: none;
+}
+
 @media (min-width: 768px) {
   .nav-toggle { display: none; }
   .primary-nav {
@@ -332,8 +343,8 @@ textarea:focus-visible {
   }
   .nav-list .nav-cta {
     padding: 8px 16px;
+    margin: 0 0 0 4px;
     border-bottom: none;
-    margin-left: 4px;
   }
 
 }

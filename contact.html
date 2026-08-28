@@ -29,7 +29,7 @@
     @media(max-width:768px){.contact-grid{grid-template-columns:1fr;gap:48px;}}
     .contact-form .form-group{margin-bottom:20px;}
     .contact-form label{display:block;font-weight:600;margin-bottom:6px;font-size:14px;}
-    .contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-family:inherit;font-size:15px;transition:border-color .15s;box-sizing:border-box;}
+    .contact-form input:not([type="radio"]):not([type="checkbox"]),.contact-form textarea,.contact-form select{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-family:inherit;font-size:15px;transition:border-color .15s;box-sizing:border-box;}
     .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent);}
     .contact-form textarea{height:140px;resize:vertical;}
     .contact-success{display:none;padding:20px 24px;background:var(--bg-light);border-radius:8px;border-left:4px solid var(--accent);margin-top:20px;}
@@ -38,9 +38,9 @@
     .contact-or::before,.contact-or::after{content:'';flex:1;height:1px;background:var(--border);}
     .meetings-iframe-container{min-height:620px;}
     .inquiry-type-group{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
-    .inquiry-type-group label{display:flex;align-items:center;gap:8px;padding:10px 16px;border:1.5px solid var(--border);border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;transition:border-color .15s,background .15s;}
+    .inquiry-type-group label{display:flex;align-items:center;gap:8px;padding:10px 16px;border:1.5px solid var(--border);border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;transition:border-color .15s,background .15s;width:auto;flex-shrink:0;}
     .inquiry-type-group label:has(input:checked){border-color:var(--accent);background:var(--bg-light);}
-    .inquiry-type-group input[type="radio"]{accent-color:var(--accent);}
+    .inquiry-type-group input[type="radio"]{accent-color:var(--accent);width:auto;flex-shrink:0;}
     .inquiry-fields{display:none;}
     .inquiry-fields.visible{display:block;}
   </style>
