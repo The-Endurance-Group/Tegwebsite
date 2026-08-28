@@ -311,15 +311,14 @@ textarea:focus-visible {
 }
 .nav-cta:hover { background: var(--color-purple) !important; color: #fff !important; }
 
-/* Mobile: contain CTA to content width inside the column flex nav */
-.nav-list li:has(.nav-cta) {
-  display: flex;
-  align-items: center;
+/* Mobile: contain CTA pill to content width */
+.nav-list li:last-child {
+  align-self: flex-start;
   border-bottom: none;
 }
 .nav-list .nav-cta {
-  display: inline-block !important;
-  width: auto !important;
+  display: block;
+  width: auto;
   padding: 10px 20px;
   margin: 10px 0 4px;
   border-bottom: none !important;
