@@ -311,15 +311,18 @@ textarea:focus-visible {
 }
 .nav-cta:hover { background: var(--color-purple) !important; color: #fff !important; }
 
-/* Mobile: override block/full-width behavior for the CTA item */
-.nav-list .nav-cta {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px 0 4px;
+/* Mobile: contain CTA to content width inside the column flex nav */
+.nav-list li:has(.nav-cta) {
+  display: flex;
+  align-items: center;
   border-bottom: none;
 }
-.nav-list li:has(.nav-cta) {
-  border-bottom: none;
+.nav-list .nav-cta {
+  display: inline-block !important;
+  width: auto !important;
+  padding: 10px 20px;
+  margin: 10px 0 4px;
+  border-bottom: none !important;
 }
 
 @media (min-width: 768px) {
