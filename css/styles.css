@@ -313,12 +313,11 @@ textarea:focus-visible {
 
 /* Mobile: contain CTA pill to content width */
 .nav-list li:last-child {
-  align-self: flex-start;
   border-bottom: none;
 }
 .nav-list .nav-cta {
-  display: block;
-  width: auto;
+  display: inline-block !important;
+  width: fit-content !important;
   padding: 10px 20px;
   margin: 10px 0 4px;
   border-bottom: none !important;
