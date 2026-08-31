@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is Claude Safe for Business Data? What B2B Teams Need to Know | The Endurance Group</title>
+  <meta name="description" content="Does Anthropic train on your data? What can Claude actually see? Here's a plain-English breakdown of Claude's data privacy policies for B2B teams using Claude for Teams, the API, or Enterprise.">
+  <link rel="canonical" href="https://theendurancegroup.com/blog/claude-data-privacy-business.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="Is Claude Safe for Business Data? What B2B Teams Need to Know | The Endurance Group">
+  <meta property="og:description" content="Does Anthropic train on your data? What can Claude actually see? Here's a plain-English breakdown of Claude's data privacy policies for B2B teams using Claude for Teams, the API, or Enterprise.">
+  <meta property="og:url" content="https://theendurancegroup.com/blog/claude-data-privacy-business.html">
+  <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Is Claude Safe for Business Data? What B2B Teams Need to Know | The Endurance Group">
+  <meta name="twitter:description" content="Does Anthropic train on your data? What can Claude actually see? Here's a plain-English breakdown of Claude's data privacy policies for B2B teams using Claude for Teams, the API, or Enterprise.">
+  <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://theendurancegroup.com/",
+    "logo": "https://theendurancegroup.com/images/og-default.png",
+    "image": "https://theendurancegroup.com/images/og-default.png",
+    "description": "AI automation and strategy for B2B companies in real estate, technology, and professional services.",
+    "foundingDate": "1998",
+    "priceRange": "$750+",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Is Claude Safe for Business Data? What B2B Teams Need to Know",
+    "description": "Does Anthropic train on your data? What can Claude actually see? Here's a plain-English breakdown of Claude's data privacy policies for B2B teams using Claude for Teams, the API, or Enterprise.",
+    "image": "https://theendurancegroup.com/images/og-default.png",
+    "datePublished": "2026-08-31",
+    "dateModified": "2026-08-31",
+    "author": { "@type": "Person", "name": "Conor Sullivan", "jobTitle": "VP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": { "@type": "ImageObject", "url": "https://theendurancegroup.com/images/og-default.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://theendurancegroup.com/blog/claude-data-privacy-business.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Anthropic train on my business data when I use Claude?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on how you access Claude. If you use the Claude API or Claude for Teams, Anthropic does not use your conversations to train its models by default. The free Claude.ai tier does allow Anthropic to use conversations for training unless you opt out in your privacy settings. Enterprise agreements include additional contractual protections and zero data retention options."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data does Claude actually see during a conversation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claude sees only what is present in the active context window: the system prompt, the conversation history, and any content passed in by tools or connectors during that session. It does not have access to your file systems, CRM, or internal tools unless you explicitly connect them via MCP servers or native connectors. Claude has no persistent memory across separate conversations unless you build memory into your implementation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Claude safe to use with client information?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claude for Teams and the Claude API are both designed for business use and do not use your inputs to train Anthropic's models by default. Data is encrypted in transit and at rest. For sensitive industries — legal, healthcare, finance — you should review Anthropic's data processing agreement, use the API rather than the consumer product, and evaluate whether a HIPAA Business Associate Agreement (available for Enterprise) is required. Anthropic is SOC 2 Type II certified."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Claude.ai, Claude for Teams, and the Claude API for data privacy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claude.ai (free and Pro) is a consumer product. Free tier conversations may be used to improve Claude's models unless you opt out. Claude for Teams is a business subscription that excludes your conversations from model training by default and provides admin controls for your organization. The Claude API is what developers use to build custom tools and automations — API inputs and outputs are not used for training by default. Claude Enterprise adds SSO, expanded context, and contractual data governance terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use Claude in a HIPAA or GDPR-compliant way?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For HIPAA: Anthropic offers a Business Associate Agreement (BAA) for Enterprise customers, which is a prerequisite for using Claude with protected health information. You cannot use the consumer Claude.ai product for PHI without a BAA. For GDPR: Anthropic's data processing is covered under their Data Processing Addendum, available to API and Teams customers. If your users are in the EU, review Anthropic's data residency options and subprocessor list before deploying."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">AI Automations</span>
+        <h1>Is Claude safe for business data? What B2B teams need to know</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>VP</span>
+          <span class="divider">·</span>
+          <span>August 31, 2026</span>
+        </div>
+        <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p>Before any B2B team deploys Claude, someone asks the same question: <em>what happens to our data?</em> It's the right question to ask, and the answer isn't one-size-fits-all. It depends on which Claude product you're using, what you connect to it, and how you've configured your account. Here's a plain-English breakdown of what Claude can see, what it can't, and what the actual privacy controls are.</p>
+
+          <h2>The short answer</h2>
+
+          <p>If you use the <strong>Claude API or Claude for Teams</strong>, Anthropic does not use your conversations to train its models by default. Your data stays out of the training pipeline. If you use the <strong>free Claude.ai tier</strong>, Anthropic may use your conversations to improve Claude — you can opt out, but the default is different from the business products.</p>
+
+          <p>For most B2B teams, the relevant products are Claude for Teams and the Claude API. Both are designed for business use with data privacy as a baseline, not a paid add-on.</p>
+
+          <h2>What Claude actually sees during a conversation</h2>
+
+          <p>Claude is not always watching. It only knows what is present in the active context window during a session. That includes:</p>
+
+          <ul>
+            <li>The system prompt — instructions set by whoever configured the tool</li>
+            <li>The conversation history from the current session</li>
+            <li>Any content explicitly passed in: documents, data, tool outputs</li>
+            <li>Data pulled by connected systems during that session (via MCP servers or connectors)</li>
+          </ul>
+
+          <p>Claude does not retain memory across separate conversations by default. When a session ends, the context is gone. If you start a new conversation, Claude starts fresh. There is no persistent store of everything you've ever said to it — unless you build one into your implementation intentionally.</p>
+
+          <p>Claude also has no access to your internal systems — your CRM, file server, email, or databases — unless you connect those systems deliberately. Connecting Claude to HubSpot, Slack, or your own data via an MCP server is an explicit action, not something that happens automatically.</p>
+
+          <h2>What Claude can't see</h2>
+
+          <ul>
+            <li>Conversations from previous sessions (no persistent memory by default)</li>
+            <li>Systems you haven't connected to it</li>
+            <li>Other users' conversations — sessions are isolated</li>
+            <li>Your organizational data outside the current context window</li>
+            <li>Anything that wasn't explicitly passed into the active conversation</li>
+          </ul>
+
+          <h2>The product breakdown: consumer vs. business</h2>
+
+          <p>Not all Claude products have the same privacy posture. Here's where each one stands.</p>
+
+          <h3>Claude.ai free</h3>
+          <p>The consumer product. By default, Anthropic may use conversations to train and improve its models. You can opt out in your privacy settings, but it's not off by default. This is the appropriate product for personal use — it is not designed for business data, client information, or anything you'd consider confidential.</p>
+
+          <h3>Claude.ai Pro</h3>
+          <p>The paid consumer tier. Conversations are not used for training by default at the Pro tier. Better than free, but Pro is still a personal product — no organizational admin controls, no data processing agreement, no audit capabilities.</p>
+
+          <h3>Claude for Teams</h3>
+          <p>Anthropic's business subscription, designed for companies. Conversations are excluded from model training by default. Team admins can manage users, see usage, and configure settings centrally. This is the right product when you want a managed Claude workspace for your organization without building anything custom.</p>
+
+          <h3>Claude API</h3>
+          <p>What developers use to build custom Claude tools, Skills, automations, and integrations. API inputs and outputs are not used to train Anthropic's models by default. The API gives you the most control: you define what goes into the context, you manage data flow, and you can implement zero data retention by not logging on your end. This is what TEG uses when building Claude implementations for clients.</p>
+
+          <h3>Claude Enterprise</h3>
+          <p>Anthropic's largest tier, for organizations that need SSO, expanded context windows, enhanced audit controls, and formal contractual data governance. Enterprise includes access to a Data Processing Addendum and, for eligible use cases, a HIPAA Business Associate Agreement. If your organization has procurement or legal requirements around AI vendor data handling, Enterprise is where those conversations happen.</p>
+
+          <h2>How data retention works</h2>
+
+          <p>Anthropic retains API inputs and outputs for a limited period for safety and trust and safety review purposes — this is disclosed in their usage policies. The default retention window is not indefinite. If your use case requires zero retention (certain legal, healthcare, or government contexts), that's a conversation for Anthropic's Enterprise team and is covered under a formal agreement rather than a standard API subscription.</p>
+
+          <p>For Claude for Teams, data handling is governed by Anthropic's standard business terms. For Enterprise customers, a Data Processing Addendum covers specifics including retention periods, subprocessors, and data deletion obligations.</p>
+
+          <h2>When you connect Claude to your tools</h2>
+
+          <p>This is where teams get tripped up. Connecting Claude to HubSpot, Slack, your CRM, or your own internal systems via Model Context Protocol (MCP) means that data from those systems flows through Claude's context window during a session. Claude can read what it's given access to — and that data is part of the conversation that Anthropic's infrastructure processes.</p>
+
+          <p>The privacy posture of those connections depends on:</p>
+
+          <ul>
+            <li>Which Claude product you're using (API or Teams vs. consumer)</li>
+            <li>What data scopes you grant to the connection</li>
+            <li>Whether you've reviewed Anthropic's subprocessor and data flow disclosures</li>
+          </ul>
+
+          <p>Best practice when connecting Claude to live business systems: scope permissions tightly. If Claude only needs to read a deal stage in HubSpot, don't give it access to your entire contact database. Least privilege applies to AI integrations exactly as it does to any other system access.</p>
+
+          <h2>What to do before deploying Claude with sensitive data</h2>
+
+          <p>If you're deploying Claude in a context where the data is sensitive — client records, financial data, health information, legal documents — here's the checklist:</p>
+
+          <ol>
+            <li><strong>Use the API or Claude for Teams, not the free product.</strong> The business products have the right baseline privacy posture.</li>
+            <li><strong>Review Anthropic's Data Processing Addendum</strong> if your organization requires a DPA. It's available for Teams and Enterprise customers.</li>
+            <li><strong>For HIPAA: get a Business Associate Agreement.</strong> A BAA is required before using Claude with protected health information. This is only available through Anthropic's Enterprise program.</li>
+            <li><strong>For GDPR: review the DPA and subprocessor list.</strong> Anthropic's privacy documentation covers EU data handling, but your legal team should sign off based on your specific data types and user locations.</li>
+            <li><strong>Scope integrations tightly.</strong> Only connect the systems Claude needs and only grant access to the data it requires for the task.</li>
+            <li><strong>Build with the assumption that context window contents are processed.</strong> Don't put data into Claude's context that you wouldn't want processed by a third-party AI vendor under standard business terms.</li>
+          </ol>
+
+          <h2>The bottom line for B2B teams</h2>
+
+          <p>Claude for Teams and the Claude API are both appropriate for business use under standard conditions. Anthropic does not train on your data when you use these products. Claude sees only what you put in front of it, and only during the active session.</p>
+
+          <p>The risks in Claude deployments aren't usually in the model — they're in how teams configure access, what data they pass into the context, and whether they've thought through what "connected to Claude" actually means for a given system. Those are implementation decisions, not platform decisions.</p>
+
+          <p>If you're evaluating Claude for a deployment that involves sensitive data, the question isn't whether Claude is safe in the abstract. It's whether your specific implementation is configured correctly. That's the part TEG helps with.</p>
+
+          <div class="cta-block" style="margin-top: 48px;">
+            <h3>Deploying Claude with sensitive data?</h3>
+            <p>We've built production Claude implementations across real estate, finance, and professional services. We can tell you what to watch for before you start.</p>
+            <a href="../ideas.html" class="btn btn-primary">Get your automation roadmap</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">B2B sales execution and AI automation. Portland, Maine.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../specialties.html">Specialties</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../ideas.html">Ideas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../careers.html">Careers</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved. · <a href="../privacy.html">Privacy</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
