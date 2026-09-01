@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We Built a Boston Permit Lookup Tool — Here's Why It Needed More Than a Search Box | The Endurance Group</title>
+  <meta name="description" content="Boston's ScerIS permit search returns scanned PDFs with no unit-level filtering. We built a better tool using the Analyze Boston open data API — type an address, get every permit grouped by unit.">
+  <link rel="canonical" href="https://theendurancegroup.com/blog/boston-permit-lookup-tool.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="We Built a Boston Permit Lookup Tool — Here's Why It Needed More Than a Search Box | The Endurance Group">
+  <meta property="og:description" content="Boston's ScerIS permit search returns scanned PDFs with no unit-level filtering. We built a better tool using the Analyze Boston open data API — type an address, get every permit grouped by unit.">
+  <meta property="og:url" content="https://theendurancegroup.com/blog/boston-permit-lookup-tool.html">
+  <meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="We Built a Boston Permit Lookup Tool — Here's Why It Needed More Than a Search Box | The Endurance Group">
+  <meta name="twitter:description" content="Boston's ScerIS permit search returns scanned PDFs with no unit-level filtering. We built a better tool using the Analyze Boston open data API — type an address, get every permit grouped by unit.">
+  <meta name="twitter:image" content="https://theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://theendurancegroup.com/",
+    "logo": "https://theendurancegroup.com/images/og-default.png",
+    "image": "https://theendurancegroup.com/images/og-default.png",
+    "description": "AI automation and strategy for B2B companies in real estate, technology, and professional services.",
+    "foundingDate": "1998",
+    "priceRange": "$750+",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "We Built a Boston Permit Lookup Tool — Here's Why It Needed More Than a Search Box",
+    "description": "Boston's ScerIS permit search returns scanned PDFs with no unit-level filtering. We built a better tool using the Analyze Boston open data API — type an address, get every permit grouped by unit.",
+    "image": "https://theendurancegroup.com/images/og-default.png",
+    "datePublished": "2026-09-01",
+    "dateModified": "2026-09-01",
+    "author": { "@type": "Person", "name": "Conor Sullivan", "jobTitle": "VP" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": { "@type": "ImageObject", "url": "https://theendurancegroup.com/images/og-default.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://theendurancegroup.com/blog/boston-permit-lookup-tool.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you look up building permits for a Boston address?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The City of Boston's official permit search is ScerIS, which returns scanned PDF documents with limited filtering. For a more usable lookup, Boston's Analyze Boston open data portal publishes a structured 'Approved Building Permits' dataset via API covering permits issued since 2009. You can query it by address and get all permit records as structured data — though the results require additional parsing to group by unit in multi-family buildings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is ScerIS and why is it hard to use for Boston permit research?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ScerIS is Boston's official document management system for building permits. It stores permit records as scanned images, meaning search results are PDF documents rather than structured data. There is no unit-level filtering, so researching a multi-family building requires reviewing every permit record for the entire address to find the ones relevant to a specific unit. For properties with dozens or hundreds of units, this is time-consuming and easy to miss."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the Analyze Boston permits API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Analyze Boston is the City of Boston's open data portal. Its 'Approved Building Permits' dataset contains structured permit records — address, permit type, description, applicant, approval date, declared valuation — going back to 2009. The dataset is available as a queryable API, which means it can be searched programmatically by address without manually reviewing scanned documents. It covers permitted work but not historical records predating 2009."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can you tell if a Boston property has unpermitted bedrooms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Comparing the assessor record (which lists the official bedroom count for a property) against the permit history can surface discrepancies. If an assessor record shows three bedrooms but permit history shows no permitted work converting a space to a bedroom, the unit may have been illegally converted. Boston's Analyze Boston dataset and the city's assessor database are both queryable, making it possible to automate this comparison — though permit descriptions vary in quality, and a discrepancy warrants further investigation rather than a definitive finding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Boston's open data portal cover all building permits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Analyze Boston 'Approved Building Permits' dataset covers permits issued since 2009. Permits issued before that date are in ScerIS as scanned documents and are not in the structured dataset. For older properties, a complete permit history may require reviewing both sources. The dataset also reflects approved permits — it does not indicate whether permitted work was actually completed or passed final inspection."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../pricing.html">Pricing</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">Real Estate</span>
+        <h1>We built a Boston permit lookup tool — here's why it needed more than a search box</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>VP</span>
+          <span class="divider">·</span>
+          <span>September 1, 2026</span>
+        </div>
+        <a class="category-badge" href="category/real-estate.html" style="margin-top:16px;">Real Estate</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p>A real estate agent was doing due diligence on a Boston condo and pulled the permit history. The unit had three bedrooms. The permit history had no record of that third bedroom ever being created. The space existed — the permit didn't. That's an illegal conversion, and it's exactly the kind of thing that doesn't surface unless someone thinks to look for it.</p>
+
+          <p>The problem wasn't that the information was hidden. It was that the tool Boston uses to serve permit records — ScerIS — makes it genuinely difficult to look. So we built something better.</p>
+
+          <h2>What ScerIS actually gives you</h2>
+
+          <p>ScerIS is Boston's official permit document system. When you search an address, it returns scanned PDFs. Not structured data — scanned images of permit applications, one document per record. There's no unit-level filtering. For a six-unit building with a decade of permit history, that's potentially dozens of PDFs to review manually to find the ones that touch a specific unit.</p>
+
+          <p>That's not a complaint about the city — it's a document archive, and it works as one. The problem is that real estate due diligence requires a different kind of query: <em>show me everything that has happened to Unit 4B.</em> ScerIS wasn't built for that question.</p>
+
+          <h2>What Boston's open data portal actually has</h2>
+
+          <p>While ScerIS stores the historical archive, Boston's Analyze Boston open data portal publishes a separate, structured dataset: "Approved Building Permits." It covers permits issued since 2009, and it's available via API — real structured records with address, permit type, description, declared valuation, approval date, and applicant. Not scanned images. Queryable data.</p>
+
+          <p>That dataset is the foundation of what we built. You type in a Boston address, the tool queries the Analyze Boston API, pulls all permit records for that address, and groups them by unit.</p>
+
+          <h2>The grouping problem</h2>
+
+          <p>Pulling permit records by address is straightforward. Grouping them by unit is not.</p>
+
+          <p>Permit descriptions are written by people, not machines, and people write them however they want. A permit for the same unit might be described as "Unit 4B," "Apt 4B," "4th floor rear," "third floor unit," or simply "condo 3." Some descriptions mention no unit at all. There's no controlled vocabulary.</p>
+
+          <p>This is where we used Claude to help. The unit-matching logic needed to handle a wide range of natural-language variations, including edge cases like buildings where floor references don't correspond to the unit number, or addresses where the same unit is referred to by multiple naming conventions across different permit applications over the years. Claude helped us work through the regex patterns and the confidence-scoring approach — records that clearly matched a unit, records that probably matched, and records where there wasn't enough information to assign them at all.</p>
+
+          <p>The tool surfaces that confidence level to the user. A permit with "Unit 4B" in the description is a high-confidence match. A permit that says "third floor work" in a building where Unit 4 is on the third floor is a probable match. A permit for general exterior work gets flagged as unassigned — it might apply to every unit, or it might be irrelevant. Hiding that ambiguity would make the tool feel cleaner but less honest.</p>
+
+          <h2>What the tool also pulls</h2>
+
+          <p>Beyond the permit history, the tool queries the Boston assessor record for the address. That gives us the official bedroom and bathroom count, property type, year built, and assessed value. We display this alongside the permit history because the combination is what makes the tool useful for due diligence.</p>
+
+          <p>A property with an assessor record showing three bedrooms and a permit history with no permitted bedroom conversion is a flag. It doesn't prove anything on its own — permits get lost, work predates the 2009 dataset, assessor records have their own lag — but it's the kind of discrepancy that warrants a follow-up question before closing.</p>
+
+          <h2>Testing on a real building</h2>
+
+          <p>We ran the tool against a building on Province Street in Boston. It had 172 permit records since 2009. The raw list is unusable for unit-level due diligence — that's the problem ScerIS has in a different form. The grouped output organized those 172 records by unit in one pass, with confidence levels, and surfaced the assessor data alongside it.</p>
+
+          <p>That's the difference between a search box and a tool. A search box returns results. A tool answers the question you actually had.</p>
+
+          <h2>What's coming next</h2>
+
+          <p>The next iteration adds an automated disclosure flag: when the assessor bedroom count doesn't match what the permit history supports, the tool surfaces a specific alert rather than leaving the user to make that inference manually. That comparison is already possible from the data we're pulling — it just needs to be surfaced explicitly rather than implied.</p>
+
+          <p>We're also looking at what else can be layered on top of the permit history: open code violations, zoning data, building age relative to permit gaps. A property with no permitted work in 15 years isn't necessarily a problem, but it's a different profile than one with consistent maintenance permits across the same period. That context matters when you're trying to understand what you're actually buying.</p>
+
+          <h2>Why we built this</h2>
+
+          <p>We work with real estate teams across the Northeast, and permit research is one of those tasks that has always been time-consuming and easy to get wrong. Not because the data doesn't exist — it does, and Boston publishes more of it than most cities — but because accessing it requires navigating systems that weren't designed for the questions practitioners actually need to answer.</p>
+
+          <p>That gap between available data and usable data is where we spend a lot of our time. The Boston permit lookup tool is one version of what closing that gap looks like.</p>
+
+          <div class="cta-block" style="margin-top: 48px;">
+            <h3>Working on real estate due diligence or data research?</h3>
+            <p>We build tools that pull from public data sources and turn them into something practitioners can actually use. Tell us what you're trying to answer.</p>
+            <a href="../ideas.html" class="btn btn-primary">Get your automation roadmap</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">B2B sales execution and AI automation. Portland, Maine.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../specialties.html">Specialties</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../ideas.html">Ideas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../careers.html">Careers</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved. · <a href="../privacy.html">Privacy</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
