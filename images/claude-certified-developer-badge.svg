@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Claude Certified Developer – Foundations">
+  <defs>
+    <!-- Arc path for curved "FOUNDATIONS" text -->
+    <path id="foundations-arc" d="M 32,92 A 72,72 0 0,1 168,92"/>
+  </defs>
+
+  <!-- Decagon body -->
+  <polygon
+    points="100,4 157,22.5 192,72 192,128 157,177.5 100,196 43,177.5 8,128 8,72 43,22.5"
+    fill="#C97155"/>
+
+  <!-- FOUNDATIONS curved text -->
+  <text font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="12.5"
+        letter-spacing="3.2" fill="#1a0f0a">
+    <textPath href="#foundations-arc" startOffset="50%" text-anchor="middle">FOUNDATIONS</textPath>
+  </text>
+
+  <!-- Anthropic asterisk (12-spoke star, alternating radii) -->
+  <g transform="translate(100,90)" stroke="white" stroke-linecap="round">
+    <!-- Long spokes at 0°, 30°, 60°, 90°, 120°, 150°, 180°, 210°, 240°, 270°, 300°, 330° -->
+    <line x1="0" y1="-22" x2="0" y2="22" stroke-width="3.2"/>
+    <line x1="22" y1="0" x2="-22" y2="0" stroke-width="3.2"/>
+    <line x1="15.6" y1="-15.6" x2="-15.6" y2="15.6" stroke-width="3.2"/>
+    <line x1="-15.6" y1="-15.6" x2="15.6" y2="15.6" stroke-width="3.2"/>
+    <!-- Short spokes at 22.5°, 67.5°, 112.5°, 157.5°, 202.5°, 247.5°, 292.5°, 337.5° (half length) -->
+    <line x1="8.5" y1="-20.5" x2="-8.5" y2="20.5" stroke-width="2.2"/>
+    <line x1="20.5" y1="-8.5" x2="-20.5" y2="8.5" stroke-width="2.2"/>
+    <line x1="20.5" y1="8.5" x2="-20.5" y2="-8.5" stroke-width="2.2"/>
+    <line x1="8.5" y1="20.5" x2="-8.5" y2="-20.5" stroke-width="2.2"/>
+  </g>
+
+  <!-- "Claude Certified" -->
+  <text x="100" y="140" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="18.5" fill="white" font-weight="400">
+    Claude Certified
+  </text>
+  <!-- "Developer" -->
+  <text x="100" y="163" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="18.5" fill="white" font-weight="400">
+    Developer
+  </text>
+</svg>
