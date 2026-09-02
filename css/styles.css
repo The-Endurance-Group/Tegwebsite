@@ -411,6 +411,32 @@ textarea:focus-visible {
 .footer-social a { color: rgba(255,255,255,0.65); display: inline-flex; }
 .footer-social a:hover { color: var(--color-teal); }
 
+/* footer-grid variant used on blog index and newer pages */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+@media (min-width: 600px) {
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+}
+.footer-logo { height: 36px; filter: brightness(0) invert(1); }
+.footer-col h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-teal);
+  margin-bottom: 16px;
+}
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { font-size: 15px; color: rgba(255,255,255,0.75); }
+.footer-col a:hover { color: var(--color-white); }
+
 /* ===== HERO ===== */
 .hero {
   position: relative;
