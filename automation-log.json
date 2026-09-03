@@ -1,0 +1,12 @@
+[
+  {
+    "date": "2026-09-03",
+    "title": "Does Claude Remember Your Conversations Now? What B2B Teams Need to Know",
+    "slug": "claude-memory-update-b2b-teams",
+    "url": "https://theendurancegroup.com/blog/claude-memory-update-b2b-teams.html",
+    "path": "A-news",
+    "angle_summary": "Anthropic unified Claude's memory across Claude.ai chat and Cowork (on by default, late August 2026 update). Angle: what it means for continuity in B2B ops/sales workflows, how it differs from Claude's data-training privacy policy, and how to manage it.",
+    "deploy_verified": true,
+    "related_post_updated": "claude-data-privacy-business.html"
+  }
+]

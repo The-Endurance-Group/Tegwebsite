@@ -20,6 +20,7 @@
 ## Blog
 
 - [Blog index](https://theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [Does Claude Remember Your Conversations Now? What B2B Teams Need to Know](https://theendurancegroup.com/blog/claude-memory-update-b2b-teams.html)
 - [How We Use Hiring Signals to Find Companies Ready to Buy AI](https://theendurancegroup.com/blog/ai-prospect-finder-hiring-signal.html)
 - [How Offerpad Scaled AI Across Sales, Renovations, and Accounting](https://theendurancegroup.com/blog/offerpad-ai-partnership.html)
 - [How Biproxi Uses AI to Find Investors Their Competitors Can't](https://theendurancegroup.com/blog/biproxi-investor-discovery.html)

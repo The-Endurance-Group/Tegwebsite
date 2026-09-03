@@ -203,14 +203,14 @@
             <li>Data pulled by connected systems during that session (via MCP servers or connectors)</li>
           </ul>
 
-          <p>Claude does not retain memory across separate conversations by default. When a session ends, the context is gone. If you start a new conversation, Claude starts fresh. There is no persistent store of everything you've ever said to it — unless you build one into your implementation intentionally.</p>
+          <p>Historically, Claude did not retain memory across separate conversations by default. That changed with an August 2026 update: Claude now carries relevant context forward between sessions across Claude.ai and Cowork, on by default, though it's a separate, user-visible feature and doesn't change the training policy described above. See <a href="claude-memory-update-b2b-teams.html">what Claude's new memory update actually remembers, and how to control it</a> for the details.</p>
 
           <p>Claude also has no access to your internal systems — your CRM, file server, email, or databases — unless you connect those systems deliberately. Connecting Claude to HubSpot, Slack, or your own data via an MCP server is an explicit action, not something that happens automatically.</p>
 
           <h2>What Claude can't see</h2>
 
           <ul>
-            <li>Conversations from previous sessions (no persistent memory by default)</li>
+            <li>Anything from before memory was turned on for your account</li>
             <li>Systems you haven't connected to it</li>
             <li>Other users' conversations — sessions are isolated</li>
             <li>Your organizational data outside the current context window</li>
