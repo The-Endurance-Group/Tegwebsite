@@ -182,13 +182,13 @@
           <p>For most WordPress sites, someone has already built the connector.</p>
 
           <ul>
-            <li><strong>WordPress MCP</strong>, published by Automattic, exposes posts, users, site settings, and WooCommerce data over a standard MCP connection. It's the closest thing to an official, general-purpose option and our default starting point for content-only work.</li>
-            <li><strong>Elementor and page-builder MCPs</strong>, like the open-source Elementor-MCP project or commercial tools such as EMCP Tools, go further and expose the page builder itself: widgets, containers, global styles, media, and in some cases plugin and user management. If a client lives in Elementor, this is where full page builds happen.</li>
+            <li><strong><a href="https://github.com/Automattic/wordpress-mcp" target="_blank" rel="noopener">WordPress MCP</a></strong>, published by Automattic, exposes posts, users, site settings, and WooCommerce data over a standard MCP connection. It's the closest thing to an official, general-purpose option and our default starting point for content-only work.</li>
+            <li><strong>Elementor and page-builder MCPs</strong>, like <a href="https://elementor.com/blog/make-your-website-ai-ready-with-mcp/" target="_blank" rel="noopener">Elementor's native MCP support</a> or commercial tools such as <a href="https://emcptools.com/" target="_blank" rel="noopener">EMCP Tools</a>, go further and expose the page builder itself: widgets, containers, global styles, media, and in some cases plugin and user management. If a client lives in Elementor, this is where full page builds happen.</li>
             <li><strong>Bricks Builder</strong> has its own equivalent (bricks-mcp), following the same pattern: a lightweight WordPress plugin that bridges REST calls to an MCP server the AI can talk to.</li>
             <li><strong>WordPress core</strong> is moving this direction natively. A set of writing abilities for posts, pages, comments, categories, tags, and media is rolling out, built on an Abilities API slated for WordPress 7.0. Once that ships, basic content operations won't need a separate plugin at all.</li>
           </ul>
 
-          <p>For non-WordPress stacks, the pattern holds. Webflow, Shopify, and most modern site builders either have an official MCP server or a community one covering the common operations.</p>
+          <p>For non-WordPress stacks, the pattern holds. <a href="https://webflow.com" target="_blank" rel="noopener">Webflow</a>, <a href="https://shopify.com" target="_blank" rel="noopener">Shopify</a>, and most modern site builders either have an official MCP server or a community one covering the common operations.</p>
 
           <h2>When TEG builds a custom server instead</h2>
 
