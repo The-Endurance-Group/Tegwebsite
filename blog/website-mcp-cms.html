@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website MCPs: How AI Agents Update Sites Without WP-Admin | The Endurance Group</title>
+  <meta name="description" content="MCP servers give AI agents direct, governed access to your CMS. Here's how they work, which existing servers we reach for, and when TEG builds a custom one instead.">
+  <link rel="canonical" href="https://theendurancegroup.com/blog/website-mcp-cms.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="Website MCPs: How AI Agents Update Sites Without WP-Admin | The Endurance Group">
+  <meta property="og:description" content="MCP servers give AI agents direct, governed access to your CMS. Here's how they work, which existing servers we reach for, and when TEG builds a custom one instead.">
+  <meta property="og:url" content="https://theendurancegroup.com/blog/website-mcp-cms.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/conor-sullivan.html">
+  <meta property="article:published_time" content="2026-09-04T09:00:00-04:00">
+  <meta name="author" content="Conor Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Website MCPs: How AI Agents Update Sites Without WP-Admin | The Endurance Group">
+  <meta name="twitter:description" content="MCP servers give AI agents direct, governed access to your CMS. Here's how they work, which existing servers we reach for, and when TEG builds a custom one instead.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation partner for B2B companies in real estate, technology, and professional services.",
+    "foundingDate": "1998",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Website MCPs: How AI Agents Update Sites Without WP-Admin",
+    "description": "MCP servers give AI agents direct, governed access to your CMS. Here's how they work, which existing servers we reach for, and when TEG builds a custom one instead.",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "datePublished": "2026-09-04",
+    "dateModified": "2026-09-04",
+    "author": { "@type": "Person", "name": "Conor Sullivan", "jobTitle": "Vice President" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": { "@type": "ImageObject", "url": "https://www.theendurancegroup.com/images/og-default.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://theendurancegroup.com/blog/website-mcp-cms.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it safe to let an AI agent edit a live website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, when it's set up correctly. The agent inherits the permissions of the user account it authenticates as, mutations should be logged, and destructive actions — deleting content, changing user roles — should require confirmation rather than running automatically. We treat this the same way we'd treat any system with write access: least privilege first, audit trail always."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does our team need to know how to code to use a website MCP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The MCP server is configured once during setup. After that, your team asks for the change in plain language the same way they'd ask a person, and the AI handles the tool calls in the background."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a website MCP replace our developer or agency entirely?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For routine content changes, mostly yes — that's the point. For structural site changes, custom functionality, or anything touching the theme's underlying code, you still want a developer reviewing the work. MCP removes the bottleneck on the 80% of requests that were never worth a developer's time in the first place."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">AI Automations</span>
+        <h1>Website MCPs: how AI agents update sites without wp-admin</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Vice President</span>
+          <span class="divider">·</span>
+          <span>September 4, 2026</span>
+        </div>
+        <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p>Updating a website usually means one of three things: logging into wp-admin and hunting for the right settings screen, waiting on a developer for a two-line copy change, or paying an agency retainer to move a button. None of that has changed much in twenty years, even as AI got good enough to write the copy, generate the image, and know exactly what should go where. The gap has never been intelligence. It has been access. MCP closes that gap by giving an AI agent a direct, governed line into the CMS itself.</p>
+
+          <p>TEG is an official member of the Anthropic Claude Partner Network, with certified Claude engineers who build and configure MCP servers and Claude Skills for B2B ops teams. We've connected Claude to WordPress, Webflow, and custom CMS builds for clients who wanted their team asking for changes in plain English instead of filing a ticket.</p>
+
+          <h2>What a website MCP actually does</h2>
+
+          <p>An MCP server sits between an AI agent and your site's admin layer. Instead of an AI generating text you then have to paste into a page builder, the server exposes the site's real operations as tools: create a post, update a widget, swap an image, install a plugin, run a query. The AI reads your brief, decides which tools to call, and the change lands on the live site the same way it would if a person had clicked through the dashboard — except it happens in seconds and the AI can chain a dozen of those calls into one page build.</p>
+
+          <p>This only works because of what the connection maps to underneath. Every tool call runs as a real user with real WordPress capabilities. An agent authenticated as an editor cannot suddenly install plugins or delete users, because the underlying permission check still applies. The AI is a faster set of hands, not a new set of privileges.</p>
+
+          <h2>Which existing servers we reach for</h2>
+
+          <p>For most WordPress sites, someone has already built the connector.</p>
+
+          <ul>
+            <li><strong>WordPress MCP</strong>, published by Automattic, exposes posts, users, site settings, and WooCommerce data over a standard MCP connection. It's the closest thing to an official, general-purpose option and our default starting point for content-only work.</li>
+            <li><strong>Elementor and page-builder MCPs</strong>, like the open-source Elementor-MCP project or commercial tools such as EMCP Tools, go further and expose the page builder itself: widgets, containers, global styles, media, and in some cases plugin and user management. If a client lives in Elementor, this is where full page builds happen.</li>
+            <li><strong>Bricks Builder</strong> has its own equivalent (bricks-mcp), following the same pattern: a lightweight WordPress plugin that bridges REST calls to an MCP server the AI can talk to.</li>
+            <li><strong>WordPress core</strong> is moving this direction natively. A set of writing abilities for posts, pages, comments, categories, tags, and media is rolling out, built on an Abilities API slated for WordPress 7.0. Once that ships, basic content operations won't need a separate plugin at all.</li>
+          </ul>
+
+          <p>For non-WordPress stacks, the pattern holds. Webflow, Shopify, and most modern site builders either have an official MCP server or a community one covering the common operations.</p>
+
+          <h2>When TEG builds a custom server instead</h2>
+
+          <p>We check for an existing server first, the same way we do for any MCP integration. A few situations still push us toward a custom build.</p>
+
+          <p>The most common is a homegrown CMS or a heavily customized WordPress setup where no generic server maps cleanly to the site's actual structure. We've built thin, purpose-specific servers that expose exactly the operations a client's marketing team needs — nothing more — tuned to their content types and naming conventions.</p>
+
+          <p>The second is scope. Some general-purpose website MCP servers expose broad, all-or-nothing access: plugin installs, user management, raw database queries, all bundled into one connection. For a client who only wants an AI touching blog posts and product descriptions, that's more surface area than we want to hand over. A custom server lets us define precisely which operations the AI can reach.</p>
+
+          <p>The third is orchestration across systems. A real update often needs more than the CMS: pull a product spec from a spreadsheet, generate an image, publish the page, then post the announcement to Slack. A custom server can chain those steps into one coherent workflow instead of asking the AI to juggle several disconnected tools.</p>
+
+          <h2>How we decide: existing server versus custom build</h2>
+
+          <p>We start with two questions: what does the AI need to read or change, and does an existing server already cover that safely. If yes, we configure it, scope the permissions to the right user role, and test it against a staging copy of the site before anything touches production. If the gap is small, we extend rather than rebuild. If nothing fits — or the access an existing server grants is wider than the client wants — we build.</p>
+
+          <h2>Frequently asked questions</h2>
+
+          <h3>Is it safe to let an AI agent edit a live website?</h3>
+          <p>Yes, when it's set up correctly. The agent inherits the permissions of the user account it authenticates as, mutations should be logged, and destructive actions (deleting content, changing user roles) should require confirmation rather than running automatically. We treat this the same way we'd treat any system with write access: least privilege first, audit trail always.</p>
+
+          <h3>Does our team need to know how to code to use this?</h3>
+          <p>No. The MCP server is configured once during setup. After that, your team asks for the change in plain language the same way they'd ask a person, and the AI handles the tool calls in the background.</p>
+
+          <h3>Can this replace our developer or agency entirely?</h3>
+          <p>For routine content changes, mostly yes — that's the point. For structural site changes, custom functionality, or anything touching the theme's underlying code, you still want a developer reviewing the work. MCP removes the bottleneck on the 80% of requests that were never worth a developer's time in the first place.</p>
+
+          <div class="cta-block" style="margin-top: 48px;">
+            <h3>Want AI editing your site?</h3>
+            <p>We configure and build MCP servers for WordPress, Webflow, and custom CMS environments. Tell us what you're working with and what's taking too long.</p>
+            <a href="../how-to-get-started.html" class="btn btn-primary">Claim Your Free Automation</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--3">
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="mcp-custom-ai-integrations.html">MCP: how we connect AI to the tools your team already runs</a></h3>
+            <p>The broader version of this same idea, applied to HubSpot, Slack, Jira, and internal systems beyond the website.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="claude-skills.html">What Claude Skills are, and why we build inside Claude instead of a new app</a></h3>
+            <p>How a packaged Skill teaches Claude your exact process, no new interface required.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="what-is-an-ai-automation.html">What counts as a real AI automation, and what's just a demo</a></h3>
+            <p>The difference between an automation actually running in production and one that only looks good in a meeting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <p class="footer-tagline">Your Claude Implementation Partner</p>
+        <p class="footer-address">Portland, ME &middot; (207) 846-6000</p>
+      </div>
+      <div class="footer-columns">
+        <nav aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="../claude-setup.html">Claude Initial Setup</a></li>
+            <li><a href="../claude.html">Skills &amp; MCPs</a></li>
+            <li><a href="../solutions.html">Training &amp; Maintenance</a></li>
+            <li><a href="../staff-augmentation.html">Staff Augmentation</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Products">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Commonality</a></li>
+            <li><a href="https://coachonix.com" target="_blank" rel="noopener">Coachonix</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Specialties">
+          <h3>Specialties</h3>
+          <ul>
+            <li><a href="../specialties.html#sales-and-marketing">Functional Specialties</a></li>
+            <li><a href="../specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="../specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="../specialties.html#professional-services">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../how-to-get-started.html">Get Started</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../ideas.html">Ideas</a></li>
+            <li><a href="../careers.html">Careers</a></li>
+            <li><a href="../free-training.html">Free Training Session</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
