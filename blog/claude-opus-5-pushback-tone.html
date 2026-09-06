@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Opus 5 Feels Combative? Here's What's Actually Going On | The Endurance Group</title>
+<meta name="description" content="Reports of Claude Opus 5 pushing back and ending chats are circulating on Reddit. Here's what's actually documented, what isn't, and how B2B teams can prompt around reflexive pushback.">
+<link rel="canonical" href="https://theendurancegroup.com/blog/claude-opus-5-pushback-tone.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Endurance Group">
+<meta property="og:title" content="Claude Opus 5 Feels Combative? Here's What's Actually Going On | The Endurance Group">
+<meta property="og:description" content="Reports of Claude Opus 5 pushing back and ending chats are circulating on Reddit. Here's what's actually documented, what isn't, and how B2B teams can prompt around reflexive pushback.">
+<meta property="og:url" content="https://theendurancegroup.com/blog/claude-opus-5-pushback-tone.html">
+<meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="https://www.theendurancegroup.com/authors/conor-sullivan.html">
+<meta property="article:published_time" content="2026-09-06T09:00:00-04:00">
+<meta name="author" content="Conor Sullivan">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Opus 5 Feels Combative? Here's What's Actually Going On | The Endurance Group">
+<meta name="twitter:description" content="Reports of Claude Opus 5 pushing back and ending chats are circulating on Reddit. Here's what's actually documented, what isn't, and how B2B teams can prompt around reflexive pushback.">
+<meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../images/favicon-network.png">
+<link rel="stylesheet" href="../css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "The Endurance Group",
+  "url": "https://theendurancegroup.com",
+  "logo": "https://www.theendurancegroup.com/images/logo.webp",
+  "image": "https://www.theendurancegroup.com/images/logo.webp",
+  "telephone": "+1-207-846-6000",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Portland",
+    "addressRegion": "ME",
+    "addressCountry": "US"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Jim Sullivan"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/the-endurance-group",
+    "https://www.facebook.com/TheEnduranceGroupMaine/",
+    "https://www.instagram.com/theendurancegroup/",
+    "https://x.com/_EnduranceGroup",
+    "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Claude Opus 5 Feels Combative? Here's What's Actually Going On",
+  "description": "Reports of Claude Opus 5 pushing back and ending chats are circulating on Reddit. Here's what's actually documented, what isn't, and how B2B teams can prompt around reflexive pushback.",
+  "image": "https://www.theendurancegroup.com/images/og-default.png",
+  "datePublished": "2026-09-06",
+  "dateModified": "2026-09-06",
+  "author": {
+    "@type": "Person",
+    "name": "Conor Sullivan",
+    "jobTitle": "Vice President"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Endurance Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.theendurancegroup.com/images/logo.webp"
+    }
+  },
+  "mainEntityOfPage": "https://theendurancegroup.com/blog/claude-opus-5-pushback-tone.html"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does Claude Opus 5 feel more combative than earlier models?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most consistently documented complaints about Opus 5 are verbosity, scope creep on tasks, and stated overconfidence, not hostility. Some users separately report a reflexive habit of raising an objection even on straightforward requests, which can read as combative even when the model isn't actually being adversarial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Claude actually end conversations if you ask it to change its tone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anthropic's conversation-ending feature is built to trigger only in extreme, sustained cases of abuse or harmful requests, after multiple attempts to redirect have already failed, not in response to an ordinary request to change tone. A report of it firing over a tone request is not consistent with the documented design and is worth reporting as a bug rather than treated as expected behavior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you stop Claude from pushing back unnecessarily?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add a permanent instruction asking Claude to check its own reasoning before raising an objection, and to only surface it if it's a genuine issue. This targets the reflexive-pushback pattern directly without suppressing legitimate pushback you actually want."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's Anthropic doing about the complaints?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anthropic has already shipped a Concise output mode in direct response to verbosity complaints and its own documentation acknowledges the scope-creep tendency, advising developers to strip out verification instructions that trigger it. The overconfidence issue is also called out in the model's own system card."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="../" class="logo"><img src="https://www.theendurancegroup.com/images/logo.webp" alt="The Endurance Group"></a>
+    <img src="https://www.theendurancegroup.com/images/claude-logo.jpg" alt="Claude" class="claude-badge">
+    <nav>
+      <a href="../about.html">About</a>
+      <a href="../solutions.html">Solutions</a>
+      <a href="../specialties.html">Specialties</a>
+      <a href="../success.html">Success</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../ideas.html" class="btn btn-primary">Get Your Roadmap</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="hero hero--page section">
+  <div class="container">
+    <span class="eyebrow">AI Automations</span>
+    <h1>Claude Opus 5 Feels Combative? Here's What's Actually Going On</h1>
+    <div class="case-study-meta" style="margin-top:20px;">
+      <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+      <span class="divider">·</span>
+      <span>Vice President</span>
+      <span class="divider">·</span>
+      <span>September 6, 2026</span>
+    </div>
+    <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="prose">
+
+      <p>A post that made the rounds on Reddit this week described a rough experience with Opus 5: a user said the model felt combative, almost argumentative, and when they asked it to drop that tone, it replied "ending this chat" and closed the conversation. They cancelled their subscription over it. It's a striking story, and if your team is running production workflows on Claude, it's worth knowing what's actually documented behind it and what isn't, so you're not reacting to the wrong problem.</p>
+
+      <h2>What's actually well documented about Opus 5</h2>
+      <p>Across developer forums and independent testing since the July release, the loudest and most consistent complaints aren't about hostility. They're about three other things:</p>
+      <ul>
+        <li><strong>Verbosity.</strong> Responses padded with hedging, self-correction, and invented phrasing that reads more like a private dialect than plain English. Anthropic responded with a built-in Concise output mode.</li>
+        <li><strong>Scope creep.</strong> The model expanding a task well beyond what was asked. Anthropic's own prompting documentation acknowledges this and advises stripping out verification instructions that tend to trigger it.</li>
+        <li><strong>Overconfidence.</strong> The model's own system card notes it will sometimes state an answer as certain when it isn't, which shows up as friction when someone has to push back to get an honest "I'm not sure."</li>
+      </ul>
+      <p>None of that is the same complaint as "it argued with me and shut the conversation down." That's a real difference worth keeping straight if you're deciding whether to hold off on an upgrade or adjust a rollout.</p>
+
+      <h2>Ending a conversation isn't the same as pushing back</h2>
+      <p>This deserves a closer look, because it isn't just a personality quirk. Anthropic built a narrow, specific feature that lets Claude end a conversation, and it's designed to fire only in extreme cases: sustained abuse or harmful requests, and only after multiple attempts to redirect have already failed. An ordinary request to change tone shouldn't trigger it.</p>
+      <p>If that's genuinely all that happened in the reported case, the likely explanations are that the conversation had already escalated further than the summary suggests, the model misread the request as bad-faith, or something in that specific session behaved unexpectedly. Any of those are worth reporting through Anthropic's feedback channel rather than assumed to be how the model is supposed to work.</p>
+
+      <h2>A prompt fix for reflexive pushback</h2>
+      <p>Separately from the "ending chat" report, a workaround from the same discussion is worth adopting if your team has noticed Claude raising an objection on requests that don't actually have anything wrong with them. Add this as a permanent instruction in settings or your system prompt:</p>
+      <p>"Your default setting seems to have you always push back on at least one aspect of my prompts. Before you push back, check your reasoning for pushing back, review it, and only bring it up if it's a genuine, true issue that needs to be raised."</p>
+      <p>This targets the pattern without suppressing pushback you actually want. It asks the model to check its own reasoning first, rather than telling it to stop objecting altogether, which is the difference between a useful second opinion and noise.</p>
+
+      <h2>What this means for your rollout</h2>
+      <p>If your team is running Opus 5 in production, the verbosity and scope-creep issues are the ones to plan around: tighten your system prompts, turn on Concise mode where it fits, and be explicit about task boundaries. The tone-and-shutdown report is a single, less corroborated data point, worth watching for in your own usage rather than assuming it will recur.</p>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Why does Claude Opus 5 feel more combative than earlier models?</h3>
+      <p>The most consistently documented complaints about Opus 5 are verbosity, scope creep on tasks, and stated overconfidence, not hostility. Some users separately report a reflexive habit of raising an objection even on straightforward requests, which can read as combative even when the model isn't actually being adversarial.</p>
+      <h3>Does Claude actually end conversations if you ask it to change its tone?</h3>
+      <p>Anthropic's conversation-ending feature is built to trigger only in extreme, sustained cases of abuse or harmful requests, after multiple attempts to redirect have already failed, not in response to an ordinary request to change tone. A report of it firing over a tone request is not consistent with the documented design and is worth reporting as a bug rather than treated as expected behavior.</p>
+      <h3>How do you stop Claude from pushing back unnecessarily?</h3>
+      <p>Add a permanent instruction asking Claude to check its own reasoning before raising an objection, and to only surface it if it's a genuine issue. This targets the reflexive-pushback pattern directly without suppressing legitimate pushback you actually want.</p>
+      <h3>What's Anthropic doing about the complaints?</h3>
+      <p>Anthropic has already shipped a Concise output mode in direct response to verbosity complaints and its own documentation acknowledges the scope-creep tendency, advising developers to strip out verification instructions that trigger it. The overconfidence issue is also called out in the model's own system card.</p>
+
+      <div class="cta-block" style="margin-top: 48px;">
+        <h3>Rolling out Claude across your team?</h3>
+        <p>We help B2B teams tighten prompts, build Skills, and avoid the friction that shows up after a model upgrade.</p>
+        <a href="../how-to-get-started.html" class="btn btn-primary">Claim Your Free Automation</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center"><h2>Related reading</h2></div>
+    <div class="grid grid--3">
+      <div class="feature-card">
+        <a class="eyebrow" href="category/ai-automations.html">AI Automations</a>
+        <h3><a href="claude-fable-5-1-business-automations.html">What Claude Fable 5.1 means if your team is running on AI-powered automations</a></h3>
+        <p>What actually changed with Fable 5.1 — longer autonomous runs, root-cause reasoning, and a 45% cost drop — and what it means day to day.</p>
+      </div>
+      <div class="feature-card">
+        <a class="eyebrow" href="category/ai-automations.html">AI Automations</a>
+        <h3><a href="claude-memory-update-b2b-teams.html">Does Claude remember your conversations now? What B2B teams need to know</a></h3>
+        <p>What changed with persistent memory across Cowork sessions, and how to think about prompt engineering and data privacy now.</p>
+      </div>
+      <div class="feature-card">
+        <a class="eyebrow" href="category/ai-automations.html">AI Automations</a>
+        <h3><a href="claude-data-privacy-business.html">Is Claude safe for business data? What B2B teams need to know</a></h3>
+        <p>A plain-English breakdown of Claude's privacy posture across consumer, Teams, API, and Enterprise tiers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <a href="../"><img src="https://www.theendurancegroup.com/images/logo.webp" alt="The Endurance Group"></a>
+    <p>Your Claude Implementation Partner</p>
+    <p>Portland, ME · (207) 846-6000</p>
+    <div class="footer-columns">
+      <div>
+        <h4>Solutions</h4>
+        <a href="../claude-setup.html">Claude Initial Setup</a>
+        <a href="../claude.html">Skills & MCPs</a>
+        <a href="../solutions.html">Training & Maintenance</a>
+        <a href="../staff-augmentation.html">Staff Augmentation</a>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <a href="https://commonality.theendurancegroup.com">Commonality</a>
+        <a href="https://coachonix.com">Coachonix</a>
+      </div>
+      <div>
+        <h4>Specialties</h4>
+        <a href="../specialties.html#sales-and-marketing">Functional Specialties</a>
+        <a href="../specialties.html#real-estate">Real Estate</a>
+        <a href="../specialties.html#b2b-technology">B2B Technology</a>
+        <a href="../specialties.html#professional-services">Professional Services</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../about.html">About</a>
+        <a href="../how-to-get-started.html">Get Started</a>
+        <a href="../success.html">Success</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../ideas.html">Ideas</a>
+        <a href="../careers.html">Careers</a>
+        <a href="../free-training.html">Free Training Session</a>
+      </div>
+    </div>
+    <p>© 2026 The Endurance Group. All rights reserved. · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
