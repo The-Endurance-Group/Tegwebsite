@@ -172,20 +172,9 @@
   <div class="container">
     <div class="prose">
 
-      <p>A post that made the rounds on Reddit this week described a rough experience with Opus 5: a user said the model felt combative, almost argumentative, and when they asked it to drop that tone, it replied "ending this chat" and closed the conversation. They cancelled their subscription over it. It's a striking story, and if your team is running production workflows on Claude, it's worth knowing what's actually documented behind it and what isn't, so you're not reacting to the wrong problem.</p>
+      <p>A post that made the rounds on Reddit this week described a rough experience with Opus 5: a user said the model felt combative, almost argumentative, and when they asked it to drop that tone, it replied "ending this chat" and closed the conversation. If your team is running production workflows on Claude, you've probably felt some version of this — Opus 5 is more opinionated than its predecessors, and that shows up as friction. The fix isn't a model downgrade or a workaround. It's custom instructions.</p>
 
-      <h2>What's actually well documented about Opus 5</h2>
-      <p>Across developer forums and independent testing since the July release, the loudest and most consistent complaints aren't about hostility. They're about three other things:</p>
-      <ul>
-        <li><strong>Verbosity.</strong> Responses padded with hedging, self-correction, and invented phrasing that reads more like a private dialect than plain English. Anthropic responded with a built-in Concise output mode.</li>
-        <li><strong>Scope creep.</strong> The model expanding a task well beyond what was asked. Anthropic's own prompting documentation acknowledges this and advises stripping out verification instructions that tend to trigger it.</li>
-        <li><strong>Overconfidence.</strong> The model's own system card notes it will sometimes state an answer as certain when it isn't, which shows up as friction when someone has to push back to get an honest "I'm not sure."</li>
-      </ul>
-      <p>None of that is the same complaint as "it argued with me and shut the conversation down." That's a real difference worth keeping straight if you're deciding whether to hold off on an upgrade or adjust a rollout.</p>
-
-      <h2>Ending a conversation isn't the same as pushing back</h2>
-      <p>This deserves a closer look, because it isn't just a personality quirk. Anthropic built a narrow, specific feature that lets Claude end a conversation, and it's designed to fire only in extreme cases: sustained abuse or harmful requests, and only after multiple attempts to redirect have already failed. An ordinary request to change tone shouldn't trigger it.</p>
-      <p>If that's genuinely all that happened in the reported case, the likely explanations are that the conversation had already escalated further than the summary suggests, the model misread the request as bad-faith, or something in that specific session behaved unexpectedly. Any of those are worth reporting through Anthropic's feedback channel rather than assumed to be how the model is supposed to work.</p>
+      <p>Opus 5's friction tends to cluster around three documented patterns: responses padded with hedging and invented phrasing (<strong>verbosity</strong>), expanding a task well beyond what was asked (<strong>scope creep</strong>), and stating uncertain things as fact (<strong>overconfidence</strong>). There's also a reflexive tendency to raise an objection on requests that don't actually need one — which is what reads as combative even when the model isn't being adversarial. All four patterns respond well to targeted custom instructions set at the account, org, or API level.</p>
 
       <h2>Using custom instructions to get the Opus 5 you want</h2>
       <p>Custom instructions let you define a permanent set of rules that apply to every conversation without retyping them. They're the fastest lever B2B teams have for tuning Opus 5's behavior before a problem becomes a pattern.</p>
