@@ -13,6 +13,8 @@ const IDEAS_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const IDEAS_RATE_LIMIT_MAX = 8;
 const ideasRateLimitHits = new Map();
 const SITE_KNOWLEDGE = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
+const SITEMAP_XML = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
+const ROBOTS_TXT = fs.readFileSync(path.join(ROOT, 'robots.txt'), 'utf8');
 const CHAT_SYSTEM_PROMPT = [
   'You are the AI assistant embedded on theendurancegroup.com, a B2B sales execution and AI automation consultancy in Portland, Maine.',
   'Answer questions about the company using ONLY the information in SITE KNOWLEDGE below. Do not invent pricing, case studies, names, or facts that aren\'t in it.',
@@ -789,6 +791,16 @@ http.createServer((req, res) => {
   }
   if (req.method === 'POST' && urlPath === '/api/download-skill') {
     handleDownloadSkill(req, res);
+    return;
+  }
+  if (urlPath === '/sitemap.xml') {
+    res.writeHead(200, { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' });
+    res.end(SITEMAP_XML);
+    return;
+  }
+  if (urlPath === '/robots.txt') {
+    res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'public, max-age=3600' });
+    res.end(ROBOTS_TXT);
     return;
   }
   if (urlPath === '/claude-setup') {
