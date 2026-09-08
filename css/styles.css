@@ -428,7 +428,7 @@ textarea:focus-visible {
 @media (min-width: 1024px) {
   .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
 }
-.footer-logo { height: 36px; filter: brightness(0) invert(1); }
+.footer-logo { height: 36px !important; width: auto !important; filter: brightness(0) invert(1); }
 .footer-col h4 {
   font-size: 14px;
   text-transform: uppercase;
