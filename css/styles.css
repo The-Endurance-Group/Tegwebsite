@@ -362,7 +362,7 @@ textarea:focus-visible {
   margin-bottom: 48px;
 }
 .footer-top .logo { color: var(--color-white); }
-.site-footer .logo-img { filter: brightness(0) invert(1); height: 36px; }
+.site-footer .logo-img { filter: brightness(0) invert(1); height: 36px !important; width: auto !important; }
 .footer-tagline { margin-top: 16px; font-size: 17px; color: rgba(255,255,255,0.85); max-width: 480px; }
 .footer-address { margin-top: 12px; color: rgba(255,255,255,0.65); font-size: 15px; }
 

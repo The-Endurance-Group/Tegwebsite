@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Photo Review for Property Management: How Claude Checks Vendor Photos Automatically | The Endurance Group</title>
+  <meta name="description" content="A property management team was manually reviewing hundreds of vendor photos per day. TEG automated the check with Claude — plus vendor coverage mapping and invoice review — saving 1–2 hours daily.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/ai-photo-review-property-management.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="AI Photo Review for Property Management: How Claude Checks Vendor Photos Automatically | The Endurance Group">
+  <meta property="og:description" content="A property management team was manually reviewing hundreds of vendor photos per day. TEG automated the check with Claude — plus vendor coverage mapping and invoice review — saving 1–2 hours daily.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/ai-photo-review-property-management.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/conor-sullivan.html">
+  <meta property="article:published_time" content="2026-09-09T09:00:00-04:00">
+  <meta name="author" content="Conor Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Photo Review for Property Management: How Claude Checks Vendor Photos Automatically | The Endurance Group">
+  <meta name="twitter:description" content="A property management team was manually reviewing hundreds of vendor photos per day. TEG automated the check with Claude — plus vendor coverage mapping and invoice review — saving 1–2 hours daily.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://www.theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation partner for B2B companies in real estate, technology, and professional services.",
+    "foundingDate": "1998",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Photo Review for Property Management: How Claude Checks Vendor Photos Automatically",
+    "description": "A property management team was manually reviewing hundreds of vendor photos per day. TEG automated the check with Claude — plus vendor coverage mapping and invoice review — saving 1–2 hours daily.",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "datePublished": "2026-09-09",
+    "dateModified": "2026-09-09",
+    "author": { "@type": "Person", "name": "Conor Sullivan", "jobTitle": "Vice President" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": { "@type": "ImageObject", "url": "https://www.theendurancegroup.com/images/og-default.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.theendurancegroup.com/blog/ai-photo-review-property-management.html" },
+    "about": [
+      { "@type": "Thing", "name": "Property management automation" },
+      { "@type": "Thing", "name": "AI photo review" },
+      { "@type": "Thing", "name": "Vendor management" },
+      { "@type": "Thing", "name": "Claude API" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can AI automatically review vendor photos for property management?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Claude API can evaluate incoming photos against documented criteria — things like lawn condition, visible garbage cans, or pool clarity — and flag whether each passes or needs a human review. This works for any vendor category where you can write down a clear standard. The AI handles the routine cases so your team only sees the ones that actually require a decision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does automated photo review work with vendor emails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Incoming vendor emails are parsed to extract attached photos. Each photo is sent to Claude along with the review criteria defined for that vendor category. Claude returns a pass or flag judgment for each image. Passing photos move toward approval; flagged photos land in a human review queue. The team only touches the ones that need a real decision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What other tasks can be automated alongside photo review for property management?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most common additions are a vendor coverage map — showing which contracted vendors serve which service areas so assignment is fast when new properties come into the portfolio — and automated invoice review, which checks inbound invoices against work records before they hit the approval queue. These three together address the main high-frequency, low-judgment tasks in a property management vendor workflow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a vendor photo review automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on how vendor emails arrive and how clearly the review criteria are documented. If criteria are already defined and email format is consistent, the core automation can be built in days, not months. The main upfront work is writing the criteria precisely enough for Claude to apply them reliably. TEG typically starts with a scoped build on one vendor category, confirms it works, then expands from there."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">Real Estate</span>
+        <h1>We taught Claude to review vendor photos so a property management team didn't have to</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Vice President</span>
+          <span class="divider">·</span>
+          <span>September 9, 2026</span>
+        </div>
+        <a class="category-badge" href="category/real-estate.html" style="margin-top:16px;">Real Estate</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p>One of our property management clients spends most of its day keeping the homes it manages in shape. Landscapers, pool cleaners, and home cleaners all send photos after each job — proof of work, proof of standards met. That part works fine. The part that didn't: a human on the team had to open every email, look at every photo, and manually sign off before the job could be marked complete or an invoice approved.</p>
+
+          <h2>The bottleneck: a human on every photo</h2>
+
+          <p>For landscaping jobs, the review criteria were clear: no brown grass, no garbage cans left in frame, lawn actually mowed. The photos came in by email. Someone opened each one, scrolled through the attachments, made a call, and moved on. Not a hard task — but multiplied across dozens of vendors and properties, it added up to a significant chunk of someone's day spent doing something that was, at its core, a yes/no visual check.</p>
+
+          <p>That's exactly the kind of task that's easy to underestimate. Each individual review takes a minute or two. Stack enough of them together and you've turned a real person into a photo-sorting machine, clearing routine sign-offs that never actually required their judgment in the first place.</p>
+
+          <h2>What we built</h2>
+
+          <h3>Automated photo review against client criteria</h3>
+
+          <p>The core of the automation: incoming vendor emails get parsed, and every attached photo runs through the Claude API against the client's actual review criteria. Claude flags whether each photo passes or needs a human look. The team only sees the ones that genuinely require a decision — the ambiguous cases, the borderline fails, the situations where judgment matters.</p>
+
+          <p>The criteria are defined by the client and written into the system prompt. For landscaping jobs: no visible brown patches, no garbage cans in frame, clear evidence the lawn was mowed. For other vendor categories the criteria differ, but the structure is the same. Claude is working from a documented standard, not guessing.</p>
+
+          <h3>Vendor coverage map</h3>
+
+          <p>Once the photo review was running, we layered on two more pieces. The first: a vendor coverage map showing every contracted vendor and their service area. When a new home comes into the portfolio, the team can see at a glance who to assign rather than piecing it together from scattered spreadsheets or old email threads.</p>
+
+          <h3>Automated invoice review</h3>
+
+          <p>The second addition: automated invoice review. Inbound vendor invoices get checked against work records before they hit the approval queue. If an invoice doesn't match what was documented — wrong property, wrong service date, amount inconsistent with the agreed rate — it gets flagged before anyone has to approve it. The clean ones move through without touching a human queue.</p>
+
+          <h2>What changed</h2>
+
+          <p>Together, these three automations save the team one to two hours per day. That's not from one dramatic intervention. It's from removing a dozen small manual checks that used to require someone to stop what they were doing, open an email, scroll through photos, and move on to the next one.</p>
+
+          <p>The work didn't disappear — it got routed correctly. The exceptions go to a human. The routine goes to Claude. The team's attention shifted from clearing a queue to making actual decisions. That's a different kind of day.</p>
+
+          <h2>The pattern this fits</h2>
+
+          <p>This is a typical shape for the automation work TEG does: not a sweeping AI transformation, but a specific recurring bottleneck — a step where someone's job is basically "look at this and tell me if it's fine" — handed off to Claude so the team can focus on the cases that actually need their judgment.</p>
+
+          <p>Visual inspection tasks are good candidates for this because they're structured. There's a documented standard. The inputs arrive in a consistent format — photos attached to vendor emails. The output is binary: pass or needs review. Claude doesn't need to improvise. It needs to apply defined criteria at scale, which is exactly what it's built for.</p>
+
+          <p>The hard part isn't the Claude integration. It's identifying the criteria clearly enough to write them down. Once you can do that, the automation follows. If your team has a step in its workflow where someone's job is to look at something and decide whether it's fine, that's usually a sign there's an automation waiting to happen.</p>
+
+          <p>Have a similar bottleneck? <a href="../contact.html">We'd be happy to talk through what's possible</a>.</p>
+
+          <h2>Frequently asked questions</h2>
+
+          <h3>Can AI automatically review vendor photos for property management?</h3>
+          <p>Yes. The Claude API can evaluate incoming photos against documented criteria — things like lawn condition, visible garbage cans, or pool clarity — and flag whether each passes or needs a human review. This works for any vendor category where you can write down a clear standard. The AI handles the routine cases so your team only sees the ones that actually require a decision.</p>
+
+          <h3>How does automated photo review work with vendor emails?</h3>
+          <p>Incoming vendor emails are parsed to extract attached photos. Each photo is sent to Claude along with the review criteria defined for that vendor category. Claude returns a pass or flag judgment for each image. Passing photos move toward approval; flagged photos land in a human review queue. The team only touches the ones that need a real decision.</p>
+
+          <h3>What other tasks can be automated alongside photo review for property management?</h3>
+          <p>The most common additions are a vendor coverage map — showing which contracted vendors serve which service areas so assignment is fast when new properties come into the portfolio — and automated invoice review, which checks inbound invoices against work records before they hit the approval queue. These three together address the main high-frequency, low-judgment tasks in a property management vendor workflow.</p>
+
+          <h3>How long does it take to build a vendor photo review automation?</h3>
+          <p>It depends on how vendor emails arrive and how clearly the review criteria are documented. If criteria are already defined and email format is consistent, the core automation can be built in days, not months. The main upfront work is writing the criteria precisely enough for Claude to apply them reliably. TEG typically starts with a scoped build on one vendor category, confirms it's working, then expands from there.</p>
+
+          <div class="btn-group" style="margin-top: 48px;">
+            <a class="btn btn-primary" href="../contact.html">Talk Through Your Bottleneck</a>
+            <a class="btn btn-secondary" href="../operations.html">See More Automation Patterns</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">Real Estate</span>
+            <h3><a href="ai-automation-real-estate.html">How AI automation helps real estate teams respond to leads before they go cold</a></h3>
+            <p>The same logic behind vendor photo review — removing high-frequency, low-judgment manual steps — applies to lead response. Here's how real estate teams are automating that handoff.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="what-is-an-ai-automation.html">What counts as a real AI automation, and what's just a demo</a></h3>
+            <p>Not every AI tool is an automation. Here's how to tell the difference — and why it matters before you commit time and budget to building something.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <p class="footer-tagline">Your Claude Implementation Partner</p>
+        <p class="footer-address">Portland, ME &middot; (207) 846-6000</p>
+      </div>
+      <div class="footer-columns">
+        <nav aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="../claude-setup.html">Claude Initial Setup</a></li>
+            <li><a href="../claude.html">Skills &amp; MCPs</a></li>
+            <li><a href="../solutions.html">Training &amp; Maintenance</a></li>
+            <li><a href="../staff-augmentation.html">Staff Augmentation</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Products">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Commonality</a></li>
+            <li><a href="https://coachonix.com" target="_blank" rel="noopener">Coachonix</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Specialties">
+          <h3>Specialties</h3>
+          <ul>
+            <li><a href="../specialties.html#sales-and-marketing">Functional Specialties</a></li>
+            <li><a href="../specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="../specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="../specialties.html#professional-services">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../how-to-get-started.html">Get Started</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../ideas.html">Ideas</a></li>
+            <li><a href="../careers.html">Careers</a></li>
+            <li><a href="../free-training.html">Free Training Session</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
