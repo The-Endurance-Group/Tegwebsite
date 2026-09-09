@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How We Turned Scattered Meeting Notes Into a Working Task System | The Endurance Group</title>
+  <meta name="description" content="A small nonprofit's meeting notes lived in three different notetakers and never made it to a shared task list. Here's the automation suite that fixed it.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/nonprofit-meeting-notes-precall-automation.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="How We Turned Scattered Meeting Notes Into a Working Task System | The Endurance Group">
+  <meta property="og:description" content="A small nonprofit's meeting notes lived in three different notetakers and never made it to a shared task list. Here's the automation suite that fixed it.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/nonprofit-meeting-notes-precall-automation.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/conor-sullivan.html">
+  <meta property="article:published_time" content="2026-09-09T09:00:00-04:00">
+  <meta name="author" content="Conor Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How We Turned Scattered Meeting Notes Into a Working Task System | The Endurance Group">
+  <meta name="twitter:description" content="A small nonprofit's meeting notes lived in three different notetakers and never made it to a shared task list. Here's the automation suite that fixed it.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation partner for B2B companies in real estate, technology, and professional services.",
+    "foundingDate": "1998",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How We Turned Scattered Meeting Notes Into a Working Task System",
+    "description": "A small nonprofit's meeting notes lived in three different notetakers and never made it to a shared task list. Here's the automation suite that fixed it.",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "datePublished": "2026-09-09",
+    "dateModified": "2026-09-09",
+    "author": { "@type": "Person", "name": "Conor Sullivan", "jobTitle": "Vice President" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": { "@type": "ImageObject", "url": "https://www.theendurancegroup.com/images/og-default.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.theendurancegroup.com/blog/nonprofit-meeting-notes-precall-automation.html" },
+    "about": [
+      { "@type": "Thing", "name": "Nonprofit CRM automation" },
+      { "@type": "Thing", "name": "Meeting notes to Trello" },
+      { "@type": "Thing", "name": "Pre-call prep automation" },
+      { "@type": "Thing", "name": "Task management AI" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How can AI automatically turn meeting notes into Trello tasks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An automation monitors a shared email inbox where staff forward meeting recaps — from any notetaker, or written in their own words. Claude reads each note, identifies the client or prospect it relates to, finds or creates that organization's Trello card, assigns tasks to the right people with due dates, and adds a drafted follow-up email for the host to review and send."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is pre-call prep automation and how does it help sales and development teams?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pre-call prep automation checks the next day's calendar each morning, pulls the relevant task board history for anyone with a meeting scheduled, and emails the host a summary of everything discussed and promised before they walk into the call. The rep arrives prepared without having to dig through old notes manually the morning of."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle meeting notes when clients don't allow AI notetakers on calls?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A shared email inbox that accepts notes in any format solves this. AI-generated summaries, voice memos transcribed manually, or a quick paragraph typed by the rep after the call all work equally well. The automation processes whatever lands in the inbox without requiring a specific tool or format, so client restrictions don't create a separate workflow for those calls."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">Case Study</span>
+        <h1>How We Turned Scattered Meeting Notes Into a Working Task System</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Vice President</span>
+          <span class="divider">·</span>
+          <span>September 9, 2026</span>
+        </div>
+        <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p>One of our nonprofit clients runs a small, fast-moving development team. Different staff use different notetakers on their calls, some clients don't allow AI notetakers at all, and none of it consistently turned into tracked follow-up. Tasks lived in people's heads or got typed into Trello inconsistently, if at all.</p>
+
+          <h2>The problem</h2>
+
+          <p>With everyone using a different tool to capture meetings, there was no single place notes reliably ended up. Follow-up tasks got created when someone remembered to create them. Reps walked into calls without a clear picture of what had already been discussed or promised.</p>
+
+          <h2>What we built</h2>
+
+          <p>We set up a shared inbox — one address every staff member forwards their meeting recap to, from whatever notetaker they used, or a quick note in their own words if the client doesn't allow AI tools on calls. From there, three automations pick up the work:</p>
+
+          <h3>Meeting notes to Trello</h3>
+          <p>Claude reads the note, figures out which client or prospect it relates to, and finds (or creates) that organization's Trello card. It assigns tasks to the right people with due dates, and adds a drafted follow-up email for the host to review and send.</p>
+
+          <h3>Daily Trello status check</h3>
+          <p>Every day at 5pm, a summary goes out to the team covering what got done, what's still open, and what's due the next day.</p>
+
+          <h3>Pre-call prep</h3>
+          <p>Each morning, it checks the next day's calendar, pulls the relevant Trello card and history for anyone with a meeting scheduled, and emails the host a prep report before they walk in.</p>
+
+          <h2>The result</h2>
+
+          <p>The pre-call prep piece is live and already saving the team from digging through old notes before every call. The daily Trello review is being tuned this week to run cleanly end to end. Together, the goal is simple: nothing discussed on a call disappears, and nobody walks into a follow-up call cold.</p>
+
+          <h2>The takeaway</h2>
+
+          <p>Small teams don't need a new CRM to fix this kind of thing. Most of the time the fix is routing information that already exists — meeting notes, calendars, a task board — to the place it's actually needed, automatically, instead of relying on someone to remember to do it by hand.</p>
+
+          <p>If your team's follow-up depends on people remembering to update a board, we'd be glad to talk through how we'd approach it.</p>
+
+          <h2>Frequently asked questions</h2>
+
+          <h3>How can AI automatically turn meeting notes into Trello tasks?</h3>
+          <p>An automation monitors a shared email inbox where staff forward meeting recaps — from any notetaker, or written in their own words. Claude reads each note, identifies the client or prospect it relates to, finds or creates that organization's Trello card, assigns tasks to the right people with due dates, and adds a drafted follow-up email for the host to review and send.</p>
+
+          <h3>What is pre-call prep automation and how does it help sales and development teams?</h3>
+          <p>Pre-call prep automation checks the next day's calendar each morning, pulls the relevant task board history for anyone with a meeting scheduled, and emails the host a summary of everything discussed and promised before they walk into the call. The rep arrives prepared without having to dig through old notes manually the morning of.</p>
+
+          <h3>How do you handle meeting notes when clients don't allow AI notetakers on calls?</h3>
+          <p>A shared email inbox that accepts notes in any format solves this. AI-generated summaries, voice memos transcribed manually, or a quick paragraph typed by the rep after the call all work equally well. The automation processes whatever lands in the inbox without requiring a specific tool or format, so client restrictions don't create a separate workflow for those calls.</p>
+
+          <div class="btn-group" style="margin-top: 48px;">
+            <a class="btn btn-primary" href="../free-training.html">Book a Free Training Session</a>
+            <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="what-is-an-ai-automation.html">What counts as a real AI automation, and what's just a demo</a></h3>
+            <p>The difference between something that's actually running in production and something that only looks good in a meeting.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">Business Strategy</span>
+            <h3><a href="hire-vs-automate.html">When to hire a sales rep vs when to automate</a></h3>
+            <p>How to think through when a person actually moves the needle and when a system handles it better.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <p class="footer-tagline">Your Claude Implementation Partner</p>
+        <p class="footer-address">Portland, ME &middot; (207) 846-6000</p>
+      </div>
+      <div class="footer-columns">
+        <nav aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="../claude-setup.html">Claude Initial Setup</a></li>
+            <li><a href="../claude.html">Skills &amp; MCPs</a></li>
+            <li><a href="../solutions.html">Training &amp; Maintenance</a></li>
+            <li><a href="../staff-augmentation.html">Staff Augmentation</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Products">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Commonality</a></li>
+            <li><a href="https://coachonix.com" target="_blank" rel="noopener">Coachonix</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Specialties">
+          <h3>Specialties</h3>
+          <ul>
+            <li><a href="../specialties.html#sales-and-marketing">Functional Specialties</a></li>
+            <li><a href="../specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="../specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="../specialties.html#professional-services">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../how-to-get-started.html">Get Started</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../ideas.html">Ideas</a></li>
+            <li><a href="../careers.html">Careers</a></li>
+            <li><a href="../free-training.html">Free Training Session</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

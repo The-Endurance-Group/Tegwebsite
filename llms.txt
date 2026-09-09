@@ -20,6 +20,9 @@
 ## Blog
 
 - [Blog index](https://theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [From Anonymous Website Visitor to Assigned CRM Lead](https://theendurancegroup.com/blog/website-visitor-to-crm-automation.html)
+- [How We Turned Scattered Meeting Notes Into a Working Task System](https://theendurancegroup.com/blog/nonprofit-meeting-notes-precall-automation.html)
+- [Reading Town Meeting Notes for Business Opportunities, Automatically](https://theendurancegroup.com/blog/town-meeting-notes-ai-pilot.html)
 - [We Taught Claude to Check Landscaping Photos So a Real Estate Team Didn't Have To](https://theendurancegroup.com/blog/ai-photo-review-property-management.html)
 - [Does Claude Remember Your Conversations Now? What B2B Teams Need to Know](https://theendurancegroup.com/blog/claude-memory-update-b2b-teams.html)
 - [How We Use Hiring Signals to Find Companies Ready to Buy AI](https://theendurancegroup.com/blog/ai-prospect-finder-hiring-signal.html)
