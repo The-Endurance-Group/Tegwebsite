@@ -113,8 +113,41 @@
             <a class="feature-link" href="solutions.html" style="display:inline-block; margin-top:1rem;">See all our services →</a>
             <p style="margin-top:1.25rem; font-size:13px; color:var(--color-lavender); letter-spacing:0.04em;">Founded in 1998. Not another startup.</p>
           </div>
-          <div class="hero-intro-frame">
-            <iframe src="videos/hero-intro.html" title="The Endurance Group - Intro" loading="lazy" allow="autoplay"></iframe>
+          <div class="hero-video" id="heroVideo">
+            <video
+              class="hero-video__el"
+              playsinline
+              autoplay
+              muted
+              loop
+              preload="auto"
+              poster="videos/hero-claude-poster.jpg"
+              aria-label="The Endurance Group — Claude in action">
+              <source src="videos/hero-claude.webm" type="video/webm">
+              <source src="videos/hero-claude.mp4" type="video/mp4">
+            </video>
+
+            <!-- Big center play/pause tap target -->
+            <button class="hero-video__toggle" type="button" aria-label="Play or pause video">
+              <svg class="hero-video__toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+
+            <!-- Custom controls (TEG palette) -->
+            <div class="hero-video__controls">
+              <button class="hvc-btn hvc-play" type="button" aria-label="Play">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <div class="hvc-progress" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="hvc-progress__fill"></div>
+              </div>
+              <span class="hvc-time">0:00</span>
+              <button class="hvc-btn hvc-mute" type="button" aria-label="Unmute">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z" opacity=".9"/><line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </button>
+              <button class="hvc-btn hvc-fs" type="button" aria-label="Fullscreen">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
           </div>
         </div>
         <div class="trust-strip">

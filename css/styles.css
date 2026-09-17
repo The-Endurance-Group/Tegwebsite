@@ -464,20 +464,154 @@ textarea:focus-visible {
   .hero-grid { grid-template-columns: 1fr 1fr; gap: 56px; }
 }
 
-.hero-intro-frame {
+/* ===== HERO VIDEO (portrait / phone) ===== */
+.hero-video {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius-md);
+  max-width: 320px;
+  margin-inline: auto;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 8px 28px rgba(26,26,26,0.18);
+  background: var(--color-ink);
+  box-shadow: 0 12px 40px rgba(26,26,26,0.22);
 }
-.hero-intro-frame iframe {
+@media (min-width: 1024px) {
+  .hero-video { margin-right: 0; } /* sit toward the text on desktop */
+}
+.hero-video__el {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;      /* fills the phone frame; source is already 9:16 so no crop */
+  display: block;
+}
+
+/* Center play/pause tap target */
+.hero-video__toggle {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
   border: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+.hero-video__toggle-icon {
+  width: 62px;
+  height: 62px;
+  padding: 16px;
+  fill: var(--color-white);
+  background: rgba(112,66,130,0.72);   /* --color-purple */
+  border-radius: 999px;
+  box-shadow: 0 4px 18px rgba(26,26,26,0.35);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity .25s ease, transform .25s ease, background .2s ease;
+}
+/* Show the big button only while paused */
+.hero-video.is-paused .hero-video__toggle-icon { opacity: 1; transform: scale(1); }
+.hero-video__toggle:hover .hero-video__toggle-icon { background: var(--color-pink); }
+
+/* Control bar */
+.hero-video__controls {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px 14px;
+  background: linear-gradient(to top, rgba(26,26,26,0.72) 0%, rgba(26,26,26,0.28) 60%, rgba(26,26,26,0) 100%);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.hero-video:hover .hero-video__controls,
+.hero-video:focus-within .hero-video__controls,
+.hero-video.is-paused .hero-video__controls { opacity: 1; transform: translateY(0); }
+
+.hvc-btn {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease;
+}
+.hvc-btn svg { width: 100%; height: 100%; fill: currentColor; }
+.hvc-btn:hover { background: rgba(255,255,255,0.16); color: var(--color-teal); }
+
+/* Progress / scrubber */
+.hvc-progress {
+  position: relative;
+  flex: 1 1 auto;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.28);
+  cursor: pointer;
+  outline: none;
+}
+.hvc-progress:focus-visible { box-shadow: 0 0 0 2px var(--color-teal); }
+.hvc-progress__fill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 0%;
+  border-radius: 999px;
+  background: var(--color-teal);   /* TEG teal progress */
+}
+.hvc-time {
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-white);
+  font-variant-numeric: tabular-nums;
+  min-width: 34px;
+  text-align: center;
+}
+
+/* Lightbox: center the phone video on a dimmed backdrop, keeping 9:16 */
+.hero-video-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(26,26,26,0.86);
+  backdrop-filter: blur(4px);
+  animation: heroVideoFade .2s ease;
+}
+@keyframes heroVideoFade { from { opacity: 0; } to { opacity: 1; } }
+body.hero-video-lock { overflow: hidden; }
+
+.hero-video.is-lightbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: auto;
+  max-width: min(94vw, 52vh);   /* 9:16 → width capped so height fits the screen */
+  height: min(92vh, 165vw);
+  aspect-ratio: 9 / 16;
+  margin: 0;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.55);
+}
+/* Keep controls visible while in the lightbox */
+.hero-video.is-lightbox .hero-video__controls { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video__toggle-icon,
+  .hero-video__controls { transition: none; }
+  .hero-video-backdrop { animation: none; }
 }
 
 /* ===== TRUST STRIP ===== */

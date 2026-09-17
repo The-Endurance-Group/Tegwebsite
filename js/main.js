@@ -256,3 +256,132 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 });
+
+/* ===== Hero video: autoplay + custom controls (TEG palette) ===== */
+(function () {
+  var frame = document.getElementById('heroVideo');
+  if (!frame) return;
+  var video = frame.querySelector('.hero-video__el');
+  if (!video) return;
+
+  var bigToggle = frame.querySelector('.hero-video__toggle');
+  var playBtn = frame.querySelector('.hvc-play');
+  var muteBtn = frame.querySelector('.hvc-mute');
+  var fsBtn = frame.querySelector('.hvc-fs');
+  var progress = frame.querySelector('.hvc-progress');
+  var progressFill = frame.querySelector('.hvc-progress__fill');
+  var timeLabel = frame.querySelector('.hvc-time');
+
+  var ICON_PLAY = '<path d="M8 5v14l11-7z"/>';
+  var ICON_PAUSE = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
+  // Speaker + sound waves (unmuted) vs speaker + X (muted)
+  var ICON_VOL_ON = '<path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M15.5 8.5a4.5 4.5 0 010 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 6a8 8 0 010 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>';
+  var ICON_VOL_OFF = '<path d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>';
+  var ICON_EXPAND = '<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+  var ICON_CLOSE = '<path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+
+  function fmt(t) {
+    if (!t || isNaN(t)) t = 0;
+    var m = Math.floor(t / 60);
+    var s = Math.floor(t % 60);
+    return m + ':' + (s < 10 ? '0' + s : s);
+  }
+
+  function syncPlayIcons() {
+    var paused = video.paused;
+    frame.classList.toggle('is-paused', paused);
+    if (playBtn) playBtn.querySelector('svg').innerHTML = paused ? ICON_PLAY : ICON_PAUSE;
+    if (playBtn) playBtn.setAttribute('aria-label', paused ? 'Play' : 'Pause');
+  }
+
+  function syncMuteIcon() {
+    var on = !video.muted && video.volume > 0;
+    frame.classList.toggle('is-unmuted', on);
+    if (muteBtn) {
+      muteBtn.querySelector('svg').innerHTML = on ? ICON_VOL_ON : ICON_VOL_OFF;
+      muteBtn.setAttribute('aria-label', on ? 'Mute' : 'Unmute');
+    }
+  }
+
+  function togglePlay() {
+    if (video.paused) { video.play(); } else { video.pause(); }
+  }
+
+  function toggleMute() {
+    video.muted = !video.muted;
+    if (!video.muted && video.volume === 0) video.volume = 1;
+    syncMuteIcon();
+  }
+
+  // Custom lightbox: center the video on a dimmed backdrop, keep 9:16 (no
+  // native fullscreen, which stretches the portrait video across the screen).
+  var backdrop = null;
+  function openLightbox() {
+    if (frame.classList.contains('is-lightbox')) return;
+    backdrop = document.createElement('div');
+    backdrop.className = 'hero-video-backdrop';
+    backdrop.addEventListener('click', closeLightbox);
+    document.body.appendChild(backdrop);
+    document.body.classList.add('hero-video-lock');
+    frame.classList.add('is-lightbox');
+    if (fsBtn) { fsBtn.querySelector('svg').innerHTML = ICON_CLOSE; fsBtn.setAttribute('aria-label', 'Close'); }
+    document.addEventListener('keydown', onLightboxKey);
+  }
+  function closeLightbox() {
+    if (!frame.classList.contains('is-lightbox')) return;
+    frame.classList.remove('is-lightbox');
+    document.body.classList.remove('hero-video-lock');
+    if (backdrop) { backdrop.remove(); backdrop = null; }
+    if (fsBtn) { fsBtn.querySelector('svg').innerHTML = ICON_EXPAND; fsBtn.setAttribute('aria-label', 'Fullscreen'); }
+    document.removeEventListener('keydown', onLightboxKey);
+  }
+  function onLightboxKey(e) { if (e.key === 'Escape') closeLightbox(); }
+  function toggleFs() {
+    if (frame.classList.contains('is-lightbox')) closeLightbox();
+    else openLightbox();
+  }
+
+  function seekFromEvent(e) {
+    var rect = progress.getBoundingClientRect();
+    var x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+    var ratio = Math.max(0, Math.min(1, x / rect.width));
+    if (video.duration) video.currentTime = ratio * video.duration;
+  }
+
+  if (bigToggle) bigToggle.addEventListener('click', togglePlay);
+  if (playBtn) playBtn.addEventListener('click', togglePlay);
+  if (muteBtn) muteBtn.addEventListener('click', toggleMute);
+  if (fsBtn) fsBtn.addEventListener('click', toggleFs);
+
+  video.addEventListener('play', syncPlayIcons);
+  video.addEventListener('pause', syncPlayIcons);
+  video.addEventListener('volumechange', syncMuteIcon);
+  video.addEventListener('timeupdate', function () {
+    var pct = video.duration ? (video.currentTime / video.duration) * 100 : 0;
+    if (progressFill) progressFill.style.width = pct + '%';
+    if (progress) progress.setAttribute('aria-valuenow', Math.round(pct));
+    if (timeLabel) timeLabel.textContent = fmt(video.currentTime);
+  });
+
+  if (progress) {
+    var scrubbing = false;
+    progress.addEventListener('mousedown', function (e) { scrubbing = true; seekFromEvent(e); });
+    document.addEventListener('mousemove', function (e) { if (scrubbing) seekFromEvent(e); });
+    document.addEventListener('mouseup', function () { scrubbing = false; });
+    progress.addEventListener('click', seekFromEvent);
+    progress.addEventListener('touchstart', function (e) { seekFromEvent(e); }, { passive: true });
+    progress.addEventListener('touchmove', function (e) { seekFromEvent(e); }, { passive: true });
+    progress.addEventListener('keydown', function (e) {
+      if (!video.duration) return;
+      if (e.key === 'ArrowRight') { video.currentTime = Math.min(video.duration, video.currentTime + 5); e.preventDefault(); }
+      else if (e.key === 'ArrowLeft') { video.currentTime = Math.max(0, video.currentTime - 5); e.preventDefault(); }
+      else if (e.key === ' ' || e.key === 'Enter') { togglePlay(); e.preventDefault(); }
+    });
+  }
+
+  // Autoplay must start muted; browsers may still block it — reflect real state.
+  syncPlayIcons();
+  syncMuteIcon();
+  var attempt = video.play();
+  if (attempt && attempt.catch) { attempt.catch(function () { syncPlayIcons(); }); }
+})();
