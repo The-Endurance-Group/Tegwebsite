@@ -212,6 +212,9 @@ const MIME_TYPES = {
   '.xml': 'application/xml; charset=utf-8',
   '.txt': 'text/plain; charset=utf-8',
   '.webp': 'image/webp',
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm',
+  '.mov': 'video/quicktime',
 };
 
 function readBody(req) {
@@ -398,20 +401,59 @@ function serveStatic(req, res) {
     return;
   }
 
+  const ext = path.extname(filePath).toLowerCase();
+  const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+  const isHtml = ext === '.html' || ext === '';
+  const isVideo = ext === '.mp4' || ext === '.webm' || ext === '.mov';
+  const cacheControl = isHtml
+    ? 'no-cache, must-revalidate'
+    : 'public, max-age=31536000, immutable';
+
+  // Videos: stream with HTTP range support so browsers can seek and start fast.
+  if (isVideo) {
+    fs.stat(filePath, (err, stat) => {
+      if (err) {
+        res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+        res.end('Not found');
+        return;
+      }
+      const total = stat.size;
+      const range = req.headers.range;
+      const baseHeaders = {
+        'Content-Type': contentType,
+        'Cache-Control': cacheControl,
+        'Accept-Ranges': 'bytes',
+      };
+      if (range) {
+        const m = /bytes=(\d*)-(\d*)/.exec(range);
+        let start = m && m[1] ? parseInt(m[1], 10) : 0;
+        let end = m && m[2] ? parseInt(m[2], 10) : total - 1;
+        if (isNaN(start) || isNaN(end) || start > end || start >= total) {
+          res.writeHead(416, { 'Content-Range': 'bytes */' + total });
+          res.end();
+          return;
+        }
+        if (end >= total) end = total - 1;
+        res.writeHead(206, Object.assign({}, baseHeaders, {
+          'Content-Range': 'bytes ' + start + '-' + end + '/' + total,
+          'Content-Length': end - start + 1,
+        }));
+        fs.createReadStream(filePath, { start: start, end: end }).pipe(res);
+      } else {
+        res.writeHead(200, Object.assign({}, baseHeaders, { 'Content-Length': total }));
+        fs.createReadStream(filePath).pipe(res);
+      }
+    });
+    return;
+  }
+
   fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
       res.end('Not found');
       return;
     }
-    const ext = path.extname(filePath).toLowerCase();
-    const isHtml = ext === '.html' || ext === '';
-    const headers = { 'Content-Type': MIME_TYPES[ext] || 'application/octet-stream' };
-    if (isHtml) {
-      headers['Cache-Control'] = 'no-cache, must-revalidate';
-    } else {
-      headers['Cache-Control'] = 'public, max-age=31536000, immutable';
-    }
+    const headers = { 'Content-Type': contentType, 'Cache-Control': cacheControl };
     res.writeHead(200, headers);
     res.end(data);
   });

@@ -239,15 +239,55 @@
     <!-- Hero -->
     <section class="hero hero--page section">
       <div class="container">
-        <div class="claude-hero-badge">
-          <img src="images/claude-logo.jpg" alt="Claude">
-          <span>Claude Partner Network Member</span>
-        </div>
-        <h1>You Got Claude.<br>We Make It Work.</h1>
-        <p class="lede" style="max-width: 580px; margin-top: 20px;">Setup, Skills, integrations with your other systems, and team training. We close the gap between what Claude can do and what your team does every day.</p>
-        <div class="btn-group" style="margin-top: 32px;">
-          <a class="btn btn-primary" href="contact.html">Schedule an Implementation Call</a>
-          <a class="btn btn-secondary" href="how-to-get-started.html">How We Get Started</a>
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="claude-hero-badge">
+              <img src="images/claude-logo.jpg" alt="Claude">
+              <span>Claude Partner Network Member</span>
+            </div>
+            <h1>You Got Claude.<br>We Make It Work.</h1>
+            <p class="lede" style="max-width: 580px; margin-top: 20px;">Setup, Skills, integrations with your other systems, and team training. We close the gap between what Claude can do and what your team does every day.</p>
+            <div class="btn-group" style="margin-top: 32px;">
+              <a class="btn btn-primary" href="contact.html">Schedule an Implementation Call</a>
+              <a class="btn btn-secondary" href="how-to-get-started.html">How We Get Started</a>
+            </div>
+          </div>
+          <div class="hero-video" id="heroVideo">
+            <video
+              class="hero-video__el"
+              playsinline
+              autoplay
+              muted
+              loop
+              preload="auto"
+              poster="videos/hero-claude-poster.jpg"
+              aria-label="The Endurance Group — Claude in action">
+              <source src="videos/hero-claude.webm" type="video/webm">
+              <source src="videos/hero-claude.mp4" type="video/mp4">
+            </video>
+
+            <!-- Big center play/pause tap target -->
+            <button class="hero-video__toggle" type="button" aria-label="Play or pause video">
+              <svg class="hero-video__toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+
+            <!-- Custom controls (TEG palette) -->
+            <div class="hero-video__controls">
+              <button class="hvc-btn hvc-play" type="button" aria-label="Play">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+              <div class="hvc-progress" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="hvc-progress__fill"></div>
+              </div>
+              <span class="hvc-time">0:00</span>
+              <button class="hvc-btn hvc-mute" type="button" aria-label="Unmute">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z" opacity=".9"/><line x1="19" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </button>
+              <button class="hvc-btn hvc-fs" type="button" aria-label="Fullscreen">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
