@@ -24,6 +24,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon-network.png">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .service-card-bullets {
+      padding: 0;
+      margin: 0 0 4px;
+      list-style: none;
+    }
+    .service-card-bullets li {
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+    .service-card-bullets li:last-child { border-bottom: none; }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -134,58 +149,75 @@
     <section class="hero hero--page section">
       <div class="container reveal">
         <span class="eyebrow">Solutions</span>
-        <h1>Claude Implementation, Delivered.</h1>
-        <p class="lede">You scope the outcome. TEG owns delivery — from initial setup through Skills, MCPs, integrations, and team training. One certified team, one accountable partner.</p>
+        <h1>What TEG Builds.</h1>
+        <p class="lede">System integrations. Automated workflows. Custom Claude applications. Setup and training. Four things, done well, by a certified team that owns the outcome.</p>
         <hr class="hero-divider">
       </div>
     </section>
 
-    <!-- Project-Based Service -->
+    <!-- Intro -->
     <section class="section section--alt">
       <div class="container">
-        <div class="grid grid--2 reveal">
+        <div class="prose reveal" style="max-width:640px;">
+          <p>TEG is an official Anthropic Claude partner. Work with us on a fixed-scope project, or keep a bank of hours on retainer — load up, draw down, refill as needed. One certified team, either way.</p>
+        </div>
+      </div>
+    </section>
 
-          <!-- Project-Based Service card -->
+    <!-- Four things -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">What we build</span>
+          <h2>Four things, done well.</h2>
+        </div>
+        <div class="grid grid--4 reveal" style="margin-top:40px; align-items:start;">
+
+          <!-- System Integrations -->
           <div class="feature-card">
-            <div class="icon-badge icon-badge--pink">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <h2>Project-Based Service</h2>
-            <p>You scope it, TEG owns delivery. Buildouts, Skills &amp; MCPs, training, or custom applications — fixed scope, defined timeline, one certified team accountable for the outcome.</p>
-            <a href="project-based.html" class="btn btn-primary">See Project-Based Service</a>
+            <h3>System Integrations</h3>
+            <ul class="service-card-bullets">
+              <li>Connect Claude to your CRM, email, Slack, and document tools — no more copy-pasting between apps</li>
+              <li>Build MCP servers that reach custom applications, proprietary databases, and legacy systems standard tools can't touch</li>
+            </ul>
           </div>
 
-          <!-- What's included -->
+          <!-- Automated Workflows -->
           <div class="feature-card">
-            <div class="icon-badge icon-badge--teal">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </div>
-            <h2>What we build</h2>
-            <ul style="padding-left:0; list-style:none; margin:0 0 20px;">
-              <li style="padding:6px 0; border-bottom:1px solid var(--border-light);">Claude environment setup &amp; workspace configuration</li>
-              <li style="padding:6px 0; border-bottom:1px solid var(--border-light);">Custom Claude Skills and MCP servers</li>
-              <li style="padding:6px 0; border-bottom:1px solid var(--border-light);">System integrations (CRM, Slack, email, documents)</li>
-              <li style="padding:6px 0; border-bottom:1px solid var(--border-light);">Operational automations and reconciliation workflows</li>
-              <li style="padding:6px 0;">Team training and handover</li>
+            <h3>Automated Workflows</h3>
+            <ul class="service-card-bullets">
+              <li>Build scheduled pipelines that monitor, route, and act on data across your systems — no manual moving required</li>
+              <li>Automate the repetitive work: lead qualification, reconciliation, alerts, follow-ups — so your team focuses on what actually needs them</li>
             </ul>
-            <a href="specialties.html" class="btn btn-secondary">See our specialties</a>
+          </div>
+
+          <!-- Custom Claude Applications -->
+          <div class="feature-card">
+            <h3>Custom Claude Applications</h3>
+            <ul class="service-card-bullets">
+              <li>Build purpose-built Claude tools for your team's specific workflows — internal tools, client-facing products, or back-office systems</li>
+              <li>TEG scopes the build, writes the code, and hands you a working application with your team trained to run it</li>
+            </ul>
+          </div>
+
+          <!-- Claude Set Up and Training -->
+          <div class="feature-card">
+            <h3>Claude Set Up and Training</h3>
+            <ul class="service-card-bullets">
+              <li>Configure Claude for your environment — Projects, Skills, Connectors, Code, and the specific workflows your people actually run</li>
+              <li>Train your team hands-on so they're doing real work on day one, not just experimenting with prompts</li>
+            </ul>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- How it works -->
-    <section class="section">
+    <!-- CTA -->
+    <section class="section section--alt">
       <div class="container">
-        <div class="prose reveal">
-          <span class="eyebrow">How it works</span>
-          <h2>You define the outcome. We deliver it.</h2>
-          <p>Every engagement starts with scoping: what does your team need, what does success look like, and what's the right order of operations to get there. TEG brings the certified engineers, manages the build, and hands off a working system with your team trained to own it.</p>
-          <p>We work deepest in real estate, B2B technology, and professional services. The first conversation is always free — no pitch, just an honest look at what would actually move the needle for your team.</p>
-          <div class="example-callout">
-            <strong>Need a certified developer embedded on your team directly?</strong> Staff augmentation is occasionally available for inbound requests with the right fit. <a href="contact.html">Contact us to discuss.</a>
-          </div>
+        <div class="prose reveal" style="max-width:640px;">
+          <p>The first conversation is always free. TEG will tell you honestly what would move the needle for your team — and what wouldn't.</p>
           <a href="contact.html" class="btn btn-primary">Talk to TEG</a>
         </div>
       </div>
