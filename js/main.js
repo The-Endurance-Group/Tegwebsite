@@ -183,12 +183,15 @@ document.addEventListener('DOMContentLoaded', function () {
       return '\x00LNK' + idx + '\x00';
     });
     var escaped = escapeHtml(placeholder);
+    // Restore markdown links as <a> tags
     links.forEach(function(lnk, idx) {
       escaped = escaped.replace('\x00LNK' + idx + '\x00',
         '<a href="' + escapeHtml(lnk.url) + '" target="_blank" rel="noopener">' + escapeHtml(lnk.label) + '</a>');
     });
     return escaped
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      // Auto-link bare https:// URLs not already inside an <a>
+      .replace(/(?<!href=")(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
       .replace(/\n/g, '<br>');
   }
 
