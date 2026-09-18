@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How MCP Connects Claude to Custom Applications, Proprietary Data, and Legacy Systems | The Endurance Group</title>
+  <meta name="description" content="Claude can answer questions. But can it actually work inside your business? MCP is the secure bridge that connects Claude to internal systems standard integrations can't reach.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/mcp-business-systems.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="How MCP Connects Claude to Custom Applications, Proprietary Data, and Legacy Systems">
+  <meta property="og:description" content="Claude can answer questions. But can it actually work inside your business? MCP is the secure bridge that connects Claude to internal systems standard integrations can't reach.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/mcp-business-systems.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/conor-sullivan.html">
+  <meta property="article:published_time" content="2026-09-18T09:00:00-04:00">
+  <meta name="author" content="Conor Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How MCP Connects Claude to Custom Applications, Proprietary Data, and Legacy Systems">
+  <meta name="twitter:description" content="Claude can answer questions. But can it actually work inside your business? MCP is the secure bridge that connects Claude to internal systems standard integrations can't reach.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .video-embed {
+      margin: 36px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+      line-height: 0;
+    }
+    .video-embed video {
+      width: 100%;
+      display: block;
+      max-height: 520px;
+    }
+    .workflow-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    @media (max-width: 640px) {
+      .workflow-compare { grid-template-columns: 1fr; }
+    }
+    .workflow-col {
+      padding: 24px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+    }
+    .workflow-col--before { border-color: var(--border); }
+    .workflow-col--after { border-color: var(--accent); background: rgba(101,182,174,.05); }
+    .workflow-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin: 0 0 16px;
+      color: var(--text-muted);
+    }
+    .workflow-col--after h4 { color: var(--accent); }
+    .workflow-col ol {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    .workflow-col ol li { margin-bottom: 8px; }
+    .permission-list {
+      margin: 24px 0;
+      padding: 0;
+      list-style: none;
+    }
+    .permission-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .permission-list li:last-child { border-bottom: none; }
+    .perm-label {
+      flex: 1;
+    }
+    .perm-status {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .perm-status--allow { color: var(--accent); }
+    .perm-status--block { color: var(--color-pink, #e05c7a); }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "AI automation and strategy for B2B companies in real estate, technology, and professional services.",
+    "foundingDate": "1998",
+    "priceRange": "$750-$6000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": { "@type": "Person", "name": "Jim Sullivan" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How MCP Connects Claude to Custom Applications, Proprietary Data, and Legacy Systems",
+    "description": "Claude can answer questions. But can it actually work inside your business? MCP is the secure bridge that connects Claude to internal systems standard integrations can't reach.",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "datePublished": "2026-09-18",
+    "dateModified": "2026-09-18",
+    "author": { "@type": "Person", "name": "Conor Sullivan", "jobTitle": "Vice President" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": { "@type": "ImageObject", "url": "https://www.theendurancegroup.com/images/og-default.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://theendurancegroup.com/blog/mcp-business-systems.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does MCP replace Salesforce or HubSpot integrations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Standard integrations are usually the best option when they already provide the capabilities a company needs. MCP becomes particularly valuable for custom applications, proprietary databases, legacy systems, and specialized workflows that standard integrations cannot reach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does MCP give Claude access to everything in my system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. A properly designed MCP connection exposes only the information and actions you explicitly approve. Claude can read and act only within the boundaries defined during implementation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can MCP connect to a legacy system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Potentially. The approach depends on whether the system offers an API, database access, automation interface, or another reliable integration point. The Endurance Group evaluates each system individually to determine the right connection method."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does the MCP server run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It can be deployed within infrastructure selected to meet the company's security, authentication, and operational requirements — including on-premise, in a private cloud, or in a managed environment."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="../index.html"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../ideas.html">Ideas</a></li>          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">AI Automations</span>
+        <h1>Claude Can Answer Questions. But Can It Actually Work Inside Your Business?</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Vice President</span>
+          <span class="divider">·</span>
+          <span>September 18, 2026</span>
+        </div>
+        <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p>Claude can analyze anything you hand it — a document, a data export, a pasted email thread. But there's a gap between what Claude can reason about and what it can actually do inside your business. By default, Claude cannot access your custom applications, query your proprietary databases, or take action inside the systems your team runs every day. The result is that employees are left searching, copying, pasting, and manually updating records — doing the connective tissue work by hand that AI should be handling.</p>
+
+          <p>MCP closes that gap. Here's how it works.</p>
+
+          <div class="video-embed">
+            <video controls preload="metadata">
+              <source src="../videos/mcp-business-systems.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <h2>Standard integrations only solve part of the problem</h2>
+
+          <p>Major platforms already offer AI integrations. Salesforce, HubSpot, Google Workspace, and Slack all have native connections that let Claude interact with the data those tools hold. If the system you need is one of those, you may not need a custom connection at all — the integration already exists.</p>
+
+          <p>But most businesses run on more than a handful of mainstream SaaS platforms. They also run on:</p>
+
+          <ul>
+            <li>Custom internal applications built by their own team</li>
+            <li>Proprietary databases that store the data the business actually runs on</li>
+            <li>Legacy software that predates modern API standards</li>
+            <li>Industry-specific platforms with no off-the-shelf AI integration</li>
+            <li>Internally developed operational tools with undocumented workflows</li>
+          </ul>
+
+          <p>Standard integrations don't reach these systems. That's where MCP becomes essential.</p>
+
+          <h2>What is MCP?</h2>
+
+          <p>Model Context Protocol — MCP — is a standard that allows AI assistants like Claude to securely interact with external tools, data, and applications.</p>
+
+          <p>Think of it as a controlled bridge. Claude is on one side. Your internal system is on the other. The MCP server sits in the middle and acts as the gatekeeper: it decides what information can cross, what actions can be taken, and what stays locked out entirely. Nothing flows through the bridge that you haven't explicitly approved.</p>
+
+          <p>The key word is <em>controlled</em>. Claude doesn't gain unrestricted access to the system on the other side. It gains only the access you define — and it can only take the actions you authorize.</p>
+
+          <h2>What Claude can do through an MCP connection</h2>
+
+          <p>An MCP connection gives Claude two types of controlled capability: reading approved information and taking approved actions.</p>
+
+          <p><strong>Reading approved information</strong> might include things like: retrieving a project's current status, looking up an internal customer record, checking inventory or availability, searching a proprietary knowledge base, or pulling data from a legacy system that would otherwise require a manual query.</p>
+
+          <p><strong>Taking approved actions</strong> might include: creating a follow-up task, updating an internal record, generating a formatted report, triggering an approved workflow, or submitting data to another internal system.</p>
+
+          <p>In both cases, the scope is bounded. Claude doesn't have the run of the application — it has the access you designed.</p>
+
+          <h2>What this looks like in practice</h2>
+
+          <p>Here's a concrete example. An employee needs to check the status of the Johnson project and create a follow-up task for Friday.</p>
+
+          <div class="workflow-compare">
+            <div class="workflow-col workflow-col--before">
+              <h4>Without MCP</h4>
+              <ol>
+                <li>Open the project management system</li>
+                <li>Search for the Johnson project</li>
+                <li>Read and interpret the status</li>
+                <li>Open the task management app</li>
+                <li>Create the follow-up task manually</li>
+              </ol>
+            </div>
+            <div class="workflow-col workflow-col--after">
+              <h4>With MCP</h4>
+              <ol>
+                <li>Employee asks Claude for the status and a Friday task</li>
+                <li>Claude retrieves the approved project information</li>
+                <li>Claude summarizes the current status</li>
+                <li>Claude creates the authorized follow-up task</li>
+                <li>Employee receives confirmation</li>
+              </ol>
+            </div>
+          </div>
+
+          <p>The work still happens in your systems — not inside an isolated chatbot. The project record is updated in your project management tool. The task is created wherever tasks live. Claude is the interface; your infrastructure is unchanged.</p>
+
+          <h2>How permissions keep the connection controlled</h2>
+
+          <p>The security of an MCP connection comes from the specificity of what you allow. A well-designed connection defines exactly what Claude can reach and what it cannot. Here's a simplified example of what that looks like:</p>
+
+          <ul class="permission-list">
+            <li>
+              <span class="perm-label">Read project status</span>
+              <span class="perm-status perm-status--allow">Allowed</span>
+            </li>
+            <li>
+              <span class="perm-label">Create follow-up tasks</span>
+              <span class="perm-status perm-status--allow">Allowed</span>
+            </li>
+            <li>
+              <span class="perm-label">Update client records</span>
+              <span class="perm-status perm-status--allow">Allowed</span>
+            </li>
+            <li>
+              <span class="perm-label">Access payroll data</span>
+              <span class="perm-status perm-status--block">Blocked</span>
+            </li>
+            <li>
+              <span class="perm-label">Delete records</span>
+              <span class="perm-status perm-status--block">Blocked</span>
+            </li>
+            <li>
+              <span class="perm-label">Approve invoices over $5,000</span>
+              <span class="perm-status perm-status--block">Requires human approval</span>
+            </li>
+          </ul>
+
+          <p>Claude reaches only what you approve — and can perform only the actions you define. MCP itself isn't automatically secure; security depends on how the connection, authentication, permissions, and infrastructure are implemented. That's the work.</p>
+
+          <h2>Why building an MCP connection is more than an API call</h2>
+
+          <p>Turning Claude loose on an internal system isn't a configuration task. A production-ready MCP connection requires understanding the business workflow, identifying the right data and actions, reviewing the system's APIs or database structure, designing authentication and permission layers, building and hosting the MCP server, validating inputs and outputs, creating approval steps where human sign-off is required, logging activity, testing failure scenarios, and maintaining the connection as systems change over time.</p>
+
+          <p>It's a combination of software integration, workflow design, and security engineering. Not "turning on Claude."</p>
+
+          <h2>How The Endurance Group builds these connections</h2>
+
+          <p>We approach every MCP engagement the same way:</p>
+
+          <ol>
+            <li><strong>Identify the workflow.</strong> We start with a process that's repetitive or frustrating — one that currently requires employees to move between systems to get something done.</li>
+            <li><strong>Define the access.</strong> We work with your team to determine exactly what Claude should be allowed to read and do. Nothing more.</li>
+            <li><strong>Build the connection.</strong> We develop the MCP server and connect it to the relevant internal application, database, or legacy system.</li>
+            <li><strong>Test the workflow.</strong> We validate accuracy, permissions, error handling, and the day-to-day employee experience before anything goes live.</li>
+            <li><strong>Deploy and maintain it.</strong> We launch the connection and update it as the underlying systems and business requirements evolve.</li>
+          </ol>
+
+          <p>The Endurance Group designs, builds, and deploys MCP connections around the way your team actually works — not around what's easiest to configure.</p>
+
+          <h2>Start with one workflow</h2>
+
+          <p>You don't need to connect every internal system at once. The right starting point is one workflow that is repetitive, time-consuming, rules-based, dependent on an internal system, and valuable enough to produce a measurable return. Get that one running well, and the next one becomes much faster to scope and build.</p>
+
+          <p>Have an internal application, proprietary database, or legacy system that Claude can't reach? Start with one workflow. We can help you design and build the secure connection.</p>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="../contact.html">Discuss an MCP Use Case</a>
+            <a class="btn btn-secondary" href="../solutions.html">See What We Build</a>
+          </div>
+
+          <h2>Frequently asked questions</h2>
+
+          <p><strong>Does MCP replace Salesforce or HubSpot integrations?</strong><br>
+          No. Standard integrations are usually the right choice when they already cover what you need. MCP becomes valuable for the systems those integrations can't reach — custom applications, proprietary databases, legacy software, specialized platforms.</p>
+
+          <p><strong>Does MCP give Claude access to everything in my system?</strong><br>
+          No. A properly designed connection exposes only the information and actions you explicitly approve. Claude can read and act only within the boundaries you define.</p>
+
+          <p><strong>Can MCP connect to a legacy system?</strong><br>
+          Potentially. It depends on whether the system offers an API, database access, automation interface, or another reliable integration point. We evaluate each system individually.</p>
+
+          <p><strong>Where does the MCP server run?</strong><br>
+          It can be deployed within infrastructure selected to meet your security, authentication, and operational requirements — including on-premise, in a private cloud, or in a managed environment.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="mcp-custom-ai-integrations.html">MCP: how we connect AI to the tools your team already runs</a></h3>
+            <p>When to build a custom MCP server versus configure an existing integration — and how we decide which path makes sense.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="mcp-servers-for-business.html">MCP servers for business: what they are and when you need one</a></h3>
+            <p>A plain-English explanation of what an MCP server does, what it connects to, and when building one actually makes sense for a B2B team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <p class="footer-tagline">Your Claude Implementation Partner</p>
+        <p class="footer-address">Portland, ME &middot; (207) 846-6000</p>
+      </div>
+      <div class="footer-columns">
+        <nav aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="../claude-setup.html">Claude Initial Setup</a></li>
+            <li><a href="../claude.html">Skills &amp; MCPs</a></li>
+            <li><a href="../solutions.html">Training &amp; Maintenance</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Products">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Commonality</a></li>
+            <li><a href="https://coachonix.com" target="_blank" rel="noopener">Coachonix</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Specialties">
+          <h3>Specialties</h3>
+          <ul>
+            <li><a href="../specialties.html#sales-and-marketing">Functional Specialties</a></li>
+            <li><a href="../specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="../specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="../specialties.html#professional-services">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../how-to-get-started.html">Get Started</a></li>            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../ideas.html">Ideas</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+            <li><a href="../free-training.html">Free Training Session</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/the-endurance-group" target="_blank" rel="noopener" aria-label="The Endurance Group on LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5s-1.98-.9-1.98-2S1.9 1.5 3 1.5s1.98.9 1.98 2zM1.2 8.3h3.6V22H1.2V8.3zM8.4 8.3h3.45v1.87h.05c.48-.9 1.66-1.87 3.42-1.87 3.66 0 4.34 2.4 4.34 5.53V22h-3.6v-6.4c0-1.53-.03-3.5-2.14-3.5-2.14 0-2.47 1.67-2.47 3.39V22H8.4V8.3z"/></svg></a>
+          <a href="https://www.facebook.com/TheEnduranceGroupMaine/" target="_blank" rel="noopener" aria-label="The Endurance Group on Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.13 8.44 9.93v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.8 8.44-4.93 8.44-9.94z"/></svg></a>
+          <a href="https://www.instagram.com/theendurancegroup/" target="_blank" rel="noopener" aria-label="The Endurance Group on Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.59 1.8c.46-.16 1.26-.35 2.43-.4C9.29 1.34 9.67 1.33 12 1.33zM12 6.86A5.14 5.14 0 1 0 12 17.14 5.14 5.14 0 0 0 12 6.86zm0 8.48a3.34 3.34 0 1 1 0-6.68 3.34 3.34 0 0 1 0 6.68zm5.34-8.69a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
+          <a href="https://x.com/_EnduranceGroup" target="_blank" rel="noopener" aria-label="The Endurance Group on X"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.4 8.5L23 22h-6.9l-5.4-7-6.2 7H1.3l7.9-9L1 2h7l4.9 6.5L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw" target="_blank" rel="noopener" aria-label="The Endurance Group on YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 7.2s-.23-1.64-.94-2.36c-.9-.95-1.9-.95-2.36-1C16.9 3.6 12 3.6 12 3.6h-.01s-4.9 0-8.2.24c-.46.05-1.46.05-2.36 1-.71.72-.94 2.36-.94 2.36S.2 9.13.2 11.04v1.8c0 1.92.25 3.84.25 3.84s.23 1.64.94 2.36c.9.95 2.07.92 2.6 1.02C5.9 20.27 12 20.33 12 20.33s4.9-.01 8.2-.25c.46-.05 1.46-.05 2.36-1 .71-.72.94-2.36.94-2.36s.25-1.92.25-3.84v-1.8c0-1.92-.25-3.84-.25-3.84zM9.7 14.9V8.95l6.05 2.98-6.05 2.97z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
