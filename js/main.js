@@ -175,7 +175,19 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function formatChatText(text) {
-    return escapeHtml(text)
+    // Extract markdown links before escaping so brackets/parens survive
+    var links = [];
+    var placeholder = text.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+|\/[^)\s]*)\)/g, function(_, label, url) {
+      var idx = links.length;
+      links.push({ url: url, label: label });
+      return '\x00LNK' + idx + '\x00';
+    });
+    var escaped = escapeHtml(placeholder);
+    links.forEach(function(lnk, idx) {
+      escaped = escaped.replace('\x00LNK' + idx + '\x00',
+        '<a href="' + escapeHtml(lnk.url) + '" target="_blank" rel="noopener">' + escapeHtml(lnk.label) + '</a>');
+    });
+    return escaped
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
       .replace(/\n/g, '<br>');
   }
