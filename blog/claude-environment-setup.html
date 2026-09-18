@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What It Looks Like When TEG Sets Up Claude for Your Team | The Endurance Group</title>
+  <meta name="description" content="Most teams install Claude and don't get far. TEG sets up your entire Claude environment in four structured meetings — built around your workflows, your tools, your team.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/claude-environment-setup.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="What It Looks Like When TEG Sets Up Claude for Your Team">
+  <meta property="og:description" content="Most teams install Claude and don't get far. TEG sets up your entire Claude environment in four structured meetings — built around your workflows, your tools, your team.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/claude-environment-setup.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What It Looks Like When TEG Sets Up Claude for Your Team">
+  <meta name="twitter:description" content="Most teams install Claude and don't get far. TEG sets up your entire Claude environment in four structured meetings — built around your workflows, your tools, your team.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .setup-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin: 32px 0;
+    }
+    .setup-step {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .setup-step-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-pink, #e11d48);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .setup-step-body h3 { margin: 0 0 6px; font-size: 17px; }
+    .setup-step-body p { margin: 0; color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What It Looks Like When TEG Sets Up Claude for Your Team",
+    "description": "Most teams install Claude and don't get far. TEG sets up your entire Claude environment in four structured meetings — built around your workflows, your tools, your team.",
+    "datePublished": "2026-09-18",
+    "dateModified": "2026-09-18",
+    "author": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "url": "https://theendurancegroup.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.theendurancegroup.com/images/og-default.png"
+      }
+    },
+    "url": "https://www.theendurancegroup.com/blog/claude-environment-setup.html",
+    "image": "https://www.theendurancegroup.com/images/og-default.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does TEG set up in a Claude environment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TEG configures your Claude organization settings, creates Projects for your team's workflows, builds Skills for your most-used tasks, writes scheduled automations, and connects Claude to your existing tools — CRM, email, Slack, documents, and any custom software your team uses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take TEG to set up a Claude environment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TEG's setup process runs across four meetings. The first three cover discovery, design, and implementation. A fourth refinement meeting happens one week later, after your team has had time to use the system in real work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a Claude Skill?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Claude Skill is a configured workflow built into your Claude environment — a specific task Claude knows how to do for your team, with your context, your tools, and your process baked in. Skills let your team trigger complex workflows with a simple instruction."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my team need technical knowledge to use a TEG-configured Claude environment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. TEG designs the environment around how your team already works. The setup meeting and the refinement meeting both include hands-on training so your team knows exactly how to use what was built. The goal is real work on day one, not a learning curve."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <article>
+
+      <section class="hero hero--page section">
+        <div class="container reveal">
+          <span class="eyebrow"><a href="../blog.html">Blog</a> &rsaquo; <a href="category/ai-automations.html">AI Automations</a></span>
+          <h1>What It Looks Like When TEG Sets Up Claude for Your Team</h1>
+          <p class="lede">Most teams install Claude and don't get far. TEG configures your entire Claude environment in four structured meetings — built around your workflows, your tools, and the way your team actually works.</p>
+          <div class="post-meta">
+            <time datetime="2026-09-18">September 18, 2026</time>
+            &middot; The Endurance Group
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt">
+        <div class="container">
+          <div class="prose reveal">
+
+            <div class="video-embed" style="margin-bottom:40px;">
+              <video controls preload="metadata" style="width:100%; border-radius:8px; display:block;">
+                <source src="../videos/custom-claude-applications.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <h2>Installing Claude is the easy part</h2>
+            <p>Most teams that buy Claude access are up and running within an hour. And then they stall. The tool works — it answers questions, helps with writing, summarizes things — but it doesn't feel like it's really part of how the team operates. It feels like a powerful thing nobody knows quite how to use.</p>
+            <p>That gap isn't a Claude problem. It's a setup problem. Claude works best when it's configured for your specific workflows, your specific tools, and the specific things your team needs to do every day. That configuration is what TEG does.</p>
+
+            <h2>Four meetings. A configured environment.</h2>
+            <p>TEG's setup process is structured across four meetings. Each one has a clear job, and together they produce a Claude environment your team knows how to use from day one.</p>
+
+            <div class="setup-steps">
+
+              <div class="setup-step">
+                <div class="setup-step-num">1</div>
+                <div class="setup-step-body">
+                  <h3>Discovery: we learn how your team works</h3>
+                  <p>We sit with you and understand what you want Claude to do — not in the abstract, but specifically. What will your team use it for on a day-to-day basis? What tasks take too long? What information do people look for repeatedly? What decisions get made over and over with the same inputs? This meeting is about your operation, not Claude's capabilities.</p>
+                </div>
+              </div>
+
+              <div class="setup-step">
+                <div class="setup-step-num">2</div>
+                <div class="setup-step-body">
+                  <h3>Design: we build a system for you</h3>
+                  <p>Based on what we learned, TEG designs your Claude environment. That means creating Skills for your most-used workflows, designing Projects around how your team is organized, writing scheduled automations that run without anyone triggering them, and adding connections to your other software — CRM, email, Slack, documents, anything your team already uses. You review the design before anything gets built.</p>
+                </div>
+              </div>
+
+              <div class="setup-step">
+                <div class="setup-step-num">3</div>
+                <div class="setup-step-body">
+                  <h3>Implementation: we set it all up together</h3>
+                  <p>We build everything in your actual Claude environment while you're in the room. Skills go live, Projects get configured, connections get tested against your real systems. Your team uses it during the session — not in a demo environment, in your actual workspace. Everyone leaves knowing how to use what was built.</p>
+                </div>
+              </div>
+
+              <div class="setup-step">
+                <div class="setup-step-num">4</div>
+                <div class="setup-step-body">
+                  <h3>Refinement: one week later</h3>
+                  <p>A week after implementation, we meet again. By now your team has used the system in real work. Some things will feel perfect. Others will need a tweak. We make those adjustments in the session — updating prompts, adding a Skill, adjusting a workflow, fixing anything that didn't land the way it should have. This meeting is what turns a good setup into a great one.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <h2>What you leave with</h2>
+            <p>After the four meetings, your team has a Claude environment that's actually configured for your work — not a generic AI tool, but a system built around your processes. That includes:</p>
+            <ul>
+              <li>Skills for the tasks your team does most</li>
+              <li>Projects organized around how your team is structured</li>
+              <li>Scheduled workflows running in the background</li>
+              <li>Connections to the tools you already use</li>
+              <li>A team that knows how to use all of it</li>
+            </ul>
+            <p>Every engagement ships with your team trained to own what we built — so when Claude evolves, or your process changes, you know how to adapt it yourself.</p>
+
+            <div class="example-callout">
+              <strong>Want to see what this would look like for your team?</strong> The first conversation is always free. <a href="../contact.html">Schedule a call with TEG.</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Inline FAQ -->
+      <section class="section">
+        <div class="container">
+          <div class="prose reveal">
+            <h2>Common questions</h2>
+
+            <h3>What does TEG set up in a Claude environment?</h3>
+            <p>TEG configures your Claude organization settings, creates Projects for your team's workflows, builds Skills for your most-used tasks, writes scheduled automations, and connects Claude to your existing tools — CRM, email, Slack, documents, and any custom software your team uses.</p>
+
+            <h3>How long does it take?</h3>
+            <p>The process runs across four meetings. The first three cover discovery, design, and implementation. A fourth refinement meeting happens one week later, after your team has had time to use the system in real work.</p>
+
+            <h3>What is a Claude Skill?</h3>
+            <p>A Claude Skill is a configured workflow built into your Claude environment — a specific task Claude knows how to do for your team, with your context, your tools, and your process baked in. Skills let your team trigger complex workflows with a simple instruction.</p>
+
+            <h3>Does my team need technical knowledge to use it?</h3>
+            <p>No. TEG designs the environment around how your team already works. The setup and refinement meetings both include hands-on training so your team knows exactly how to use what was built. The goal is real work on day one, not a learning curve.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--alt">
+        <div class="container">
+          <div class="prose reveal">
+            <h2>Ready to actually use Claude?</h2>
+            <p>TEG configures your Claude environment around your workflows, your tools, and your team. Fixed scope, certified engineers, four meetings from start to done.</p>
+            <a href="../contact.html" class="btn btn-primary">Talk to TEG</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Claude Implementation Partner</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../specialties.html">Specialties</a></li>
+            <li><a href="../ideas.html">Ideas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

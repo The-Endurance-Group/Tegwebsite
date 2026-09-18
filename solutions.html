@@ -25,6 +25,32 @@
   <link rel="icon" type="image/png" href="images/favicon-network.png">
   <link rel="stylesheet" href="css/styles.css">
   <style>
+    .video-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-teal-dark, #0d9488);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .video-toggle svg { transition: transform 0.2s; }
+    .video-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .service-video-wrap {
+      display: none;
+      margin-top: 14px;
+    }
+    .service-video-wrap.is-open { display: block; }
+    .service-video {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
     .service-card-bullets {
       padding: 0;
       margin: 0 0 4px;
@@ -180,6 +206,16 @@
               <li>Connect Claude to your CRM, email, Slack, and document tools — no more copy-pasting between apps</li>
               <li>Build MCP servers that reach custom applications, proprietary databases, and legacy systems standard tools can't touch</li>
             </ul>
+            <button class="video-toggle" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+              Watch the video
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="service-video-wrap">
+              <video class="service-video" controls preload="none">
+                <source src="videos/mcp-business-systems.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
 
           <!-- Automated Workflows -->
@@ -189,6 +225,16 @@
               <li>Build scheduled pipelines that monitor, route, and act on data across your systems — no manual moving required</li>
               <li>Automate the repetitive work: lead qualification, reconciliation, alerts, follow-ups — so your team focuses on what actually needs them</li>
             </ul>
+            <button class="video-toggle" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+              Watch the video
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="service-video-wrap">
+              <video class="service-video" controls preload="none">
+                <source src="videos/automated-workflows.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
 
           <!-- Custom Claude Applications -->
@@ -198,6 +244,16 @@
               <li>Build purpose-built Claude tools for your team's specific workflows — internal tools, client-facing products, or back-office systems</li>
               <li>TEG scopes the build, writes the code, and hands you a working application with your team trained to run it</li>
             </ul>
+            <button class="video-toggle" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+              Watch the video
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="service-video-wrap">
+              <video class="service-video" controls preload="none">
+                <source src="videos/custom-claude-applications.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
 
           <!-- Claude Set Up and Training -->
@@ -268,5 +324,15 @@
   <!-- END SHARED FOOTER -->
 
   <script src="js/main.js" defer></script>
+  <script>
+    document.querySelectorAll('.video-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var wrap = btn.nextElementSibling;
+        var open = wrap.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open);
+        if (!open) wrap.querySelector('video').pause();
+      });
+    });
+  </script>
 </body>
 </html>
