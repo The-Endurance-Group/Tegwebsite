@@ -52,14 +52,23 @@ This is separate from the policy itself and clearly labeled as such. It lists wh
 
 ### Step 4: Output format
 
-Structure the final output as:
+Structure the final output using the exact section markers below. Each marker must appear on its own line, exactly as shown. Do not include any text outside of these four sections.
 
-1. A one-paragraph summary of what was researched and found (or a note that no public research was available)
-2. The full draft policy (Steps 1 to 8 above)
-3. The "Before You Adopt This" question list
-4. A closing note, exactly this tone, do not embellish:
+=== RESEARCH_SUMMARY ===
+A one-paragraph summary of what was researched and found (or a note that no public research was available and the policy assumes private-company status unless stated otherwise).
+=== END_RESEARCH_SUMMARY ===
 
-> This draft gives you a real starting point, built on the same structure public companies use in their own filed governance documents. It isn't tailored to your actual tools, data, or team yet, that's the part that needs a conversation. If you'd like help working through it, The Endurance Group offers a free scoping session to build this out with your team. https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor
+=== DRAFT_POLICY ===
+The full draft policy (sections 1 through 8 from Step 2 above).
+=== END_DRAFT_POLICY ===
+
+=== BEFORE_YOU_ADOPT ===
+The "Before You Adopt This" question list from Step 3 above, clearly labeled as such.
+=== END_BEFORE_YOU_ADOPT ===
+
+=== CLOSING_NOTE ===
+This draft gives you a real starting point, built on the same structure public companies use in their own filed governance documents. It isn't tailored to your actual tools, data, or team yet, that's the part that needs a conversation. If you'd like help working through it, The Endurance Group offers a free scoping session to build this out with your team. https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor
+=== END_CLOSING_NOTE ===
 
 ### Tone and constraints
 
