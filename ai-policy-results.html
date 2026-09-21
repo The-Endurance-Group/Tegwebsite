@@ -135,6 +135,9 @@
   </header>
   <!-- END SHARED HEADER -->
 
+  <!-- Pre-existing render target for html2canvas — must be in DOM on page load, not dynamically appended -->
+  <div id="pdf-render-zone" style="position:fixed;top:0;left:0;width:680px;background:#fff;padding:24px 20px;font-family:Raleway,Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;overflow:hidden;visibility:hidden;pointer-events:none;z-index:99999;"></div>
+
   <main id="main-content">
 
     <!-- No-data fallback -->
@@ -459,12 +462,11 @@
         var pdfHtml = buildPdfHtml(sections);
         var slug = (generatedCompany || 'company').toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
-        // Append as a fully visible element — html2canvas requires a real rendered element.
-        // A hidden/off-screen element produces a blank canvas regardless of z-index tricks.
-        var el = document.createElement('div');
-        el.style.cssText = 'position:fixed;top:0;left:0;width:680px;background:#fff;z-index:99999;padding:24px 20px;font-family:Raleway,Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;overflow:hidden;';
+        // Use a pre-existing DOM element — html2canvas reliably renders existing elements,
+        // not ones dynamically appended to body after page load.
+        var el = document.getElementById('pdf-render-zone');
         el.innerHTML = pdfHtml;
-        document.body.appendChild(el);
+        el.style.visibility = 'visible';
 
         var btn = document.getElementById('btn-dl-again');
         if (btn) btn.disabled = true;
@@ -476,7 +478,8 @@
           html2canvas: { scale: 2, useCORS: true },
           jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
         }).from(el).save().then(function () {
-          document.body.removeChild(el);
+          el.style.visibility = 'hidden';
+          el.innerHTML = '';
           if (btn) btn.disabled = false;
         });
       }
