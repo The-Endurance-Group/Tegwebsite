@@ -350,7 +350,7 @@
             </ul>
 
             <h2>3. Approved Tools</h2>
-            <p>Covered Persons may use generative AI tools for Company work only if the tool appears on the Approved Tool List. The table below is a placeholder for Harborview to populate once it has completed its tool review and procurement process.</p>
+            <p>Covered Persons may use generative AI tools for Company work only if the tool appears on the Approved Tool List. The table below shows what a populated Approved Tool List looks like for Harborview — your version would reflect your actual tool stack after procurement and legal review.</p>
 
             <div class="table-wrap">
               <table>
@@ -364,16 +364,22 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>[Tool name]</td>
-                    <td>[Enterprise / Team / Personal]</td>
-                    <td>[Permitted use cases]</td>
-                    <td>[Prohibited use cases]</td>
+                    <td><strong>Claude for Work</strong><br><span style="font-size:12px;color:#6B6B8A;">claude.ai</span></td>
+                    <td>Harborview Teams plan<br><span style="font-size:12px;color:#6B6B8A;">Company-managed; personal accounts not permitted for work use</span></td>
+                    <td>Drafting and editing, summarization, research on publicly available data, internal documentation, writing assistance, general Q&amp;A</td>
+                    <td>Customer PII or client data sets, MNPI, proprietary algorithm details, source code containing trade secrets, contract terms under NDA</td>
                   </tr>
                   <tr>
-                    <td>[Tool name]</td>
-                    <td>[Enterprise / Team / Personal]</td>
-                    <td>[Permitted use cases]</td>
-                    <td>[Prohibited use cases]</td>
+                    <td><strong>GitHub Copilot</strong><br><span style="font-size:12px;color:#6B6B8A;">GitHub Enterprise Copilot</span></td>
+                    <td>GitHub Enterprise Copilot license<br><span style="font-size:12px;color:#6B6B8A;">Assigned through IT; personal GitHub accounts not permitted</span></td>
+                    <td>Code completion, code review, test generation, inline documentation for internal repositories</td>
+                    <td>Prompts containing customer data, proprietary algorithms marked confidential, credentials or API keys, MNPI-related business logic</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Microsoft 365 Copilot</strong><br><span style="font-size:12px;color:#6B6B8A;">M365 Copilot add-on</span></td>
+                    <td>IT-managed M365 E3/E5 with Copilot license<br><span style="font-size:12px;color:#6B6B8A;">Must be accessed through company tenant only</span></td>
+                    <td>Drafting emails and documents from internal content, meeting recaps in Teams, summarizing internal documents, non-confidential spreadsheet analysis</td>
+                    <td>Documents or emails containing MNPI, customer contract terms, client data, anything subject to active blackout period</td>
                   </tr>
                 </tbody>
               </table>
@@ -459,9 +465,6 @@
     </section>
   </main>
 
-  <!-- Off-screen div for PDF generation -->
-  <div id="pdf-render" style="position:absolute;left:-9999px;top:0;width:680px;font-family:'Raleway',sans-serif;font-size:14px;line-height:1.7;color:#1a1a2e;padding:0;"></div>
-
   <!-- SHARED FOOTER: keep in sync across all pages -->
   <footer class="site-footer">
     <div class="container">
@@ -512,28 +515,31 @@
   <script>
     function doDownloadPdf() {
       var src = document.getElementById('policy-content');
-      var el = document.getElementById('pdf-render');
       if (!window.html2pdf) { alert('PDF library not loaded yet. Please try again in a moment.'); return; }
       var todayStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      // Create a fresh element at visible coordinates (left:-9999px tricks html2canvas into rendering a blank page)
+      var el = document.createElement('div');
+      el.style.cssText = 'position:fixed;top:0;left:0;width:680px;background:#fff;z-index:-9999;padding:24px 20px;font-family:Raleway,Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;pointer-events:none;';
       el.innerHTML =
         '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid #C45E89;">' +
           '<img src="/images/logo.webp" style="height:28px;" alt="The Endurance Group">' +
           '<span style="font-size:10px;font-weight:700;color:#6B6B8A;text-transform:uppercase;letter-spacing:1.2px;">Example AI Usage Policy Draft</span>' +
         '</div>' +
-        '<div style="font-family:\'Raleway\',Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;">' +
+        '<div style="font-family:Raleway,Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;">' +
           src.innerHTML +
         '</div>' +
         '<div style="margin-top:48px;padding-top:12px;border-top:1px solid #E7E2E5;display:flex;align-items:center;justify-content:space-between;">' +
           '<span style="font-size:10px;color:#9B9BAD;">Generated by The Endurance Group &middot; theendurancegroup.com</span>' +
           '<span style="font-size:10px;color:#9B9BAD;">' + todayStr + '</span>' +
         '</div>';
+      document.body.appendChild(el);
       html2pdf().set({
         margin: [15, 15, 15, 15],
         filename: 'harborview-analytics-ai-policy-example.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2, useCORS: true },
         jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
-      }).from(el).save();
+      }).from(el).save().then(function() { document.body.removeChild(el); });
     }
 
     function doDownloadTxt() {
