@@ -521,11 +521,6 @@
               <label for="f-ticker">Stock ticker <span class="field-note">optional — helps with research</span></label>
               <input type="text" id="f-ticker" name="ticker" placeholder="e.g. ACME" style="text-transform:uppercase;" maxlength="10">
             </div>
-            <div class="form-group">
-              <label for="f-industry">Industry <span aria-hidden="true">*</span></label>
-              <input type="text" id="f-industry" name="industry" required placeholder="e.g. Real Estate, Financial Services, Healthcare">
-              <p class="form-error" id="err-industry">Please enter your industry.</p>
-            </div>
             <button type="submit" class="btn btn-primary submit-btn">Generate my draft</button>
           </form>
           <p class="form-disclaimer">No account required. No spam. Your information is used only to personalize the draft and to let us know someone used this tool.</p>
@@ -843,7 +838,6 @@
         var name = document.getElementById('f-name').value.trim();
         var email = document.getElementById('f-email').value.trim();
         var company = document.getElementById('f-company').value.trim();
-        var industry = document.getElementById('f-industry').value.trim();
         var ok = true;
 
         showFieldError('name', !name);
@@ -854,9 +848,6 @@
 
         showFieldError('company', !company);
         if (!company) ok = false;
-
-        showFieldError('industry', !industry);
-        if (!industry) ok = false;
 
         return ok;
       }
@@ -1036,7 +1027,6 @@
         var email = document.getElementById('f-email').value.trim();
         var company = document.getElementById('f-company').value.trim();
         var ticker = document.getElementById('f-ticker').value.trim().toUpperCase();
-        var industry = document.getElementById('f-industry').value.trim();
 
         showLoading();
         startLoadingMessages(company);
@@ -1044,7 +1034,7 @@
         fetch('/api/ai-policy', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: name, email: email, company: company, ticker: ticker, industry: industry }),
+          body: JSON.stringify({ name: name, email: email, company: company, ticker: ticker }),
         })
         .then(function(res) {
           return res.json().then(function(data) { return { status: res.status, data: data }; });

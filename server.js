@@ -811,7 +811,6 @@ async function sendAiPolicyNotification(lead) {
           'Email:    ' + lead.email,
           'Company:  ' + (lead.company || '—'),
           'Ticker:   ' + (lead.ticker || '—'),
-          'Industry: ' + (lead.industry || '—'),
           'IP:       ' + lead.ip,
           'Time:     ' + new Date().toISOString(),
         ].join('\n'),
@@ -849,20 +848,18 @@ async function handleAiPolicy(req, res) {
     var email = (data.email || '').slice(0, 200).trim();
     var company = (data.company || '').slice(0, 200).trim();
     var ticker = (data.ticker || '').replace(/[^A-Za-z0-9.]/g, '').slice(0, 10).toUpperCase();
-    var industry = (data.industry || '').slice(0, 200).trim();
 
-    if (!name || !email || !company || !industry) {
-      respondJson(400, { error: 'Name, email, company, and industry are required.' });
+    if (!name || !email || !company) {
+      respondJson(400, { error: 'Name, email, and company are required.' });
       return;
     }
 
-    console.log('[AI-POLICY]', JSON.stringify({ name, email, company, ticker, industry, ip, ts: new Date().toISOString() }));
-    sendAiPolicyNotification({ name, email, company, ticker, industry, ip });
+    console.log('[AI-POLICY]', JSON.stringify({ name, email, company, ticker, ip, ts: new Date().toISOString() }));
+    sendAiPolicyNotification({ name, email, company, ticker, ip });
 
     var userContent = [
       'Company: ' + company,
       'Stock ticker: ' + (ticker || 'not provided'),
-      'Industry: ' + industry,
     ].join('\n');
 
     var output = await callClaudeApi(
