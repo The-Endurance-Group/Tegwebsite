@@ -59,7 +59,7 @@ Structure the final output as:
 3. The "Before You Adopt This" question list
 4. A closing note, exactly this tone, do not embellish:
 
-> This draft gives you a real starting point, built on the same structure public companies use in their own filed governance documents. It isn't tailored to your actual tools, data, or team yet, that's the part that needs a conversation. If you'd like help working through it, The Endurance Group offers a free scoping session to build this out with your team. [Link to booking/contact]
+> This draft gives you a real starting point, built on the same structure public companies use in their own filed governance documents. It isn't tailored to your actual tools, data, or team yet, that's the part that needs a conversation. If you'd like help working through it, The Endurance Group offers a free scoping session to build this out with your team. https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor
 
 ### Tone and constraints
 
