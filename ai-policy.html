@@ -877,19 +877,34 @@
         var msgs = [
           'Researching ' + company + '&hellip;',
           'Looking up public filings&hellip;',
+          'Checking SEC disclosures&hellip;',
           'Reviewing governance documents&hellip;',
           'Identifying AI risk areas&hellip;',
+          'Scanning the Code of Conduct&hellip;',
           'Drafting policy sections&hellip;',
-          'Reviewing data handling rules&hellip;',
-          'Finalizing your draft&hellip;',
+          'Building the Approved Tools table&hellip;',
+          'Writing data handling rules&hellip;',
+          'Drafting MNPI guidelines&hellip;',
+          'Structuring the governance section&hellip;',
+          'Adding incident reporting procedures&hellip;',
+          'Writing the before-you-adopt checklist&hellip;',
+          'Reviewing draft for accuracy&hellip;',
+          'Polishing final sections&hellip;',
           'Almost ready&hellip;',
+          'Just a moment more&hellip;',
+          'Wrapping up&hellip;',
         ];
         var idx = 0;
         loadingMsg.innerHTML = msgs[0];
 
-        // Cycle a new message every 5 seconds, stay on last one
+        // Cycle a new message every 5 seconds; after the last one, loop the final few
+        var loopStart = msgs.length - 4;
         var msgInterval = setInterval(function() {
-          idx = Math.min(idx + 1, msgs.length - 1);
+          if (idx < msgs.length - 1) {
+            idx++;
+          } else {
+            idx = loopStart;
+          }
           loadingMsg.style.opacity = '0';
           setTimeout(function() {
             loadingMsg.innerHTML = msgs[idx];
@@ -904,7 +919,7 @@
           fill.style.transition = 'none';
           fill.style.width = '0%';
           requestAnimationFrame(function() {
-            fill.style.transition = 'width 45s cubic-bezier(0.4, 0, 0.2, 1)';
+            fill.style.transition = 'width 90s cubic-bezier(0.4, 0, 0.2, 1)';
             fill.style.width = '88%';
           });
         }
