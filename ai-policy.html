@@ -123,31 +123,9 @@
       color: #6B6B8A;
     }
 
-    /* ── Results ────────────────────────────────────────────────── */
+    /* ── Results / Walkthrough ──────────────────────────────────── */
     #results-section {
       display: none;
-    }
-    .results-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #E7E2E5;
-    }
-    .results-actions .btn {
-      font-size: 14px;
-      padding: 10px 20px;
-    }
-    .results-actions .btn-secondary {
-      background: #fff;
-      border: 1px solid #D0CDD8;
-      color: #1a1a2e;
-    }
-    .results-actions .btn-secondary:hover {
-      border-color: #C45E89;
-      color: #C45E89;
     }
     .policy-doc {
       max-width: 760px;
@@ -175,17 +153,13 @@
       margin: 28px 0 8px;
       color: #1a1a2e;
     }
-    .policy-doc p {
-      margin: 0 0 14px;
-    }
+    .policy-doc p { margin: 0 0 14px; }
     .policy-doc ul,
     .policy-doc ol {
       margin: 0 0 14px;
       padding-left: 24px;
     }
-    .policy-doc li {
-      margin-bottom: 6px;
-    }
+    .policy-doc li { margin-bottom: 6px; }
     .policy-doc hr {
       border: none;
       border-top: 1px solid #E7E2E5;
@@ -223,33 +197,193 @@
       border: 1px solid #E7E2E5;
       vertical-align: top;
     }
-    .policy-doc tr:nth-child(even) td {
-      background: #FAFAFA;
-    }
+    .policy-doc tr:nth-child(even) td { background: #FAFAFA; }
     .policy-doc strong { font-weight: 700; }
     .policy-doc em { font-style: italic; }
     .policy-doc a { color: #0d9488; }
 
-    .results-footer {
+    /* Progress dots */
+    .walkthrough-progress {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .step-dots { display: flex; gap: 10px; align-items: center; }
+    .step-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      background: #E7E2E5;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .step-dot.active { background: #C45E89; transform: scale(1.4); }
+    .step-dot.done { background: #C45E89; opacity: 0.45; }
+    .step-label-text {
+      font-size: 12px;
+      font-weight: 700;
+      color: #6B6B8A;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Panels */
+    .walkthrough-panel { display: none; }
+    .walkthrough-panel.active { display: block; }
+    .panel-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      color: #C45E89;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .panel-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1a1a2e;
+      margin: 0 0 8px;
+      line-height: 1.2;
+    }
+    .panel-sub {
+      font-size: 15px;
+      color: #6B6B8A;
+      margin: 0 0 28px;
+      max-width: 560px;
+    }
+    .panel-header {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #E7E2E5;
+    }
+    .panel-header-left { flex: 1; min-width: 0; }
+    .panel-header-left .panel-title { margin-bottom: 0; }
+    .panel-header-left .panel-eyebrow { margin-bottom: 6px; }
+    .panel-dl-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .panel-dl-btns .btn {
+      font-size: 13px;
+      padding: 9px 16px;
+      background: #fff;
+      border: 1px solid #D0CDD8;
+      color: #1a1a2e;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+    }
+    .panel-dl-btns .btn:hover { border-color: #C45E89; color: #C45E89; }
+    .panel-dl-btns .btn-pdf {
+      background: #C45E89;
+      border-color: #C45E89;
+      color: #fff;
+    }
+    .panel-dl-btns .btn-pdf:hover { background: #b04d78; border-color: #b04d78; color: #fff; }
+
+    /* Walkthrough navigation */
+    .walkthrough-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-top: 48px;
       padding-top: 24px;
       border-top: 1px solid #E7E2E5;
+    }
+    .nav-btn-back {
+      font-size: 15px;
+      padding: 12px 24px;
+      background: #fff;
+      border: 1px solid #D0CDD8;
+      color: #1a1a2e;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      transition: border-color 0.15s;
+    }
+    .nav-btn-back:hover { border-color: #C45E89; color: #C45E89; }
+    #btn-next {
+      font-size: 15px;
+      padding: 12px 28px;
+    }
+
+    /* TEG CTA card */
+    .teg-cta-card {
+      max-width: 600px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 100%);
+      border-radius: 20px;
+      padding: 44px 40px 40px;
+      color: #fff;
+    }
+    .teg-cta-card .cta-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #E9AACB;
+      margin-bottom: 14px;
+    }
+    .teg-cta-card h3 {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 0 14px;
+      line-height: 1.3;
+      color: #fff;
+    }
+    .teg-cta-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+      margin: 0 0 10px;
+    }
+    .teg-cta-card ul {
+      margin: 0 0 28px;
+      padding-left: 20px;
+      color: rgba(255,255,255,0.8);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .teg-cta-card li { margin-bottom: 5px; }
+    .teg-cta-card .cta-actions {
       display: flex;
+      gap: 14px;
       flex-wrap: wrap;
-      gap: 12px;
       align-items: center;
     }
-    .results-footer .reset-link {
+    .btn-cta-white {
+      background: #fff;
+      color: #1a1a2e;
+      font-family: inherit;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn-cta-white:hover { opacity: 0.88; }
+    .btn-cta-ghost {
       font-size: 14px;
-      color: #6B6B8A;
+      color: rgba(255,255,255,0.65);
       background: none;
       border: none;
       cursor: pointer;
       padding: 0;
+      font-family: inherit;
       text-decoration: underline;
       text-underline-offset: 3px;
     }
-    .results-footer .reset-link:hover { color: #1a1a2e; }
+    .btn-cta-ghost:hover { color: #fff; }
 
     /* ── Page-level error banner ────────────────────────────────── */
     #form-error-banner {
@@ -269,28 +403,23 @@
       .site-footer,
       #form-section,
       #loading-section,
-      .results-actions,
-      .results-footer,
+      .walkthrough-progress,
+      .walkthrough-nav,
+      .panel-dl-btns,
       .skip-link {
         display: none !important;
       }
       #results-section {
         display: block !important;
       }
-      body {
-        font-size: 12pt;
-        color: #000;
-      }
-      .policy-doc {
-        max-width: 100%;
-      }
+      .walkthrough-panel { display: block !important; }
+      body { font-size: 12pt; color: #000; }
+      .policy-doc { max-width: 100%; }
       .policy-doc blockquote {
         border-left: 2pt solid #C45E89;
         background: none;
       }
-      .policy-doc th {
-        background: #eee;
-      }
+      .policy-doc th { background: #eee; }
     }
   </style>
 </head>
@@ -407,25 +536,80 @@
       </div>
     </section>
 
-    <!-- Results section -->
+    <!-- Results section: 3-step walkthrough -->
     <section class="section" id="results-section">
       <div class="container">
 
-        <div class="results-actions">
-          <button class="btn btn-primary" onclick="doPrint()" style="font-size:14px;padding:10px 20px;">Save as PDF</button>
-          <button class="btn results-actions btn-secondary" onclick="doDownloadTxt()" style="font-size:14px;padding:10px 20px;background:#fff;border:1px solid #D0CDD8;color:#1a1a2e;border-radius:8px;cursor:pointer;font-family:inherit;font-weight:600;">Download as .txt</button>
-          <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener" style="font-size:14px;padding:10px 20px;">Book a free scoping session</a>
+        <!-- Progress indicator -->
+        <div class="walkthrough-progress">
+          <div class="step-dots">
+            <button class="step-dot active" data-step="0" title="What we found"></button>
+            <button class="step-dot" data-step="1" title="Before you adopt"></button>
+            <button class="step-dot" data-step="2" title="Your draft + next steps"></button>
+          </div>
+          <span class="step-label-text" id="step-label-text">What we found</span>
         </div>
 
-        <div id="results-output" class="policy-doc"></div>
+        <!-- Panel 0: Research summary -->
+        <div class="walkthrough-panel active" id="panel-0">
+          <div class="panel-eyebrow">Step 1 of 3</div>
+          <h2 class="panel-title">What we found</h2>
+          <p class="panel-sub">A quick summary — your full draft arrives in Step 3.</p>
+          <div class="policy-doc" id="panel-0-content"></div>
+        </div>
 
-        <div class="results-footer">
-          <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener" style="font-size:14px;padding:10px 20px;">Book a free scoping session</a>
-          <button class="reset-link" onclick="resetTool()">Generate another</button>
+        <!-- Panel 1: Before you adopt -->
+        <div class="walkthrough-panel" id="panel-1">
+          <div class="panel-eyebrow">Step 2 of 3</div>
+          <h2 class="panel-title">Before you adopt this</h2>
+          <p class="panel-sub">Seven questions to work through internally — no outside research can answer them.</p>
+          <div class="policy-doc" id="panel-1-content"></div>
+        </div>
+
+        <!-- Panel 2: TEG CTA + full draft policy -->
+        <div class="walkthrough-panel" id="panel-2">
+          <div class="panel-eyebrow">Step 3 of 3</div>
+          <h2 class="panel-title">Your draft is ready</h2>
+
+          <!-- Download row -->
+          <div class="panel-dl-btns" style="margin-bottom:36px;">
+            <button class="btn btn-pdf" onclick="doDownloadPdf()">Download PDF</button>
+            <button class="btn" onclick="doDownloadTxt()">Download .txt</button>
+          </div>
+
+          <!-- TEG CTA -->
+          <div class="teg-cta-card" style="margin-bottom:52px;">
+            <div class="cta-eyebrow">Free scoping session</div>
+            <h3>This draft is a real starting point.<br>Making it yours takes a conversation.</h3>
+            <p>The Endurance Group works with small public companies to turn draft policies like this into something your team will actually use. In a free 30-minute session we'll walk through:</p>
+            <ul>
+              <li>Which sections need legal review before adoption</li>
+              <li>How to build your approved tool list</li>
+              <li>How to roll this out without creating friction for your team</li>
+              <li>What ongoing governance looks like at your scale</li>
+            </ul>
+            <div class="cta-actions">
+              <a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener" class="btn-cta-white">Book your free session</a>
+              <button class="btn-cta-ghost" onclick="resetTool()">Generate another policy</button>
+            </div>
+          </div>
+
+          <!-- Full draft policy -->
+          <h3 style="font-size:18px;font-weight:700;color:#1a1a2e;margin:0 0 24px;padding-bottom:16px;border-bottom:2px solid #F0EDF3;">Your full draft policy</h3>
+          <div class="policy-doc" id="panel-2-content"></div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="walkthrough-nav">
+          <button id="btn-back" class="nav-btn-back" onclick="prevStep()">← Back</button>
+          <button id="btn-next" class="btn btn-primary" onclick="nextStep()">Next: discussion questions →</button>
         </div>
 
       </div>
     </section>
+
+    <!-- Off-screen div used for PDF generation -->
+    <div id="pdf-content" class="policy-doc" style="position:absolute;left:-9999px;top:0;width:680px;padding:0;"></div>
 
   </main>
 
@@ -475,6 +659,7 @@
   <!-- END SHARED FOOTER -->
 
   <script src="js/main.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     (function () {
       'use strict';
@@ -485,10 +670,12 @@
       var resultsSection = document.getElementById('results-section');
       var loadingMsg = document.getElementById('loading-msg');
       var formErrorBanner = document.getElementById('form-error-banner');
-      var resultsOutput = document.getElementById('results-output');
       var generatedText = '';
       var generatedCompany = '';
       var loadingTimers = [];
+      var currentStep = 0;
+      var stepLabels = ['What we found', 'Before you adopt', 'Your draft is ready'];
+      var nextLabels = ['Next: discussion questions →', 'Get your draft →'];
 
       // ── Markdown renderer ───────────────────────────────────────
       function escHtml(s) {
@@ -690,6 +877,60 @@
         loadingTimers = [];
       }
 
+      // ── Section parsing ─────────────────────────────────────────
+      function parseSections(output) {
+        function extract(tag) {
+          var start = '=== ' + tag + ' ===';
+          var end = '=== END_' + tag + ' ===';
+          var si = output.indexOf(start);
+          var ei = output.indexOf(end);
+          if (si === -1 || ei === -1) return null;
+          return output.slice(si + start.length, ei).trim();
+        }
+        return {
+          research: extract('RESEARCH_SUMMARY'),
+          policy: extract('DRAFT_POLICY'),
+          beforeYouAdopt: extract('BEFORE_YOU_ADOPT'),
+          closingNote: extract('CLOSING_NOTE')
+        };
+      }
+
+      // ── Step navigation ─────────────────────────────────────────
+      function updateProgress(step) {
+        document.querySelectorAll('.step-dot').forEach(function(dot, i) {
+          dot.classList.remove('active', 'done');
+          if (i === step) dot.classList.add('active');
+          else if (i < step) dot.classList.add('done');
+        });
+        document.getElementById('step-label-text').textContent = stepLabels[step];
+        for (var i = 0; i < 3; i++) {
+          var panel = document.getElementById('panel-' + i);
+          if (panel) panel.classList.toggle('active', i === step);
+        }
+        var btnBack = document.getElementById('btn-back');
+        var btnNext = document.getElementById('btn-next');
+        btnBack.style.visibility = step === 0 ? 'hidden' : 'visible';
+        if (step === 2) {
+          btnNext.style.display = 'none';
+          // Trigger PDF download when they reach the final step
+          setTimeout(function() { doDownloadPdf(); }, 600);
+        } else {
+          btnNext.style.display = '';
+          btnNext.textContent = nextLabels[step];
+        }
+        var rs = document.getElementById('results-section');
+        window.scrollTo({ top: rs ? rs.offsetTop - 80 : 0, behavior: 'smooth' });
+      }
+
+      function showStep(n) {
+        currentStep = n;
+        updateProgress(n);
+      }
+      function nextStep() { if (currentStep < 2) showStep(currentStep + 1); }
+      function prevStep() { if (currentStep > 0) showStep(currentStep - 1); }
+      window.nextStep = nextStep;
+      window.prevStep = prevStep;
+
       // ── State transitions ───────────────────────────────────────
       function showLoading() {
         formSection.style.display = 'none';
@@ -701,10 +942,33 @@
         generatedText = output;
         generatedCompany = company;
         stopLoadingMessages();
-        resultsOutput.innerHTML = renderMarkdown(output);
+
+        var sections = parseSections(output);
+        var hasMarkers = sections.research !== null;
+
+        if (hasMarkers) {
+          document.getElementById('panel-0-content').innerHTML = renderMarkdown(sections.research || '');
+          document.getElementById('panel-1-content').innerHTML = renderMarkdown(sections.beforeYouAdopt || '');
+          document.getElementById('panel-2-content').innerHTML = renderMarkdown(sections.policy || '');
+        } else {
+          document.getElementById('panel-0-content').innerHTML = '<p style="color:#6B6B8A;">No public research was available for this company.</p>';
+          document.getElementById('panel-1-content').innerHTML = '';
+          document.getElementById('panel-2-content').innerHTML = renderMarkdown(output);
+        }
+
+        // Build PDF source (full output)
+        var pdfEl = document.getElementById('pdf-content');
+        if (pdfEl) {
+          var pdfContent = hasMarkers
+            ? [sections.research, sections.policy, sections.beforeYouAdopt, sections.closingNote].filter(Boolean).join('\n\n---\n\n')
+            : output;
+          pdfEl.innerHTML = renderMarkdown(pdfContent);
+        }
+
+        currentStep = 0;
         loadingSection.style.display = 'none';
         resultsSection.style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        updateProgress(0);
       }
 
       function showFormWithError(msg) {
@@ -719,7 +983,11 @@
       function resetTool() {
         generatedText = '';
         generatedCompany = '';
-        resultsOutput.innerHTML = '';
+        currentStep = 0;
+        ['panel-0-content', 'panel-1-content', 'panel-2-content', 'pdf-content'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.innerHTML = '';
+        });
         formErrorBanner.style.display = 'none';
         resultsSection.style.display = 'none';
         formSection.style.display = 'block';
@@ -728,10 +996,19 @@
       window.resetTool = resetTool;
 
       // ── Download helpers ────────────────────────────────────────
-      function doPrint() {
-        window.print();
+      function doDownloadPdf() {
+        var el = document.getElementById('pdf-content');
+        if (!el || !window.html2pdf) return;
+        var slug = (generatedCompany || 'company').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        html2pdf().set({
+          margin: [15, 15, 15, 15],
+          filename: slug + '-ai-policy-draft.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
+        }).from(el).save();
       }
-      window.doPrint = doPrint;
+      window.doDownloadPdf = doDownloadPdf;
 
       function doDownloadTxt() {
         if (!generatedText) return;
