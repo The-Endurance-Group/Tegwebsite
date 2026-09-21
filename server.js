@@ -264,20 +264,28 @@ async function callClaudeApi(systemPrompt, messages, maxTokens, model) {
     throw new Error('ANTHROPIC_API_KEY is not configured');
   }
 
-  var res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      model: model || ANTHROPIC_MODEL,
-      max_tokens: maxTokens || 400,
-      system: systemPrompt,
-      messages: messages,
-    }),
-  });
+  var controller = new AbortController();
+  var timeoutId = setTimeout(function() { controller.abort(); }, 90000);
+  var res;
+  try {
+    res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: model || ANTHROPIC_MODEL,
+        max_tokens: maxTokens || 400,
+        system: systemPrompt,
+        messages: messages,
+      }),
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timeoutId);
+  }
 
   if (!res.ok) {
     var detail = await res.text().catch(function () { return ''; });
@@ -867,7 +875,7 @@ async function handleAiPolicy(req, res) {
     respondJson(200, { output: output, company: company });
   } catch (err) {
     console.error('[AI-POLICY] Error:', err.message);
-    respondJson(500, { error: 'Something went wrong generating your policy. Please try again.' });
+    try { respondJson(500, { error: 'Something went wrong generating your policy. Please try again.' }); } catch (_) {}
   }
 }
 
@@ -963,4 +971,11 @@ http.createServer((req, res) => {
   serveStatic(req, res);
 }).listen(PORT, '0.0.0.0', () => {
   console.log(`Serving The Endurance Group site on port ${PORT}`);
+});
+
+process.on('unhandledRejection', function(reason) {
+  console.error('[CRASH] Unhandled rejection:', reason && reason.message ? reason.message : reason);
+});
+process.on('uncaughtException', function(err) {
+  console.error('[CRASH] Uncaught exception:', err.message, err.stack);
 });
