@@ -11,144 +11,79 @@
   <link rel="icon" type="image/png" href="images/favicon-network.png">
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    /* ── Policy doc ─────────────────────────────────────────────── */
-    .policy-doc {
-      max-width: 760px;
-      font-size: 15px;
-      line-height: 1.75;
-      color: #1a1a2e;
+    .results-wrap {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 64px 16px 96px;
     }
-    .policy-doc h1 { font-size: 26px; font-weight: 800; margin: 0 0 20px; line-height: 1.25; }
-    .policy-doc h2 {
-      font-size: 20px; font-weight: 700; margin: 40px 0 12px;
-      padding-bottom: 8px; border-bottom: 2px solid #F0EDF3; color: #1a1a2e;
+    .results-icon {
+      width: 56px; height: 56px;
+      background: #FDF8FB; border: 1.5px solid #E9AACB; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 28px;
     }
-    .policy-doc h3 { font-size: 16px; font-weight: 700; margin: 28px 0 8px; color: #1a1a2e; }
-    .policy-doc p { margin: 0 0 14px; }
-    .policy-doc ul, .policy-doc ol { margin: 0 0 14px; padding-left: 24px; }
-    .policy-doc li { margin-bottom: 6px; }
-    .policy-doc hr { border: none; border-top: 1px solid #E7E2E5; margin: 32px 0; }
-    .policy-doc blockquote {
-      border-left: 3px solid #C45E89; margin: 28px 0; padding: 16px 20px;
-      background: #FDF8FB; border-radius: 0 8px 8px 0; font-size: 15px; color: #1a1a2e;
-    }
-    .policy-doc blockquote p { margin: 0 0 8px; }
-    .policy-doc blockquote p:last-child { margin: 0; }
-    .table-wrap { overflow-x: auto; margin: 16px 0 20px; }
-    .policy-doc table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    .policy-doc th { background: #F5F2F8; font-weight: 700; text-align: left; padding: 10px 14px; border: 1px solid #E7E2E5; }
-    .policy-doc td { padding: 9px 14px; border: 1px solid #E7E2E5; vertical-align: top; }
-    .policy-doc tr:nth-child(even) td { background: #FAFAFA; }
-    .policy-doc strong { font-weight: 700; }
-    .policy-doc em { font-style: italic; }
-    .policy-doc a { color: #0d9488; }
-
-    /* ── Progress dots ──────────────────────────────────────────── */
-    .walkthrough-progress {
-      display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 40px;
-    }
-    .step-dots { display: flex; gap: 10px; align-items: center; }
-    .step-dot {
-      width: 10px; height: 10px; border-radius: 50%; border: none; background: #E7E2E5;
-      cursor: pointer; padding: 0; transition: background 0.2s, transform 0.2s;
-    }
-    .step-dot.active { background: #C45E89; transform: scale(1.4); }
-    .step-dot.done { background: #C45E89; opacity: 0.45; }
-    .step-label-text {
-      font-size: 12px; font-weight: 700; color: #6B6B8A;
-      letter-spacing: 0.06em; text-transform: uppercase;
-    }
-
-    /* ── Panels ─────────────────────────────────────────────────── */
-    .walkthrough-panel { display: none; }
-    .walkthrough-panel.active { display: block; }
-    .panel-eyebrow {
+    .results-eyebrow {
       font-size: 12px; font-weight: 700; color: #C45E89;
-      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;
     }
-    .panel-title { font-size: 28px; font-weight: 800; color: #1a1a2e; margin: 0 0 8px; line-height: 1.2; }
-    .panel-sub { font-size: 15px; color: #6B6B8A; margin: 0 0 28px; max-width: 560px; }
-
-    /* ── Step 2: question list treatment ───────────────────────── */
-    #panel-1 .policy-doc ol {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      counter-reset: question-counter;
+    .results-heading {
+      font-size: 32px; font-weight: 800; color: #1a1a2e;
+      margin: 0 0 14px; line-height: 1.2;
     }
-    #panel-1 .policy-doc ol > li {
-      counter-increment: question-counter;
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      padding: 20px 0;
-      border-bottom: 1px solid #F0EDF3;
-      margin-bottom: 0;
+    .company-badge {
+      display: none; font-size: 13px; font-weight: 700; color: #1a1a2e;
+      background: #F5F2F8; border-radius: 6px; padding: 6px 12px;
+      margin-bottom: 16px; width: fit-content;
     }
-    #panel-1 .policy-doc ol > li:last-child { border-bottom: none; }
-    #panel-1 .policy-doc ol > li::before {
-      content: counter(question-counter);
-      flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      background: #FDF8FB;
-      border: 1.5px solid #E9AACB;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 700;
-      color: #C45E89;
-      margin-top: 1px;
-    }
-    #panel-1 .policy-doc ol > li p { margin: 0; }
-
-    /* ── Step 1: research callout ───────────────────────────────── */
-    #panel-0 .policy-doc > p:first-child {
-      font-size: 16px;
-      line-height: 1.8;
+    .results-sub {
+      font-size: 15px; color: #6B6B8A; line-height: 1.65; margin: 0 0 32px;
     }
 
-    .panel-dl-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
-    .panel-dl-btns .btn {
-      font-size: 13px; padding: 9px 16px; background: #fff; border: 1px solid #D0CDD8;
-      color: #1a1a2e; border-radius: 8px; cursor: pointer; font-family: inherit; font-weight: 600;
+    /* ── Disclaimer ───────────────────────────────────────────── */
+    .disclaimer-card {
+      border: 1px solid #F5D5A0; border-left: 4px solid #D98B00;
+      border-radius: 0 10px 10px 0; background: #FFFBF3;
+      padding: 18px 22px; margin-bottom: 28px;
     }
-    .panel-dl-btns .btn:hover { border-color: #C45E89; color: #C45E89; }
-    .panel-dl-btns .btn-pdf { background: #C45E89; border-color: #C45E89; color: #fff; }
-    .panel-dl-btns .btn-pdf:hover { background: #b04d78; border-color: #b04d78; color: #fff; }
+    .disclaimer-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.09em;
+      text-transform: uppercase; color: #A86800; margin-bottom: 8px;
+    }
+    .disclaimer-card p {
+      font-size: 14px; line-height: 1.6; color: #3D2A00; margin: 0 0 6px;
+    }
+    .disclaimer-card p:last-child { margin: 0; }
 
-    /* ── Nav ────────────────────────────────────────────────────── */
-    .walkthrough-nav {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-top: 48px; padding-top: 24px; border-top: 1px solid #E7E2E5;
+    /* ── Download again ───────────────────────────────────────── */
+    .dl-again-row { margin-bottom: 44px; }
+    .btn-dl-again {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #fff; border: 1px solid #D0CDD8; color: #1a1a2e;
+      font-family: inherit; font-weight: 600; font-size: 14px;
+      padding: 10px 18px; border-radius: 8px; cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
     }
-    .nav-btn-back {
-      font-size: 15px; padding: 12px 24px; background: #fff; border: 1px solid #D0CDD8;
-      color: #1a1a2e; border-radius: 8px; cursor: pointer; font-family: inherit;
-      font-weight: 600; transition: border-color 0.15s;
-    }
-    .nav-btn-back:hover { border-color: #C45E89; color: #C45E89; }
-    #btn-next { font-size: 15px; padding: 12px 28px; }
+    .btn-dl-again:hover { border-color: #C45E89; color: #C45E89; }
+    .btn-dl-again:disabled { opacity: 0.55; cursor: default; }
 
-    /* ── TEG CTA card ───────────────────────────────────────────── */
+    /* ── CTA card ─────────────────────────────────────────────── */
     .teg-cta-card {
-      max-width: 600px; background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 100%);
-      border-radius: 20px; padding: 44px 40px 40px; color: #fff; margin-bottom: 52px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 100%);
+      border-radius: 20px; padding: 40px 36px 36px; color: #fff;
     }
     .teg-cta-card .cta-eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: #E9AACB; margin-bottom: 14px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #E9AACB; margin-bottom: 12px;
     }
-    .teg-cta-card h3 { font-size: 24px; font-weight: 800; margin: 0 0 14px; line-height: 1.3; color: #fff; }
-    .teg-cta-card p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.8); margin: 0 0 10px; }
-    .teg-cta-card ul { margin: 0 0 28px; padding-left: 20px; color: rgba(255,255,255,0.8); font-size: 15px; line-height: 1.7; }
-    .teg-cta-card li { margin-bottom: 5px; }
-    .teg-cta-card .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .teg-cta-card h3 {
+      font-size: 22px; font-weight: 800; margin: 0 0 12px; line-height: 1.3; color: #fff;
+    }
+    .teg-cta-card p {
+      font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.8); margin: 0 0 22px;
+    }
+    .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
     .btn-cta-white {
       background: #fff; color: #1a1a2e; font-family: inherit; font-weight: 700;
-      padding: 13px 24px; border-radius: 8px; text-decoration: none; font-size: 15px;
+      padding: 12px 22px; border-radius: 8px; text-decoration: none; font-size: 15px;
       display: inline-block; border: none; cursor: pointer; transition: opacity 0.15s;
     }
     .btn-cta-white:hover { opacity: 0.88; }
@@ -159,65 +94,15 @@
     }
     .btn-cta-ghost:hover { color: #fff; }
 
-    /* ── No-data state ──────────────────────────────────────────── */
-    #no-data-banner {
-      display: none; text-align: center; padding: 80px 20px;
-    }
+    /* ── No-data state ────────────────────────────────────────── */
+    #no-data-banner { display: none; text-align: center; padding: 80px 20px; }
     #no-data-banner p { font-size: 17px; color: #6B6B8A; margin-bottom: 24px; }
 
-    /* ── Floating-word animations ──────────────────────────────── */
-    @keyframes floatUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
+    @media (max-width: 600px) {
+      .results-heading { font-size: 26px; }
+      .teg-cta-card { padding: 32px 24px 28px; }
     }
-    .anim-word {
-      display: inline-block;
-      animation: floatUp 0.52s ease-out both;
-    }
-    .anim-child {
-      animation: floatUp 0.55s ease-out both;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .anim-word, .anim-child {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-      }
-    }
-
-    /* ── Step progress bar ──────────────────────────────────────── */
-    .step-progress-bar {
-      width: 100%; max-width: 220px; height: 3px;
-      background: #F0EDF3; border-radius: 2px; overflow: hidden; margin-top: 10px;
-    }
-    .step-progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #C45E89 0%, #e07aaa 100%);
-      border-radius: 2px;
-      transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-      width: 33.33%;
-    }
-
-    /* ── Company context strip ──────────────────────────────────── */
-    .company-strip {
-      font-size: 12px; font-weight: 700; color: #9B9BAD;
-      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px;
-    }
-    .company-strip strong {
-      color: #1a1a2e; font-weight: 800; font-size: 14px;
-      text-transform: none; letter-spacing: 0;
-    }
-
-    /* ── Print ──────────────────────────────────────────────────── */
-    @media print {
-      .site-header, .site-footer, .walkthrough-progress, .walkthrough-nav,
-      .panel-dl-btns, .skip-link, .teg-cta-card { display: none !important; }
-      .walkthrough-panel { display: block !important; }
-      body { font-size: 12pt; color: #000; }
-      .policy-doc { max-width: 100%; }
-      .policy-doc blockquote { border-left: 2pt solid #C45E89; background: none; }
-      .policy-doc th { background: #eee; }
-    }
+    @media print { body { display: none; } }
   </style>
 </head>
 <body>
@@ -259,83 +144,53 @@
     </div>
 
     <!-- Results section -->
-    <section class="section" id="results-section" style="display:none;">
-      <div class="container">
+    <section id="results-section" style="display:none;">
+      <div class="results-wrap">
 
-        <!-- Company context strip -->
-        <div class="company-strip" id="company-strip" style="display:none;">Policy draft for <strong id="company-name-display"></strong></div>
+        <div class="results-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C45E89" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
 
-        <!-- Progress indicator -->
-        <div class="walkthrough-progress">
-          <div class="step-dots">
-            <button class="step-dot active" data-step="0" title="What we found"></button>
-            <button class="step-dot" data-step="1" title="Before you adopt"></button>
-            <button class="step-dot" data-step="2" title="Your draft + next steps"></button>
+        <div class="results-eyebrow">Your draft</div>
+        <h1 class="results-heading">Your AI policy draft is downloading.</h1>
+        <div class="company-badge" id="company-badge"></div>
+        <p class="results-sub">The PDF includes everything: a summary of what we found about your company, the questions your team should work through before adopting it, and the full draft policy.</p>
+
+        <div class="disclaimer-card">
+          <div class="disclaimer-label">Draft only — not legal advice</div>
+          <p>This policy is a starting point, not a finished document. It should be reviewed by qualified legal counsel before it is adopted, distributed to employees, or relied on for any compliance purpose.</p>
+          <p>If your company is publicly traded, the section on MNPI (material nonpublic information) handling carries distinct legal risk under securities law and requires review by outside securities counsel before the policy is adopted or distributed.</p>
+        </div>
+
+        <div class="dl-again-row">
+          <button class="btn-dl-again" id="btn-dl-again" onclick="downloadAgain()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download again
+          </button>
+        </div>
+
+        <div class="teg-cta-card">
+          <div class="cta-eyebrow">Free scoping session</div>
+          <h3>This draft is a real starting point.<br>Making it yours takes a conversation.</h3>
+          <p>In a free 30-minute session, we'll walk through how your team actually uses AI, help you build your approved tool list, and identify what needs legal review before you roll this out.</p>
+          <div class="cta-actions">
+            <a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener" class="btn-cta-white">Book your free session</a>
+            <a href="/ai-policy.html" class="btn-cta-ghost">Generate another policy</a>
           </div>
-          <div class="step-progress-bar"><div class="step-progress-fill" id="step-progress-fill"></div></div>
-          <span class="step-label-text" id="step-label-text">What we found</span>
-        </div>
-
-        <!-- Panel 0: Research summary -->
-        <div class="walkthrough-panel active" id="panel-0">
-          <div class="panel-eyebrow">Step 1 of 3</div>
-          <h2 class="panel-title">What we found</h2>
-          <p class="panel-sub">A quick summary of your company's context — your full draft arrives in Step 3.</p>
-          <div class="policy-doc" id="panel-0-content"></div>
-        </div>
-
-        <!-- Panel 1: Before you adopt -->
-        <div class="walkthrough-panel" id="panel-1">
-          <div class="panel-eyebrow">Step 2 of 3</div>
-          <h2 class="panel-title">Before you adopt this</h2>
-          <p class="panel-sub">Seven questions to work through internally — no outside research can answer them.</p>
-          <div class="policy-doc" id="panel-1-content"></div>
-        </div>
-
-        <!-- Panel 2: Download + TEG CTA + full draft -->
-        <div class="walkthrough-panel" id="panel-2">
-          <div class="panel-eyebrow">Step 3 of 3</div>
-          <h2 class="panel-title">Your draft is ready</h2>
-
-          <div class="panel-dl-btns">
-            <button class="btn btn-pdf" onclick="doDownloadPdf()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download PDF
-            </button>
-            <button class="btn" onclick="doDownloadTxt()">Download .txt</button>
-          </div>
-
-          <div class="teg-cta-card">
-            <div class="cta-eyebrow">Free scoping session</div>
-            <h3>This draft is a real starting point.<br>Making it yours takes a conversation.</h3>
-            <p>The Endurance Group works with small public companies to turn draft policies like this into something your team will actually use. In a free 30-minute session we'll walk through:</p>
-            <ul>
-              <li>Which sections need legal review before adoption</li>
-              <li>How to build your approved tool list</li>
-              <li>How to roll this out without creating friction for your team</li>
-              <li>What ongoing governance looks like at your scale</li>
-            </ul>
-            <div class="cta-actions">
-              <a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor" target="_blank" rel="noopener" class="btn-cta-white">Book your free session</a>
-              <a href="/ai-policy.html" class="btn-cta-ghost">Generate another policy</a>
-            </div>
-          </div>
-
-          <h3 style="font-size:18px;font-weight:700;color:#1a1a2e;margin:0 0 24px;padding-bottom:16px;border-bottom:2px solid #F0EDF3;">Your full draft policy</h3>
-          <div class="policy-doc" id="panel-2-content"></div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="walkthrough-nav">
-          <button id="btn-back" class="nav-btn-back" onclick="prevStep()">← Back</button>
-          <button id="btn-next" class="btn btn-primary" onclick="nextStep()">Next: discussion questions →</button>
         </div>
 
       </div>
     </section>
-
-    <!-- Off-screen div for PDF generation -->
-    <div id="pdf-content" class="policy-doc" style="position:absolute;left:-9999px;top:0;width:680px;padding:0;"></div>
 
   </main>
 
@@ -392,15 +247,11 @@
 
       var generatedText = '';
       var generatedCompany = '';
-      var currentStep = 0;
-      var stepLabels = ['What we found', 'Before you adopt', 'Your draft is ready'];
-      var nextLabels = ['Next: discussion questions →', 'Get your draft →'];
 
       // ── Markdown renderer ───────────────────────────────────────
       function escHtml(s) {
         return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
       }
-
       function inlineMd(text) {
         text = escHtml(text);
         text = text.replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>');
@@ -408,16 +259,15 @@
         text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
         return text;
       }
-
       function renderMarkdown(md) {
         var lines = md.split('\n');
         var html = '';
         var inUl = false, inOl = false, inTable = false, tableHeaderDone = false;
         var inBlockquote = false, bqLines = [];
-
         function flushBq() {
           if (inBlockquote) {
-            html += '<blockquote>' + bqLines.map(function(l) { return '<p>' + inlineMd(l) + '</p>'; }).join('') + '</blockquote>';
+            html += '<blockquote style="border-left:3px solid #C45E89;margin:20px 0;padding:12px 16px;background:#FDF8FB;border-radius:0 6px 6px 0;">' +
+              bqLines.map(function(l) { return '<p style="margin:0 0 6px;">' + inlineMd(l) + '</p>'; }).join('') + '</blockquote>';
             bqLines = []; inBlockquote = false;
           }
         }
@@ -432,64 +282,61 @@
             inTable = false; tableHeaderDone = false;
           }
         }
-
         for (var i = 0; i < lines.length; i++) {
           var line = lines[i];
           if (/^> /.test(line) || (inBlockquote && line.startsWith('>'))) {
             closeList(); closeTable(); inBlockquote = true;
             bqLines.push(line.replace(/^> ?/, '')); continue;
           } else { flushBq(); }
-          if (/^---+$/.test(line.trim())) { closeList(); closeTable(); html += '<hr>'; continue; }
-          if (/^### /.test(line)) { closeList(); closeTable(); html += '<h3>' + inlineMd(line.slice(4).trim()) + '</h3>'; continue; }
-          if (/^## /.test(line)) { closeList(); closeTable(); html += '<h2>' + inlineMd(line.slice(3).trim()) + '</h2>'; continue; }
-          if (/^# /.test(line)) { closeList(); closeTable(); html += '<h1>' + inlineMd(line.slice(2).trim()) + '</h1>'; continue; }
+          if (/^---+$/.test(line.trim())) { closeList(); closeTable(); html += '<hr style="border:none;border-top:1px solid #E7E2E5;margin:24px 0;">'; continue; }
+          if (/^### /.test(line)) { closeList(); closeTable(); html += '<h3 style="font-size:14px;font-weight:700;margin:22px 0 6px;color:#1a1a2e;">' + inlineMd(line.slice(4).trim()) + '</h3>'; continue; }
+          if (/^## /.test(line)) { closeList(); closeTable(); html += '<h2 style="font-size:16px;font-weight:700;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid #F0EDF3;color:#1a1a2e;">' + inlineMd(line.slice(3).trim()) + '</h2>'; continue; }
+          if (/^# /.test(line)) { closeList(); closeTable(); html += '<h1 style="font-size:20px;font-weight:800;margin:0 0 14px;color:#1a1a2e;">' + inlineMd(line.slice(2).trim()) + '</h1>'; continue; }
           if (/^\|/.test(line)) {
             closeList();
             var isSep = /^[\s|:=-]+$/.test(line);
-            if (!inTable) { html += '<div class="table-wrap"><table><thead>'; inTable = true; tableHeaderDone = false; }
+            if (!inTable) { html += '<div style="overflow-x:auto;margin:12px 0 16px;"><table style="width:100%;border-collapse:collapse;font-size:13px;"><thead>'; inTable = true; tableHeaderDone = false; }
             if (isSep) { html += '</thead><tbody>'; tableHeaderDone = true; }
             else {
               var cells = line.split('|').slice(1, -1);
               var tag = tableHeaderDone ? 'td' : 'th';
-              html += '<tr>' + cells.map(function(c) { return '<' + tag + '>' + inlineMd(c.trim()) + '</' + tag + '>'; }).join('') + '</tr>';
+              var cellStyle = tableHeaderDone
+                ? 'padding:8px 12px;border:1px solid #E7E2E5;vertical-align:top;'
+                : 'padding:8px 12px;border:1px solid #E7E2E5;background:#F5F2F8;font-weight:700;text-align:left;';
+              html += '<tr>' + cells.map(function(c) { return '<' + tag + ' style="' + cellStyle + '">' + inlineMd(c.trim()) + '</' + tag + '>'; }).join('') + '</tr>';
             }
             continue;
           } else if (inTable) { closeTable(); }
           if (/^[-*] /.test(line)) {
             closeTable(); if (inOl) { html += '</ol>'; inOl = false; }
-            if (!inUl) { html += '<ul>'; inUl = true; }
-            html += '<li>' + inlineMd(line.slice(2).trim()) + '</li>'; continue;
+            if (!inUl) { html += '<ul style="margin:0 0 12px;padding-left:22px;">'; inUl = true; }
+            html += '<li style="margin-bottom:5px;">' + inlineMd(line.slice(2).trim()) + '</li>'; continue;
           }
           if (/^\d+[.)]\s/.test(line)) {
             closeTable(); if (inUl) { html += '</ul>'; inUl = false; }
-            if (!inOl) { html += '<ol>'; inOl = true; }
-            html += '<li>' + inlineMd(line.replace(/^\d+[.)]\s/, '').trim()) + '</li>'; continue;
+            if (!inOl) { html += '<ol style="margin:0 0 12px;padding-left:22px;">'; inOl = true; }
+            html += '<li style="margin-bottom:5px;">' + inlineMd(line.replace(/^\d+[.)]\s/, '').trim()) + '</li>'; continue;
           }
           closeList();
           if (line.trim() === '') continue;
-          html += '<p>' + inlineMd(line) + '</p>';
+          html += '<p style="margin:0 0 12px;">' + inlineMd(line) + '</p>';
         }
         flushBq(); closeList(); closeTable();
         return html;
       }
 
       // ── Section parsing ─────────────────────────────────────────
-
-      // Remove any leftover === MARKER === lines before display
       function stripMarkers(text) {
         return text
           .replace(/^=+\s*(?:RESEARCH_SUMMARY|DRAFT_POLICY|BEFORE_YOU_ADOPT|CLOSING_NOTE|END_RESEARCH_SUMMARY|END_DRAFT_POLICY|END_BEFORE_YOU_ADOPT|END_CLOSING_NOTE)\s*=*\s*$/gim, '')
           .replace(/\n{3,}/g, '\n\n')
           .trim();
       }
-
       function parseSections(output) {
         function extract(tag) {
-          // Primary: =+ chars, optional whitespace, newline-bounded
           var re = new RegExp('=+\\s*' + tag + '\\s*=+\\r?\\n([\\s\\S]*?)\\r?\\n=+\\s*END_' + tag + '\\s*=+', 'i');
           var m = output.match(re);
           if (m) return m[1].trim();
-          // Fallback: inline (no newline requirement) — handles tighter formatting
           var re2 = new RegExp('=+\\s*' + tag + '\\s*=+([\\s\\S]*?)=+\\s*END_' + tag + '\\s*=+', 'i');
           var m2 = output.match(re2);
           return m2 ? m2[1].trim() : null;
@@ -501,9 +348,7 @@
           closingNote: extract('CLOSING_NOTE')
         };
       }
-
       function splitWithoutMarkers(output) {
-        // Strip markers first so they don't bleed into section content
         var clean = stripMarkers(output);
         var byaIdx = clean.search(/(?:^|\n)#+\s*Before You Adopt This/i);
         var policyIdx = clean.search(/(?:^|\n)#+\s*(?:Artificial Intelligence Usage Policy|AI Usage Policy)/i);
@@ -520,132 +365,89 @@
         return { research: '', beforeYouAdopt: '', policy: clean };
       }
 
-      // ── Panel animations ────────────────────────────────────────
-      function animateTitle(panel, startDelay) {
-        var titleEl = panel.querySelector('.panel-title');
-        if (!titleEl) return;
-        if (!titleEl.hasAttribute('data-orig')) {
-          titleEl.setAttribute('data-orig', titleEl.textContent.trim());
+      // ── PDF builder ─────────────────────────────────────────────
+      function buildPdfHtml(sections) {
+        var todayStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        var companyLabel = generatedCompany ? ' — ' + generatedCompany : '';
+
+        var body = '';
+
+        if (sections.research) {
+          body += '<h2 style="font-size:15px;font-weight:700;margin:0 0 10px;color:#1a1a2e;padding-bottom:7px;border-bottom:2px solid #F0EDF3;">What We Found</h2>';
+          body += renderMarkdown(stripMarkers(sections.research));
+          body += '<div style="border-top:1px solid #E7E2E5;margin:24px 0;"></div>';
         }
-        var words = titleEl.getAttribute('data-orig').split(/\s+/).filter(Boolean);
-        var frag = document.createDocumentFragment();
-        words.forEach(function(word, i) {
-          if (i > 0) frag.appendChild(document.createTextNode(' '));
-          var span = document.createElement('span');
-          span.className = 'anim-word';
-          span.textContent = word;
-          span.style.animationDelay = (startDelay + i * 0.08) + 's';
-          frag.appendChild(span);
-        });
-        titleEl.innerHTML = '';
-        titleEl.appendChild(frag);
+        if (sections.beforeYouAdopt) {
+          body += '<h2 style="font-size:15px;font-weight:700;margin:0 0 10px;color:#1a1a2e;padding-bottom:7px;border-bottom:2px solid #F0EDF3;">Before You Adopt This</h2>';
+          body += renderMarkdown(stripMarkers(sections.beforeYouAdopt));
+          body += '<div style="border-top:1px solid #E7E2E5;margin:24px 0;"></div>';
+        }
+        if (sections.policy) {
+          body += renderMarkdown(stripMarkers(sections.policy));
+        }
+
+        return (
+          '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid #C45E89;">' +
+            '<img src="/images/logo.webp" style="height:28px;" alt="The Endurance Group">' +
+            '<span style="font-size:10px;font-weight:700;color:#6B6B8A;text-transform:uppercase;letter-spacing:1.2px;">AI Usage Policy Draft' + companyLabel + '</span>' +
+          '</div>' +
+          '<div style="margin:0 0 28px;padding:14px 18px;border-left:4px solid #D98B00;background:#FFFBF3;border-radius:0 8px 8px 0;">' +
+            '<p style="margin:0 0 5px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A86800;">Draft only — not legal advice</p>' +
+            '<p style="margin:0;font-size:12px;line-height:1.55;color:#3D2A00;">This policy should be reviewed by qualified legal counsel before adoption or distribution. If your company is publicly traded, the MNPI section requires review by outside securities counsel.</p>' +
+          '</div>' +
+          '<div style="font-family:Raleway,Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;">' + body + '</div>' +
+          '<div style="margin-top:48px;padding-top:12px;border-top:1px solid #E7E2E5;display:flex;align-items:center;justify-content:space-between;">' +
+            '<span style="font-size:10px;color:#9B9BAD;">Generated by The Endurance Group · theendurancegroup.com</span>' +
+            '<span style="font-size:10px;color:#9B9BAD;">' + todayStr + '</span>' +
+          '</div>'
+        );
       }
 
-      function animatePanel(panel) {
-        if (panel.dataset.animated) return;
-        panel.dataset.animated = '1';
+      // ── Trigger PDF download ────────────────────────────────────
+      function triggerPdfDownload() {
+        if (!window.html2pdf || !generatedText) return;
 
-        var eyebrow = panel.querySelector('.panel-eyebrow');
-        var sub     = panel.querySelector('.panel-sub');
-        var dlBtns  = panel.querySelector('.panel-dl-btns');
-        var ctaCard = panel.querySelector('.teg-cta-card');
-        var content = panel.querySelector('.policy-doc');
-
-        if (eyebrow) { eyebrow.classList.add('anim-child'); eyebrow.style.animationDelay = '0.02s'; }
-        animateTitle(panel, 0.10);
-        if (sub)     { sub.classList.add('anim-child');     sub.style.animationDelay = '0.40s'; }
-        if (dlBtns)  { dlBtns.classList.add('anim-child');  dlBtns.style.animationDelay = '0.50s'; }
-        if (ctaCard) { ctaCard.classList.add('anim-child'); ctaCard.style.animationDelay = '0.62s'; }
-
-        if (content) {
-          Array.from(content.children).forEach(function(child, i) {
-            child.classList.add('anim-child');
-            // Cap stagger at 8 items to avoid overly long sequences
-            child.style.animationDelay = (0.50 + Math.min(i, 8) * 0.07) + 's';
-          });
-        }
-      }
-
-      // ── Step navigation ─────────────────────────────────────────
-      function updateProgress(step) {
-        document.querySelectorAll('.step-dot').forEach(function(dot, i) {
-          dot.classList.remove('active', 'done');
-          if (i === step) dot.classList.add('active');
-          else if (i < step) dot.classList.add('done');
-        });
-        document.getElementById('step-label-text').textContent = stepLabels[step];
-
-        var fill = document.getElementById('step-progress-fill');
-        if (fill) fill.style.width = (((step + 1) / 3) * 100) + '%';
-
-        for (var i = 0; i < 3; i++) {
-          var panel = document.getElementById('panel-' + i);
-          if (panel) panel.classList.toggle('active', i === step);
-        }
-
-        var activePanel = document.getElementById('panel-' + step);
-        if (activePanel) animatePanel(activePanel);
-
-        var btnBack = document.getElementById('btn-back');
-        var btnNext = document.getElementById('btn-next');
-        btnBack.style.visibility = step === 0 ? 'hidden' : 'visible';
-        if (step === 2) {
-          btnNext.style.display = 'none';
+        var raw = parseSections(generatedText);
+        var sections;
+        if (raw.research !== null) {
+          sections = raw;
         } else {
-          btnNext.style.display = '';
-          btnNext.textContent = nextLabels[step];
+          var fb = splitWithoutMarkers(generatedText);
+          sections = { research: fb.research, beforeYouAdopt: fb.beforeYouAdopt, policy: fb.policy };
         }
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
 
-      function nextStep() {
-        if (currentStep < 2) { currentStep++; updateProgress(currentStep); }
-      }
-      function prevStep() {
-        if (currentStep > 0) { currentStep--; updateProgress(currentStep); }
-      }
-      window.nextStep = nextStep;
-      window.prevStep = prevStep;
-
-      // ── Download helpers ────────────────────────────────────────
-      function doDownloadPdf() {
-        var pdfSource = document.getElementById('pdf-content');
-        if (!pdfSource || !window.html2pdf) return;
+        var pdfHtml = buildPdfHtml(sections);
         var slug = (generatedCompany || 'company').toLowerCase().replace(/[^a-z0-9]+/g, '-');
-        // Create element at visible coords — left:-9999px causes html2canvas to render a blank page
+
         var el = document.createElement('div');
-        el.style.cssText = 'position:fixed;top:0;left:0;width:680px;background:#fff;z-index:-9999;padding:24px 20px;pointer-events:none;';
-        el.innerHTML = pdfSource.innerHTML;
+        el.style.cssText = 'position:fixed;top:0;left:0;width:680px;background:#fff;z-index:-9999;padding:24px 20px;font-family:Raleway,Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;pointer-events:none;';
+        el.innerHTML = pdfHtml;
         document.body.appendChild(el);
+
+        var btn = document.getElementById('btn-dl-again');
+        if (btn) btn.disabled = true;
+
         html2pdf().set({
           margin: [15, 15, 15, 15],
           filename: slug + '-ai-policy-draft.pdf',
           image: { type: 'jpeg', quality: 0.98 },
           html2canvas: { scale: 2, useCORS: true },
           jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
-        }).from(el).save().then(function() { document.body.removeChild(el); });
+        }).from(el).save().then(function () {
+          document.body.removeChild(el);
+          if (btn) btn.disabled = false;
+        });
       }
-      window.doDownloadPdf = doDownloadPdf;
 
-      function doDownloadTxt() {
-        if (!generatedText) return;
-        var blob = new Blob([generatedText], { type: 'text/plain; charset=utf-8' });
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        var filename = (generatedCompany || 'company').toLowerCase().replace(/[^a-z0-9]+/g, '-') + '-ai-policy-draft.txt';
-        a.href = url; a.download = filename;
-        document.body.appendChild(a); a.click();
-        setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(url); }, 200);
-      }
-      window.doDownloadTxt = doDownloadTxt;
+      window.downloadAgain = triggerPdfDownload;
 
-      // ── Init: read sessionStorage ───────────────────────────────
-      document.addEventListener('DOMContentLoaded', function() {
+      // ── Init ────────────────────────────────────────────────────
+      document.addEventListener('DOMContentLoaded', function () {
         var output, company;
         try {
           output = sessionStorage.getItem('aiPolicyOutput');
           company = sessionStorage.getItem('aiPolicyCompany');
-        } catch(e) {}
+        } catch (e) {}
 
         if (!output) {
           document.getElementById('no-data-banner').style.display = 'block';
@@ -655,61 +457,16 @@
         generatedText = output;
         generatedCompany = company || '';
 
-        // Update page title
         if (company) {
           document.title = company + ' AI Policy Draft | The Endurance Group';
+          var badge = document.getElementById('company-badge');
+          if (badge) { badge.textContent = company; badge.style.display = 'inline-block'; }
         }
 
-        var sections = parseSections(output);
-        var hasMarkers = sections.research !== null;
-
-        if (hasMarkers) {
-          document.getElementById('panel-0-content').innerHTML = renderMarkdown(stripMarkers(sections.research || ''));
-          document.getElementById('panel-1-content').innerHTML = renderMarkdown(stripMarkers(sections.beforeYouAdopt || ''));
-          document.getElementById('panel-2-content').innerHTML = renderMarkdown(stripMarkers(sections.policy || ''));
-        } else {
-          var fb = splitWithoutMarkers(output);
-          document.getElementById('panel-0-content').innerHTML = fb.research
-            ? renderMarkdown(fb.research)
-            : '<p style="color:#6B6B8A;">No public research summary was included in this output.</p>';
-          document.getElementById('panel-1-content').innerHTML = fb.beforeYouAdopt ? renderMarkdown(fb.beforeYouAdopt) : '';
-          document.getElementById('panel-2-content').innerHTML = renderMarkdown(fb.policy || stripMarkers(output));
-        }
-
-        // Build branded PDF source
-        var pdfEl = document.getElementById('pdf-content');
-        if (pdfEl) {
-          var pdfContent = hasMarkers
-            ? stripMarkers([sections.research, sections.policy, sections.beforeYouAdopt, sections.closingNote].filter(Boolean).join('\n\n---\n\n'))
-            : stripMarkers(output);
-          var todayStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-          pdfEl.innerHTML =
-            '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid #C45E89;">' +
-              '<img src="/images/logo.webp" style="height:28px;" alt="The Endurance Group">' +
-              '<span style="font-size:10px;font-weight:700;color:#6B6B8A;text-transform:uppercase;letter-spacing:1.2px;">AI Usage Policy Draft</span>' +
-            '</div>' +
-            '<div style="font-family:\'Raleway\',Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;">' +
-              renderMarkdown(pdfContent) +
-            '</div>' +
-            '<div style="margin-top:48px;padding-top:12px;border-top:1px solid #E7E2E5;display:flex;align-items:center;justify-content:space-between;">' +
-              '<span style="font-size:10px;color:#9B9BAD;">Generated by The Endurance Group &middot; theendurancegroup.com</span>' +
-              '<span style="font-size:10px;color:#9B9BAD;">' + todayStr + '</span>' +
-            '</div>';
-        }
-
-        // Show company strip
-        if (company) {
-          var strip = document.getElementById('company-strip');
-          var nameEl = document.getElementById('company-name-display');
-          if (strip && nameEl) {
-            nameEl.textContent = company;
-            strip.style.display = 'block';
-          }
-        }
-
-        currentStep = 0;
         document.getElementById('results-section').style.display = 'block';
-        updateProgress(0);
+
+        // Auto-trigger after a brief pause so the page renders first
+        setTimeout(triggerPdfDownload, 700);
       });
 
     })();
