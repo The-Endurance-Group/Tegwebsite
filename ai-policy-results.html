@@ -609,16 +609,21 @@
 
       // ── Download helpers ────────────────────────────────────────
       function doDownloadPdf() {
-        var el = document.getElementById('pdf-content');
-        if (!el || !window.html2pdf) return;
+        var pdfSource = document.getElementById('pdf-content');
+        if (!pdfSource || !window.html2pdf) return;
         var slug = (generatedCompany || 'company').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        // Create element at visible coords — left:-9999px causes html2canvas to render a blank page
+        var el = document.createElement('div');
+        el.style.cssText = 'position:fixed;top:0;left:0;width:680px;background:#fff;z-index:-9999;padding:24px 20px;pointer-events:none;';
+        el.innerHTML = pdfSource.innerHTML;
+        document.body.appendChild(el);
         html2pdf().set({
           margin: [15, 15, 15, 15],
           filename: slug + '-ai-policy-draft.pdf',
           image: { type: 'jpeg', quality: 0.98 },
           html2canvas: { scale: 2, useCORS: true },
           jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
-        }).from(el).save();
+        }).from(el).save().then(function() { document.body.removeChild(el); });
       }
       window.doDownloadPdf = doDownloadPdf;
 
