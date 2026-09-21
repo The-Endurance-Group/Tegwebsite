@@ -135,8 +135,8 @@
   </header>
   <!-- END SHARED HEADER -->
 
-  <!-- Pre-existing render target for html2canvas — must be in DOM on page load, not dynamically appended -->
-  <div id="pdf-render-zone" style="position:fixed;top:0;left:0;width:680px;background:#fff;padding:24px 20px;font-family:Raleway,Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;overflow:hidden;visibility:hidden;pointer-events:none;z-index:99999;"></div>
+  <!-- Pre-existing render target for html2canvas — opacity:0 keeps it painted/laid-out; visibility:hidden prevents painting entirely -->
+  <div id="pdf-render-zone" style="position:fixed;top:0;left:0;width:680px;background:#fff;padding:24px 20px;font-family:Raleway,Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;opacity:0;pointer-events:none;z-index:99999;"></div>
 
   <main id="main-content">
 
@@ -462,25 +462,30 @@
         var pdfHtml = buildPdfHtml(sections);
         var slug = (generatedCompany || 'company').toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
-        // Use a pre-existing DOM element — html2canvas reliably renders existing elements,
-        // not ones dynamically appended to body after page load.
+        // Use a pre-existing DOM element — html2canvas reliably renders existing elements.
+        // opacity:0 keeps the element painted/laid-out; visibility:hidden prevents painting entirely.
+        // Two rAF frames ensure the browser has completed layout before html2canvas captures.
         var el = document.getElementById('pdf-render-zone');
         el.innerHTML = pdfHtml;
-        el.style.visibility = 'visible';
+        el.style.opacity = '1';
 
         var btn = document.getElementById('btn-dl-again');
         if (btn) btn.disabled = true;
 
-        html2pdf().set({
-          margin: [15, 20, 15, 20],
-          filename: slug + '-ai-policy-draft.pdf',
-          image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: { scale: 2, useCORS: true },
-          jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
-        }).from(el).save().then(function () {
-          el.style.visibility = 'hidden';
-          el.innerHTML = '';
-          if (btn) btn.disabled = false;
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            html2pdf().set({
+              margin: [15, 20, 15, 20],
+              filename: slug + '-ai-policy-draft.pdf',
+              image: { type: 'jpeg', quality: 0.98 },
+              html2canvas: { scale: 2, useCORS: true },
+              jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
+            }).from(el).save().then(function () {
+              el.style.opacity = '0';
+              el.innerHTML = '';
+              if (btn) btn.disabled = false;
+            });
+          });
         });
       }
 
