@@ -6,13 +6,18 @@ const PORT = process.env.PORT || 8080;
 const ROOT = __dirname;
 
 const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001';
+const AI_POLICY_MODEL = process.env.AI_POLICY_MODEL || 'claude-sonnet-4-6';
 const CHAT_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const CHAT_RATE_LIMIT_MAX = 30;
 const chatRateLimitHits = new Map();
 const IDEAS_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const IDEAS_RATE_LIMIT_MAX = 8;
 const ideasRateLimitHits = new Map();
+const AI_POLICY_RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
+const AI_POLICY_RATE_LIMIT_MAX = 10;
+const aiPolicyRateLimitHits = new Map();
 const SITE_KNOWLEDGE = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
+const AI_POLICY_SYSTEM_PROMPT = fs.readFileSync(path.join(ROOT, 'ai-policy-generator-prompt.md'), 'utf8');
 const SITEMAP_XML = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const ROBOTS_TXT = fs.readFileSync(path.join(ROOT, 'robots.txt'), 'utf8');
 const CHAT_SYSTEM_PROMPT = [
@@ -253,7 +258,7 @@ function isRateLimited(map, ip, windowMs, max) {
   return hits.length > max;
 }
 
-async function callClaudeApi(systemPrompt, messages, maxTokens) {
+async function callClaudeApi(systemPrompt, messages, maxTokens, model) {
   var apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     throw new Error('ANTHROPIC_API_KEY is not configured');
@@ -267,7 +272,7 @@ async function callClaudeApi(systemPrompt, messages, maxTokens) {
       'content-type': 'application/json',
     },
     body: JSON.stringify({
-      model: ANTHROPIC_MODEL,
+      model: model || ANTHROPIC_MODEL,
       max_tokens: maxTokens || 400,
       system: systemPrompt,
       messages: messages,
@@ -778,6 +783,81 @@ async function handleApply(req, res) {
   }
 }
 
+async function sendAiPolicyNotification(lead) {
+  var resendKey = process.env.RESEND_API_KEY;
+  if (!resendKey) return;
+  fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { 'Authorization': 'Bearer ' + resendKey, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      from: 'TEG Website <noreply@theendurancegroup.com>',
+      to: ['csullivan@theendurancegroup.com'],
+      reply_to: lead.email,
+      subject: 'AI Policy Lead: ' + lead.name + (lead.company ? ' · ' + lead.company : ''),
+      text: [
+        'Name:     ' + lead.name,
+        'Email:    ' + lead.email,
+        'Company:  ' + (lead.company || '—'),
+        'Ticker:   ' + (lead.ticker || '—'),
+        'Industry: ' + (lead.industry || '—'),
+        'IP:       ' + lead.ip,
+        'Time:     ' + new Date().toISOString(),
+      ].join('\n'),
+    }),
+  }).catch(function(err) { console.error('[AI-POLICY] Resend error:', err.message); });
+}
+
+async function handleAiPolicy(req, res) {
+  var ip = clientIp(req);
+
+  function respondJson(status, body) {
+    res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify(body));
+  }
+
+  try {
+    if (isRateLimited(aiPolicyRateLimitHits, ip, AI_POLICY_RATE_LIMIT_WINDOW_MS, AI_POLICY_RATE_LIMIT_MAX)) {
+      respondJson(429, { error: 'Too many requests. Please try again in a little while.' });
+      return;
+    }
+
+    var raw = await readBody(req);
+    var data = JSON.parse(raw || '{}');
+
+    var name = (data.name || '').slice(0, 200).trim();
+    var email = (data.email || '').slice(0, 200).trim();
+    var company = (data.company || '').slice(0, 200).trim();
+    var ticker = (data.ticker || '').replace(/[^A-Za-z0-9.]/g, '').slice(0, 10).toUpperCase();
+    var industry = (data.industry || '').slice(0, 200).trim();
+
+    if (!name || !email || !company || !industry) {
+      respondJson(400, { error: 'Name, email, company, and industry are required.' });
+      return;
+    }
+
+    console.log('[AI-POLICY]', JSON.stringify({ name, email, company, ticker, industry, ip, ts: new Date().toISOString() }));
+    sendAiPolicyNotification({ name, email, company, ticker, industry, ip });
+
+    var userContent = [
+      'Company: ' + company,
+      'Stock ticker: ' + (ticker || 'not provided'),
+      'Industry: ' + industry,
+    ].join('\n');
+
+    var output = await callClaudeApi(
+      AI_POLICY_SYSTEM_PROMPT,
+      [{ role: 'user', content: userContent }],
+      4096,
+      AI_POLICY_MODEL
+    );
+
+    respondJson(200, { output: output, company: company });
+  } catch (err) {
+    console.error('[AI-POLICY] Error:', err.message);
+    respondJson(500, { error: 'Something went wrong generating your policy. Please try again.' });
+  }
+}
+
 function handleDownloadSkill(req, res) {
   var ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown').split(',')[0].trim();
   readBody(req).then(function(body) {
@@ -835,6 +915,10 @@ http.createServer((req, res) => {
     handleDownloadSkill(req, res);
     return;
   }
+  if (req.method === 'POST' && urlPath === '/api/ai-policy') {
+    handleAiPolicy(req, res);
+    return;
+  }
   if (urlPath === '/sitemap.xml') {
     res.writeHead(200, { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public, max-age=3600' });
     res.end(SITEMAP_XML);
@@ -850,6 +934,9 @@ http.createServer((req, res) => {
   }
   if (urlPath === '/operations') {
     req.url = '/operations.html';
+  }
+  if (urlPath === '/ai-policy') {
+    req.url = '/ai-policy.html';
   }
   if (urlPath === '/claude') {
     res.writeHead(301, { Location: '/' });
