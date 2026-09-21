@@ -785,26 +785,39 @@ async function handleApply(req, res) {
 
 async function sendAiPolicyNotification(lead) {
   var resendKey = process.env.RESEND_API_KEY;
-  if (!resendKey) return;
-  fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { 'Authorization': 'Bearer ' + resendKey, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      from: 'TEG Website <noreply@theendurancegroup.com>',
-      to: ['csullivan@theendurancegroup.com'],
-      reply_to: lead.email,
-      subject: 'AI Policy Lead: ' + lead.name + (lead.company ? ' · ' + lead.company : ''),
-      text: [
-        'Name:     ' + lead.name,
-        'Email:    ' + lead.email,
-        'Company:  ' + (lead.company || '—'),
-        'Ticker:   ' + (lead.ticker || '—'),
-        'Industry: ' + (lead.industry || '—'),
-        'IP:       ' + lead.ip,
-        'Time:     ' + new Date().toISOString(),
-      ].join('\n'),
-    }),
-  }).catch(function(err) { console.error('[AI-POLICY] Resend error:', err.message); });
+  if (!resendKey) {
+    console.error('[AI-POLICY] RESEND_API_KEY not set — notification skipped');
+    return;
+  }
+  try {
+    var r = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + resendKey, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: 'TEG Website <noreply@theendurancegroup.com>',
+        to: ['csullivan@theendurancegroup.com'],
+        reply_to: lead.email,
+        subject: 'AI Policy Lead: ' + lead.name + (lead.company ? ' · ' + lead.company : ''),
+        text: [
+          'Name:     ' + lead.name,
+          'Email:    ' + lead.email,
+          'Company:  ' + (lead.company || '—'),
+          'Ticker:   ' + (lead.ticker || '—'),
+          'Industry: ' + (lead.industry || '—'),
+          'IP:       ' + lead.ip,
+          'Time:     ' + new Date().toISOString(),
+        ].join('\n'),
+      }),
+    });
+    if (r.ok) {
+      console.log('[AI-POLICY] Notification sent to csullivan for', lead.email);
+    } else {
+      var detail = await r.text().catch(function() { return ''; });
+      console.error('[AI-POLICY] Resend error', r.status, detail);
+    }
+  } catch (err) {
+    console.error('[AI-POLICY] Resend fetch failed:', err.message);
+  }
 }
 
 async function handleAiPolicy(req, res) {
