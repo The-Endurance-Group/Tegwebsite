@@ -419,36 +419,23 @@
         var pdfHtml = buildPdfHtml(sections);
         var slug = (generatedCompany || 'company').toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
+        // Append as a fully visible element — html2canvas requires a real rendered element.
+        // A hidden/off-screen element produces a blank canvas regardless of z-index tricks.
         var el = document.createElement('div');
-        el.style.cssText = 'position:fixed;top:0;left:0;width:680px;background:#fff;z-index:2;padding:24px 20px;font-family:Raleway,Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;pointer-events:none;';
+        el.style.cssText = 'position:fixed;top:0;left:0;width:680px;background:#fff;z-index:99999;padding:24px 20px;font-family:Raleway,Arial,sans-serif;font-size:14px;line-height:1.75;color:#1a1a2e;overflow:hidden;';
         el.innerHTML = pdfHtml;
-
-        var overlay = document.createElement('div');
-        overlay.id = '__pdf-overlay';
-        overlay.style.cssText = 'position:fixed;inset:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;';
-        overlay.innerHTML = '<span style="font-size:14px;color:#6B6B8A;font-family:Raleway,Arial,sans-serif;">Generating PDF…</span>';
-
         document.body.appendChild(el);
-        document.body.appendChild(overlay);
 
         var btn = document.getElementById('btn-dl-again');
         if (btn) btn.disabled = true;
 
         html2pdf().set({
-          margin: [15, 15, 15, 15],
+          margin: [15, 20, 15, 20],
           filename: slug + '-ai-policy-draft.pdf',
           image: { type: 'jpeg', quality: 0.98 },
-          html2canvas: {
-            scale: 2,
-            useCORS: true,
-            onclone: function(clonedDoc) {
-              var o = clonedDoc.getElementById('__pdf-overlay');
-              if (o) o.parentNode.removeChild(o);
-            }
-          },
+          html2canvas: { scale: 2, useCORS: true },
           jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
         }).from(el).save().then(function () {
-          document.body.removeChild(overlay);
           document.body.removeChild(el);
           if (btn) btn.disabled = false;
         });
