@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example AI Policy Draft | The Endurance Group</title>
+  <meta name="description" content="See a sample AI usage policy draft generated for a fictional public company — the same structure your policy would follow.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/ai-policy-example">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon-network.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .example-banner {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 100%);
+      padding: 18px 0;
+      text-align: center;
+    }
+    .example-banner p {
+      margin: 0;
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+    }
+    .example-banner strong { color: #E9AACB; }
+    .example-banner a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .example-banner a:hover { opacity: 0.8; }
+
+    .example-page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .example-meta {
+      background: #FDF8FB;
+      border: 1px solid #E9AACB;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .example-meta-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .example-meta-text { flex: 1; min-width: 0; }
+    .example-meta-text p {
+      margin: 0 0 4px;
+      font-size: 14px;
+      color: #1a1a2e;
+      line-height: 1.55;
+    }
+    .example-meta-text p:last-child { margin: 0; }
+    .example-meta-text strong { color: #1a1a2e; }
+
+    .dl-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .btn-dl-pdf {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #C45E89;
+      color: #fff;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 24px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s;
+      text-decoration: none;
+    }
+    .btn-dl-pdf:hover { background: #b04d78; }
+    .btn-dl-txt {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: #1a1a2e;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 13px 24px;
+      border-radius: 8px;
+      border: 1px solid #D0CDD8;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+      text-decoration: none;
+    }
+    .btn-dl-txt:hover { border-color: #C45E89; color: #C45E89; }
+
+    .policy-doc {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #1a1a2e;
+    }
+    .policy-doc h1 {
+      font-size: 26px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+    .policy-doc .doc-meta {
+      font-size: 13px;
+      color: #6B6B8A;
+      margin: 0 0 32px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid #F0EDF3;
+    }
+    .policy-doc h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 40px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #F0EDF3;
+      color: #1a1a2e;
+    }
+    .policy-doc h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 28px 0 8px;
+      color: #1a1a2e;
+    }
+    .policy-doc p { margin: 0 0 14px; }
+    .policy-doc ul,
+    .policy-doc ol {
+      margin: 0 0 14px;
+      padding-left: 24px;
+    }
+    .policy-doc li { margin-bottom: 6px; }
+    .policy-doc hr {
+      border: none;
+      border-top: 1px solid #E7E2E5;
+      margin: 32px 0;
+    }
+    .policy-doc blockquote {
+      border-left: 3px solid #C45E89;
+      margin: 28px 0;
+      padding: 16px 20px;
+      background: #FDF8FB;
+      border-radius: 0 8px 8px 0;
+      font-size: 15px;
+      color: #1a1a2e;
+    }
+    .policy-doc blockquote p { margin: 0 0 8px; }
+    .policy-doc blockquote p:last-child { margin: 0; }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0 20px;
+    }
+    .policy-doc table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .policy-doc th {
+      background: #F5F2F8;
+      font-weight: 700;
+      text-align: left;
+      padding: 10px 14px;
+      border: 1px solid #E7E2E5;
+    }
+    .policy-doc td {
+      padding: 9px 14px;
+      border: 1px solid #E7E2E5;
+      vertical-align: top;
+    }
+    .policy-doc tr:nth-child(even) td { background: #FAFAFA; }
+    .policy-doc strong { font-weight: 700; }
+    .policy-doc em { font-style: italic; }
+    .decision-box {
+      background: #FDF8FB;
+      border: 1px solid #E9AACB;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .decision-box .decision-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #C45E89;
+      margin-bottom: 10px;
+    }
+    .decision-box p { margin: 0 0 10px; font-size: 14px; }
+    .decision-box p:last-child { margin: 0; }
+    .decision-box ul { margin: 0 0 10px; padding-left: 20px; font-size: 14px; }
+    .decision-box li { margin-bottom: 5px; }
+
+    .teg-cta-card {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 100%);
+      border-radius: 20px;
+      padding: 44px 40px 40px;
+      color: #fff;
+      margin: 60px 0 48px;
+    }
+    .teg-cta-card .cta-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #E9AACB;
+      margin-bottom: 14px;
+    }
+    .teg-cta-card h3 {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 0 14px;
+      line-height: 1.3;
+      color: #fff;
+    }
+    .teg-cta-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+      margin: 0 0 10px;
+    }
+    .teg-cta-card ul {
+      margin: 0 0 28px;
+      padding-left: 20px;
+      color: rgba(255,255,255,0.8);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .teg-cta-card li { margin-bottom: 5px; }
+    .teg-cta-card .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn-cta-white {
+      background: #fff;
+      color: #1a1a2e;
+      font-family: inherit;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn-cta-white:hover { opacity: 0.88; }
+
+    @media (max-width: 600px) {
+      .teg-cta-card { padding: 32px 24px 28px; }
+    }
+
+    @media print {
+      .example-banner, .site-header, .site-footer, .dl-row, .teg-cta-card, .skip-link { display: none !important; }
+      .policy-doc h2 { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="success.html">Success</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="ideas.html" class="nav-cta">Get Your Roadmap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <div class="example-banner">
+    <p><strong>This is an example.</strong> Harborview Analytics is a fictional company. <a href="ai-policy.html">Get a draft personalized to your company →</a></p>
+  </div>
+
+  <main id="main-content">
+    <section class="section">
+      <div class="container">
+        <div class="example-page-wrap">
+
+          <div class="example-meta">
+            <div class="example-meta-icon">📄</div>
+            <div class="example-meta-text">
+              <p><strong>What you're looking at:</strong> This is the kind of draft our tool generates — a full AI usage policy built on the same structure found in SEC-filed governance documents, personalized to a company's industry and public status. Harborview Analytics, Inc. is fictional; the policy structure is real.</p>
+              <p>Your version will be researched against your actual company, ticker, and industry. <a href="ai-policy.html" style="color:#C45E89;font-weight:600;">Generate yours in about a minute →</a></p>
+            </div>
+          </div>
+
+          <div class="dl-row">
+            <button class="btn-dl-pdf" onclick="doDownloadPdf()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download example PDF
+            </button>
+            <button class="btn-dl-txt" onclick="doDownloadTxt()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Download .txt
+            </button>
+          </div>
+
+          <!-- Policy document -->
+          <div class="policy-doc" id="policy-content">
+
+            <h1>Artificial Intelligence Usage Policy</h1>
+            <p class="doc-meta">Harborview Analytics, Inc. &nbsp;·&nbsp; Draft for internal review &nbsp;·&nbsp; [DATE] &nbsp;·&nbsp; Version 1.0</p>
+
+            <p><em>We reviewed Harborview Analytics' published Code of Business Conduct and Ethics and did not find a section addressing AI tool use. This draft is written to stand alone or to be incorporated into that document.</em></p>
+
+            <h2>1. Purpose and Scope</h2>
+            <p>Harborview Analytics, Inc. ("Harborview" or "the Company") develops and sells B2B data analytics software to enterprise customers across financial services, healthcare, and technology sectors. Our employees regularly work with client data, proprietary algorithms, unreleased product roadmaps, and material nonpublic financial information. Generative AI tools offer genuine productivity benefits across sales, engineering, customer success, and finance functions — and the Company intends to enable their use thoughtfully, not to prohibit them.</p>
+            <p>This policy establishes the rules under which Harborview employees, contractors, and agents ("Covered Persons") may use generative AI tools in connection with Company work. Its goal is to make safe, confident AI use the default — not to create compliance friction that causes employees to work around it.</p>
+            <p>This policy covers all use of generative AI tools when conducting Company business, including use on personal devices.</p>
+
+            <h2>2. Definitions</h2>
+            <ul>
+              <li><strong>Generative AI tool</strong> — any software that uses a large language model or similar foundation model to generate text, code, images, or other content in response to prompts. This includes but is not limited to AI assistants, AI-powered coding tools, AI writing aids, and AI-powered search tools.</li>
+              <li><strong>Approved tool</strong> — a generative AI tool that the Company has reviewed and added to the Approved Tool List maintained by the Policy Owner (see Section 8).</li>
+              <li><strong>Confidential information</strong> — any non-public information relating to Harborview's business, including customer data, customer lists, contract terms, unreleased product features, source code, financial projections, personnel matters, strategic plans, and information subject to nondisclosure agreements.</li>
+              <li><strong>MNPI (material nonpublic information)</strong> — information about Harborview that is both (a) material (meaning a reasonable investor would consider it important in making an investment decision) and (b) not yet publicly disclosed. Examples include earnings results before public announcement, major contract wins or losses, M&A discussions, and significant product launches not yet announced.</li>
+              <li><strong>Personal or consumer account</strong> — an account with a generative AI provider held by an individual in their personal capacity, as distinct from an enterprise or business account managed and contracted by Harborview.</li>
+            </ul>
+
+            <h2>3. Approved Tools</h2>
+            <p>Covered Persons may use generative AI tools for Company work only if the tool appears on the Approved Tool List. The table below is a placeholder for Harborview to populate once it has completed its tool review and procurement process.</p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tool</th>
+                    <th>Account type required</th>
+                    <th>Cleared for</th>
+                    <th>Not cleared for</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>[Tool name]</td>
+                    <td>[Enterprise / Team / Personal]</td>
+                    <td>[Permitted use cases]</td>
+                    <td>[Prohibited use cases]</td>
+                  </tr>
+                  <tr>
+                    <td>[Tool name]</td>
+                    <td>[Enterprise / Team / Personal]</td>
+                    <td>[Permitted use cases]</td>
+                    <td>[Prohibited use cases]</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>Until a tool is added to the Approved Tool List, it may not be used for Company work. If you want to use a tool that is not yet on the list, follow the process in Section 6.</p>
+
+            <h2>4. Data Rules</h2>
+
+            <h3>4.1 General rule</h3>
+            <p>Covered Persons may not enter Confidential Information into any generative AI tool other than an Approved Tool. This prohibition applies regardless of whether the tool is accessed through a browser, app, API, or integration with another product (e.g., an AI writing assistant embedded in an email client or document editor).</p>
+            <p>Because Harborview's work regularly involves customer data, proprietary analytics models, and enterprise contract terms — all of which are Confidential Information — this means employees should assume the restriction applies unless the tool is on the Approved Tool List. When in doubt, do not paste.</p>
+            <p>This restriction does not prevent using AI tools for tasks that involve only non-confidential content (e.g., drafting a generic onboarding email, generating sample SQL for internal training, or summarizing a publicly available earnings call transcript).</p>
+
+            <h3>4.2 MNPI handling</h3>
+            <p>Because Harborview is a publicly traded company (Nasdaq: HVAN), certain employees will have access to MNPI in the ordinary course of their work. The handling of MNPI through AI tools presents distinct legal risk under securities law, separate from general confidentiality concerns.</p>
+
+            <div class="decision-box">
+              <div class="decision-label">Leadership decision required</div>
+              <p>The following presents two approaches to MNPI in AI tools. Harborview's leadership — in consultation with outside securities counsel — must choose one before this policy is adopted. Do not treat either option as selected until that decision is made and documented.</p>
+              <p><strong>Option A — Default prohibited (stricter):</strong> No Covered Person may enter MNPI into any generative AI tool, regardless of whether it is on the Approved Tool List. This is the more conservative position and requires no ongoing judgment calls about what qualifies as MNPI.</p>
+              <p><strong>Option B — Tiered with named sign-off (more permissive):</strong> Entry of MNPI into an Approved Tool requires advance written approval from the CFO or General Counsel (or their designees). Approval is documented in [designated system] and specifies the nature of the MNPI, the tool, and the business purpose. Routine financial data (e.g., current-quarter actuals being used in an internal model) may be treated differently from high-sensitivity MNPI (e.g., preliminary earnings, M&A terms, or undisclosed regulatory matters).</p>
+              <p><em>This section should be reviewed by securities counsel before adoption.</em></p>
+            </div>
+
+            <h2>5. Reviewing AI Output</h2>
+            <p>Generative AI tools produce plausible-sounding output that may be factually wrong, legally problematic, or inappropriate for the intended use. Before relying on AI-assisted work, a Covered Person must review it for accuracy, completeness, and fitness for purpose.</p>
+            <p>Specifically, AI-assisted work may not be:</p>
+            <ul>
+              <li>sent to a customer, prospect, partner, or outside counsel without human review;</li>
+              <li>included in a public filing, press release, or investor communication without human review;</li>
+              <li>used as the basis for a business, legal, or financial decision without human review; or</li>
+              <li>submitted as original work when the context requires disclosure of AI assistance.</li>
+            </ul>
+            <p>"Review" means an actual check for accuracy and appropriateness by a person who understands the subject matter — not simply reading the output once before forwarding it.</p>
+
+            <h2>6. Requesting a New Tool</h2>
+            <p>If you want to use a generative AI tool that is not on the Approved Tool List, bring the request to the Policy Owner before using the tool. Requests should include:</p>
+            <ul>
+              <li>the name of the tool and the provider;</li>
+              <li>the intended use case; and</li>
+              <li>whether you anticipate entering any Confidential Information or MNPI.</li>
+            </ul>
+            <p>The Policy Owner will assess the request and respond within [X] business days. Using an unapproved tool while a request is pending is not permitted.</p>
+            <p>This is not intended to be a slow or difficult process. The goal is to build a list that reflects how people actually work — not to create a backlog of unanswered requests.</p>
+
+            <h2>7. Reporting an Incident</h2>
+            <p>If you become aware that Confidential Information or MNPI has been entered into an unapproved tool, or that approved-tool rules have been violated, you must report it to the Policy Owner within the same business day. Reports may also be made to [designated contact / ethics hotline].</p>
+            <p>Employees who report an incident in good faith will not face adverse consequences for the report itself. Harborview does not retaliate against good-faith reporters.</p>
+            <p>The Policy Owner will assess each report and escalate to legal counsel, the CFO, or the Board as the circumstances require.</p>
+
+            <h2>8. Governance</h2>
+            <ul>
+              <li><strong>Policy Owner:</strong> [Name / Title] is responsible for maintaining the Approved Tool List, processing tool requests, receiving incident reports, and serving as the first point of contact for questions about this policy.</li>
+              <li><strong>Review cadence:</strong> This policy will be reviewed at least annually, or sooner if there are material changes in the Company's AI tool usage, a significant security or compliance incident, or new regulatory guidance.</li>
+              <li><strong>Acknowledgment:</strong> Covered Persons will be asked to acknowledge this policy at [onboarding / annual certification / next all-hands]. Acknowledgment records will be maintained by [HR / Legal].</li>
+              <li><strong>Securities counsel review:</strong> Section 4.2 of this policy addresses MNPI handling and should be reviewed and approved by outside securities counsel before the policy is adopted or distributed.</li>
+            </ul>
+
+            <hr>
+            <p style="font-size:13px;color:#6B6B8A;"><em>This is a draft for internal review. It is not legal advice. Harborview Analytics should have this policy reviewed by qualified legal counsel — including securities counsel for Section 4.2 — before adoption.</em></p>
+
+          </div>
+          <!-- end policy-content -->
+
+          <div class="teg-cta-card">
+            <div class="cta-eyebrow">Free scoping session</div>
+            <h3>Ready for a draft built on your actual company?</h3>
+            <p>The example above follows the same structure your policy would — but yours would be researched against your company's actual filings, governance documents, and industry context. In about a minute, you'll have a real starting point.</p>
+            <ul>
+              <li>Personalized to your company name, ticker, and industry</li>
+              <li>Checked against your existing Code of Conduct for gaps</li>
+              <li>MNPI section included if you're publicly traded</li>
+              <li>PDF and .txt ready to share with your team or counsel</li>
+            </ul>
+            <div class="cta-actions">
+              <a href="ai-policy.html" class="btn-cta-white">Generate my draft</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Off-screen div for PDF generation -->
+  <div id="pdf-render" style="position:absolute;left:-9999px;top:0;width:680px;font-family:'Raleway',sans-serif;font-size:14px;line-height:1.7;color:#1a1a2e;padding:0;"></div>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Claude Implementation Partner</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="specialties.html">Specialties</a></li>
+            <li><a href="ideas.html">Ideas</a></li>
+            <li><a href="ai-policy.html">AI Policy Draft</a></li>
+            <li><a href="free-training.html">Free Training</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="success.html">Success</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="privacy.html">Privacy</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="js/main.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function doDownloadPdf() {
+      var src = document.getElementById('policy-content');
+      var el = document.getElementById('pdf-render');
+      el.innerHTML = src.innerHTML;
+      if (!window.html2pdf) { alert('PDF library not loaded yet. Please try again in a moment.'); return; }
+      html2pdf().set({
+        margin: [15, 15, 15, 15],
+        filename: 'harborview-analytics-ai-policy-example.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
+      }).from(el).save();
+    }
+
+    function doDownloadTxt() {
+      var src = document.getElementById('policy-content');
+      var tmp = document.createElement('div');
+      tmp.innerHTML = src.innerHTML;
+      var text = (tmp.innerText || tmp.textContent || '').replace(/\n{3,}/g, '\n\n').trim();
+      var blob = new Blob([text], { type: 'text/plain' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'harborview-analytics-ai-policy-example.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+    }
+  </script>
+</body>
+</html>
