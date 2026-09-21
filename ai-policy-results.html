@@ -427,11 +427,25 @@
       }
 
       // ── Section parsing ─────────────────────────────────────────
+
+      // Remove any leftover === MARKER === lines before display
+      function stripMarkers(text) {
+        return text
+          .replace(/^=+\s*(?:RESEARCH_SUMMARY|DRAFT_POLICY|BEFORE_YOU_ADOPT|CLOSING_NOTE|END_RESEARCH_SUMMARY|END_DRAFT_POLICY|END_BEFORE_YOU_ADOPT|END_CLOSING_NOTE)\s*=*\s*$/gim, '')
+          .replace(/\n{3,}/g, '\n\n')
+          .trim();
+      }
+
       function parseSections(output) {
         function extract(tag) {
-          var re = new RegExp('===\\s*' + tag + '\\s*===([\\s\\S]*?)===\\s*END_' + tag + '\\s*===', 'i');
+          // Primary: =+ chars, optional whitespace, newline-bounded
+          var re = new RegExp('=+\\s*' + tag + '\\s*=+\\r?\\n([\\s\\S]*?)\\r?\\n=+\\s*END_' + tag + '\\s*=+', 'i');
           var m = output.match(re);
-          return m ? m[1].trim() : null;
+          if (m) return m[1].trim();
+          // Fallback: inline (no newline requirement) — handles tighter formatting
+          var re2 = new RegExp('=+\\s*' + tag + '\\s*=+([\\s\\S]*?)=+\\s*END_' + tag + '\\s*=+', 'i');
+          var m2 = output.match(re2);
+          return m2 ? m2[1].trim() : null;
         }
         return {
           research: extract('RESEARCH_SUMMARY'),
@@ -442,19 +456,21 @@
       }
 
       function splitWithoutMarkers(output) {
-        var byaIdx = output.search(/(?:^|\n)#+\s*Before You Adopt This/i);
-        var policyIdx = output.search(/(?:^|\n)#+\s*(?:Artificial Intelligence Usage Policy|AI Usage Policy)/i);
+        // Strip markers first so they don't bleed into section content
+        var clean = stripMarkers(output);
+        var byaIdx = clean.search(/(?:^|\n)#+\s*Before You Adopt This/i);
+        var policyIdx = clean.search(/(?:^|\n)#+\s*(?:Artificial Intelligence Usage Policy|AI Usage Policy)/i);
         if (byaIdx !== -1 && policyIdx !== -1) {
           return {
-            research: output.slice(0, Math.min(byaIdx, policyIdx)).trim(),
-            beforeYouAdopt: byaIdx < policyIdx ? output.slice(byaIdx, policyIdx).trim() : output.slice(byaIdx).trim(),
-            policy: policyIdx > byaIdx ? output.slice(policyIdx).trim() : output.slice(policyIdx, byaIdx).trim()
+            research: clean.slice(0, Math.min(byaIdx, policyIdx)).trim(),
+            beforeYouAdopt: byaIdx < policyIdx ? clean.slice(byaIdx, policyIdx).trim() : clean.slice(byaIdx).trim(),
+            policy: policyIdx > byaIdx ? clean.slice(policyIdx).trim() : clean.slice(policyIdx, byaIdx).trim()
           };
         }
         if (policyIdx !== -1) {
-          return { research: output.slice(0, policyIdx).trim(), beforeYouAdopt: '', policy: output.slice(policyIdx).trim() };
+          return { research: clean.slice(0, policyIdx).trim(), beforeYouAdopt: '', policy: clean.slice(policyIdx).trim() };
         }
-        return { research: '', beforeYouAdopt: '', policy: output };
+        return { research: '', beforeYouAdopt: '', policy: clean };
       }
 
       // ── Step navigation ─────────────────────────────────────────
@@ -542,24 +558,24 @@
         var hasMarkers = sections.research !== null;
 
         if (hasMarkers) {
-          document.getElementById('panel-0-content').innerHTML = renderMarkdown(sections.research || '');
-          document.getElementById('panel-1-content').innerHTML = renderMarkdown(sections.beforeYouAdopt || '');
-          document.getElementById('panel-2-content').innerHTML = renderMarkdown(sections.policy || '');
+          document.getElementById('panel-0-content').innerHTML = renderMarkdown(stripMarkers(sections.research || ''));
+          document.getElementById('panel-1-content').innerHTML = renderMarkdown(stripMarkers(sections.beforeYouAdopt || ''));
+          document.getElementById('panel-2-content').innerHTML = renderMarkdown(stripMarkers(sections.policy || ''));
         } else {
           var fb = splitWithoutMarkers(output);
           document.getElementById('panel-0-content').innerHTML = fb.research
             ? renderMarkdown(fb.research)
             : '<p style="color:#6B6B8A;">No public research summary was included in this output.</p>';
           document.getElementById('panel-1-content').innerHTML = fb.beforeYouAdopt ? renderMarkdown(fb.beforeYouAdopt) : '';
-          document.getElementById('panel-2-content').innerHTML = renderMarkdown(fb.policy || output);
+          document.getElementById('panel-2-content').innerHTML = renderMarkdown(fb.policy || stripMarkers(output));
         }
 
         // Build branded PDF source
         var pdfEl = document.getElementById('pdf-content');
         if (pdfEl) {
           var pdfContent = hasMarkers
-            ? [sections.research, sections.policy, sections.beforeYouAdopt, sections.closingNote].filter(Boolean).join('\n\n---\n\n')
-            : output;
+            ? stripMarkers([sections.research, sections.policy, sections.beforeYouAdopt, sections.closingNote].filter(Boolean).join('\n\n---\n\n'))
+            : stripMarkers(output);
           var todayStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
           pdfEl.innerHTML =
             '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid #C45E89;">' +
