@@ -165,6 +165,49 @@
     }
     #no-data-banner p { font-size: 17px; color: #6B6B8A; margin-bottom: 24px; }
 
+    /* ── Floating-word animations ──────────────────────────────── */
+    @keyframes floatUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .anim-word {
+      display: inline-block;
+      animation: floatUp 0.52s ease-out both;
+    }
+    .anim-child {
+      animation: floatUp 0.55s ease-out both;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .anim-word, .anim-child {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* ── Step progress bar ──────────────────────────────────────── */
+    .step-progress-bar {
+      width: 100%; max-width: 220px; height: 3px;
+      background: #F0EDF3; border-radius: 2px; overflow: hidden; margin-top: 10px;
+    }
+    .step-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #C45E89 0%, #e07aaa 100%);
+      border-radius: 2px;
+      transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 33.33%;
+    }
+
+    /* ── Company context strip ──────────────────────────────────── */
+    .company-strip {
+      font-size: 12px; font-weight: 700; color: #9B9BAD;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px;
+    }
+    .company-strip strong {
+      color: #1a1a2e; font-weight: 800; font-size: 14px;
+      text-transform: none; letter-spacing: 0;
+    }
+
     /* ── Print ──────────────────────────────────────────────────── */
     @media print {
       .site-header, .site-footer, .walkthrough-progress, .walkthrough-nav,
@@ -219,6 +262,9 @@
     <section class="section" id="results-section" style="display:none;">
       <div class="container">
 
+        <!-- Company context strip -->
+        <div class="company-strip" id="company-strip" style="display:none;">Policy draft for <strong id="company-name-display"></strong></div>
+
         <!-- Progress indicator -->
         <div class="walkthrough-progress">
           <div class="step-dots">
@@ -226,6 +272,7 @@
             <button class="step-dot" data-step="1" title="Before you adopt"></button>
             <button class="step-dot" data-step="2" title="Your draft + next steps"></button>
           </div>
+          <div class="step-progress-bar"><div class="step-progress-fill" id="step-progress-fill"></div></div>
           <span class="step-label-text" id="step-label-text">What we found</span>
         </div>
 
@@ -427,11 +474,25 @@
       }
 
       // ── Section parsing ─────────────────────────────────────────
+
+      // Remove any leftover === MARKER === lines before display
+      function stripMarkers(text) {
+        return text
+          .replace(/^=+\s*(?:RESEARCH_SUMMARY|DRAFT_POLICY|BEFORE_YOU_ADOPT|CLOSING_NOTE|END_RESEARCH_SUMMARY|END_DRAFT_POLICY|END_BEFORE_YOU_ADOPT|END_CLOSING_NOTE)\s*=*\s*$/gim, '')
+          .replace(/\n{3,}/g, '\n\n')
+          .trim();
+      }
+
       function parseSections(output) {
         function extract(tag) {
-          var re = new RegExp('===\\s*' + tag + '\\s*===([\\s\\S]*?)===\\s*END_' + tag + '\\s*===', 'i');
+          // Primary: =+ chars, optional whitespace, newline-bounded
+          var re = new RegExp('=+\\s*' + tag + '\\s*=+\\r?\\n([\\s\\S]*?)\\r?\\n=+\\s*END_' + tag + '\\s*=+', 'i');
           var m = output.match(re);
-          return m ? m[1].trim() : null;
+          if (m) return m[1].trim();
+          // Fallback: inline (no newline requirement) — handles tighter formatting
+          var re2 = new RegExp('=+\\s*' + tag + '\\s*=+([\\s\\S]*?)=+\\s*END_' + tag + '\\s*=+', 'i');
+          var m2 = output.match(re2);
+          return m2 ? m2[1].trim() : null;
         }
         return {
           research: extract('RESEARCH_SUMMARY'),
@@ -442,19 +503,67 @@
       }
 
       function splitWithoutMarkers(output) {
-        var byaIdx = output.search(/(?:^|\n)#+\s*Before You Adopt This/i);
-        var policyIdx = output.search(/(?:^|\n)#+\s*(?:Artificial Intelligence Usage Policy|AI Usage Policy)/i);
+        // Strip markers first so they don't bleed into section content
+        var clean = stripMarkers(output);
+        var byaIdx = clean.search(/(?:^|\n)#+\s*Before You Adopt This/i);
+        var policyIdx = clean.search(/(?:^|\n)#+\s*(?:Artificial Intelligence Usage Policy|AI Usage Policy)/i);
         if (byaIdx !== -1 && policyIdx !== -1) {
           return {
-            research: output.slice(0, Math.min(byaIdx, policyIdx)).trim(),
-            beforeYouAdopt: byaIdx < policyIdx ? output.slice(byaIdx, policyIdx).trim() : output.slice(byaIdx).trim(),
-            policy: policyIdx > byaIdx ? output.slice(policyIdx).trim() : output.slice(policyIdx, byaIdx).trim()
+            research: clean.slice(0, Math.min(byaIdx, policyIdx)).trim(),
+            beforeYouAdopt: byaIdx < policyIdx ? clean.slice(byaIdx, policyIdx).trim() : clean.slice(byaIdx).trim(),
+            policy: policyIdx > byaIdx ? clean.slice(policyIdx).trim() : clean.slice(policyIdx, byaIdx).trim()
           };
         }
         if (policyIdx !== -1) {
-          return { research: output.slice(0, policyIdx).trim(), beforeYouAdopt: '', policy: output.slice(policyIdx).trim() };
+          return { research: clean.slice(0, policyIdx).trim(), beforeYouAdopt: '', policy: clean.slice(policyIdx).trim() };
         }
-        return { research: '', beforeYouAdopt: '', policy: output };
+        return { research: '', beforeYouAdopt: '', policy: clean };
+      }
+
+      // ── Panel animations ────────────────────────────────────────
+      function animateTitle(panel, startDelay) {
+        var titleEl = panel.querySelector('.panel-title');
+        if (!titleEl) return;
+        if (!titleEl.hasAttribute('data-orig')) {
+          titleEl.setAttribute('data-orig', titleEl.textContent.trim());
+        }
+        var words = titleEl.getAttribute('data-orig').split(/\s+/).filter(Boolean);
+        var frag = document.createDocumentFragment();
+        words.forEach(function(word, i) {
+          if (i > 0) frag.appendChild(document.createTextNode(' '));
+          var span = document.createElement('span');
+          span.className = 'anim-word';
+          span.textContent = word;
+          span.style.animationDelay = (startDelay + i * 0.08) + 's';
+          frag.appendChild(span);
+        });
+        titleEl.innerHTML = '';
+        titleEl.appendChild(frag);
+      }
+
+      function animatePanel(panel) {
+        if (panel.dataset.animated) return;
+        panel.dataset.animated = '1';
+
+        var eyebrow = panel.querySelector('.panel-eyebrow');
+        var sub     = panel.querySelector('.panel-sub');
+        var dlBtns  = panel.querySelector('.panel-dl-btns');
+        var ctaCard = panel.querySelector('.teg-cta-card');
+        var content = panel.querySelector('.policy-doc');
+
+        if (eyebrow) { eyebrow.classList.add('anim-child'); eyebrow.style.animationDelay = '0.02s'; }
+        animateTitle(panel, 0.10);
+        if (sub)     { sub.classList.add('anim-child');     sub.style.animationDelay = '0.40s'; }
+        if (dlBtns)  { dlBtns.classList.add('anim-child');  dlBtns.style.animationDelay = '0.50s'; }
+        if (ctaCard) { ctaCard.classList.add('anim-child'); ctaCard.style.animationDelay = '0.62s'; }
+
+        if (content) {
+          Array.from(content.children).forEach(function(child, i) {
+            child.classList.add('anim-child');
+            // Cap stagger at 8 items to avoid overly long sequences
+            child.style.animationDelay = (0.50 + Math.min(i, 8) * 0.07) + 's';
+          });
+        }
       }
 
       // ── Step navigation ─────────────────────────────────────────
@@ -465,10 +574,18 @@
           else if (i < step) dot.classList.add('done');
         });
         document.getElementById('step-label-text').textContent = stepLabels[step];
+
+        var fill = document.getElementById('step-progress-fill');
+        if (fill) fill.style.width = (((step + 1) / 3) * 100) + '%';
+
         for (var i = 0; i < 3; i++) {
           var panel = document.getElementById('panel-' + i);
           if (panel) panel.classList.toggle('active', i === step);
         }
+
+        var activePanel = document.getElementById('panel-' + step);
+        if (activePanel) animatePanel(activePanel);
+
         var btnBack = document.getElementById('btn-back');
         var btnNext = document.getElementById('btn-next');
         btnBack.style.visibility = step === 0 ? 'hidden' : 'visible';
@@ -542,24 +659,24 @@
         var hasMarkers = sections.research !== null;
 
         if (hasMarkers) {
-          document.getElementById('panel-0-content').innerHTML = renderMarkdown(sections.research || '');
-          document.getElementById('panel-1-content').innerHTML = renderMarkdown(sections.beforeYouAdopt || '');
-          document.getElementById('panel-2-content').innerHTML = renderMarkdown(sections.policy || '');
+          document.getElementById('panel-0-content').innerHTML = renderMarkdown(stripMarkers(sections.research || ''));
+          document.getElementById('panel-1-content').innerHTML = renderMarkdown(stripMarkers(sections.beforeYouAdopt || ''));
+          document.getElementById('panel-2-content').innerHTML = renderMarkdown(stripMarkers(sections.policy || ''));
         } else {
           var fb = splitWithoutMarkers(output);
           document.getElementById('panel-0-content').innerHTML = fb.research
             ? renderMarkdown(fb.research)
             : '<p style="color:#6B6B8A;">No public research summary was included in this output.</p>';
           document.getElementById('panel-1-content').innerHTML = fb.beforeYouAdopt ? renderMarkdown(fb.beforeYouAdopt) : '';
-          document.getElementById('panel-2-content').innerHTML = renderMarkdown(fb.policy || output);
+          document.getElementById('panel-2-content').innerHTML = renderMarkdown(fb.policy || stripMarkers(output));
         }
 
         // Build branded PDF source
         var pdfEl = document.getElementById('pdf-content');
         if (pdfEl) {
           var pdfContent = hasMarkers
-            ? [sections.research, sections.policy, sections.beforeYouAdopt, sections.closingNote].filter(Boolean).join('\n\n---\n\n')
-            : output;
+            ? stripMarkers([sections.research, sections.policy, sections.beforeYouAdopt, sections.closingNote].filter(Boolean).join('\n\n---\n\n'))
+            : stripMarkers(output);
           var todayStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
           pdfEl.innerHTML =
             '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid #C45E89;">' +
@@ -573,6 +690,16 @@
               '<span style="font-size:10px;color:#9B9BAD;">Generated by The Endurance Group &middot; theendurancegroup.com</span>' +
               '<span style="font-size:10px;color:#9B9BAD;">' + todayStr + '</span>' +
             '</div>';
+        }
+
+        // Show company strip
+        if (company) {
+          var strip = document.getElementById('company-strip');
+          var nameEl = document.getElementById('company-name-display');
+          if (strip && nameEl) {
+            nameEl.textContent = company;
+            strip.style.display = 'block';
+          }
         }
 
         currentStep = 0;
