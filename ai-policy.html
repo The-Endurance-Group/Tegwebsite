@@ -246,8 +246,14 @@
       font-size: 28px;
       font-weight: 800;
       color: #1a1a2e;
-      margin: 0 0 28px;
+      margin: 0 0 8px;
       line-height: 1.2;
+    }
+    .panel-sub {
+      font-size: 15px;
+      color: #6B6B8A;
+      margin: 0 0 28px;
+      max-width: 560px;
     }
     .panel-header {
       display: flex;
@@ -530,7 +536,7 @@
       </div>
     </section>
 
-    <!-- Results section: 4-step walkthrough -->
+    <!-- Results section: 3-step walkthrough -->
     <section class="section" id="results-section">
       <div class="container">
 
@@ -538,51 +544,44 @@
         <div class="walkthrough-progress">
           <div class="step-dots">
             <button class="step-dot active" data-step="0" title="What we found"></button>
-            <button class="step-dot" data-step="1" title="Your draft policy"></button>
-            <button class="step-dot" data-step="2" title="Before you adopt"></button>
-            <button class="step-dot" data-step="3" title="Work with TEG"></button>
+            <button class="step-dot" data-step="1" title="Before you adopt"></button>
+            <button class="step-dot" data-step="2" title="Your draft + next steps"></button>
           </div>
           <span class="step-label-text" id="step-label-text">What we found</span>
         </div>
 
         <!-- Panel 0: Research summary -->
         <div class="walkthrough-panel active" id="panel-0">
-          <div class="panel-eyebrow">Step 1 of 4</div>
+          <div class="panel-eyebrow">Step 1 of 3</div>
           <h2 class="panel-title">What we found</h2>
+          <p class="panel-sub">A quick summary — your full draft arrives in Step 3.</p>
           <div class="policy-doc" id="panel-0-content"></div>
         </div>
 
-        <!-- Panel 1: Draft policy -->
+        <!-- Panel 1: Before you adopt -->
         <div class="walkthrough-panel" id="panel-1">
-          <div class="panel-header">
-            <div class="panel-header-left">
-              <div class="panel-eyebrow">Step 2 of 4</div>
-              <h2 class="panel-title">Your draft policy</h2>
-            </div>
-            <div class="panel-dl-btns">
-              <button class="btn btn-pdf" onclick="doDownloadPdf()">Download PDF</button>
-              <button class="btn" onclick="doDownloadTxt()">Download .txt</button>
-            </div>
-          </div>
+          <div class="panel-eyebrow">Step 2 of 3</div>
+          <h2 class="panel-title">Before you adopt this</h2>
+          <p class="panel-sub">Seven questions to work through internally — no outside research can answer them.</p>
           <div class="policy-doc" id="panel-1-content"></div>
         </div>
 
-        <!-- Panel 2: Before you adopt -->
+        <!-- Panel 2: TEG CTA + full draft policy -->
         <div class="walkthrough-panel" id="panel-2">
-          <div class="panel-eyebrow">Step 3 of 4</div>
-          <h2 class="panel-title">Before you adopt this</h2>
-          <p style="color:#6B6B8A;font-size:15px;margin-bottom:28px;max-width:640px;">No outside research can answer these. They need a conversation inside your organization before this policy goes live.</p>
-          <div class="policy-doc" id="panel-2-content"></div>
-        </div>
+          <div class="panel-eyebrow">Step 3 of 3</div>
+          <h2 class="panel-title">Your draft is ready</h2>
 
-        <!-- Panel 3: TEG CTA -->
-        <div class="walkthrough-panel" id="panel-3">
-          <div class="panel-eyebrow">Step 4 of 4</div>
-          <h2 class="panel-title">What happens next</h2>
-          <div class="teg-cta-card">
+          <!-- Download row -->
+          <div class="panel-dl-btns" style="margin-bottom:36px;">
+            <button class="btn btn-pdf" onclick="doDownloadPdf()">Download PDF</button>
+            <button class="btn" onclick="doDownloadTxt()">Download .txt</button>
+          </div>
+
+          <!-- TEG CTA -->
+          <div class="teg-cta-card" style="margin-bottom:52px;">
             <div class="cta-eyebrow">Free scoping session</div>
             <h3>This draft is a real starting point.<br>Making it yours takes a conversation.</h3>
-            <p>The Endurance Group works with small public companies to turn draft policies like this into something your team will actually use. In a free 30-minute scoping session we'll walk through:</p>
+            <p>The Endurance Group works with small public companies to turn draft policies like this into something your team will actually use. In a free 30-minute session we'll walk through:</p>
             <ul>
               <li>Which sections need legal review before adoption</li>
               <li>How to build your approved tool list</li>
@@ -594,12 +593,16 @@
               <button class="btn-cta-ghost" onclick="resetTool()">Generate another policy</button>
             </div>
           </div>
+
+          <!-- Full draft policy -->
+          <h3 style="font-size:18px;font-weight:700;color:#1a1a2e;margin:0 0 24px;padding-bottom:16px;border-bottom:2px solid #F0EDF3;">Your full draft policy</h3>
+          <div class="policy-doc" id="panel-2-content"></div>
         </div>
 
         <!-- Navigation -->
         <div class="walkthrough-nav">
           <button id="btn-back" class="nav-btn-back" onclick="prevStep()">← Back</button>
-          <button id="btn-next" class="btn btn-primary" onclick="nextStep()">See your policy →</button>
+          <button id="btn-next" class="btn btn-primary" onclick="nextStep()">Next: discussion questions →</button>
         </div>
 
       </div>
@@ -671,8 +674,8 @@
       var generatedCompany = '';
       var loadingTimers = [];
       var currentStep = 0;
-      var stepLabels = ['What we found', 'Your draft policy', 'Before you adopt', 'What happens next'];
-      var nextLabels = ['See your policy →', 'Review the questions →', 'See next steps →'];
+      var stepLabels = ['What we found', 'Before you adopt', 'Your draft is ready'];
+      var nextLabels = ['Next: discussion questions →', 'Get your draft →'];
 
       // ── Markdown renderer ───────────────────────────────────────
       function escHtml(s) {
@@ -900,15 +903,17 @@
           else if (i < step) dot.classList.add('done');
         });
         document.getElementById('step-label-text').textContent = stepLabels[step];
-        for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 3; i++) {
           var panel = document.getElementById('panel-' + i);
           if (panel) panel.classList.toggle('active', i === step);
         }
         var btnBack = document.getElementById('btn-back');
         var btnNext = document.getElementById('btn-next');
         btnBack.style.visibility = step === 0 ? 'hidden' : 'visible';
-        if (step === 3) {
+        if (step === 2) {
           btnNext.style.display = 'none';
+          // Trigger PDF download when they reach the final step
+          setTimeout(function() { doDownloadPdf(); }, 600);
         } else {
           btnNext.style.display = '';
           btnNext.textContent = nextLabels[step];
@@ -921,7 +926,7 @@
         currentStep = n;
         updateProgress(n);
       }
-      function nextStep() { if (currentStep < 3) showStep(currentStep + 1); }
+      function nextStep() { if (currentStep < 2) showStep(currentStep + 1); }
       function prevStep() { if (currentStep > 0) showStep(currentStep - 1); }
       window.nextStep = nextStep;
       window.prevStep = prevStep;
@@ -943,12 +948,12 @@
 
         if (hasMarkers) {
           document.getElementById('panel-0-content').innerHTML = renderMarkdown(sections.research || '');
-          document.getElementById('panel-1-content').innerHTML = renderMarkdown(sections.policy || '');
-          document.getElementById('panel-2-content').innerHTML = renderMarkdown(sections.beforeYouAdopt || '');
+          document.getElementById('panel-1-content').innerHTML = renderMarkdown(sections.beforeYouAdopt || '');
+          document.getElementById('panel-2-content').innerHTML = renderMarkdown(sections.policy || '');
         } else {
           document.getElementById('panel-0-content').innerHTML = '<p style="color:#6B6B8A;">No public research was available for this company.</p>';
-          document.getElementById('panel-1-content').innerHTML = renderMarkdown(output);
-          document.getElementById('panel-2-content').innerHTML = '';
+          document.getElementById('panel-1-content').innerHTML = '';
+          document.getElementById('panel-2-content').innerHTML = renderMarkdown(output);
         }
 
         // Build PDF source (full output)
@@ -964,9 +969,6 @@
         loadingSection.style.display = 'none';
         resultsSection.style.display = 'block';
         updateProgress(0);
-
-        // Auto-download PDF after a short settle delay
-        setTimeout(function() { doDownloadPdf(); }, 900);
       }
 
       function showFormWithError(msg) {
@@ -982,12 +984,10 @@
         generatedText = '';
         generatedCompany = '';
         currentStep = 0;
-        ['panel-0-content', 'panel-1-content', 'panel-2-content'].forEach(function(id) {
+        ['panel-0-content', 'panel-1-content', 'panel-2-content', 'pdf-content'].forEach(function(id) {
           var el = document.getElementById(id);
           if (el) el.innerHTML = '';
         });
-        var pdfEl = document.getElementById('pdf-content');
-        if (pdfEl) pdfEl.innerHTML = '';
         formErrorBanner.style.display = 'none';
         resultsSection.style.display = 'none';
         formSection.style.display = 'block';
