@@ -69,6 +69,47 @@
     .panel-title { font-size: 28px; font-weight: 800; color: #1a1a2e; margin: 0 0 8px; line-height: 1.2; }
     .panel-sub { font-size: 15px; color: #6B6B8A; margin: 0 0 28px; max-width: 560px; }
 
+    /* ── Step 2: question list treatment ───────────────────────── */
+    #panel-1 .policy-doc ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: question-counter;
+    }
+    #panel-1 .policy-doc ol > li {
+      counter-increment: question-counter;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid #F0EDF3;
+      margin-bottom: 0;
+    }
+    #panel-1 .policy-doc ol > li:last-child { border-bottom: none; }
+    #panel-1 .policy-doc ol > li::before {
+      content: counter(question-counter);
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: #FDF8FB;
+      border: 1.5px solid #E9AACB;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #C45E89;
+      margin-top: 1px;
+    }
+    #panel-1 .policy-doc ol > li p { margin: 0; }
+
+    /* ── Step 1: research callout ───────────────────────────────── */
+    #panel-0 .policy-doc > p:first-child {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
     .panel-dl-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
     .panel-dl-btns .btn {
       font-size: 13px; padding: 9px 16px; background: #fff; border: 1px solid #D0CDD8;
