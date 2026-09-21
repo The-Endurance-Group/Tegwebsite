@@ -522,6 +522,7 @@
             <button type="submit" class="btn btn-primary submit-btn">Generate my draft</button>
           </form>
           <p class="form-disclaimer">No account required. No spam. Your information is used only to personalize the draft and to let us know someone used this tool.</p>
+          <p style="text-align:center;margin-top:10px;font-size:13px;color:#6B6B8A;">Curious what this looks like? <a href="ai-policy-example.html" style="color:#C45E89;font-weight:600;">Download an example PDF →</a></p>
         </div>
 
       </div>
@@ -880,12 +881,10 @@
       // ── Section parsing ─────────────────────────────────────────
       function parseSections(output) {
         function extract(tag) {
-          var start = '=== ' + tag + ' ===';
-          var end = '=== END_' + tag + ' ===';
-          var si = output.indexOf(start);
-          var ei = output.indexOf(end);
-          if (si === -1 || ei === -1) return null;
-          return output.slice(si + start.length, ei).trim();
+          // Tolerant: allows extra whitespace around === markers, case-insensitive
+          var re = new RegExp('===\\s*' + tag + '\\s*===([\\s\\S]*?)===\\s*END_' + tag + '\\s*===', 'i');
+          var m = output.match(re);
+          return m ? m[1].trim() : null;
         }
         return {
           research: extract('RESEARCH_SUMMARY'),
@@ -893,6 +892,25 @@
           beforeYouAdopt: extract('BEFORE_YOU_ADOPT'),
           closingNote: extract('CLOSING_NOTE')
         };
+      }
+
+      // Fallback splitter for when Claude omits the === markers
+      function splitWithoutMarkers(output) {
+        var byaIdx = output.search(/(?:^|\n)#+\s*Before You Adopt This/i);
+        var policyIdx = output.search(/(?:^|\n)#+\s*(?:Artificial Intelligence Usage Policy|AI Usage Policy)/i);
+        if (byaIdx !== -1 && policyIdx !== -1) {
+          var first = Math.min(byaIdx, policyIdx);
+          var second = Math.max(byaIdx, policyIdx);
+          return {
+            research: output.slice(0, first).trim(),
+            beforeYouAdopt: byaIdx < policyIdx ? output.slice(byaIdx, policyIdx).trim() : output.slice(byaIdx).trim(),
+            policy: policyIdx > byaIdx ? output.slice(policyIdx).trim() : output.slice(policyIdx, byaIdx).trim()
+          };
+        }
+        if (policyIdx !== -1) {
+          return { research: output.slice(0, policyIdx).trim(), beforeYouAdopt: '', policy: output.slice(policyIdx).trim() };
+        }
+        return { research: '', beforeYouAdopt: '', policy: output };
       }
 
       // ── Step navigation ─────────────────────────────────────────
@@ -939,37 +957,14 @@
       }
 
       function showResults(output, company) {
-        generatedText = output;
-        generatedCompany = company;
         stopLoadingMessages();
-
-        var sections = parseSections(output);
-        var hasMarkers = sections.research !== null;
-
-        if (hasMarkers) {
-          document.getElementById('panel-0-content').innerHTML = renderMarkdown(sections.research || '');
-          document.getElementById('panel-1-content').innerHTML = renderMarkdown(sections.beforeYouAdopt || '');
-          document.getElementById('panel-2-content').innerHTML = renderMarkdown(sections.policy || '');
-        } else {
-          document.getElementById('panel-0-content').innerHTML = '<p style="color:#6B6B8A;">No public research was available for this company.</p>';
-          document.getElementById('panel-1-content').innerHTML = '';
-          document.getElementById('panel-2-content').innerHTML = renderMarkdown(output);
-        }
-
-        // Build PDF source (full output)
-        var pdfEl = document.getElementById('pdf-content');
-        if (pdfEl) {
-          var pdfContent = hasMarkers
-            ? [sections.research, sections.policy, sections.beforeYouAdopt, sections.closingNote].filter(Boolean).join('\n\n---\n\n')
-            : output;
-          pdfEl.innerHTML = renderMarkdown(pdfContent);
-        }
-
-        currentStep = 0;
-        loadingSection.style.display = 'none';
-        resultsSection.style.display = 'block';
-        updateProgress(0);
+        try {
+          sessionStorage.setItem('aiPolicyOutput', output);
+          sessionStorage.setItem('aiPolicyCompany', company);
+        } catch(e) {}
+        window.location.href = '/ai-policy-results.html';
       }
+
 
       function showFormWithError(msg) {
         stopLoadingMessages();
