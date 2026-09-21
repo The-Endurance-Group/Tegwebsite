@@ -117,10 +117,29 @@
       font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 8px;
+      min-height: 1.5em;
+      transition: opacity 0.3s;
     }
     #loading-sub {
       font-size: 14px;
       color: #6B6B8A;
+      margin-bottom: 28px;
+    }
+    .progress-track {
+      width: 320px;
+      max-width: 100%;
+      height: 6px;
+      background: #E7E2E5;
+      border-radius: 3px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #C45E89;
+      border-radius: 3px;
+      transition: width linear;
     }
 
     /* ── Results / Walkthrough ──────────────────────────────────── */
@@ -534,7 +553,8 @@
       <div class="container">
         <div class="spinner" role="status" aria-label="Generating policy"></div>
         <p id="loading-msg">Researching your company&hellip;</p>
-        <p id="loading-sub">This takes about 20&ndash;30 seconds.</p>
+        <p id="loading-sub">This takes about 30&ndash;45 seconds.</p>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
       </div>
     </section>
 
@@ -852,26 +872,54 @@
         return ok;
       }
 
-      // ── Loading message cycle ───────────────────────────────────
+      // ── Loading message cycle + progress bar ───────────────────
       function startLoadingMessages(company) {
         var msgs = [
           'Researching ' + company + '&hellip;',
-          'Drafting your policy&hellip;',
-          'Finalizing sections&hellip;',
+          'Looking up public filings&hellip;',
+          'Reviewing governance documents&hellip;',
+          'Identifying AI risk areas&hellip;',
+          'Drafting policy sections&hellip;',
+          'Reviewing data handling rules&hellip;',
+          'Finalizing your draft&hellip;',
+          'Almost ready&hellip;',
         ];
         var idx = 0;
         loadingMsg.innerHTML = msgs[0];
 
-        loadingTimers.push(setTimeout(function() {
-          loadingMsg.innerHTML = msgs[1];
-        }, 12000));
-        loadingTimers.push(setTimeout(function() {
-          loadingMsg.innerHTML = msgs[2];
-        }, 25000));
+        // Cycle a new message every 5 seconds, stay on last one
+        var msgInterval = setInterval(function() {
+          idx = Math.min(idx + 1, msgs.length - 1);
+          loadingMsg.style.opacity = '0';
+          setTimeout(function() {
+            loadingMsg.innerHTML = msgs[idx];
+            loadingMsg.style.opacity = '1';
+          }, 150);
+        }, 5000);
+        loadingTimers.push(msgInterval);
+
+        // Progress bar: animate to 88% over 45s, complete to 100% on finish
+        var fill = document.getElementById('progress-fill');
+        if (fill) {
+          fill.style.transition = 'none';
+          fill.style.width = '0%';
+          requestAnimationFrame(function() {
+            fill.style.transition = 'width 45s cubic-bezier(0.4, 0, 0.2, 1)';
+            fill.style.width = '88%';
+          });
+        }
+      }
+
+      function completeProgress() {
+        var fill = document.getElementById('progress-fill');
+        if (fill) {
+          fill.style.transition = 'width 0.4s ease';
+          fill.style.width = '100%';
+        }
       }
 
       function stopLoadingMessages() {
-        loadingTimers.forEach(function(t) { clearTimeout(t); });
+        loadingTimers.forEach(function(t) { clearInterval(t); clearTimeout(t); });
         loadingTimers = [];
       }
 
@@ -951,6 +999,7 @@
         formSection.style.display = 'none';
         loadingSection.style.display = 'block';
         resultsSection.style.display = 'none';
+        window.scrollTo({ top: loadingSection.offsetTop - 100, behavior: 'smooth' });
       }
 
       function showResults(output, company) {
@@ -1040,15 +1089,20 @@
           return res.json().then(function(data) { return { status: res.status, data: data }; });
         })
         .then(function(r) {
-          if (r.status === 429) {
-            showFormWithError('Too many requests. Please try again in a little while.');
-          } else if (r.status !== 200 || !r.data.output) {
-            showFormWithError(r.data.error || 'Something went wrong. Please try again.');
-          } else {
-            showResults(r.data.output, r.data.company || company);
-          }
+          stopLoadingMessages();
+          completeProgress();
+          setTimeout(function() {
+            if (r.status === 429) {
+              showFormWithError('Too many requests. Please try again in a little while.');
+            } else if (r.status !== 200 || !r.data.output) {
+              showFormWithError(r.data.error || 'Something went wrong. Please try again.');
+            } else {
+              showResults(r.data.output, r.data.company || company);
+            }
+          }, 450);
         })
         .catch(function() {
+          stopLoadingMessages();
           showFormWithError('Network error. Please check your connection and try again.');
         });
       });
