@@ -597,7 +597,8 @@
         filename: 'harborview-analytics-ai-policy-example.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
+        jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' },
+        pagebreak: { mode: 'avoid-all' }
       }).from(src).save().then(function() {
         [hdr, disc, pb1, research, pb2, beforeAdopt, pb3, sep, ftr].forEach(function(el) {
           src.removeChild(el);

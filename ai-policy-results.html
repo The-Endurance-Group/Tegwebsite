@@ -477,7 +477,8 @@
           filename: slug + '-ai-policy-draft.pdf',
           image: { type: 'jpeg', quality: 0.98 },
           html2canvas: { scale: 2, useCORS: true },
-          jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' }
+          jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' },
+          pagebreak: { mode: 'avoid-all' }
         }).from(el).save().then(function () {
           el.innerHTML = '';
           if (btn) btn.disabled = false;
