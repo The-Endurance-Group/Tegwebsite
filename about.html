@@ -24,6 +24,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon-network.png">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .claude-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(205,100,60,0.08);
+      border: 1px solid rgba(205,100,60,0.2);
+      border-radius: 99px;
+      padding: 6px 16px 6px 10px;
+      margin-bottom: 28px;
+    }
+    .claude-hero-badge img {
+      height: 24px;
+      width: auto;
+    }
+    .claude-hero-badge span {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #c45020;
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -134,6 +156,16 @@
     <section class="hero hero--page section">
       <div class="container">
         <span class="eyebrow">About</span>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
+          <div class="claude-hero-badge">
+            <img src="images/claude-logo.jpg" alt="Claude">
+            <span>Claude Partner Network Member</span>
+          </div>
+          <div class="claude-hero-badge">
+            <img src="images/badges/claude-certified-architect.png" alt="Claude Certified Architect badge">
+            <span>Claude Certified Architect</span>
+          </div>
+        </div>
         <blockquote class="prose" style="font-size:20px; font-style:italic; color:var(--color-purple); font-weight:600; margin-bottom:24px; border-left:4px solid var(--color-teal); padding-left:20px;">"Through endurance we conquer." - Ernest Shackleton</blockquote>
         <h1>We've been doing this work since 1998. The tools have changed. The principle hasn't.</h1>
         <p class="lede" style="margin-top:24px;">At TEG, we help people be people, and build technology to do everything else. Judgment, care, and connection are the human parts of work we protect. Repetitive, manual work is what we automate.</p>
