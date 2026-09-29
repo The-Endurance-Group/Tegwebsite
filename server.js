@@ -961,6 +961,16 @@ http.createServer((req, res) => {
     res.end();
     return;
   }
+  const removedPages = {
+    '/pricing': '/contact.html', '/pricing.html': '/contact.html',
+    '/industries': '/success.html', '/industries.html': '/success.html',
+    '/staff-augmentation': '/managed-claude.html', '/staff-augmentation.html': '/managed-claude.html'
+  };
+  if (removedPages[urlPath]) {
+    res.writeHead(301, { Location: removedPages[urlPath] });
+    res.end();
+    return;
+  }
   // Extensionless URLs: rewrite /foo → /foo.html when no extension present
   if (urlPath !== '/' && !path.extname(urlPath)) {
     req.url = urlPath + '.html';

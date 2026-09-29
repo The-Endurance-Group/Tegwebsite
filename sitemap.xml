@@ -4,9 +4,15 @@
   <!-- Core pages -->
   <url>
     <loc>https://www.theendurancegroup.com/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.theendurancegroup.com/managed-claude.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.theendurancegroup.com/solutions.html</loc>
@@ -16,18 +22,6 @@
   </url>
   <url>
     <loc>https://www.theendurancegroup.com/project-based.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.theendurancegroup.com/staff-augmentation.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.theendurancegroup.com/pricing.html</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -82,12 +76,6 @@
   </url>
   <url>
     <loc>https://www.theendurancegroup.com/contact.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.theendurancegroup.com/industries.html</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -503,5 +491,10 @@
   <url><loc>https://www.theendurancegroup.com/blog/best-mcp-servers-for-sales.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.theendurancegroup.com/blog/how-to-hire-a-claude-developer.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.theendurancegroup.com/blog/claude-vs-gemini-business-automation.html</loc><lastmod>2026-08-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.theendurancegroup.com/blog/claude-hubspot-plugin.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.theendurancegroup.com/blog/upwork-proposals-with-claude.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.theendurancegroup.com/blog/find-visiting-college-teams-with-claude.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.theendurancegroup.com/blog/copper-retirement-pots-leads-with-claude.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.theendurancegroup.com/blog/compliance-review-with-claude.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 </urlset>
