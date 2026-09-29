@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Use Claude With HubSpot: A Free Plugin for Deals, Tasks, and Meeting Prep | The Endurance Group</title>
+  <meta name="description" content="Connecting HubSpot to Claude is step one. Our free HubSpot CRM Toolkit plugin teaches Claude to create deals, turn reminders into HubSpot tasks, prep meetings, and review your pipeline.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/claude-hubspot-plugin.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="How to Use Claude With HubSpot: A Free Plugin for Deals, Tasks, and Meeting Prep | The Endurance Group">
+  <meta property="og:description" content="Connecting HubSpot to Claude is step one. Our free HubSpot CRM Toolkit plugin teaches Claude to create deals, turn reminders into HubSpot tasks, prep meetings, and review your pipeline.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/claude-hubspot-plugin.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/conor-sullivan.html">
+  <meta property="article:published_time" content="2026-09-29T09:00:00-04:00">
+  <meta name="author" content="Conor Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Use Claude With HubSpot: A Free Plugin for Deals, Tasks, and Meeting Prep | The Endurance Group">
+  <meta name="twitter:description" content="Connecting HubSpot to Claude is step one. Our free HubSpot CRM Toolkit plugin teaches Claude to create deals, turn reminders into HubSpot tasks, prep meetings, and review your pipeline.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation partner for B2B companies in real estate, technology, and professional services.",
+    "foundingDate": "1998",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Use Claude With HubSpot: A Free Plugin for Deals, Tasks, and Meeting Prep",
+    "description": "Connecting HubSpot to Claude is step one. Our free HubSpot CRM Toolkit plugin teaches Claude to create deals, turn reminders into HubSpot tasks, prep meetings, and review your pipeline.",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "datePublished": "2026-09-29",
+    "dateModified": "2026-09-29",
+    "author": {
+      "@type": "Person",
+      "name": "Conor Sullivan",
+      "jobTitle": "Vice President"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.theendurancegroup.com/images/og-default.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://theendurancegroup.com/blog/claude-hubspot-plugin.html"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can Claude connect to HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. HubSpot offers a connector for Claude that lets Claude read and write CRM records with your HubSpot user's permissions. Once it is connected, a plugin like the HubSpot CRM Toolkit tells Claude how to use it for everyday work such as creating deals, tasks, and call notes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I make Claude create HubSpot tasks instead of calendar reminders?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Install a Skill that tells Claude to treat 'remind me' and 'create a task' requests about a contact as HubSpot tasks. The task-reminder Skill in our free HubSpot CRM Toolkit does this and associates the task with the contact, their company, and open deals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will Claude change my HubSpot data without asking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not with this plugin. The HubSpot CRM Toolkit asks for confirmation before writing to HubSpot, looks up pipelines and stages from your own account, and never deletes or merges records."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does the HubSpot CRM Toolkit cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is free, and so is the 30-minute session where we install it and set it up with you."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">Sales Execution</span>
+        <h1>How to use Claude with HubSpot: a free plugin for deals, tasks, and meeting prep</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Vice President</span>
+          <span class="divider">·</span>
+          <span>September 29, 2026</span>
+        </div>
+        <a class="category-badge" href="category/sales-execution.html" style="margin-top:16px;">Sales Execution</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p>Short answer: connect the HubSpot connector in Claude, then give Claude a set of Skills that tell it how your team actually uses the CRM. The connector gives Claude access. The Skills give it judgment: which pipeline a deal belongs in, that "remind me" means a HubSpot task and not a calendar event, and what to pull before a sales call. We packaged the Skills we use every day into a free plugin called the HubSpot CRM Toolkit.</p>
+
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We build Claude Skills, plugins, and MCP integrations for B2B teams, and this plugin came straight out of that work. <a href="../solutions.html">See our full Claude services.</a></em></p>
+
+          <div class="example-callout">
+            <strong>Get the HubSpot CRM Toolkit free</strong>
+            We'll send you the plugin and set it up with you on a free 30-minute call: installed, connected, and run on your real work before we hang up. <a href="../claude-plugins.html#book">Book your free setup</a>.
+          </div>
+
+          <h2>Why the connector alone isn't enough</h2>
+
+          <p>Once HubSpot is connected, Claude can read and write CRM records. What it can't do out of the box is guess your conventions. Ask it to "remind me to follow up with Sam on Thursday" and there's a good chance you get a calendar event, a to-do in the chat, or a question back. None of those land where your team actually works. We hit that exact annoyance ourselves, which is why the first Skill we wrote was the one that turns reminders into properly linked HubSpot tasks.</p>
+
+          <p>A plugin fixes that by bundling small, focused Skills that load automatically when the request matches. You keep talking normally. Claude does the CRM work the way a well-trained coordinator would.</p>
+
+          <h2>What the HubSpot CRM Toolkit does</h2>
+
+          <ul>
+            <li><strong>Create deals.</strong> "Create a deal for Acme." Claude reads your pipelines and stages from your account, picks the stage from context or asks, finds or creates the contact and company, and links everything together.</li>
+            <li><strong>Task reminders.</strong> "Remind me to follow up with Sam in three days." Claude finds Sam, pulls his company and open deals, and creates one HubSpot task associated with all of them. It never invents a due date.</li>
+            <li><strong>Meeting prep.</strong> "Prep me for my call with Sam." A snapshot of the contact, company, deals, open tasks, recent notes, and activity, plus a suggested agenda and talking points, using only what's in HubSpot.</li>
+            <li><strong>Pipeline review.</strong> "How's my pipeline?" Open deals by stage, with stalled, past-due, and incomplete deals flagged and next moves recommended.</li>
+            <li><strong>Log call notes.</strong> Paste your notes and say "log this." Claude writes a clean note on the right records, creates follow-up tasks for action items, and only proposes a stage change when the notes clearly support it.</li>
+            <li><strong>CRM cleanup.</strong> "Audit my contacts." Duplicates, missing fields, formatting problems, and orphaned records, proposed as fixes in a confirmation table. It never deletes or merges anything.</li>
+            <li><strong>Weekly sales digest.</strong> "Weekly sales recap." New deals, wins, losses, stalls, and overdue tasks for the week, and it can be set up as a recurring scheduled task in your Claude account.</li>
+          </ul>
+
+          <h2>Guardrails built in</h2>
+
+          <p>CRM data is shared, so a sloppy write is worse than no write. The toolkit asks for confirmation before it writes to HubSpot. Pipeline, stage, and owner IDs are always looked up from your own portal, never hardcoded. Claude doesn't invent contact details, deal amounts, or dates you didn't give it. And nothing in the plugin deletes or merges records.</p>
+
+          <h2>What you need</h2>
+
+          <ol>
+            <li>A Claude plan that supports plugins.</li>
+            <li>The HubSpot connector, connected and authorized in your Claude workspace.</li>
+            <li>HubSpot permissions to read and create deals, contacts, companies, notes, and tasks. Claude can only do what your HubSpot user can do.</li>
+          </ol>
+
+          <h2>How to get it</h2>
+
+          <p>We don't post the plugin as a download. Instead, book a free 30-minute session and we'll send it to you, install it with you, confirm the HubSpot connection, and run a couple of the Skills on your real pipeline before we hang up. It's yours to keep, and it's free. If your team uses HubSpot differently than most (custom objects, multiple pipelines, strict stage rules), that's a good thing to bring to the call too.</p>
+
+          <h2>Frequently asked questions</h2>
+
+          <h3>Can Claude connect to HubSpot?</h3>
+          <p>Yes. HubSpot offers a connector for Claude that lets Claude read and write CRM records with your HubSpot user's permissions. Once it is connected, a plugin like the HubSpot CRM Toolkit tells Claude how to use it for everyday work such as creating deals, tasks, and call notes.</p>
+
+          <h3>How do I make Claude create HubSpot tasks instead of calendar reminders?</h3>
+          <p>Install a Skill that tells Claude to treat 'remind me' and 'create a task' requests about a contact as HubSpot tasks. The task-reminder Skill in our free HubSpot CRM Toolkit does this and associates the task with the contact, their company, and open deals.</p>
+
+          <h3>Will Claude change my HubSpot data without asking?</h3>
+          <p>Not with this plugin. The HubSpot CRM Toolkit asks for confirmation before writing to HubSpot, looks up pipelines and stages from your own account, and never deletes or merges records.</p>
+
+          <h3>How much does the HubSpot CRM Toolkit cost?</h3>
+          <p>It is free, and so is the 30-minute session where we install it and set it up with you.</p>
+
+          <div class="btn-group" style="margin-top: 48px;">
+            <a class="btn btn-primary" href="../claude-plugins.html#book">Book Your Free Setup</a>
+            <a class="btn btn-secondary" href="../claude-plugins.html">See All Free Plugins</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">Ops &amp; CRM</span>
+            <h3><a href="automate-lead-followup-hubspot.html">How to automate lead follow-up in HubSpot without losing the personal touch</a></h3>
+            <p>Where automation helps follow-up in HubSpot, and where a person still needs to be in the loop.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="claude-skills.html">What Claude Skills are, and why we build inside Claude instead of a new app</a></h3>
+            <p>The building blocks behind every plugin on our free plugins page.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <p class="footer-tagline">Your Claude Implementation Partner</p>
+        <p class="footer-address">Portland, ME &middot; (207) 846-6000</p>
+      </div>
+      <div class="footer-columns">
+        <nav aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="../claude-setup.html">Claude Initial Setup</a></li>
+            <li><a href="../claude.html">Skills &amp; MCPs</a></li>
+            <li><a href="../solutions.html">Training &amp; Maintenance</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Products">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Commonality</a></li>
+            <li><a href="https://coachonix.com" target="_blank" rel="noopener">Coachonix</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Specialties">
+          <h3>Specialties</h3>
+          <ul>
+            <li><a href="../specialties.html#sales-and-marketing">Functional Specialties</a></li>
+            <li><a href="../specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="../specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="../specialties.html#professional-services">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../how-to-get-started.html">Get Started</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../ideas.html">Ideas</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+            <li><a href="../free-training.html">Free Training Session</a></li>
+            <li><a href="../claude-plugins.html">Free Claude Plugins</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
