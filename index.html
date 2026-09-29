@@ -24,7 +24,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon-network.png">
   <link rel="stylesheet" href="css/styles.css?v=20260917">
-  <script type="application/ld+json">
+  <style>
+    .video-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-teal-dark, #0d9488);
+      background: none;
+      border: none;
+      padding: 4px 0;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .video-toggle svg { transition: transform 0.2s; }
+    .video-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .service-video-wrap {
+      display: none;
+      margin-top: 14px;
+    }
+    .service-video-wrap.is-open { display: block; }
+    .service-video {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+    .service-card-bullets {
+      padding: 0;
+      margin: 0 0 4px;
+      list-style: none;
+    }
+    .service-card-bullets li {
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+    .service-card-bullets li:last-child { border-bottom: none; }
+  </style>  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -246,6 +287,96 @@
       </div>
     </section>
 
+<!-- What we build -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">What we build</span>
+          <h2>Four things, done well.</h2>
+        </div>
+        <div class="grid grid--4 reveal" style="margin-top:40px; align-items:start;">
+
+          <!-- System Integrations -->
+          <div class="feature-card">
+            <h3>System Integrations</h3>
+            <ul class="service-card-bullets">
+              <li>Connect Claude to your CRM, email, Slack, and document tools — no more copy-pasting between apps</li>
+              <li>Build MCP servers that reach custom applications, proprietary databases, and legacy systems standard tools can't touch</li>
+            </ul>
+            <button class="video-toggle" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+              Watch the video
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="service-video-wrap">
+              <video class="service-video" controls preload="none">
+                <source src="videos/mcp-business-systems.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <!-- Automated Workflows -->
+          <div class="feature-card">
+            <h3>Automated Workflows</h3>
+            <ul class="service-card-bullets">
+              <li>Build scheduled pipelines that monitor, route, and act on data across your systems — no manual moving required</li>
+              <li>Automate the repetitive work: lead qualification, reconciliation, alerts, follow-ups — so your team focuses on what actually needs them</li>
+            </ul>
+            <button class="video-toggle" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+              Watch the video
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="service-video-wrap">
+              <video class="service-video" controls preload="none">
+                <source src="videos/automated-workflows.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <!-- Custom Claude Applications -->
+          <div class="feature-card">
+            <h3>Custom Claude Applications</h3>
+            <ul class="service-card-bullets">
+              <li>Build purpose-built Claude tools for your team's specific workflows — internal tools, client-facing products, or back-office systems</li>
+              <li>TEG scopes the build, writes the code, and hands you a working application with your team trained to run it</li>
+            </ul>
+            <button class="video-toggle" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+              Watch the video
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="service-video-wrap">
+              <video class="service-video" controls preload="none">
+                <source src="videos/custom-claude-applications.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <!-- Claude Set Up and Training -->
+          <div class="feature-card">
+            <h3>Claude Set Up and Training</h3>
+            <ul class="service-card-bullets">
+              <li>Configure Claude for your environment — Projects, Skills, Connectors, Code, and the specific workflows your people actually run</li>
+              <li>Train your team hands-on so they're doing real work on day one, not just experimenting with prompts</li>
+            </ul>
+            <button class="video-toggle" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+              Watch the video
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="service-video-wrap">
+              <video class="service-video" controls preload="none">
+                <source src="videos/claude-setup-training.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+        </div>
+        <p class="text-center reveal" style="margin-top:32px;"><a href="solutions.html" class="btn btn-secondary">See all solutions</a></p>
+      </div>
+    </section>
+
     <!-- Free Training teaser -->
     <section class="section">
       <div class="container">
@@ -362,5 +493,15 @@
   <!-- END SHARED FOOTER -->
 
   <script src="js/main.js?v=20260917" defer></script>
+  <script>
+    document.querySelectorAll('.video-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var wrap = btn.nextElementSibling;
+        var open = wrap.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open);
+        if (!open) wrap.querySelector('video').pause();
+      });
+    });
+  </script>
 </body>
 </html>
