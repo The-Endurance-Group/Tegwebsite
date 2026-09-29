@@ -51,6 +51,53 @@
     @media (min-width: 600px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 1100px) { .service-grid { grid-template-columns: repeat(4, 1fr); } }
     @media (min-width: 1100px) { .service-grid--3 { grid-template-columns: repeat(3, 1fr); } }
+    .borrow-card {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .borrow-card .icon-badge { background: rgba(255,255,255,0.16); color: #fff; }
+    .borrow-card h3 { font-size: 20px; margin-bottom: 10px; }
+    .borrow-card p { color: rgba(255,255,255,0.88); margin: 0; }
+    .section--dark .eyebrow { color: var(--color-teal); }
+    .own-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+    .own-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--color-white);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-ink);
+    }
+    .own-check {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--tint-teal, rgba(101,182,174,0.12));
+      color: var(--color-teal-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .own-check svg { width: 16px; height: 16px; }
+    .own-callout {
+      background: var(--color-purple);
+      border-radius: 12px;
+      padding: 40px 32px;
+      color: #fff;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .own-callout .icon-badge { background: rgba(255,255,255,0.16); color: #fff; }
+    .own-callout p { color: #fff; font-size: 22px; font-weight: 700; line-height: 1.35; margin: 0; }
     .service-card {
       background: var(--color-white);
       border: 1px solid var(--border-light);
@@ -352,17 +399,25 @@
     </section>
 
     <!-- Outsourced team positioning -->
-    <section class="section">
+    <section class="section section--dark">
       <div class="container">
         <div class="section-head section-head--center reveal" style="max-width: 760px;">
           <span class="eyebrow">The alternative to hiring</span>
           <h2>Don't Build an Internal Claude Team.<br>Borrow Ours.</h2>
         </div>
         <div class="grid grid--2 reveal--stagger reveal" style="max-width:900px; margin-inline:auto; margin-top:32px;">
-          <div class="feature-card">
+          <div class="borrow-card">
+            <div class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>One hire isn't a team</h3>
             <p>Hiring one AI engineer doesn't give you an AI team. TEG gives you access to developers who work with Claude every day — without recruiting, managing, or trying to keep up with a platform changing every month.</p>
           </div>
-          <div class="feature-card">
+          <div class="borrow-card">
+            <div class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            </div>
+            <h3>You point, we solve</h3>
             <p>Your team tells us where work is slow, manual, or frustrating. We figure out what Claude should do about it.</p>
           </div>
         </div>
@@ -404,15 +459,18 @@
           <h2>Everything We Build Stays Yours.</h2>
           <p class="lede" style="margin-inline:auto;">No proprietary platform you have to adopt. Whenever possible, TEG builds directly inside the tools your company already uses — Claude, your CRM, your documents, and your internal systems.</p>
         </div>
-        <div class="grid grid--2 reveal--stagger reveal" style="max-width:900px; margin-inline:auto; margin-top:32px; align-items:center;">
-          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:14px; font-size:17px; font-weight:700; color:var(--color-ink);">
-            <li>Your Skills are yours.</li>
-            <li>Your integrations are yours.</li>
-            <li>Your workflows are yours.</li>
-            <li>Your code is yours.</li>
-            <li>Your data remains yours.</li>
+        <div class="grid grid--2 reveal--stagger reveal" style="max-width:900px; margin-inline:auto; margin-top:32px; align-items:stretch;">
+          <ul class="own-list">
+            <li><span class="own-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Your Skills are yours.</li>
+            <li><span class="own-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Your integrations are yours.</li>
+            <li><span class="own-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Your workflows are yours.</li>
+            <li><span class="own-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Your code is yours.</li>
+            <li><span class="own-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Your data remains yours.</li>
           </ul>
-          <div class="feature-card">
+          <div class="own-callout">
+            <div class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
             <p>TEG is the team that builds and maintains it.</p>
           </div>
         </div>
