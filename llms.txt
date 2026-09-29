@@ -14,12 +14,18 @@
 - [How to Get Started](https://theendurancegroup.com/how-to-get-started.html): It starts with one call. From there, TEG either builds a free automation or runs a free private team training, no cost, no contract either way.
 - [Claude Setup for Teams](https://theendurancegroup.com/claude-setup): For teams already on Claude Teams who aren't getting full value from their subscription. TEG builds the shared workspace, knowledge base, connected tools, and repeatable workflows in 14 days for a flat $6,000. Includes a plan audit, team workshops to identify the highest-impact workflows, Projects and knowledge base setup, five workflows built as Claude Skills, integrations with existing tools (email, Slack, Notion, Drive, etc.), two live handover sessions, and 30 days of direct support. Optional add-ons: additional workflows at $750 each, ongoing retainer at $299/mo.
 - [Operational Reconciliation](https://theendurancegroup.com/operations): AI automations that check incoming data (invoices, documents, photos) against your system of record, flag discrepancies, and route exceptions before they become problems. Three common patterns: document review, vendor/invoice validation, and pre-deadline gap detection.
+- [Free Claude Plugins](https://theendurancegroup.com/claude-plugins.html): Free Claude plugins TEG built from client work: HubSpot CRM Toolkit, Upwork Proposal Kit, AwayGame (visiting college teams for hotels and travel vendors), POTS Opportunity (copper retirement research for telecom brokers), and Compliance Review. Each is set up free on a 30-minute call where TEG installs it with the user; a Skylead plugin is coming soon.
 - [Privacy Policy](https://theendurancegroup.com/privacy.html)
 - [Terms of Service](https://theendurancegroup.com/terms.html)
 
 ## Blog
 
 - [Blog index](https://theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [How to Use Claude With HubSpot: A Free Plugin for Deals, Tasks, and Meeting Prep](https://theendurancegroup.com/blog/claude-hubspot-plugin.html)
+- [How to Write Upwork Proposals With Claude (Without Overclaiming)](https://theendurancegroup.com/blog/upwork-proposals-with-claude.html)
+- [How Hotels and Travel Vendors Can Find Visiting College Teams With Claude](https://theendurancegroup.com/blog/find-visiting-college-teams-with-claude.html)
+- [How Telecom Brokers Can Find Copper Retirement Notices and POTS Replacement Leads With Claude](https://theendurancegroup.com/blog/copper-retirement-pots-leads-with-claude.html)
+- [How to Check Marketing Content for Compliance With Claude](https://theendurancegroup.com/blog/compliance-review-with-claude.html)
 - [Anthropic Just Said It's Slowing Down. Here's What That Actually Means for Your Team.](https://theendurancegroup.com/blog/anthropic-pacing-what-it-means.html)
 - [Why I Believe Anyone Can Learn AI (Even a Former English Teacher)](https://theendurancegroup.com/blog/why-anyone-can-learn-ai.html)
 - [From Anonymous Website Visitor to Assigned CRM Lead](https://theendurancegroup.com/blog/website-visitor-to-crm-automation.html)

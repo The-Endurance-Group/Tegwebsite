@@ -33,6 +33,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.theendurancegroup.com/claude-plugins.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.theendurancegroup.com/free-training.html</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -118,6 +124,11 @@
   </url>
 
   <!-- Claude / AI-native blog posts — highest priority -->
+  <url><loc>https://theendurancegroup.com/blog/claude-hubspot-plugin.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://theendurancegroup.com/blog/upwork-proposals-with-claude.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://theendurancegroup.com/blog/find-visiting-college-teams-with-claude.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://theendurancegroup.com/blog/copper-retirement-pots-leads-with-claude.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://theendurancegroup.com/blog/compliance-review-with-claude.html</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url>
     <loc>https://www.theendurancegroup.com/blog/claude-partner-announcement.html</loc>
     <lastmod>2026-08-27</lastmod>
