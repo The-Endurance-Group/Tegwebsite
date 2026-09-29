@@ -218,6 +218,18 @@
       text-decoration: underline;
       text-underline-offset: 3px;
     }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-teal-dark, #0d9488);
+      padding: 4px 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
     .video-toggle svg { transition: transform 0.2s; }
     .video-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
     .service-video-wrap {
@@ -467,7 +479,7 @@
           <h2>What your Claude team can build.</h2>
           <p style="margin-top: 12px; color: var(--color-lavender); font-size: 16px;">Skills, integrations, workflows, applications, and training, built and maintained by one certified team.</p>
         </div>
-        <div class="grid grid--3 reveal--stagger reveal" style="margin-top:40px; align-items:start;">
+        <div class="grid grid--3 reveal--stagger reveal" style="margin-top:40px;">
 
           <div class="service-card">
             <div class="service-card-icon">
@@ -475,6 +487,7 @@
             </div>
             <h3>Skills &amp; Projects</h3>
             <p>Turn recurring work into repeatable systems anyone on your team can run.</p>
+            <a class="card-link" href="claude-plugins.html">Get free skills &amp; plugins &rarr;</a>
           </div>
 
           <div class="service-card">
@@ -555,7 +568,7 @@
             </div>
             <h3>AI Governance</h3>
             <p>Draft company-wide AI usage policies and guardrails so your team adopts Claude responsibly, not just quickly.</p>
-            <a href="ai-policy.html" style="display:inline-block; margin-top:16px; font-size:13px; font-weight:700; color:var(--color-teal-dark); text-decoration:none;">Draft your policy →</a>
+            <a class="card-link" href="ai-policy.html">Draft your policy free now &rarr;</a>
           </div>
 
         </div>
