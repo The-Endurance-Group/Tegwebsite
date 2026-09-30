@@ -981,9 +981,9 @@ details[open] .faq-q::after { content: "−"; }
 }
 .quote-card-logo {
   display: block;
-  height: 22px;
+  height: 56px;
   width: auto;
-  max-width: 140px;
+  max-width: 180px;
   object-fit: contain;
   margin-bottom: 12px;
 }
