@@ -21,6 +21,7 @@
 ## Blog
 
 - [Blog index](https://theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [Free Claude Training for Our Coworking Neighbors in Portland, Maine](https://theendurancegroup.com/blog/free-claude-training-cloudport-coworking-maine.html)
 - [How to Use Claude With HubSpot: A Free Plugin for Deals, Tasks, and Meeting Prep](https://theendurancegroup.com/blog/claude-hubspot-plugin.html)
 - [How to Write Upwork Proposals With Claude (Without Overclaiming)](https://theendurancegroup.com/blog/upwork-proposals-with-claude.html)
 - [How Hotels and Travel Vendors Can Find Visiting College Teams With Claude](https://theendurancegroup.com/blog/find-visiting-college-teams-with-claude.html)
