@@ -1173,12 +1173,12 @@ details[open] .faq-q::after { content: "−"; }
 .prose li::marker { color: var(--color-pink); font-weight: 700; }
 
 /* Blog posts: larger, more readable long-form text */
-.blog-post .prose { max-width: 800px; font-size: 19px; line-height: 1.75; }
+.blog-post .prose { max-width: 940px; font-size: 21px; line-height: 1.7; }
 .blog-post .prose p { margin-bottom: 24px; }
 .blog-post .prose h2 { margin-top: 52px; margin-bottom: 18px; }
-.blog-post .prose h3 { font-size: 22px; }
+.blog-post .prose h3 { font-size: 24px; }
 @media (max-width: 640px) {
-  .blog-post .prose { font-size: 17px; line-height: 1.7; }
+  .blog-post .prose { font-size: 18px; line-height: 1.7; }
 }
 
 /* ===== UTILITY ===== */
