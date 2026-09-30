@@ -983,7 +983,7 @@ details[open] .faq-q::after { content: "−"; }
   display: block;
   height: 56px;
   width: auto;
-  max-width: 180px;
+  max-width: 240px;
   object-fit: contain;
   margin-bottom: 12px;
 }
