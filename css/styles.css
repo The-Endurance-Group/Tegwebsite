@@ -1015,11 +1015,11 @@ details[open] .faq-q::after { content: "−"; }
 .case-study-meta a:hover { text-decoration: underline; }
 .case-study-logo {
   display: block;
-  height: 28px;
+  height: 64px;
   width: auto;
-  max-width: 160px;
+  max-width: 220px;
   object-fit: contain;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .case-study-card p { margin-bottom: 16px; }
