@@ -963,6 +963,11 @@ details[open] .faq-q::after { content: "−"; }
 
 /* compact quote grid ("more from our clients") */
 .quote-grid { margin-top: 0; }
+@media (min-width: 768px) {
+  /* Center a short last row instead of leaving it left-aligned */
+  .quote-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+  .quote-grid > .quote-card { flex: 0 1 calc((100% - 48px) / 3); }
+}
 .quote-card {
   background: var(--color-white);
   border: 1px solid var(--border-light);
