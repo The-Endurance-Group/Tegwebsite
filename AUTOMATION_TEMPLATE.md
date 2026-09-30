@@ -23,6 +23,10 @@ one) rather than building the `<head>` from memory. The pieces that matter:
    - `author.jobTitle` for Conor Sullivan: the site is inconsistent (`"VP"` and `"Vice President"` both appear across posts). Use **"Vice President"** — that's his exact title on `authors/conor-sullivan.html`, and the visible byline meta line elsewhere on the site (`<span>Vice President</span>`) matches it.
 3. `FAQPage` — 3-4 real Q&As. **Must exactly match visible content** in the body (see below), not just live in the schema.
 
+## Asset cache busting
+
+The server caches every non-HTML asset for a year (immutable). Copy the `?v=YYYYMMDD` query string on the `styles.css` and `main.js` links from a recent post, and bump it in all pages whenever CSS, JS, or client logo files are edited in place.
+
 ## Body class
 
 Use `<body class="blog-post">` (not bare `<body>`). It applies the larger blog body text size in `css/styles.css`.
