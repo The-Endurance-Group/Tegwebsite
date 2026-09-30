@@ -88,51 +88,35 @@
   </script>
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is MCP (Model Context Protocol)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "MCP stands for Model Context Protocol. It's a standard that lets AI assistants like Claude connect to external tools and take actions inside them — without requiring a custom integration for each tool. It's a standardized protocol so any tool that implements MCP can talk to any AI model that supports it using the same standard."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need to run my own MCP server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. Many tools already have MCP support built in or as an add-on. When they don't, we can build a lightweight server that connects them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this the same as a plugin or API integration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. MCP is a protocol, a standardized way for AI models to talk to external systems in real time. Plugins were platform-specific and fragmented. MCP is designed to work across models and tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI tools support MCP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claude and GitHub Copilot have the most mature MCP support right now. OpenAI and others are following."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I get an MCP server set up for my business?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TEG, an official Anthropic Claude Partner, builds and configures MCP servers for B2B teams. We check whether an existing MCP server covers your tool first. If one exists, we configure it. If not, we build a lightweight custom server. The setup is included in our Claude Skills and MCPs service, starting at $750."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to run my own MCP server?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not necessarily. Many tools already have MCP support built in or as an add-on. When they don't, we can build a lightweight server that connects them."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this the same as a plugin or API integration?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. MCP is a protocol, a standardized way for AI models to talk to external systems in real time. Plugins were platform-specific and fragmented. MCP is designed to work across models and tools."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which AI tools support MCP?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Claude and GitHub Copilot have the most mature MCP support right now. OpenAI and others are following."
-      }
-    }
-  ]
-}
+    ]
+  }
   </script>
 </head>
 <body class="blog-post">

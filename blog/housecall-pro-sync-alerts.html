@@ -86,6 +86,38 @@
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://theendurancegroup.com/blog/housecall-pro-sync-alerts.html" }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What was the Housecall Pro sync alerts problem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Housecall Pro's sync alerts feed flags odd jobs before they push through to billing, but it was flagging many jobs that were not real problems. For example, a finished and paid job could be tagged as a possible late finish just because the technician forgot to tap Finish. The office spent hours rechecking flags, and genuine issues could get lost in the noise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you automate a workflow when the software's API does not expose the data you need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Housecall Pro's API does not expose the fields the sync alert logic depends on, such as the exact completion timestamp compared to the scheduled time. So TEG built a read-only tool that reads the same sync alerts view a person in the office would see, logs in, and checks each flagged job directly. It never writes to or changes anything in the client's account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the tool decide which flagged jobs need review?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It sorts every flagged job into one of three buckets: push it through if the job is paid, completed, and the dates line up; ignore it if it is not paid yet; or flag it for real review with the specific reason attached. The rules were tuned against screen recordings of the edge cases the client's office runs into."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="blog-post">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -164,6 +196,17 @@
           <h2>The takeaway</h2>
           <p>Not every integration problem gets solved with API access. When a system doesn't expose what you need on the back end, sometimes the answer is building something that reads the front end the way a person would: carefully, read-only, and tuned against how the team actually works rather than how the software assumes they work.</p>
           <p>If you're dealing with a similar gap between what your software shows you and what your team actually needs from it, we'd be glad to talk through how we'd approach it.</p>
+
+          <h2>Frequently asked questions</h2>
+
+          <h3>What was the Housecall Pro sync alerts problem?</h3>
+          <p>Housecall Pro's sync alerts feed flags odd jobs before they push through to billing, but it was flagging many jobs that were not real problems. For example, a finished and paid job could be tagged as a possible late finish just because the technician forgot to tap Finish. The office spent hours rechecking flags, and genuine issues could get lost in the noise.</p>
+
+          <h3>How do you automate a workflow when the software's API does not expose the data you need?</h3>
+          <p>Housecall Pro's API does not expose the fields the sync alert logic depends on, such as the exact completion timestamp compared to the scheduled time. So TEG built a read-only tool that reads the same sync alerts view a person in the office would see, logs in, and checks each flagged job directly. It never writes to or changes anything in the client's account.</p>
+
+          <h3>How does the tool decide which flagged jobs need review?</h3>
+          <p>It sorts every flagged job into one of three buckets: push it through if the job is paid, completed, and the dates line up; ignore it if it is not paid yet; or flag it for real review with the specific reason attached. The rules were tuned against screen recordings of the edge cases the client's office runs into.</p>
 
           <div class="btn-group">
             <a class="btn btn-primary" href="../free-training.html">Book a Free Training Session</a>

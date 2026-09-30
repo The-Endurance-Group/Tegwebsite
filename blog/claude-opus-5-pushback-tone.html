@@ -85,43 +85,43 @@
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What are custom instructions in Claude and where do I set them?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Custom instructions are a permanent set of rules that apply to every conversation without you having to retype them. On Claude.ai, set them under Settings → Custom Instructions. In Claude Cowork, your organization's admin can set shared instructions for the whole team. Through the API, pass them in the system parameter. Once set, they run silently on every conversation."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are custom instructions in Claude and where do I set them?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom instructions are a permanent set of rules that apply to every conversation without you having to retype them. On Claude.ai, set them under Settings → Custom Instructions. In Claude Cowork, your organization's admin can set shared instructions for the whole team. Through the API, pass them in the system parameter. Once set, they run silently on every conversation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you stop Claude Opus 5 from pushing back unnecessarily?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add a permanent custom instruction that asks Claude to check its reasoning before raising an objection and only surface it if it's a genuine issue — not a reflexive hedge. This targets the pattern without suppressing legitimate pushback you actually want."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you reduce verbosity in Claude Opus 5?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add a custom instruction telling Claude to lead with the answer, skip hedging and filler phrases, and avoid invented formatting. Pair this with Claude's built-in Concise mode if your account has it enabled. The two work together."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's Anthropic doing about Opus 5 scope creep and overconfidence?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anthropic has shipped a Concise output mode in response to verbosity complaints. Their prompting documentation advises stripping out verification instructions that trigger scope creep. The overconfidence issue is acknowledged in the model's own system card. Custom instructions give teams a way to address all three behaviors without waiting for model-level fixes."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you stop Claude Opus 5 from pushing back unnecessarily?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Add a permanent custom instruction that asks Claude to check its reasoning before raising an objection and only surface it if it's a genuine issue — not a reflexive hedge. This targets the pattern without suppressing legitimate pushback you actually want."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you reduce verbosity in Claude Opus 5?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Add a custom instruction telling Claude to lead with the answer, skip hedging and filler phrases, and avoid invented formatting. Pair this with Claude's built-in Concise mode if your account has it enabled. The two work together."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's Anthropic doing about Opus 5 scope creep and overconfidence?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Anthropic has shipped a Concise output mode in response to verbosity complaints. Their prompting documentation advises stripping out verification instructions that trigger scope creep. The overconfidence issue is acknowledged in the model's own system card. Custom instructions give teams a way to address all three behaviors without waiting for model-level fixes."
-      }
-    }
-  ]
-}
+    ]
+  }
 </script>
 </head>
 <body class="blog-post">

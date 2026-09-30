@@ -234,6 +234,23 @@
 
           <p>That gap between available data and usable data is where we spend a lot of our time. The Boston permit lookup tool is one version of what closing that gap looks like.</p>
 
+          <h2>Frequently asked questions</h2>
+
+          <h3>How do you look up building permits for a Boston address?</h3>
+          <p>The City of Boston's official permit search is ScerIS, which returns scanned PDF documents with limited filtering. For a more usable lookup, Boston's Analyze Boston open data portal publishes a structured 'Approved Building Permits' dataset via API covering permits issued since 2009. You can query it by address and get all permit records as structured data — though the results require additional parsing to group by unit in multi-family buildings.</p>
+
+          <h3>What is ScerIS and why is it hard to use for Boston permit research?</h3>
+          <p>ScerIS is Boston's official document management system for building permits. It stores permit records as scanned images, meaning search results are PDF documents rather than structured data. There is no unit-level filtering, so researching a multi-family building requires reviewing every permit record for the entire address to find the ones relevant to a specific unit. For properties with dozens or hundreds of units, this is time-consuming and easy to miss.</p>
+
+          <h3>What is the Analyze Boston permits API?</h3>
+          <p>Analyze Boston is the City of Boston's open data portal. Its 'Approved Building Permits' dataset contains structured permit records — address, permit type, description, applicant, approval date, declared valuation — going back to 2009. The dataset is available as a queryable API, which means it can be searched programmatically by address without manually reviewing scanned documents. It covers permitted work but not historical records predating 2009.</p>
+
+          <h3>How can you tell if a Boston property has unpermitted bedrooms?</h3>
+          <p>Comparing the assessor record (which lists the official bedroom count for a property) against the permit history can surface discrepancies. If an assessor record shows three bedrooms but permit history shows no permitted work converting a space to a bedroom, the unit may have been illegally converted. Boston's Analyze Boston dataset and the city's assessor database are both queryable, making it possible to automate this comparison — though permit descriptions vary in quality, and a discrepancy warrants further investigation rather than a definitive finding.</p>
+
+          <h3>Does Boston's open data portal cover all building permits?</h3>
+          <p>The Analyze Boston 'Approved Building Permits' dataset covers permits issued since 2009. Permits issued before that date are in ScerIS as scanned documents and are not in the structured dataset. For older properties, a complete permit history may require reviewing both sources. The dataset also reflects approved permits — it does not indicate whether permitted work was actually completed or passed final inspection.</p>
+
           <div class="cta-block" style="margin-top: 48px;">
             <h3>Working on real estate due diligence or data research?</h3>
             <p>We build tools that pull from public data sources and turn them into something practitioners can actually use. Tell us what you're trying to answer.</p>

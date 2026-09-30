@@ -207,6 +207,23 @@
           <p>Official MCP servers cover the standard operations of their respective tools. If you need Claude to access a proprietary system (an internal deal tracking tool, a custom database, a vendor's API that doesn't have an official MCP), TEG builds custom MCP servers. A custom MCP typically takes two to three weeks to build and test, and it gives Claude the same level of live-data access to your internal tools that the official MCP servers give it to HubSpot or Salesforce.</p>
           <p>We've built custom MCPs for clients with internal systems that store information their CRM doesn't: pricing configuration tools, capacity databases, custom product configurators. In each case, the custom MCP gave Claude access to the data it needed to handle the workflow correctly, rather than requiring the user to paste context in manually every time.</p>
 
+          <h2>Frequently asked questions</h2>
+
+          <h3>What is an MCP server?</h3>
+          <p>An MCP server is a connector that links an AI model like Claude to an external system using the Model Context Protocol (MCP) standard. MCP servers give Claude the ability to read live data from and take actions in tools like HubSpot, Salesforce, Slack, and custom databases, without the user having to copy and paste data into the chat.</p>
+
+          <h3>Does HubSpot have an MCP server for Claude?</h3>
+          <p>Yes. Anthropic and HubSpot have published an official MCP integration that gives Claude direct access to HubSpot contacts, deals, and activity data. TEG uses the HubSpot MCP as the base layer for most of our sales automation work, connecting it to Claude Skills that handle follow-up drafting, deal review, and pipeline management.</p>
+
+          <h3>Does Salesforce have an MCP server?</h3>
+          <p>Yes. Salesforce has published an official MCP server that connects Claude to your Salesforce instance, including contacts, opportunities, and account data. For organizations running Salesforce as their CRM, the Salesforce MCP gives Claude live data access without requiring any manual export or sync.</p>
+
+          <h3>When should I build a custom MCP server?</h3>
+          <p>Build a custom MCP when you need Claude to access a system that doesn't have an official MCP server: a proprietary internal tool, a custom database, or a vendor API that MCP doesn't yet cover. TEG builds custom MCP servers for clients as part of project-based work. A custom MCP typically takes two to three weeks to build and test, and it gives Claude the same live-data access to your internal systems that official servers give it to standard tools.</p>
+
+          <h3>What can Claude do with MCP access to my CRM?</h3>
+          <p>With MCP access to a CRM like HubSpot or Salesforce, Claude can pull a contact's full history and summarize it before a call, draft personalized follow-ups based on deal stage and past communication, flag deals that haven't been touched within a defined window, generate pipeline summaries for your weekly review, and log activity back into the CRM after an interaction.</p>
+
           <div class="btn-group">
             <a class="btn btn-primary" href="../free-training.html">Book a Free Training Session</a>
             <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>

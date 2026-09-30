@@ -87,35 +87,35 @@
   </script>
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does an inbound lead router actually do?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It reads the lead's form submission or CRM record, applies whatever routing logic your team uses (territory, industry, rep capacity, lead source), assigns the lead to the right person, and notifies that person, all automatically, in seconds, without a human in the middle."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does an inbound lead router actually do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It reads the lead's form submission or CRM record, applies your routing logic (territory, industry, rep capacity, lead source), assigns the lead to the right person, and notifies that person, all automatically, in seconds, without a human in the middle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this require replacing our CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. A lead router works on top of whatever CRM you already use. It reads from and writes to the CRM via API, HubSpot, Salesforce, Pipedrive, whatever. The CRM stays the system of record; the router is the layer that handles assignment logic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to leads that don't fit a clean routing rule?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That's where AI earns its place. A rule-based router fails on edge cases. An AI-powered router reads the full context of the lead, company size, industry, what they said in the form, what page they came from, and makes a judgment call. Leads that still can't be confidently assigned get flagged for human review, not silently dropped."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Does this require replacing our CRM?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. A lead router works on top of whatever CRM you already use. It reads from and writes to the CRM via API, HubSpot, Salesforce, Pipedrive, whatever. The CRM stays the system of record; the router is the layer that handles assignment logic."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens to leads that don't fit a clean routing rule?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "That's where AI earns its place. A rule-based router fails on edge cases. An AI-powered router reads the full context of the lead, company size, industry, what they said in the form, what page they came from, and makes a judgment call. Leads that still can't be confidently assigned get flagged for human review, not silently dropped."
-      }
-    }
-  ]
-}
+    ]
+  }
   </script>
 </head>
 <body class="blog-post">

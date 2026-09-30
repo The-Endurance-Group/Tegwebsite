@@ -11,7 +11,7 @@ New post: `blog/<kebab-case-slug>.html`. Copy the full structure of an
 existing post (e.g. `blog/claude-memory-update-b2b-teams.html` or any recent
 one) rather than building the `<head>` from memory. The pieces that matter:
 
-- `<title>` and `og:title` / `twitter:title`: `<Headline> | The Endurance Group`
+- `<title>` and `og:title` / `twitter:title`: `<Short headline> | TEG`, 65 characters or fewer in total. Meta description and `og:description` / `twitter:description`: 160 characters or fewer.
 - Canonical, `og:url`: `https://theendurancegroup.com/blog/<slug>.html` (no www — this is the site-wide convention in every existing post's markup, even though the live site currently only resolves correctly under `www.theendurancegroup.com`; see "Known site quirks" below)
 - `og:image` / `twitter:image`: always `https://www.theendurancegroup.com/images/og-default.png`, 1200x630
 - `article:published_time`: today, `T09:00:00-04:00`

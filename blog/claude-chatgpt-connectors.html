@@ -87,51 +87,35 @@
   </script>
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What are Claude integrations (connectors)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Claude integrations (called 'Integrations' in claude.ai settings) are authorizations you grant inside Claude that let it read from external sources like Google Drive, HubSpot, Jira, GitHub, Confluence, Dropbox, Linear, Sentry, and Asana. Once authorized, Claude can search and reference those sources mid-conversation without you pasting anything in. Available on Claude Pro, Team, and Enterprise plans."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do connectors replace a full automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Connectors are a read layer, they give the AI context so it can answer better. A full automation handles multi-step workflows, writes data back to systems, and runs without a person starting each conversation. Most clients end up using both."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Claude and ChatGPT connectors work with each other's apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, each platform's connectors only work inside that platform. Claude's integrations live in claude.ai; ChatGPT's connectors live in ChatGPT. If your team uses both tools, you'd set up connectors in each one separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is connector access secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Connectors use OAuth, you authorize specific read access to specific apps, the same way you'd authorize any SaaS tool. The AI only sees what you've scoped to it, and you can revoke access at any time from your account settings."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between a Claude connector and an MCP server?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Connectors are user-level authorizations that let Claude read from specific sources during a conversation. MCP (Model Context Protocol) is the developer-level protocol underneath — it defines how AI models and external tools communicate. A connector may use MCP under the hood. TEG, as an Anthropic Claude Partner, configures both: connectors for quick read access, MCP servers for deeper or write-back integrations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do connectors replace a full automation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Connectors are a read layer, they give the AI context so it can answer better. A full automation handles multi-step workflows, writes data back to systems, and runs without a person starting each conversation. Most clients end up using both."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do Claude and ChatGPT connectors work with each other's apps?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No, each platform's connectors only work inside that platform. Claude's integrations live in claude.ai; ChatGPT's connectors live in ChatGPT. If your team uses both tools, you'd set up connectors in each one separately."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is connector access secure?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Connectors use OAuth, you authorize specific read access to specific apps, the same way you'd authorize any SaaS tool. The AI only sees what you've scoped to it, and you can revoke access at any time from your account settings."
-      }
-    }
-  ]
-}
+    ]
+  }
   </script>
 </head>
 <body class="blog-post">

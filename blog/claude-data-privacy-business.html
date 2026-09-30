@@ -277,6 +277,23 @@
 
           <p>If you're evaluating Claude for a deployment that involves sensitive data, the question isn't whether Claude is safe in the abstract. It's whether your specific implementation is configured correctly. That's the part TEG helps with.</p>
 
+          <h2>Frequently asked questions</h2>
+
+          <h3>Does Anthropic train on my business data when I use Claude?</h3>
+          <p>It depends on how you access Claude. If you use the Claude API or Claude for Teams, Anthropic does not use your conversations to train its models by default. The free Claude.ai tier does allow Anthropic to use conversations for training unless you opt out in your privacy settings. Enterprise agreements include additional contractual protections and zero data retention options.</p>
+
+          <h3>What data does Claude actually see during a conversation?</h3>
+          <p>Claude sees only what is present in the active context window: the system prompt, the conversation history, and any content passed in by tools or connectors during that session. It does not have access to your file systems, CRM, or internal tools unless you explicitly connect them via MCP servers or native connectors. Claude has no persistent memory across separate conversations unless you build memory into your implementation.</p>
+
+          <h3>Is Claude safe to use with client information?</h3>
+          <p>Claude for Teams and the Claude API are both designed for business use and do not use your inputs to train Anthropic's models by default. Data is encrypted in transit and at rest. For sensitive industries — legal, healthcare, finance — you should review Anthropic's data processing agreement, use the API rather than the consumer product, and evaluate whether a HIPAA Business Associate Agreement (available for Enterprise) is required. Anthropic is SOC 2 Type II certified.</p>
+
+          <h3>What is the difference between Claude.ai, Claude for Teams, and the Claude API for data privacy?</h3>
+          <p>Claude.ai (free and Pro) is a consumer product. Free tier conversations may be used to improve Claude's models unless you opt out. Claude for Teams is a business subscription that excludes your conversations from model training by default and provides admin controls for your organization. The Claude API is what developers use to build custom tools and automations — API inputs and outputs are not used for training by default. Claude Enterprise adds SSO, expanded context, and contractual data governance terms.</p>
+
+          <h3>Can I use Claude in a HIPAA or GDPR-compliant way?</h3>
+          <p>For HIPAA: Anthropic offers a Business Associate Agreement (BAA) for Enterprise customers, which is a prerequisite for using Claude with protected health information. You cannot use the consumer Claude.ai product for PHI without a BAA. For GDPR: Anthropic's data processing is covered under their Data Processing Addendum, available to API and Teams customers. If your users are in the EU, review Anthropic's data residency options and subprocessor list before deploying.</p>
+
           <div class="cta-block" style="margin-top: 48px;">
             <h3>Deploying Claude with sensitive data?</h3>
             <p>We've built production Claude implementations across real estate, finance, and professional services. We can tell you what to watch for before you start.</p>

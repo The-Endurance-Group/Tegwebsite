@@ -88,51 +88,35 @@
   </script>
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is Claude better than ChatGPT for business automation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Neither is universally better — the choice depends on the task. Claude handles longer documents better and follows detailed instructions more faithfully, making it stronger for document analysis, structured data extraction, and strict output formats. ChatGPT has a broader plugin and integration ecosystem and handles conversational flows slightly better. TEG, as an Anthropic Claude Partner, tests both on your actual prompt before committing to one."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can you use both?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and we sometimes do. Different parts of the same automation can call different models depending on what each step needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which one is cheaper?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing changes often enough that you should check both at build time. For most business automation, cost difference is minor compared to the time saved."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about Gemini?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Gemini is a real option, especially if your team is already deep in Google Workspace. We've built with all three."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does TEG recommend Claude for many business automations?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TEG is an official Anthropic Claude Partner, and we recommend Claude for automations where reasoning quality, document comprehension, or multi-step judgment make the difference between an automation that holds up and one that requires constant intervention. Claude's instruction-following and long context window make it particularly reliable for B2B ops automation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you use both?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, and we sometimes do. Different parts of the same automation can call different models depending on what each step needs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which one is cheaper?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pricing changes often enough that you should check both at build time. For most business automation, cost difference is minor compared to the time saved."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What about Gemini?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Gemini is a real option, especially if your team is already deep in Google Workspace. We've built with all three."
-      }
-    }
-  ]
-}
+    ]
+  }
   </script>
 </head>
 <body class="blog-post">

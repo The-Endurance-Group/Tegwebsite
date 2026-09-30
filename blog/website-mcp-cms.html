@@ -95,12 +95,12 @@
         "name": "Is it safe to let an AI agent edit a live website?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, when it's set up correctly. The agent inherits the permissions of the user account it authenticates as, mutations should be logged, and destructive actions — deleting content, changing user roles — should require confirmation rather than running automatically. We treat this the same way we'd treat any system with write access: least privilege first, audit trail always."
+          "text": "Yes, when it's set up correctly. The agent inherits the permissions of the user account it authenticates as, mutations should be logged, and destructive actions (deleting content, changing user roles) should require confirmation rather than running automatically. We treat this the same way we'd treat any system with write access: least privilege first, audit trail always."
         }
       },
       {
         "@type": "Question",
-        "name": "Does our team need to know how to code to use a website MCP?",
+        "name": "Does our team need to know how to code to use this?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No. The MCP server is configured once during setup. After that, your team asks for the change in plain language the same way they'd ask a person, and the AI handles the tool calls in the background."
@@ -108,7 +108,7 @@
       },
       {
         "@type": "Question",
-        "name": "Can a website MCP replace our developer or agency entirely?",
+        "name": "Can this replace our developer or agency entirely?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "For routine content changes, mostly yes — that's the point. For structural site changes, custom functionality, or anything touching the theme's underlying code, you still want a developer reviewing the work. MCP removes the bottleneck on the 80% of requests that were never worth a developer's time in the first place."

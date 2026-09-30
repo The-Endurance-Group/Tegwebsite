@@ -87,51 +87,35 @@
   </script>
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is an MCP server and how does it connect to Claude?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An MCP server is a small service that sits between Claude and an external tool (like HubSpot or Slack). It translates Claude's requests into API calls the tool understands, and sends the results back. Claude's host application manages the connection via a built-in MCP client. The result: Claude can pull live data from your systems and take actions inside them during a conversation."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does our team need to be technical to use an MCP server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically, your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is MCP the same as a connector or a Skill?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not exactly. Connectors (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that, it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A Skill defines how the AI behaves; MCP defines what it can reach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we use an existing MCP server and a custom one at the same time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Most client setups use a mix, existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "When should I use an existing MCP server versus having one built?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TEG checks for an existing MCP server first. If one covers your tools and scope, we configure it. If your tool has no server, or the existing server exposes too much data or doesn't match your workflow, we build a custom one. Custom builds are also useful when you need to pull data from multiple sources into one coherent answer. Most client setups end up using a mix of existing and custom servers."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does our team need to be technical to use an MCP server?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically, your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is MCP the same as a connector or a Skill?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not exactly. Connectors (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that, it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A Skill defines how the AI behaves; MCP defines what it can reach."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can we use an existing MCP server and a custom one at the same time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Most client setups use a mix, existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request."
-      }
-    }
-  ]
-}
+    ]
+  }
   </script>
 </head>
 <body class="blog-post">

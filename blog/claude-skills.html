@@ -88,51 +88,35 @@
   </script>
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a Claude Skill?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A Claude Skill is a folder of instructions, reference material, and small scripts that Claude can pull from during a conversation. Businesses build their own Skills and load them into Claude.ai, Claude Code, or the API. A Skill teaches Claude your exact process — your pricing logic, your tone, your exceptions — so it responds correctly every time without needing re-explaining."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do we need to already use Claude for this to work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, but it helps. If your team isn't on Claude yet, we'll help you decide whether it's the right fit before we build anything, rather than building a Skill for a tool no one opens."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a Claude Skill the same as a custom GPT or a Gemini Gem?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Same idea, different platform. A Skill is Anthropic's version, a custom GPT is OpenAI's, and a Gem is Google's. We build whichever one matches the tool your team already has open every day."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a Claude Skill see our internal data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only what we scope it to reach. We define exactly what reference material and systems each Skill can use during the build, the same as any automation we ship."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I get a Claude Skill built for my business?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TEG, an official Anthropic Claude Partner, builds Claude Skills for B2B teams starting at $750 per Skill. The process starts with a scoping call to understand your exact workflow, then TEG drafts and installs the Skill and tests it with your team. Your first Skill is free so you can see it working before any money changes hands."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do we need to already use Claude for this to work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No, but it helps. If your team isn't on Claude yet, we'll help you decide whether it's the right fit before we build anything, rather than building a Skill for a tool no one opens."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is a Claude Skill the same as a custom GPT or a Gemini Gem?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Same idea, different platform. A Skill is Anthropic's version, a custom GPT is OpenAI's, and a Gem is Google's. We build whichever one matches the tool your team already has open every day."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can a Claude Skill see our internal data?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Only what we scope it to reach. We define exactly what reference material and systems each Skill can use during the build, the same as any automation we ship."
-      }
-    }
-  ]
-}
+    ]
+  }
   </script>
 </head>
 <body class="blog-post">
