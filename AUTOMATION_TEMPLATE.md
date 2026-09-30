@@ -23,6 +23,10 @@ one) rather than building the `<head>` from memory. The pieces that matter:
    - `author.jobTitle` for Conor Sullivan: the site is inconsistent (`"VP"` and `"Vice President"` both appear across posts). Use **"Vice President"** — that's his exact title on `authors/conor-sullivan.html`, and the visible byline meta line elsewhere on the site (`<span>Vice President</span>`) matches it.
 3. `FAQPage` — 3-4 real Q&As. **Must exactly match visible content** in the body (see below), not just live in the schema.
 
+## Body class
+
+Use `<body class="blog-post">` (not bare `<body>`). It applies the larger blog body text size in `css/styles.css`.
+
 ## Shared header and footer
 
 Copy these two blocks byte-for-byte from any recent post. Do not paraphrase.
