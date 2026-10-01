@@ -429,6 +429,8 @@ textarea:focus-visible {
   .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
 }
 .footer-logo { height: 36px !important; width: auto !important; filter: brightness(0) invert(1); }
+.hero-partner-badge { float: right; height: 240px; width: auto; border-radius: 12px; margin: 8px 0 24px 40px; }
+@media (max-width: 900px) { .hero-partner-badge { float: none; display: block; height: 120px; margin: 0 0 24px; } }
 .footer-partner-badge { display: block; margin-top: 20px; height: 48px; width: auto; border-radius: 6px; }
 .footer-col h4 {
   font-size: 14px;
