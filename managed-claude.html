@@ -42,6 +42,8 @@
       letter-spacing: 0.04em;
       color: #c45020;
     }
+    .hero-partner-badge { float: right; height: 240px; width: auto; border-radius: 12px; margin: 8px 0 24px 40px; }
+    @media (max-width: 900px) { .hero-partner-badge { float: none; display: block; height: 120px; margin: 0 0 24px; } }
     .service-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -259,6 +261,7 @@
     <!-- Hero -->
     <section class="hero hero--page section">
       <div class="container reveal">
+        <img class="hero-partner-badge" src="images/badges/claude-certified-services-partner-vertical.png" alt="Claude Certified Services Partner, Claude Partner Network">
         <span class="eyebrow">Managed Claude</span>
         <h1>An outsourced Claude team for your business.</h1>
         <p class="lede" style="max-width:620px;">TEG acts as the technical team behind your Claude environment. We continuously build, maintain, troubleshoot, and improve the systems your employees use inside and around Claude — so Claude keeps getting more useful instead of stalling out after setup.</p>
@@ -266,7 +269,6 @@
           <a class="btn btn-primary" href="contact.html">Talk to Your Claude Team</a>
           <a class="btn btn-secondary" href="project-based.html">Need a one-time build instead?</a>
         </div>
-        <img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" style="height:64px; width:auto; border-radius:8px; margin-top:28px; display:block;">
       </div>
     </section>
 
