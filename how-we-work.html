@@ -48,7 +48,6 @@
     .how-we-work .grid > * { min-width: 0; }
     .how-we-work .work-steps { margin-top: 40px; clear: both; }
     .how-we-work .work-steps .feature-num { margin-bottom: 16px; }
-    .how-we-work .work-deliverables { margin-top: 28px; }
     .how-we-work .proposal-flow { display: grid; grid-template-columns: 1fr auto 1fr 1fr; gap: 20px; align-items: center; margin-bottom: 24px; }
     .how-we-work .proposal-flow div { display: flex; flex-direction: column; }
     .how-we-work .proposal-flow span { color: var(--color-lavender); font-size: 14px; }
@@ -109,12 +108,6 @@
       .how-we-work .managed-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .how-we-work .managed-benefits li { padding: 20px 12px; font-size: 14px; }
     }
-    .how-we-work .pricing-summary .eyebrow { margin-bottom: 8px; }
-    .how-we-work .pricing-summary h3 { margin-bottom: 16px; }
-    .how-we-work .summary-price { font-size: clamp(24px, 3vw, 30px); font-weight: 700; line-height: 1.25; color: var(--color-purple); }
-    .how-we-work .summary-price span { font-size: 16px; font-weight: 600; }
-    .how-we-work .summary-caption { margin-top: 8px; font-size: 14px; color: var(--color-lavender); }
-    .how-we-work .summary-facts { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-light); font-size: 14px; color: var(--color-lavender); }
     .how-we-work .time-meter { display: block; position: relative; height: 6px; margin-top: 12px; width: 100%; background: var(--border-light); border-radius: 6px; overflow: hidden; }
     .how-we-work .time-meter::after { content: ""; display: block; height: 100%; background: var(--color-purple); border-radius: inherit; transform-origin: left; }
     .how-we-work .time-meter--claude::after { background: var(--color-teal-dark); transform: scaleX(.375); }
@@ -134,6 +127,7 @@
     }
     @keyframes proposal-time-shrink { from { transform: scaleX(1); } to { transform: scaleX(.375); } }
     @keyframes value-reveal { from { opacity: .4; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .how-we-work .managed-terms h4 { margin-top: 20px; margin-bottom: 8px; font-size: 16px; }
   </style>
 </head>
 <body>
@@ -172,7 +166,6 @@
         <span class="eyebrow">Our approach</span>
         <h1>How We Work</h1>
         <h2 class="hero-subtitle">We Find the Value. We Build It. Then We Stay on as Your Claude Team.</h2>
-        <p class="lede">One relationship: measurable AI value, fixed-price builds, and your ongoing Claude team.</p>
         <div class="btn-group"><a class="btn btn-primary" href="book-value-assessment.html">Start Your Free Value Assessment</a></div>
         <ol class="grid grid--3 work-steps" aria-label="How we work in three steps">
           <li class="feature-card"><span class="feature-num" aria-hidden="true">1</span><h3>Find the value</h3><p>Assess one team. Prioritize the opportunities.</p></li>
@@ -189,11 +182,6 @@
         <p class="lede">Up to five hours of meetings and research with one team, such as sales or finance, to create your AI Value Report.</p>
         <p style="margin-top:16px; color:var(--color-lavender); font-size:14px;">First call: choose the team. Report: within one week after the assessment.</p>
         <div class="btn-group"><a class="btn btn-secondary" href="sample-ai-value-assessment.html">View a Sample AI Value Report</a></div>
-        <div class="grid grid--3 work-deliverables">
-          <div class="feature-card"><h3>What to build</h3><p>The workflow, what it does, and the process it improves.</p></div>
-          <div class="feature-card"><h3>What it’s worth</h3><p>Expected 12-month economic value, using operating data and conservative assumptions where possible.</p></div>
-          <div class="feature-card"><h3>What it costs</h3><p>A fixed implementation price. No obligation to build every opportunity.</p></div>
-        </div>
       </div>
     </section>
 
@@ -260,33 +248,25 @@
         <p class="managed-build-note"><b>New builds are separately scoped and value-priced.</b></p>
         <p style="margin-top:8px; font-size:14px; color:var(--color-lavender);">Claude subscriptions, third-party software and API charges are paid separately by the client.</p>
         <details class="managed-scope">
-          <summary>What’s included &amp; how pricing grows</summary>
+          <summary>Scope, ownership &amp; terms</summary>
           <div class="managed-terms">
             <p>We maintain TEG-built workflows, keep technology and documentation current, and support and train your team.</p>
             <p>Assessments of additional teams are included at no extra charge. Monthly reviews cover usage, value, improvements, new Claude capabilities and what to build next.</p>
             <p>The monthly fee reflects your environment at launch. Any adjustment for added workflows, integrations, teams or support needs is agreed with you before it takes effect.</p>
+            <h4>Ownership</h4><p>You own the workflows, Skills, integrations and code we build.</p>
+            <h4>Billing &amp; agreement terms</h4><p>Managed Claude is billed monthly at an agreed fixed fee. We confirm the monthly service scope, billing start date, term and cancellation provisions in your agreement before you commit.</p>
+            <h4>Implementation timing</h4><p>We agree each build’s scope and delivery schedule in a project exhibit before kickoff.</p>
           </div>
         </details>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Build + ongoing support.</h2>
-        <div class="grid grid--2">
-          <div class="pricing-card pricing-summary"><span class="eyebrow">Build</span><h3>Implementation</h3><p class="summary-price">Fixed project price</p><p class="summary-caption">Based on expected 12-month value</p><div class="summary-facts"><span>50% kickoff · 50% launch</span><span>30-day warranty</span></div></div>
-          <div class="pricing-card pricing-summary"><span class="eyebrow">Stay</span><h3>Managed Claude</h3><p class="summary-price">From $1,500<span>/month</span></p><p class="summary-caption">Your ongoing Claude team</p><div class="summary-facts"><span>Fixed fee · billed monthly</span><span>New builds priced separately</span></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt"><div class="container"><div class="quote-card" style="max-width:800px; margin-inline:auto;"><span class="eyebrow">A client’s experience</span><blockquote>“From our first conversation, Conor took the time to understand our business, the challenges we were trying to solve, and how custom Claude skills could help streamline our workflows.”</blockquote><cite>Gieriet Bowen, Director of Investor Relations · Biproxi Capital Network</cite><a class="feature-link" href="success.html#biproxi">Read the client story →</a></div></div></section>
+<section class="section section--alt"><div class="container"><div class="quote-card" style="max-width:800px; margin-inline:auto;"><span class="eyebrow">A client’s experience</span><blockquote>“From our first conversation, Conor took the time to understand our business, the challenges we were trying to solve, and how custom Claude skills could help streamline our workflows.”</blockquote><cite>Gieriet Bowen, Director of Investor Relations · Biproxi Capital Network</cite><a class="feature-link" href="success.html#biproxi">Read the client story →</a></div></div></section>
 
     <section class="section section--dark text-center">
       <div class="container">
         <h2 class="section-title">Start With One Team</h2>
-        <p class="lede" style="margin-inline:auto;">Show us how your team works. We’ll show you what to build, what it could be worth, and what it costs.</p>
-        <p style="margin-top:20px;"><b>Your first AI Value Assessment is free.</b></p>
+        <p class="lede" style="margin-inline:auto;">Your first assessment is free.</p>
         <div class="btn-group btn-group--center"><a class="btn btn-primary" href="book-value-assessment.html">Start Your Free Assessment</a></div>
       </div>
     </section>

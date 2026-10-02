@@ -65,9 +65,6 @@
     .sample-assessment .calculation p + p { margin-top: 12px; }
     .sample-assessment .formula { font-weight: 700; color: var(--color-purple); }
     .sample-assessment .calculation .caveat { font-size: 14px; color: var(--color-lavender); }
-    .sample-assessment .ongoing { margin-top: 0; }
-    .sample-assessment .ongoing h2 { font-size: 22px; margin-bottom: 12px; }
-    .sample-assessment .ongoing p + p { margin-top: 12px; }
     @media (max-width: 767px) {
       .sample-assessment .opportunity-row { grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px; }
       .sample-assessment .opportunity-name { grid-column: 1 / -1; }
@@ -164,19 +161,17 @@
           <dl class="build-price"><dt>Fixed build price</dt><dd>$15,000</dd></dl>
         </div>
       </div>
-      <p class="summary-note">Clients pay Claude subscriptions, third-party software and API charges separately.</p>
       <p class="summary-note">Build prices are one-time implementation fees. Annual values are estimates before build fees and Managed Claude costs. We don’t add them into a single “savings” total: capacity, avoided costs and new revenue have different assumptions and can overlap.</p>
     </div></section>
     <section class="section"><div class="container">
-      <h2 class="section-title">Explore each opportunity</h2>
-      <p class="lede" style="margin-bottom:28px;">Open a build to see the workflow, calculation and conditions behind its estimate.</p>
+      <h2 class="section-title">Explore the builds</h2>
       <div class="opportunity-details">
-        <details class="opportunity" id="meeting-follow-up" open>
+        <details class="opportunity" id="meeting-follow-up">
           <summary><div><span class="value-kind">Time freed</span><h3>Meeting notes &amp; follow-up</h3><p>Turn meeting notes into reviewed follow-ups and CRM updates.</p></div></summary>
           <div class="detail-body">
             <div class="detail-grid"><div><h4>Today</h4><p>Sales reps manually summarize calls, draft follow-ups and copy action items into the CRM. At 15 meetings a week, this creates repetitive work and uneven follow-through.</p></div><div><h4>Recommended build</h4><p>A Claude workflow drafts summaries, follow-up emails and CRM updates from approved meeting transcripts. Reps review every draft and approve changes before anything is sent or saved.</p></div></div>
             <div class="calculation"><h4>Projected annual value: $18,000</h4><p class="formula">15 meetings/week × 20 minutes freed × 50 weeks = 250 hours/year<br>250 hours × $72/hour fully loaded cost = $18,000 annual capacity value</p><p class="caveat">Time freed, not a forecast of cash savings. Value depends on the team using those hours for useful work.</p></div>
-            <div class="detail-grid detail-grid--scope"><div><h4>Fixed build price: $2,500</h4><p>One meeting source, one CRM and one approved follow-up format. Includes configuration, testing, documentation, launch support and a 30-day warranty.</p></div></div>
+            <div class="detail-grid detail-grid--scope"><div><h4>Fixed build price: $2,500</h4><p>One meeting source, one CRM and one approved follow-up format.</p></div></div>
           </div>
         </details>
         <details class="opportunity" id="proposal-creation">
@@ -184,7 +179,7 @@
           <div class="detail-body">
             <div class="detail-grid"><div><h4>Today</h4><p>The team creates 15 proposals a week, spending about two hours on each. Much of that time goes into assembling standard content and tailoring it to the deal.</p></div><div><h4>Recommended build</h4><p>Claude assembles a proposal draft from approved service descriptions, templates and CRM deal fields. A salesperson checks scope, claims, pricing and terms before sharing it.</p></div></div>
             <div class="calculation"><h4>Projected annual value: $75,000</h4><p class="formula">2 hours today − 45 minutes with Claude = 1.25 hours freed/proposal<br>15 proposals/week × 1.25 hours × $80/hour × 50 weeks = $75,000 annual capacity value</p><p class="caveat">This is capacity value, not cash savings. The $7,500 build price uses 10% in this example only; the percentage is agreed per project.</p></div>
-            <div class="detail-grid detail-grid--scope"><div><h4>Fixed build price: $7,500</h4><p>One proposal template family and one CRM, with approved content and a review step. Includes testing, documentation, launch support and a 30-day warranty.</p></div></div>
+            <div class="detail-grid detail-grid--scope"><div><h4>Fixed build price: $7,500</h4><p>One proposal template family and one CRM, with approved content and a review step.</p></div></div>
           </div>
         </details>
         <details class="opportunity" id="lead-qualification">
@@ -192,7 +187,7 @@
           <div class="detail-body">
             <div class="detail-grid"><div><h4>Today</h4><p>The team expects lead volume to exceed its capacity and is planning an additional qualification role with a fully loaded annual cost of $90,000.</p></div><div><h4>Recommended build</h4><p>Claude checks inbound leads against agreed criteria, flags missing information and prepares a qualification summary for the existing team. Staff handle exceptions and approve routing decisions.</p></div></div>
             <div class="calculation"><h4>Projected annual value: $90,000</h4><p class="formula">1 planned full-year role × $90,000 fully loaded annual cost = $90,000 hiring cost avoided</p><p class="caveat">Only counts if the planned hire is genuinely unnecessary for the full year. A delayed hire creates a smaller benefit; time savings from this same role must not be counted again.</p></div>
-            <div class="detail-grid detail-grid--scope"><div><h4>Fixed build price: $12,000</h4><p>One inbound source, one CRM, agreed qualification rules and an exception queue. Includes testing, documentation, launch support and a 30-day warranty.</p></div></div>
+            <div class="detail-grid detail-grid--scope"><div><h4>Fixed build price: $12,000</h4><p>One inbound source, one CRM, agreed qualification rules and an exception queue.</p></div></div>
           </div>
         </details>
         <details class="opportunity" id="sales-finance-handoff">
@@ -200,7 +195,7 @@
           <div class="detail-body">
             <div class="detail-grid"><div><h4>Today</h4><p>An outside provider charges $2,500 a month to reconcile closed deals, invoice details and finance records. Those costs are distinct from the lead-qualification role.</p></div><div><h4>Recommended build</h4><p>A workflow prepares a reconciliation report, checks missing or inconsistent fields and gives finance an exception list. Finance approves corrections; the workflow does not release payments or modify ledgers without review.</p></div></div>
             <div class="calculation"><h4>Projected annual value: $30,000</h4><p class="formula">$2,500/month in removable vendor fees × 12 months = $30,000 annual cost reduction</p><p class="caveat">Savings require an actual reduction in the vendor bill. Retained fees, additional software or internal operating costs reduce the net benefit.</p></div>
-            <div class="detail-grid detail-grid--scope"><div><h4>Fixed build price: $4,000</h4><p>One CRM-to-finance data handoff, one reconciliation report and an approval step. Includes testing, documentation, launch support and a 30-day warranty.</p></div></div>
+            <div class="detail-grid detail-grid--scope"><div><h4>Fixed build price: $4,000</h4><p>One CRM-to-finance data handoff, one reconciliation report and an approval step.</p></div></div>
           </div>
         </details>
         <details class="opportunity" id="customer-reporting">
@@ -208,16 +203,14 @@
           <div class="detail-body">
             <div class="detail-grid"><div><h4>Today</h4><p>Customers ask for recurring account insights, but producing bespoke reports manually is too costly to offer as a repeatable paid service.</p></div><div><h4>Recommended build</h4><p>Claude drafts a monthly report from approved customer data and a standard report format. An account manager reviews accuracy, access permissions and recommendations before delivery.</p></div></div>
             <div class="calculation"><h4>Projected annual value: $100,000</h4><p class="formula">20 customers × $500/month × 12 months = $120,000 projected annual revenue<br>$120,000 revenue − $20,000 incremental delivery costs = $100,000 annual contribution</p><p class="caveat">The pricing basis is $100,000 in contribution, not gross revenue. This assumes 20 paying customers for the full year; ramp-up, churn and acquisition costs can reduce value.</p></div>
-            <div class="detail-grid detail-grid--scope"><div><h4>Fixed build price: $15,000</h4><p>One data source, one report format and a human approval process. Includes testing, documentation, launch support and a 30-day warranty.</p></div></div>
+            <div class="detail-grid detail-grid--scope"><div><h4>Fixed build price: $15,000</h4><p>One data source, one report format and a human approval process.</p></div></div>
           </div>
         </details>
       </div>
-      <p class="summary-note">Prices are agreed before work starts and stay fixed regardless of actual results. No universal percentage applies. Payment is 50% at kickoff and 50% at launch.</p>
+      <p class="summary-note">All builds include testing, documentation, launch support and a 30-day warranty. Prices are fixed before work starts; no universal percentage applies. Payment: 50% at kickoff / 50% at launch. Clients pay software subscriptions and API charges separately.</p>
+      <p class="summary-note">Ongoing support: <a href="how-we-work.html" style="color:var(--color-purple); text-decoration:underline;">Managed Claude starts at $1,500/month</a>. New builds are priced separately.</p>
     </div></section>
-    <section class="section section--alt"><div class="container">
-      <div class="maintenance-callout ongoing"><h2>Managed Claude · from $1,500/month</h2><p>Your standard ongoing TEG relationship: maintenance, support, updates, training, opportunity assessments and monthly value reviews.</p><p>New builds are separately scoped and value-priced. This monthly fee is separate from the build prices above; any adjustment as your environment grows is agreed in advance.</p></div>
-    </div></section>
-    <section class="section section--dark text-center"><div class="container"><h2 class="section-title">What could we find for your team?</h2><p class="lede" style="margin-inline:auto;">Start with one team, such as sales or finance. Your first AI Value Assessment is free.</p><div class="btn-group btn-group--center"><a class="btn btn-primary" href="book-value-assessment.html">Start Your Free Assessment</a></div></div></section>
+<section class="section section--dark text-center"><div class="container"><h2 class="section-title">What could we find for your team?</h2><p class="lede" style="margin-inline:auto;">Start with one team, such as sales or finance. Your first AI Value Assessment is free.</p><div class="btn-group btn-group--center"><a class="btn btn-primary" href="book-value-assessment.html">Start Your Free Assessment</a></div></div></section>
   </main>
   <script>
     // Open the selected opportunity before navigating to its detail panel.

@@ -61,12 +61,6 @@
     .assessment-booking .prep-icons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
     .assessment-booking .prep-icons li { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 16px 8px; font-size: 14px; font-weight: 600; text-align: center; }
     .assessment-booking .prep-icons svg { width: 28px; height: 28px; color: var(--color-purple); }
-    .assessment-booking .call-focus { display: flex; align-items: flex-start; gap: 16px; }
-    .assessment-booking .call-focus > svg { flex: 0 0 32px; width: 32px; height: 32px; color: var(--color-purple); }
-    .assessment-booking .call-focus h3 { font-size: 20px; margin-bottom: 8px; }
-    .assessment-booking .call-focus p { font-size: 14px; color: var(--color-lavender); }
-    .assessment-booking .call-checklist { display: grid; gap: 12px; margin-top: 24px; font-size: 15px; }
-    .assessment-booking .call-checklist li::before { content: "✓"; color: var(--color-teal-dark); font-weight: 700; margin-right: 12px; }
     @media (max-width: 767px) {
       .assessment-booking .assessment-journey { grid-template-columns: 1fr; gap: 28px; }
       .assessment-booking .assessment-journey::before { left: 28px; right: auto; top: 28px; bottom: 28px; border-top: 0; border-left: 2px solid var(--border-light); }
@@ -114,7 +108,6 @@
       <h1>Book Your Free Value Assessment</h1>
       <p class="lede">Show us how your team works. We’ll find where Claude can create measurable economic value.</p>
       <div class="btn-group"><a class="btn btn-primary" href="#book">Choose a Time</a><a class="btn btn-secondary" href="sample-ai-value-assessment.html">View a Sample AI Value Report</a></div>
-      <p class="booking-note">First, a call to choose the team. Then, meetings and research.</p>
     </div></section>
     <section class="section section--alt"><div class="container">
       <h2 class="section-title">A call. An assessment. Your report.</h2>
@@ -128,21 +121,16 @@
       <p class="booking-note">You choose what to build. No obligation to build every opportunity.</p>
     </div></section>
     <section class="section section--alt" id="book"><div class="container calendar-layout">
-      <div><span class="eyebrow">Free intro call</span><h2 class="section-title">Choose a time.</h2><div class="call-focus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11a8 8 0 0 1-8 8H7l-5 3V11a9 9 0 0 1 19 0z"/><path d="M7 10h10M7 14h6"/></svg><div><h3>Let’s choose your team.</h3><p>Sales, finance, or another team.</p></div></div><ul class="call-checklist"><li>Choose the team</li><li>Agree the focus</li><li>Plan the assessment</li></ul><div class="booking-links"><a href="how-we-work.html">How We Work</a><a href="sample-ai-value-assessment.html">Sample AI Value Report</a></div><p class="calendar-alternative">Prefer email? <a href="mailto:csullivan@theendurancegroup.com">csullivan@theendurancegroup.com</a></p></div>
+      <div><span class="eyebrow">Free intro call</span><h2 class="section-title">Choose a time.</h2><div class="booking-links"><a href="how-we-work.html">How We Work</a></div><p class="calendar-alternative">Prefer email? <a href="mailto:csullivan@theendurancegroup.com">csullivan@theendurancegroup.com</a></p></div>
       <div><iframe class="calendar-frame" title="Book your free AI Value Assessment with TEG" src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?embed=true" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="calendar-alternative"><a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor">Open the booking calendar directly</a></p></div>
     </div></section>
     <section class="section"><div class="container"><h2 class="section-title">A few common questions</h2><div class="faq-list">
-      <details class="faq-item"><summary class="faq-q">Is the assessment really free?</summary><p class="faq-a">Yes. After the introductory call, your free assessment covers one team or department and includes up to five hours in total of meetings and research to create the report. There is no obligation to build every opportunity we identify.</p></details>
-      <details class="faq-item"><summary class="faq-q">What should I bring to the call?</summary><p class="faq-a">Bring a team or department you have in mind, such as sales or finance, and a short overview of what you’d like to improve. We use this call to choose where to focus; detailed meetings and research come afterward.</p></details>
-      <details class="faq-item"><summary class="faq-q">Do I need Claude already?</summary><p class="faq-a">No. We can start with how your team works today and identify any Claude setup or software requirements as part of the assessment.</p></details>
-      <details class="faq-item"><summary class="faq-q">What happens after the assessment?</summary><p class="faq-a">Within one week after the assessment is complete, you receive an AI Value Report: prioritized builds, what each would do, expected 12-month economic value, and a fixed implementation price. You choose which opportunities to pursue.</p></details>
-      <details class="faq-item"><summary class="faq-q">What if there isn’t a worthwhile build?</summary><p class="faq-a">We’ll tell you. The assessment is about finding measurable value, and there is no obligation to proceed with an implementation.</p></details>
-      <details class="faq-item"><summary class="faq-q">Are projected values guaranteed savings?</summary><p class="faq-a">No. Estimates use agreed inputs and assumptions. Time freed is capacity value, avoided hiring depends on a real hiring plan, and new revenue depends on demand and delivery costs. We distinguish these in your report.</p></details>
-      <details class="faq-item"><summary class="faq-q">Are Claude subscriptions and software costs included?</summary><p class="faq-a">No. Clients pay Claude subscriptions, third-party software and API charges separately from TEG’s implementation and Managed Claude fees. We identify the requirements and confirm these costs before work begins.</p></details>
-      <details class="faq-item"><summary class="faq-q">What does Managed Claude cover?</summary><p class="faq-a">Managed Claude starts at $1,500/month and is the standard ongoing TEG relationship. It covers maintenance of TEG-built workflows, updates, employee support, documentation, training, ongoing assessments and monthly value reviews. New builds are separately scoped and value-priced.</p></details>
-      <details class="faq-item"><summary class="faq-q">When does Managed Claude billing begin, and what are the terms?</summary><p class="faq-a">We confirm the monthly service scope, billing start date, term and cancellation provisions in your agreement before you commit. Any fee adjustment as your environment grows is agreed in advance.</p></details>
-      <details class="faq-item"><summary class="faq-q">Who owns the workflows, and what access do you need?</summary><p class="faq-a">You own the workflows, Skills, integrations and code we build. For the initial call, start by describing the work; you do not need to share passwords or grant system access. If we proceed, we agree the access and data handling needed for the scope.</p></details>
-      <details class="faq-item"><summary class="faq-q">How long does implementation take?</summary><p class="faq-a">Timing depends on the build and your systems. We agree the scope and delivery schedule in a project exhibit before kickoff. Payment is 50% at kickoff and 50% at launch, with a 30-day warranty for reasonable fixes and refinements.</p></details>
+      <details class="faq-item"><summary class="faq-q">Is it free, and am I obligated to proceed?</summary><p class="faq-a">Your first assessment is free and includes up to five hours of meetings and research for one team. There is no obligation to proceed with a build. If we don’t find a worthwhile build, we’ll tell you.</p></details>
+      <details class="faq-item"><summary class="faq-q">What should I bring?</summary><p class="faq-a">A team or department you have in mind, such as sales or finance, and an idea of what you’d like to improve. The first call chooses the focus; detailed meetings and research come afterward.</p></details>
+      <details class="faq-item"><summary class="faq-q">Do I need Claude already?</summary><p class="faq-a">No. We identify any Claude setup or software requirements during the assessment.</p></details>
+      <details class="faq-item"><summary class="faq-q">What will I receive, and when?</summary><p class="faq-a">Within one week after the assessment is complete: an AI Value Report with prioritized builds, what each would do, projected 12-month economic value and fixed implementation prices.</p></details>
+      <details class="faq-item"><summary class="faq-q">What access or data do you need?</summary><p class="faq-a">No passwords or system access are needed for the first call. If we proceed, we agree what access and data handling the scope requires.</p></details>
+      <details class="faq-item"><summary class="faq-q">Are software costs included?</summary><p class="faq-a">No. Clients pay Claude subscriptions, third-party software and API charges separately from TEG fees. We confirm the requirements and costs before work begins.</p></details>
     </div></div></section>
   </main>
   <!-- SHARED FOOTER: keep in sync across all pages -->
