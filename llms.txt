@@ -1,11 +1,15 @@
 # The Endurance Group
 
-> Official Anthropic Claude Partner and Claude implementation firm for B2B companies, based in Portland, Maine, founded in 1998. TEG is an official member of Anthropic's Claude Partner Network with Claude-certified developers and architects. TEG does four things: system integrations, automated workflows, custom Claude applications, and Claude setup and training. Work with TEG on a fixed-scope project or keep a bank of hours on retainer — load up, draw down, refill as needed. One certified team, either way.
+> Official Anthropic Claude Partner and Claude implementation firm for B2B companies, based in Portland, Maine, founded in 1998. TEG is an official member of Anthropic's Claude Partner Network with Claude-certified developers and architects. TEG does four things: system integrations, automated workflows, custom Claude applications, and Claude setup and training. Start with a free AI Value Assessment for one team, build value-priced opportunities, and continue with Managed Claude as your ongoing team. New builds are separately scoped and priced.
 
 ## Core pages
 
+- [How We Work](https://www.theendurancegroup.com/how-we-work.html): Free assessment, fixed value-priced builds, and Managed Claude from $1,500/month. Clients pay software and API charges separately.
+- [Sample AI Value Report](https://www.theendurancegroup.com/sample-ai-value-assessment.html): Illustrative opportunities, economic-value calculations and fixed build prices for a fictional sales team.
+- [Book a Free Value Assessment](https://www.theendurancegroup.com/book-value-assessment.html): Choose a team on the intro call, then up to five hours of meetings and research. AI Value Report within one week after the assessment.
+
 - [Home](https://theendurancegroup.com/): What we do and how we work - AI automations and strategy, built and run, not just advised.
-- [Solutions](https://theendurancegroup.com/solutions.html): The four things TEG does — system integrations, automated workflows, custom Claude applications, and Claude setup and training. Fixed-scope project or hours bank retainer.
+- [Solutions](https://theendurancegroup.com/solutions.html): The four things TEG does — system integrations, automated workflows, custom Claude applications, and Claude setup and training. New builds are separately scoped and value-priced.
 - [Managed Claude](https://theendurancegroup.com/managed-claude.html): TEG as an outsourced Claude team - an ongoing relationship where TEG builds, maintains, troubleshoots, and improves the systems your employees use inside and around Claude.
 - [Project-Based Builds](https://theendurancegroup.com/project-based.html): One-time, scoped Claude builds for teams that do not need an ongoing relationship.
 - [Specialties](https://theendurancegroup.com/specialties.html): Functional specialties (sales & marketing automation, CRM, AI workflow design) and industry depth across Real Estate, B2B Technology, and Professional Services.

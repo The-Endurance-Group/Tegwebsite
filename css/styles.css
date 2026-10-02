@@ -186,7 +186,9 @@ textarea:focus-visible {
   border-radius: var(--radius-sm);
   border: 2px solid transparent;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
 }
 .btn:hover { transform: translateY(-1px); }
 
@@ -323,7 +325,7 @@ textarea:focus-visible {
   border-bottom: none !important;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .nav-toggle { display: none; }
   .primary-nav {
     position: static;
