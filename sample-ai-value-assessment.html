@@ -81,6 +81,24 @@
       .sample-assessment .detail-body { padding: 0 20px 24px; }
       .sample-assessment .calculation { padding: 20px; }
     }
+    .sample-assessment .opportunity[open] > summary { background: var(--tint-purple); }
+    @media (prefers-reduced-motion: no-preference) {
+      .sample-assessment .opportunity-row { transition: border-color .2s ease, box-shadow .2s ease; }
+      .sample-assessment .opportunity-row.is-motion-played { animation: report-row-arrive .45s ease both; }
+      .sample-assessment .opportunity-row:nth-child(2) { animation-delay: .07s; }
+      .sample-assessment .opportunity-row:nth-child(3) { animation-delay: .14s; }
+      .sample-assessment .opportunity-row:nth-child(4) { animation-delay: .21s; }
+      .sample-assessment .opportunity-row:nth-child(5) { animation-delay: .28s; }
+      .sample-assessment .opportunity[open] .detail-body { animation: report-detail-open .3s ease both; }
+      .sample-assessment .opportunity > summary { transition: background-color .2s ease; }
+    }
+    @media (hover: hover) {
+      .sample-assessment .opportunity-row:hover { border-color: var(--color-teal); box-shadow: 0 4px 16px var(--tint-teal); }
+    }
+    .sample-assessment .opportunity-row:focus-within { border-color: var(--color-teal-dark); }
+    .sample-assessment .opportunity[open] .detail-body { padding-top: 24px; }
+    @keyframes report-row-arrive { from { opacity: .5; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes report-detail-open { from { opacity: .5; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -277,6 +295,23 @@
   </footer>
   <!-- END SHARED FOOTER -->
 
+  <script>
+    (function () {
+      var preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (preference.matches || !('IntersectionObserver' in window)) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-motion-played');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.2 });
+      document.querySelectorAll('.opportunity-row').forEach(function (row) { observer.observe(row); });
+      preference.addEventListener('change', function (event) {
+        if (event.matches) observer.disconnect();
+      });
+    })();
+  </script>
   <script src="js/main.js?v=20260930" defer></script>
 </body>
 </html>
