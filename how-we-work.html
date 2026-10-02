@@ -109,6 +109,12 @@
       .how-we-work .managed-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .how-we-work .managed-benefits li { padding: 20px 12px; font-size: 14px; }
     }
+    .how-we-work .pricing-summary .eyebrow { margin-bottom: 8px; }
+    .how-we-work .pricing-summary h3 { margin-bottom: 16px; }
+    .how-we-work .summary-price { font-size: clamp(24px, 3vw, 30px); font-weight: 700; line-height: 1.25; color: var(--color-purple); }
+    .how-we-work .summary-price span { font-size: 16px; font-weight: 600; }
+    .how-we-work .summary-caption { margin-top: 8px; font-size: 14px; color: var(--color-lavender); }
+    .how-we-work .summary-facts { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-light); font-size: 14px; color: var(--color-lavender); }
   </style>
 </head>
 <body>
@@ -243,10 +249,10 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title">One Relationship. Two Types of Pricing.</h2>
+        <h2 class="section-title">Build + ongoing support.</h2>
         <div class="grid grid--2">
-          <div class="pricing-card"><h3>Implementation</h3><p class="pricing-scope">Fixed project price · value-based</p><ul class="pricing-features"><li>New workflow or application; price depends on the opportunity</li><li>50% at kickoff / 50% at launch</li><li>Build, testing, documentation, launch and 30-day warranty</li></ul></div>
-          <div class="pricing-card"><h3>Managed Claude</h3><p class="pricing-scope">From $1,500/month · fixed monthly fee</p><ul class="pricing-features"><li>Your ongoing Claude team, billed monthly</li><li>Maintenance, support, updates, training and optimization</li><li>Opportunity assessments included; new builds priced separately</li></ul></div>
+          <div class="pricing-card pricing-summary"><span class="eyebrow">Build</span><h3>Implementation</h3><p class="summary-price">Fixed project price</p><p class="summary-caption">Based on expected 12-month value</p><div class="summary-facts"><span>50% kickoff · 50% launch</span><span>30-day warranty</span></div></div>
+          <div class="pricing-card pricing-summary"><span class="eyebrow">Stay</span><h3>Managed Claude</h3><p class="summary-price">From $1,500<span>/month</span></p><p class="summary-caption">Your ongoing Claude team</p><div class="summary-facts"><span>Fixed fee · billed monthly</span><span>New builds priced separately</span></div></div>
         </div>
       </div>
     </section>
