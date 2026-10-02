@@ -94,6 +94,21 @@
       .how-we-work .launch-stage:not(:last-child)::after { content: "↓"; right: auto; left: 36px; top: auto; bottom: -20px; }
       .how-we-work .launch-details { gap: 16px; }
     }
+    .how-we-work .managed-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .how-we-work .managed-benefits li { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 14px; padding: 24px 16px; border: 1px solid var(--border-light); border-radius: var(--radius-md); background: var(--color-white); text-align: center; font-weight: 600; line-height: 1.4; }
+    .how-we-work .benefit-icon { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: var(--radius-md); background: var(--tint-purple); color: var(--color-purple); }
+    .how-we-work .benefit-icon svg { width: 24px; height: 24px; }
+    .how-we-work .managed-benefits li:nth-child(3n + 2) .benefit-icon { color: var(--color-teal-dark); background: var(--tint-teal); }
+    .how-we-work .managed-benefits li:nth-child(3n) .benefit-icon { color: var(--color-pink-dark); background: var(--tint-pink); }
+    .how-we-work .managed-build-note { margin-top: 24px; font-size: 14px; color: var(--color-lavender); }
+    .how-we-work .managed-scope { margin-top: 16px; border-top: 1px solid var(--border-light); padding-top: 16px; }
+    .how-we-work .managed-scope summary { cursor: pointer; color: var(--color-purple); font-weight: 600; font-size: 14px; }
+    .how-we-work .managed-scope summary:focus-visible { outline: 2px solid var(--color-teal-dark); outline-offset: 4px; }
+    .how-we-work .managed-scope .managed-terms { margin-top: 16px; font-size: 14px; }
+    @media (max-width: 767px) {
+      .how-we-work .managed-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .how-we-work .managed-benefits li { padding: 20px 12px; font-size: 14px; }
+    }
   </style>
 </head>
 <body>
@@ -206,18 +221,23 @@
         <h2 class="section-title">Your ongoing Claude team.</h2>
         <p class="lede">Managed Claude is the standard TEG relationship.</p>
         <div class="managed-price"><h3>Managed Claude</h3><div class="price-headline"><span class="price-big">Starting at $1,500/month</span></div></div>
-        <div class="grid grid--3 managed-benefits">
-          <div class="feature-card"><h3>Maintain</h3><p>Maintenance and troubleshooting for TEG-built workflows.</p></div>
-          <div class="feature-card"><h3>Keep current</h3><p>Updates as Claude, connectors, APIs and your systems change.</p></div>
-          <div class="feature-card"><h3>Support your team</h3><p>Employee questions, training and enablement.</p></div>
-          <div class="feature-card"><h3>Document</h3><p>Current instructions and operating materials.</p></div>
-          <div class="feature-card"><h3>Find new value</h3><p>Ongoing assessments, including additional departments at no extra charge.</p></div>
-          <div class="feature-card"><h3>Review monthly</h3><p>Usage, results, improvements, new Claude capabilities and what to build next.</p></div>
-        </div>
-        <div class="managed-terms">
-          <p><b>New builds:</b> separately scoped and value-priced before implementation.</p>
-          <p><b>As you grow:</b> the monthly fee reflects your environment at launch. Added workflows, integrations, departments or support needs may require an adjustment, agreed with you before it takes effect.</p>
-        </div>
+        <ul class="managed-benefits" aria-label="Included in Managed Claude">
+          <li><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6 4-4a6 6 0 0 1-8 8L4 16a3 3 0 0 0 4 4l6-6a6 6 0 0 0 8-8l-4 4z"/></svg></span><span>Maintenance</span></li>
+          <li><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12-2l2 2M18 17A7 7 0 0 1 6 19l-2-2"/></svg></span><span>Technology updates</span></li>
+          <li><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11a8 8 0 0 1-8 8H7l-5 3V11a9 9 0 0 1 19 0z"/><path d="M7 10h10M7 14h6"/></svg></span><span>Team support & training</span></li>
+          <li><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span><span>Documentation</span></li>
+          <li><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M10 7v6M7 10h6"/></svg></span><span>New opportunity assessments</span></li>
+          <li><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18m-11 5 2 2 4-4"/></svg></span><span>Monthly value reviews</span></li>
+        </ul>
+        <p class="managed-build-note"><b>New builds are separately scoped and value-priced.</b></p>
+        <details class="managed-scope">
+          <summary>What’s included &amp; how pricing grows</summary>
+          <div class="managed-terms">
+            <p>We maintain TEG-built workflows, keep technology and documentation current, and support and train your team.</p>
+            <p>Additional department assessments are included at no extra charge. Monthly reviews cover usage, value, improvements, new Claude capabilities and what to build next.</p>
+            <p>The monthly fee reflects your environment at launch. Any adjustment for added workflows, integrations, departments or support needs is agreed with you before it takes effect.</p>
+          </div>
+        </details>
       </div>
     </section>
 
