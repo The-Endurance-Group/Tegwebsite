@@ -115,6 +115,25 @@
     .how-we-work .summary-price span { font-size: 16px; font-weight: 600; }
     .how-we-work .summary-caption { margin-top: 8px; font-size: 14px; color: var(--color-lavender); }
     .how-we-work .summary-facts { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-light); font-size: 14px; color: var(--color-lavender); }
+    .how-we-work .time-meter { display: block; position: relative; height: 6px; margin-top: 12px; width: 100%; background: var(--border-light); border-radius: 6px; overflow: hidden; }
+    .how-we-work .time-meter::after { content: ""; display: block; height: 100%; background: var(--color-purple); border-radius: inherit; transform-origin: left; }
+    .how-we-work .time-meter--claude::after { background: var(--color-teal-dark); transform: scaleX(.375); }
+    @media (prefers-reduced-motion: no-preference) {
+      .how-we-work .work-steps .is-motion-played { animation: work-step-highlight 1.2s ease both; }
+      .how-we-work .work-steps .is-motion-played:nth-child(2) { animation-delay: .18s; }
+      .how-we-work .work-steps .is-motion-played:nth-child(3) { animation-delay: .36s; }
+      .how-we-work .value-example.is-motion-played .time-meter--claude::after { animation: proposal-time-shrink .85s cubic-bezier(.22, 1, .36, 1) .2s both; }
+      .how-we-work .value-example.is-motion-played .time-saved { animation: value-reveal .5s ease .65s both; }
+      .how-we-work .value-example.is-motion-played .value-total { animation: value-reveal .5s ease .95s both; }
+      .how-we-work .value-example.is-motion-played .value-total--price { animation-delay: 1.15s; }
+    }
+    @keyframes work-step-highlight {
+      0% { border-color: var(--border-light); transform: translateY(0); }
+      35%, 65% { border-color: var(--color-pink); background: var(--tint-pink); transform: translateY(-4px); }
+      100% { border-color: var(--border-light); transform: translateY(0); }
+    }
+    @keyframes proposal-time-shrink { from { transform: scaleX(1); } to { transform: scaleX(.375); } }
+    @keyframes value-reveal { from { opacity: .4; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -189,9 +208,9 @@
           <span class="eyebrow">Example</span>
           <h3 id="proposal-example">Proposal Creation Workflow</h3>
           <div class="proposal-flow" aria-label="Proposal preparation time: 2 hours today, 45 minutes with Claude, saving 1.25 hours per proposal">
-            <div><span>Today</span><b>2 hours</b><span>per proposal</span></div>
+            <div><span>Today</span><b>2 hours</b><span>per proposal</span><span class="time-meter time-meter--today" aria-hidden="true"></span></div>
             <span class="flow-arrow" aria-hidden="true">→</span>
-            <div><span>With Claude</span><b>45 minutes</b><span>per proposal</span></div>
+            <div><span>With Claude</span><b>45 minutes</b><span>per proposal</span><span class="time-meter time-meter--claude" aria-hidden="true"></span></div>
             <div class="time-saved"><span>Time freed</span><b>1.25 hours</b><span>per proposal</span></div>
           </div>
           <p class="value-equation">15 proposals/week × 1.25 hours freed × $80/hour × 50 weeks</p>
@@ -316,6 +335,25 @@
   </footer>
   <!-- END SHARED FOOTER -->
 
+  <script>
+    (function () {
+      var motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (motionPreference.matches || !('IntersectionObserver' in window)) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-motion-played');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.2 });
+      document.querySelectorAll('.work-steps > li, .value-example').forEach(function (element) {
+        observer.observe(element);
+      });
+      motionPreference.addEventListener('change', function (event) {
+        if (event.matches) observer.disconnect();
+      });
+    })();
+  </script>
   <script src="js/main.js?v=20260930" defer></script>
 </body>
 </html>
