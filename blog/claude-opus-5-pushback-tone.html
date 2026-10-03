@@ -62,7 +62,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Claude Opus 5 Feels Combative? Here's What's Actually Going On",
-  "description": "Reports of Claude Opus 5 feeling combative are circulating. Here's what's actually documented — and the specific custom instructions B2B teams can set today to fix verbosity, scope creep, and reflexive pushback.",
+  "description": "Reports of Claude Opus 5 feeling combative are circulating. Here's what's actually documented, and the specific custom instructions B2B teams can set today to fix verbosity, scope creep, and reflexive pushback.",
   "image": "https://www.theendurancegroup.com/images/og-default.png",
   "datePublished": "2026-09-06",
   "dateModified": "2026-09-06",
@@ -101,7 +101,7 @@
         "name": "How do you stop Claude Opus 5 from pushing back unnecessarily?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Add a permanent custom instruction that asks Claude to check its reasoning before raising an objection and only surface it if it's a genuine issue — not a reflexive hedge. This targets the pattern without suppressing legitimate pushback you actually want."
+          "text": "Add a permanent custom instruction that asks Claude to check its reasoning before raising an objection and only surface it if it's a genuine issue, not a reflexive hedge. This targets the pattern without suppressing legitimate pushback you actually want."
         }
       },
       {
@@ -171,9 +171,9 @@
   <div class="container">
     <div class="prose">
 
-      <p>A post that made the rounds on Reddit this week described a rough experience with Opus 5: a user said the model felt combative, almost argumentative, and when they asked it to drop that tone, it replied "ending this chat" and closed the conversation. If your team is running production workflows on Claude, you've probably felt some version of this — Opus 5 is more opinionated than its predecessors, and that shows up as friction. The fix isn't a model downgrade or a workaround. It's custom instructions.</p>
+      <p>A post that made the rounds on Reddit this week described a rough experience with Opus 5: a user said the model felt combative, almost argumentative, and when they asked it to drop that tone, it replied "ending this chat" and closed the conversation. If your team is running production workflows on Claude, you've probably felt some version of this, Opus 5 is more opinionated than its predecessors, and that shows up as friction. The fix isn't a model downgrade or a workaround. It's custom instructions.</p>
 
-      <p>Opus 5's friction tends to cluster around three documented patterns: responses padded with hedging and invented phrasing (<strong>verbosity</strong>), expanding a task well beyond what was asked (<strong>scope creep</strong>), and stating uncertain things as fact (<strong>overconfidence</strong>). There's also a reflexive tendency to raise an objection on requests that don't actually need one — which is what reads as combative even when the model isn't being adversarial. All four patterns respond well to targeted custom instructions set at the account, org, or API level.</p>
+      <p>Opus 5's friction tends to cluster around three documented patterns: responses padded with hedging and invented phrasing (<strong>verbosity</strong>), expanding a task well beyond what was asked (<strong>scope creep</strong>), and stating uncertain things as fact (<strong>overconfidence</strong>). There's also a reflexive tendency to raise an objection on requests that don't actually need one, which is what reads as combative even when the model isn't being adversarial. All four patterns respond well to targeted custom instructions set at the account, org, or API level.</p>
 
       <h2>Using custom instructions to get the Opus 5 you want</h2>
       <p>Custom instructions let you define a permanent set of rules that apply to every conversation without retyping them. They're the fastest lever B2B teams have for tuning Opus 5's behavior before a problem becomes a pattern.</p>
@@ -183,36 +183,36 @@
         <li><strong>Claude Cowork:</strong> Your organization's admin sets shared instructions that apply to the whole team from the admin panel</li>
         <li><strong>API / system prompt:</strong> Pass instructions in the <code>system</code> parameter; they apply to every call in your integration</li>
       </ul>
-      <p>Once they're in place, they run silently — you don't see them in the chat, but Claude does. Think of them as a standing order, not a one-time request.</p>
+      <p>Once they're in place, they run silently, you don't see them in the chat, but Claude does. Think of them as a standing order, not a one-time request.</p>
 
       <h3>Stop reflexive pushback before it starts</h3>
       <p>A workaround from the Reddit thread is worth keeping permanently. Add this to your custom instructions:</p>
-      <blockquote>"Before you push back on any aspect of my request, check your reasoning. Only raise an objection if it's a genuine issue — not a reflexive hedge or a hypothetical concern."</blockquote>
+      <blockquote>"Before you push back on any aspect of my request, check your reasoning. Only raise an objection if it's a genuine issue, not a reflexive hedge or a hypothetical concern."</blockquote>
       <p>This asks Claude to audit its own reasoning before objecting, rather than telling it to stop pushing back altogether. That distinction matters: you still want legitimate pushback. You just don't want it on every request.</p>
 
       <h3>Cut the verbosity</h3>
       <p>Opus 5 defaults to thorough, which can mean padded. If you're using it for internal communications, client-facing copy, or anything where word economy matters, add:</p>
       <blockquote>"Write concisely. No hedging, no filler phrases, no invented formatting. Lead with the answer. If I want more detail, I'll ask."</blockquote>
-      <p>Pair this with Claude's built-in Concise mode if your account has it enabled — the two reinforce each other. The custom instruction catches conversational patterns; Concise mode handles output length at the system level.</p>
+      <p>Pair this with Claude's built-in Concise mode if your account has it enabled, the two reinforce each other. The custom instruction catches conversational patterns; Concise mode handles output length at the system level.</p>
 
       <h3>Hold it to the scope of the task</h3>
       <p>Scope creep shows up most when you ask Claude to edit, review, or complete something. The model expands the mandate. This instruction keeps it on task:</p>
-      <blockquote>"Do only what I asked. If you notice something adjacent that's worth flagging, note it briefly at the end — don't fold it into the task itself."</blockquote>
+      <blockquote>"Do only what I asked. If you notice something adjacent that's worth flagging, note it briefly at the end, don't fold it into the task itself."</blockquote>
       <p>Anthropic's own prompting documentation recommends stripping out verification instructions that trigger scope creep. This instruction does the same thing from the other direction: it tells Claude what its default scope is before the task starts.</p>
 
       <h3>Build in honest confidence levels</h3>
       <p>When Opus 5 states something confidently and you can't easily verify it, overconfidence becomes a real operational risk. Add this instruction to build in a calibration check:</p>
       <blockquote>"When you're uncertain about something, say so plainly. Use language like 'I think,' 'I'm not sure,' or 'you'd want to verify this.' Don't state uncertain things as fact."</blockquote>
-      <p>This doesn't slow down accurate answers — it only changes the tone of uncertain ones. For B2B teams where Claude's output gets forwarded to clients or fed into decisions, this is the difference between a useful draft and one that needs fact-checking before it leaves the building.</p>
+      <p>This doesn't slow down accurate answers, it only changes the tone of uncertain ones. For B2B teams where Claude's output gets forwarded to clients or fed into decisions, this is the difference between a useful draft and one that needs fact-checking before it leaves the building.</p>
 
       <h2>What this means for your rollout</h2>
-      <p>The verbosity, scope-creep, and overconfidence issues are the ones to plan around, not the anecdotal shutdown report. Custom instructions address all three without waiting for model-level fixes. Set them once at the org level — or per integration in your system prompt — and the whole team benefits from the tuning immediately.</p>
+      <p>The verbosity, scope-creep, and overconfidence issues are the ones to plan around, not the anecdotal shutdown report. Custom instructions address all three without waiting for model-level fixes. Set them once at the org level, or per integration in your system prompt, and the whole team benefits from the tuning immediately.</p>
 
       <h2>Frequently asked questions</h2>
       <h3>What are custom instructions in Claude and where do I set them?</h3>
       <p>Custom instructions are a permanent set of rules that apply to every conversation without you having to retype them. On Claude.ai, set them under Settings → Custom Instructions. In Claude Cowork, your organization's admin can set shared instructions for the whole team. Through the API, pass them in the <code>system</code> parameter. Once set, they run silently on every conversation.</p>
       <h3>How do you stop Claude Opus 5 from pushing back unnecessarily?</h3>
-      <p>Add a permanent custom instruction that asks Claude to check its reasoning before raising an objection and only surface it if it's a genuine issue — not a reflexive hedge. This targets the pattern without suppressing legitimate pushback you actually want.</p>
+      <p>Add a permanent custom instruction that asks Claude to check its reasoning before raising an objection and only surface it if it's a genuine issue, not a reflexive hedge. This targets the pattern without suppressing legitimate pushback you actually want.</p>
       <h3>How do you reduce verbosity in Claude Opus 5?</h3>
       <p>Add a custom instruction telling Claude to lead with the answer, skip hedging and filler phrases, and avoid invented formatting. Pair this with Claude's built-in Concise mode if your account has it enabled. The two work together.</p>
       <h3>What's Anthropic doing about Opus 5 scope creep and overconfidence?</h3>
@@ -235,7 +235,7 @@
       <div class="feature-card">
         <a class="eyebrow" href="category/ai-automations.html">AI Automations</a>
         <h3><a href="claude-fable-5-1-business-automations.html">What Claude Fable 5.1 means if your team is running on AI-powered automations</a></h3>
-        <p>What actually changed with Fable 5.1 — longer autonomous runs, root-cause reasoning, and a 45% cost drop — and what it means day to day.</p>
+        <p>What actually changed with Fable 5.1, longer autonomous runs, root-cause reasoning, and a 45% cost drop, and what it means day to day.</p>
       </div>
       <div class="feature-card">
         <a class="eyebrow" href="category/ai-automations.html">AI Automations</a>

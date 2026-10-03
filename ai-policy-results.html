@@ -162,7 +162,7 @@
         <p class="results-sub">The PDF includes everything: a summary of what we found about your company, the questions your team should work through before adopting it, and the full draft policy.</p>
 
         <div class="disclaimer-card">
-          <div class="disclaimer-label">Draft only — not legal advice</div>
+          <div class="disclaimer-label">Draft only, not legal advice</div>
           <p>This policy is a starting point, not a finished document. It should be reviewed by qualified legal counsel before it is adopted, distributed to employees, or relied on for any compliance purpose.</p>
           <p>If your company is publicly traded, the section on MNPI (material nonpublic information) handling carries distinct legal risk under securities law and requires review by outside securities counsel before the policy is adopted or distributed.</p>
         </div>
@@ -403,7 +403,7 @@
       function buildPdfHtml(sections) {
         var todayStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
         var company = generatedCompany || '';
-        var sectionLabel = 'AI Usage Policy Draft' + (company ? ' — ' + company : '');
+        var sectionLabel = 'AI Usage Policy Draft' + (company ? ', ' + company : '');
 
         // ── Page 1: Cover / Disclaimer ────────────────────────────
         var cover =
@@ -414,7 +414,7 @@
             '<div style="font-size:13px;color:#6B6B8A;">Draft · ' + todayStr + '</div>' +
           '</div>' +
           '<div style="padding:18px 20px;border-left:4px solid #D98B00;background:#FFFBF3;border-radius:0 8px 8px 0;">' +
-            '<div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A86800;margin-bottom:8px;">Draft only — not legal advice</div>' +
+            '<div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A86800;margin-bottom:8px;">Draft only, not legal advice</div>' +
             '<p style="margin:0 0 8px;font-size:13px;line-height:1.6;color:#3D2A00;">This document is a draft only. It is not legal advice and must not be adopted, distributed, or relied upon without review by qualified legal counsel.</p>' +
             '<p style="margin:0;font-size:13px;line-height:1.6;color:#3D2A00;">If your company is publicly traded, the section addressing MNPI (material nonpublic information) requires review by outside securities counsel before adoption.</p>' +
           '</div>' +
@@ -473,7 +473,7 @@
         var pdfHtml = buildPdfHtml(sections);
         var slug = (generatedCompany || 'company').toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
-        // Inject into an existing normal-flow element — the same approach that works on the
+        // Inject into an existing normal-flow element, the same approach that works on the
         // example page. position:fixed elements cause blank html2canvas output regardless of
         // visibility tricks; a static element already in the document renders reliably.
         var el = document.getElementById('pdf-canvas-target');

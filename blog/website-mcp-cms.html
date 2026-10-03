@@ -111,7 +111,7 @@
         "name": "Can this replace our developer or agency entirely?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For routine content changes, mostly yes — that's the point. For structural site changes, custom functionality, or anything touching the theme's underlying code, you still want a developer reviewing the work. MCP removes the bottleneck on the 80% of requests that were never worth a developer's time in the first place."
+          "text": "For routine content changes, mostly yes, that's the point. For structural site changes, custom functionality, or anything touching the theme's underlying code, you still want a developer reviewing the work. MCP removes the bottleneck on the 80% of requests that were never worth a developer's time in the first place."
         }
       }
     ]
@@ -172,7 +172,7 @@
 
           <h2>What a website MCP actually does</h2>
 
-          <p>An MCP server sits between an AI agent and your site's admin layer. Instead of an AI generating text you then have to paste into a page builder, the server exposes the site's real operations as tools: create a post, update a widget, swap an image, install a plugin, run a query. The AI reads your brief, decides which tools to call, and the change lands on the live site the same way it would if a person had clicked through the dashboard — except it happens in seconds and the AI can chain a dozen of those calls into one page build.</p>
+          <p>An MCP server sits between an AI agent and your site's admin layer. Instead of an AI generating text you then have to paste into a page builder, the server exposes the site's real operations as tools: create a post, update a widget, swap an image, install a plugin, run a query. The AI reads your brief, decides which tools to call, and the change lands on the live site the same way it would if a person had clicked through the dashboard, except it happens in seconds and the AI can chain a dozen of those calls into one page build.</p>
 
           <p>This only works because of what the connection maps to underneath. Every tool call runs as a real user with real WordPress capabilities. An agent authenticated as an editor cannot suddenly install plugins or delete users, because the underlying permission check still applies. The AI is a faster set of hands, not a new set of privileges.</p>
 
@@ -193,7 +193,7 @@
 
           <p>We check for an existing server first, the same way we do for any MCP integration. A few situations still push us toward a custom build.</p>
 
-          <p>The most common is a homegrown CMS or a heavily customized WordPress setup where no generic server maps cleanly to the site's actual structure. We've built thin, purpose-specific servers that expose exactly the operations a client's marketing team needs — nothing more — tuned to their content types and naming conventions.</p>
+          <p>The most common is a homegrown CMS or a heavily customized WordPress setup where no generic server maps cleanly to the site's actual structure. We've built thin, purpose-specific servers that expose exactly the operations a client's marketing team needs, nothing more, tuned to their content types and naming conventions.</p>
 
           <p>The second is scope. Some general-purpose website MCP servers expose broad, all-or-nothing access: plugin installs, user management, raw database queries, all bundled into one connection. For a client who only wants an AI touching blog posts and product descriptions, that's more surface area than we want to hand over. A custom server lets us define precisely which operations the AI can reach.</p>
 
@@ -201,7 +201,7 @@
 
           <h2>How we decide: existing server versus custom build</h2>
 
-          <p>We start with two questions: what does the AI need to read or change, and does an existing server already cover that safely. If yes, we configure it, scope the permissions to the right user role, and test it against a staging copy of the site before anything touches production. If the gap is small, we extend rather than rebuild. If nothing fits — or the access an existing server grants is wider than the client wants — we build.</p>
+          <p>We start with two questions: what does the AI need to read or change, and does an existing server already cover that safely. If yes, we configure it, scope the permissions to the right user role, and test it against a staging copy of the site before anything touches production. If the gap is small, we extend rather than rebuild. If nothing fits, or the access an existing server grants is wider than the client wants, we build.</p>
 
           <h2>Frequently asked questions</h2>
 
@@ -212,7 +212,7 @@
           <p>No. The MCP server is configured once during setup. After that, your team asks for the change in plain language the same way they'd ask a person, and the AI handles the tool calls in the background.</p>
 
           <h3>Can this replace our developer or agency entirely?</h3>
-          <p>For routine content changes, mostly yes — that's the point. For structural site changes, custom functionality, or anything touching the theme's underlying code, you still want a developer reviewing the work. MCP removes the bottleneck on the 80% of requests that were never worth a developer's time in the first place.</p>
+          <p>For routine content changes, mostly yes, that's the point. For structural site changes, custom functionality, or anything touching the theme's underlying code, you still want a developer reviewing the work. MCP removes the bottleneck on the 80% of requests that were never worth a developer's time in the first place.</p>
 
           <div class="cta-block" style="margin-top: 48px;">
             <h3>Want AI editing your site?</h3>
