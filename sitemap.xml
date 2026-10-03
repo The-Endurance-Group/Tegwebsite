@@ -402,7 +402,7 @@
   </url>
   <url>
     <loc>https://www.theendurancegroup.com/blog/category/sales-execution.html</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -524,5 +524,17 @@
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.theendurancegroup.com/blog/outsourced-b2b-sales-lessons-for-claude.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theendurancegroup.com/blog/account-intelligence-to-qualified-conversations-with-claude.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
