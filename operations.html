@@ -37,6 +37,9 @@
     .value-pricing-operator { font-size:24px; text-align:center; color:var(--color-purple); }
     .value-pricing-note { font-size:13px; color:var(--color-lavender); margin-bottom:12px; }
     @media(max-width:600px) { .value-pricing { padding:20px; } .value-pricing-math { grid-template-columns:1fr; gap:8px; margin-top:20px; } .value-pricing-operator { display:none; } .value-pricing-metric { display:flex; flex-direction:row-reverse; align-items:center; justify-content:space-between; gap:12px; padding:16px; text-align:left; } .value-pricing-metric strong { font-size:28px; flex-shrink:0; } .value-pricing-metric span { margin:0; font-size:13px; max-width:140px; } }
+    .homepage-relationship { margin:24px 0; max-width:760px; font-size:clamp(18px,2vw,22px); font-weight:600; line-height:1.6; }
+    .homepage-relationship a { color:var(--color-purple); text-decoration:none; }
+    .homepage-relationship a:hover { text-decoration:underline; }
     .value-signals { display:flex; flex-wrap:wrap; gap:12px; list-style:none; padding:0; margin:24px 0 0; }
     .value-signals li { display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; background:var(--color-off-white, #f7f5f8); font-weight:600; }
     .value-signals span { font-size:24px; color:var(--color-purple); }
@@ -45,12 +48,7 @@
     .value-report-preview ul { list-style:none; padding:0; margin:0; }
     .value-report-preview li { padding:6px 0; }
     .value-report-preview li::before { content:'✓'; color:var(--color-purple); margin-right:10px; }
-    .homepage-steps.is-visible .feature-num { animation:home-step-glow 1.2s ease-out both; }
-    .homepage-steps.is-visible li:nth-child(2) .feature-num { animation-delay:.25s; }
-    .homepage-steps.is-visible li:nth-child(3) .feature-num { animation-delay:.5s; }
-    @keyframes home-step-glow { 0% { box-shadow:0 0 0 0 rgba(112,64,137,.3); } 100% { box-shadow:0 0 0 14px rgba(112,64,137,0); } }
     @media(max-width:600px) { .value-report-preview { grid-template-columns:1fr; padding:20px; } .value-signals { gap:8px; } .value-signals li { padding:10px 12px; font-size:14px; } }
-    @media(prefers-reduced-motion:reduce) { .homepage-steps.is-visible .feature-num { animation:none; } }
 
     .claude-hero-badge {
       display: inline-flex;
@@ -431,11 +429,7 @@
           <p class="value-pricing-note">10% is illustrative. The percentage is agreed per project; the price is fixed before work begins.</p>
           <a class="feature-link" href="how-we-work.html">How value pricing works →</a>
         </div>
-        <ol class="grid grid--3 reveal reveal--stagger homepage-steps" aria-label="How we work">
-          <li class="feature-card"><span class="feature-num" aria-hidden="true">1</span><h3>Find the Value</h3><p>One team. A free assessment. A prioritized AI Value Report.</p></li>
-          <li class="feature-card"><span class="feature-num" aria-hidden="true">2</span><h3>Build It</h3><p>We agree on what to build and a fixed price. Then we build and launch it.</p></li>
-          <li class="feature-card"><span class="feature-num" aria-hidden="true">3</span><h3>Stay &amp; Improve</h3><p>Your ongoing Claude team.</p></li>
-        </ol>
+        <p class="homepage-relationship reveal"><a href="how-we-work.html">We find the value, build it, and stay as your Claude team to keep improving. <span aria-hidden="true">→</span></a></p>
         <div class="value-report-preview reveal">
           <div><span class="eyebrow">Your AI Value Report</span><h3>A clear decision for every opportunity.</h3></div>
           <ul aria-label="Report contents"><li>Recommended build</li><li>Expected annual value</li><li>Fixed build price</li></ul>
