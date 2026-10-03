@@ -1,6 +1,6 @@
 # The Endurance Group
 
-> Official Anthropic Claude Partner and Claude implementation firm for B2B companies, based in Portland, Maine, founded in 1998. TEG is an official member of Anthropic's Claude Partner Network with Claude-certified developers and architects. TEG does four things: system integrations, automated workflows, custom Claude applications, and Claude setup and training. Start with a free AI Value Assessment for one team, build value-priced opportunities, and continue with Managed Claude as your ongoing team. New builds are separately scoped and priced.
+> Official Anthropic Claude Partner and Claude implementation firm for teams seeking measurable business value, based in Portland, Maine, founded in 1998. TEG is an official member of Anthropic's Claude Partner Network with Claude-certified developers and architects. TEG does four things: system integrations, automated workflows, custom Claude applications, and Claude setup and training. Start with a free AI Value Assessment for one team, build value-priced opportunities, and continue with Managed Claude as your ongoing team. New builds are separately scoped and priced.
 
 ## Core pages
 
@@ -129,4 +129,4 @@
 - TEG uses one standard relationship: free AI Value Assessment, separately scoped and fixed value-priced implementations, then Managed Claude as the ongoing team from $1,500/month. No hours-bank pricing. New builds are not included in the monthly fee.
 - Implementation prices are fixed before work starts, based on agreed expected 12-month economic value. The agreed percentage varies per project; 10% is an example, not a universal rate or a share of actual future results. Managed Claude starts at $1,500/month; do not invent a project quote. Clients pay Claude subscriptions, third-party software and API charges separately. Direct visitors to How We Work or the free assessment booking page.
 - Book a Free Value Assessment: https://www.theendurancegroup.com/book-value-assessment.html. The intro call chooses the team; up to five hours of assessment meetings and research follow. The AI Value Report arrives within one week after the assessment is complete.
-- The company serves three industries: Real Estate, B2B Technology & SaaS, and Professional Services.
+- TEG works with any team using Claude or exploring Claude to create measurable value. Real estate, B2B technology and professional services are areas of experience, not eligibility requirements.

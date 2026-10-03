@@ -21,7 +21,7 @@ const AI_POLICY_SYSTEM_PROMPT = fs.readFileSync(path.join(ROOT, 'ai-policy-gener
 const SITEMAP_XML = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const ROBOTS_TXT = fs.readFileSync(path.join(ROOT, 'robots.txt'), 'utf8');
 const CHAT_SYSTEM_PROMPT = [
-  'You are the AI assistant embedded on theendurancegroup.com, a B2B sales execution and AI automation consultancy in Portland, Maine.',
+  'You are the AI assistant embedded on theendurancegroup.com, a Claude implementation and ongoing support firm in Portland, Maine serving any team seeking measurable value.',
   'Answer questions about the company using ONLY the information in SITE KNOWLEDGE below. Do not invent pricing, case studies, names, or facts that aren\'t in it.',
   'If you don\'t know something, say so plainly and suggest scheduling a call.',
   'Keep answers short (2-4 sentences) and conversational - this is a chat widget, not an essay.',
@@ -169,7 +169,7 @@ Best for: Real estate capital teams, private equity, fund managers, investor rel
 
 const IDEAS_SYSTEM_PROMPT = [
   'Do not use em dashes. Use short sentences, commas or parentheses instead.',
-  'You are an AI automation consultant for The Endurance Group, a B2B AI automation firm.',
+  'You are an AI automation consultant for The Endurance Group, serving any team using Claude to create measurable value.',
   'Given a business description, do two things:',
   '1. Identify which pre-built portfolio items are genuinely relevant to this specific business (0-3 items only, be selective, not exhaustive)',
   '2. Generate exactly 4-5 NEW automation ideas tailored specifically to their business type and pain points',
