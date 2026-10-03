@@ -173,6 +173,17 @@
     ]
   }
   </script>
+<style>
+  .proof-highlights { margin-bottom:16px; }
+  .proof-highlights .feature-card { display:block; color:var(--color-ink); text-decoration:none; }
+  .client-before-after { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0; }
+  .client-before-after > div { background:var(--bg-light); padding:20px; border-radius:12px; }
+  .client-before-after p { margin:8px 0 0; }
+  .client-story-details summary { cursor:pointer; font-weight:700; font-size:20px; }
+  .client-story-details summary span { display:block; font-weight:400; font-size:16px; color:var(--color-lavender); margin-top:8px; }
+  .client-story-content { margin-top:24px; }
+  @media(max-width:600px) { .client-before-after { grid-template-columns:1fr; } }
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -219,11 +230,19 @@
       <div class="container">
         <div class="case-study-timeline">
 
+        <div class="grid grid--3 proof-highlights" aria-label="Client results at a glance">
+          <a class="feature-card" href="#offerpad"><span class="eyebrow">Time freed · Offerpad</span><h3>1 to 2 hours/day</h3><p>Saved on vendor photo review.</p></a>
+          <a class="feature-card" href="#market-savvy"><span class="eyebrow">New capability · Market Savvy</span><h3>A month of posts in minutes</h3><p>Client-reported results from HealthPost Genius.</p></a>
+          <a class="feature-card" href="#edify-software"><span class="eyebrow">Earlier sales work · Edify</span><h3>New long-term clients</h3><p>Relationships worth hundreds of thousands of dollars.</p></a>
+        </div>
+        <p style="margin:16px 0 32px; color:var(--color-lavender); font-size:14px;">These are documented client outcomes, not projections. For examples of hiring avoided and new revenue opportunities, <a href="sample-ai-value-assessment.html">view the illustrative AI Value Report</a>.</p>
         <div id="offerpad" class="case-study-card reveal">
           <img class="case-study-logo" src="images/clients/offerpad.webp?v=20260930" alt="Offerpad">
           <p class="case-study-meta"><span>Offerpad</span><span class="divider">·</span><span>Real Estate</span><span class="divider">·</span><span>AI Implementation</span></p>
-          <h3 style="margin-bottom:12px;">Hours of manual work eliminated</h3>
-          <p>Offerpad needed AI tools for their sales team and automation for back-office work that was eating hours of manual time across multiple departments. We built a suite of custom AI tools scoped to how their teams actually worked, iterated as their needs changed, and maintained what we built so it kept running.</p>
+          <h3 style="margin-bottom:12px;">1 to 2 hours saved daily on vendor photo review</h3>
+          <div class="client-before-after"><div><span class="eyebrow">Before</span><p>A person opened every vendor photo by hand, every day.</p></div><div><span class="eyebrow">With Claude</span><p>Photos are checked against Offerpad’s criteria. The renovations team saves 1 to 2 hours daily.</p></div></div>
+          <p>TEG also built sales coaching and invoice reconciliation tools, working across sales, renovations and accounting.</p>
+          <p style="margin-top:12px;"><b>How the relationship evolves:</b> working sessions uncover the next need, small prototypes test the approach, and workflows are refined as teams’ needs change.</p>
           <div class="testimonial testimonial--nested">
             <blockquote>TEG has been a great AI partner for us. They helped us build a suite of AI tools for our sales team and develop back-office automations that eliminated hours of manual work. They've worked across multiple teams and delivered consistently. They know how to scope, build, and iterate without a lot of hand-holding.</blockquote>
             <cite>- Chris Carpenter, COO · Offerpad</cite>
@@ -243,75 +262,6 @@
           <a class="btn btn-secondary" href="blog/biproxi-investor-discovery.html" style="margin-top:20px;display:inline-block;">Read case study &rarr;</a>
         </div>
 
-        <div id="mti" class="case-study-card reveal">
-          <img class="case-study-logo" src="images/clients/maine-technology-institute.webp?v=20260930" alt="Maine Technology Institute">
-          <p class="case-study-meta"><span>Maine Technology Institute</span><span class="divider">·</span><span>Economic Development</span><span class="divider">·</span><span>Claude Training</span></p>
-          <h3 style="margin-bottom:12px;">Time saved through practical Claude training</h3>
-          <p>MTI Investment Officer Scott Bursey reports greater efficiency and time saved after training built around his actual work. We covered Claude Projects, Skills, Connectors and scheduled tasks, including where AI needs human review.</p>
-          <div class="testimonial testimonial--nested">
-            <blockquote>I recently had the privilege of receiving a customized training on Claude from TEG, and it was amazing! The Claude training has made me more effective and efficient at work and has already saved me untold hours. TEG also shared the strengths and weaknesses of AI, so I have a better understanding of how to produce a quality product. Looking forward to the next training session!</blockquote>
-            <cite>- Scott Bursey, Investment Officer · Maine Technology Institute</cite>
-          </div>
-          <a class="btn btn-secondary" href="blog/free-claude-training-cloudport-coworking-maine.html" style="margin-top:20px;display:inline-block;">Read the story &rarr;</a>
-        </div>
-
-        <div id="realty-one-group" class="case-study-card reveal">
-          <img class="case-study-logo" src="images/clients/realty-one-group.webp?v=20260930" alt="Realty ONE Group">
-          <p class="case-study-meta"><span>Realty ONE Group</span><span class="divider">·</span><span>Real Estate</span><span class="divider">·</span><span>Sales Execution + AI</span></p>
-          <h3 style="margin-bottom:12px;">Less manual work. A clearer sales pipeline.</h3>
-          <p>Realty ONE Group's sales team was running on multiple disconnected systems, data silos, inconsistent CRM adoption, and no clear view of the pipeline. We came in, migrated everything into HubSpot, built custom workflows that eliminated manual work, created dashboards that gave leadership a real view of sales performance, and implemented a LinkedIn outreach strategy built on shared connections and common backgrounds.</p>
-          <p>The result: a sales team that works smarter, leadership that can actually see what's happening, and an outreach motion that became a core part of their prospecting strategy.</p>
-          <div class="testimonial testimonial--nested">
-            <blockquote>Working with The Endurance Group on our HubSpot implementation was absolutely amazing. They introduced a new LinkedIn outreach solution that has been a fantastic addition to our prospecting strategy. TEG totally exceeded our expectations.</blockquote>
-            <cite>- Sevag Sarkissian, VP Growth Marketing · Realty ONE Group</cite>
-          </div>
-        </div>
-
-        <div id="fenestrapro" class="case-study-card reveal">
-          <img class="case-study-logo" src="images/clients/fenestrapro.webp?v=20260930" alt="FenestraPro">
-          <p class="case-study-meta"><span>FenestraPro</span><span class="divider">·</span><span>B2B Technology</span><span class="divider">·</span><span>Sales Execution</span></p>
-          <h3 style="margin-bottom:12px;">A 30% average outreach response rate</h3>
-          <p>FenestraPro had a list of target firms they'd been trying to reach for years with no traction. We mapped the shared history between their team and those target firms, found the warm paths in, and ran an outreach motion built on those real connections.</p>
-          <p>Average response rate: 30%. Real conversations opened with firms that had been unreachable through conventional outreach.</p>
-          <div class="testimonial testimonial--nested">
-            <blockquote>The Endurance Group's strategy of using shared experiences to establish connections and book meetings with prospects has worked incredibly well. Their efforts have resulted in an average 30% response rate and started conversations with key firms that we'd been interested in pursuing for years.</blockquote>
-            <cite>- David Palmer, CEO &amp; Founder · FenestraPro</cite>
-          </div>
-        </div>
-
-        <div id="huron" class="case-study-card reveal">
-          <img class="case-study-logo" src="images/clients/huron.webp?v=20260930" alt="Huron">
-          <p class="case-study-meta"><span>Huron</span><span class="divider">·</span><span>Professional Services</span><span class="divider">·</span><span>Relationship Expansion</span></p>
-          <h3 style="margin-bottom:12px;">New connections with relevant prospects</h3>
-          <p>Huron's team wanted to grow their network in a way that felt authentic rather than another round of cold outreach. We ran relationship expansion campaigns that connected their people with prospects who shared real, specific backgrounds with them, turning cold contacts into known entities.</p>
-          <div class="testimonial testimonial--nested">
-            <blockquote>TEG's relationship expansion campaigns are well-named. By connecting with prospects who you share backgrounds with, you are able to develop authentic connections and become a known entity. You build your brand and network among individuals who may look to you in the near future for your perspective or when they have business needs aligned to your areas of expertise.</blockquote>
-            <cite>- Ben Chrischelles, Senior Director · Huron</cite>
-          </div>
-        </div>
-
-        <div id="home-impact-partners" class="case-study-card reveal">
-          <img class="case-study-logo" src="images/clients/home-impact-partners.webp?v=20260930" alt="Home Impact Partners">
-          <p class="case-study-meta"><span>Home Impact Partners</span><span class="divider">·</span><span>Real Estate</span><span class="divider">·</span><span>AI Implementation</span></p>
-          <h3 style="margin-bottom:12px;">An AI platform brought to life</h3>
-          <p>Home Impact Partners was building Impact Atlas, a platform at the intersection of real estate and AI. They needed a partner who could execute on specs but also think strategically about product direction. We built alongside the team, helping shape the product and bringing their vision to life.</p>
-          <div class="testimonial testimonial--nested">
-            <blockquote>The Endurance Group helped us bring my platform, Impact Atlas, to life. They don't just execute on specs; they think alongside you and help shape the product. If you're working at the intersection of real estate and AI, TEG is the team to call.</blockquote>
-            <cite>- Vin Ferrara, Founder · Home Impact Partners</cite>
-          </div>
-        </div>
-
-        <div id="edify-software" class="case-study-card reveal">
-          <img class="case-study-logo" src="images/clients/edify.webp?v=20260930" alt="Edify Software">
-          <p class="case-study-meta"><span>Edify Software</span><span class="divider">·</span><span>Professional Services</span><span class="divider">·</span><span>Sales Execution</span></p>
-          <h3 style="margin-bottom:12px;">New long-term client relationships</h3>
-          <p>Edify had grown entirely through referrals but had no consistent pipeline. We built the sales infrastructure, generated leads, created content, and executed outreach that resulted in long-term client relationships worth hundreds of thousands of dollars. Edify has since grown to 60 full-time employees.</p>
-          <div class="testimonial testimonial--nested">
-            <blockquote>Over the course of several years, our work with The Endurance Group has been instrumental in gaining valuable insights about our market space and establishing connections with the right individuals and organizations, ultimately leading to new long-term client relationships.</blockquote>
-            <cite>- Federico Hess, Partner &amp; CEO · Edify Software</cite>
-          </div>
-        </div>
-
         <div id="market-savvy" class="case-study-card reveal">
           <img class="case-study-logo" src="images/clients/market-savvy.webp?v=20260930" alt="Market Savvy">
           <p class="case-study-meta"><span>Market Savvy</span><span class="divider">·</span><span>Healthcare Marketing</span><span class="divider">·</span><span>AI Implementation</span></p>
@@ -322,39 +272,91 @@
             <cite>- Megan Walker, Founder · Market Savvy</cite>
           </div>
         </div>
-
-        <div id="benchmark-human-capital" class="case-study-card reveal">
+<h2 style="margin:32px 0 20px;">More client stories</h2>
+<details id="mti" class="case-study-card client-story-details"><summary>Maine Technology Institute<span>Time saved through practical Claude training</span></summary><div class="client-story-content">
+          <img class="case-study-logo" src="images/clients/maine-technology-institute.webp?v=20260930" alt="Maine Technology Institute">
+          <p class="case-study-meta"><span>Maine Technology Institute</span><span class="divider">·</span><span>Economic Development</span><span class="divider">·</span><span>Claude Training</span></p>
+          <p>MTI Investment Officer Scott Bursey reports greater efficiency and time saved after training built around his actual work. We covered Claude Projects, Skills, Connectors and scheduled tasks, including where AI needs human review.</p>
+          <div class="testimonial testimonial--nested">
+            <blockquote>I recently had the privilege of receiving a customized training on Claude from TEG, and it was amazing! The Claude training has made me more effective and efficient at work and has already saved me untold hours. TEG also shared the strengths and weaknesses of AI, so I have a better understanding of how to produce a quality product. Looking forward to the next training session!</blockquote>
+            <cite>- Scott Bursey, Investment Officer · Maine Technology Institute</cite>
+          </div>
+          <a class="btn btn-secondary" href="blog/free-claude-training-cloudport-coworking-maine.html" style="margin-top:20px;display:inline-block;">Read the story &rarr;</a>
+        </div></details>
+<details id="realty-one-group" class="case-study-card client-story-details"><summary>Realty ONE Group<span>Less manual work. A clearer sales pipeline.</span></summary><div class="client-story-content">
+          <img class="case-study-logo" src="images/clients/realty-one-group.webp?v=20260930" alt="Realty ONE Group">
+          <p class="case-study-meta"><span>Realty ONE Group</span><span class="divider">·</span><span>Real Estate</span><span class="divider">·</span><span>Sales Execution + AI</span></p>
+          <p>Realty ONE Group's sales team was running on multiple disconnected systems, data silos, inconsistent CRM adoption, and no clear view of the pipeline. We came in, migrated everything into HubSpot, built custom workflows that eliminated manual work, created dashboards that gave leadership a real view of sales performance, and implemented a LinkedIn outreach strategy built on shared connections and common backgrounds.</p>
+          <p>The result: a sales team that works smarter, leadership that can actually see what's happening, and an outreach motion that became a core part of their prospecting strategy.</p>
+          <div class="testimonial testimonial--nested">
+            <blockquote>Working with The Endurance Group on our HubSpot implementation was absolutely amazing. They introduced a new LinkedIn outreach solution that has been a fantastic addition to our prospecting strategy. TEG totally exceeded our expectations.</blockquote>
+            <cite>- Sevag Sarkissian, VP Growth Marketing · Realty ONE Group</cite>
+          </div>
+        </div></details>
+<details id="fenestrapro" class="case-study-card client-story-details"><summary>FenestraPro<span>A 30% average outreach response rate</span></summary><div class="client-story-content">
+          <img class="case-study-logo" src="images/clients/fenestrapro.webp?v=20260930" alt="FenestraPro">
+          <p class="case-study-meta"><span>FenestraPro</span><span class="divider">·</span><span>B2B Technology</span><span class="divider">·</span><span>Sales Execution</span></p>
+          <p>FenestraPro had a list of target firms they'd been trying to reach for years with no traction. We mapped the shared history between their team and those target firms, found the warm paths in, and ran an outreach motion built on those real connections.</p>
+          <p>Average response rate: 30%. Real conversations opened with firms that had been unreachable through conventional outreach.</p>
+          <div class="testimonial testimonial--nested">
+            <blockquote>The Endurance Group's strategy of using shared experiences to establish connections and book meetings with prospects has worked incredibly well. Their efforts have resulted in an average 30% response rate and started conversations with key firms that we'd been interested in pursuing for years.</blockquote>
+            <cite>- David Palmer, CEO &amp; Founder · FenestraPro</cite>
+          </div>
+        </div></details>
+<details id="huron" class="case-study-card client-story-details"><summary>Huron<span>New connections with relevant prospects</span></summary><div class="client-story-content">
+          <img class="case-study-logo" src="images/clients/huron.webp?v=20260930" alt="Huron">
+          <p class="case-study-meta"><span>Huron</span><span class="divider">·</span><span>Professional Services</span><span class="divider">·</span><span>Relationship Expansion</span></p>
+          <p>Huron's team wanted to grow their network in a way that felt authentic rather than another round of cold outreach. We ran relationship expansion campaigns that connected their people with prospects who shared real, specific backgrounds with them, turning cold contacts into known entities.</p>
+          <div class="testimonial testimonial--nested">
+            <blockquote>TEG's relationship expansion campaigns are well-named. By connecting with prospects who you share backgrounds with, you are able to develop authentic connections and become a known entity. You build your brand and network among individuals who may look to you in the near future for your perspective or when they have business needs aligned to your areas of expertise.</blockquote>
+            <cite>- Ben Chrischelles, Senior Director · Huron</cite>
+          </div>
+        </div></details>
+<details id="home-impact-partners" class="case-study-card client-story-details"><summary>Home Impact Partners<span>An AI platform brought to life</span></summary><div class="client-story-content">
+          <img class="case-study-logo" src="images/clients/home-impact-partners.webp?v=20260930" alt="Home Impact Partners">
+          <p class="case-study-meta"><span>Home Impact Partners</span><span class="divider">·</span><span>Real Estate</span><span class="divider">·</span><span>AI Implementation</span></p>
+          <p>Home Impact Partners was building Impact Atlas, a platform at the intersection of real estate and AI. They needed a partner who could execute on specs but also think strategically about product direction. We built alongside the team, helping shape the product and bringing their vision to life.</p>
+          <div class="testimonial testimonial--nested">
+            <blockquote>The Endurance Group helped us bring my platform, Impact Atlas, to life. They don't just execute on specs; they think alongside you and help shape the product. If you're working at the intersection of real estate and AI, TEG is the team to call.</blockquote>
+            <cite>- Vin Ferrara, Founder · Home Impact Partners</cite>
+          </div>
+        </div></details>
+<details id="edify-software" class="case-study-card client-story-details"><summary>Edify Software<span>New long-term client relationships</span></summary><div class="client-story-content">
+          <img class="case-study-logo" src="images/clients/edify.webp?v=20260930" alt="Edify Software">
+          <p class="case-study-meta"><span>Edify Software</span><span class="divider">·</span><span>Professional Services</span><span class="divider">·</span><span>Sales Execution</span></p>
+          <p>Edify had grown entirely through referrals but had no consistent pipeline. We built the sales infrastructure, generated leads, created content, and executed outreach that resulted in long-term client relationships worth hundreds of thousands of dollars. Edify has since grown to 60 full-time employees.</p>
+          <div class="testimonial testimonial--nested">
+            <blockquote>Over the course of several years, our work with The Endurance Group has been instrumental in gaining valuable insights about our market space and establishing connections with the right individuals and organizations, ultimately leading to new long-term client relationships.</blockquote>
+            <cite>- Federico Hess, Partner &amp; CEO · Edify Software</cite>
+          </div>
+        </div></details>
+<details id="benchmark-human-capital" class="case-study-card client-story-details"><summary>Benchmark Human Capital<span>A new tool to enhance tax advisory services</span></summary><div class="client-story-content">
           <img class="case-study-logo" src="images/clients/benchmark-human-capital.webp?v=20260930" alt="Benchmark Human Capital">
           <p class="case-study-meta"><span>Benchmark Human Capital</span><span class="divider">·</span><span>Professional Services</span><span class="divider">·</span><span>AI Implementation</span></p>
-          <h3 style="margin-bottom:12px;">A new tool to enhance tax advisory services</h3>
           <p>Michael Gazzano wanted an AI that functioned like a CPA down the hall, able to answer complex tax questions accurately without hallucinating. We built it, trained it on the tax code, tested it against real scenarios, and made accuracy the non-negotiable standard.</p>
           <div class="testimonial testimonial--nested">
             <blockquote>The Endurance Group was instrumental in helping me create an AI that knows the US tax code inside and out. Thanks to TEG, we now have a powerful tool that enhances our service offerings and a clear strategy for growth.</blockquote>
             <cite>- Michael Gazzano, CEO · Benchmark Human Capital</cite>
           </div>
-        </div>
-
-        <div id="cuny" class="case-study-card reveal">
+        </div></details>
+<details id="cuny" class="case-study-card client-story-details"><summary>CUNY<span>30 mentors secured. 88 alumni responses.</span></summary><div class="client-story-content">
           <img class="case-study-logo" src="images/clients/cuny.webp?v=20260930" alt="CUNY">
           <p class="case-study-meta"><span>CUNY</span><span class="divider">·</span><span>Higher Education</span><span class="divider">·</span><span>Social Capital Outreach</span></p>
-          <h3 style="margin-bottom:12px;">30 mentors secured. 88 alumni responses.</h3>
           <p>The College of Staten Island team secured 30 career mentors in two months. The CCNY team received 88 responses from targeted alumni in two weeks. Both using our social capital outreach approach applied to alumni engagement.</p>
           <div class="testimonial testimonial--nested">
             <blockquote>The Endurance Group has really helped our organization reach many new individuals and make new connections. Their services have been exemplary.</blockquote>
             <cite>- Kathleen Mone, Business Manager for University Advancement · CUNY</cite>
           </div>
-        </div>
-
-        <div id="united-way" class="case-study-card reveal">
+        </div></details>
+<details id="united-way" class="case-study-card client-story-details"><summary>United Way of Western Connecticut<span>Less time spent on grant applications</span></summary><div class="client-story-content">
           <img class="case-study-logo" src="images/clients/united-way.webp?v=20260930" alt="United Way of Western Connecticut">
           <p class="case-study-meta"><span>United Way of Western Connecticut</span><span class="divider">·</span><span>Nonprofit</span><span class="divider">·</span><span>AI Implementation</span></p>
-          <h3 style="margin-bottom:12px;">Less time spent on grant applications</h3>
           <p>The United Way was struggling to keep up with grant opportunities manually. We built a custom AI that identified relevant grants, drafted application responses based on their existing materials, and tailored each submission to the specific requirements of each funder.</p>
           <div class="testimonial testimonial--nested">
             <blockquote>The Endurance Group helped us create an AI that allowed us to apply for grants much more efficiently than before. Their expertise and innovative approach have streamlined our grant application, saving us invaluable time and resources.</blockquote>
             <cite>- Trish Tomlinson, Board Member · United Way of Western Connecticut</cite>
           </div>
-        </div>
+        </div></details>
 
         </div>
       </div>
@@ -503,5 +505,18 @@
   <!-- END SHARED FOOTER -->
 
   <script src="js/main.js?v=20260930" defer></script>
+<script>
+(function () {
+  function openClientStory() {
+    var target = document.getElementById(location.hash.slice(1));
+    if (target && target.tagName === 'DETAILS') {
+      target.open = true;
+      requestAnimationFrame(function () { target.scrollIntoView({block: 'start'}); });
+    }
+  }
+  window.addEventListener('hashchange', openClientStory);
+  openClientStory();
+})();
+</script>
 </body>
 </html>
