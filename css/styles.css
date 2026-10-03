@@ -379,7 +379,7 @@ textarea:focus-visible {
   .footer-columns { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 1024px) {
-  .footer-columns { grid-template-columns: repeat(4, 1fr); }
+  .footer-columns { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
 
 .footer-columns h3 {
@@ -428,7 +428,7 @@ textarea:focus-visible {
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 1024px) {
-  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  .footer-grid { grid-template-columns: minmax(0, 1.6fr) repeat(4, minmax(0, 1fr)); }
 }
 .footer-logo { height: 36px !important; width: auto !important; filter: brightness(0) invert(1); }
 .hero-partner-badge { float: right; height: 240px; width: auto; border-radius: 12px; margin: 8px 0 24px 40px; }
