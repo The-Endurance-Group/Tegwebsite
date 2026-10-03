@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://www.theendurancegroup.com/specialties.html</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -518,5 +518,11 @@
     <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.theendurancegroup.com/claude-business-development.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
