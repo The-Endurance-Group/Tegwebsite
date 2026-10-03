@@ -4,6 +4,8 @@
 
 ## Core pages
 
+- [How to Find AI Value in Your Business: Start With Your People](https://www.theendurancegroup.com/blog/how-to-find-ai-value-in-your-business.html): Jim Sullivan explains employee interviews, AI Value Assessments, economic value, value-priced builds, team training and ongoing Managed Claude improvement.
+
 - [How We Work](https://www.theendurancegroup.com/how-we-work.html): Free assessment, fixed value-priced builds, and Managed Claude from $1,500/month. Clients pay software and API charges separately.
 - [Sample AI Value Report](https://www.theendurancegroup.com/sample-ai-value-assessment.html): Illustrative opportunities, economic-value calculations and fixed build prices for a fictional sales team.
 - [Book a Free Value Assessment](https://www.theendurancegroup.com/book-value-assessment.html): Choose a team on the intro call, then up to five hours of meetings and research. AI Value Report within one week after the assessment.
