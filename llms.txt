@@ -4,6 +4,8 @@
 
 ## Core pages
 
+- [How to Choose a Claude Consulting Partner: Start With Value](https://www.theendurancegroup.com/blog/how-to-choose-a-claude-consulting-partner.html): Jim Sullivan’s buyer guide to evaluating Claude partners on value assessment, fixed value-based pricing, employee adoption and post-launch responsibility.
+
 - [How to Find AI Value in Your Business: Start With Your People](https://www.theendurancegroup.com/blog/how-to-find-ai-value-in-your-business.html): Jim Sullivan explains employee interviews, AI Value Assessments, economic value, value-priced builds, team training and ongoing Managed Claude improvement.
 
 - [How We Work](https://www.theendurancegroup.com/how-we-work.html): Free AI Value Assessment, fixed value-priced builds, and Managed Claude from $1,500/month. Clients pay software and API charges separately.
