@@ -1614,7 +1614,7 @@ details[open] .faq-q::after { content: "−"; }
 }
 .ai-chat-send:hover { background: var(--color-pink-dark); }
 
-/* ===== BEFORE / AFTER BLOCK (how-to-get-started.html) ===== */
+/* ===== BEFORE / AFTER BLOCK (legacy process layouts) ===== */
 .before-after {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1665,7 +1665,7 @@ details[open] .faq-q::after { content: "−"; }
   .ba-col { padding: 28px 24px; }
 }
 
-/* ===== PROCESS TIMELINE (how-to-get-started.html) ===== */
+/* ===== PROCESS TIMELINE (legacy process layouts) ===== */
 .process-track {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1806,7 +1806,7 @@ details[open] .faq-q::after { content: "−"; }
   .step-num { margin-bottom: 6px; }
 }
 
-/* ===== STAT CHIPS (how-to-get-started.html) ===== */
+/* ===== STAT CHIPS (legacy process layouts) ===== */
 .stat-trio {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
