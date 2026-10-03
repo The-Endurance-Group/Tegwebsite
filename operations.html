@@ -35,6 +35,7 @@
     .value-pricing-metric--price { background:var(--color-purple); }
     .value-pricing-metric--price strong,.value-pricing-metric--price span { color:#fff; }
     .value-pricing-operator { font-size:24px; text-align:center; color:var(--color-purple); }
+    .value-pricing-links { display:flex; flex-wrap:wrap; gap:12px 24px; }
     .value-pricing-note { font-size:13px; color:var(--color-lavender); margin-bottom:12px; }
     @media(max-width:600px) { .value-pricing { padding:20px; } .value-pricing-math { grid-template-columns:1fr; gap:8px; margin-top:20px; } .value-pricing-operator { display:none; } .value-pricing-metric { display:flex; flex-direction:row-reverse; align-items:center; justify-content:space-between; gap:12px; padding:16px; text-align:left; } .value-pricing-metric strong { font-size:28px; flex-shrink:0; } .value-pricing-metric span { margin:0; font-size:13px; max-width:140px; } }
     .homepage-relationship { margin:24px 0; max-width:760px; font-size:clamp(18px,2vw,22px); font-weight:600; line-height:1.6; }
@@ -43,12 +44,7 @@
     .value-signals { display:flex; flex-wrap:wrap; gap:12px; list-style:none; padding:0; margin:24px 0 0; }
     .value-signals li { display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; background:var(--color-off-white, #f7f5f8); font-weight:600; }
     .value-signals span { font-size:24px; color:var(--color-purple); }
-    .value-report-preview { margin-top:24px; padding:24px; border:1px solid var(--border); border-radius:16px; display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center; }
-    .value-report-preview h3 { margin-top:8px; }
-    .value-report-preview ul { list-style:none; padding:0; margin:0; }
-    .value-report-preview li { padding:6px 0; }
-    .value-report-preview li::before { content:'✓'; color:var(--color-purple); margin-right:10px; }
-    @media(max-width:600px) { .value-report-preview { grid-template-columns:1fr; padding:20px; } .value-signals { gap:8px; } .value-signals li { padding:10px 12px; font-size:14px; } }
+    @media(max-width:600px) { .value-signals { gap:8px; } .value-signals li { padding:10px 12px; font-size:14px; } }
 
     .claude-hero-badge {
       display: inline-flex;
@@ -427,15 +423,13 @@
             <div class="value-pricing-metric value-pricing-metric--price"><strong>$7,500</strong><span>Fixed build price</span></div>
           </div>
           <p class="value-pricing-note">10% is illustrative. The percentage is agreed per project; the price is fixed before work begins.</p>
-          <a class="feature-link" href="how-we-work.html">How value pricing works →</a>
+          <div class="value-pricing-links">
+            <a class="feature-link" href="how-we-work.html">How value pricing works →</a>
+            <a class="feature-link" href="sample-ai-value-assessment.html">See a sample report →</a>
+          </div>
         </div>
         <p class="homepage-relationship reveal"><a href="how-we-work.html">We find the value, build it, and stay as your Claude team to keep improving. <span aria-hidden="true">→</span></a></p>
-        <div class="value-report-preview reveal">
-          <div><span class="eyebrow">Your AI Value Report</span><h3>A clear decision for every opportunity.</h3></div>
-          <ul aria-label="Report contents"><li>Recommended build</li><li>Expected annual value</li><li>Fixed build price</li></ul>
-          <a class="feature-link" href="sample-ai-value-assessment.html">See a sample report →</a>
-        </div>
-        <div class="btn-group"><a class="btn btn-primary" href="book-value-assessment.html">Start Your Free Value Assessment</a><a class="btn btn-secondary" href="how-we-work.html">How We Work</a></div>
+
       </div>
     </section>
 
