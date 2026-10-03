@@ -1,6 +1,6 @@
 # The Endurance Group
 
-> Official Anthropic Claude Partner and Claude implementation firm for teams seeking measurable business value, based in Portland, Maine, founded in 1998. TEG is an official member of Anthropic's Claude Partner Network with Claude-certified developers and architects. TEG does four things: system integrations, automated workflows, custom Claude applications, and Claude setup and training. Start with a free AI Value Assessment for one team, build value-priced opportunities, and continue with Managed Claude as your ongoing team. New builds are separately scoped and priced.
+> Official Anthropic Claude Partner and Claude implementation firm for teams seeking measurable business value, based in Portland, Maine, founded in 1999. TEG is an official member of Anthropic's Claude Partner Network with Claude-certified developers and architects. TEG does four things: system integrations, automated workflows, custom Claude applications, and Claude setup and training. Start with a free AI Value Assessment for one team, build value-priced opportunities, and continue with Managed Claude as your ongoing team. New builds are separately scoped and priced.
 
 ## Core pages
 
