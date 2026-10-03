@@ -12,7 +12,7 @@
 
 - [Home](https://theendurancegroup.com/): What we do and how we work - AI automations and strategy, built and run, not just advised.
 - [Solutions](https://theendurancegroup.com/solutions.html): The four things TEG does, system integrations, automated workflows, custom Claude applications, and Claude setup and training. New builds are separately scoped and value-priced.
-- [Managed Claude](https://theendurancegroup.com/managed-claude.html): TEG as an outsourced Claude team - an ongoing relationship where TEG builds, maintains, troubleshoots, and improves the systems your employees use inside and around Claude.
+- [Managed Claude](https://www.theendurancegroup.com/managed-claude.html): Your Claude team beyond launch. Maintenance, employee support, training, technology and documentation updates, workflow improvement and monthly AI Value Reviews. Starts at $1,500/month; new builds are separately scoped and value-priced.
 - [Specialties](https://theendurancegroup.com/specialties.html): Functional specialties (sales & marketing automation, CRM, AI workflow design) and industry depth across Real Estate, B2B Technology, and Professional Services.
 - [Success](https://theendurancegroup.com/success.html): Case studies and client testimonials, including Offerpad, Realty ONE Group, FenestraPro, and Huron.
 - [About](https://theendurancegroup.com/about.html): Company history and the people behind it - President Jim Sullivan and Vice President Conor Sullivan.
