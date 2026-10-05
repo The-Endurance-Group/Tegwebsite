@@ -12,117 +12,117 @@
 - [Sample AI Value Report](https://www.theendurancegroup.com/sample-ai-value-assessment.html): Illustrative opportunities, economic-value calculations and fixed build prices for a fictional sales team.
 - [Book a Free AI Value Assessment](https://www.theendurancegroup.com/book-value-assessment.html): Choose a team on the intro call, then up to five hours of meetings and research. AI Value Report within one week after the assessment.
 
-- [Home](https://theendurancegroup.com/): What we do and how we work - AI automations and strategy, built and run, not just advised.
-- [Solutions](https://theendurancegroup.com/solutions.html): The four things TEG does, system integrations, automated workflows, custom Claude applications, and Claude setup and training. New builds are separately scoped and value-priced.
+- [Home](https://www.theendurancegroup.com/): What we do and how we work - AI automations and strategy, built and run, not just advised.
+- [Solutions](https://www.theendurancegroup.com/solutions.html): The four things TEG does, system integrations, automated workflows, custom Claude applications, and Claude setup and training. New builds are separately scoped and value-priced.
 - [Managed Claude](https://www.theendurancegroup.com/managed-claude.html): Your Claude team beyond launch. Maintenance, employee support, training, technology and documentation updates, workflow improvement and monthly AI Value Reviews. Starts at $1,500/month; new builds are separately scoped and value-priced.
-- [Specialties](https://theendurancegroup.com/specialties.html): Functional specialties (sales & marketing automation, CRM, AI workflow design) and industry depth across Real Estate, B2B Technology, and Professional Services.
-- [Success](https://theendurancegroup.com/success.html): Case studies and client testimonials, including Offerpad, Realty ONE Group, FenestraPro, and Huron.
-- [About](https://theendurancegroup.com/about.html): Company history and the people behind it - President Jim Sullivan and Vice President Conor Sullivan.
+- [Specialties](https://www.theendurancegroup.com/specialties.html): Functional specialties (sales & marketing automation, CRM, AI workflow design) and industry depth across Real Estate, B2B Technology, and Professional Services.
+- [Success](https://www.theendurancegroup.com/success.html): Case studies and client testimonials, including Offerpad, Realty ONE Group, FenestraPro, and Huron.
+- [About](https://www.theendurancegroup.com/about.html): Company history and the people behind it - President Jim Sullivan and Vice President Conor Sullivan.
 - [How to Get Started](https://www.theendurancegroup.com/book-value-assessment.html): Choose one team on an intro call, then complete a free AI Value Assessment with up to five hours of meetings and research.
 - [Claude Setup for Teams](https://www.theendurancegroup.com/claude-setup.html): Claude configuration, connected tools and workflows. Start with a free AI Value Assessment; builds are separately scoped and value-priced. Managed Claude is the standard ongoing relationship.
-- [Operational Reconciliation](https://theendurancegroup.com/operations): AI automations that check incoming data (invoices, documents, photos) against your system of record, flag discrepancies, and route exceptions before they become problems. Three common patterns: document review, vendor/invoice validation, and pre-deadline gap detection.
-- [Free Claude Plugins](https://theendurancegroup.com/claude-plugins.html): Free Claude plugins TEG built from client work: HubSpot CRM Toolkit, Upwork Proposal Kit, AwayGame (visiting college teams for hotels and travel vendors), POTS Opportunity (copper retirement research for telecom brokers), and Compliance Review. Each is set up free on a 30-minute call where TEG installs it with the user; a Skylead plugin is coming soon.
-- [Privacy Policy](https://theendurancegroup.com/privacy.html)
-- [Terms of Service](https://theendurancegroup.com/terms.html)
+- [Operational Reconciliation](https://www.theendurancegroup.com/operations): AI automations that check incoming data (invoices, documents, photos) against your system of record, flag discrepancies, and route exceptions before they become problems. Three common patterns: document review, vendor/invoice validation, and pre-deadline gap detection.
+- [Free Claude Plugins](https://www.theendurancegroup.com/claude-plugins.html): Free Claude plugins TEG built from client work: HubSpot CRM Toolkit, Upwork Proposal Kit, AwayGame (visiting college teams for hotels and travel vendors), POTS Opportunity (copper retirement research for telecom brokers), and Compliance Review. Each is set up free on a 30-minute call where TEG installs it with the user; a Skylead plugin is coming soon.
+- [Privacy Policy](https://www.theendurancegroup.com/privacy.html)
+- [Terms of Service](https://www.theendurancegroup.com/terms.html)
 
 ## Blog
 
-- [Blog index](https://theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
-- [How MCP Connects Claude to Custom Applications, Proprietary Data, and Legacy Systems](https://theendurancegroup.com/blog/mcp-business-systems.html)
-- [Merriam-Webster Just Added 1,400 New Words. Here's What the AI Ones Actually Mean.](https://theendurancegroup.com/blog/merriam-webster-ai-words.html)
-- [Claude Opus 5 Feels Combative? Here's What's Actually Going On](https://theendurancegroup.com/blog/claude-opus-5-pushback-tone.html)
-- [Website MCPs: How AI Agents Update Sites Without WP-Admin](https://theendurancegroup.com/blog/website-mcp-cms.html)
-- [What Claude Fable 5.1 Means If Your Team Is Running on AI-Powered Automations](https://theendurancegroup.com/blog/claude-fable-5-1-business-automations.html)
-- [What Claudeforce Means If Your Team Already Runs on Salesforce](https://theendurancegroup.com/blog/claudeforce-salesforce-claude-integration.html)
-- [We Built a Boston Permit Lookup Tool, Here's Why It Needed More Than a Search Box](https://theendurancegroup.com/blog/boston-permit-lookup-tool.html)
-- [Is Claude Safe for Business Data? What B2B Teams Need to Know](https://theendurancegroup.com/blog/claude-data-privacy-business.html)
-- [Why Claude Certification Matters, and Why TEG Is Building a Bench of Certified Talent](https://theendurancegroup.com/blog/claude-certification-matters.html)
-- [What is a Claude Partner and how do you find one?](https://theendurancegroup.com/blog/what-is-a-claude-partner.html)
-- [The best MCP servers for B2B sales and CRM teams](https://theendurancegroup.com/blog/best-mcp-servers-for-sales.html)
-- [How to hire a Claude developer (and what to look for)](https://theendurancegroup.com/blog/how-to-hire-a-claude-developer.html)
-- [How much does Claude implementation cost?](https://theendurancegroup.com/blog/claude-implementation-cost.html)
-- [Claude vs Gemini for business automation: what actually matters](https://theendurancegroup.com/blog/claude-vs-gemini-business-automation.html)
-- [Claude for real estate: what's actually useful in 2026](https://theendurancegroup.com/blog/claude-for-real-estate.html)
-- [Claude Projects vs Claude Skills: what's the difference?](https://theendurancegroup.com/blog/claude-projects-vs-skills.html)
-- [Claude Cowork vs. Claude Skills: what B2B teams need to know](https://theendurancegroup.com/blog/claude-cowork-vs-claude-skills.html)
-- [How We Fixed a Housecall Pro Sync Alerts Problem Without API Access](https://theendurancegroup.com/blog/housecall-pro-sync-alerts.html)
-- [The Endurance Group named a Claude Partner](https://theendurancegroup.com/blog/claude-partner-announcement.html)
-- [The Endurance Group named an OpenAI Select Partner](https://theendurancegroup.com/blog/openai-select-partner-announcement.html)
-- [Defensive vs offensive automation workflows: how to know which one you need](https://theendurancegroup.com/blog/defensive-vs-offensive-automation.html)
-- [How higher ed is using AI to find prospective students](https://theendurancegroup.com/blog/higher-ed-ai-student-recruitment.html)
-- [How Coachonix is transforming network marketing with AI coaching](https://theendurancegroup.com/blog/coachonix-network-marketing.html)
-- [Zapier vs n8n for B2B automation: which one fits your stack](https://theendurancegroup.com/blog/zapier-vs-n8n.html)
-- [Why your team stops using the CRM after 90 days](https://theendurancegroup.com/blog/why-your-crm-fails.html)
-- [Why inbound leads don't get followed up (and how automation fixes it)](https://theendurancegroup.com/blog/inbound-lead-routing-automation.html)
-- [Why AI projects fail: the adoption problem nobody talks about](https://theendurancegroup.com/blog/why-ai-projects-fail.html)
-- [When to hire a sales rep vs when to automate](https://theendurancegroup.com/blog/hire-vs-automate.html)
-- [What to automate first when you're a small B2B team](https://theendurancegroup.com/blog/what-to-automate-first.html)
-- [What is a HubSpot sequence and when should you use one](https://theendurancegroup.com/blog/what-is-a-hubspot-sequence.html)
-- [What is AI workflow automation? A plain-English guide](https://theendurancegroup.com/blog/what-is-ai-workflow-automation.html)
-- [What MCP servers are and what they mean for your business](https://theendurancegroup.com/blog/mcp-servers-for-business.html)
-- [The difference between an AI tool and an AI automation](https://theendurancegroup.com/blog/ai-tool-vs-ai-automation.html)
-- [Make vs Zapier vs n8n: how to choose for B2B automation](https://theendurancegroup.com/blog/make-vs-zapier-vs-n8n.html)
-- [HubSpot sequences vs AI automation: when to use which](https://theendurancegroup.com/blog/hubspot-sequences-vs-ai-automation.html)
-- [How to use n8n to connect your CRM to AI](https://theendurancegroup.com/blog/n8n-crm-ai-integration.html)
-- [How to keep real estate leads warm with automated nurture](https://theendurancegroup.com/blog/real-estate-lead-nurture-automation.html)
-- [How to build a lead qualification workflow with AI](https://theendurancegroup.com/blog/ai-lead-qualification-workflow.html)
-- [How to automate lead follow-up in HubSpot without losing the personal touch](https://theendurancegroup.com/blog/automate-lead-followup-hubspot.html)
-- [How to automate client onboarding for a consulting firm](https://theendurancegroup.com/blog/automate-client-onboarding-consulting.html)
-- [How fractional executives use AI to manage more clients](https://theendurancegroup.com/blog/fractional-executives-ai.html)
-- [How SaaS companies use AI to reduce churn with better onboarding](https://theendurancegroup.com/blog/saas-ai-reduce-churn.html)
-- [Claude vs ChatGPT for business automation: what actually matters](https://theendurancegroup.com/blog/claude-vs-chatgpt-business-automation.html)
-- [AI tools for commercial real estate brokers: what's actually useful](https://theendurancegroup.com/blog/ai-tools-commercial-real-estate.html)
-- [AI automation for property management companies](https://theendurancegroup.com/blog/ai-automation-property-management.html)
-- [AI automation for law firms and advisory practices](https://theendurancegroup.com/blog/ai-automation-law-firms.html)
-- [MCP: how we connect AI to the tools your team already runs](https://theendurancegroup.com/blog/mcp-custom-ai-integrations.html)
-- [Claude and ChatGPT connectors: give AI the right context without copy-pasting](https://theendurancegroup.com/blog/claude-chatgpt-connectors.html)
-- [Free Claude Training for Our Coworking Neighbors in Portland, Maine](https://theendurancegroup.com/blog/free-claude-training-cloudport-coworking-maine.html)
-- [How to Use Claude With HubSpot: A Free Plugin for Deals, Tasks, and Meeting Prep](https://theendurancegroup.com/blog/claude-hubspot-plugin.html)
-- [How to Write Upwork Proposals With Claude (Without Overclaiming)](https://theendurancegroup.com/blog/upwork-proposals-with-claude.html)
-- [How Hotels and Travel Vendors Can Find Visiting College Teams With Claude](https://theendurancegroup.com/blog/find-visiting-college-teams-with-claude.html)
-- [How Telecom Brokers Can Find Copper Retirement Notices and POTS Replacement Leads With Claude](https://theendurancegroup.com/blog/copper-retirement-pots-leads-with-claude.html)
-- [How to Check Marketing Content for Compliance With Claude](https://theendurancegroup.com/blog/compliance-review-with-claude.html)
-- [How to Find Warm Paths Into B2B Prospects With Claude](https://theendurancegroup.com/blog/warm-paths-b2b-sales-with-claude.html)
-- [How to Pull Franchise Owner Contacts From an FDD With Claude](https://theendurancegroup.com/blog/fdd-analyzer-with-claude.html)
-- [How to Find Which Clients to Ask for a Referral With Claude](https://theendurancegroup.com/blog/referral-identifier-with-claude.html)
-- [Anthropic Just Said It's Slowing Down. Here's What That Actually Means for Your Team.](https://theendurancegroup.com/blog/anthropic-pacing-what-it-means.html)
-- [Why I Believe Anyone Can Learn AI (Even a Former English Teacher)](https://theendurancegroup.com/blog/why-anyone-can-learn-ai.html)
-- [From Anonymous Website Visitor to Assigned CRM Lead](https://theendurancegroup.com/blog/website-visitor-to-crm-automation.html)
-- [How We Turned Scattered Meeting Notes Into a Working Task System](https://theendurancegroup.com/blog/nonprofit-meeting-notes-precall-automation.html)
-- [Reading Town Meeting Notes for Business Opportunities, Automatically](https://theendurancegroup.com/blog/town-meeting-notes-ai-pilot.html)
-- [We Taught Claude to Check Landscaping Photos So a Real Estate Team Didn't Have To](https://theendurancegroup.com/blog/ai-photo-review-property-management.html)
-- [Does Claude Remember Your Conversations Now? What B2B Teams Need to Know](https://theendurancegroup.com/blog/claude-memory-update-b2b-teams.html)
-- [How We Use Hiring Signals to Find Companies Ready to Buy AI](https://theendurancegroup.com/blog/ai-prospect-finder-hiring-signal.html)
-- [How Offerpad Scaled AI Across Sales, Renovations, and Accounting](https://theendurancegroup.com/blog/offerpad-ai-partnership.html)
-- [How Biproxi Uses AI to Find Investors Their Competitors Can't](https://theendurancegroup.com/blog/biproxi-investor-discovery.html)
-- [How AI automation helps real estate teams respond to leads before they go cold](https://theendurancegroup.com/blog/ai-automation-real-estate.html)
-- [Why generic outbound automation fails B2B SaaS, and what to build instead](https://theendurancegroup.com/blog/ai-automation-b2b-saas.html)
-- [Why professional services firms should map their network before they prospect](https://theendurancegroup.com/blog/ai-automation-professional-services.html)
-- [What counts as a real AI automation, and what's just a demo](https://theendurancegroup.com/blog/what-is-an-ai-automation.html)
-- [When it makes sense to outsource sales execution instead of hiring an SDR](https://theendurancegroup.com/blog/outsourced-sales-execution-guide.html)
-- [Why adding more leads won't fix a broken CRM](https://theendurancegroup.com/blog/fix-crm-before-more-leads.html)
-- [What Claude Skills are, and why we build inside Claude instead of a new app](https://theendurancegroup.com/blog/claude-skills.html)
-- [What custom GPTs are, and why we build inside ChatGPT instead of a new app](https://theendurancegroup.com/blog/openai-custom-gpts.html)
-- [What Gemini Gems are, and why we build inside Google Workspace instead of a new app](https://theendurancegroup.com/blog/gemini-gems.html)
-- [How Claude Automates the Work That Slows Your Team Down](https://theendurancegroup.com/blog/claude-automated-workflows.html)
-- [What It Looks Like When TEG Sets Up Claude for Your Team](https://theendurancegroup.com/blog/claude-environment-setup.html)
-- [When Claude.ai Isn't Enough: Building a Custom Claude Application](https://theendurancegroup.com/blog/custom-claude-applications.html)
+- [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [How MCP Connects Claude to Custom Applications, Proprietary Data, and Legacy Systems](https://www.theendurancegroup.com/blog/mcp-business-systems.html)
+- [Merriam-Webster Just Added 1,400 New Words. Here's What the AI Ones Actually Mean.](https://www.theendurancegroup.com/blog/merriam-webster-ai-words.html)
+- [Claude Opus 5 Feels Combative? Here's What's Actually Going On](https://www.theendurancegroup.com/blog/claude-opus-5-pushback-tone.html)
+- [Website MCPs: How AI Agents Update Sites Without WP-Admin](https://www.theendurancegroup.com/blog/website-mcp-cms.html)
+- [What Claude Fable 5.1 Means If Your Team Is Running on AI-Powered Automations](https://www.theendurancegroup.com/blog/claude-fable-5-1-business-automations.html)
+- [What Claudeforce Means If Your Team Already Runs on Salesforce](https://www.theendurancegroup.com/blog/claudeforce-salesforce-claude-integration.html)
+- [We Built a Boston Permit Lookup Tool, Here's Why It Needed More Than a Search Box](https://www.theendurancegroup.com/blog/boston-permit-lookup-tool.html)
+- [Is Claude Safe for Business Data? What B2B Teams Need to Know](https://www.theendurancegroup.com/blog/claude-data-privacy-business.html)
+- [Why Claude Certification Matters, and Why TEG Is Building a Bench of Certified Talent](https://www.theendurancegroup.com/blog/claude-certification-matters.html)
+- [What is a Claude Partner and how do you find one?](https://www.theendurancegroup.com/blog/what-is-a-claude-partner.html)
+- [The best MCP servers for B2B sales and CRM teams](https://www.theendurancegroup.com/blog/best-mcp-servers-for-sales.html)
+- [How to hire a Claude developer (and what to look for)](https://www.theendurancegroup.com/blog/how-to-hire-a-claude-developer.html)
+- [How much does Claude implementation cost?](https://www.theendurancegroup.com/blog/claude-implementation-cost.html)
+- [Claude vs Gemini for business automation: what actually matters](https://www.theendurancegroup.com/blog/claude-vs-gemini-business-automation.html)
+- [Claude for real estate: what's actually useful in 2026](https://www.theendurancegroup.com/blog/claude-for-real-estate.html)
+- [Claude Projects vs Claude Skills: what's the difference?](https://www.theendurancegroup.com/blog/claude-projects-vs-skills.html)
+- [Claude Cowork vs. Claude Skills: what B2B teams need to know](https://www.theendurancegroup.com/blog/claude-cowork-vs-claude-skills.html)
+- [How We Fixed a Housecall Pro Sync Alerts Problem Without API Access](https://www.theendurancegroup.com/blog/housecall-pro-sync-alerts.html)
+- [The Endurance Group named a Claude Partner](https://www.theendurancegroup.com/blog/claude-partner-announcement.html)
+- [The Endurance Group named an OpenAI Select Partner](https://www.theendurancegroup.com/blog/openai-select-partner-announcement.html)
+- [Defensive vs offensive automation workflows: how to know which one you need](https://www.theendurancegroup.com/blog/defensive-vs-offensive-automation.html)
+- [How higher ed is using AI to find prospective students](https://www.theendurancegroup.com/blog/higher-ed-ai-student-recruitment.html)
+- [How Coachonix is transforming network marketing with AI coaching](https://www.theendurancegroup.com/blog/coachonix-network-marketing.html)
+- [Zapier vs n8n for B2B automation: which one fits your stack](https://www.theendurancegroup.com/blog/zapier-vs-n8n.html)
+- [Why your team stops using the CRM after 90 days](https://www.theendurancegroup.com/blog/why-your-crm-fails.html)
+- [Why inbound leads don't get followed up (and how automation fixes it)](https://www.theendurancegroup.com/blog/inbound-lead-routing-automation.html)
+- [Why AI projects fail: the adoption problem nobody talks about](https://www.theendurancegroup.com/blog/why-ai-projects-fail.html)
+- [When to hire a sales rep vs when to automate](https://www.theendurancegroup.com/blog/hire-vs-automate.html)
+- [What to automate first when you're a small B2B team](https://www.theendurancegroup.com/blog/what-to-automate-first.html)
+- [What is a HubSpot sequence and when should you use one](https://www.theendurancegroup.com/blog/what-is-a-hubspot-sequence.html)
+- [What is AI workflow automation? A plain-English guide](https://www.theendurancegroup.com/blog/what-is-ai-workflow-automation.html)
+- [What MCP servers are and what they mean for your business](https://www.theendurancegroup.com/blog/mcp-servers-for-business.html)
+- [The difference between an AI tool and an AI automation](https://www.theendurancegroup.com/blog/ai-tool-vs-ai-automation.html)
+- [Make vs Zapier vs n8n: how to choose for B2B automation](https://www.theendurancegroup.com/blog/make-vs-zapier-vs-n8n.html)
+- [HubSpot sequences vs AI automation: when to use which](https://www.theendurancegroup.com/blog/hubspot-sequences-vs-ai-automation.html)
+- [How to use n8n to connect your CRM to AI](https://www.theendurancegroup.com/blog/n8n-crm-ai-integration.html)
+- [How to keep real estate leads warm with automated nurture](https://www.theendurancegroup.com/blog/real-estate-lead-nurture-automation.html)
+- [How to build a lead qualification workflow with AI](https://www.theendurancegroup.com/blog/ai-lead-qualification-workflow.html)
+- [How to automate lead follow-up in HubSpot without losing the personal touch](https://www.theendurancegroup.com/blog/automate-lead-followup-hubspot.html)
+- [How to automate client onboarding for a consulting firm](https://www.theendurancegroup.com/blog/automate-client-onboarding-consulting.html)
+- [How fractional executives use AI to manage more clients](https://www.theendurancegroup.com/blog/fractional-executives-ai.html)
+- [How SaaS companies use AI to reduce churn with better onboarding](https://www.theendurancegroup.com/blog/saas-ai-reduce-churn.html)
+- [Claude vs ChatGPT for business automation: what actually matters](https://www.theendurancegroup.com/blog/claude-vs-chatgpt-business-automation.html)
+- [AI tools for commercial real estate brokers: what's actually useful](https://www.theendurancegroup.com/blog/ai-tools-commercial-real-estate.html)
+- [AI automation for property management companies](https://www.theendurancegroup.com/blog/ai-automation-property-management.html)
+- [AI automation for law firms and advisory practices](https://www.theendurancegroup.com/blog/ai-automation-law-firms.html)
+- [MCP: how we connect AI to the tools your team already runs](https://www.theendurancegroup.com/blog/mcp-custom-ai-integrations.html)
+- [Claude and ChatGPT connectors: give AI the right context without copy-pasting](https://www.theendurancegroup.com/blog/claude-chatgpt-connectors.html)
+- [Free Claude Training for Our Coworking Neighbors in Portland, Maine](https://www.theendurancegroup.com/blog/free-claude-training-cloudport-coworking-maine.html)
+- [How to Use Claude With HubSpot: A Free Plugin for Deals, Tasks, and Meeting Prep](https://www.theendurancegroup.com/blog/claude-hubspot-plugin.html)
+- [How to Write Upwork Proposals With Claude (Without Overclaiming)](https://www.theendurancegroup.com/blog/upwork-proposals-with-claude.html)
+- [How Hotels and Travel Vendors Can Find Visiting College Teams With Claude](https://www.theendurancegroup.com/blog/find-visiting-college-teams-with-claude.html)
+- [How Telecom Brokers Can Find Copper Retirement Notices and POTS Replacement Leads With Claude](https://www.theendurancegroup.com/blog/copper-retirement-pots-leads-with-claude.html)
+- [How to Check Marketing Content for Compliance With Claude](https://www.theendurancegroup.com/blog/compliance-review-with-claude.html)
+- [How to Find Warm Paths Into B2B Prospects With Claude](https://www.theendurancegroup.com/blog/warm-paths-b2b-sales-with-claude.html)
+- [How to Pull Franchise Owner Contacts From an FDD With Claude](https://www.theendurancegroup.com/blog/fdd-analyzer-with-claude.html)
+- [How to Find Which Clients to Ask for a Referral With Claude](https://www.theendurancegroup.com/blog/referral-identifier-with-claude.html)
+- [Anthropic Just Said It's Slowing Down. Here's What That Actually Means for Your Team.](https://www.theendurancegroup.com/blog/anthropic-pacing-what-it-means.html)
+- [Why I Believe Anyone Can Learn AI (Even a Former English Teacher)](https://www.theendurancegroup.com/blog/why-anyone-can-learn-ai.html)
+- [From Anonymous Website Visitor to Assigned CRM Lead](https://www.theendurancegroup.com/blog/website-visitor-to-crm-automation.html)
+- [How We Turned Scattered Meeting Notes Into a Working Task System](https://www.theendurancegroup.com/blog/nonprofit-meeting-notes-precall-automation.html)
+- [Reading Town Meeting Notes for Business Opportunities, Automatically](https://www.theendurancegroup.com/blog/town-meeting-notes-ai-pilot.html)
+- [We Taught Claude to Check Landscaping Photos So a Real Estate Team Didn't Have To](https://www.theendurancegroup.com/blog/ai-photo-review-property-management.html)
+- [Does Claude Remember Your Conversations Now? What B2B Teams Need to Know](https://www.theendurancegroup.com/blog/claude-memory-update-b2b-teams.html)
+- [How We Use Hiring Signals to Find Companies Ready to Buy AI](https://www.theendurancegroup.com/blog/ai-prospect-finder-hiring-signal.html)
+- [How Offerpad Scaled AI Across Sales, Renovations, and Accounting](https://www.theendurancegroup.com/blog/offerpad-ai-partnership.html)
+- [How Biproxi Uses AI to Find Investors Their Competitors Can't](https://www.theendurancegroup.com/blog/biproxi-investor-discovery.html)
+- [How AI automation helps real estate teams respond to leads before they go cold](https://www.theendurancegroup.com/blog/ai-automation-real-estate.html)
+- [Why generic outbound automation fails B2B SaaS, and what to build instead](https://www.theendurancegroup.com/blog/ai-automation-b2b-saas.html)
+- [Why professional services firms should map their network before they prospect](https://www.theendurancegroup.com/blog/ai-automation-professional-services.html)
+- [What counts as a real AI automation, and what's just a demo](https://www.theendurancegroup.com/blog/what-is-an-ai-automation.html)
+- [When it makes sense to outsource sales execution instead of hiring an SDR](https://www.theendurancegroup.com/blog/outsourced-sales-execution-guide.html)
+- [Why adding more leads won't fix a broken CRM](https://www.theendurancegroup.com/blog/fix-crm-before-more-leads.html)
+- [What Claude Skills are, and why we build inside Claude instead of a new app](https://www.theendurancegroup.com/blog/claude-skills.html)
+- [What custom GPTs are, and why we build inside ChatGPT instead of a new app](https://www.theendurancegroup.com/blog/openai-custom-gpts.html)
+- [What Gemini Gems are, and why we build inside Google Workspace instead of a new app](https://www.theendurancegroup.com/blog/gemini-gems.html)
+- [How Claude Automates the Work That Slows Your Team Down](https://www.theendurancegroup.com/blog/claude-automated-workflows.html)
+- [What It Looks Like When TEG Sets Up Claude for Your Team](https://www.theendurancegroup.com/blog/claude-environment-setup.html)
+- [When Claude.ai Isn't Enough: Building a Custom Claude Application](https://www.theendurancegroup.com/blog/custom-claude-applications.html)
 
 ### Blog categories
 
-- [Real Estate](https://theendurancegroup.com/blog/category/real-estate.html)
-- [B2B Technology & SaaS](https://theendurancegroup.com/blog/category/b2b-technology-saas.html)
-- [Professional Services](https://theendurancegroup.com/blog/category/professional-services.html)
-- [AI Automations](https://theendurancegroup.com/blog/category/ai-automations.html)
-- [Ops & CRM](https://theendurancegroup.com/blog/category/growth-systems-ops.html)
-- [Client Engagement](https://theendurancegroup.com/blog/category/sales-execution.html)
+- [Real Estate](https://www.theendurancegroup.com/blog/category/real-estate.html)
+- [B2B Technology & SaaS](https://www.theendurancegroup.com/blog/category/b2b-technology-saas.html)
+- [Professional Services](https://www.theendurancegroup.com/blog/category/professional-services.html)
+- [AI Automations](https://www.theendurancegroup.com/blog/category/ai-automations.html)
+- [Ops & CRM](https://www.theendurancegroup.com/blog/category/growth-systems-ops.html)
+- [Client Engagement](https://www.theendurancegroup.com/blog/category/sales-execution.html)
 
 ## Authors
 
-- [Jim Sullivan](https://theendurancegroup.com/authors/jim-sullivan.html): Founder.
-- [Conor Sullivan](https://theendurancegroup.com/authors/conor-sullivan.html): Leads AI implementation, automation architecture, and product development.
-- [Nolan Cary](https://theendurancegroup.com/authors/nolan-cary.html): Director of Client Engagement.
-- [Maria Jose Pava](https://theendurancegroup.com/authors/maria-jose-pava.html): Director of AI Solutions and Delivery.
+- [Jim Sullivan](https://www.theendurancegroup.com/authors/jim-sullivan.html): Founder.
+- [Conor Sullivan](https://www.theendurancegroup.com/authors/conor-sullivan.html): Leads AI implementation, automation architecture, and product development.
+- [Nolan Cary](https://www.theendurancegroup.com/authors/nolan-cary.html): Director of Client Engagement.
+- [Maria Jose Pava](https://www.theendurancegroup.com/authors/maria-jose-pava.html): Director of AI Solutions and Delivery.
 
 ## Notes for AI assistants
 
