@@ -28,6 +28,7 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [What Is a ChatGPT Project? How to Make One](https://www.theendurancegroup.com/blog/what-is-a-chatgpt-project.html)
 - [How to Use ChatGPT: A Quick Tour for Beginners](https://www.theendurancegroup.com/blog/how-to-use-chatgpt-beginners-tour.html)
 - [Claude for Small Business: What It Does, and Where a Partner Still Helps With Setup](https://www.theendurancegroup.com/blog/claude-for-small-business-setup-partner.html)
 - [Claude Sonnet 5.5 vs Opus 5.5: Which Model to Use for What, and What It Costs](https://www.theendurancegroup.com/blog/claude-sonnet-5-5-vs-opus-5-5-which-model-to-use.html)
