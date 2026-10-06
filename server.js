@@ -20,6 +20,16 @@ const SITE_KNOWLEDGE = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
 const AI_POLICY_SYSTEM_PROMPT = fs.readFileSync(path.join(ROOT, 'ai-policy-generator-prompt.md'), 'utf8');
 const SITEMAP_XML = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const ROBOTS_TXT = fs.readFileSync(path.join(ROOT, 'robots.txt'), 'utf8');
+// RB2B visitor identification snippet, injected into the <head> of every HTML page.
+const RB2B_KEY = process.env.RB2B_KEY || '0NW1GHJQKYO4';
+const RB2B_SNIPPET = RB2B_KEY ? '<script>!function(key) {\n' +
+  'if (window.reb2b) return;\n' +
+  'window.reb2b = {loaded: true};\n' +
+  'var s = document.createElement("script");\n' +
+  's.async = true;\n' +
+  's.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";\n' +
+  'document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);\n' +
+  '}("' + RB2B_KEY + '");</script>\n' : '';
 const CHAT_SYSTEM_PROMPT = [
   'You are the AI assistant embedded on theendurancegroup.com, a Claude implementation and ongoing support firm in Portland, Maine serving any team seeking measurable value.',
   'Answer questions about the company using ONLY the information in SITE KNOWLEDGE below. Do not invent pricing, case studies, names, or facts that aren\'t in it.',
@@ -470,6 +480,9 @@ function serveStatic(req, res) {
       return;
     }
     const headers = { 'Content-Type': contentType, 'Cache-Control': cacheControl };
+    if (isHtml && RB2B_SNIPPET) {
+      data = data.toString('utf8').replace('</head>', RB2B_SNIPPET + '</head>');
+    }
     res.writeHead(200, headers);
     res.end(data);
   });
