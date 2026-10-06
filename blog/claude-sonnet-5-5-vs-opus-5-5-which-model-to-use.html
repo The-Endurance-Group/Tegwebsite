@@ -126,6 +126,14 @@
       },
       {
         "@type": "Question",
+        "name": "How much do Sonnet 5.5 and Opus 5.5 cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anthropic lists Sonnet 5.5 at $2 per million input tokens and $10 per million output tokens. Opus 5.5 is $4 per million input tokens and $20 per million output tokens, 20% below Opus 5. Cached input is $0.20 per million tokens on both. What your team actually pays depends on how many tokens your workflows use."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Do I need to change anything to use the new models?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -196,7 +204,7 @@
 
           <p><em>TEG is an official member of the Anthropic Claude Partner Network. We build Claude Skills, Projects, and MCP integrations for B2B ops teams. <a href="../solutions.html">See our full Claude services.</a></em></p>
 
-          <div class="example-callout"><h2>Which Claude model should my team use, Sonnet 5.5 or Opus 5.5?</h2><p>Use Sonnet 5.5 for well-scoped everyday work like drafting, reporting, CRM updates, and building documents. Use Opus 5.5 for complex, open-ended work that needs sustained judgment. Sonnet 5.5 costs half as much per token as Opus 5.5, but judge cost per finished task, not per token.</p></div>
+          <div class="example-callout"><h2>Which Claude model should my team use, Sonnet 5.5 or Opus 5.5?</h2><p>Use Sonnet 5.5 for well-scoped everyday work like drafting, reporting, CRM updates, and building documents. Use Opus 5.5 for complex, open-ended work that needs sustained judgment. Sonnet 5.5 lists at $2 per million input tokens and $10 per million output tokens, half the $4 and $20 for Opus 5.5. Judge cost per finished task, not per token.</p></div>
 
           <p>Anthropic shipped two models in a week. Claude Opus 5.5 arrived on September 22, and Claude Sonnet 5.5 followed on September 28. If you run Claude for your team, or pay for automations built on it, the question is simple: which one should do which job, and what does the choice do to your costs?</p>
 
@@ -222,7 +230,13 @@
 
           <h2>The cost trade-off, honestly</h2>
 
-          <p>Per token, Sonnet 5.5 costs half of what Opus 5.5 does. That is the headline, and it is the wrong number to optimize on.</p>
+          <p>Per token, Sonnet 5.5 costs half of what Opus 5.5 does. That is the headline, and it is the wrong number to optimize on. Here are the list prices from Anthropic, per million tokens:</p>
+
+          <ul>
+            <li><strong>Sonnet 5.5:</strong> $2 for input, $10 for output.</li>
+            <li><strong>Opus 5.5:</strong> $4 for input, $20 for output. That is 20% below Opus 5, which listed at $5 and $25.</li>
+            <li><strong>Cached input (both models):</strong> $0.20, so repeated context such as a long instruction set or a reference document is cheap to reuse.</li>
+          </ul>
 
           <p>What matters is cost per finished task. A cheaper model that needs two retries, or hands back work a person has to rework, is not cheaper. A pricier model that gets a hard task right the first time often is. Both launches lean on the same idea: fewer tokens per task, not just a lower rate per token. That is why Anthropic quotes savings on typical workloads rather than on price sheets.</p>
 
@@ -249,6 +263,9 @@
 
           <h3>How much cheaper is Sonnet 5.5 than Sonnet 5?</h3>
           <p>Anthropic says Sonnet 5.5 costs up to 30% less than Sonnet 5 for most work, because it typically needs far fewer tokens to do the same task. It also runs more than 30% faster.</p>
+
+          <h3>How much do Sonnet 5.5 and Opus 5.5 cost?</h3>
+          <p>Anthropic lists Sonnet 5.5 at $2 per million input tokens and $10 per million output tokens. Opus 5.5 is $4 per million input tokens and $20 per million output tokens, 20% below Opus 5. Cached input is $0.20 per million tokens on both. What your team actually pays depends on how many tokens your workflows use.</p>
 
           <h3>Do I need to change anything to use the new models?</h3>
           <p>If you use Claude.ai or Cowork directly, you can choose the new models from the model picker. If your automations are built on the API, the model being called has to be updated, ideally with a quick test on your own workflows first. TEG can review which steps should use which model.</p>

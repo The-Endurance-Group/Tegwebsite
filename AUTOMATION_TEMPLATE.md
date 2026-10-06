@@ -69,7 +69,7 @@ exact pattern (adjust the middle sentence to what the post is actually about):
 <p><em>TEG is an official member of the Anthropic Claude Partner Network. We build Claude Skills, Projects, and MCP integrations for B2B ops teams. <a href="../solutions.html">See our full Claude services.</a></em></p>
 ```
 
-Never mention prices, dollar amounts, or membership tiers anywhere in the body.
+Never mention what TEG charges, or membership tiers, anywhere in the body. Published third-party list prices (for example Anthropic model pricing) are fine when sourced from the vendor's own page.
 
 End the body with a **visible** FAQ section that matches the FAQPage schema
 word for word:
