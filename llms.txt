@@ -28,6 +28,7 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [Could Your Company Be the Alternative to a Hire?](https://www.theendurancegroup.com/blog/ai-automation-project-vs-hire.html)
 - [How to Schedule a Task in ChatGPT (and Why You Should)](https://www.theendurancegroup.com/blog/how-to-schedule-a-task-in-chatgpt.html)
 - [What Is a ChatGPT Skill and How to Make One](https://www.theendurancegroup.com/blog/how-to-create-a-chatgpt-skill.html)
 - [How to Connect Gmail to ChatGPT (Connectors Explained)](https://www.theendurancegroup.com/blog/chatgpt-connectors-gmail-how-to-connect.html)

@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-10-06",
+    "title": "Could Your Company Be the Alternative to a Hire?",
+    "slug": "ai-automation-project-vs-hire",
+    "url": "https://www.theendurancegroup.com/blog/ai-automation-project-vs-hire.html",
+    "path": "manual-conor-pov",
+    "angle_summary": "First-person post from Conor on a daily workflow that finds companies posting AI automation jobs and offers TEG as a scoped-project alternative to a full-time hire. Includes hire-vs-project test and AI Value Assessment CTA.",
+    "deploy_verified": false,
+    "related_post_updated": "ai-prospect-finder-hiring-signal.html"
+  },
+  {
+    "date": "2026-10-06",
     "title": "Claude for Small Business: What It Does, and Where a Partner Still Helps With Setup",
     "slug": "claude-for-small-business-setup-partner",
     "url": "https://www.theendurancegroup.com/blog/claude-for-small-business-setup-partner.html",
