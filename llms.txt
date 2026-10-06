@@ -28,6 +28,8 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [Claude for Small Business: What It Does, and Where a Partner Still Helps With Setup](https://www.theendurancegroup.com/blog/claude-for-small-business-setup-partner.html)
+- [Claude Sonnet 5.5 vs Opus 5.5: Which Model to Use for What, and What It Costs](https://www.theendurancegroup.com/blog/claude-sonnet-5-5-vs-opus-5-5-which-model-to-use.html)
 - [How MCP Connects Claude to Custom Applications, Proprietary Data, and Legacy Systems](https://www.theendurancegroup.com/blog/mcp-business-systems.html)
 - [Merriam-Webster Just Added 1,400 New Words. Here's What the AI Ones Actually Mean.](https://www.theendurancegroup.com/blog/merriam-webster-ai-words.html)
 - [Claude Opus 5 Feels Combative? Here's What's Actually Going On](https://www.theendurancegroup.com/blog/claude-opus-5-pushback-tone.html)

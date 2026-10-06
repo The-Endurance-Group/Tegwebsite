@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-10-06",
+    "title": "Claude for Small Business: What It Does, and Where a Partner Still Helps With Setup",
+    "slug": "claude-for-small-business-setup-partner",
+    "url": "https://www.theendurancegroup.com/blog/claude-for-small-business-setup-partner.html",
+    "path": "manual-conor-news",
+    "angle_summary": "Claude for Small Business expanded to 43 workflows and 27 integrations on Sept 15, 2026. Angle: what it does for owners and where a partner adds value in setup.",
+    "deploy_verified": false,
+    "related_post_updated": "you-already-have-claude-now-what.html"
+  },
+  {
+    "date": "2026-10-06",
+    "title": "Claude Sonnet 5.5 vs Opus 5.5: Which Model to Use for What, and What It Costs",
+    "slug": "claude-sonnet-5-5-vs-opus-5-5-which-model-to-use",
+    "url": "https://www.theendurancegroup.com/blog/claude-sonnet-5-5-vs-opus-5-5-which-model-to-use.html",
+    "path": "manual-conor-news",
+    "angle_summary": "Opus 5.5 (Sept 22) and Sonnet 5.5 (Sept 28). Angle: which model for which business task and the cost-per-task trade-off.",
+    "deploy_verified": false,
+    "related_post_updated": "claude-fable-5-1-business-automations.html"
+  },
+  {
     "date": "2026-09-30",
     "title": "Free Claude Training for Our Coworking Neighbors in Portland, Maine",
     "slug": "free-claude-training-cloudport-coworking-maine",
