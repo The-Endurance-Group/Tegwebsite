@@ -29,8 +29,8 @@
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
 - [How to Schedule a Task in ChatGPT (and Why You Should)](https://www.theendurancegroup.com/blog/how-to-schedule-a-task-in-chatgpt.html)
-- [What Is a ChatGPT Skill? Why It Matters and How to Make One](https://www.theendurancegroup.com/blog/how-to-create-a-chatgpt-skill.html)
-- [ChatGPT Connectors and Plugins: How to Connect Gmail and What You Can Do With It](https://www.theendurancegroup.com/blog/chatgpt-connectors-gmail-how-to-connect.html)
+- [What Is a ChatGPT Skill and How to Make One](https://www.theendurancegroup.com/blog/how-to-create-a-chatgpt-skill.html)
+- [How to Connect Gmail to ChatGPT (Connectors Explained)](https://www.theendurancegroup.com/blog/chatgpt-connectors-gmail-how-to-connect.html)
 - [What Is a ChatGPT Project? How to Make One](https://www.theendurancegroup.com/blog/what-is-a-chatgpt-project.html)
 - [How to Use ChatGPT: A Quick Tour for Beginners](https://www.theendurancegroup.com/blog/how-to-use-chatgpt-beginners-tour.html)
 - [Claude for Small Business: What It Does, and Where a Partner Still Helps With Setup](https://www.theendurancegroup.com/blog/claude-for-small-business-setup-partner.html)
