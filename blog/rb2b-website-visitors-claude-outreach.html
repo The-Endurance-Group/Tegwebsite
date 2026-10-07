@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How we turn RB2B website visitors into outreach with Claude | TEG</title>
-  <meta name="description" content="How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, Skylead and Gmail. The workflow, the rules, and a first real run.">
+  <meta name="description" content="How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, LinkedIn automation and Gmail. The workflow, the rules, and a first real run.">
   <link rel="canonical" href="https://www.theendurancegroup.com/blog/rb2b-website-visitors-claude-outreach.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
   <meta property="og:title" content="How we turn RB2B website visitors into outreach with Claude | The Endurance Group">
-  <meta property="og:description" content="How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, Skylead and Gmail. The workflow, the rules, and a first real run.">
+  <meta property="og:description" content="How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, LinkedIn automation and Gmail. The workflow, the rules, and a first real run.">
   <meta property="og:url" content="https://www.theendurancegroup.com/blog/rb2b-website-visitors-claude-outreach.html">
   <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
   <meta name="author" content="Conor Sullivan">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="How we turn RB2B website visitors into outreach with Claude | The Endurance Group">
-  <meta name="twitter:description" content="How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, Skylead and Gmail. The workflow, the rules, and a first real run.">
+  <meta name="twitter:description" content="How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, LinkedIn automation and Gmail. The workflow, the rules, and a first real run.">
   <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +69,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "How we turn RB2B website visitors into outreach with Claude",
-  "description": "How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, Skylead and Gmail. The workflow, the rules, and a first real run.",
+  "description": "How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, LinkedIn automation and Gmail. The workflow, the rules, and a first real run.",
   "image": "https://www.theendurancegroup.com/images/og-default.png",
   "datePublished": "2026-10-07",
   "dateModified": "2026-10-07",
@@ -102,7 +102,7 @@
       "name": "Can Claude work with RB2B?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. RB2B posts each identified visitor to Slack, and you can paste that alert into Claude. A Claude skill then checks HubSpot, Skylead and Gmail for existing contact, finds one decision maker in Apollo if the company is new, and prepares an email draft, a paused LinkedIn sequence and a follow-up task for you to approve."
+        "text": "Yes. RB2B posts each identified visitor to Slack, and you can paste that alert into Claude. A Claude skill then checks HubSpot, our proprietary LinkedIn automation system and Gmail for existing contact, finds one decision maker in Apollo if the company is new, and prepares an email draft, a paused LinkedIn sequence and a follow-up task for you to approve."
       }
     },
     {
@@ -196,7 +196,7 @@
 
           <div class="example-callout">
             <h2>How do you turn an RB2B alert into outreach with Claude?</h2>
-            <p>You paste each RB2B alert into a Claude skill that does the research a salesperson would do by hand. It checks HubSpot, Skylead and Gmail for any past contact, finds one decision maker in Apollo if the company is new, then prepares an email draft, a paused LinkedIn sequence and a follow-up task. Nothing is sent until a person approves it.</p>
+            <p>You paste each RB2B alert into a Claude skill that does the research a salesperson would do by hand. It checks HubSpot, our proprietary LinkedIn automation system and Gmail for any past contact, finds one decision maker in Apollo if the company is new, then prepares an email draft, a paused LinkedIn sequence and a follow-up task. Nothing is sent until a person approves it.</p>
           </div>
 
           <p>Most of what we sell is the idea that a small team with Claude can do the work of a bigger one, so when we wanted more leads we tried to prove it on ourselves. We installed RB2B on theendurancegroup.com, and it tells us which companies, and sometimes which people, land on our site. That part is easy. The hard part is what happens next, which we covered for a client in <a href="website-visitor-to-crm-automation.html">From Anonymous Website Visitor to Assigned CRM Lead</a>. A visitor tool that nobody acts on is just a feed that gets ignored.</p>
@@ -205,7 +205,7 @@
 
           <p>RB2B sends each visitor to a Slack channel. It looks great for about a day. Then every alert becomes a small chore: do we already know them, is anyone already talking to them, who there should we contact, and what do we even say?</p>
 
-          <p>Answering those questions by hand means opening HubSpot, Skylead, Gmail and Apollo for every company. On a small team, that is the kind of chore that lets most alerts get a glance and nothing more.</p>
+          <p>Answering those questions by hand means opening HubSpot, our proprietary LinkedIn automation system, Gmail and Apollo for every company. On a small team, that is the kind of chore that lets most alerts get a glance and nothing more.</p>
 
           <h2>How does Claude turn an RB2B alert into outreach?</h2>
 
@@ -213,14 +213,14 @@
 
           <ol>
             <li><strong>Paste the alert.</strong> The RB2B Slack notification goes into Claude.</li>
-            <li><strong>Run three read-only checks.</strong> Claude searches HubSpot, our Skylead campaigns and Gmail for any past contact with that company.</li>
+            <li><strong>Run three read-only checks.</strong> Claude searches HubSpot, our proprietary LinkedIn automation system and Gmail for any past contact with that company.</li>
             <li><strong>Stop if there is prior contact.</strong> If we have ever emailed, met with or messaged anyone there, Claude tells us what it found and waits.</li>
             <li><strong>Find one decision maker.</strong> Only if the company is new does it spend an Apollo credit, on one person. For a small organization that is usually the CEO, president or executive director. For a bigger one it is operations, technology or innovation.</li>
-            <li><strong>Prepare four things for approval.</strong> A HubSpot contact, a Gmail draft, a paused Skylead LinkedIn lead with the invite and both follow-ups filled in, and a HubSpot task to follow up in two days.</li>
+            <li><strong>Prepare four things for approval.</strong> A HubSpot contact, a Gmail draft, a paused lead in our proprietary LinkedIn automation system with the invite and both follow-ups filled in, and a HubSpot task to follow up in two days.</li>
           </ol>
 
           <figure style="margin:32px 0;">
-            <img src="../images/rb2b-lead-workflow.png" alt="Flowchart of the RB2B lead workflow: an RB2B alert is pasted into Claude, which checks HubSpot, Skylead and Gmail. If there is prior contact it stops and asks. If not, Apollo finds one decision maker, then a HubSpot contact, Gmail draft, paused Skylead lead and 2-day follow-up task are created for approval." style="max-width:100%; height:auto;" width="1344" height="1096" loading="lazy">
+            <img src="../images/rb2b-lead-workflow.png" alt="Flowchart of the RB2B lead workflow: an RB2B alert is pasted into Claude, which checks HubSpot, our proprietary LinkedIn automation system and Gmail. If there is prior contact it stops and asks. If not, Apollo finds one decision maker, then a HubSpot contact, Gmail draft, paused lead in our proprietary LinkedIn automation system and 2-day follow-up task are created for approval." style="max-width:100%; height:auto;" width="1344" height="1096" loading="lazy">
             <figcaption style="font-size:0.9em; opacity:0.75; margin-top:8px;">Every lead passes three read-only checks before any credit is spent.</figcaption>
           </figure>
 
@@ -241,7 +241,7 @@
 
           <p>Our first test was a small public-sector organization that RB2B flagged as a visitor from an information technology organization. We had no idea who it was.</p>
 
-          <p>Claude checked HubSpot and found nothing. It then checked all 12 of our Skylead campaigns and found nothing there either. Then a Gmail search turned up something the first two had missed: we had cold emailed someone there in 2024 and never heard back.</p>
+          <p>Claude checked HubSpot and found nothing. It then checked all 12 of our LinkedIn campaigns and found nothing there either. Then a Gmail search turned up something the first two had missed: we had cold emailed someone there in 2024 and never heard back.</p>
 
           <p>That is exactly the kind of mistake that makes outreach feel sloppy, and it is why the skill now searches Gmail before it spends anything. We updated it on the spot. Because the old email was long gone and unanswered, I chose to continue with a fresh angle.</p>
 
@@ -269,7 +269,7 @@
 
           <h2>Frequently asked questions</h2>
           <h3>Can Claude work with RB2B?</h3>
-          <p>Yes. RB2B posts each identified visitor to Slack, and you can paste that alert into Claude. A Claude skill then checks HubSpot, Skylead and Gmail for existing contact, finds one decision maker in Apollo if the company is new, and prepares an email draft, a paused LinkedIn sequence and a follow-up task for you to approve.</p>
+          <p>Yes. RB2B posts each identified visitor to Slack, and you can paste that alert into Claude. A Claude skill then checks HubSpot, our proprietary LinkedIn automation system and Gmail for existing contact, finds one decision maker in Apollo if the company is new, and prepares an email draft, a paused LinkedIn sequence and a follow-up task for you to approve.</p>
 
           <h3>Does RB2B have an MCP server?</h3>
           <p>RB2B has an MCP for its API, but it is tied to a separate API partner program, so we did not rely on it. Pasting the Slack alert into Claude works fine and keeps the workflow simple.</p>
