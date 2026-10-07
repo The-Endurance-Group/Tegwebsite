@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How we turn RB2B website visitors into outreach with Claude | The Endurance Group</title>
+  <meta name="description" content="How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, Skylead and Gmail. The workflow, the rules, and a first real run.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/rb2b-website-visitors-claude-outreach.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="How we turn RB2B website visitors into outreach with Claude | The Endurance Group">
+  <meta property="og:description" content="How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, Skylead and Gmail. The workflow, the rules, and a first real run.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/rb2b-website-visitors-claude-outreach.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/conor-sullivan.html">
+  <meta property="article:published_time" content="2026-10-07T09:00:00-04:00">
+  <meta name="author" content="Conor Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How we turn RB2B website visitors into outreach with Claude | The Endurance Group">
+  <meta name="twitter:description" content="How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, Skylead and Gmail. The workflow, the rules, and a first real run.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation partner for B2B companies in real estate, technology, and professional services.",
+    "foundingDate": "1998",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How we turn RB2B website visitors into outreach with Claude",
+  "description": "How TEG turns RB2B alerts into reviewed outreach with Claude, HubSpot, Apollo, Skylead and Gmail. The workflow, the rules, and a first real run.",
+  "image": "https://www.theendurancegroup.com/images/og-default.png",
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "author": {
+    "@type": "Person",
+    "name": "Conor Sullivan",
+    "jobTitle": "Vice President"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Endurance Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.theendurancegroup.com/images/og-default.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://theendurancegroup.com/blog/rb2b-website-visitors-claude-outreach.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Claude work with RB2B?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. RB2B posts each identified visitor to Slack, and you can paste that alert into Claude. A Claude skill then checks HubSpot, Skylead and Gmail for existing contact, finds one decision maker in Apollo if the company is new, and prepares an email draft, a paused LinkedIn sequence and a follow-up task for you to approve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does RB2B have an MCP server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RB2B has an MCP for its API, but it is tied to a separate API partner program, so we did not rely on it. Pasting the Slack alert into Claude works fine and keeps the workflow simple."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many website visitors does RB2B identify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not most of them. RB2B only identifies US visitors, visitors on a VPN are missed, and its own plan pages list identification rates well under half of traffic. Check RB2B's pricing page for current plans and limits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Claude send the outreach automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. In our workflow Gmail only receives a draft, LinkedIn leads are added paused, and a person reads and approves every message before anything reaches the prospect."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">AI Automations</span>
+        <h1>How we turn RB2B website visitors into outreach with Claude</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Vice President</span>
+          <span class="divider">·</span>
+          <span>October 7, 2026</span>
+        </div>
+        <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p>Short answer: you paste each RB2B alert into a Claude skill, and it does the research a salesperson would do by hand. It checks HubSpot, Skylead and Gmail for any past contact, finds one decision maker in Apollo if the company is new, then prepares an email draft, a paused LinkedIn sequence and a follow-up task. Nothing is sent until a person approves it.</p>
+
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We build Claude Skills, Projects, and MCP integrations for B2B ops teams. <a href="../solutions.html">See our full Claude services.</a></em></p>
+
+          <p>Most of what we sell is the idea that a small team with Claude can do the work of a bigger one, so when we wanted more leads we tried to prove it on ourselves. We installed RB2B on theendurancegroup.com, and it tells us which companies, and sometimes which people, land on our site. That part is easy. The hard part is what happens next, which we covered for a client in <a href="website-visitor-to-crm-automation.html">From Anonymous Website Visitor to Assigned CRM Lead</a>. A visitor tool that nobody acts on is just a feed that gets ignored.</p>
+
+          <h2>Why is an RB2B alert not a lead yet?</h2>
+
+          <p>RB2B sends each visitor to a Slack channel. It looks great for about a day. Then every alert becomes a small chore: do we already know them, is anyone already talking to them, who there should we contact, and what do we even say?</p>
+
+          <p>Answering those questions by hand means opening HubSpot, Skylead, Gmail and Apollo for every company. On a small team, that is the kind of chore that lets most alerts get a glance and nothing more.</p>
+
+          <h2>How does Claude turn an RB2B alert into outreach?</h2>
+
+          <p>We built one Claude skill that runs the whole sequence, wired to the tools we already use. Here is the path every lead follows:</p>
+
+          <ol>
+            <li><strong>Paste the alert.</strong> The RB2B Slack notification goes into Claude.</li>
+            <li><strong>Run three read-only checks.</strong> Claude searches HubSpot, our Skylead campaigns and Gmail for any past contact with that company.</li>
+            <li><strong>Stop if there is prior contact.</strong> If we have ever emailed, met with or messaged anyone there, Claude tells us what it found and waits.</li>
+            <li><strong>Find one decision maker.</strong> Only if the company is new does it spend an Apollo credit, on one person. For a small organization that is usually the CEO, president or executive director. For a bigger one it is operations, technology or innovation.</li>
+            <li><strong>Prepare four things for approval.</strong> A HubSpot contact, a Gmail draft, a paused Skylead LinkedIn lead with the invite and both follow-ups filled in, and a HubSpot task to follow up in two days.</li>
+          </ol>
+
+          <figure style="margin:32px 0;">
+            <img src="../images/rb2b-lead-workflow.png" alt="Flowchart of the RB2B lead workflow: an RB2B alert is pasted into Claude, which checks HubSpot, Skylead and Gmail. If there is prior contact it stops and asks. If not, Apollo finds one decision maker, then a HubSpot contact, Gmail draft, paused Skylead lead and 2-day follow-up task are created for approval." style="max-width:100%; height:auto;" width="1344" height="1096" loading="lazy">
+            <figcaption style="font-size:0.9em; opacity:0.75; margin-top:8px;">Every lead passes three read-only checks before any credit is spent.</figcaption>
+          </figure>
+
+          <h2>What rules does the skill follow?</h2>
+
+          <p>We are an AI partner, so we hold ourselves to the standard we would set for a client. The skill has a short list of rules it cannot break:</p>
+
+          <ul>
+            <li>It never sends an email. Gmail gets a draft, and a person reads it first.</li>
+            <li>LinkedIn leads are added paused. Nothing reaches anyone until it is unpaused.</li>
+            <li>It never mentions the website visit. Every message is about something relevant to the person's organization, so the outreach does not feel like surveillance.</li>
+            <li>It contacts one person per company, never a whole team.</li>
+            <li>It does not invent facts, clients or results.</li>
+            <li>It checks before it spends, so credits are never used on someone we already know.</li>
+          </ul>
+
+          <h2>What happened on the first real run?</h2>
+
+          <p>Our first test was a small public-sector organization that RB2B flagged as a visitor from an information technology organization. We had no idea who it was.</p>
+
+          <p>Claude checked HubSpot and found nothing. It then checked all 12 of our Skylead campaigns and found nothing there either. Then a Gmail search turned up something the first two had missed: we had cold emailed someone there in 2024 and never heard back.</p>
+
+          <p>That is exactly the kind of mistake that makes outreach feel sloppy, and it is why the skill now searches Gmail before it spends anything. We updated it on the spot. Because the old email was long gone and unanswered, I chose to continue with a fresh angle.</p>
+
+          <p>Claude picked the organization's president as the decision maker, since for a small team that is the CEO equivalent. It found an email address and LinkedIn profile, created the HubSpot records, wrote the draft, loaded the LinkedIn sequence and set the follow-up task. I reviewed the messages and then unpaused the LinkedIn lead. My part was reading drafts and approving them, not switching between four tabs.</p>
+
+          <h2>What are RB2B's limits?</h2>
+
+          <ul>
+            <li>RB2B only identifies US visitors, and visitors on a VPN are missed.</li>
+            <li>Most visitors stay anonymous. RB2B's own plan pages list identification rates well under half of traffic.</li>
+            <li>The free plan identifies visitors at the company level only and sends them to Slack. That was enough for us to build the whole workflow before paying for anything. Check <a href="https://www.rb2b.com/pricing" target="_blank" rel="noopener">RB2B's pricing page</a> for current plans.</li>
+            <li>RB2B has an MCP for its API, but it is tied to a separate API partner program. We did not rely on it, and pasting the Slack alert into Claude works fine.</li>
+            <li>Apollo charges credits to reveal an email address. That is why the skill looks up one person per company and nothing more.</li>
+          </ul>
+
+          <h2>What do we still not know?</h2>
+
+          <p>This is early, and we want to be straight about it. One run does not prove a pipeline. We have not yet measured how many of these conversations turn into booked calls, and we will share the numbers once we have enough of them to mean something.</p>
+
+          <h2>How can you build something similar?</h2>
+
+          <p>The point is not RB2B, and it is not any single tool. The slow part of lead generation is the research between the alert and the first message, and that research is exactly what Claude is good at. Take the steps your best salesperson already follows, write them down as a skill, and let Claude run them while you keep the final say. If you are weighing which tools to connect, start with our guide to the <a href="best-mcp-servers-for-sales.html">best MCP servers for B2B sales and CRM teams</a>.</p>
+
+          <p>Start small, the same way we did. Pick one source of leads, one set of checks and one kind of message, and keep everything in draft until you trust it. If you would like help building something like this for your own business, start with our free AI Value Assessment. We will look at where your team spends its time and show you where Claude can take some of it back.</p>
+
+          <h2>Frequently asked questions</h2>
+          <h3>Can Claude work with RB2B?</h3>
+          <p>Yes. RB2B posts each identified visitor to Slack, and you can paste that alert into Claude. A Claude skill then checks HubSpot, Skylead and Gmail for existing contact, finds one decision maker in Apollo if the company is new, and prepares an email draft, a paused LinkedIn sequence and a follow-up task for you to approve.</p>
+
+          <h3>Does RB2B have an MCP server?</h3>
+          <p>RB2B has an MCP for its API, but it is tied to a separate API partner program, so we did not rely on it. Pasting the Slack alert into Claude works fine and keeps the workflow simple.</p>
+
+          <h3>How many website visitors does RB2B identify?</h3>
+          <p>Not most of them. RB2B only identifies US visitors, visitors on a VPN are missed, and its own plan pages list identification rates well under half of traffic. Check RB2B's pricing page for current plans and limits.</p>
+
+          <h3>Does Claude send the outreach automatically?</h3>
+          <p>No. In our workflow Gmail only receives a draft, LinkedIn leads are added paused, and a person reads and approves every message before anything reaches the prospect.</p>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="../free-training.html">Get a Free Team Training</a>
+            <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">Case Study</span>
+            <h3><a href="website-visitor-to-crm-automation.html">From Anonymous Website Visitor to Assigned CRM Lead</a></h3>
+            <p>How we turned an ignored visitor spreadsheet into a filtered CRM feed for a client.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="best-mcp-servers-for-sales.html">The best MCP servers for B2B sales and CRM teams</a></h3>
+            <p>Which MCP servers actually connect Claude to the sales tools your team already uses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <p class="footer-tagline">Your Claude Implementation Partner</p>
+        <p class="footer-address">Portland, ME &middot; (207) 846-6000</p>
+      </div>
+      <div class="footer-columns">
+        <nav aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="../claude-setup.html">Claude Initial Setup</a></li>
+            <li><a href="../claude.html">Skills &amp; MCPs</a></li>
+            <li><a href="../solutions.html">Training &amp; Maintenance</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Products">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="https://commonality.theendurancegroup.com" target="_blank" rel="noopener">Commonality</a></li>
+            <li><a href="https://coachonix.com" target="_blank" rel="noopener">Coachonix</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Specialties">
+          <h3>Specialties</h3>
+          <ul>
+            <li><a href="../specialties.html#sales-and-marketing">Functional Specialties</a></li>
+            <li><a href="../specialties.html#real-estate">Real Estate</a></li>
+            <li><a href="../specialties.html#b2b-technology">B2B Technology</a></li>
+            <li><a href="../specialties.html#professional-services">Professional Services</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../how-to-get-started.html">Get Started</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../ideas.html">Ideas</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+            <li><a href="../free-training.html">Free Training Session</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

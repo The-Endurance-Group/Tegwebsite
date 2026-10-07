@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-07",
+    "title": "How we turn RB2B website visitors into outreach with Claude",
+    "slug": "rb2b-website-visitors-claude-outreach",
+    "url": "https://theendurancegroup.com/blog/rb2b-website-visitors-claude-outreach.html",
+    "path": "manual-edit",
+    "angle_summary": "Converted Conor's RB2B draft into a TEG post: Claude skill that checks HubSpot, Skylead and Gmail, finds one decision maker in Apollo, and prepares draft outreach for approval. Includes workflow diagram, rules, first real run, RB2B limits.",
+    "deploy_verified": false,
+    "related_post_updated": "website-visitor-to-crm-automation.html"
+  },
+  {
     "date": "2026-09-03",
     "title": "Does Claude Remember Your Conversations Now? What B2B Teams Need to Know",
     "slug": "claude-memory-update-b2b-teams",
