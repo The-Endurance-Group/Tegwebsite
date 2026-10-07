@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What MCP Servers Are and What They Mean for Your Business | The Endurance Group</title>
-  <meta name="description" content="MCP (Model Context Protocol) lets Claude connect directly to your tools. TEG, an Anthropic Claude Partner, explains what MCP servers are and how to use them for B2B.">
+  <title>What MCP Servers Are and What They Mean for Your Business | TEG</title>
+  <meta name="description" content="MCP (Model Context Protocol) lets Claude connect directly to your tools. TEG, an Anthropic Claude Partner, explains MCP servers for B2B teams.">
   <link rel="canonical" href="https://www.theendurancegroup.com/blog/mcp-servers-for-business.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
-  <meta property="og:title" content="What MCP Servers Are and What They Mean for Your Business | The Endurance Group">
-  <meta property="og:description" content="MCP (Model Context Protocol) lets Claude connect directly to your tools. TEG, an Anthropic Claude Partner, explains what MCP servers are and how to use them for B2B.">
+  <meta property="og:title" content="What MCP Servers Are and What They Mean for Your Business | TEG">
+  <meta property="og:description" content="MCP (Model Context Protocol) lets Claude connect directly to your tools. TEG, an Anthropic Claude Partner, explains MCP servers for B2B teams.">
   <meta property="og:url" content="https://www.theendurancegroup.com/blog/mcp-servers-for-business.html">
   <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -19,26 +19,25 @@
   <meta property="article:published_time" content="2026-07-03T09:00:00-04:00">
   <meta name="author" content="Conor Sullivan">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="What MCP Servers Are and What They Mean for Your Business | The Endurance Group">
-  <meta name="twitter:description" content="MCP (Model Context Protocol) lets Claude connect directly to your tools. TEG, an Anthropic Claude Partner, explains what MCP servers are and how to use them for B2B.">
+  <meta name="twitter:title" content="What MCP Servers Are and What They Mean for Your Business | TEG">
+  <meta name="twitter:description" content="MCP (Model Context Protocol) lets Claude connect directly to your tools. TEG, an Anthropic Claude Partner, explains MCP servers for B2B teams.">
   <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../images/favicon-network.png">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css?v=20261003-free-offerings">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "The Endurance Group",
     "alternateName": "TEG",
-    "url": "https://theendurancegroup.com/",
+    "url": "https://www.theendurancegroup.com/",
     "logo": "https://www.theendurancegroup.com/images/og-default.png",
     "image": "https://www.theendurancegroup.com/images/og-default.png",
-    "description": "AI automation and strategy for B2B companies in real estate, technology, and professional services.",
-    "foundingDate": "1998",
-    "priceRange": "$750-$5500",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "16 Middle St, 2nd Floor",
@@ -83,65 +82,59 @@
       "name": "The Endurance Group",
       "logo": { "@type": "ImageObject", "url": "https://www.theendurancegroup.com/images/og-default.png" }
     },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://theendurancegroup.com/blog/mcp-servers-for-business.html" }
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.theendurancegroup.com/blog/mcp-servers-for-business.html" }
   }
   </script>
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is MCP (Model Context Protocol)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "MCP stands for Model Context Protocol. It's a standard that lets AI assistants like Claude connect to external tools and take actions inside them — without requiring a custom integration for each tool. It's a standardized protocol so any tool that implements MCP can talk to any AI model that supports it using the same standard."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need to run my own MCP server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. Many tools already have MCP support built in or as an add-on. When they don't, we can build a lightweight server that connects them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this the same as a plugin or API integration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. MCP is a protocol, a standardized way for AI models to talk to external systems in real time. Plugins were platform-specific and fragmented. MCP is designed to work across models and tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI tools support MCP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Claude and GitHub Copilot have the most mature MCP support right now. OpenAI and others are following."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I get an MCP server set up for my business?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TEG, an official Anthropic Claude Partner, builds and configures MCP servers for B2B teams. We check whether an existing MCP server covers your tool first. If one exists, we configure it. If not, we build a lightweight custom server. The setup is included in our Claude Skills and MCPs service, starting at $750."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need to run my own MCP server?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not necessarily. Many tools already have MCP support built in or as an add-on. When they don't, we can build a lightweight server that connects them."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this the same as a plugin or API integration?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. MCP is a protocol, a standardized way for AI models to talk to external systems in real time. Plugins were platform-specific and fragmented. MCP is designed to work across models and tools."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which AI tools support MCP?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Claude and GitHub Copilot have the most mature MCP support right now. OpenAI and others are following."
-      }
-    }
-  ]
-}
+    ]
+  }
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
   </script>
 </head>
-<body>
+<body class="blog-post">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- SHARED HEADER: keep in sync across all pages -->
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="../index.html"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -150,12 +143,11 @@
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="../about.html">About</a></li>
-          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../how-we-work.html">How We Work</a></li>
           <li><a href="../specialties.html">Specialties</a></li>
           <li><a href="../ideas.html">Ideas</a></li>          <li><a href="../success.html">Success</a></li>
           <li><a href="../blog.html" aria-current="page">Blog</a></li>
           <li><a href="../contact.html">Contact</a></li>
-          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
         </ul>
       </nav>
     </div>
@@ -185,7 +177,7 @@
       <div class="container">
         <div class="prose">
           <p>MCP stands for Model Context Protocol. It's a standard that lets AI assistants connect to external tools and take actions inside them, without requiring a custom integration for each one. If you've been watching the AI space and wondering why everyone is suddenly talking about MCP servers, this is the explanation.</p>
-          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We build and configure <a href="../project-based.html#skills-mcps">MCP servers and Claude Skills</a> for B2B teams. Claude has the most mature MCP support of any AI platform right now.</em></p>
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We build and configure <a href="../how-we-work.html">MCP servers and Claude Skills</a> for teams seeking measurable value. Claude has the most mature MCP support of any AI platform right now.</em></p>
 
           <h2>What problem does MCP solve?</h2>
           <p>Every business tool has its own API. Connecting an AI model to your CRM, your calendar, your email, and your project management system used to mean building a separate integration for each one, different authentication, different data formats, different endpoints. That's engineering work, and most companies don't have the capacity to do it at the pace AI tools are moving.</p>
@@ -212,7 +204,7 @@
           <p>Claude and GitHub Copilot have the most mature MCP support right now. OpenAI and others are following.</p>
 
           <div class="btn-group">
-            <a class="btn btn-primary" href="../how-to-get-started.html">Claim Your Free Automation</a>
+            <a class="btn btn-primary" href="../book-value-assessment.html">Start Your Free AI Value Assessment</a>
             <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>
           </div>
         </div>
@@ -247,16 +239,29 @@
     <div class="container">
       <div class="footer-top">
         <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
-        <p class="footer-tagline">Your Claude Implementation Partner</p>
+        <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="../images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
         <p class="footer-address">Portland, ME &middot; (207) 846-6000</p>
       </div>
       <div class="footer-columns">
         <nav aria-label="Solutions">
           <h3>Solutions</h3>
           <ul>
+            <li><a href="../how-we-work.html">How We Work</a></li>
+            <li><a href="../sample-ai-value-assessment.html">Sample AI Value Report</a></li>
             <li><a href="../claude-setup.html">Claude Initial Setup</a></li>
             <li><a href="../claude.html">Skills &amp; MCPs</a></li>
+            <li><a href="../managed-claude.html">Managed Claude</a></li>
             <li><a href="../solutions.html">Training &amp; Maintenance</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Free Offerings">
+          <h3>Free Offerings</h3>
+          <ul>
+            <li><a href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="../ai-policy.html">AI Policy Draft</a></li>
+            <li><a href="../free-training.html">Free Training</a></li>
+            <li><a href="../claude-plugins.html">Claude Plugins</a></li>
           </ul>
         </nav>
         <nav aria-label="Products">
@@ -278,13 +283,11 @@
         <nav aria-label="Company">
           <h3>Company</h3>
           <ul>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../how-to-get-started.html">Get Started</a></li>            <li><a href="../success.html">Success</a></li>
+            <li><a href="../about.html">About</a></li>            <li><a href="../success.html">Success</a></li>
             <li><a href="../blog.html">Blog</a></li>
             <li><a href="../contact.html">Contact</a></li>
             <li><a href="../ideas.html">Ideas</a></li>
             <li><a href="../fellowship.html">Fellowship</a></li>
-            <li><a href="../free-training.html">Free Training Session</a></li>
           </ul>
         </nav>
       </div>
@@ -302,6 +305,6 @@
   </footer>
   <!-- END SHARED FOOTER -->
 
-  <script src="../js/main.js" defer></script>
+  <script src="../js/main.js?v=20260930" defer></script>
 </body>
 </html>

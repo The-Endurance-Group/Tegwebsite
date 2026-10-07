@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Claude and ChatGPT Connectors: Give AI the Right Context Without Copy-Pasting | The Endurance Group</title>
-  <meta name="description" content="Claude integrations give AI live access to your real data. TEG, an Anthropic Claude Partner, explains how Claude connectors work and when to use them vs. full MCP automations.">
+  <title>Claude and ChatGPT Connectors: Skip the Copy-Pasting | TEG</title>
+  <meta name="description" content="Claude connectors give AI live access to your real data. TEG, an Anthropic Claude Partner, explains how they work and when to use MCP instead.">
   <link rel="canonical" href="https://www.theendurancegroup.com/blog/claude-chatgpt-connectors.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
-  <meta property="og:title" content="Claude and ChatGPT Connectors: Give AI the Right Context Without Copy-Pasting | The Endurance Group">
-  <meta property="og:description" content="Claude integrations give AI live access to your real data. TEG, an Anthropic Claude Partner, explains how Claude connectors work and when to use them vs. full MCP automations.">
+  <meta property="og:title" content="Claude and ChatGPT Connectors: Skip the Copy-Pasting | TEG">
+  <meta property="og:description" content="Claude connectors give AI live access to your real data. TEG, an Anthropic Claude Partner, explains how they work and when to use MCP instead.">
   <meta property="og:url" content="https://www.theendurancegroup.com/blog/claude-chatgpt-connectors.html">
   <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -19,25 +19,25 @@
   <meta property="article:published_time" content="2026-06-30T09:00:00-04:00">
   <meta name="author" content="Conor Sullivan">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Claude and ChatGPT Connectors: Give AI the Right Context Without Copy-Pasting | The Endurance Group">
-  <meta name="twitter:description" content="Claude integrations give AI live access to your real data. TEG, an Anthropic Claude Partner, explains how Claude connectors work and when to use them vs. full MCP automations.">
+  <meta name="twitter:title" content="Claude and ChatGPT Connectors: Skip the Copy-Pasting | TEG">
+  <meta name="twitter:description" content="Claude connectors give AI live access to your real data. TEG, an Anthropic Claude Partner, explains how they work and when to use MCP instead.">
   <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../images/favicon-network.png">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css?v=20261003-free-offerings">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "The Endurance Group",
     "alternateName": "TEG",
-    "url": "https://theendurancegroup.com/",
+    "url": "https://www.theendurancegroup.com/",
     "logo": "https://www.theendurancegroup.com/images/og-default.png",
     "image": "https://www.theendurancegroup.com/images/og-default.png",
-    "description": "AI automation and strategy for B2B companies in real estate, technology, and professional services.",
-    "foundingDate": "1998",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "16 Middle St, 2nd Floor",
@@ -82,65 +82,59 @@
       "name": "The Endurance Group",
       "logo": { "@type": "ImageObject", "url": "https://www.theendurancegroup.com/images/og-default.png" }
     },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://theendurancegroup.com/blog/claude-chatgpt-connectors.html" }
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.theendurancegroup.com/blog/claude-chatgpt-connectors.html" }
   }
   </script>
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What are Claude integrations (connectors)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Claude integrations (called 'Integrations' in claude.ai settings) are authorizations you grant inside Claude that let it read from external sources like Google Drive, HubSpot, Jira, GitHub, Confluence, Dropbox, Linear, Sentry, and Asana. Once authorized, Claude can search and reference those sources mid-conversation without you pasting anything in. Available on Claude Pro, Team, and Enterprise plans."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do connectors replace a full automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Connectors are a read layer, they give the AI context so it can answer better. A full automation handles multi-step workflows, writes data back to systems, and runs without a person starting each conversation. Most clients end up using both."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Claude and ChatGPT connectors work with each other's apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, each platform's connectors only work inside that platform. Claude's integrations live in claude.ai; ChatGPT's connectors live in ChatGPT. If your team uses both tools, you'd set up connectors in each one separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is connector access secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Connectors use OAuth, you authorize specific read access to specific apps, the same way you'd authorize any SaaS tool. The AI only sees what you've scoped to it, and you can revoke access at any time from your account settings."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between a Claude connector and an MCP server?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Connectors are user-level authorizations that let Claude read from specific sources during a conversation. MCP (Model Context Protocol) is the developer-level protocol underneath — it defines how AI models and external tools communicate. A connector may use MCP under the hood. TEG, as an Anthropic Claude Partner, configures both: connectors for quick read access, MCP servers for deeper or write-back integrations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do connectors replace a full automation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Connectors are a read layer, they give the AI context so it can answer better. A full automation handles multi-step workflows, writes data back to systems, and runs without a person starting each conversation. Most clients end up using both."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do Claude and ChatGPT connectors work with each other's apps?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No, each platform's connectors only work inside that platform. Claude's integrations live in claude.ai; ChatGPT's connectors live in ChatGPT. If your team uses both tools, you'd set up connectors in each one separately."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is connector access secure?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Connectors use OAuth, you authorize specific read access to specific apps, the same way you'd authorize any SaaS tool. The AI only sees what you've scoped to it, and you can revoke access at any time from your account settings."
-      }
-    }
-  ]
-}
+    ]
+  }
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
   </script>
 </head>
-<body>
+<body class="blog-post">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- SHARED HEADER: keep in sync across all pages -->
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="../index.html"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -149,12 +143,11 @@
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="../about.html">About</a></li>
-          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../how-we-work.html">How We Work</a></li>
           <li><a href="../specialties.html">Specialties</a></li>
           <li><a href="../ideas.html">Ideas</a></li>          <li><a href="../success.html">Success</a></li>
           <li><a href="../blog.html" aria-current="page">Blog</a></li>
           <li><a href="../contact.html">Contact</a></li>
-          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
         </ul>
       </nav>
     </div>
@@ -184,7 +177,7 @@
       <div class="container">
         <div class="prose">
           <p>The most common complaint I hear from teams that have tried AI: "It gives great answers, but it doesn't know anything about our business." That's usually a context problem, not a model problem. The AI is answering from general knowledge because nobody has given it access to your actual information. Claude and ChatGPT both have a native way to fix that, connectors, and most teams haven't turned them on yet.</p>
-          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We configure Claude integrations and <a href="../project-based.html#skills-mcps">build MCP servers</a> that connect Claude to your actual business systems — as part of a full <a href="../project-based.html#initial-setup">Claude initial setup</a> or as a standalone service.</em></p>
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We configure Claude integrations and <a href="../how-we-work.html">build MCP servers</a> that connect Claude to your actual business systems, as part of a <a href="../how-we-work.html">value-priced build and ongoing Claude relationship</a>.</em></p>
 
           <h2>What a connector actually is</h2>
           <p>A connector is an authorization you grant inside the AI platform that lets it read from a specific external source, your Google Drive, your HubSpot, your Jira board, your internal wiki. Once you authorize it, the AI can search and reference that source in the middle of a conversation without you having to paste anything in. You ask a question, the AI pulls the relevant context from where it actually lives, and it answers with that.</p>
@@ -211,7 +204,7 @@
           <p>Connectors use OAuth, you authorize specific read access to specific apps, the same way you'd authorize any SaaS tool. The AI only sees what you've scoped to it, and you can revoke access at any time from your account settings.</p>
 
           <div class="btn-group">
-            <a class="btn btn-primary" href="../how-to-get-started.html">Claim Your Free Automation</a>
+            <a class="btn btn-primary" href="../book-value-assessment.html">Start Your Free AI Value Assessment</a>
             <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>
           </div>
         </div>
@@ -251,16 +244,29 @@
     <div class="container">
       <div class="footer-top">
         <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
-        <p class="footer-tagline">Your Claude Implementation Partner</p>
+        <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="../images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
         <p class="footer-address">Portland, ME &middot; (207) 846-6000</p>
       </div>
       <div class="footer-columns">
         <nav aria-label="Solutions">
           <h3>Solutions</h3>
           <ul>
+            <li><a href="../how-we-work.html">How We Work</a></li>
+            <li><a href="../sample-ai-value-assessment.html">Sample AI Value Report</a></li>
             <li><a href="../claude-setup.html">Claude Initial Setup</a></li>
             <li><a href="../claude.html">Skills &amp; MCPs</a></li>
+            <li><a href="../managed-claude.html">Managed Claude</a></li>
             <li><a href="../solutions.html">Training &amp; Maintenance</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Free Offerings">
+          <h3>Free Offerings</h3>
+          <ul>
+            <li><a href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="../ai-policy.html">AI Policy Draft</a></li>
+            <li><a href="../free-training.html">Free Training</a></li>
+            <li><a href="../claude-plugins.html">Claude Plugins</a></li>
           </ul>
         </nav>
         <nav aria-label="Products">
@@ -282,13 +288,11 @@
         <nav aria-label="Company">
           <h3>Company</h3>
           <ul>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../how-to-get-started.html">Get Started</a></li>            <li><a href="../success.html">Success</a></li>
+            <li><a href="../about.html">About</a></li>            <li><a href="../success.html">Success</a></li>
             <li><a href="../blog.html">Blog</a></li>
             <li><a href="../contact.html">Contact</a></li>
             <li><a href="../ideas.html">Ideas</a></li>
             <li><a href="../fellowship.html">Fellowship</a></li>
-            <li><a href="../free-training.html">Free Training Session</a></li>
           </ul>
         </nav>
       </div>
@@ -306,6 +310,6 @@
   </footer>
   <!-- END SHARED FOOTER -->
 
-  <script src="../js/main.js" defer></script>
+  <script src="../js/main.js?v=20260930" defer></script>
 </body>
 </html>

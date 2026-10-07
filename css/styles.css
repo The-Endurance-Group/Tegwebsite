@@ -186,7 +186,9 @@ textarea:focus-visible {
   border-radius: var(--radius-sm);
   border: 2px solid transparent;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
 }
 .btn:hover { transform: translateY(-1px); }
 
@@ -323,7 +325,7 @@ textarea:focus-visible {
   border-bottom: none !important;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .nav-toggle { display: none; }
   .primary-nav {
     position: static;
@@ -377,7 +379,7 @@ textarea:focus-visible {
   .footer-columns { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 1024px) {
-  .footer-columns { grid-template-columns: repeat(4, 1fr); }
+  .footer-columns { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
 
 .footer-columns h3 {
@@ -426,9 +428,12 @@ textarea:focus-visible {
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 1024px) {
-  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  .footer-grid { grid-template-columns: minmax(0, 1.6fr) repeat(4, minmax(0, 1fr)); }
 }
 .footer-logo { height: 36px !important; width: auto !important; filter: brightness(0) invert(1); }
+.hero-partner-badge { float: right; height: 240px; width: auto; border-radius: 12px; margin: 8px 0 24px 40px; }
+@media (max-width: 900px) { .hero-partner-badge { float: none; display: block; height: 120px; margin: 0 0 24px; } }
+.footer-partner-badge { display: block; margin-top: 20px; height: 48px; width: auto; border-radius: 6px; }
 .footer-col h4 {
   font-size: 14px;
   text-transform: uppercase;
@@ -963,6 +968,11 @@ details[open] .faq-q::after { content: "−"; }
 
 /* compact quote grid ("more from our clients") */
 .quote-grid { margin-top: 0; }
+@media (min-width: 768px) {
+  /* Center a short last row instead of leaving it left-aligned */
+  .quote-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+  .quote-grid > .quote-card { flex: 0 1 calc((100% - 48px) / 3); }
+}
 .quote-card {
   background: var(--color-white);
   border: 1px solid var(--border-light);
@@ -981,9 +991,9 @@ details[open] .faq-q::after { content: "−"; }
 }
 .quote-card-logo {
   display: block;
-  height: 22px;
+  height: 56px;
   width: auto;
-  max-width: 140px;
+  max-width: 240px;
   object-fit: contain;
   margin-bottom: 12px;
 }
@@ -1015,11 +1025,11 @@ details[open] .faq-q::after { content: "−"; }
 .case-study-meta a:hover { text-decoration: underline; }
 .case-study-logo {
   display: block;
-  height: 28px;
+  height: 64px;
   width: auto;
-  max-width: 160px;
+  max-width: 220px;
   object-fit: contain;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .case-study-card p { margin-bottom: 16px; }
@@ -1171,6 +1181,15 @@ details[open] .faq-q::after { content: "−"; }
 .prose ol { list-style: decimal; }
 .prose li { margin-bottom: 8px; }
 .prose li::marker { color: var(--color-pink); font-weight: 700; }
+
+/* Blog posts: larger, more readable long-form text */
+.blog-post .prose { max-width: 940px; font-size: 21px; line-height: 1.7; }
+.blog-post .prose p { margin-bottom: 24px; }
+.blog-post .prose h2 { margin-top: 52px; margin-bottom: 18px; }
+.blog-post .prose h3 { font-size: 24px; }
+@media (max-width: 640px) {
+  .blog-post .prose { font-size: 18px; line-height: 1.7; }
+}
 
 /* ===== UTILITY ===== */
 .text-center { text-align: center; }
@@ -1595,7 +1614,7 @@ details[open] .faq-q::after { content: "−"; }
 }
 .ai-chat-send:hover { background: var(--color-pink-dark); }
 
-/* ===== BEFORE / AFTER BLOCK (how-to-get-started.html) ===== */
+/* ===== BEFORE / AFTER BLOCK (legacy process layouts) ===== */
 .before-after {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1646,7 +1665,7 @@ details[open] .faq-q::after { content: "−"; }
   .ba-col { padding: 28px 24px; }
 }
 
-/* ===== PROCESS TIMELINE (how-to-get-started.html) ===== */
+/* ===== PROCESS TIMELINE (legacy process layouts) ===== */
 .process-track {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1787,7 +1806,7 @@ details[open] .faq-q::after { content: "−"; }
   .step-num { margin-bottom: 6px; }
 }
 
-/* ===== STAT CHIPS (how-to-get-started.html) ===== */
+/* ===== STAT CHIPS (legacy process layouts) ===== */
 .stat-trio {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

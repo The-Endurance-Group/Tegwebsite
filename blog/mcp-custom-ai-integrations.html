@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCP: How We Connect AI to the Tools Your Team Already Runs | The Endurance Group</title>
-  <meta name="description" content="TEG, an Anthropic Claude Partner, builds custom MCP servers that connect Claude to HubSpot, Slack, Jira, and internal tools. Here's how we decide when to build versus configure.">
+  <title>MCP: How We Connect AI to the Tools Your Team Already Runs | TEG</title>
+  <meta name="description" content="TEG, an Anthropic Claude Partner, builds custom MCP servers that connect Claude to HubSpot, Slack, Jira, and internal tools. Here's how we decide what to build.">
   <link rel="canonical" href="https://www.theendurancegroup.com/blog/mcp-custom-ai-integrations.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
-  <meta property="og:title" content="MCP: How We Connect AI to the Tools Your Team Already Runs | The Endurance Group">
-  <meta property="og:description" content="TEG, an Anthropic Claude Partner, builds custom MCP servers that connect Claude to HubSpot, Slack, Jira, and internal tools. Here's how we decide when to build versus configure.">
+  <meta property="og:title" content="MCP: How We Connect AI to the Tools Your Team Already Runs | TEG">
+  <meta property="og:description" content="TEG, an Anthropic Claude Partner, builds custom MCP servers that connect Claude to HubSpot, Slack, Jira, and internal tools. Here's how we decide what to build.">
   <meta property="og:url" content="https://www.theendurancegroup.com/blog/mcp-custom-ai-integrations.html">
   <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -19,25 +19,25 @@
   <meta property="article:published_time" content="2026-06-30T09:00:00-04:00">
   <meta name="author" content="Maria Jose Pava">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MCP: How We Connect AI to the Tools Your Team Already Runs | The Endurance Group">
-  <meta name="twitter:description" content="TEG, an Anthropic Claude Partner, builds custom MCP servers that connect Claude to HubSpot, Slack, Jira, and internal tools. Here's how we decide when to build versus configure.">
+  <meta name="twitter:title" content="MCP: How We Connect AI to the Tools Your Team Already Runs | TEG">
+  <meta name="twitter:description" content="TEG, an Anthropic Claude Partner, builds custom MCP servers that connect Claude to HubSpot, Slack, Jira, and internal tools. Here's how we decide what to build.">
   <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../images/favicon-network.png">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css?v=20261003-free-offerings">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "The Endurance Group",
     "alternateName": "TEG",
-    "url": "https://theendurancegroup.com/",
+    "url": "https://www.theendurancegroup.com/",
     "logo": "https://www.theendurancegroup.com/images/og-default.png",
     "image": "https://www.theendurancegroup.com/images/og-default.png",
-    "description": "AI automation and strategy for B2B companies in real estate, technology, and professional services.",
-    "foundingDate": "1998",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "16 Middle St, 2nd Floor",
@@ -82,65 +82,59 @@
       "name": "The Endurance Group",
       "logo": { "@type": "ImageObject", "url": "https://www.theendurancegroup.com/images/og-default.png" }
     },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://theendurancegroup.com/blog/mcp-custom-ai-integrations.html" }
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.theendurancegroup.com/blog/mcp-custom-ai-integrations.html" }
   }
   </script>
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is an MCP server and how does it connect to Claude?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An MCP server is a small service that sits between Claude and an external tool (like HubSpot or Slack). It translates Claude's requests into API calls the tool understands, and sends the results back. Claude's host application manages the connection via a built-in MCP client. The result: Claude can pull live data from your systems and take actions inside them during a conversation."
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does our team need to be technical to use an MCP server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically, your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is MCP the same as a connector or a Skill?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not exactly. Connectors (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that, it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A Skill defines how the AI behaves; MCP defines what it can reach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we use an existing MCP server and a custom one at the same time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Most client setups use a mix, existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request."
+        }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "When should I use an existing MCP server versus having one built?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TEG checks for an existing MCP server first. If one covers your tools and scope, we configure it. If your tool has no server, or the existing server exposes too much data or doesn't match your workflow, we build a custom one. Custom builds are also useful when you need to pull data from multiple sources into one coherent answer. Most client setups end up using a mix of existing and custom servers."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does our team need to be technical to use an MCP server?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not to use one once it's set up. MCP servers are configured once by us during the build. After that, the AI handles the communication automatically, your team just asks questions or triggers workflows the normal way, and the MCP layer runs in the background."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is MCP the same as a connector or a Skill?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not exactly. Connectors (like claude.ai integrations or ChatGPT's connected apps) are user-level authorizations that let the AI read from specific sources during a conversation. MCP is the developer-level protocol underneath that, it defines how AI models and external tools communicate. A connector might use MCP under the hood, or it might not. A Skill defines how the AI behaves; MCP defines what it can reach."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can we use an existing MCP server and a custom one at the same time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Most client setups use a mix, existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request."
-      }
-    }
-  ]
-}
+    ]
+  }
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
   </script>
 </head>
-<body>
+<body class="blog-post">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- SHARED HEADER: keep in sync across all pages -->
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="../index.html"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -149,12 +143,11 @@
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="../about.html">About</a></li>
-          <li><a href="../solutions.html">Solutions</a></li>
+          <li><a href="../how-we-work.html">How We Work</a></li>
           <li><a href="../specialties.html">Specialties</a></li>
           <li><a href="../ideas.html">Ideas</a></li>          <li><a href="../success.html">Success</a></li>
           <li><a href="../blog.html" aria-current="page">Blog</a></li>
           <li><a href="../contact.html">Contact</a></li>
-          <li><a href="../ideas.html" class="nav-cta">Get Your Roadmap</a></li>
         </ul>
       </nav>
     </div>
@@ -184,7 +177,7 @@
       <div class="container">
         <div class="prose">
           <p>Most AI integrations are built the same way: one team writes a custom connection between their AI tool and their CRM, and another team builds a completely different custom connection between a different AI tool and that same CRM, and neither one works with the other's setup. It's fragmented, slow to build, and expensive to maintain. MCP, the Model Context Protocol, was designed to solve that, and it's changed how we build AI integrations for clients.</p>
-          <p><em>TEG is an official member of the Anthropic Claude Partner Network, with certified Claude engineers who build and configure <a href="../project-based.html#skills-mcps">MCP servers and Claude Skills</a> for B2B ops teams. Claude has the most mature MCP support of any AI platform available today.</em></p>
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network, with certified Claude engineers who build and configure <a href="../how-we-work.html">MCP servers and Claude Skills</a> for teams seeking measurable value. Claude has the most mature MCP support of any AI platform available today.</em></p>
 
           <h2>What MCP actually is</h2>
           <p>MCP is an open protocol that Anthropic released in late 2024. It defines a standard way for AI models to communicate with external tools and data sources. Instead of every integration being a custom one-off, MCP creates a common language: any MCP-compatible AI can talk to any MCP-compatible server, and the connection works regardless of which AI you're using or which tool you're connecting to.</p>
@@ -220,7 +213,7 @@
           <p>Yes. Most client setups use a mix, existing servers for standard tools like HubSpot or Slack, and a custom server for whatever proprietary or niche system the existing ecosystem doesn't cover. The AI sees them all as tools it can reach and uses whichever is relevant to the request.</p>
 
           <div class="btn-group">
-            <a class="btn btn-primary" href="../how-to-get-started.html">Claim Your Free Automation</a>
+            <a class="btn btn-primary" href="../book-value-assessment.html">Start Your Free AI Value Assessment</a>
             <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>
           </div>
         </div>
@@ -260,16 +253,29 @@
     <div class="container">
       <div class="footer-top">
         <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
-        <p class="footer-tagline">Your Claude Implementation Partner</p>
+        <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="../images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
         <p class="footer-address">Portland, ME &middot; (207) 846-6000</p>
       </div>
       <div class="footer-columns">
         <nav aria-label="Solutions">
           <h3>Solutions</h3>
           <ul>
+            <li><a href="../how-we-work.html">How We Work</a></li>
+            <li><a href="../sample-ai-value-assessment.html">Sample AI Value Report</a></li>
             <li><a href="../claude-setup.html">Claude Initial Setup</a></li>
             <li><a href="../claude.html">Skills &amp; MCPs</a></li>
+            <li><a href="../managed-claude.html">Managed Claude</a></li>
             <li><a href="../solutions.html">Training &amp; Maintenance</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Free Offerings">
+          <h3>Free Offerings</h3>
+          <ul>
+            <li><a href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="../ai-policy.html">AI Policy Draft</a></li>
+            <li><a href="../free-training.html">Free Training</a></li>
+            <li><a href="../claude-plugins.html">Claude Plugins</a></li>
           </ul>
         </nav>
         <nav aria-label="Products">
@@ -291,13 +297,11 @@
         <nav aria-label="Company">
           <h3>Company</h3>
           <ul>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="../how-to-get-started.html">Get Started</a></li>            <li><a href="../success.html">Success</a></li>
+            <li><a href="../about.html">About</a></li>            <li><a href="../success.html">Success</a></li>
             <li><a href="../blog.html">Blog</a></li>
             <li><a href="../contact.html">Contact</a></li>
             <li><a href="../ideas.html">Ideas</a></li>
             <li><a href="../fellowship.html">Fellowship</a></li>
-            <li><a href="../free-training.html">Free Training Session</a></li>
           </ul>
         </nav>
       </div>
@@ -315,6 +319,6 @@
   </footer>
   <!-- END SHARED FOOTER -->
 
-  <script src="../js/main.js" defer></script>
+  <script src="../js/main.js?v=20260930" defer></script>
 </body>
 </html>

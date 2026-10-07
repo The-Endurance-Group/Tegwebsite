@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample AI Value Report | The Endurance Group</title>
+  <meta name="description" content="Explore a sample AI Value Report for one sales team: five Claude builds, projected annual economic value, fixed implementation prices, and the assumptions behind each.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/sample-ai-value-assessment.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="Sample AI Value Report | The Endurance Group">
+  <meta property="og:description" content="Explore a sample AI Value Report for one sales team: five Claude builds, projected annual economic value, fixed implementation prices, and the assumptions behind each.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/sample-ai-value-assessment.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sample AI Value Report | The Endurance Group">
+  <meta name="twitter:description" content="Explore a sample AI Value Report for one sales team: five Claude builds, projected annual economic value, fixed implementation prices, and the assumptions behind each.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon-network.png">
+  <link rel="stylesheet" href="css/styles.css?v=20261003-free-offerings">
+  <style>
+    .sample-assessment .section-title { margin-bottom: 24px; }
+    .sample-assessment .intro-copy { margin-top: 20px; }
+    .sample-assessment .btn { white-space: normal; text-align: center; }
+    .sample-assessment .hero::after { content: ""; display: block; clear: both; }
+    .sample-assessment .sample-note { margin-top: 28px; max-width: 760px; padding: 16px 20px; border-left: 3px solid var(--color-pink); border-radius: var(--radius-sm); background: var(--tint-pink); font-size: 14px; }
+    .sample-assessment .opportunity-list { display: grid; gap: 12px; }
+    .sample-assessment .opportunity-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; align-items: center; padding: 24px; background: var(--color-white); border: 1px solid var(--border-light); border-radius: var(--radius-md); }
+    .sample-assessment .opportunity-row > * { min-width: 0; }
+    .sample-assessment .opportunity-row h3 { font-size: 18px; margin-bottom: 8px; }
+    .sample-assessment .opportunity-row a:hover { color: var(--color-pink-dark); text-decoration: underline; }
+    .sample-assessment .value-kind { font-size: 12px; font-weight: 700; color: var(--color-purple); background: var(--tint-purple); padding: 4px 8px; border-radius: var(--radius-sm); display: inline-block; }
+    .sample-assessment .value-kind--hiring { color: var(--color-teal-dark); background: var(--tint-teal); }
+    .sample-assessment .value-kind--revenue { color: var(--color-pink-dark); background: var(--tint-pink); }
+    .sample-assessment dl { margin: 0; }
+    .sample-assessment dt { color: var(--color-lavender); font-size: 12px; }
+    .sample-assessment dd { margin: 4px 0 0; font-weight: 700; font-size: 24px; line-height: 1.3; color: var(--color-purple); }
+    .sample-assessment .build-price dd { color: var(--color-pink-dark); }
+    .sample-assessment .summary-note { font-size: 14px; color: var(--color-lavender); margin-top: 20px; max-width: 760px; }
+    .sample-assessment .opportunity-details { display: grid; gap: 20px; }
+    .sample-assessment .opportunity { scroll-margin-top: 100px; background: var(--color-white); border: 1px solid var(--border-light); border-radius: var(--radius-md); overflow: hidden; }
+    .sample-assessment .opportunity summary { cursor: pointer; position: relative; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 24px; list-style: none; }
+    .sample-assessment .opportunity summary::-webkit-details-marker { display: none; }
+    .sample-assessment .opportunity summary::after { content: "+"; color: var(--color-purple); font-size: 28px; flex-shrink: 0; }
+    .sample-assessment .opportunity[open] summary::after { content: "−"; }
+    .sample-assessment .opportunity summary:focus-visible { outline: 2px solid var(--color-teal-dark); outline-offset: -4px; }
+    .sample-assessment .opportunity summary h3 { font-size: 22px; margin: 12px 0 8px; }
+    .sample-assessment .opportunity summary p { font-size: 14px; color: var(--color-lavender); }
+    .sample-assessment .detail-body { padding: 0 24px 28px; }
+    .sample-assessment .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .sample-assessment .detail-grid--scope { grid-template-columns: 1fr; }
+    .sample-assessment .detail-grid h4 { margin-bottom: 10px; }
+    .sample-assessment .detail-grid p, .sample-assessment .detail-grid li { font-size: 15px; color: var(--color-lavender); }
+    .sample-assessment .detail-grid ul { list-style: disc; padding-left: 20px; }
+    .sample-assessment .detail-grid li + li { margin-top: 8px; }
+    .sample-assessment .calculation { margin-block: 24px; padding: 24px; background: var(--tint-purple); border-radius: var(--radius-md); }
+    .sample-assessment .calculation h4 { margin-bottom: 12px; }
+    .sample-assessment .calculation p + p { margin-top: 12px; }
+    .sample-assessment .formula { font-weight: 700; color: var(--color-purple); }
+    .sample-assessment .calculation .caveat { font-size: 14px; color: var(--color-lavender); }
+    @media (max-width: 767px) {
+      .sample-assessment .opportunity-row { grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px; }
+      .sample-assessment .opportunity-name { grid-column: 1 / -1; }
+      .sample-assessment .detail-grid { grid-template-columns: 1fr; }
+      .sample-assessment .opportunity summary { padding: 20px; }
+      .sample-assessment .detail-body { padding: 0 20px 24px; }
+      .sample-assessment .calculation { padding: 20px; }
+    }
+    .sample-assessment .opportunity[open] > summary { background: var(--tint-purple); }
+    @media (prefers-reduced-motion: no-preference) {
+      .sample-assessment .opportunity-row { transition: border-color .2s ease, box-shadow .2s ease; }
+      .sample-assessment .opportunity-row.is-motion-played { animation: report-row-arrive .45s ease both; }
+      .sample-assessment .opportunity-row:nth-child(2) { animation-delay: .07s; }
+      .sample-assessment .opportunity-row:nth-child(3) { animation-delay: .14s; }
+      .sample-assessment .opportunity-row:nth-child(4) { animation-delay: .21s; }
+      .sample-assessment .opportunity-row:nth-child(5) { animation-delay: .28s; }
+      .sample-assessment .opportunity[open] .detail-body { animation: report-detail-open .3s ease both; }
+      .sample-assessment .opportunity > summary { transition: background-color .2s ease; }
+    }
+    @media (hover: hover) {
+      .sample-assessment .opportunity-row:hover { border-color: var(--color-teal); box-shadow: 0 4px 16px var(--tint-teal); }
+    }
+    .sample-assessment .opportunity-row:focus-within { border-color: var(--color-teal-dark); }
+    .sample-assessment .opportunity[open] .detail-body { padding-top: 24px; }
+    @keyframes report-row-arrive { from { opacity: .5; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes report-detail-open { from { opacity: .5; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How We Work</a></li>
+          <li><a href="specialties.html">Specialties</a></li>          <li><a href="success.html">Success</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content" class="sample-assessment">
+    <section class="hero hero--page section"><div class="container">
+      <img class="hero-partner-badge" src="images/badges/claude-certified-services-partner-vertical.png" alt="Claude Certified Services Partner, Claude Partner Network">
+      <span class="eyebrow">Sample AI Value Report</span>
+      <h1>One team. Five opportunities.</h1>
+      <p class="lede">See what an AI Value Assessment could uncover for a sales team: time freed, hiring avoided, lower costs and a new revenue stream.</p>
+      <p class="summary-note">Example team: 10-person B2B sales team, 15 proposals per week, one CRM and a finance handoff.</p>
+      <p class="sample-note"><b>Example only, not a quote.</b> This fictional team and its estimates illustrate how we assess value. Your opportunities, assumptions and fixed build prices will be agreed with you.</p>
+      <div class="btn-group"><a class="btn btn-secondary" href="how-we-work.html">Back to How We Work</a></div>
+    </div></section>
+    <section class="section section--alt"><div class="container">
+      <h2 class="section-title">The opportunity shortlist</h2>
+      <p class="summary-note" style="margin:0 0 24px;">The fixed build fees below vary by opportunity and are illustrative, not a rate card. We agree on each project’s expected value, scope and fixed price before work begins. The price is not a share of actual future savings or revenue.</p>
+      <div class="opportunity-list">
+        <div class="opportunity-row">
+          <div class="opportunity-name"><h3><a href="#meeting-follow-up">Meeting notes &amp; follow-up <svg style="display:inline-block; vertical-align:middle;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></h3><span class="value-kind">Time freed</span></div>
+          <dl><dt>Projected annual value</dt><dd>$18,000</dd></dl>
+          <dl class="build-price"><dt>Illustrative fixed build fee</dt><dd>$5,400</dd></dl>
+        </div>
+        <div class="opportunity-row">
+          <div class="opportunity-name"><h3><a href="#sales-finance-handoff">Sales-to-finance handoff <svg style="display:inline-block; vertical-align:middle;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></h3><span class="value-kind">Outside costs reduced</span></div>
+          <dl><dt>Projected annual value</dt><dd>$30,000</dd></dl>
+          <dl class="build-price"><dt>Illustrative fixed build fee</dt><dd>$6,000</dd></dl>
+        </div>
+        <div class="opportunity-row">
+          <div class="opportunity-name"><h3><a href="#proposal-creation">Proposal creation <svg style="display:inline-block; vertical-align:middle;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></h3><span class="value-kind">Time freed</span></div>
+          <dl><dt>Projected annual value</dt><dd>$75,000</dd></dl>
+          <dl class="build-price"><dt>Illustrative fixed build fee</dt><dd>$7,500</dd></dl>
+        </div>
+        <div class="opportunity-row">
+          <div class="opportunity-name"><h3><a href="#lead-qualification">Lead qualification <svg style="display:inline-block; vertical-align:middle;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></h3><span class="value-kind value-kind--hiring">Hiring avoided</span></div>
+          <dl><dt>Projected annual value</dt><dd>$90,000</dd></dl>
+          <dl class="build-price"><dt>Illustrative fixed build fee</dt><dd>$6,750</dd></dl>
+        </div>
+        <div class="opportunity-row">
+          <div class="opportunity-name"><h3><a href="#customer-reporting">Paid customer reporting service <svg style="display:inline-block; vertical-align:middle;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a></h3><span class="value-kind value-kind--revenue">New revenue</span></div>
+          <dl><dt>Projected annual value</dt><dd>$100,000</dd></dl>
+          <dl class="build-price"><dt>Illustrative fixed build fee</dt><dd>$5,000</dd></dl>
+        </div>
+      </div>
+    </div></section>
+    <section class="section"><div class="container">
+      <h2 class="section-title">Explore the builds</h2>
+      <div class="opportunity-details">
+        <details class="opportunity" id="meeting-follow-up">
+          <summary><div><span class="value-kind">Time freed</span><h3>Meeting notes &amp; follow-up</h3><p>Turn meeting notes into reviewed follow-ups and CRM updates.</p></div></summary>
+          <div class="detail-body">
+            <div class="detail-grid"><div><h4>Today</h4><p>Sales reps manually summarize calls, draft follow-ups and copy action items into the CRM. At 15 meetings a week, this creates repetitive work and uneven follow-through.</p></div><div><h4>Recommended build</h4><p>A Claude workflow drafts summaries, follow-up emails and CRM updates from approved meeting transcripts. Reps review every draft and approve changes before anything is sent or saved.</p></div></div>
+            <div class="calculation"><h4>Projected annual value: $18,000</h4><p class="formula">15 meetings/week × 20 minutes freed × 50 weeks = 250 hours/year<br>250 hours × $72/hour fully loaded cost = $18,000 annual capacity value</p><p class="caveat">Time freed, not a forecast of cash savings. Value depends on the team using those hours for useful work.</p></div>
+            <div class="detail-grid detail-grid--scope"><div><h4>Illustrative fixed build fee: $5,400</h4><p>One meeting source, one CRM and one approved follow-up format.</p></div></div>
+          </div>
+        </details>
+        <details class="opportunity" id="proposal-creation">
+          <summary><div><span class="value-kind">Time freed</span><h3>Proposal creation</h3><p>Draft proposals from approved templates and deal information.</p></div></summary>
+          <div class="detail-body">
+            <div class="detail-grid"><div><h4>Today</h4><p>The team creates 15 proposals a week, spending about two hours on each. Much of that time goes into assembling standard content and tailoring it to the deal.</p></div><div><h4>Recommended build</h4><p>Claude assembles a proposal draft from approved service descriptions, templates and CRM deal fields. A salesperson checks scope, claims, pricing and terms before sharing it.</p></div></div>
+            <div class="calculation"><h4>Projected annual value: $75,000</h4><p class="formula">2 hours today − 45 minutes with Claude = 1.25 hours freed/proposal<br>15 proposals/week × 1.25 hours × $80/hour × 50 weeks = $75,000 annual capacity value</p><p class="caveat">This is capacity value, not cash savings. Together, we estimate the solution’s expected 12-month economic value and agree on a percentage that makes sense for your business. That sets a fixed build price before work begins.</p></div>
+            <div class="detail-grid detail-grid--scope"><div><h4>Illustrative fixed build fee: $7,500</h4><p>One proposal template family and one CRM, with approved content and a review step.</p></div></div>
+          </div>
+        </details>
+        <details class="opportunity" id="lead-qualification">
+          <summary><div><span class="value-kind value-kind--hiring">Hiring avoided</span><h3>Lead qualification</h3><p>Handle higher lead volume without the planned additional role.</p></div></summary>
+          <div class="detail-body">
+            <div class="detail-grid"><div><h4>Today</h4><p>The team expects lead volume to exceed its capacity and is planning an additional qualification role with a fully loaded annual cost of $90,000.</p></div><div><h4>Recommended build</h4><p>Claude checks inbound leads against agreed criteria, flags missing information and prepares a qualification summary for the existing team. Staff handle exceptions and approve routing decisions.</p></div></div>
+            <div class="calculation"><h4>Projected annual value: $90,000</h4><p class="formula">1 planned full-year role × $90,000 fully loaded annual cost = $90,000 hiring cost avoided</p><p class="caveat">Only counts if the planned hire is genuinely unnecessary for the full year. A delayed hire creates a smaller benefit; time savings from this same role must not be counted again.</p></div>
+            <div class="detail-grid detail-grid--scope"><div><h4>Illustrative fixed build fee: $6,750</h4><p>One inbound source, one CRM, agreed qualification rules and an exception queue.</p></div></div>
+          </div>
+        </details>
+        <details class="opportunity" id="sales-finance-handoff">
+          <summary><div><span class="value-kind">Outside costs reduced</span><h3>Sales-to-finance handoff</h3><p>Reduce outsourced reconciliation between sales and finance.</p></div></summary>
+          <div class="detail-body">
+            <div class="detail-grid"><div><h4>Today</h4><p>An outside provider charges $2,500 a month to reconcile closed deals, invoice details and finance records. Those costs are distinct from the lead-qualification role.</p></div><div><h4>Recommended build</h4><p>A workflow prepares a reconciliation report, checks missing or inconsistent fields and gives finance an exception list. Finance approves corrections; the workflow does not release payments or modify ledgers without review.</p></div></div>
+            <div class="calculation"><h4>Projected annual value: $30,000</h4><p class="formula">$2,500/month in removable vendor fees × 12 months = $30,000 annual cost reduction</p><p class="caveat">Savings require an actual reduction in the vendor bill. Retained fees, additional software or internal operating costs reduce the net benefit.</p></div>
+            <div class="detail-grid detail-grid--scope"><div><h4>Illustrative fixed build fee: $6,000</h4><p>One CRM-to-finance data handoff, one reconciliation report and an approval step.</p></div></div>
+          </div>
+        </details>
+        <details class="opportunity" id="customer-reporting">
+          <summary><div><span class="value-kind value-kind--revenue">New revenue</span><h3>Paid customer reporting service</h3><p>Offer customers a new paid reporting service.</p></div></summary>
+          <div class="detail-body">
+            <div class="detail-grid"><div><h4>Today</h4><p>Customers ask for recurring account insights, but producing bespoke reports manually is too costly to offer as a repeatable paid service.</p></div><div><h4>Recommended build</h4><p>Claude drafts a monthly report from approved customer data and a standard report format. An account manager reviews accuracy, access permissions and recommendations before delivery.</p></div></div>
+            <div class="calculation"><h4>Projected annual value: $100,000</h4><p class="formula">20 customers × $500/month × 12 months = $120,000 projected annual revenue<br>$120,000 revenue − $20,000 incremental delivery costs = $100,000 annual contribution</p><p class="caveat">The pricing basis is $100,000 in contribution, not gross revenue. This assumes 20 paying customers for the full year; ramp-up, churn and acquisition costs can reduce value.</p></div>
+            <div class="detail-grid detail-grid--scope"><div><h4>Illustrative fixed build fee: $5,000</h4><p>One data source, one report format and a human approval process.</p></div></div>
+          </div>
+        </details>
+      </div>
+      <p class="summary-note">All builds include testing, documentation, launch support and a 30-day warranty. Prices are fixed before work starts; no universal percentage applies. Payment: 50% at kickoff / 50% at launch. Clients pay software subscriptions and API charges separately.</p>
+      <p class="summary-note">Ongoing support: <a href="how-we-work.html" style="color:var(--color-purple); text-decoration:underline;">Managed Claude starts at $1,500/month</a>. New builds are priced separately.</p>
+    </div></section>
+<section class="section section--dark text-center"><div class="container"><h2 class="section-title">What could we find for your team?</h2><p class="lede" style="margin-inline:auto;">Start with one team, such as sales or finance. Your first AI Value Assessment is free.</p><div class="btn-group btn-group--center"><a class="btn btn-primary" href="book-value-assessment.html">Start Your Free AI Value Assessment</a></div></div></section>
+  </main>
+  <script>
+    // Open the selected opportunity before navigating to its detail panel.
+    function openOpportunity(hash) {
+      var target = document.getElementById(hash.slice(1));
+      if (target && target.classList.contains('opportunity')) target.open = true;
+    }
+    document.querySelectorAll('.opportunity-name a').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        openOpportunity(link.hash);
+        history.pushState(null, '', link.hash);
+        document.getElementById(link.hash.slice(1)).scrollIntoView();
+      });
+    });
+    window.addEventListener('hashchange', function () { openOpportunity(location.hash); });
+    openOpportunity(location.hash);
+  </script>
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="how-we-work.html">How We Work</a></li>
+            <li><a href="sample-ai-value-assessment.html">Sample AI Value Report</a></li>
+            <li><a href="managed-claude.html">Managed Claude</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="specialties.html">Specialties</a></li>            <li><a href="ideas.html">Ideas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Free Offerings</h4>
+          <ul>
+            <li><a href="book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="ai-policy.html">AI Policy Draft</a></li>
+            <li><a href="free-training.html">Free Training</a></li>
+            <li><a href="claude-plugins.html">Claude Plugins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="success.html">Success</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script>
+    (function () {
+      var preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (preference.matches || !('IntersectionObserver' in window)) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-motion-played');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.2 });
+      document.querySelectorAll('.opportunity-row').forEach(function (row) { observer.observe(row); });
+      preference.addEventListener('change', function (event) {
+        if (event.matches) observer.disconnect();
+      });
+    })();
+  </script>
+  <script src="js/main.js?v=20260930" defer></script>
+</body>
+</html>

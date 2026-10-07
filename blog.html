@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Claude Implementation Blog | The Endurance Group</title>
-  <meta name="description" content="Implementation guides from Anthropic's Claude Partner. How to deploy Claude Skills, MCP servers, and AI automations for B2B teams in real estate, technology, and professional services.">
+  <title>AI Implementation Blog | The Endurance Group</title>
+  <meta name="description" content="Practical guides on AI implementation and automation. How we deploy it, how clients use it, and what actually works for teams using AI to create value.">
   <link rel="canonical" href="https://www.theendurancegroup.com/blog.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Endurance Group">
-  <meta property="og:title" content="Claude Implementation Blog | The Endurance Group">
-  <meta property="og:description" content="Implementation guides from Anthropic's Claude Partner. How to deploy Claude Skills, MCP servers, and AI automations for B2B teams in real estate, technology, and professional services.">
+  <meta property="og:title" content="AI Implementation Blog | The Endurance Group">
+  <meta property="og:description" content="Practical guides on AI implementation and automation. How we deploy it, how clients use it, and what actually works for teams using AI to create value.">
   <meta property="og:url" content="https://www.theendurancegroup.com/blog.html">
   <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Claude Implementation Blog | The Endurance Group">
-  <meta name="twitter:description" content="Implementation guides from Anthropic's Claude Partner. How to deploy Claude Skills, MCP servers, and AI automations for B2B teams in real estate, technology, and professional services.">
+  <meta name="twitter:title" content="AI Implementation Blog | The Endurance Group">
+  <meta name="twitter:description" content="Practical guides on AI implementation and automation. How we deploy it, how clients use it, and what actually works for teams using AI to create value.">
   <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon-network.png">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=20261003-free-offerings">
   <style>
+    .blog-search{position:relative;max-width:520px;margin-bottom:20px;}
+    .blog-search input{width:100%;padding:12px 16px;border:1.5px solid #d1d5db;border-radius:99px;font-size:16px;font-family:inherit;color:var(--color-ink);background:#fff;}
+    .blog-search input:focus{outline:none;border-color:var(--color-purple);box-shadow:0 0 0 3px rgba(112,66,130,0.15);}
+    .blog-empty{display:none;margin:24px 0;color:var(--color-ink);}
     .blog-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
     .blog-filter-btn{padding:6px 18px;border:1.5px solid #d1d5db;border-radius:99px;background:transparent;color:var(--color-ink);cursor:pointer;font-size:14px;font-family:inherit;font-weight:500;transition:background .15s,border-color .15s,color .15s;}
     .blog-filter-btn:hover{background:rgba(112,66,130,0.07);border-color:var(--color-purple);}
@@ -38,12 +42,11 @@
     "@type": "ProfessionalService",
     "name": "The Endurance Group",
     "alternateName": "TEG",
-    "url": "https://theendurancegroup.com/",
+    "url": "https://www.theendurancegroup.com/",
     "logo": "https://www.theendurancegroup.com/images/og-default.png",
     "image": "https://www.theendurancegroup.com/images/og-default.png",
-    "description": "AI automation and strategy for B2B companies in real estate, technology, and professional services.",
-    "foundingDate": "1998",
-    "priceRange": "$750-$5500",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "16 Middle St, 2nd Floor",
@@ -78,157 +81,198 @@
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "The Endurance Group Blog",
-    "url": "https://theendurancegroup.com/blog.html",
+    "url": "https://www.theendurancegroup.com/blog.html",
     "publisher": {
       "@type": "Organization",
       "name": "The Endurance Group",
       "logo": { "@type": "ImageObject", "url": "https://www.theendurancegroup.com/images/og-default.png" }
     },
     "blogPost": [
-      {"@type":"BlogPosting","headline":"How we turn RB2B website visitors into outreach with Claude","url":"https://theendurancegroup.com/blog/rb2b-website-visitors-claude-outreach.html","datePublished":"2026-10-07"},
-      {"@type":"BlogPosting","headline":"When Claude.ai Isn't Enough: Building a Custom Claude Application","url":"https://theendurancegroup.com/blog/custom-claude-applications.html","datePublished":"2026-09-18"},
-      {"@type":"BlogPosting","headline":"How Claude Automates the Work That Slows Your Team Down","url":"https://theendurancegroup.com/blog/claude-automated-workflows.html","datePublished":"2026-09-18"},
-      {"@type":"BlogPosting","headline":"What It Looks Like When TEG Sets Up Claude for Your Team","url":"https://theendurancegroup.com/blog/claude-environment-setup.html","datePublished":"2026-09-18"},
-      {"@type":"BlogPosting","headline":"Claude Can Answer Questions. But Can It Actually Work Inside Your Business?","url":"https://theendurancegroup.com/blog/mcp-business-systems.html","datePublished":"2026-09-18"},
-      {"@type":"BlogPosting","headline":"Merriam-Webster Just Added 1,400 New Words. Here's What the AI Ones Actually Mean.","url":"https://theendurancegroup.com/blog/merriam-webster-ai-words.html","datePublished":"2026-09-17"},
-      {"@type":"BlogPosting","headline":"Anthropic Just Said It's Slowing Down. Here's What That Actually Means for Your Team.","url":"https://theendurancegroup.com/blog/anthropic-pacing-what-it-means.html","datePublished":"2026-09-13"},
-      {"@type":"BlogPosting","headline":"Why I Believe Anyone Can Learn AI (Even a Former English Teacher)","url":"https://theendurancegroup.com/blog/why-anyone-can-learn-ai.html","datePublished":"2026-09-11"},
-      {"@type":"BlogPosting","headline":"From Anonymous Website Visitor to Assigned CRM Lead","url":"https://theendurancegroup.com/blog/website-visitor-to-crm-automation.html","datePublished":"2026-09-09"},
-      {"@type":"BlogPosting","headline":"How We Turned Scattered Meeting Notes Into a Working Task System","url":"https://theendurancegroup.com/blog/nonprofit-meeting-notes-precall-automation.html","datePublished":"2026-09-09"},
-      {"@type":"BlogPosting","headline":"Reading Town Meeting Notes for Business Opportunities, Automatically","url":"https://theendurancegroup.com/blog/town-meeting-notes-ai-pilot.html","datePublished":"2026-09-09"},
-      {"@type":"BlogPosting","headline":"We Taught Claude to Check Landscaping Photos So a Real Estate Team Didn't Have To","url":"https://theendurancegroup.com/blog/ai-photo-review-property-management.html","datePublished":"2026-09-09"},
-      {"@type":"BlogPosting","headline":"Claude Opus 5 Feels Combative? Here's What's Actually Going On","url":"https://theendurancegroup.com/blog/claude-opus-5-pushback-tone.html","datePublished":"2026-09-06"},
-      {"@type":"BlogPosting","headline":"Website MCPs: how AI agents update sites without wp-admin","url":"https://theendurancegroup.com/blog/website-mcp-cms.html","datePublished":"2026-09-04"},
-      {"@type":"BlogPosting","headline":"Does Claude remember your conversations now? What B2B teams need to know","url":"https://theendurancegroup.com/blog/claude-memory-update-b2b-teams.html","datePublished":"2026-09-03"},
-      {"@type":"BlogPosting","headline":"What Claude Fable 5.1 means if your team is running on AI-powered automations","url":"https://theendurancegroup.com/blog/claude-fable-5-1-business-automations.html","datePublished":"2026-09-03"},
-      {"@type":"BlogPosting","headline":"What Claudeforce means if your team already runs on Salesforce","url":"https://theendurancegroup.com/blog/claudeforce-salesforce-claude-integration.html","datePublished":"2026-09-02"},
-      {"@type":"BlogPosting","headline":"We built a Boston permit lookup tool — here's why it needed more than a search box","url":"https://theendurancegroup.com/blog/boston-permit-lookup-tool.html","datePublished":"2026-09-01"},
-      {"@type":"BlogPosting","headline":"Is Claude safe for business data? What B2B teams need to know","url":"https://theendurancegroup.com/blog/claude-data-privacy-business.html","datePublished":"2026-08-31"},
-      {"@type":"BlogPosting","headline":"Why Claude certification matters — and why TEG is building a bench of certified talent","url":"https://theendurancegroup.com/blog/claude-certification-matters.html","datePublished":"2026-08-28"},
-      {"@type":"BlogPosting","headline":"Claude Cowork vs. Claude Skills: what B2B teams need to know","url":"https://theendurancegroup.com/blog/claude-cowork-vs-claude-skills.html","datePublished":"2026-08-27"},
-      {"@type":"BlogPosting","headline":"What is a Claude Partner and how do you find one?","url":"https://theendurancegroup.com/blog/what-is-a-claude-partner.html","datePublished":"2026-08-27"},
-      {"@type":"BlogPosting","headline":"How much does Claude implementation cost?","url":"https://theendurancegroup.com/blog/claude-implementation-cost.html","datePublished":"2026-08-27"},
-      {"@type":"BlogPosting","headline":"Claude Projects vs Claude Skills: what's the difference?","url":"https://theendurancegroup.com/blog/claude-projects-vs-skills.html","datePublished":"2026-08-27"},
-      {"@type":"BlogPosting","headline":"Claude for real estate: what's actually useful in 2026","url":"https://theendurancegroup.com/blog/claude-for-real-estate.html","datePublished":"2026-08-27"},
-      {"@type":"BlogPosting","headline":"The best MCP servers for B2B sales and CRM teams","url":"https://theendurancegroup.com/blog/best-mcp-servers-for-sales.html","datePublished":"2026-08-27"},
-      {"@type":"BlogPosting","headline":"How to hire a Claude developer (and what to look for)","url":"https://theendurancegroup.com/blog/how-to-hire-a-claude-developer.html","datePublished":"2026-08-27"},
-      {"@type":"BlogPosting","headline":"Claude vs Gemini for business automation: what actually matters","url":"https://theendurancegroup.com/blog/claude-vs-gemini-business-automation.html","datePublished":"2026-08-27"},
+{"@type": "BlogPosting", "headline": "How we turn RB2B website visitors into outreach with Claude", "url": "https://www.theendurancegroup.com/blog/rb2b-website-visitors-claude-outreach.html", "datePublished": "2026-10-07"},
+{"@type": "BlogPosting", "headline": "Turn Job Postings Into an Outbound Lead Generation Machine", "url": "https://www.theendurancegroup.com/blog/job-postings-outbound-lead-generation.html", "datePublished": "2026-10-06"},
+      {"@type":"BlogPosting","headline":"How to Schedule a Task in ChatGPT (and Why You Should)","url":"https://www.theendurancegroup.com/blog/how-to-schedule-a-task-in-chatgpt.html","datePublished":"2026-10-06"},
+      {"@type":"BlogPosting","headline":"What Is a ChatGPT Skill and How to Make One","url":"https://www.theendurancegroup.com/blog/how-to-create-a-chatgpt-skill.html","datePublished":"2026-10-06"},
+      {"@type":"BlogPosting","headline":"How to Connect Gmail to ChatGPT (Connectors Explained)","url":"https://www.theendurancegroup.com/blog/chatgpt-connectors-gmail-how-to-connect.html","datePublished":"2026-10-06"},
+      {"@type":"BlogPosting","headline":"What Is a ChatGPT Project? How to Make One","url":"https://www.theendurancegroup.com/blog/what-is-a-chatgpt-project.html","datePublished":"2026-10-06"},
+      {"@type":"BlogPosting","headline":"How to Use ChatGPT: A Quick Tour for Beginners","url":"https://www.theendurancegroup.com/blog/how-to-use-chatgpt-beginners-tour.html","datePublished":"2026-10-06"},
+      {"@type":"BlogPosting","headline":"Claude for Small Business: what it does, and where a partner still helps with setup","url":"https://www.theendurancegroup.com/blog/claude-for-small-business-setup-partner.html","datePublished":"2026-10-06"},
+      {"@type":"BlogPosting","headline":"Claude Sonnet 5.5 vs Opus 5.5: which model to use for what, and what it costs","url":"https://www.theendurancegroup.com/blog/claude-sonnet-5-5-vs-opus-5-5-which-model-to-use.html","datePublished":"2026-10-06"},
+{"@type": "BlogPosting", "headline": "What Outsourced B2B Sales Taught Us About Using Claude", "url": "https://www.theendurancegroup.com/blog/outsourced-b2b-sales-lessons-for-claude.html", "datePublished": "2026-10-03"},
+{"@type": "BlogPosting", "headline": "From Account Intelligence to Qualified Conversations With Claude", "url": "https://www.theendurancegroup.com/blog/account-intelligence-to-qualified-conversations-with-claude.html", "datePublished": "2026-10-03"},
+
+{"@type": "BlogPosting", "headline": "How to Calculate the ROI of an AI Workflow", "url": "https://www.theendurancegroup.com/blog/how-to-calculate-roi-ai-workflow.html", "datePublished": "2026-10-03"},
+{"@type": "BlogPosting", "headline": "5 Business Processes That Are Usually Worth Automating With Claude", "url": "https://www.theendurancegroup.com/blog/business-processes-worth-automating-with-claude.html", "datePublished": "2026-10-03"},
+{"@type": "BlogPosting", "headline": "Saving Time Isn’t the Same as Creating ROI", "url": "https://www.theendurancegroup.com/blog/saving-time-isnt-the-same-as-creating-roi.html", "datePublished": "2026-10-03"},
+{"@type": "BlogPosting", "headline": "Why We Price AI Projects Based on Value, Not Hours", "url": "https://www.theendurancegroup.com/blog/why-we-price-ai-projects-based-on-value.html", "datePublished": "2026-10-03"},
+{"@type": "BlogPosting", "headline": "You Already Have Claude. Now What?", "url": "https://www.theendurancegroup.com/blog/you-already-have-claude-now-what.html", "datePublished": "2026-10-03"},
+
+{"@type": "BlogPosting", "headline": "How to Choose a Claude Consulting Partner: Start With Value", "url": "https://www.theendurancegroup.com/blog/how-to-choose-a-claude-consulting-partner.html", "datePublished": "2026-10-03"},
+{"@type": "BlogPosting", "headline": "How to Find AI Value in Your Business: Start With Your People", "url": "https://www.theendurancegroup.com/blog/how-to-find-ai-value-in-your-business.html", "datePublished": "2026-10-03"},
+      {"@type":"BlogPosting","headline":"Free Claude Training for Our Coworking Neighbors in Portland, Maine","url":"https://www.theendurancegroup.com/blog/free-claude-training-cloudport-coworking-maine.html","datePublished":"2026-09-30"},
+      {"@type":"BlogPosting","headline":"How to Find Warm Paths Into B2B Prospects With Claude","url":"https://www.theendurancegroup.com/blog/warm-paths-b2b-sales-with-claude.html","datePublished":"2026-09-29"},
+      {"@type":"BlogPosting","headline":"How to Pull Franchise Owner Contacts From an FDD With Claude","url":"https://www.theendurancegroup.com/blog/fdd-analyzer-with-claude.html","datePublished":"2026-09-29"},
+      {"@type":"BlogPosting","headline":"How to Find Which Clients to Ask for a Referral With Claude","url":"https://www.theendurancegroup.com/blog/referral-identifier-with-claude.html","datePublished":"2026-09-29"},
+      {"@type":"BlogPosting","headline":"How to Use Claude With HubSpot: A Free Plugin for Deals, Tasks, and Meeting Prep","url":"https://www.theendurancegroup.com/blog/claude-hubspot-plugin.html","datePublished":"2026-09-29"},
+      {"@type":"BlogPosting","headline":"How to Write Upwork Proposals With Claude (Without Overclaiming)","url":"https://www.theendurancegroup.com/blog/upwork-proposals-with-claude.html","datePublished":"2026-09-29"},
+      {"@type":"BlogPosting","headline":"How Hotels and Travel Vendors Can Find Visiting College Teams With Claude","url":"https://www.theendurancegroup.com/blog/find-visiting-college-teams-with-claude.html","datePublished":"2026-09-29"},
+      {"@type":"BlogPosting","headline":"How Telecom Brokers Can Find Copper Retirement Notices and POTS Replacement Leads With Claude","url":"https://www.theendurancegroup.com/blog/copper-retirement-pots-leads-with-claude.html","datePublished":"2026-09-29"},
+      {"@type":"BlogPosting","headline":"How to Check Marketing Content for Compliance With Claude","url":"https://www.theendurancegroup.com/blog/compliance-review-with-claude.html","datePublished":"2026-09-29"},
+      {"@type":"BlogPosting","headline":"When Claude.ai Isn't Enough: Building a Custom Claude Application","url":"https://www.theendurancegroup.com/blog/custom-claude-applications.html","datePublished":"2026-09-18"},
+      {"@type":"BlogPosting","headline":"How Claude Automates the Work That Slows Your Team Down","url":"https://www.theendurancegroup.com/blog/claude-automated-workflows.html","datePublished":"2026-09-18"},
+      {"@type":"BlogPosting","headline":"What It Looks Like When TEG Sets Up Claude for Your Team","url":"https://www.theendurancegroup.com/blog/claude-environment-setup.html","datePublished":"2026-09-18"},
+      {"@type":"BlogPosting","headline":"Claude Can Answer Questions. But Can It Actually Work Inside Your Business?","url":"https://www.theendurancegroup.com/blog/mcp-business-systems.html","datePublished":"2026-09-18"},
+      {"@type":"BlogPosting","headline":"Merriam-Webster Just Added 1,400 New Words. Here's What the AI Ones Actually Mean.","url":"https://www.theendurancegroup.com/blog/merriam-webster-ai-words.html","datePublished":"2026-09-17"},
+      {"@type":"BlogPosting","headline":"Anthropic Just Said It's Slowing Down. Here's What That Actually Means for Your Team.","url":"https://www.theendurancegroup.com/blog/anthropic-pacing-what-it-means.html","datePublished":"2026-09-13"},
+      {"@type":"BlogPosting","headline":"Why I Believe Anyone Can Learn AI (Even a Former English Teacher)","url":"https://www.theendurancegroup.com/blog/why-anyone-can-learn-ai.html","datePublished":"2026-09-11"},
+      {"@type":"BlogPosting","headline":"From Anonymous Website Visitor to Assigned CRM Lead","url":"https://www.theendurancegroup.com/blog/website-visitor-to-crm-automation.html","datePublished":"2026-09-09"},
+      {"@type":"BlogPosting","headline":"How We Turned Scattered Meeting Notes Into a Working Task System","url":"https://www.theendurancegroup.com/blog/nonprofit-meeting-notes-precall-automation.html","datePublished":"2026-09-09"},
+      {"@type":"BlogPosting","headline":"Reading Town Meeting Notes for Business Opportunities, Automatically","url":"https://www.theendurancegroup.com/blog/town-meeting-notes-ai-pilot.html","datePublished":"2026-09-09"},
+      {"@type":"BlogPosting","headline":"We Taught Claude to Check Landscaping Photos So a Real Estate Team Didn't Have To","url":"https://www.theendurancegroup.com/blog/ai-photo-review-property-management.html","datePublished":"2026-09-09"},
+      {"@type":"BlogPosting","headline":"Claude Opus 5 Feels Combative? Here's What's Actually Going On","url":"https://www.theendurancegroup.com/blog/claude-opus-5-pushback-tone.html","datePublished":"2026-09-06"},
+      {"@type":"BlogPosting","headline":"Website MCPs: how AI agents update sites without wp-admin","url":"https://www.theendurancegroup.com/blog/website-mcp-cms.html","datePublished":"2026-09-04"},
+      {"@type":"BlogPosting","headline":"Does Claude remember your conversations now? What B2B teams need to know","url":"https://www.theendurancegroup.com/blog/claude-memory-update-b2b-teams.html","datePublished":"2026-09-03"},
+      {"@type":"BlogPosting","headline":"What Claude Fable 5.1 means if your team is running on AI-powered automations","url":"https://www.theendurancegroup.com/blog/claude-fable-5-1-business-automations.html","datePublished":"2026-09-03"},
+      {"@type":"BlogPosting","headline":"What Claudeforce means if your team already runs on Salesforce","url":"https://www.theendurancegroup.com/blog/claudeforce-salesforce-claude-integration.html","datePublished":"2026-09-02"},
+      {"@type":"BlogPosting","headline":"We built a Boston permit lookup tool, here's why it needed more than a search box","url":"https://www.theendurancegroup.com/blog/boston-permit-lookup-tool.html","datePublished":"2026-09-01"},
+      {"@type":"BlogPosting","headline":"Is Claude safe for business data? What B2B teams need to know","url":"https://www.theendurancegroup.com/blog/claude-data-privacy-business.html","datePublished":"2026-08-31"},
+      {"@type":"BlogPosting","headline":"Why Claude certification matters, and why TEG is building a bench of certified talent","url":"https://www.theendurancegroup.com/blog/claude-certification-matters.html","datePublished":"2026-08-28"},
+      {"@type":"BlogPosting","headline":"Claude Cowork vs. Claude Skills: what B2B teams need to know","url":"https://www.theendurancegroup.com/blog/claude-cowork-vs-claude-skills.html","datePublished":"2026-08-27"},
+      {"@type":"BlogPosting","headline":"What is a Claude Partner and how do you find one?","url":"https://www.theendurancegroup.com/blog/what-is-a-claude-partner.html","datePublished":"2026-08-27"},
+      {"@type":"BlogPosting","headline":"How much does Claude implementation cost?","url":"https://www.theendurancegroup.com/blog/claude-implementation-cost.html","datePublished":"2026-08-27"},
+      {"@type":"BlogPosting","headline":"Claude Projects vs Claude Skills: what's the difference?","url":"https://www.theendurancegroup.com/blog/claude-projects-vs-skills.html","datePublished":"2026-08-27"},
+      {"@type":"BlogPosting","headline":"Claude for real estate: what's actually useful in 2026","url":"https://www.theendurancegroup.com/blog/claude-for-real-estate.html","datePublished":"2026-08-27"},
+      {"@type":"BlogPosting","headline":"The best MCP servers for B2B sales and CRM teams","url":"https://www.theendurancegroup.com/blog/best-mcp-servers-for-sales.html","datePublished":"2026-08-27"},
+      {"@type":"BlogPosting","headline":"How to hire a Claude developer (and what to look for)","url":"https://www.theendurancegroup.com/blog/how-to-hire-a-claude-developer.html","datePublished":"2026-08-27"},
+      {"@type":"BlogPosting","headline":"Claude vs Gemini for business automation: what actually matters","url":"https://www.theendurancegroup.com/blog/claude-vs-gemini-business-automation.html","datePublished":"2026-08-27"},
       {
         "@type": "BlogPosting",
         "headline": "How We Fixed a Housecall Pro Sync Alerts Problem Without API Access",
-        "url": "https://theendurancegroup.com/blog/housecall-pro-sync-alerts.html",
+        "url": "https://www.theendurancegroup.com/blog/housecall-pro-sync-alerts.html",
         "datePublished": "2026-08-24"
       },
       {
         "@type": "BlogPosting",
         "headline": "The Endurance Group named a Claude Partner",
-        "url": "https://theendurancegroup.com/blog/claude-partner-announcement.html",
+        "url": "https://www.theendurancegroup.com/blog/claude-partner-announcement.html",
         "datePublished": "2026-08-20"
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "The Endurance Group named an OpenAI Select Partner",
+        "url": "https://www.theendurancegroup.com/blog/openai-select-partner-announcement.html",
+        "datePublished": "2026-08-12"
       },
 {
         "@type": "BlogPosting",
         "headline": "Defensive vs offensive automation workflows: how to know which one you need",
-        "url": "https://theendurancegroup.com/blog/defensive-vs-offensive-automation.html",
+        "url": "https://www.theendurancegroup.com/blog/defensive-vs-offensive-automation.html",
         "datePublished": "2026-08-11"
       },
       {
         "@type": "BlogPosting",
         "headline": "How We Use Hiring Signals to Find Companies Ready to Buy AI",
-        "url": "https://theendurancegroup.com/blog/ai-prospect-finder-hiring-signal.html",
+        "url": "https://www.theendurancegroup.com/blog/ai-prospect-finder-hiring-signal.html",
         "datePublished": "2026-08-04"
       },
       {
         "@type": "BlogPosting",
         "headline": "How Offerpad Scaled AI Across Sales, Renovations, and Accounting",
-        "url": "https://theendurancegroup.com/blog/offerpad-ai-partnership.html",
+        "url": "https://www.theendurancegroup.com/blog/offerpad-ai-partnership.html",
         "datePublished": "2026-08-03"
       },
       {
         "@type": "BlogPosting",
         "headline": "How Biproxi Uses AI to Find Investors Their Competitors Can't",
-        "url": "https://theendurancegroup.com/blog/biproxi-investor-discovery.html",
+        "url": "https://www.theendurancegroup.com/blog/biproxi-investor-discovery.html",
         "datePublished": "2026-08-03"
       },
       {
         "@type": "BlogPosting",
         "headline": "How AI automation helps real estate teams respond to leads before they go cold",
-        "url": "https://theendurancegroup.com/blog/ai-automation-real-estate.html",
+        "url": "https://www.theendurancegroup.com/blog/ai-automation-real-estate.html",
         "datePublished": "2026-06-23"
       },
       {
         "@type": "BlogPosting",
         "headline": "Why generic outbound automation fails B2B SaaS, and what to build instead",
-        "url": "https://theendurancegroup.com/blog/ai-automation-b2b-saas.html",
+        "url": "https://www.theendurancegroup.com/blog/ai-automation-b2b-saas.html",
         "datePublished": "2026-06-23"
       },
       {
         "@type": "BlogPosting",
         "headline": "Why professional services firms should map their network before they prospect",
-        "url": "https://theendurancegroup.com/blog/ai-automation-professional-services.html",
+        "url": "https://www.theendurancegroup.com/blog/ai-automation-professional-services.html",
         "datePublished": "2026-06-23"
       },
       {
         "@type": "BlogPosting",
         "headline": "What counts as a real AI automation, and what's just a demo",
-        "url": "https://theendurancegroup.com/blog/what-is-an-ai-automation.html",
+        "url": "https://www.theendurancegroup.com/blog/what-is-an-ai-automation.html",
         "datePublished": "2026-06-23"
       },
       {
         "@type": "BlogPosting",
         "headline": "When it makes sense to outsource sales execution instead of hiring an SDR",
-        "url": "https://theendurancegroup.com/blog/outsourced-sales-execution-guide.html",
+        "url": "https://www.theendurancegroup.com/blog/outsourced-sales-execution-guide.html",
         "datePublished": "2026-06-23"
       },
       {
         "@type": "BlogPosting",
         "headline": "Why adding more leads won't fix a broken CRM",
-        "url": "https://theendurancegroup.com/blog/fix-crm-before-more-leads.html",
+        "url": "https://www.theendurancegroup.com/blog/fix-crm-before-more-leads.html",
         "datePublished": "2026-06-23"
       },
       {
         "@type": "BlogPosting",
         "headline": "What Claude Skills are, and why we build inside Claude instead of a new app",
-        "url": "https://theendurancegroup.com/blog/claude-skills.html",
+        "url": "https://www.theendurancegroup.com/blog/claude-skills.html",
         "datePublished": "2026-06-23"
       },
       {
         "@type": "BlogPosting",
         "headline": "What custom GPTs are, and why we build inside ChatGPT instead of a new app",
-        "url": "https://theendurancegroup.com/blog/openai-custom-gpts.html",
+        "url": "https://www.theendurancegroup.com/blog/openai-custom-gpts.html",
         "datePublished": "2026-06-23"
       },
       {
         "@type": "BlogPosting",
         "headline": "What Gemini Gems are, and why we build inside Google Workspace instead of a new app",
-        "url": "https://theendurancegroup.com/blog/gemini-gems.html",
+        "url": "https://www.theendurancegroup.com/blog/gemini-gems.html",
         "datePublished": "2026-06-23"
       },
       {
         "@type": "BlogPosting",
         "headline": "Claude and ChatGPT connectors: give AI the right context without copy-pasting",
-        "url": "https://theendurancegroup.com/blog/claude-chatgpt-connectors.html",
+        "url": "https://www.theendurancegroup.com/blog/claude-chatgpt-connectors.html",
         "datePublished": "2026-06-30"
       },
       {
         "@type": "BlogPosting",
         "headline": "MCP: how we connect AI to the tools your team already runs",
-        "url": "https://theendurancegroup.com/blog/mcp-custom-ai-integrations.html",
+        "url": "https://www.theendurancegroup.com/blog/mcp-custom-ai-integrations.html",
         "datePublished": "2026-06-30"
       },
       {
         "@type": "BlogPosting",
         "headline": "How Coachonix is transforming network marketing with AI coaching",
-        "url": "https://theendurancegroup.com/blog/coachonix-network-marketing.html",
+        "url": "https://www.theendurancegroup.com/blog/coachonix-network-marketing.html",
         "datePublished": "2026-07-14"
       },
       {
         "@type": "BlogPosting",
         "headline": "How higher ed is using AI to find prospective students",
-        "url": "https://theendurancegroup.com/blog/higher-ed-ai-student-recruitment.html",
+        "url": "https://www.theendurancegroup.com/blog/higher-ed-ai-student-recruitment.html",
         "datePublished": "2026-07-14"
       }
     ]
   }
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
   </script>
 </head>
 <body>
@@ -249,11 +293,10 @@
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="about.html">About</a></li>
-          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="how-we-work.html">How We Work</a></li>
           <li><a href="specialties.html">Specialties</a></li>          <li><a href="success.html">Success</a></li>
           <li><a href="blog.html" aria-current="page">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="ideas.html" class="nav-cta">Get Your Roadmap</a></li>
         </ul>
       </nav>
     </div>
@@ -265,15 +308,18 @@
     <!-- Hero -->
     <section class="hero hero--page section">
       <div class="container">
-        <span class="eyebrow">Claude Partner Blog</span>
-        <h1>Practical guides on Claude implementation and AI automation</h1>
-        <p class="lede">Implementation guides from Anthropic's Claude Partner. Most of what we write is about Claude: how we deploy it, how clients use it, and what actually works in production for B2B teams.</p>
+        <h1>Practical guides on AI implementation and automation</h1>
+        <p class="lede">Most of what we write is about AI: how we deploy it, how clients use it, and what actually works for teams using AI to create value.</p>
       </div>
     </section>
 
     <!-- Blog Posts with Filter -->
     <section class="section">
       <div class="container">
+        <div class="blog-search">
+          <label for="blog-search-input" class="sr-only" style="position:absolute;left:-9999px;">Search blog posts</label>
+          <input type="search" id="blog-search-input" placeholder="Search posts by topic (e.g. HubSpot, ROI, real estate)" autocomplete="off">
+        </div>
         <div class="blog-filter" role="group" aria-label="Filter posts by topic">
           <button class="blog-filter-btn active" data-cat="all">All</button>
           <button class="blog-filter-btn" data-cat="claude">Claude</button>
@@ -284,33 +330,95 @@
           <button class="blog-filter-btn" data-cat="b2b-technology-saas">B2B Tech &amp; SaaS</button>
           <button class="blog-filter-btn" data-cat="professional-services">Professional Services</button>
         </div>
-        <p class="blog-count" id="blog-count">59 posts</p>
+        <p class="blog-count" id="blog-count">90 posts</p>
+        <p class="blog-empty" id="blog-empty">No posts match your search. Try a different word.</p>
         <div class="grid grid--3" id="blog-grid">
+<div class="feature-card blog-card" data-category="sales-execution ai-automations claude"><a class="eyebrow" href="blog/category/sales-execution.html">Client Engagement</a><h3><a href="blog/rb2b-website-visitors-claude-outreach.html">How we turn RB2B website visitors into outreach with Claude</a></h3><p>We pasted RB2B alerts into a Claude skill that checks HubSpot, Skylead and Gmail, finds one decision maker, and drafts outreach for approval. Here is the workflow, the rules, and the first real run.</p></div>
+<div class="feature-card blog-card" data-category="sales-execution claude"><a class="eyebrow" href="blog/category/sales-execution.html">Client Engagement</a><h3><a href="blog/job-postings-outbound-lead-generation.html">Turn Job Postings Into an Outbound Lead Generation Machine</a></h3><p>A job posting tells you what a company needs. Learn how we turned that signal into a weekday outbound lead generation workflow, and how to map your own service to the roles to watch.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/how-to-schedule-a-task-in-chatgpt.html">How to Schedule a Task in ChatGPT (and Why You Should)</a></h3><p>Scheduled tasks let ChatGPT run a prompt for you on a timer. Here is what they are, why they save time, and how to set one up.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/how-to-create-a-chatgpt-skill.html">What Is a ChatGPT Skill and How to Make One</a></h3><p>A ChatGPT skill packages a task you repeat into something ChatGPT can run on request. Here is what skills are, why they matter, and how to create one.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/chatgpt-connectors-gmail-how-to-connect.html">How to Connect Gmail to ChatGPT (Connectors Explained)</a></h3><p>Connectors let ChatGPT work with apps like Gmail. Here is how to connect one, what you can ask ChatGPT to do once it is linked, and what to watch for.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/what-is-a-chatgpt-project.html">What Is a ChatGPT Project? How to Make One</a></h3><p>A ChatGPT project keeps your chats, files and instructions in one place. Here is what projects are and how to create one, with a video walkthrough.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/how-to-use-chatgpt-beginners-tour.html">How to Use ChatGPT: A Quick Tour for Beginners</a></h3><p>A short video walkthrough of ChatGPT: chat vs work, scheduled tasks, plugins, projects, attaching files and photos, and picking the right model.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/claude-for-small-business-setup-partner.html">Claude for Small Business: what it does, and where a partner still helps with setup</a></h3><p>Anthropic expanded Claude for Small Business to 43 workflows and 27 integrations on September 15. Here's what it does for owners, and where a partner still adds value in setup.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/claude-sonnet-5-5-vs-opus-5-5-which-model-to-use.html">Claude Sonnet 5.5 vs Opus 5.5: which model to use for what, and what it costs</a></h3><p>Which Claude model fits which business task, how Sonnet 5.5 and Opus 5.5 compare on speed and cost, and how to split work between them.</p></div>
+<div class="feature-card blog-card" data-category="sales-execution claude"><a class="eyebrow" href="blog/category/sales-execution.html">Client Engagement</a><h3><a href="blog/outsourced-b2b-sales-lessons-for-claude.html">What Outsourced B2B Sales Taught Us About Using Claude</a></h3><p>Jim Sullivan shares how TEG’s outsourced B2B sales experience shapes Claude outreach: better account selection, warm introductions and useful conversations.</p></div>
+<div class="feature-card blog-card" data-category="sales-execution claude"><a class="eyebrow" href="blog/category/sales-execution.html">Client Engagement</a><h3><a href="blog/account-intelligence-to-qualified-conversations-with-claude.html">From Account Intelligence to Qualified Conversations With Claude</a></h3><p>Use Claude to connect account signals, warm relationships and thoughtful outreach. Build a practical path from monthly account briefs to measurable pipeline value.</p></div>
 
-          <!-- New post October 7, 2026 -->
-          <div class="feature-card blog-card" data-category="ai-automations sales-execution claude">
+<div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/how-to-calculate-roi-ai-workflow.html">How to Calculate the ROI of an AI Workflow</a></h3><p>Calculate AI workflow ROI from process volume, time, costs and expected improvement. Separate capacity from cash savings and include the full cost of ownership.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/business-processes-worth-automating-with-claude.html">5 Business Processes That Are Usually Worth Automating With Claude</a></h3><p>Explore proposal creation, account research, CRM follow-up, invoice workflows and reporting, with practical Claude examples and realistic economics.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/saving-time-isnt-the-same-as-creating-roi.html">Saving Time Isn’t the Same as Creating ROI</a></h3><p>Distinguish AI time savings from cash savings, avoided hiring, capacity, vendor savings and revenue contribution. Build a credible model without double counting.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/why-we-price-ai-projects-based-on-value.html">Why We Price AI Projects Based on Value, Not Hours</a></h3><p>Learn how TEG agrees on expected 12-month economic value and a fixed upfront build price, with separate ongoing management and clear project scope.</p></div>
+<div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/you-already-have-claude-now-what.html">You Already Have Claude. Now What?</a></h3><p>Turn Claude conversations into repeatable team workflows with clear instructions, shared context, connected tools, measurement and ongoing management.</p></div>
+
+<div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/how-to-choose-a-claude-consulting-partner.html">How to Choose a Claude Consulting Partner: Start With Value</a></h3><p>Compare partners on expected economic value, fixed build pricing, training and who stays responsible after launch.</p></div>
+          <div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/how-to-find-ai-value-in-your-business.html">How to Find AI Value in Your Business: Start With Your People</a></h3><p>A people-first method for uncovering AI cost savings, capacity and new revenue, then building and improving with Claude.</p></div>
+
+          <div class="feature-card blog-card" data-category="ai-automations claude">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
-            <h3><a href="blog/rb2b-website-visitors-claude-outreach.html">How we turn RB2B website visitors into outreach with Claude</a></h3>
-            <p>We pasted RB2B alerts into a Claude skill that checks HubSpot, Skylead and Gmail, finds one decision maker, and drafts outreach for approval. Here is the workflow, the rules, and the first real run.</p>
+            <h3><a href="blog/free-claude-training-cloudport-coworking-maine.html">Free Claude Training for Our Coworking Neighbors in Portland, Maine</a></h3>
+            <p>Conor on offering free one-on-one Claude training to Cloudport Coworking members in Portland, Maine, and how a session with Scott Bursey of Maine Technology Institute turned into two more.</p>
+          </div>
+
+          <!-- New posts September 29, 2026: free Claude plugins -->
+          <div class="feature-card blog-card" data-category="sales-execution claude">
+            <a class="eyebrow" href="blog/category/sales-execution.html">Sales Execution</a>
+            <h3><a href="blog/warm-paths-b2b-sales-with-claude.html">How to Find Warm Paths Into B2B Prospects With Claude</a></h3>
+            <p>A Claude connector that finds who on your team already knows someone at a target company, so outreach starts warm instead of cold.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="sales-execution claude">
+            <a class="eyebrow" href="blog/category/sales-execution.html">Sales Execution</a>
+            <h3><a href="blog/fdd-analyzer-with-claude.html">How to Pull Franchise Owner Contacts From an FDD With Claude</a></h3>
+            <p>A free Claude skill that reads a Franchise Disclosure Document and turns the franchisee listings into a structured contact list.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="professional-services claude">
+            <a class="eyebrow" href="blog/category/professional-services.html">Professional Services</a>
+            <h3><a href="blog/referral-identifier-with-claude.html">How to Find Which Clients to Ask for a Referral With Claude</a></h3>
+            <p>A free Claude skill that reviews your email and CRM to find clients ready for a referral ask, then drafts a personal message for each.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="sales-execution claude">
+            <a class="eyebrow" href="blog/category/sales-execution.html">Sales Execution</a>
+            <h3><a href="blog/claude-hubspot-plugin.html">How to Use Claude With HubSpot: A Free Plugin for Deals, Tasks, and Meeting Prep</a></h3>
+            <p>Connecting HubSpot to Claude is step one. Our free HubSpot CRM Toolkit plugin teaches Claude to create deals, turn reminders into HubSpot tasks, prep meetings, and review your pipeline.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="sales-execution claude">
+            <a class="eyebrow" href="blog/category/sales-execution.html">Sales Execution</a>
+            <h3><a href="blog/upwork-proposals-with-claude.html">How to Write Upwork Proposals With Claude (Without Overclaiming)</a></h3>
+            <p>A free plugin that checks Upwork job fit first, then writes proposals in your voice that cite only work you've actually delivered.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="sales-execution claude">
+            <a class="eyebrow" href="blog/category/sales-execution.html">Sales Execution</a>
+            <h3><a href="blog/find-visiting-college-teams-with-claude.html">How Hotels and Travel Vendors Can Find Visiting College Teams With Claude</a></h3>
+            <p>AwayGame is a free Claude plugin that finds college teams playing in your market, verifies games and public contacts, and drafts outreach.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="b2b-technology-saas claude">
+            <a class="eyebrow" href="blog/category/b2b-technology-saas.html">B2B Technology &amp; SaaS</a>
+            <h3><a href="blog/copper-retirement-pots-leads-with-claude.html">How Telecom Brokers Can Find Copper Retirement Notices and POTS Replacement Leads With Claude</a></h3>
+            <p>A free Claude plugin that finds FCC and carrier copper retirement notices, reads the fine print, and builds evidence-backed POTS replacement prospect lists.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="professional-services claude">
+            <a class="eyebrow" href="blog/category/professional-services.html">Professional Services</a>
+            <h3><a href="blog/compliance-review-with-claude.html">How to Check Marketing Content for Compliance With Claude</a></h3>
+            <p>A free Claude plugin that reviews pages, ads, emails, and contracts against the frameworks you choose, with cited, prioritized findings.</p>
           </div>
 
           <!-- New posts September 18, 2026 -->
           <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/custom-claude-applications.html">When Claude.ai Isn't Enough: Building a Custom Claude Application</a></h3>
-            <p>Sometimes you can't use Claude.ai — your users don't have access, or you need a specific interface. Here's when a custom Claude application is the right call, with examples TEG has built.</p>
+            <p>Sometimes you can't use Claude.ai, your users don't have access, or you need a specific interface. Here's when a custom Claude application is the right call, with examples TEG has built.</p>
           </div>
 
           <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/claude-automated-workflows.html">How Claude Automates the Work That Slows Your Team Down</a></h3>
-            <p>Claude doesn't just answer questions — it executes multi-step workflows across your business systems. Here's how automated Claude workflows actually work.</p>
+            <p>Claude doesn't just answer questions, it executes multi-step workflows across your business systems. Here's how automated Claude workflows actually work.</p>
           </div>
 
           <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/claude-environment-setup.html">What It Looks Like When TEG Sets Up Claude for Your Team</a></h3>
-            <p>Most teams install Claude and don't get far. TEG configures your entire Claude environment in four structured meetings — built around your workflows, your tools, your team.</p>
+            <p>Most teams install Claude and don't get far. TEG configures your entire Claude environment in four structured meetings, built around your workflows, your tools, your team.</p>
           </div>
 
           <div class="feature-card blog-card" data-category="ai-automations">
@@ -323,21 +431,21 @@
           <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/merriam-webster-ai-words.html">Merriam-Webster Just Added 1,400 New Words. Here's What the AI Ones Actually Mean.</a></h3>
-            <p>AGI, compute, vibe coding, slop — these words made the dictionary this week. Here's what each one actually means if your team is using Claude at work.</p>
+            <p>AGI, compute, vibe coding, slop, these words made the dictionary this week. Here's what each one actually means if your team is using Claude at work.</p>
           </div>
 
           <!-- New posts September 13, 2026 -->
           <div class="feature-card blog-card" data-category="ai-automations claude">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/anthropic-pacing-what-it-means.html">Anthropic Just Said It's Slowing Down. Here's What That Actually Means for Your Team.</a></h3>
-            <p>Anthropic CEO Dario Amodei published an essay on pacing Claude's frontier capability growth. Here's what it does — and doesn't — mean for B2B teams already running Claude in their operations.</p>
+            <p>Anthropic CEO Dario Amodei published an essay on pacing Claude's frontier capability growth. Here's what it does, and doesn't, mean for B2B teams already running Claude in their operations.</p>
           </div>
 
           <!-- New posts September 11, 2026 -->
           <div class="feature-card blog-card" data-category="claude ai-automations">
             <span class="eyebrow">Professional Development</span>
             <h3><a href="blog/why-anyone-can-learn-ai.html">Why I Believe Anyone Can Learn AI (Even a Former English Teacher)</a></h3>
-            <p>A former high school English teacher turned Claude Certified Developer on why AI isn't just for technical people — and what that means for business owners on the fence.</p>
+            <p>A former high school English teacher turned Claude Certified Developer on why AI isn't just for technical people, and what that means for business owners on the fence.</p>
           </div>
 
           <!-- New posts September 9, 2026 -->
@@ -349,7 +457,7 @@
           <div class="feature-card blog-card" data-category="ai-automations professional-services">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/nonprofit-meeting-notes-precall-automation.html">How We Turned Scattered Meeting Notes Into a Working Task System</a></h3>
-            <p>A small nonprofit's meeting notes lived in three different notetakers and never made it to a shared task list. Here's the automation suite — meeting notes to Trello, daily status checks, and pre-call prep — that fixed it.</p>
+            <p>A small nonprofit's meeting notes lived in three different notetakers and never made it to a shared task list. Here's the automation suite, meeting notes to Trello, daily status checks, and pre-call prep, that fixed it.</p>
           </div>
           <div class="feature-card blog-card" data-category="real-estate ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
@@ -359,7 +467,7 @@
           <div class="feature-card blog-card" data-category="real-estate ai-automations">
             <a class="eyebrow" href="blog/category/real-estate.html">Real Estate</a>
             <h3><a href="blog/ai-photo-review-property-management.html">We Taught Claude to Check Landscaping Photos So a Real Estate Team Didn't Have To</a></h3>
-            <p>A property management team was manually reviewing hundreds of vendor photos per day. TEG automated the check with Claude — plus vendor coverage mapping and invoice review — saving 1–2 hours daily.</p>
+            <p>A property management team was manually reviewing hundreds of vendor photos per day. TEG automated the check with Claude, plus vendor coverage mapping and invoice review, saving 1–2 hours daily.</p>
           </div>
 
           <!-- New posts September 6, 2026 -->
@@ -373,7 +481,7 @@
           <div class="feature-card blog-card" data-category="ai-automations mcp">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/website-mcp-cms.html">Website MCPs: how AI agents update sites without wp-admin</a></h3>
-            <p>MCP servers give AI agents a direct, governed line into your CMS — no wp-admin, no ticket, no agency retainer. Here's how they work, which existing WordPress and Webflow servers we reach for, and when we build a custom one instead.</p>
+            <p>MCP servers give AI agents a direct, governed line into your CMS, no wp-admin, no ticket, no agency retainer. Here's how they work, which existing WordPress and Webflow servers we reach for, and when we build a custom one instead.</p>
           </div>
 
           <!-- New posts September 3, 2026 -->
@@ -385,34 +493,34 @@
           <div class="feature-card blog-card" data-category="ai-automations claude">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/claude-fable-5-1-business-automations.html">What Claude Fable 5.1 means if your team is running on AI-powered automations</a></h3>
-            <p>Anthropic released Claude Fable 5.1 on September 1. Here's what actually changed — longer autonomous runs, root-cause reasoning, and a 45% cost drop — and what it means for the workflows your team runs day to day.</p>
+            <p>Anthropic released Claude Fable 5.1 on September 1. Here's what actually changed, longer autonomous runs, root-cause reasoning, and a 45% cost drop, and what it means for the workflows your team runs day to day.</p>
           </div>
 
           <!-- New posts September 2, 2026 -->
           <div class="feature-card blog-card" data-category="ai-automations claude">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/claudeforce-salesforce-claude-integration.html">What Claudeforce means if your team already runs on Salesforce</a></h3>
-            <p>Salesforce and Anthropic just announced Claudeforce — two distinct integrations with different buyers and different use cases. Here's what Salesforce in Claude vs. Claude in Salesforce actually means for B2B teams, and where the 37 prebuilt sales skills stop.</p>
+            <p>Salesforce and Anthropic just announced Claudeforce, two distinct integrations with different buyers and different use cases. Here's what Salesforce in Claude vs. Claude in Salesforce actually means for B2B teams, and where the 37 prebuilt sales skills stop.</p>
           </div>
 
           <!-- New posts September 1, 2026 -->
           <div class="feature-card blog-card" data-category="real-estate claude">
             <a class="eyebrow" href="blog/category/real-estate.html">Real Estate</a>
-            <h3><a href="blog/boston-permit-lookup-tool.html">We built a Boston permit lookup tool — here's why it needed more than a search box</a></h3>
-            <p>Boston's ScerIS permit search returns scanned PDFs with no unit-level filtering. We built a tool on the Analyze Boston open data API that pulls every permit for an address, groups them by unit, and surfaces assessor data alongside — so due diligence teams can actually answer the question they're asking.</p>
+            <h3><a href="blog/boston-permit-lookup-tool.html">We built a Boston permit lookup tool, here's why it needed more than a search box</a></h3>
+            <p>Boston's ScerIS permit search returns scanned PDFs with no unit-level filtering. We built a tool on the Analyze Boston open data API that pulls every permit for an address, groups them by unit, and surfaces assessor data alongside, so due diligence teams can actually answer the question they're asking.</p>
           </div>
 
           <!-- New posts August 31, 2026 -->
           <div class="feature-card blog-card" data-category="ai-automations claude">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/claude-data-privacy-business.html">Is Claude safe for business data? What B2B teams need to know</a></h3>
-            <p>Does Anthropic train on your data? What can Claude actually see? A plain-English breakdown of Claude's privacy posture across the consumer, Teams, API, and Enterprise tiers — and what to check before connecting Claude to sensitive systems.</p>
+            <p>Does Anthropic train on your data? What can Claude actually see? A plain-English breakdown of Claude's privacy posture across the consumer, Teams, API, and Enterprise tiers, and what to check before connecting Claude to sensitive systems.</p>
           </div>
 
           <!-- New posts August 28, 2026 -->
           <div class="feature-card blog-card" data-category="ai-automations claude">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
-            <h3><a href="blog/claude-certification-matters.html">Why Claude certification matters — and why TEG is building a bench of certified talent</a></h3>
+            <h3><a href="blog/claude-certification-matters.html">Why Claude certification matters, and why TEG is building a bench of certified talent</a></h3>
             <p>Anthropic now certifies developers and architects who build with Claude in production. Here's what the credentials cover, why they matter when hiring an implementation firm, and how TEG's fellowship is building a verified bench.</p>
           </div>
 
@@ -468,6 +576,11 @@
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
             <h3><a href="blog/claude-partner-announcement.html">The Endurance Group named a Claude Partner</a></h3>
             <p>We've been accepted into Anthropic's Claude partner program. Here's what that means for our clients and how we plan to use it.</p>
+          </div>
+          <div class="feature-card blog-card" data-category="ai-automations">
+            <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
+            <h3><a href="blog/openai-select-partner-announcement.html">The Endurance Group named an OpenAI Select Partner</a></h3>
+            <p>TEG has been named an OpenAI Select Partner. Here's what the OpenAI Partner Network is and what it means for our clients.</p>
           </div>
 <div class="feature-card blog-card" data-category="ai-automations">
             <a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a>
@@ -691,16 +804,29 @@
     <div class="container">
       <div class="footer-top">
         <a class="logo" href="/"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
-        <p class="footer-tagline">Your Claude Implementation Partner</p>
+        <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
         <p class="footer-address">Portland, ME &middot; (207) 846-6000</p>
       </div>
       <div class="footer-columns">
         <nav aria-label="Solutions">
           <h3>Solutions</h3>
           <ul>
+            <li><a href="managed-claude.html">Managed Claude</a></li>
+            <li><a href="how-we-work.html">How We Work</a></li>
+            <li><a href="sample-ai-value-assessment.html">Sample AI Value Report</a></li>
             <li><a href="claude-setup.html">Claude Initial Setup</a></li>
             <li><a href="claude.html">Skills &amp; MCPs</a></li>
             <li><a href="solutions.html">Training &amp; Maintenance</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Free Offerings">
+          <h3>Free Offerings</h3>
+          <ul>
+            <li><a href="book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="ai-policy.html">AI Policy Draft</a></li>
+            <li><a href="free-training.html">Free Training</a></li>
+            <li><a href="claude-plugins.html">Claude Plugins</a></li>
           </ul>
         </nav>
         <nav aria-label="Products">
@@ -722,15 +848,11 @@
         <nav aria-label="Company">
           <h3>Company</h3>
           <ul>
-            <li><a href="about.html">About</a></li>
-            <li><a href="how-to-get-started.html">Get Started</a></li>            <li><a href="success.html">Success</a></li>
+            <li><a href="about.html">About</a></li>            <li><a href="success.html">Success</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="ideas.html">Ideas</a></li>
-            <li><a href="ai-policy.html">AI Policy Draft</a></li>
-            <li><a href="free-training.html">Free Training</a></li>
             <li><a href="fellowship.html">Fellowship</a></li>
-            <li><a href="free-training.html">Free Training Session</a></li>
           </ul>
         </nav>
       </div>
@@ -748,31 +870,39 @@
   </footer>
   <!-- END SHARED FOOTER -->
 
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=20260930" defer></script>
   <script>
     (function(){
       var btns = document.querySelectorAll('.blog-filter-btn');
       var cards = document.querySelectorAll('.blog-card');
       var countEl = document.getElementById('blog-count');
-      if(countEl) countEl.textContent = cards.length + (cards.length === 1 ? ' post' : ' posts');
+      var input = document.getElementById('blog-search-input');
+      var emptyEl = document.getElementById('blog-empty');
+      var cat = 'all';
+      var texts = Array.prototype.map.call(cards, function(c){ return c.textContent.toLowerCase(); });
+      function apply(){
+        var terms = (input ? input.value : '').toLowerCase().split(/\s+/).filter(Boolean);
+        var visible = 0;
+        cards.forEach(function(card, i){
+          var cats = (card.dataset.category || '').split(' ');
+          var okCat = cat === 'all' || cats.indexOf(cat) !== -1;
+          var okText = terms.every(function(t){ return texts[i].indexOf(t) !== -1; });
+          if(okCat && okText){ card.classList.remove('hidden'); visible++; }
+          else { card.classList.add('hidden'); }
+        });
+        if(countEl) countEl.textContent = visible + (visible === 1 ? ' post' : ' posts');
+        if(emptyEl) emptyEl.style.display = visible === 0 ? 'block' : 'none';
+      }
       btns.forEach(function(btn){
         btn.addEventListener('click', function(){
           btns.forEach(function(b){ b.classList.remove('active'); });
           btn.classList.add('active');
-          var cat = btn.dataset.cat;
-          var visible = 0;
-          cards.forEach(function(card){
-            var cats = (card.dataset.category || '').split(' ');
-            if(cat === 'all' || cats.indexOf(cat) !== -1){
-              card.classList.remove('hidden');
-              visible++;
-            } else {
-              card.classList.add('hidden');
-            }
-          });
-          if(countEl) countEl.textContent = visible + (visible === 1 ? ' post' : ' posts');
+          cat = btn.dataset.cat;
+          apply();
         });
       });
+      if(input) input.addEventListener('input', apply);
+      apply();
     })();
   </script>
 </body>
