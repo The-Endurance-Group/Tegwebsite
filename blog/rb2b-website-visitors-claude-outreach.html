@@ -102,7 +102,7 @@
       "name": "Can Claude work with RB2B?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. RB2B posts each identified visitor to Slack, and you can paste that alert into Claude. A Claude skill then checks HubSpot, our proprietary LinkedIn automation system and Gmail for existing contact, finds one decision maker in Apollo if the company is new, and prepares an email draft, a paused LinkedIn sequence and a follow-up task for you to approve."
+        "text": "Yes. RB2B posts each identified visitor to Slack, and today we paste that alert into Claude. It can also be configured so Claude runs the lookups automatically as soon as a lead hits. A Claude skill then checks HubSpot, our proprietary LinkedIn automation system and Gmail for existing contact, finds one decision maker in Apollo if the company is new, and prepares an email draft, a paused LinkedIn sequence and a follow-up task for you to approve."
       }
     },
     {
@@ -110,7 +110,7 @@
       "name": "Does RB2B have an MCP server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "RB2B has an MCP for its API, but it is tied to a separate API partner program, so we did not rely on it. Pasting the Slack alert into Claude works fine and keeps the workflow simple."
+        "text": "RB2B has an MCP for its API, but it is tied to a separate API partner program, so we did not rely on it. Pasting the Slack alert into Claude works fine, and the lookups can be triggered automatically when a lead hits."
       }
     },
     {
@@ -212,7 +212,7 @@
           <p>We built one Claude skill that runs the whole sequence, wired to the tools we already use. Here is the path every lead follows:</p>
 
           <ol>
-            <li><strong>Paste the alert.</strong> The RB2B Slack notification goes into Claude.</li>
+            <li><strong>Send Claude the alert.</strong> Today we paste the RB2B Slack notification into Claude.</li>
             <li><strong>Run three read-only checks.</strong> Claude searches HubSpot, our proprietary LinkedIn automation system and Gmail for any past contact with that company.</li>
             <li><strong>Stop if there is prior contact.</strong> If we have ever emailed, met with or messaged anyone there, Claude tells us what it found and waits.</li>
             <li><strong>Find one decision maker.</strong> Only if the company is new does it spend an Apollo credit, on one person. For a small organization that is usually the CEO, president or executive director. For a bigger one it is operations, technology or innovation.</li>
@@ -223,6 +223,8 @@
             <img src="../images/rb2b-lead-workflow.png" alt="Flowchart of the RB2B lead workflow: an RB2B alert is pasted into Claude, which checks HubSpot, our proprietary LinkedIn automation system and Gmail. If there is prior contact it stops and asks. If not, Apollo finds one decision maker, then a HubSpot contact, Gmail draft, paused lead in our proprietary LinkedIn automation system and 2-day follow-up task are created for approval." style="max-width:100%; height:auto;" width="1344" height="1096" loading="lazy">
             <figcaption style="font-size:0.9em; opacity:0.75; margin-top:8px;">Every lead passes three read-only checks before any credit is spent.</figcaption>
           </figure>
+
+          <p>We use Slack as the starting point for now, but it does not have to stay manual. The same skill can be configured so Claude runs every one of these lookups automatically the moment a lead hits, with the drafts, the paused LinkedIn lead and the follow-up task already waiting when you open them. A person still approves before anything is sent.</p>
 
           <h2>What rules does the skill follow?</h2>
 
@@ -259,10 +261,10 @@
 
           <h2>Frequently asked questions</h2>
           <h3>Can Claude work with RB2B?</h3>
-          <p>Yes. RB2B posts each identified visitor to Slack, and you can paste that alert into Claude. A Claude skill then checks HubSpot, our proprietary LinkedIn automation system and Gmail for existing contact, finds one decision maker in Apollo if the company is new, and prepares an email draft, a paused LinkedIn sequence and a follow-up task for you to approve.</p>
+          <p>Yes. RB2B posts each identified visitor to Slack, and today we paste that alert into Claude. It can also be configured so Claude runs the lookups automatically as soon as a lead hits. A Claude skill then checks HubSpot, our proprietary LinkedIn automation system and Gmail for existing contact, finds one decision maker in Apollo if the company is new, and prepares an email draft, a paused LinkedIn sequence and a follow-up task for you to approve.</p>
 
           <h3>Does RB2B have an MCP server?</h3>
-          <p>RB2B has an MCP for its API, but it is tied to a separate API partner program, so we did not rely on it. Pasting the Slack alert into Claude works fine and keeps the workflow simple.</p>
+          <p>RB2B has an MCP for its API, but it is tied to a separate API partner program, so we did not rely on it. Pasting the Slack alert into Claude works fine, and the lookups can be triggered automatically when a lead hits.</p>
 
           <h3>How many website visitors does RB2B identify?</h3>
           <p>Not most of them. RB2B only identifies US visitors, visitors on a VPN are missed, and its own plan pages list identification rates well under half of traffic. Check RB2B's pricing page for current plans and limits.</p>
