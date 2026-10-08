@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="../images/favicon-network.png">
-  <link rel="stylesheet" href="../css/styles.css?v=20261003-free-offerings">
+  <link rel="stylesheet" href="../css/styles.css?v=20261008-contrast">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -150,6 +150,18 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "yrynbf5pfi");
   </script>
+  <style>
+    .model-summary { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0 32px; font-size: 18px; background: var(--color-white); border: 2px solid var(--color-purple); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 12px 32px rgba(112, 66, 130, .15); }
+    .model-summary caption { caption-side: top; text-align: left; font-size: 20px; font-weight: 800; color: var(--color-purple); padding-bottom: 12px; }
+    .model-summary th, .model-summary td { padding: 16px 20px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); line-height: 1.4; }
+    .model-summary thead th { background: var(--color-purple); color: #fff; font-size: 20px; font-weight: 800; border-bottom: 0; }
+    .model-summary thead th:nth-child(3) { background: var(--color-pink-dark); }
+    .model-summary tbody th { font-weight: 700; color: var(--color-ink); background: var(--tint-purple); width: 24%; }
+    .model-summary tbody td { font-weight: 600; }
+    .model-summary tbody tr:last-child th, .model-summary tbody tr:last-child td { border-bottom: 0; }
+    .model-summary tbody tr:nth-child(2) td, .model-summary tbody tr:nth-child(3) td { font-size: 22px; font-weight: 800; color: var(--color-purple); }
+    @media (max-width: 640px) { .model-summary { font-size: 16px; } .model-summary th, .model-summary td { padding: 12px; } }
+  </style>
 </head>
 <body class="blog-post">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -205,6 +217,17 @@
           <p><em>TEG is an official member of the Anthropic Claude Partner Network. We build Claude Skills, Projects, and MCP integrations for B2B ops teams. <a href="../solutions.html">See our full Claude services.</a></em></p>
 
           <div class="example-callout"><h2>Which Claude model should my team use, Sonnet 5.5 or Opus 5.5?</h2><p>Use Sonnet 5.5 for well-scoped everyday work like drafting, reporting, CRM updates, and building documents. Use Opus 5.5 for complex, open-ended work that needs sustained judgment. Sonnet 5.5 lists at $2 per million input tokens and $10 per million output tokens, half the $4 and $20 for Opus 5.5. Judge cost per finished task, not per token.</p></div>
+
+          <table class="model-summary">
+            <caption>Sonnet 5.5 vs Opus 5.5 at a glance</caption>
+            <thead><tr><th scope="col"></th><th scope="col">Sonnet 5.5</th><th scope="col">Opus 5.5</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Best for</th><td>Well-scoped everyday work: drafting, reporting, CRM updates, documents</td><td>Open-ended, high-stakes work that needs sustained judgment</td></tr>
+              <tr><th scope="row">Input, per million tokens</th><td>$2</td><td>$4</td></tr>
+              <tr><th scope="row">Output, per million tokens</th><td>$10</td><td>$20</td></tr>
+              <tr><th scope="row">Use it as</th><td>Your default</td><td>The step where a wrong call is expensive</td></tr>
+            </tbody>
+          </table>
 
           <p>Anthropic shipped two models in a week. Claude Opus 5.5 arrived on September 22, and Claude Sonnet 5.5 followed on September 28. If you run Claude for your team, or pay for automations built on it, the question is simple: which one should do which job, and what does the choice do to your costs?</p>
 
@@ -293,6 +316,11 @@
             <span class="eyebrow">AI Automations</span>
             <h3><a href="claude-implementation-cost.html">How much does Claude implementation cost?</a></h3>
             <p>What drives the cost of putting Claude to work, and what to expect from a partner engagement.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="claude-haiku-5-5-cost-savings.html">Claude Haiku 5.5 costs up to 90% less. Here is who should switch.</a></h3>
+            <p>Anthropic's new low-cost Claude model costs up to 90% less than the last Haiku. What it really saves and which everyday tasks to hand it first.</p>
           </div>
         </div>
       </div>

@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-08",
+    "title": "Claude Haiku 5.5 costs up to 90% less. Here is who should switch.",
+    "slug": "claude-haiku-5-5-cost-savings",
+    "url": "https://www.theendurancegroup.com/blog/claude-haiku-5-5-cost-savings.html",
+    "path": "manual-conor-pov",
+    "angle_summary": "Claude Haiku 5.5 launch (Oct 7), rewritten for a non-technical audience: 90% price cut explained in plain terms, why real savings are closer to 75%, which everyday tasks to hand to Haiku, how to test safely. Answer-first callout and 5 FAQs for AEO.",
+    "deploy_verified": false,
+    "related_post_updated": "claude-sonnet-5-5-vs-opus-5-5-which-model-to-use.html"
+  },
+  {
     "date": "2026-10-07",
     "title": "How we turn RB2B website visitors into outreach with Claude",
     "slug": "rb2b-website-visitors-claude-outreach",

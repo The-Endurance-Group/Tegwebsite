@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon-network.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261003-free-offerings">
+  <link rel="stylesheet" href="css/styles.css?v=20261008-contrast">
   <style>
     .how-we-work .section-title { margin-bottom: 24px; }
     .how-we-work .hero-subtitle { max-width: 850px; font-size: clamp(24px, 3vw, 34px); margin-bottom: 24px; }
@@ -130,6 +130,13 @@
     .how-we-work .managed-why { background: var(--color-white); }
     .how-we-work .managed-why h4 { margin-bottom: 12px; }
     .how-we-work .managed-why p { max-width: 760px; font-size: 15px; color: var(--color-lavender); }
+    .how-we-work .quote-card--hero { position: relative; padding: 48px 48px 40px; border: 0; border-left: 8px solid var(--color-teal-dark); border-radius: var(--radius-md); background: var(--color-white); box-shadow: 0 18px 44px rgba(112, 66, 130, .18); }
+    .how-we-work .quote-card--hero::before { content: "\201C"; position: absolute; top: -8px; right: 32px; font-size: 140px; line-height: 1; font-weight: 800; color: var(--color-pink); opacity: .35; }
+    .how-we-work .quote-card--hero .eyebrow { font-size: 14px; }
+    .how-we-work .quote-card--hero blockquote { margin: 16px 0 20px; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.4; font-weight: 700; color: var(--color-ink); }
+    .how-we-work .quote-card--hero cite { display: block; font-size: 15px; font-weight: 600; }
+    .how-we-work .quote-card--hero .feature-link { display: inline-block; margin-top: 20px; font-size: 17px; font-weight: 700; }
+    @media (max-width: 767px) { .how-we-work .quote-card--hero { padding: 32px 24px; } }
     .how-we-work .managed-why p + p { margin-top: 12px; }
   </style>
   <script type="text/javascript">
@@ -221,6 +228,7 @@
           </dl>
           <p class="example-terms">Together, we estimate the solution’s expected 12-month economic value and agree on a percentage that makes sense for your business. That sets a fixed build price before work begins. This example estimates capacity, not cash savings. Once fixed, the price does not change with actual savings, utilization, revenue, employee compensation, or other results.</p>
         </aside>
+        <div class="btn-group"><a class="btn btn-primary" href="book-value-assessment.html">Start Your Free AI Value Assessment</a><a class="btn btn-secondary" href="sample-ai-value-assessment.html">View a Sample AI Value Report</a></div>
         <div class="launch-plan">
           <h3>From kickoff to launch</h3>
           <ol class="launch-stages" aria-label="Implementation stages">
@@ -269,6 +277,7 @@
         </div>
         <p class="managed-build-note">Have an idea for a new workflow? Its assessment is included. <b>The new build is separately scoped and value-priced.</b></p>
         <p style="margin-top:8px; font-size:14px; color:var(--color-lavender);">Claude subscriptions, third-party software and API charges are paid separately by the client.</p>
+        <div class="btn-group"><a class="btn btn-primary" href="book-value-assessment.html">Start Your Free AI Value Assessment</a></div>
         <details class="managed-scope">
           <summary>Scope, ownership &amp; terms</summary>
           <div class="managed-terms">
@@ -283,7 +292,7 @@
       </div>
     </section>
 
-<section class="section section--alt"><div class="container"><div class="quote-card" style="max-width:800px; margin-inline:auto;"><span class="eyebrow">A client’s experience</span><blockquote>“From our first conversation, Conor took the time to understand our business, the challenges we were trying to solve, and how custom Claude skills could help streamline our workflows.”</blockquote><cite>Gieriet Bowen, Director of Investor Relations · Biproxi Capital Network</cite><a class="feature-link" href="success.html#biproxi">Read the client story →</a></div></div></section>
+<section class="section"><div class="container"><div class="quote-card quote-card--hero" style="max-width:860px; margin-inline:auto;"><span class="eyebrow">A client’s experience</span><blockquote>“From our first conversation, Conor took the time to understand our business, the challenges we were trying to solve, and how custom Claude skills could help streamline our workflows.”</blockquote><cite>Gieriet Bowen, Director of Investor Relations · Biproxi Capital Network</cite><a class="feature-link" href="success.html#biproxi">Read the client story →</a></div></div></section>
 
     <section class="section section--dark text-center">
       <div class="container">
