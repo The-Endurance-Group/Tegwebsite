@@ -28,6 +28,7 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [Claude Haiku 5.5 cuts token prices up to 90%. Here is what to move over first.](https://www.theendurancegroup.com/blog/claude-haiku-5-5-cost-savings.html)
 - [How we turn RB2B website visitors into outreach with Claude](https://www.theendurancegroup.com/blog/rb2b-website-visitors-claude-outreach.html)
 - [Turn Job Postings Into an Outbound Lead Generation Machine](https://www.theendurancegroup.com/blog/job-postings-outbound-lead-generation.html)
 - [How to Schedule a Task in ChatGPT (and Why You Should)](https://www.theendurancegroup.com/blog/how-to-schedule-a-task-in-chatgpt.html)
