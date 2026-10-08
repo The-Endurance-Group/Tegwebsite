@@ -137,7 +137,7 @@ textarea:focus-visible {
   padding-block: var(--section-padding);
 }
 
-.section--alt { background: #EDE7EB; border-top: 1px solid #DDD3D9; border-bottom: 1px solid #DDD3D9; }
+.section--alt { background: #E8DFE6; border-top: 1px solid #D3C6CF; border-bottom: 1px solid #D3C6CF; }
 .section--tint-pink { background: var(--tint-pink); }
 .section--tint-teal { background: var(--tint-teal); }
 .section--tint-purple { background: var(--tint-purple); }
