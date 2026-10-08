@@ -1261,7 +1261,8 @@ details[open] .faq-q::after { content: "−"; }
 .feature-card, .pricing-card, .tool-card, .example-card, .case-study-card, .post-scroller-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
-.feature-card:hover, .tool-card:hover, .example-card:hover, .post-scroller-card:hover {
+/* Static cards (no link inside) must not look clickable; only lift cards that contain a link. */
+.feature-card:has(a):hover, .tool-card:hover, .example-card:hover, .post-scroller-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 32px rgba(26,26,26,0.10);
   border-color: var(--color-pink);
