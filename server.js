@@ -435,6 +435,13 @@ function serveStatic(req, res) {
     ? 'no-cache, must-revalidate'
     : 'public, max-age=31536000, immutable';
 
+  // Gated training videos require the cookie set by /api/video-access.
+  if (isVideo && /^gpt-training\d+\./.test(path.basename(filePath)) && !/(^|;\s*)teg_video=1/.test(req.headers.cookie || '')) {
+    res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('Enter your email on the page to watch this video.');
+    return;
+  }
+
   // Videos: stream with HTTP range support so browsers can seek and start fast.
   if (isVideo) {
     fs.stat(filePath, (err, stat) => {
@@ -927,6 +934,44 @@ function handleDownloadSkill(req, res) {
   });
 }
 
+function handleVideoAccess(req, res) {
+  var ip = clientIp(req);
+  readBody(req).then(function(body) {
+    var data;
+    try { data = JSON.parse(body); } catch(e) { data = {}; }
+    var email = (data.email || '').slice(0, 200).trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      res.writeHead(400, {'Content-Type': 'application/json'});
+      res.end(JSON.stringify({ok: false, error: 'Valid email required'}));
+      return;
+    }
+    var page = (data.page || '').replace(/[^a-z0-9\-\/.]/gi, '').slice(0, 120);
+    console.log('[VIDEO]', JSON.stringify({email, page, ip, ts: new Date().toISOString()}));
+    var resendKey = process.env.RESEND_API_KEY;
+    if (resendKey) {
+      fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + resendKey, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          from: 'TEG Website <noreply@theendurancegroup.com>',
+          to: ['csullivan@theendurancegroup.com'],
+          reply_to: email,
+          subject: 'Training video viewer: ' + email,
+          text: 'Someone unlocked a ChatGPT training video.\n\nEmail: ' + email + '\nPage: ' + (page || 'unknown') + '\nIP: ' + ip + '\nTime: ' + new Date().toISOString()
+        })
+      }).catch(function(err) { console.error('[VIDEO] Resend error:', err.message); });
+    }
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+      'Set-Cookie': 'teg_video=1; Path=/; Max-Age=31536000; SameSite=Lax; HttpOnly'
+    });
+    res.end(JSON.stringify({ok: true}));
+  }).catch(function() {
+    res.writeHead(400, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify({ok: false, error: 'Bad request'}));
+  });
+}
+
 http.createServer((req, res) => {
   var urlPath = req.url.split('?')[0];
   if (req.method === 'POST' && urlPath === '/api/chat') {
@@ -947,6 +992,10 @@ http.createServer((req, res) => {
   }
   if (req.method === 'POST' && urlPath === '/api/download-skill') {
     handleDownloadSkill(req, res);
+    return;
+  }
+  if (req.method === 'POST' && urlPath === '/api/video-access') {
+    handleVideoAccess(req, res);
     return;
   }
   if (req.method === 'POST' && urlPath === '/api/ai-policy') {

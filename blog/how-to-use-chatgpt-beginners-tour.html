@@ -169,9 +169,17 @@
         <div class="container">
           <div class="prose reveal">
 
-            <div class="video-embed" style="margin-bottom:40px;">
-              <video controls preload="metadata" style="width:100%; border-radius:8px; display:block;">
-                <source src="../videos/gpt-training1.mp4" type="video/mp4">
+            <div class="video-embed" data-gated style="margin-bottom:40px;">
+              <div class="video-gate" style="background:#f4f6fa; border-radius:8px; padding:40px 24px; text-align:center;">
+                <p style="font-weight:700; font-size:1.15rem; margin:0 0 8px;">Enter your email to watch this video</p>
+                <p style="margin:0 0 20px;">Free. We will only use it to follow up about ChatGPT and Claude training.</p>
+                <form style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+                  <input type="email" required placeholder="you@company.com" aria-label="Email address" style="padding:12px 14px; border:1px solid #c5ccd8; border-radius:6px; min-width:240px; font:inherit;">
+                  <button type="submit" class="btn btn-primary">Watch the video</button>
+                </form>
+                <p class="video-gate-error" style="display:none; color:#b00020; margin:12px 0 0;">Something went wrong. Please try again.</p>
+              </div>
+              <video controls preload="metadata" data-src="../videos/gpt-training1.mp4" style="width:100%; border-radius:8px; display:none;">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -294,5 +302,6 @@
   <!-- END SHARED FOOTER -->
 
   <script src="../js/main.js?v=20260930" defer></script>
+  <script src="../js/video-gate.js"></script>
 </body>
 </html>
