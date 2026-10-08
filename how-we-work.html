@@ -69,11 +69,14 @@
     .how-we-work .launch-details { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
     .how-we-work .payment-split { padding: 24px; background: var(--tint-purple); border-radius: var(--radius-md); }
     .how-we-work .payment-split h4 { margin-bottom: 16px; }
-    .how-we-work .payment-milestones { display: grid; grid-template-columns: 1fr 1fr; }
-    .how-we-work .payment-milestones div { display: flex; flex-direction: column; gap: 4px; }
-    .how-we-work .payment-milestones div + div { border-left: 1px solid var(--border-light); padding-left: 24px; }
-    .how-we-work .payment-milestones b { font-size: 36px; line-height: 1.2; color: var(--color-purple); }
-    .how-we-work .payment-milestones span { font-size: 14px; color: var(--color-lavender); }
+    .how-we-work .payment-split, .how-we-work .warranty-note { grid-column: 1 / -1; }
+    .how-we-work .pace-intro { margin-bottom: 16px; font-size: 15px; color: var(--color-lavender); }
+    .how-we-work .pace-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .how-we-work .pace-option { display: flex; flex-direction: column; gap: 4px; padding: 20px; border: 1px solid var(--border-light); border-radius: var(--radius-md); background: var(--color-white); }
+    .how-we-work .pace-option b { font-size: 24px; line-height: 1.2; color: var(--color-purple); }
+    .how-we-work .pace-option span { font-size: 14px; color: var(--color-lavender); }
+    .how-we-work .pace-note { margin-top: 16px; font-size: 14px; color: var(--color-lavender); }
+    .how-we-work .pace-options + .pace-note { margin-top: 20px; }
     .how-we-work .warranty-note { display: flex; align-items: center; gap: 16px; padding: 24px; background: var(--tint-teal); border-radius: var(--radius-md); }
     .how-we-work .warranty-note svg { flex: 0 0 28px; width: 28px; height: 28px; color: var(--color-teal-dark); }
     .how-we-work .warranty-note h4 { margin-bottom: 6px; }
@@ -84,7 +87,7 @@
     @media (max-width: 767px) {
       .how-we-work .proposal-flow { grid-template-columns: 1fr auto 1fr; gap: 12px; }
       .how-we-work .proposal-flow .time-saved { grid-column: 1 / -1; }
-      .how-we-work .launch-stages, .how-we-work .launch-details { grid-template-columns: 1fr; }
+      .how-we-work .launch-stages, .how-we-work .launch-details, .how-we-work .pace-options { grid-template-columns: 1fr; }
       .how-we-work .launch-stages { gap: 16px; }
       .how-we-work .launch-stage { display: grid; grid-template-columns: 44px 1fr; column-gap: 16px; padding: 20px; }
       .how-we-work .launch-stage .stage-icon { grid-row: 1 / 3; }
@@ -238,8 +241,16 @@
           </ol>
           <div class="launch-details">
             <div class="payment-split">
-              <h4>Two simple payments</h4>
-              <div class="payment-milestones"><div><b>50%</b><span>At kickoff</span></div><div><b>50%</b><span>At launch</span></div></div>
+              <h4>Choose your pace</h4>
+              <p class="pace-intro">Your build price is fixed before work begins. You decide how fast we move and how you pay.</p>
+              <div class="pace-options">
+                <div class="pace-option"><b>All at once</b><span>Pay at kickoff. Fastest delivery.</span></div>
+                <div class="pace-option"><b>2 months</b><span>Two equal monthly payments.</span></div>
+                <div class="pace-option"><b>3 months</b><span>Three equal monthly payments.</span></div>
+                <div class="pace-option"><b>4 months</b><span>Four equal monthly payments. Lowest monthly cost.</span></div>
+              </div>
+              <p class="pace-note">Same price on every plan. No interest, no fees. For example, a $10,000 build is $10,000 at once or $2,500 a month over four months.</p>
+              <p class="pace-note">Your first payment is due at kickoff. Each plan sets the build schedule, so the faster you pay, the faster we deliver.</p>
             </div>
             <div class="warranty-note">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"/><path d="m8 12 3 3 5-6"/></svg>
