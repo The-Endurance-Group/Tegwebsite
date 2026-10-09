@@ -436,7 +436,7 @@ function serveStatic(req, res) {
     : 'public, max-age=31536000, immutable';
 
   // Gated training videos require the cookie set by /api/video-access.
-  if (isVideo && /^gpt-training\d+\./.test(path.basename(filePath)) && !/(^|;\s*)teg_video=1/.test(req.headers.cookie || '')) {
+  if (isVideo && /^(gpt|claude)-training\d+\./.test(path.basename(filePath)) && !/(^|;\s*)teg_video=1/.test(req.headers.cookie || '')) {
     res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('Enter your email on the page to watch this video.');
     return;
@@ -946,6 +946,7 @@ function handleVideoAccess(req, res) {
       return;
     }
     var page = (data.page || '').replace(/[^a-z0-9\-\/.]/gi, '').slice(0, 120);
+    var kind = /claude/i.test(page) ? 'Claude' : 'ChatGPT';
     console.log('[VIDEO]', JSON.stringify({email, page, ip, ts: new Date().toISOString()}));
     var resendKey = process.env.RESEND_API_KEY;
     if (resendKey) {
@@ -956,8 +957,8 @@ function handleVideoAccess(req, res) {
           from: 'TEG Website <noreply@theendurancegroup.com>',
           to: ['csullivan@theendurancegroup.com'],
           reply_to: email,
-          subject: 'Training video viewer: ' + email,
-          text: 'Someone unlocked a ChatGPT training video.\n\nEmail: ' + email + '\nPage: ' + (page || 'unknown') + '\nIP: ' + ip + '\nTime: ' + new Date().toISOString()
+          subject: kind + ' training video viewer: ' + email,
+          text: 'Someone unlocked a ' + kind + ' training video.\n\nEmail: ' + email + '\nPage: ' + (page || 'unknown') + '\nIP: ' + ip + '\nTime: ' + new Date().toISOString()
         })
       }).catch(function(err) { console.error('[VIDEO] Resend error:', err.message); });
     }
