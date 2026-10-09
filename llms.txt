@@ -28,6 +28,7 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [Claude Now Builds Live Dashboards and Animations. Here's What Business Teams Should Do With Them.](https://www.theendurancegroup.com/blog/claude-dashboards-motion-docs-slides-design.html)
 - [How to Schedule a Task in Claude](https://www.theendurancegroup.com/blog/how-to-schedule-a-task-in-claude.html)
 - [How to Create a Claude Skill (Step by Step)](https://www.theendurancegroup.com/blog/how-to-create-a-claude-skill.html)
 - [How to Connect Gmail to Claude (Connectors Explained)](https://www.theendurancegroup.com/blog/claude-connectors-gmail-how-to-connect.html)
