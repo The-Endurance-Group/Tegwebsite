@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-10-09",
+    "title": "Anthropic Now Bans Cruelty Toward Claude. Here's What That Means for Your Team.",
+    "slug": "being-nice-to-claude-usage-policy",
+    "url": "https://www.theendurancegroup.com/blog/being-nice-to-claude-usage-policy.html",
+    "path": "manual-conor-pov",
+    "angle_summary": "Anthropic usage policy update (effective Nov 12) banning sustained, needless cruelty toward Claude: what the rule covers and excludes, enforcement via ending conversations, model welfare rationale, practical takeaways for business teams. Sourced from TechCrunch and MacRumors reporting since AFP page was not fetchable.",
+    "deploy_verified": false,
+    "related_post_updated": "claude-data-privacy-business.html"
+  },
+  {
     "date": "2026-10-08",
     "title": "Claude Haiku 5.5 costs up to 90% less. Here is who should switch.",
     "slug": "claude-haiku-5-5-cost-savings",

@@ -33,6 +33,7 @@
 - [How to Connect Gmail to Claude (Connectors Explained)](https://www.theendurancegroup.com/blog/claude-connectors-gmail-how-to-connect.html)
 - [How to Create a Claude Project (and Stop Re-Pasting Context)](https://www.theendurancegroup.com/blog/how-to-create-a-claude-project.html)
 - [How to Use Claude: A Quick Tour for Beginners](https://www.theendurancegroup.com/blog/how-to-use-claude-beginners-tour.html)
+- [Anthropic Now Bans Cruelty Toward Claude. Here's What That Means for Your Team.](https://www.theendurancegroup.com/blog/being-nice-to-claude-usage-policy.html)
 - [Claude Haiku 5.5 costs up to 90% less. Here is who should switch.](https://www.theendurancegroup.com/blog/claude-haiku-5-5-cost-savings.html)
 - [How we turn RB2B website visitors into outreach with Claude](https://www.theendurancegroup.com/blog/rb2b-website-visitors-claude-outreach.html)
 - [Turn Job Postings Into an Outbound Lead Generation Machine](https://www.theendurancegroup.com/blog/job-postings-outbound-lead-generation.html)
