@@ -11,6 +11,7 @@
 - [How We Work](https://www.theendurancegroup.com/how-we-work.html): Free AI Value Assessment, fixed value-priced builds, and Managed Claude from $1,500/month. Clients pay software and API charges separately.
 - [Sample AI Value Report](https://www.theendurancegroup.com/sample-ai-value-assessment.html): Illustrative opportunities, economic-value calculations and fixed build prices for a fictional sales team.
 - [Book a Free AI Value Assessment](https://www.theendurancegroup.com/book-value-assessment.html): Choose a team on the intro call, then up to five hours of meetings and research. AI Value Report within one week after the assessment.
+- [Instant AI Assessment](https://www.theendurancegroup.com/ai-assessment): Answer six questions tailored to your role and industry and get an instant AI Opportunity Report with recommended Claude builds, estimated hours freed and projected annual value. Enter an email to unlock the full report.
 
 - [Home](https://www.theendurancegroup.com/): What we do and how we work - AI automations and strategy, built and run, not just advised.
 - [Solutions](https://www.theendurancegroup.com/solutions.html): The four things TEG does, system integrations, automated workflows, custom Claude applications, and Claude setup and training. New builds are separately scoped and value-priced.
