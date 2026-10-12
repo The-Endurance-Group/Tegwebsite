@@ -30,6 +30,23 @@
     .sample-assessment .btn { white-space: normal; text-align: center; }
     .sample-assessment .hero::after { content: ""; display: block; clear: both; }
     .sample-assessment .sample-note { margin-top: 28px; max-width: 760px; padding: 16px 20px; border-left: 3px solid var(--color-pink); border-radius: var(--radius-sm); background: var(--tint-pink); font-size: 14px; }
+    .sample-assessment .result-stats { display: flex; flex-wrap: wrap; gap: 16px; margin: 28px 0 0; }
+    .sample-assessment .result-stats li { flex: 1 1 180px; padding: 16px 20px; background: var(--color-white); border: 1px solid var(--border-light); border-radius: var(--radius-md); }
+    .sample-assessment .result-stats b { display: block; font-size: clamp(26px, 4vw, 36px); line-height: 1.1; color: var(--color-purple); }
+    .sample-assessment .result-stats span { font-size: 14px; color: var(--color-lavender); }
+    .sample-assessment .result-card { margin-top: 16px; max-width: 900px; padding: 24px; background: var(--color-white); border: 2px solid var(--color-purple); border-radius: var(--radius-md); }
+    .sample-assessment .result-card h2 { font-size: 20px; margin-bottom: 16px; }
+    .sample-assessment .result-compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; }
+    .sample-assessment .result-compare > div { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: var(--radius-sm); }
+    .sample-assessment .result-before { background: var(--bg-light); }
+    .sample-assessment .result-after { background: var(--tint-teal); }
+    .sample-assessment .result-tag { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--color-lavender); }
+    .sample-assessment .result-compare b { font-size: clamp(24px, 3.5vw, 32px); line-height: 1.2; color: var(--color-purple); }
+    .sample-assessment .result-compare div > span:last-child { font-size: 14px; color: var(--color-lavender); }
+    .sample-assessment .result-arrow { font-size: 28px; font-weight: 700; color: var(--color-pink-dark); }
+    .sample-assessment .result-sum { margin-top: 16px; font-size: 15px; color: var(--color-lavender); }
+    .sample-assessment .result-sum b { color: var(--color-purple); }
+    @media (max-width: 767px) { .sample-assessment .result-compare { grid-template-columns: 1fr; } .sample-assessment .result-arrow { transform: rotate(90deg); justify-self: center; } }
     .sample-assessment .opportunity-list { display: grid; gap: 12px; }
     .sample-assessment .opportunity-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; align-items: center; padding: 24px; background: var(--color-white); border: 1px solid var(--border-light); border-radius: var(--radius-md); }
     .sample-assessment .opportunity-row > * { min-width: 0; }
@@ -142,9 +159,23 @@
       <p class="lede">See what an AI Value Assessment could uncover for a sales team: time freed, hiring avoided, lower costs and a new revenue stream.</p>
       <p class="summary-note">Example team: 10-person B2B sales team, 15 proposals per week, one CRM and a finance handoff.</p>
       <p class="sample-note"><b>Example only, not a quote.</b> This fictional team and its estimates illustrate how we assess value. Your opportunities, assumptions and fixed build prices will be agreed with you.</p>
-      <div class="btn-group"><a class="btn btn-secondary" href="how-we-work.html">Back to How We Work</a></div>
+      <ul class="result-stats" aria-label="Sample report totals">
+        <li><b>$313,000</b><span>projected annual value</span></li>
+        <li><b>$30,650</b><span>illustrative fixed build fees</span></li>
+        <li><b>5</b><span>opportunities found</span></li>
+      </ul>
+      <div class="result-card">
+        <h2>Sample result: proposal creation</h2>
+        <div class="result-compare">
+          <div class="result-before"><span class="result-tag">Before</span><b>2 hours</b><span>per proposal, 15 a week</span></div>
+          <div class="result-arrow" aria-hidden="true">→</div>
+          <div class="result-after"><span class="result-tag">After</span><b>45 minutes</b><span>per proposal, reviewed by a salesperson</span></div>
+        </div>
+        <p class="result-sum">1.25 hours freed × 15 proposals/week × $80/hour × 50 weeks = <b>$75,000</b> a year in capacity value.</p>
+      </div>
+      <div class="btn-group"><a class="btn btn-primary" href="book-value-assessment.html">Start Your Free AI Value Assessment</a><a class="btn btn-secondary" href="#before-after">See all five before and afters</a></div>
     </div></section>
-    <section class="section section--alt"><div class="container">
+    <section class="section section--alt" id="before-after"><div class="container">
       <h2 class="section-title">Before and after, at a glance</h2>
       <div class="ba-scroll"><table class="ba-table">
         <thead><tr><th scope="col">Opportunity</th><th scope="col">Today</th><th scope="col">With Claude</th><th scope="col">Projected annual value</th></tr></thead>
