@@ -1188,9 +1188,9 @@ function reportAsHtml(s, firstName) {
     '<body style="margin:0;padding:0;background:' + tint + ';">' +
     '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:' + tint + ';"><tr><td align="center" style="padding:24px 12px;">' +
     '<table role="presentation" width="640" cellpadding="0" cellspacing="0" style="width:100%;max-width:640px;">' +
-      '<tr><td style="background:' + purple + ';border-radius:12px 12px 0 0;padding:22px 28px;' + font + 'color:#ffffff;">' +
-        '<div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85;">The Endurance Group</div>' +
-        '<div style="font-size:24px;font-weight:800;line-height:1.25;padding-top:6px;">Your AI Value Assessment</div>' +
+      '<tr><td style="background:#ffffff;border-radius:12px 12px 0 0;padding:22px 28px 18px;border-bottom:1px solid ' + line + ';"><a href="https://www.theendurancegroup.com"><img src="https://www.theendurancegroup.com/images/logo-email.png" width="280" alt="The Endurance Group" style="display:block;width:280px;max-width:100%;height:auto;border:0;"></a></td></tr>' +
+      '<tr><td style="background:' + purple + ';padding:20px 28px;' + font + 'color:#ffffff;">' +
+        '<div style="font-size:24px;font-weight:800;line-height:1.25;">Your AI Value Assessment</div>' +
       '</td></tr>' +
       '<tr><td style="background:#ffffff;border-radius:0 0 12px 12px;padding:28px;' + font + 'color:' + ink + ';">' +
         '<p style="margin:0 0 16px;font-size:16px;line-height:1.6;">Hi ' + escHtml(firstName) + ',</p>' +
