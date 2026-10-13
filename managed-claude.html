@@ -247,6 +247,11 @@
   .managed-example h3 { margin:12px 0 24px; }
   .managed-example h4 { margin-bottom:8px; }
   .managed-example p { font-size:15px; color:var(--color-lavender); }
+  .managed-agreement { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:48px; align-items:start; }
+  .managed-agreement-list { background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); padding:8px 28px; }
+  .managed-agreement-list .faq-item:first-child { border-top:0; }
+  .managed-agreement-list .faq-item:last-child { border-bottom:0; }
+  @media (max-width:800px) { .managed-agreement { grid-template-columns:1fr; gap:24px; } .managed-agreement-list { padding:4px 20px; } }
   .managed-question { border-bottom:1px solid var(--border); padding:20px 0; }
   .managed-question summary { font-weight:600; cursor:pointer; }
   .managed-question p { margin-top:12px; max-width:800px; color:var(--color-lavender); }
@@ -315,10 +320,15 @@
       <div class="grid grid--3"><div><h4>Review</h4><p>Notice the edits employees make repeatedly.</p></div><div><h4>Refine</h4><p>Improve instructions, test drafts and update training.</p></div><div><h4>Assess the next opportunity</h4><p>Evaluate a new CRM integration. Agree a separate scope and fixed price before building.</p></div></div>
     </div>
   </div></section>
-  <section class="section section--alt"><div class="container reveal"><h2>A clear ongoing agreement.</h2><details class="managed-question"><summary>What is Managed Claude?</summary><p>TEG is your ongoing Claude team. We maintain and improve existing workflows, support and train employees, update documentation, review value and assess new opportunities.</p></details>
-<details class="managed-question"><summary>What does the monthly fee cover?</summary><p>The agreed environment and service scope at launch. Managed Claude starts at $1,500/month, billed monthly. New workflows and applications are separately scoped and value-priced before implementation. Clients pay Claude subscriptions, third-party software and API charges separately.</p></details>
-<details class="managed-question"><summary>Can the monthly fee change?</summary><p>As workflows, integrations, teams or support requirements grow, we may recommend adjusting the monthly fee. Any change is agreed with you before it takes effect. We confirm service scope, billing start date, term and cancellation provisions in your agreement before you commit.</p></details>
-<details class="managed-question"><summary>Who owns what TEG builds?</summary><p>You own the workflows, Skills, integrations and code we build. Whenever possible, we work inside the tools your company already uses.</p></details></div></section>
+  <section class="section section--alt"><div class="container reveal managed-agreement">
+    <div class="managed-agreement-intro"><span class="eyebrow">The agreement</span><h2>A clear ongoing agreement.</h2><p class="lede">Simple monthly terms, no surprises. Here are the questions we hear most.</p></div>
+    <div class="faq-list managed-agreement-list">
+      <details class="faq-item" open><summary class="faq-q">What is Managed Claude?</summary><p class="faq-a">TEG is your ongoing Claude team. We maintain and improve existing workflows, support and train employees, update documentation, review value and assess new opportunities.</p></details>
+      <details class="faq-item"><summary class="faq-q">What does the monthly fee cover?</summary><p class="faq-a">The agreed environment and service scope at launch. Managed Claude starts at $1,500/month, billed monthly. New workflows and applications are separately scoped and value-priced before implementation. Clients pay Claude subscriptions, third-party software and API charges separately.</p></details>
+      <details class="faq-item"><summary class="faq-q">Can the monthly fee change?</summary><p class="faq-a">As workflows, integrations, teams or support requirements grow, we may recommend adjusting the monthly fee. Any change is agreed with you before it takes effect. We confirm service scope, billing start date, term and cancellation provisions in your agreement before you commit.</p></details>
+      <details class="faq-item"><summary class="faq-q">Who owns what TEG builds?</summary><p class="faq-a">You own the workflows, Skills, integrations and code we build. Whenever possible, we work inside the tools your company already uses.</p></details>
+    </div>
+  </div></section>
     <!-- Client testimonial -->
     <section class="section">
       <div class="container">
