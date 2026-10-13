@@ -868,7 +868,7 @@ const ASSESSMENT_QUESTIONS_PROMPT = [
 const ASSESSMENT_REPORT_PROMPT = [
   ASSESSMENT_BASE_RULES,
   '',
-  'TASK: Write an instant AI Opportunity Report for this visitor based on their role, industry, company and answers.',
+  'TASK: Write an instant AI Value Assessment for this visitor based on their role, industry, company and answers.',
   'Recommend exactly 4 opportunities, ordered by projected value. Each must be a concrete Claude build that names the trigger, the source system or data, the output, and the human review step. No vague "AI assistant" or "dashboard" ideas.',
   'Use the systems the visitor said they use. Where a PRE-BUILT PORTFOLIO item genuinely fits, reference its id in portfolio_id (otherwise null).',
   '',
@@ -1198,11 +1198,11 @@ function sendAssessmentEmails(s) {
   sendResendEmail({
     to: [s.lead.email],
     reply_to: 'csullivan@theendurancegroup.com',
-    subject: 'Your AI Opportunity Report from The Endurance Group',
+    subject: 'Your AI Value Assessment from The Endurance Group',
     text: [
       'Hi ' + s.lead.name.split(' ')[0] + ',',
       '',
-      'Here is the AI Opportunity Report you generated on theendurancegroup.com.',
+      'Here is the AI Value Assessment you generated on theendurancegroup.com.',
       '',
       reportAsText(s),
       'These are instant estimates based on your answers, not a quote. A free AI Value Assessment turns them into a prioritized plan with fixed build prices:',
