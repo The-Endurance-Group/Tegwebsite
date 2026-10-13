@@ -1144,6 +1144,78 @@ function reportAsText(s) {
   return lines.join('\n');
 }
 
+var ASSESSMENT_CALENDAR_URL = 'https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b';
+
+function escHtml(str) {
+  return String(str == null ? '' : str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Branded HTML version of the report email (table layout and inline styles for email clients).
+function reportAsHtml(s, firstName) {
+  var r = s.report;
+  var font = "font-family:'Raleway',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;";
+  var ink = '#1A1A1A', muted = '#645D69', purple = '#704282', pink = '#C45E89', line = '#E7E2E5', tint = '#F8F6F7';
+
+  function detail(label, text) {
+    if (!text) return '';
+    return '<tr><td style="padding:10px 0 0;' + font + 'font-size:14px;line-height:1.55;color:' + ink + ';">' +
+      '<strong style="color:' + purple + ';">' + label + '</strong><br>' + escHtml(text) + '</td></tr>';
+  }
+
+  var opps = r.opportunities.map(function (o, i) {
+    return '<tr><td style="padding:0 0 16px;">' +
+      '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid ' + line + ';border-radius:10px;background:#ffffff;">' +
+      '<tr><td style="padding:20px;">' +
+        '<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>' +
+          '<td valign="top" style="' + font + 'font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:' + pink + ';">Opportunity ' + (i + 1) + ' &middot; ' + escHtml(o.value_type) + '</td>' +
+          '<td valign="top" align="right" style="' + font + 'font-size:15px;font-weight:800;color:' + purple + ';white-space:nowrap;">' + formatUsd(o.annual_value_low) + ' to ' + formatUsd(o.annual_value_high) + '<span style="font-weight:600;font-size:12px;color:' + muted + ';"> / year</span></td>' +
+        '</tr></table>' +
+        '<div style="' + font + 'font-size:18px;font-weight:700;line-height:1.3;color:' + ink + ';padding:8px 0 4px;">' + escHtml(o.title) + '</div>' +
+        '<div style="' + font + 'font-size:15px;line-height:1.55;color:' + muted + ';">' + escHtml(o.one_liner) + '</div>' +
+        '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:12px;border-top:1px solid ' + line + ';">' +
+          detail('Today', o.today) + detail('With Claude', o.with_claude) + detail('The math', o.value_math) +
+        '</table>' +
+      '</td></tr></table></td></tr>';
+  }).join('');
+
+  var reading = (r.articles || []).map(function (a) {
+    return '<li style="padding:3px 0;"><a href="https://www.theendurancegroup.com' + escHtml(a.url) + '" style="color:' + purple + ';font-weight:600;text-decoration:underline;">' + escHtml(a.title) + '</a></li>';
+  }).join('');
+
+  var hours = r.total_hours ? ' &middot; about ' + r.total_hours.toLocaleString('en-US') + ' hours/year freed' : '';
+
+  return '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>' +
+    '<body style="margin:0;padding:0;background:' + tint + ';">' +
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:' + tint + ';"><tr><td align="center" style="padding:24px 12px;">' +
+    '<table role="presentation" width="640" cellpadding="0" cellspacing="0" style="width:100%;max-width:640px;">' +
+      '<tr><td style="background:' + purple + ';border-radius:12px 12px 0 0;padding:22px 28px;' + font + 'color:#ffffff;">' +
+        '<div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85;">The Endurance Group</div>' +
+        '<div style="font-size:24px;font-weight:800;line-height:1.25;padding-top:6px;">Your AI Value Assessment</div>' +
+      '</td></tr>' +
+      '<tr><td style="background:#ffffff;border-radius:0 0 12px 12px;padding:28px;' + font + 'color:' + ink + ';">' +
+        '<p style="margin:0 0 16px;font-size:16px;line-height:1.6;">Hi ' + escHtml(firstName) + ',</p>' +
+        '<p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:' + muted + ';">Here is the AI Value Assessment you generated on theendurancegroup.com.</p>' +
+        '<h1 style="margin:0 0 10px;font-size:22px;line-height:1.3;font-weight:800;color:' + ink + ';">' + escHtml(r.headline) + '</h1>' +
+        '<p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:' + muted + ';">' + escHtml(r.summary) + '</p>' +
+        '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 28px;background:' + tint + ';border-left:4px solid ' + pink + ';border-radius:8px;"><tr><td style="padding:16px 20px;">' +
+          '<div style="' + font + 'font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:' + muted + ';">Projected annual value</div>' +
+          '<div style="' + font + 'font-size:28px;font-weight:800;color:' + purple + ';padding-top:2px;">' + formatUsd(r.total_low) + ' to ' + formatUsd(r.total_high) + '</div>' +
+          '<div style="' + font + 'font-size:14px;color:' + muted + ';">' + r.opportunities.length + ' Claude opportunities' + hours + '</div>' +
+        '</td></tr></table>' +
+        '<table role="presentation" width="100%" cellpadding="0" cellspacing="0">' + opps + '</table>' +
+        (r.first_step ? '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:8px 0 24px;background:#F3EEF6;border-radius:10px;"><tr><td style="padding:18px 20px;' + font + 'font-size:15px;line-height:1.6;color:' + ink + ';"><strong style="color:' + purple + ';">Where to start</strong><br>' + escHtml(r.first_step) + '</td></tr></table>' : '') +
+        (reading ? '<div style="' + font + 'font-size:16px;font-weight:700;color:' + ink + ';padding:4px 0 6px;">Further reading</div><ul style="margin:0 0 24px;padding-left:20px;' + font + 'font-size:15px;line-height:1.5;">' + reading + '</ul>' : '') +
+        '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:8px 0 8px;background:' + purple + ';border-radius:12px;"><tr><td align="center" style="padding:28px 24px;' + font + 'color:#ffffff;">' +
+          '<div style="font-size:20px;font-weight:800;line-height:1.3;padding-bottom:8px;">Let&rsquo;s turn this into a plan</div>' +
+          '<div style="font-size:15px;line-height:1.6;opacity:.92;padding-bottom:18px;">Meet with me and we will put this assessment into action: which team to start with, what to build first, and what it would take.</div>' +
+          '<a href="' + escHtml(ASSESSMENT_CALENDAR_URL) + '" style="display:inline-block;background:#ffffff;color:' + purple + ';font-weight:800;font-size:16px;text-decoration:none;padding:13px 28px;border-radius:8px;">Pick a time to meet</a>' +
+        '</td></tr></table>' +
+        '<p style="margin:20px 0 0;font-size:15px;line-height:1.6;color:' + muted + ';">Or just reply to this email with any questions.</p>' +
+        '<p style="margin:20px 0 0;font-size:15px;line-height:1.6;color:' + ink + ';">Conor Sullivan<br><span style="color:' + muted + ';">The Endurance Group</span></p>' +
+      '</td></tr>' +
+    '</table></td></tr></table></body></html>';
+}
+
 async function sendResendEmail(payload, tag) {
   var resendKey = process.env.RESEND_API_KEY;
   if (!resendKey) {
@@ -1199,16 +1271,17 @@ function sendAssessmentEmails(s) {
     to: [s.lead.email],
     reply_to: 'csullivan@theendurancegroup.com',
     subject: 'Your AI Value Assessment from The Endurance Group',
+    html: reportAsHtml(s, s.lead.name.split(' ')[0]),
     text: [
       'Hi ' + s.lead.name.split(' ')[0] + ',',
       '',
       'Here is the AI Value Assessment you generated on theendurancegroup.com.',
       '',
       reportAsText(s),
-      'These are instant estimates based on your answers, not a quote. A free AI Value Assessment turns them into a prioritized plan with fixed build prices:',
-      'https://www.theendurancegroup.com/book-value-assessment.html',
+      'Let\'s turn this into a plan. Meet with me and we will put this assessment into action: which team to start with, what to build first, and what it would take.',
+      'Pick a time to meet: ' + ASSESSMENT_CALENDAR_URL,
       '',
-      'Just reply to this email with any questions.',
+      'Or just reply to this email with any questions.',
       '',
       'Conor Sullivan',
       'The Endurance Group',
