@@ -1124,7 +1124,7 @@
   <script>
     (function () {
       var CALENDAR_URL = 'https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?embed=true';
-      var state = { sessionId: null, profile: null, intro: '', questions: [], answers: {}, index: 0, preview: null };
+      var state = { sessionId: null, token: null, profile: null, intro: '', questions: [], answers: {}, index: 0, preview: null };
       var loadingTimer = null;
 
       function $(id) { return document.getElementById(id); }
@@ -1202,6 +1202,7 @@
         postJson('/api/assessment/start', profile).then(function (data) {
           stopLoading();
           state.sessionId = data.sessionId;
+          state.token = data.token || null;
           state.intro = data.intro || '';
           state.questions = data.questions;
           state.answers = {};
@@ -1292,8 +1293,9 @@
           'Finding related TEG builds and guides…',
           'Putting your report together…'
         ], 'This takes about 30 seconds.');
-        postJson('/api/assessment/report', { sessionId: state.sessionId, answers: answers }).then(function (data) {
+        postJson('/api/assessment/report', { sessionId: state.sessionId, token: state.token, answers: answers }).then(function (data) {
           stopLoading();
+          state.token = data.token || state.token;
           state.preview = data.preview;
           renderPreview(data.preview);
           show('screen-report');
@@ -1355,7 +1357,7 @@
         var btn = this.querySelector('button[type="submit"]');
         btn.disabled = true;
         btn.textContent = 'Unlocking…';
-        postJson('/api/assessment/unlock', { sessionId: state.sessionId, name: name, email: email, company: $('g-company').value.trim() })
+        postJson('/api/assessment/unlock', { sessionId: state.sessionId, token: state.token, name: name, email: email, company: $('g-company').value.trim() })
           .then(function (data) {
             track('assessment_unlocked');
             renderFull(data.report);

@@ -19,6 +19,7 @@ const ASSESSMENT_RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
 const ASSESSMENT_RATE_LIMIT_MAX = 10;
 const assessmentStartHits = new Map();
 const assessmentReportHits = new Map();
+const assessmentUnlockHits = new Map();
 const ASSESSMENT_SESSION_TTL_MS = 3 * 60 * 60 * 1000;
 const ASSESSMENT_SESSION_MAX = 2000;
 // Assessment sessions live in memory: the full report stays server-side until the visitor submits an email.
@@ -1004,8 +1005,46 @@ function pruneAssessmentSessions() {
   }
 }
 
-function getAssessmentSession(id) {
+// Sessions are also sealed into an encrypted token the browser holds, so a server restart or deploy
+// mid-assessment does not lose them. The visitor cannot read or alter the token (AES-256-GCM), so the
+// full report still stays locked until an email is submitted.
+var ASSESSMENT_TOKEN_KEY = require('crypto').createHash('sha256')
+  .update(process.env.ASSESSMENT_TOKEN_SECRET || process.env.ANTHROPIC_API_KEY || require('crypto').randomBytes(32).toString('hex'))
+  .digest();
+
+function sealAssessmentSession(s) {
+  var crypto = require('crypto');
+  var iv = crypto.randomBytes(12);
+  var cipher = crypto.createCipheriv('aes-256-gcm', ASSESSMENT_TOKEN_KEY, iv);
+  var payload = {
+    createdAt: s.createdAt, ip: s.ip, role: s.role, industry: s.industry, teamSize: s.teamSize,
+    website: s.website, questions: s.questions, answers: s.answers, report: s.report,
+  };
+  if (!s.report) payload.websiteContext = s.websiteContext;
+  var enc = Buffer.concat([cipher.update(JSON.stringify(payload), 'utf8'), cipher.final()]);
+  return Buffer.concat([iv, cipher.getAuthTag(), enc]).toString('base64url');
+}
+
+function openAssessmentToken(token) {
+  try {
+    var crypto = require('crypto');
+    var buf = Buffer.from(token, 'base64url');
+    var decipher = crypto.createDecipheriv('aes-256-gcm', ASSESSMENT_TOKEN_KEY, buf.subarray(0, 12));
+    decipher.setAuthTag(buf.subarray(12, 28));
+    var json = Buffer.concat([decipher.update(buf.subarray(28)), decipher.final()]).toString('utf8');
+    return JSON.parse(json);
+  } catch (err) {
+    return null;
+  }
+}
+
+function getAssessmentSession(id, token) {
   var s = typeof id === 'string' ? assessmentSessions.get(id) : null;
+  if (!s && typeof id === 'string' && typeof token === 'string' && token) {
+    s = openAssessmentToken(token);
+    if (s && Array.isArray(s.questions)) assessmentSessions.set(id, s);
+    else s = null;
+  }
   if (!s || Date.now() - s.createdAt > ASSESSMENT_SESSION_TTL_MS) return null;
   return s;
 }
@@ -1334,6 +1373,7 @@ async function handleAssessmentStart(req, res) {
 
     respondJsonTo(res, 200, {
       sessionId: sessionId,
+      token: sealAssessmentSession(session),
       intro: cleanText(parsed.intro, 300),
       questions: session.questions,
       usedWebsite: !!session.websiteContext,
@@ -1352,13 +1392,13 @@ async function handleAssessmentReport(req, res) {
       return;
     }
     var data = JSON.parse((await readBody(req)) || '{}');
-    var session = getAssessmentSession(data.sessionId);
+    var session = getAssessmentSession(data.sessionId, data.token);
     if (!session) {
       respondJsonTo(res, 404, { error: 'Your session expired. Please start the assessment again.' });
       return;
     }
     if (session.report) {
-      respondJsonTo(res, 200, { preview: reportPreview(session.report) });
+      respondJsonTo(res, 200, { preview: reportPreview(session.report), token: sealAssessmentSession(session) });
       return;
     }
 
@@ -1392,7 +1432,7 @@ async function handleAssessmentReport(req, res) {
     session.report = report;
     console.log('[ASSESSMENT] report', JSON.stringify({ role: session.role, industry: session.industry, total_low: report.total_low, ip: ip }));
 
-    respondJsonTo(res, 200, { preview: reportPreview(report) });
+    respondJsonTo(res, 200, { preview: reportPreview(report), token: sealAssessmentSession(session) });
   } catch (err) {
     console.error('[ASSESSMENT] report failed:', err.message);
     respondJsonTo(res, 500, { error: 'Something went wrong building your report. Please try again.' });
@@ -1402,7 +1442,12 @@ async function handleAssessmentReport(req, res) {
 async function handleAssessmentUnlock(req, res) {
   try {
     var data = JSON.parse((await readBody(req)) || '{}');
-    var session = getAssessmentSession(data.sessionId);
+    var ip = clientIp(req);
+    if (isRateLimited(assessmentUnlockHits, ip, ASSESSMENT_RATE_LIMIT_WINDOW_MS, ASSESSMENT_RATE_LIMIT_MAX * 3)) {
+      respondJsonTo(res, 429, { error: 'Too many requests. Please try again in a little while.' });
+      return;
+    }
+    var session = getAssessmentSession(data.sessionId, data.token);
     if (!session || !session.report) {
       respondJsonTo(res, 404, { error: 'Your session expired. Please start the assessment again.' });
       return;
