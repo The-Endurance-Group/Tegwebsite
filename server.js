@@ -1598,7 +1598,8 @@ http.createServer((req, res) => {
     '/pricing': '/contact.html', '/pricing.html': '/contact.html',
     '/industries': '/success.html', '/industries.html': '/success.html',
     '/staff-augmentation': '/managed-claude.html', '/staff-augmentation.html': '/managed-claude.html',
-    '/your-claude-team': '/managed-claude.html', '/your-claude-team.html': '/managed-claude.html'
+    '/your-claude-team': '/managed-claude.html', '/your-claude-team.html': '/managed-claude.html',
+    '/ideas': '/ai-assessment.html#portfolio', '/ideas.html': '/ai-assessment.html#portfolio'
   };
   if (removedPages[urlPath]) {
     res.writeHead(301, { Location: removedPages[urlPath] });
