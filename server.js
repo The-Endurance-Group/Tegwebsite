@@ -10,9 +10,6 @@ const AI_POLICY_MODEL = process.env.AI_POLICY_MODEL || 'claude-sonnet-4-6';
 const CHAT_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const CHAT_RATE_LIMIT_MAX = 30;
 const chatRateLimitHits = new Map();
-const IDEAS_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
-const IDEAS_RATE_LIMIT_MAX = 8;
-const ideasRateLimitHits = new Map();
 const AI_POLICY_RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
 const AI_POLICY_RATE_LIMIT_MAX = 10;
 const aiPolicyRateLimitHits = new Map();
@@ -187,46 +184,6 @@ What it is: Claude skill that takes a firm name and automatically runs the full 
 Best for: Real estate capital teams, private equity, fund managers, investor relations professionals doing high-volume family office outreach
 `.trim();
 
-const IDEAS_SYSTEM_PROMPT = [
-  'Do not use em dashes. Use short sentences, commas or parentheses instead.',
-  'You are an AI automation consultant for The Endurance Group, serving any team using Claude to create measurable value.',
-  'Given a business description, do two things:',
-  '1. Identify which pre-built portfolio items are genuinely relevant to this specific business (0-3 items only, be selective, not exhaustive)',
-  '2. Generate exactly 4-5 NEW practical Claude ideas tailored to their team, bottlenecks, capacity, avoidable costs and potential revenue opportunities',
-  '',
-  'BUILD CONSTRAINT: Ideas may use Claude Skills, Projects, connectors, MCP integrations, automations, agents or custom Claude-powered applications. Choose the approach that fits the business opportunity.',
-  'Name the actual source data, workflow or trigger, output, and necessary human review. Do not suggest vague AI features without an operational use.',
-  'These are initial ideas, not an assessed report. Do not invent savings figures, revenue forecasts, implementation prices or guaranteed results.',
-  'Consider time freed, genuinely avoided costs or hiring, and new revenue opportunities where relevant. Do not force every category to fit.',
-  '',
-  'PRE-BUILT PORTFOLIO:',
-  IDEAS_PORTFOLIO_TEXT,
-  '',
-  'CRITICAL: Return ONLY a raw JSON object. No markdown, no code fences, no explanation before or after.',
-  'Format:',
-  '{',
-  '  "portfolio_matches": [',
-  '    { "id": "invoice-reviewer", "reason": "One sentence explaining why this fits their specific business." }',
-  '  ],',
-  '  "new_ideas": [',
-  '    {',
-  '      "title": "Short descriptive title",',
-  '      "description": "Two sentences: what the automation does and what system/trigger it uses, then what specific problem it solves for this business.",',
-  '      "category": "Sales",',
-  '      "value_type": "Time freed"',
-  '    }',
-  '  ]',
-  '}',
-  '',
-  'Rules for new_ideas:',
-  '- category must be one of: Sales, Operations, Research, Communications, Documents',
-  '- Name the actual trigger, source system, and output in the description (e.g. "When a new lead comes in via HubSpot form..." or "Every Monday, pulls open invoices from QuickBooks...")',
-  '- Do not suggest vague platitudes like "AI assistant", "smart dashboard", or "data analytics platform"',
-  '- Each idea should be distinct from the others and from the portfolio matches',
-  '- value_type must be Time freed, Costs avoided, or Revenue opportunity. Use the best-supported category for each idea.',
-  '- Every idea must be feasible using Claude and the relevant systems, with human review where needed.',
-].join('\n');
-
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -361,62 +318,6 @@ async function handleChat(req, res) {
   } catch (err) {
     console.error('Chat request failed:', err);
     respondJson(500, { error: 'Something went wrong.' });
-  }
-}
-
-async function handleIdeas(req, res) {
-  var ip = clientIp(req);
-
-  function respondJson(status, body) {
-    res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
-    res.end(JSON.stringify(body));
-  }
-
-  try {
-    if (isRateLimited(ideasRateLimitHits, ip, IDEAS_RATE_LIMIT_WINDOW_MS, IDEAS_RATE_LIMIT_MAX)) {
-      respondJson(429, { error: 'Too many requests. Please try again in a few minutes.' });
-      return;
-    }
-
-    var raw = await readBody(req);
-    var body = JSON.parse(raw || '{}');
-    var businessDescription = typeof body.businessDescription === 'string'
-      ? body.businessDescription.trim().slice(0, 1000)
-      : '';
-
-    if (businessDescription.length < 10) {
-      respondJson(400, { error: 'Please describe your business in a bit more detail.' });
-      return;
-    }
-
-    var responseText = await callClaudeApi(
-      IDEAS_SYSTEM_PROMPT,
-      [{ role: 'user', content: 'Business description: ' + businessDescription }],
-      1400
-    );
-
-    // Strip markdown code fences if Claude adds them despite instructions
-    var jsonStr = responseText.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
-    var ideas = JSON.parse(jsonStr);
-
-    // Sanitize: only allow known portfolio IDs through
-    var validIds = ['coachonix','commonality','invoice-reviewer','property-photo-analyzer','linkedin-sales-nav','rfp-identifier','rfp-filler','news-delivery','fdd-analyzer','onboarding-doc-analyzer','franchisee-identifier','sales-call-analyzer','live-sales-coach','real-estate-market-analysis','slide-deck-creator','proposal-generator','lead-research-dedup','salesforce-contact-cleanup','inbound-lead-router','google-form-hubspot-enrichment','agent-prospecting-tiering','onboarding-esignature-routing','podcast-newsletter-writer','ebook-generator','housecall-pro-quickbooks-reconciliation','investor-contact-finder'];
-    if (Array.isArray(ideas.portfolio_matches)) {
-      ideas.portfolio_matches = ideas.portfolio_matches
-        .filter(function(m) { return m && validIds.includes(m.id); })
-        .slice(0, 3);
-    } else {
-      ideas.portfolio_matches = [];
-    }
-    if (!Array.isArray(ideas.new_ideas)) {
-      ideas.new_ideas = [];
-    }
-    ideas.new_ideas = ideas.new_ideas.slice(0, 6);
-
-    respondJson(200, ideas);
-  } catch (err) {
-    console.error('Ideas request failed:', err);
-    respondJson(500, { error: 'Something went wrong generating your ideas. Try again in a moment.' });
   }
 }
 
@@ -1531,10 +1432,6 @@ http.createServer((req, res) => {
   var urlPath = req.url.split('?')[0];
   if (req.method === 'POST' && urlPath === '/api/chat') {
     handleChat(req, res);
-    return;
-  }
-  if (req.method === 'POST' && urlPath === '/api/ideas') {
-    handleIdeas(req, res);
     return;
   }
   if (req.method === 'POST' && urlPath === '/api/contact') {
