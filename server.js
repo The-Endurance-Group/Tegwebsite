@@ -1264,6 +1264,7 @@ async function sendResendEmail(payload, tag) {
   }
 }
 
+// TODO: also create/update the lead as a HubSpot contact (email-only for now).
 function sendAssessmentEmails(s) {
   var answersText = s.questions.map(function (q) {
     var a = s.answers[q.id];
