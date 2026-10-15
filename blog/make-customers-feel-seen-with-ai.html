@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Make every customer feel seen with AI | TEG</title>
-  <meta name="description" content="Customers feel seen when someone remembers them. How Claude gives a small team that memory, with a real mistake we nearly made and the line to never cross.">
+  <title>AI Personalization That Makes Customers Feel Seen | TEG</title>
+  <meta name="description" content="AI personalization works when customers feel remembered. How Claude gives a small team that memory, how to build it, and the line to never cross.">
   <link rel="canonical" href="https://www.theendurancegroup.com/blog/make-customers-feel-seen-with-ai.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
   <meta property="og:title" content="How to make every customer feel seen with AI (without the creepy part) | The Endurance Group">
-  <meta property="og:description" content="Customers feel seen when someone remembers them. How Claude gives a small team that memory, with a real mistake we nearly made and the line to never cross.">
+  <meta property="og:description" content="AI personalization works when customers feel remembered. How Claude gives a small team that memory, how to build it, and the line to never cross.">
   <meta property="og:url" content="https://www.theendurancegroup.com/blog/make-customers-feel-seen-with-ai.html">
   <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
   <meta name="author" content="Conor Sullivan">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="How to make every customer feel seen with AI (without the creepy part) | The Endurance Group">
-  <meta name="twitter:description" content="Customers feel seen when someone remembers them. How Claude gives a small team that memory, with a real mistake we nearly made and the line to never cross.">
+  <meta name="twitter:description" content="AI personalization works when customers feel remembered. How Claude gives a small team that memory, how to build it, and the line to never cross.">
   <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +69,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "How to make every customer feel seen with AI (without the creepy part)",
-  "description": "Customers feel seen when someone remembers them. How Claude gives a small team that memory, with a real mistake we nearly made and the line to never cross.",
+  "description": "AI personalization works when customers feel remembered. How Claude gives a small team that memory, how to build it, and the line to never cross.",
   "image": "https://www.theendurancegroup.com/images/og-default.png",
   "datePublished": "2026-10-15",
   "dateModified": "2026-10-15",
@@ -88,7 +88,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://theendurancegroup.com/blog/make-customers-feel-seen-with-ai.html"
+    "@id": "https://www.theendurancegroup.com/blog/make-customers-feel-seen-with-ai.html"
   }
 }
   </script>
@@ -126,7 +126,7 @@
       "name": "How do you keep personalization from feeling creepy?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only reference what the person would expect you to know, such as their past emails, orders and stated goals. Skip anything that reveals you were tracking their behavior. Our own outreach skill never mentions that someone visited our website."
+        "text": "Only reference what the person would expect you to know, such as their past emails, orders and stated goals. Skip anything that reveals you were tracking their behavior. If a workflow flags who visited your website, do not open with \"I saw you were on our website.\""
       }
     }
   ]
@@ -203,10 +203,6 @@
 
           <p>Nothing in that story is clever, and none of it was AI. A person noticed what was actually happening to a customer and acted on it. The hard part is doing that when you have a thousand customers and a team of ten, because no one can remember that much. AI does not replace the caring. It gives a small team the memory that caring depends on.</p>
 
-          <p>We learned the other side of this ourselves. When we built our RB2B outreach skill, the first real lead was a small public-sector organization we knew nothing about. Claude checked HubSpot and found nothing. It checked all 12 of our LinkedIn campaigns and found nothing. Then it searched Gmail and found that we had cold emailed someone there in 2024 and never heard back. The full story is in our post on <a href="rb2b-website-visitors-claude-outreach.html">turning website visitors into outreach</a>.</p>
-
-          <p>Without that last check, we would have written to them as if we had never met. The information existed. It was just in a place nobody looked.</p>
-
           <p>Statisticians call a study of one person an "n of 1." It is a good name for the feeling you want a customer to have. Here is how to give it to thousands of customers, and where it goes wrong.</p>
 
           <h2>What does it take for someone to feel seen?</h2>
@@ -249,8 +245,8 @@
           <p>Start with one group that deserves more attention than it gets, such as customers in their first 30 days or accounts six months from renewal. Then:</p>
 
           <ol>
-            <li><strong>Connect the sources.</strong> Claude reads your CRM, email and meeting notes through connectors, so each person's history is in one place.</li>
-            <li><strong>Write down what your best person checks.</strong> Save the questions your best account manager asks before reaching out as a Claude skill.</li>
+            <li><strong>Connect the sources.</strong> Claude reads your CRM, email and meeting notes through <a href="claude-connectors-gmail-how-to-connect.html">connectors</a>, so each person's history is in one place.</li>
+            <li><strong>Write down what your best person checks.</strong> Save the questions your best account manager asks before reaching out as a <a href="how-to-create-a-claude-skill.html">Claude skill</a>.</li>
             <li><strong>Have Claude brief before it writes.</strong> The brief is what makes the draft specific.</li>
             <li><strong>Check before you contact.</strong> Has anyone already talked to this person?</li>
             <li><strong>Review every draft at first.</strong> A person reads and approves each message until you trust the output.</li>
@@ -262,7 +258,7 @@
 
           <p>There is a line between feeling seen and feeling watched. A useful test is whether the person would expect you to know the thing you are referencing. Their last email to you, their order history and the goal they told you about are fair. A detail that exists only because you tracked their behavior is not.</p>
 
-          <p>We hold ourselves to this. Our outreach skill never mentions that someone visited our website, because the message should be about something relevant to them, not proof that we were looking. It also never invents facts and contacts one person per company.</p>
+          <p>Say you have a workflow that analyzes who visits your website. Do not reach out with "I saw you were on our website." That is proof you were watching, and it helps no one. Write about the things it makes sense for you to remember: the conversation you had, what they asked for, what is still open.</p>
 
           <p>If you want help finding the first group worth doing this for, our free AI Value Assessment is built for that. We listen to how your team works and show you where Claude can take some of the load.</p>
 
@@ -277,7 +273,7 @@
           <p>It does not have to. In the workflows we build, Claude researches and drafts, and a person reads every message before it reaches a customer. Sending automatically is a choice you can make later, once you trust the drafts.</p>
 
           <h3>How do you keep personalization from feeling creepy?</h3>
-          <p>Only reference what the person would expect you to know, such as their past emails, orders and stated goals. Skip anything that reveals you were tracking their behavior. Our own outreach skill never mentions that someone visited our website.</p>
+          <p>Only reference what the person would expect you to know, such as their past emails, orders and stated goals. Skip anything that reveals you were tracking their behavior. If a workflow flags who visited your website, do not open with "I saw you were on our website."</p>
 
           <div class="btn-group">
             <a class="btn btn-primary" href="../contact.html">Schedule a Call</a>
