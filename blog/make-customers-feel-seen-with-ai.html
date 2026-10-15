@@ -199,15 +199,15 @@
             <p>You give every customer what a great account manager gives their favorite client: someone who remembers. Claude reads each person's history across your CRM, email and notes, works out what changed and what is still open, and drafts a message about that one thing. A person approves it before it goes out.</p>
           </div>
 
-          <p>In 2022, a woman named Anna Brose tried to return an unopened bag of dog food after her dog Gus died. Chewy refunded it, suggested she donate the food to a shelter, and sent flowers with a note signed by the person she had talked to. Her tweet about it got more than 600,000 likes, and other customers replied with similar stories. The coverage is in <a href="https://fortune.com/2022/06/17/chewy-dog-personal-gifts-viral-tweet-pet-paintings/" target="_blank" rel="noopener">Fortune</a>, <a href="https://newsweek.com/after-womans-dog-died-pet-company-chewy-sent-her-flowers-card-1716712" target="_blank" rel="noopener">Newsweek</a> and the <a href="https://www.bostonglobe.com/2022/06/16/business/her-dog-died-then-chewy-sent-her-flowers" target="_blank" rel="noopener">Boston Globe</a>.</p>
+          <p>In 2022, a woman named Anna Brose tried to return an unopened bag of dog food after her dog Gus died. Chewy refunded it, suggested she donate the food to a shelter, and sent flowers with a note signed by the person she had talked to. Her tweet got more than 600,000 likes. The coverage is in <a href="https://fortune.com/2022/06/17/chewy-dog-personal-gifts-viral-tweet-pet-paintings/" target="_blank" rel="noopener">Fortune</a>, <a href="https://newsweek.com/after-womans-dog-died-pet-company-chewy-sent-her-flowers-card-1716712" target="_blank" rel="noopener">Newsweek</a> and the <a href="https://www.bostonglobe.com/2022/06/16/business/her-dog-died-then-chewy-sent-her-flowers" target="_blank" rel="noopener">Boston Globe</a>.</p>
 
           <p>Nothing in that story is clever, and none of it was AI. A person noticed what was actually happening to a customer and acted on it. The hard part is doing that when you have a thousand customers and a team of ten, because no one can remember that much. AI does not replace the caring. It gives a small team the memory that caring depends on.</p>
 
           <p>We learned the other side of this ourselves. When we built our RB2B outreach skill, the first real lead was a small public-sector organization we knew nothing about. Claude checked HubSpot and found nothing. It checked all 12 of our LinkedIn campaigns and found nothing. Then it searched Gmail and found that we had cold emailed someone there in 2024 and never heard back. The full story is in our post on <a href="rb2b-website-visitors-claude-outreach.html">turning website visitors into outreach</a>.</p>
 
-          <p>If Claude had skipped that last check, we would have written to them as if we had never met, which is the opposite of making someone feel seen. We would have done it to ourselves, a company that sells this for a living. The information existed. It was just in a place nobody looked.</p>
+          <p>Without that last check, we would have written to them as if we had never met. The information existed. It was just in a place nobody looked.</p>
 
-          <p>Statisticians call a study of one person an "n of 1." It is a good name for the feeling you want a customer to have. This post covers how to give that feeling to hundreds or thousands of customers without hiring a hundred account managers, and where it goes wrong.</p>
+          <p>Statisticians call a study of one person an "n of 1." It is a good name for the feeling you want a customer to have. Here is how to give it to thousands of customers, and where it goes wrong.</p>
 
           <h2>What does it take for someone to feel seen?</h2>
 
@@ -220,13 +220,13 @@
             <li><strong>Heard what they told you.</strong> The message responds to their words, not your campaign calendar.</li>
           </ol>
 
-          <p>All four are recall and research problems, which is where Claude is strong. None of them is about clever wording.</p>
+          <p>All four are recall and research problems, which is where Claude is strong.</p>
 
           <h2>Why does it break at scale?</h2>
 
-          <p>It is rarely a lack of caring. The details are scattered across a CRM note, an old thread, a call recording and one person's head, and nobody has time to read all of it before every message. So the message goes out generic, and the customer can tell.</p>
+          <p>It is rarely a lack of caring. The details are scattered across a CRM note, an old thread and one person's head, and nobody has time to read all of it before every message. So it goes out generic, and the customer can tell.</p>
 
-          <p>Mail merge was the first attempt at a fix. It puts a first name and a company in a template and calls it personal. Most people spot that in a second. Much of what you will read online about "segment of one" personalization is about software that picks products or content to show. This is a different job: writing to a person the way someone who knows them would.</p>
+          <p>Mail merge puts a first name in a template and calls it personal. Most people spot that in a second. Much of what you will read about "segment of one" personalization is about software that picks products to show. This is a different job: writing to a person the way someone who knows them would.</p>
 
           <h2>What does the difference look like?</h2>
 
@@ -242,29 +242,29 @@
             <p>Hi Sam, on the kickoff call you said the Friday reporting was eating your team's week. The report template we set up on the 9th is live, but I do not see that anyone has opened it. Want me to walk Priya through it this week?</p>
           </blockquote>
 
-          <p>The second message is not better writing. It is better preparation. Nobody had to spend twenty minutes digging before sending it, and that is the part that scales.</p>
+          <p>The second message is not better writing. It is better preparation, and that is the part that scales.</p>
 
           <h2>How do you build this?</h2>
 
-          <p>Start with one group of customers who deserve more attention than they get, such as new customers in their first 30 days or accounts six months from renewal. Then:</p>
+          <p>Start with one group that deserves more attention than it gets, such as customers in their first 30 days or accounts six months from renewal. Then:</p>
 
           <ol>
             <li><strong>Connect the sources.</strong> Claude reads your CRM, email and meeting notes through connectors, so each person's history is in one place.</li>
-            <li><strong>Write down what your best person checks.</strong> Capture the questions your best account manager asks before reaching out, and save them as a Claude skill.</li>
+            <li><strong>Write down what your best person checks.</strong> Save the questions your best account manager asks before reaching out as a Claude skill.</li>
             <li><strong>Have Claude brief before it writes.</strong> The brief is what makes the draft specific.</li>
-            <li><strong>Check before you contact.</strong> The most valuable step in our own workflow was the plain one: has anyone already talked to this person?</li>
+            <li><strong>Check before you contact.</strong> Has anyone already talked to this person?</li>
             <li><strong>Review every draft at first.</strong> A person reads and approves each message until you trust the output.</li>
           </ol>
 
-          <p>Run it on ten customers and read the drafts. Ask whether you would be glad to receive them. If yes, widen the group.</p>
+          <p>Run it on ten customers and read the drafts. Would you be glad to receive them? If yes, widen the group.</p>
 
           <h2>Where does it turn creepy?</h2>
 
           <p>There is a line between feeling seen and feeling watched. A useful test is whether the person would expect you to know the thing you are referencing. Their last email to you, their order history and the goal they told you about are fair. A detail that exists only because you tracked their behavior is not.</p>
 
-          <p>We hold ourselves to this. Our outreach skill never mentions that someone visited our website, because the message should be about something relevant to them, not proof that we were looking. It also never invents facts, and it contacts one person per company instead of a whole team. Those rules are what keep it feeling like attention rather than surveillance.</p>
+          <p>We hold ourselves to this. Our outreach skill never mentions that someone visited our website, because the message should be about something relevant to them, not proof that we were looking. It also never invents facts and contacts one person per company.</p>
 
-          <p>If you want help finding the first group worth doing this for, and what it could be worth, our free AI Value Assessment is built for that. We listen to how your team works and show you where Claude can take some of the load.</p>
+          <p>If you want help finding the first group worth doing this for, our free AI Value Assessment is built for that. We listen to how your team works and show you where Claude can take some of the load.</p>
 
           <h2>Frequently asked questions</h2>
           <h3>What does it mean to make a customer feel like an n of 1?</h3>
