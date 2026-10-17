@@ -1651,6 +1651,8 @@ const EXAMPLES = {
       'Finds the person the new hire would report to.',
       'Drafts a short outreach note based on the role being hired.',
     ],
+    flow: ['Find job posts', 'Screen against your ICP', 'Find the hiring manager', 'Draft a note'],
+    morning_short: 'Ranked companies, the role posted and a drafted note.',
     guardrail: EXAMPLE_GUARDRAIL,
     morning: 'A short ranked list of companies, the role each one posted and why it surfaced, with a drafted note waiting for your approval.',
     link: { url: '/blog/ai-prospect-finder-hiring-signal.html', label: 'How we use hiring signals to find companies ready to buy AI' },
@@ -1665,6 +1667,8 @@ const EXAMPLES = {
       'Screens for the company size you actually sell to.',
       'Routes qualified visitors to an owner in your CRM.',
     ],
+    flow: ['Identify visitors', 'Check fit and size', 'Route to an owner'],
+    morning_short: 'Ranked visitors, why each fits and the owner assigned.',
     guardrail: EXAMPLE_GUARDRAIL,
     morning: 'A short ranked list of qualified visitors, why each one fits and the owner it was routed to.',
     link: { url: '/blog/website-visitor-to-crm-automation.html', label: 'From anonymous website visitor to assigned CRM lead' },
@@ -1679,6 +1683,8 @@ const EXAMPLES = {
       'Checks your CRM and outreach tool so no one is contacted twice.',
       'Queues the people who pass for your approval.',
     ],
+    flow: ['Find engagers', 'Screen role and size', 'Check your CRM', 'Queue for approval'],
+    morning_short: 'Ranked people and the post each one engaged with.',
     guardrail: EXAMPLE_GUARDRAIL,
     morning: 'A short ranked list of people, the post each one engaged with and why they passed screening.',
     link: null,
@@ -1693,6 +1699,8 @@ const EXAMPLES = {
       'Drafts the follow-up.',
       'Queues the drafts for your review.',
     ],
+    flow: ['Review clicks and opens', 'Pick the next step', 'Draft the follow-up'],
+    morning_short: 'Ranked contacts, what they clicked and a drafted follow-up.',
     guardrail: EXAMPLE_GUARDRAIL,
     morning: 'A short ranked list of contacts, the clicks or opens that put them there and a drafted follow-up for each.',
     link: null,
@@ -1707,6 +1715,8 @@ const EXAMPLES = {
       'Checks your CRM and outreach tool so no one is contacted twice.',
       'Drafts outreach built around the tool they already use.',
     ],
+    flow: ['Find public mentions', 'Confirm and screen', 'Check your CRM', 'Draft an opener'],
+    morning_short: 'Ranked companies, the public mention and a drafted opener.',
     guardrail: EXAMPLE_GUARDRAIL,
     morning: 'A short ranked list of companies, the public statement that surfaced each one and a drafted opener.',
     link: null,
@@ -1832,7 +1842,7 @@ function playbookExample(id) {
   if (!e) return null;
   return {
     title: e.title, signal: e.signal, schedule: e.schedule, steps: e.steps.slice(),
-    guardrail: e.guardrail, morning: e.morning, link: e.link ? { url: e.link.url, label: e.link.label } : null,
+    guardrail: e.guardrail, morning: e.morning, flow: e.flow.slice(), morning_short: e.morning_short, link: e.link ? { url: e.link.url, label: e.link.label } : null,
   };
 }
 

@@ -210,7 +210,6 @@
     .ip-digest-status { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 99px; background: var(--tint-teal); color: #2F6E68; white-space: nowrap; }
     .ip-digest-foot { padding: 12px 20px; font-size: 13px; color: var(--color-lavender); background: var(--bg-light); border-top: 1px solid var(--border-light); margin: 0; }
 
-    #r-top h3.aa-section-title { font-size: 24px; margin: 28px 0 16px; }
     .aa-detail ul.ip-list { list-style: disc; padding-left: 20px; display: grid; gap: 4px; }
     .ip-schedule-chip { display: inline-block; }
     .ip-lock { font-size: 12px; font-weight: 700; color: var(--color-lavender); }
@@ -228,6 +227,23 @@
       .ip-digest-status { grid-column: 2; justify-self: start; }
     }
     @media print { .ip-examples { display: none !important; } }
+
+    .ip-pipe { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 0; margin-top: 24px; max-width: 720px; }
+    .ip-pipe li { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; color: var(--color-purple); }
+    .ip-pipe li svg { flex: none; padding: 8px; box-sizing: content-box; width: 22px; height: 22px; border-radius: 50%; background: var(--tint-purple); }
+    .ip-pipe li + li::before { content: "\2192"; margin: 0 12px; color: var(--color-pink-dark); font-weight: 800; }
+    .ip-ex-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--tint-teal); color: var(--color-teal-dark); }
+    .ip-ex-head { display: flex; align-items: center; gap: 12px; }
+    .ip-ex-head h3 { font-size: 18px; line-height: 1.25; }
+    .ip-flow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .ip-flow li { font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 99px; background: var(--bg-light); border: 1px solid var(--border-light); }
+    .ip-flow li + li::before { content: "\2192"; margin-right: 6px; color: var(--color-pink-dark); font-weight: 800; }
+    .ip-flow li + li { padding-left: 8px; }
+    .ip-guards { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 24px; padding: 14px 20px; background: var(--tint-teal); border-radius: var(--radius-md); font-weight: 700; font-size: 15px; }
+    .ip-guards li { display: flex; align-items: center; gap: 8px; }
+    .ip-guards svg { flex: none; width: 20px; height: 20px; color: var(--color-teal-dark); }
+    #r-top h3.aa-section-title { font-size: 24px; margin: 28px 0 16px; }
+    @media (max-width: 767px) { .ip-pipe li + li::before { margin: 0 6px; } .ip-pipe li { font-size: 14px; } }
   </style>
   <script type="application/ld+json">
 {
@@ -262,7 +278,7 @@
       "name": "Is the playbook free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The questions and your playbook cost nothing, and there is no obligation to build anything. If you want the flows built and run for you, we talk through scope and pricing on a call."
+        "text": "Yes, with no obligation. Pricing for building the flows is shared on a call."
       }
     },
     {
@@ -270,15 +286,15 @@
       "name": "What is an intent signal?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A sign that a person or company may be getting ready to buy. Examples are engaging with a vendor’s content, visiting your website, clicking your emails, hiring for the problem you solve, or publicly saying they use a related tool."
+        "text": "A sign that a person or company may be about to buy, like engaging with a vendor, visiting your site, or hiring for the problem you solve."
       }
     },
     {
       "@type": "Question",
-      "name": "Will anything be sent to my prospects automatically?",
+      "name": "Will anything be sent automatically?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Each flow checks your CRM and outreach tools first, skips existing contacts, and queues leads paused for your approval. Nothing is sent until you approve it."
+        "text": "No. Leads are queued paused until you approve them."
       }
     }
   ]
@@ -324,76 +340,65 @@
     <section class="hero hero--page section"><div class="container">
       <span class="eyebrow">Intent Lead Playbook</span>
       <h1>Find the buyers who are already looking.</h1>
-      <p class="lede">Intent leads are people and companies showing signs they are about to buy: engaging with a competitor’s content, visiting your site, clicking your emails, hiring for the problem you solve, or publicly adopting a related tool. Reaching them while that interest is live beats working a cold list.</p>
-      <p class="lede" style="margin-top:16px;">TEG runs these as scheduled flows that work overnight, dedupe against your CRM and outreach tools, and queue leads for your approval before anything is sent.</p>
+      <p class="lede">Intent leads are people and companies showing signs they are about to buy. TEG runs the flows overnight and queues the best ones for your approval.</p>
+      <ol class="ip-pipe" aria-label="How an intent flow works">
+        <li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l3-8 4 16 3-8h6"/></svg><span>Buying signal</span></li><li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg><span>Screen</span></li><li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span>Check your CRM</span></li><li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span>You approve</span></li>
+      </ol>
       <ul class="hero-facts" aria-label="What to expect"><li>About 3 minutes</li><li>Questions tailored to you</li><li>Instant playbook</li></ul>
       <div class="btn-group"><a class="btn btn-primary" href="#playbook">Build my intent playbook</a><a class="btn btn-secondary" href="sample-intent-playbook.html">View a sample playbook</a></div>
     </div></section>
 
     <section class="section section--alt ip-examples" id="in-practice"><div class="container">
       <h2 class="section-title">What this looks like in practice</h2>
-      <p class="section-lede" style="max-width:720px;color:var(--color-lavender);margin-bottom:28px;">These are intent flows TEG runs or has published. Each one runs on a schedule, checks your CRM first, and hands you a short list in the morning with the reason each lead surfaced.</p>
+      <p class="section-lede" style="max-width:720px;color:var(--color-lavender);margin-bottom:28px;">Five flows TEG runs or has published.</p>
       <div class="ip-ex-grid">
         <article class="ip-ex">
-          <span class="aa-chip">Intent signal</span>
-          <h3>Hiring signals</h3>
-          <p class="ip-ex-signal">A company posts a role that automation could cover.</p>
+          <div class="ip-ex-head"><span class="ip-ex-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 13h18"/></svg></span><h3>Hiring signals</h3></div>
           <p class="ip-ex-schedule">Runs every weekday</p>
-          <ol><li>Pulls active job postings for roles like AI Engineer and Automation Manager.</li><li>Screens each company against your ideal customer profile and drops companies that already have engineers.</li><li>Finds the person the new hire would report to.</li><li>Drafts a short outreach note based on the role being hired.</li></ol>
-          <p class="ip-ex-guard"><strong>Guardrail:</strong> Checks your CRM first, never sends on its own, queues leads paused for your approval.</p>
-          <p class="ip-ex-morning"><strong>In the morning:</strong> A short ranked list of companies, the role each one posted and why it surfaced, with a drafted note waiting for your approval.</p>
-          <a class="ip-ex-link" href="blog/ai-prospect-finder-hiring-signal.html">Read: How we use hiring signals to find companies ready to buy AI</a>
+          <ul class="ip-flow"><li>Find job posts</li><li>Screen against your ICP</li><li>Find the hiring manager</li><li>Draft a note</li></ul>
+          <p class="ip-ex-morning"><strong>In the morning:</strong> Ranked companies, the role posted and a drafted note.</p>
+          <a class="ip-ex-link" href="blog/ai-prospect-finder-hiring-signal.html">Read the post</a>
         </article>
         <article class="ip-ex">
-          <span class="aa-chip">Intent signal</span>
-          <h3>Website visitor to CRM lead</h3>
-          <p class="ip-ex-signal">An anonymous website visitor is identified as a company that fits.</p>
+          <div class="ip-ex-head"><span class="ip-ex-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><h3>Website visitor to CRM lead</h3></div>
           <p class="ip-ex-schedule">Runs overnight on weekdays</p>
-          <ol><li>Picks up newly identified visitors from your visitor-identification tool.</li><li>Checks company fit against your target customer profile.</li><li>Screens for the company size you actually sell to.</li><li>Routes qualified visitors to an owner in your CRM.</li></ol>
-          <p class="ip-ex-guard"><strong>Guardrail:</strong> Checks your CRM first, never sends on its own, queues leads paused for your approval.</p>
-          <p class="ip-ex-morning"><strong>In the morning:</strong> A short ranked list of qualified visitors, why each one fits and the owner it was routed to.</p>
-          <a class="ip-ex-link" href="blog/website-visitor-to-crm-automation.html">Read: From anonymous website visitor to assigned CRM lead</a>
+          <ul class="ip-flow"><li>Identify visitors</li><li>Check fit and size</li><li>Route to an owner</li></ul>
+          <p class="ip-ex-morning"><strong>In the morning:</strong> Ranked visitors, why each fits and the owner assigned.</p>
+          <a class="ip-ex-link" href="blog/website-visitor-to-crm-automation.html">Read the post</a>
         </article>
         <article class="ip-ex">
-          <span class="aa-chip">Intent signal</span>
-          <h3>Social engagement signals</h3>
-          <p class="ip-ex-signal">Someone comments on or reacts to a relevant vendor's LinkedIn posts.</p>
+          <div class="ip-ex-head"><span class="ip-ex-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12z"/></svg></span><h3>Social engagement signals</h3></div>
           <p class="ip-ex-schedule">Runs nightly</p>
-          <ol><li>Finds people commenting on or reacting to a relevant vendor's LinkedIn posts.</li><li>Screens them by role and company size.</li><li>Checks your CRM and outreach tool so no one is contacted twice.</li><li>Queues the people who pass for your approval.</li></ol>
-          <p class="ip-ex-guard"><strong>Guardrail:</strong> Checks your CRM first, never sends on its own, queues leads paused for your approval.</p>
-          <p class="ip-ex-morning"><strong>In the morning:</strong> A short ranked list of people, the post each one engaged with and why they passed screening.</p>
+          <ul class="ip-flow"><li>Find engagers</li><li>Screen role and size</li><li>Check your CRM</li><li>Queue for approval</li></ul>
+          <p class="ip-ex-morning"><strong>In the morning:</strong> Ranked people and the post each one engaged with.</p>
         </article>
         <article class="ip-ex">
-          <span class="aa-chip">Intent signal</span>
-          <h3>Email engagement follow-up</h3>
-          <p class="ip-ex-signal">A contact clicks or repeatedly opens a one-to-one email.</p>
+          <div class="ip-ex-head"><span class="ip-ex-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><h3>Email engagement follow-up</h3></div>
           <p class="ip-ex-schedule">Runs each weekday morning</p>
-          <ol><li>Reviews who clicked or repeatedly opened your one-to-one emails.</li><li>Decides the next step for each contact.</li><li>Drafts the follow-up.</li><li>Queues the drafts for your review.</li></ol>
-          <p class="ip-ex-guard"><strong>Guardrail:</strong> Checks your CRM first, never sends on its own, queues leads paused for your approval.</p>
-          <p class="ip-ex-morning"><strong>In the morning:</strong> A short ranked list of contacts, the clicks or opens that put them there and a drafted follow-up for each.</p>
+          <ul class="ip-flow"><li>Review clicks and opens</li><li>Pick the next step</li><li>Draft the follow-up</li></ul>
+          <p class="ip-ex-morning"><strong>In the morning:</strong> Ranked contacts, what they clicked and a drafted follow-up.</p>
         </article>
         <article class="ip-ex">
-          <span class="aa-chip">Intent signal</span>
-          <h3>Public tool adoption evidence</h3>
-          <p class="ip-ex-signal">A small company says publicly that it already uses a tool you work with.</p>
+          <div class="ip-ex-head"><span class="ip-ex-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg></span><h3>Public tool adoption evidence</h3></div>
           <p class="ip-ex-schedule">Runs overnight on weekdays</p>
-          <ol><li>Finds small companies that say publicly they already use the tool.</li><li>Confirms the statement and screens by company size.</li><li>Checks your CRM and outreach tool so no one is contacted twice.</li><li>Drafts outreach built around the tool they already use.</li></ol>
-          <p class="ip-ex-guard"><strong>Guardrail:</strong> Checks your CRM first, never sends on its own, queues leads paused for your approval.</p>
-          <p class="ip-ex-morning"><strong>In the morning:</strong> A short ranked list of companies, the public statement that surfaced each one and a drafted opener.</p>
+          <ul class="ip-flow"><li>Find public mentions</li><li>Confirm and screen</li><li>Check your CRM</li><li>Draft an opener</li></ul>
+          <p class="ip-ex-morning"><strong>In the morning:</strong> Ranked companies, the public mention and a drafted opener.</p>
         </article>
       </div>
+
+      <ul class="ip-guards" aria-label="Guardrails on every flow"><li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span>Checks your CRM first</span></li><li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span>Never sends on its own</span></li><li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg><span>Queues leads paused for your approval</span></li></ul>
 
       <div class="ip-digest" role="group" aria-label="Illustrative morning digest">
         <div class="ip-digest-head"><strong>Your morning digest</strong><span class="ip-digest-tag">Illustrative example</span></div>
         <ol class="ip-digest-list">
-          <li class="ip-digest-row"><span class="ip-digest-rank">1</span><div><p class="ip-digest-who">Dana M. <span>· Operations Director, Harbor Logistics (45 people)</span></p><p class="ip-digest-why">Why: commented on a vendor’s LinkedIn post about manual onboarding, and fits your buyer title and size range.</p></div><span class="ip-digest-status">Paused for approval</span></li>
-          <li class="ip-digest-row"><span class="ip-digest-rank">2</span><div><p class="ip-digest-who">Pinecrest Staffing <span>· 60 people</span></p><p class="ip-digest-why">Why: posted a role for an automation manager, and has no in-house engineering team.</p></div><span class="ip-digest-status">Paused for approval</span></li>
-          <li class="ip-digest-row"><span class="ip-digest-rank">3</span><div><p class="ip-digest-who">Sam R. <span>· Owner, Alder Street Dental Group</span></p><p class="ip-digest-why">Why: clicked the pricing link in your email twice this week. Follow-up drafted.</p></div><span class="ip-digest-status">Paused for approval</span></li>
+          <li class="ip-digest-row"><span class="ip-digest-rank">1</span><div><p class="ip-digest-who">Dana M. <span>· Operations Director, Harbor Logistics (45 people)</span></p><p class="ip-digest-why">Commented on a vendor’s LinkedIn post. Fits your buyer title and size.</p></div><span class="ip-digest-status">Paused for approval</span></li>
+          <li class="ip-digest-row"><span class="ip-digest-rank">2</span><div><p class="ip-digest-who">Pinecrest Staffing <span>· 60 people</span></p><p class="ip-digest-why">Posted an automation manager role. No in-house engineers.</p></div><span class="ip-digest-status">Paused for approval</span></li>
+          <li class="ip-digest-row"><span class="ip-digest-rank">3</span><div><p class="ip-digest-who">Sam R. <span>· Owner, Alder Street Dental Group</span></p><p class="ip-digest-why">Clicked your pricing link twice. Follow-up drafted.</p></div><span class="ip-digest-status">Paused for approval</span></li>
         </ol>
-        <p class="ip-digest-foot">Illustrative example with fictional people and companies. Existing contacts were skipped and nothing was sent.</p>
+        <p class="ip-digest-foot">Fictional people and companies. Nothing was sent.</p>
       </div>
 
-      <p class="ip-ex-note">Client results are on the <a href="success.html">Success page</a>.</p>
+      <p class="ip-ex-note">See client results on the <a href="success.html">Success page</a>.</p>
     </div></section>
 
     <section class="section aa-tool" id="playbook"><div class="container">
@@ -542,20 +547,17 @@
     <section class="section section--alt aa-how-section"><div class="container">
       <h2 class="section-title">How the intent playbook works</h2>
       <ol class="aa-how">
-        <li><span class="eyebrow">1 · Answer six questions</span><h3>Tell us who you sell to</h3><p>Share your role and industry, then answer six short questions about your buyers, your tools and how you follow up. It takes about 3 minutes.</p></li>
-        <li><span class="eyebrow">2 · Get your playbook</span><h3>Signals and flow specs</h3><p>See which intent signals to track and what a scheduled flow for each would do. Unlock the full playbook with your email.</p></li>
-        <li><span class="eyebrow">3 · We build the flows</span><h3>Scheduled and approved by you</h3><p>We turn the playbook into scheduled flows that run overnight and queue leads for your approval. Pricing is shared on the call.</p></li>
+        <li><span class="eyebrow">1 · Answer six questions</span><h3>Tell us who you sell to</h3><p>About 3 minutes.</p></li>
+        <li><span class="eyebrow">2 · Get your playbook</span><h3>Signals and flow specs</h3><p>See what to track and how each flow runs.</p></li>
+        <li><span class="eyebrow">3 · We build the flows</span><h3>Scheduled and approved by you</h3><p>Flows run overnight. You approve every lead.</p></li>
       </ol>
-      <p class="booking-note" style="margin-top:28px;color:var(--color-lavender)">You choose which flows to run. Nothing is sent without your approval.</p>
+      <p class="booking-note" style="margin-top:28px;color:var(--color-lavender)">Pricing is shared on the call.</p>
     </div></section>
 
     <section class="section"><div class="container"><h2 class="section-title">A few common questions</h2><div class="faq-list">
-      <details class="faq-item"><summary class="faq-q">Is the playbook free?</summary><p class="faq-a">Yes. The questions and your playbook cost nothing, and there is no obligation to build anything. If you want the flows built and run for you, we talk through scope and pricing on a call.</p></details>
-      <details class="faq-item"><summary class="faq-q">What is an intent signal?</summary><p class="faq-a">A sign that a person or company may be getting ready to buy. Examples are engaging with a vendor’s content, visiting your website, clicking your emails, hiring for the problem you solve, or publicly saying they use a related tool.</p></details>
-      <details class="faq-item"><summary class="faq-q">Will anything be sent to my prospects automatically?</summary><p class="faq-a">No. Each flow checks your CRM and outreach tools first, skips existing contacts, and queues leads paused for your approval. Nothing is sent until you approve it.</p></details>
-      <details class="faq-item"><summary class="faq-q">What tools do the flows work with?</summary><p class="faq-a">Your CRM and outreach tools. The questions ask what you use today, and we confirm the details on the call.</p></details>
-      <details class="faq-item"><summary class="faq-q">How accurate is the lead estimate?</summary><p class="faq-a">It is an estimate based on your answers, not a promise. We confirm the real numbers once the first flow has run.</p></details>
-      <details class="faq-item"><summary class="faq-q">What happens after I see my playbook?</summary><p class="faq-a">After you unlock it, you can book a call right below the playbook. We will talk through which flow to start with and build the ones you choose as scheduled flows.</p></details>
+      <details class="faq-item"><summary class="faq-q">Is the playbook free?</summary><p class="faq-a">Yes, with no obligation. Pricing for building the flows is shared on a call.</p></details>
+      <details class="faq-item"><summary class="faq-q">What is an intent signal?</summary><p class="faq-a">A sign that a person or company may be about to buy, like engaging with a vendor, visiting your site, or hiring for the problem you solve.</p></details>
+      <details class="faq-item"><summary class="faq-q">Will anything be sent automatically?</summary><p class="faq-a">No. Leads are queued paused until you approve them.</p></details>
     </div></div></section>
   </main>
 
@@ -820,13 +822,11 @@
       // The matching real TEG example, attached by the server from its fixed EXAMPLES list.
       function exampleBox(ex) {
         var box = el('div', 'ip-example');
-        box.appendChild(el('h5', null, 'TEG runs a flow like this: ' + ex.title));
-        box.appendChild(el('p', null, ex.schedule + '. ' + ex.signal));
-        box.appendChild(listOf('ol', ex.steps));
-        box.appendChild(el('p', null, ex.guardrail));
+        box.appendChild(el('h5', null, 'TEG runs a flow like this: ' + ex.title + ' (' + ex.schedule.replace(/^Runs /, '') + ')'));
+        box.appendChild(listOf('ul', ex.flow, 'ip-flow'));
         var morning = el('p');
         morning.appendChild(el('strong', null, 'In the morning: '));
-        morning.appendChild(document.createTextNode(ex.morning));
+        morning.appendChild(document.createTextNode(ex.morning_short));
         box.appendChild(morning);
         if (ex.link) {
           var p = el('p');

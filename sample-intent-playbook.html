@@ -125,6 +125,9 @@
     .sample-playbook .guardrails ul { list-style: disc; padding-left: 20px; display: grid; gap: 4px; font-size: 15px; }
     .sample-playbook .flow-spec { list-style: decimal; padding-left: 20px; display: grid; gap: 6px; }
     .sample-playbook .opportunity-row { grid-template-columns: 2fr 1fr 1fr; }
+    .sample-playbook .ip-flow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; list-style: none; padding: 0; margin: 8px 0; }
+    .sample-playbook .ip-flow li { font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 99px; background: var(--color-white); border: 1px solid var(--border-light); color: var(--color-ink); }
+    .sample-playbook .ip-flow li + li::before { content: "\2192"; margin-right: 6px; color: var(--color-pink-dark); font-weight: 800; }
     @media print { .site-header, .site-footer, .section--dark { display: none !important; } }
   </style>
   <script type="application/ld+json">
@@ -225,7 +228,7 @@
             <h4>Scheduled flow spec</h4>
             <ol class="flow-spec"><li>Pull newly identified visitors from the visitor-identification tool</li><li>Check company fit against the target customer profile</li><li>Screen for the 50 to 200 employee range</li><li>Check the CRM and outreach tool and skip existing contacts</li><li>Enrich only the visitors who pass screening</li><li>Rank by pages viewed and assign an owner</li><li>Queue the leads paused for approval</li></ol>
             <div class="guardrails"><h4>Built-in guardrails</h4><ul><li>Dedupes against your CRM and outreach tools first</li><li>Skips existing contacts, customers and anyone already in a sequence</li><li>Enriches only the leads that pass screening</li><li>Stops short of sending anything</li><li>Queues leads paused for your approval</li></ul></div>
-            <div class="ip-ex-box"><h4>TEG runs a flow like this: Website visitor to CRM lead</h4><p>Runs overnight on weekdays. An anonymous website visitor is identified as a company that fits.</p><ol><li>Picks up newly identified visitors from your visitor-identification tool.</li><li>Checks company fit against your target customer profile.</li><li>Screens for the company size you actually sell to.</li><li>Routes qualified visitors to an owner in your CRM.</li></ol><p>Checks your CRM first, never sends on its own, queues leads paused for your approval.</p><p><strong>In the morning:</strong> A short ranked list of qualified visitors, why each one fits and the owner it was routed to.</p><p><a href="blog/website-visitor-to-crm-automation.html">Read: From anonymous website visitor to assigned CRM lead</a></p></div>
+            <div class="ip-ex-box"><h4>TEG runs a flow like this: Website visitor to CRM lead (overnight on weekdays)</h4><ul class="ip-flow"><li>Identify visitors</li><li>Check fit and size</li><li>Route to an owner</li></ul><p><strong>In the morning:</strong> Ranked visitors, why each fits and the owner assigned.</p><p><a href="blog/website-visitor-to-crm-automation.html">Read the post</a></p></div>
           </div>
         </details>
         <details class="opportunity" id="hiring">
@@ -237,7 +240,7 @@
             <h4>Scheduled flow spec</h4>
             <ol class="flow-spec"><li>Search job boards for reconciliation and close-process roles</li><li>Screen each company against the target customer profile</li><li>Check the CRM and outreach tool and skip existing contacts</li><li>Find the person the new hire would report to</li><li>Enrich only that qualified contact</li><li>Draft a short note based on the role being hired</li><li>Queue the lead paused for approval</li></ol>
             <div class="guardrails"><h4>Built-in guardrails</h4><ul><li>Dedupes against your CRM and outreach tools first</li><li>Skips existing contacts, customers and anyone already in a sequence</li><li>Enriches only the leads that pass screening</li><li>Stops short of sending anything</li><li>Queues leads paused for your approval</li></ul></div>
-            <div class="ip-ex-box"><h4>TEG runs a flow like this: Hiring signals</h4><p>Runs every weekday. A company posts a role that automation could cover.</p><ol><li>Pulls active job postings for roles like AI Engineer and Automation Manager.</li><li>Screens each company against your ideal customer profile and drops companies that already have engineers.</li><li>Finds the person the new hire would report to.</li><li>Drafts a short outreach note based on the role being hired.</li></ol><p>Checks your CRM first, never sends on its own, queues leads paused for your approval.</p><p><strong>In the morning:</strong> A short ranked list of companies, the role each one posted and why it surfaced, with a drafted note waiting for your approval.</p><p><a href="blog/ai-prospect-finder-hiring-signal.html">Read: How we use hiring signals to find companies ready to buy AI</a></p></div>
+            <div class="ip-ex-box"><h4>TEG runs a flow like this: Hiring signals (every weekday)</h4><ul class="ip-flow"><li>Find job posts</li><li>Screen against your ICP</li><li>Find the hiring manager</li><li>Draft a note</li></ul><p><strong>In the morning:</strong> Ranked companies, the role posted and a drafted note.</p><p><a href="blog/ai-prospect-finder-hiring-signal.html">Read the post</a></p></div>
           </div>
         </details>
         <details class="opportunity" id="email">
@@ -249,11 +252,11 @@
             <h4>Scheduled flow spec</h4>
             <ol class="flow-spec"><li>Pull yesterday’s clicks and repeat opens on one-to-one emails</li><li>Remove scanner activity and contacts who already replied</li><li>Check the CRM for open deals and skip anyone in an active conversation</li><li>Decide the next step for each remaining contact</li><li>Draft a short follow-up for each contact worth pursuing</li><li>Rank by recency and strength of engagement</li><li>Queue the drafts paused for approval</li></ol>
             <div class="guardrails"><h4>Built-in guardrails</h4><ul><li>Dedupes against your CRM and outreach tools first</li><li>Skips existing contacts, customers and anyone already in a sequence</li><li>Enriches only the leads that pass screening</li><li>Stops short of sending anything</li><li>Queues leads paused for your approval</li></ul></div>
-            <div class="ip-ex-box"><h4>TEG runs a flow like this: Email engagement follow-up</h4><p>Runs each weekday morning. A contact clicks or repeatedly opens a one-to-one email.</p><ol><li>Reviews who clicked or repeatedly opened your one-to-one emails.</li><li>Decides the next step for each contact.</li><li>Drafts the follow-up.</li><li>Queues the drafts for your review.</li></ol><p>Checks your CRM first, never sends on its own, queues leads paused for your approval.</p><p><strong>In the morning:</strong> A short ranked list of contacts, the clicks or opens that put them there and a drafted follow-up for each.</p></div>
+            <div class="ip-ex-box"><h4>TEG runs a flow like this: Email engagement follow-up (each weekday morning)</h4><ul class="ip-flow"><li>Review clicks and opens</li><li>Pick the next step</li><li>Draft the follow-up</li></ul><p><strong>In the morning:</strong> Ranked contacts, what they clicked and a drafted follow-up.</p></div>
           </div>
         </details>
       </div>
-      <p class="summary-note">The example boxes describe flows TEG runs or has published. Every flow checks your CRM first, never sends on its own and queues leads paused for your approval. Client results are on the <a href="success.html" style="color:var(--color-purple); text-decoration:underline;">Success page</a>.</p>
+      <p class="summary-note">Every flow checks your CRM first, never sends on its own and queues leads paused for your approval. Client results are on the <a href="success.html" style="color:var(--color-purple); text-decoration:underline;">Success page</a>.</p>
     </div></section>
 <section class="section section--dark text-center"><div class="container"><h2 class="section-title">What would your playbook say?</h2><p class="lede" style="margin-inline:auto;">Answer six questions about who you sell to and get your own signals and flow specs in about three minutes.</p><div class="btn-group btn-group--center"><a class="btn btn-primary" href="intent-playbook.html#playbook">Build my intent playbook</a></div></div></section>
   </main>
