@@ -242,8 +242,19 @@
     .ip-guards { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 24px; padding: 14px 20px; background: var(--tint-teal); border-radius: var(--radius-md); font-weight: 700; font-size: 15px; }
     .ip-guards li { display: flex; align-items: center; gap: 8px; }
     .ip-guards svg { flex: none; width: 20px; height: 20px; color: var(--color-teal-dark); }
+    .ip-ex .ip-flow { flex-direction: column; align-items: stretch; gap: 0; position: relative; }
+    .ip-ex .ip-flow li { display: flex; align-items: center; gap: 10px; background: none; border: 0; border-radius: 0; padding: 4px 0; font-size: 15px; font-weight: 600; counter-increment: ipstep; }
+    .ip-ex .ip-flow li + li { padding-left: 0; }
+    .ip-ex .ip-flow li + li::before { content: counter(ipstep); margin: 0; color: var(--color-purple); }
+    .ip-ex .ip-flow li:first-child::before { content: counter(ipstep); }
+    .ip-ex .ip-flow li::before { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--tint-purple); color: var(--color-purple); font-size: 12px; font-weight: 800; display: grid; place-items: center; }
+    .ip-ex .ip-flow { counter-reset: ipstep; }
     #r-top h3.aa-section-title { font-size: 24px; margin: 28px 0 16px; }
-    @media (max-width: 767px) { .ip-pipe li + li::before { margin: 0 6px; } .ip-pipe li { font-size: 14px; } }
+    @media (max-width: 767px) {
+      .ip-pipe { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .ip-pipe li + li::before { display: none; }
+      .ip-pipe li { font-size: 14px; }
+    }
   </style>
   <script type="application/ld+json">
 {
