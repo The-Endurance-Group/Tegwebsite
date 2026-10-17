@@ -418,7 +418,7 @@
         <!-- Step 1: profile -->
         <div class="aa-screen" id="screen-start">
           <h2>Tell us who you sell to</h2>
-          <p class="aa-sub">We use this to write questions that fit your market. Add your website and the questions get more specific.</p>
+          <p class="aa-sub">We read your website to write questions that fit your market.</p>
           <form id="start-form" novalidate>
             <div class="aa-grid">
               <div class="aa-field">
@@ -465,8 +465,8 @@
                 <input class="aa-other-input" id="f-industry-other" type="text" maxlength="80" placeholder="Your industry" hidden>
               </div>
               <div class="aa-field aa-field--full-row">
-                <label for="f-website">Company website <span class="aa-optional">(optional)</span></label>
-                <input id="f-website" type="text" inputmode="url" autocomplete="url" maxlength="200" placeholder="yourcompany.com">
+                <label for="f-website">Company website</label>
+                <input id="f-website" type="text" inputmode="url" autocomplete="url" maxlength="200" placeholder="yourcompany.com" required aria-required="true">
               </div>
             </div>
             <p class="aa-error" id="start-error" role="alert"></p>
@@ -696,13 +696,12 @@
         e.preventDefault();
         var profile = { role: pick('role'), industry: pick('industry'), website: $('f-website').value.trim() };
         if (!profile.role || !profile.industry) { $('start-error').textContent = 'Please choose your role and industry.'; return; }
+        if (!/^(https?:\/\/)?[^\s\/.]+(\.[^\s\/.]+)+(\/\S*)?$/i.test(profile.website)) { $('start-error').textContent = 'Please enter your company website, like yourcompany.com.'; $('f-website').focus(); return; }
         $('start-error').textContent = '';
         state.profile = profile;
         track('playbook_start');
         startLoading(
-          profile.website
-            ? ['Reading ' + profile.website.replace(/^https?:\/\//, '').replace(/\/.*$/, '') + '…', 'Thinking about who a ' + profile.role + ' sells to…', 'Writing your questions…']
-            : ['Thinking about who a ' + profile.role + ' sells to…', 'Looking at how ' + profile.industry.toLowerCase() + ' buyers research…', 'Writing your questions…'],
+          ['Reading ' + profile.website.replace(/^https?:\/\//, '').replace(/\/.*$/, '') + '…', 'Thinking about who a ' + profile.role + ' sells to…', 'Writing your questions…'],
           'This takes about 10 seconds.'
         );
         postJson('/api/playbook/start', profile).then(function (data) {

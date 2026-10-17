@@ -1491,8 +1491,8 @@ const PLAYBOOK_SESSION_MAX = 2000;
 const playbookSessions = new Map();
 const PLAYBOOK_CALENDAR_URL = 'https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor';
 
-// The only signals a playbook may recommend. The model chooses from this list by id and never invents others.
-// The default fields back-fill any part of a model answer that comes back empty or too thin.
+// Example signals shown to the model as inspiration. It may use them or invent its own.
+// A catalog match also gets its default fields and the real TEG example attached.
 const SIGNAL_CATALOG = [
   {
     id: 'competitor_or_vendor_linkedin_engagers',
@@ -1628,7 +1628,7 @@ const SIGNAL_CATALOG_TEXT = SIGNAL_CATALOG.map(function (s) {
   return s.id + ' | ' + s.name + ' | ' + s.summary + ' | Source: ' + s.source;
 }).join('\n');
 
-// Fixed guardrails attached to every flow spec. The model does not write these.
+// Example guardrails given to the model, and the fallback when it returns none.
 const FLOW_GUARDRAILS = [
   'Dedupes against your CRM and outreach tools first',
   'Skips existing contacts, customers and anyone already in a sequence',
@@ -1735,23 +1735,26 @@ const PLAYBOOK_QUESTIONS_PROMPT = [
   '',
   'TASK: A visitor is starting an Intent Lead Playbook. Write exactly 6 short multiple-choice questions tailored to their role and industry (and their company, if website content is provided).',
   'The answers decide which buying-intent signals to track so they can find buyers who are showing buying intent. The 6 questions, in this order, must collect:',
-  '1. Who they sell to: buyer title and company size range (single choice)',
-  '2. What they sell and the typical deal size, with ranges as options (single choice)',
-  '3. Where their buyers spend time: LinkedIn, communities, review sites, job boards, events, search (multi-select)',
-  '4. Their current stack: CRM, outreach tools and data tools, naming real products common in their industry (multi-select)',
-  '5. Target volume: new qualified conversations wanted per month, with ranges as options (single choice)',
-  '6. How they follow up today and who approves outreach: solo, small team or SDR team (single choice)',
-  'Use the visitor\'s vocabulary and industry. Each question: 3 to 6 options, each option under 60 characters. Keep question text under 110 characters.',
+  '1. Who they sell to: buyer title and company size range',
+  '2. What they sell and the typical deal size, with ranges as options',
+  '3. Where their buyers spend time: LinkedIn, communities, review sites, job boards, events, search',
+  '4. Their current stack: CRM, outreach tools and data tools, naming real products common in their industry',
+  '5. Target volume: new qualified conversations wanted per month, with ranges as options',
+  '6. How they follow up today and who approves outreach: solo, small team or SDR team',
+  'Use WEBSITE CONTENT to name what the company really sells and who it targets, and to pick real options. If it is empty or unreadable, rely on role and industry.',
+  'Use the visitor\'s vocabulary and industry. Every question is multi-select (type "multi"), so write options that can each apply on their own, not mutually exclusive ranges where only one fits. Each question: 3 to 6 options, each option under 60 characters. Keep question text under 110 characters.',
   '',
   'Format:',
-  '{ "intro": "One sentence acknowledging their role and industry.", "questions": [ { "id": "q1", "question": "...", "type": "single" or "multi", "options": ["...", "..."] } ] }',
+  '{ "intro": "One sentence acknowledging their role and industry.", "questions": [ { "id": "q1", "question": "...", "type": "multi", "options": ["...", "..."] } ] }',
 ].join('\n');
 
 const PLAYBOOK_REPORT_PROMPT = [
   PLAYBOOK_BASE_RULES,
   '',
   'TASK: Write an Intent Lead Playbook for this visitor based on their role, industry, company and answers. The playbook lists the buying-intent signals they should track to find buyers who are showing buying intent, with a scheduled flow spec for each.',
-  'Choose 2 to 4 signals from the SIGNAL CATALOG below, ordered by fit with this visitor (best first). Use only the ids in the catalog. Never invent a signal that is not in the catalog.',
+  'Recommend 2 to 4 intent signals, ordered by fit with this visitor (best first). The SIGNAL CATALOG below is a set of EXAMPLES, not a limit. Use a catalog signal when it fits, and get creative with others that suit this visitor\'s industry, buyers and tools, as long as the signal comes from data a scheduled flow could actually observe (public sources, their own website, email or CRM).',
+  'For a catalog signal, use its id as signal_id. For a signal you invent, make up a short snake_case signal_id and give it a clear name and one-sentence summary.',
+  'Use WEBSITE CONTENT to get specific about the offer, the buyers and the tools. If it is empty or unreadable, rely on the answers.',
   'Base every choice on the visitor\'s answers: who they sell to, where buyers spend time, the stack they already use, target volume and how they follow up. Name the real tools they said they use where it helps.',
   'For each signal return:',
   '- why_fit: two sentences on why this signal fits this visitor',
@@ -1760,13 +1763,17 @@ const PLAYBOOK_REPORT_PROMPT = [
   '- drop: 2 to 4 short screening rules for who to drop',
   '- angle: the messaging angle in one sentence',
   '- schedule: a suggested schedule, for example "Weekdays at 2am ET"',
-  '- steps: a scheduled flow spec of 5 to 7 short imperative steps, each under 140 characters. The flow collects the signal, screens it, checks the CRM and outreach tools for duplicates, enriches only qualified leads, ranks them and ends by queuing leads paused for approval. Nothing is ever sent by the flow.',
+  '- steps: a scheduled flow spec of 5 to 7 short imperative steps, each under 140 characters',
+  '- guardrails: 3 to 5 short safeguards for the flow. See EXAMPLE GUARDRAILS below and adapt them as you see fit.',
   'expected_output: one line in the form "About N screened leads per week, with reasoning", where the reasoning is one short clause tied to their volume target. It is an estimate. estimated_leads_per_week is the whole number N.',
   'Do not invent clients, statistics, results or conversion rates. Never quote prices.',
   'ARTICLES: choose 1 to 3 relevant TEG blog posts by slug, ONLY from BLOG INDEX below, with a one-sentence reason each. Do not invent slugs.',
   '',
-  'SIGNAL CATALOG (id | name | summary | source):',
+  'EXAMPLE SIGNALS (id | name | summary | source):',
   SIGNAL_CATALOG_TEXT,
+  '',
+  'EXAMPLE GUARDRAILS:',
+  FLOW_GUARDRAILS.map(function (g) { return '- ' + g; }).join('\n'),
   '',
   'BLOG INDEX (slug | title | description):',
   BLOG_INDEX_TEXT,
@@ -1778,13 +1785,16 @@ const PLAYBOOK_REPORT_PROMPT = [
   '  "signals": [',
   '    {',
   '      "signal_id": "hiring_signal",',
+  '      "name": "Hiring signal",',
+  '      "summary": "One sentence on what the signal is.",',
   '      "why_fit": "...",',
   '      "source": "...",',
   '      "keep": ["...", "..."],',
   '      "drop": ["...", "..."],',
   '      "angle": "...",',
   '      "schedule": "Weekdays at 2am ET",',
-  '      "steps": ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"]',
+  '      "steps": ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"],',
+  '      "guardrails": ["Guardrail 1", "Guardrail 2", "Guardrail 3"]',
   '    }',
   '  ],',
   '  "expected_output": "About 15 screened leads per week, with reasoning.",',
@@ -1796,19 +1806,19 @@ const PLAYBOOK_REPORT_PROMPT = [
 
 // Used when the model returns too few usable questions, so the visitor always gets exactly six.
 const PLAYBOOK_FALLBACK_QUESTIONS = [
-  { question: 'Who do you sell to?', type: 'single', options: ['Owners and CEOs, 1-50 employees', 'Department heads, 51-200 employees', 'VPs and directors, 201-1,000 employees', 'Executives at 1,000+ employee companies', 'A mix of buyer titles and sizes'] },
-  { question: 'What do you sell, and what is a typical deal?', type: 'single', options: ['Services or software under $5K', '$5K to $25K', '$25K to $100K', 'Over $100K', 'It varies a lot'] },
+  { question: 'Who do you sell to?', type: 'multi', options: ['Owners and CEOs, 1-50 employees', 'Department heads, 51-200 employees', 'VPs and directors, 201-1,000 employees', 'Executives at 1,000+ employee companies', 'A mix of buyer titles and sizes'] },
+  { question: 'What do you sell, and what is a typical deal?', type: 'multi', options: ['Services or software under $5K', '$5K to $25K', '$25K to $100K', 'Over $100K', 'It varies a lot'] },
   { question: 'Where do your buyers spend time?', type: 'multi', options: ['LinkedIn', 'Online communities', 'Review sites', 'Job boards', 'Events and webinars', 'Search'] },
   { question: 'Which tools do you use today?', type: 'multi', options: ['HubSpot', 'Salesforce', 'A spreadsheet or other CRM', 'An email or sequence tool', 'LinkedIn Sales Navigator', 'A data or enrichment tool'] },
-  { question: 'How many new qualified conversations do you want each month?', type: 'single', options: ['1 to 5', '6 to 15', '16 to 30', 'More than 30'] },
-  { question: 'How do you follow up today, and who approves outreach?', type: 'single', options: ['I do it all myself', 'A small team shares it', 'An SDR team with a manager approving', 'Outreach is mostly ad hoc'] },
+  { question: 'How many new qualified conversations do you want each month?', type: 'multi', options: ['1 to 5', '6 to 15', '16 to 30', 'More than 30'] },
+  { question: 'How do you follow up today, and who approves outreach?', type: 'multi', options: ['I do it all myself', 'A small team shares it', 'An SDR team with a manager approving', 'Outreach is mostly ad hoc'] },
 ];
 
 function playbookProfileText(s) {
   return [
     'Role: ' + s.role,
     'Industry: ' + s.industry,
-    'Company website: ' + (s.website || 'not provided'),
+    'Company website: ' + s.website,
   ].join('\n');
 }
 
@@ -1826,8 +1836,8 @@ function sanitizePlaybookQuestions(data) {
     return {
       id: 'q' + (i + 1),
       question: usable ? question : fallback.question,
-      // Questions 3 (where buyers spend time) and 4 (stack) are always multi-select, the rest single choice.
-      type: i === 2 || i === 3 ? 'multi' : 'single',
+      // Buyers rarely fit one box, so every question is multi-select.
+      type: 'multi',
       options: usable ? options : fallback.options,
     };
   });
@@ -1846,25 +1856,32 @@ function playbookExample(id) {
   };
 }
 
+// entry is the matching catalog example, or null when the model invented the signal.
 function sanitizePlaybookSignal(raw, entry) {
-  var steps = cleanList(raw && raw.steps, 7, 180);
-  // Pad thin flow specs from the catalog so every spec has at least five steps.
-  entry.steps.forEach(function (d) { if (steps.length < 5 && steps.indexOf(d) === -1) steps.push(d); });
-  var keep = cleanList(raw && raw.keep, 4, 160);
-  var drop = cleanList(raw && raw.drop, 4, 160);
+  raw = raw && typeof raw === 'object' ? raw : {};
+  var id = entry ? entry.id : cleanText(raw.signal_id, 60).toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+  var name = cleanText(raw.name, 80) || (entry && entry.name);
+  var steps = cleanList(raw.steps, 7, 180);
+  // Catalog signals back-fill thin specs from their defaults. Invented signals need at least three steps of their own.
+  if (entry) entry.steps.forEach(function (d) { if (steps.length < 5 && steps.indexOf(d) === -1) steps.push(d); });
+  if (!id || !name || steps.length < 3) return null;
+  var keep = cleanList(raw.keep, 4, 160);
+  var drop = cleanList(raw.drop, 4, 160);
+  var guardrails = cleanList(raw.guardrails, 6, 160);
   return {
-    id: entry.id,
-    name: entry.name,
-    summary: entry.summary,
-    why_fit: cleanText(raw && raw.why_fit, 500) || 'This signal is a common place for teams like yours to start. We confirm the fit on a call.',
-    source: cleanText(raw && raw.source, 300) || entry.source,
-    keep: keep.length ? keep : entry.keep.slice(),
-    drop: drop.length ? drop : entry.drop.slice(),
-    angle: cleanText(raw && raw.angle, 300),
-    schedule: cleanText(raw && raw.schedule, 80) || entry.schedule,
+    id: id,
+    name: name,
+    summary: cleanText(raw.summary, 200) || (entry && entry.summary) || '',
+    why_fit: cleanText(raw.why_fit, 500) || 'This signal is a good place for teams like yours to start. We confirm the fit on a call.',
+    source: cleanText(raw.source, 300) || (entry && entry.source) || '',
+    keep: keep.length ? keep : (entry ? entry.keep.slice() : []),
+    drop: drop.length ? drop : (entry ? entry.drop.slice() : []),
+    angle: cleanText(raw.angle, 300),
+    schedule: cleanText(raw.schedule, 80) || (entry && entry.schedule) || 'Weekdays overnight',
     steps: steps,
-    guardrails: FLOW_GUARDRAILS.slice(),
-    example: playbookExample(entry.id),
+    guardrails: guardrails.length ? guardrails : FLOW_GUARDRAILS.slice(),
+    // Real TEG example text is only attached to catalog signals TEG actually runs.
+    example: entry ? playbookExample(entry.id) : null,
   };
 }
 
@@ -1873,10 +1890,12 @@ function sanitizePlaybook(data) {
   var seen = {};
   var signals = [];
   (Array.isArray(data.signals) ? data.signals : []).forEach(function (s) {
-    var entry = s && SIGNAL_CATALOG.find(function (c) { return c.id === s.signal_id; });
-    if (entry && !seen[entry.id] && signals.length < 4) {
-      seen[entry.id] = true;
-      signals.push(sanitizePlaybookSignal(s, entry));
+    if (!s || signals.length >= 4) return;
+    var entry = SIGNAL_CATALOG.find(function (c) { return c.id === s.signal_id; }) || null;
+    var signal = sanitizePlaybookSignal(s, entry);
+    if (signal && !seen[signal.id]) {
+      seen[signal.id] = true;
+      signals.push(signal);
     }
   });
   if (!signals.length) throw new Error('Model returned no usable signals');
@@ -1884,7 +1903,8 @@ function sanitizePlaybook(data) {
   ['website_visitor_identification', 'email_engagement', 'hiring_signal'].forEach(function (id) {
     if (signals.length < 2 && !seen[id]) {
       seen[id] = true;
-      signals.push(sanitizePlaybookSignal({}, SIGNAL_CATALOG.find(function (c) { return c.id === id; })));
+      var fallback = SIGNAL_CATALOG.find(function (c) { return c.id === id; });
+      signals.push(sanitizePlaybookSignal({ signal_id: id }, fallback));
     }
   });
 
@@ -2146,6 +2166,10 @@ async function handlePlaybookStart(req, res) {
     };
     if (!session.role || !session.industry) {
       respondJsonTo(res, 400, { error: 'Please choose your role and industry.' });
+      return;
+    }
+    if (!/^(https?:\/\/)?[^\s\/.]+(\.[^\s\/.]+)+(\/\S*)?$/i.test(session.website)) {
+      respondJsonTo(res, 400, { error: 'Please enter your company website, like yourcompany.com.' });
       return;
     }
 
