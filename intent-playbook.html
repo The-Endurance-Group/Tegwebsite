@@ -655,16 +655,29 @@
         if (window.scrollY > top + 40 || window.scrollY < top - 400) window.scrollTo({ top: top, behavior: 'smooth' });
       }
 
+      // After the scripted messages run out, rotate these so the screen never sits on one line.
+      var STILL_WORKING = [
+        'Still working on it…',
+        'Checking the details of each flow…',
+        'Tightening your screening rules…',
+        'Making the flow specs specific to you…',
+        'Almost there, polishing the playbook…',
+        'Thanks for waiting, nearly done…'
+      ];
       function startLoading(messages, sub) {
         clearInterval(loadingTimer);
-        var i = 0;
+        var i = 0, ticks = 0, extra = 0;
         $('loading-msg').textContent = messages[0];
         $('loading-sub').textContent = sub;
         show('screen-loading');
         loadingTimer = setInterval(function () {
-          i = Math.min(i + 1, messages.length - 1);
+          ticks++;
+          var text;
+          if (i < messages.length - 1) { i++; text = messages[i]; }
+          else { text = STILL_WORKING[extra % STILL_WORKING.length]; extra++; }
+          if (ticks === 12) $('loading-sub').textContent = 'Detailed playbooks can take a minute or two. Please keep this tab open.';
           $('loading-msg').style.opacity = '0';
-          setTimeout(function () { $('loading-msg').textContent = messages[i]; $('loading-msg').style.opacity = '1'; }, 250);
+          setTimeout(function () { $('loading-msg').textContent = text; $('loading-msg').style.opacity = '1'; }, 250);
         }, 3200);
       }
       function stopLoading() { clearInterval(loadingTimer); }
@@ -792,25 +805,44 @@
         track('playbook_answers_submitted');
         startLoading([
           'Reviewing your answers…',
+          'Reading what your website says you sell…',
           'Matching your buyers to intent signals…',
+          'Looking for signals beyond the obvious ones…',
           'Screening who to keep and who to drop…',
+          'Choosing the best schedule for each flow…',
           'Writing your scheduled flow specs…',
+          'Adding guardrails to every flow…',
+          'Estimating your screened leads per week…',
           'Finding related TEG guides…',
           'Putting your playbook together…'
-        ], 'This takes about 30 seconds.');
-        postJson('/api/playbook/report', { sessionId: state.sessionId, token: state.token, answers: answers }).then(function (data) {
-          stopLoading();
-          state.token = data.token || state.token;
-          state.preview = data.preview;
-          renderPreview(data.preview);
-          show('screen-report');
-          $('r-headline').focus({ preventScroll: true });
-          track('playbook_preview_shown');
-        }).catch(function (err) {
+        ], 'This usually takes under a minute.');
+        var payload = { sessionId: state.sessionId, token: state.token, answers: answers };
+        var started = Date.now(), failures = 0;
+        function fail(message) {
           stopLoading();
           show('screen-questions');
-          alertInline(err.message);
-        });
+          alertInline(message);
+        }
+        // The server builds the playbook in the background. Ask until it is ready, and shrug off brief network drops.
+        function poll() {
+          if (Date.now() - started > 5 * 60 * 1000) { fail('This is taking longer than expected. Please try again.'); return; }
+          postJson('/api/playbook/report', payload).then(function (data) {
+            failures = 0;
+            if (data.pending) { setTimeout(poll, 3000); return; }
+            stopLoading();
+            state.token = data.token || state.token;
+            state.preview = data.preview;
+            renderPreview(data.preview);
+            show('screen-report');
+            $('r-headline').focus({ preventScroll: true });
+            track('playbook_preview_shown');
+          }).catch(function (err) {
+            // A thrown TypeError means the connection dropped, not that the server said no. Retry a few times.
+            if (err instanceof TypeError && ++failures <= 5) { setTimeout(poll, 3000); return; }
+            fail(err instanceof TypeError ? 'Your connection dropped. Please check it and try again.' : err.message);
+          });
+        }
+        poll();
       }
       function alertInline(message) {
         var p = $('q-error') || el('p', 'aa-error');

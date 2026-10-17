@@ -2207,13 +2207,36 @@ async function handlePlaybookStart(req, res) {
   }
 }
 
+// Writing the playbook can take a minute or more, which is long enough for mobile browsers and proxies to drop a single
+// request ("Load failed"). So the first call starts the job and returns at once, and the page polls this same endpoint
+// until the report is ready. Repeat calls are cheap and only the first one counts against the rate limit.
+async function buildPlaybookReport(session, ip) {
+  var userContent = [
+    '--- VISITOR INPUT ---',
+    playbookProfileText(session),
+    '',
+    'Answers:',
+    session.questions.map(function (q) {
+      var a = session.answers[q.id];
+      return 'Q: ' + q.question + '\nA: ' + (a.length ? a.join('; ') : '(skipped)');
+    }).join('\n'),
+    '--- WEBSITE CONTENT ---',
+    session.websiteContext || '(none)',
+  ].join('\n');
+
+  var report = sanitizePlaybook(parseClaudeJson(await callClaudeApi(
+    PLAYBOOK_REPORT_PROMPT,
+    [{ role: 'user', content: userContent }],
+    4000,
+    PLAYBOOK_REPORT_MODEL
+  )));
+  session.report = report;
+  console.log('[PLAYBOOK] report', JSON.stringify({ role: session.role, industry: session.industry, signals: report.signals.map(function (s) { return s.id; }), ip: ip }));
+}
+
 async function handlePlaybookReport(req, res) {
   var ip = clientIp(req);
   try {
-    if (isRateLimited(playbookReportHits, ip, PLAYBOOK_RATE_LIMIT_WINDOW_MS, PLAYBOOK_RATE_LIMIT_MAX)) {
-      respondJsonTo(res, 429, { error: 'Too many playbooks requested. Please try again in a little while.' });
-      return;
-    }
     var data = JSON.parse((await readBody(req)) || '{}');
     var session = getPlaybookSession(data.sessionId, data.token);
     if (!session) {
@@ -2224,7 +2247,21 @@ async function handlePlaybookReport(req, res) {
       respondJsonTo(res, 200, { preview: playbookPreview(session.report), token: sealPlaybookSession(session) });
       return;
     }
+    if (session.jobError) {
+      var message = session.jobError;
+      session.jobError = null;
+      respondJsonTo(res, 500, { error: message });
+      return;
+    }
+    if (session.job) {
+      respondJsonTo(res, 202, { pending: true });
+      return;
+    }
 
+    if (isRateLimited(playbookReportHits, ip, PLAYBOOK_RATE_LIMIT_WINDOW_MS, PLAYBOOK_RATE_LIMIT_MAX)) {
+      respondJsonTo(res, 429, { error: 'Too many playbooks requested. Please try again in a little while.' });
+      return;
+    }
     var rawAnswers = data.answers && typeof data.answers === 'object' ? data.answers : {};
     session.answers = {};
     session.questions.forEach(function (q) {
@@ -2232,29 +2269,13 @@ async function handlePlaybookReport(req, res) {
       session.answers[q.id] = (Array.isArray(a) ? a : [a]).map(function (v) { return cleanText(v, 200); }).filter(Boolean).slice(0, 8);
     });
 
-    var userContent = [
-      '--- VISITOR INPUT ---',
-      playbookProfileText(session),
-      '',
-      'Answers:',
-      session.questions.map(function (q) {
-        var a = session.answers[q.id];
-        return 'Q: ' + q.question + '\nA: ' + (a.length ? a.join('; ') : '(skipped)');
-      }).join('\n'),
-      '--- WEBSITE CONTENT ---',
-      session.websiteContext || '(none)',
-    ].join('\n');
-
-    var report = sanitizePlaybook(parseClaudeJson(await callClaudeApi(
-      PLAYBOOK_REPORT_PROMPT,
-      [{ role: 'user', content: userContent }],
-      4000,
-      PLAYBOOK_REPORT_MODEL
-    )));
-    session.report = report;
-    console.log('[PLAYBOOK] report', JSON.stringify({ role: session.role, industry: session.industry, signals: report.signals.map(function (s) { return s.id; }), ip: ip }));
-
-    respondJsonTo(res, 200, { preview: playbookPreview(report), token: sealPlaybookSession(session) });
+    session.job = buildPlaybookReport(session, ip)
+      .catch(function (err) {
+        console.error('[PLAYBOOK] report failed:', err.message);
+        session.jobError = 'Something went wrong building your playbook. Please try again.';
+      })
+      .then(function () { session.job = null; });
+    respondJsonTo(res, 202, { pending: true });
   } catch (err) {
     console.error('[PLAYBOOK] report failed:', err.message);
     respondJsonTo(res, 500, { error: 'Something went wrong building your playbook. Please try again.' });
