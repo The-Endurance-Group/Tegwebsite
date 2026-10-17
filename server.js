@@ -1741,6 +1741,7 @@ const PLAYBOOK_QUESTIONS_PROMPT = [
   '4. Their current stack: CRM, outreach tools and data tools, naming real products common in their industry',
   '5. Target volume: new qualified conversations wanted per month, with ranges as options',
   '6. How they follow up today and who approves outreach: solo, small team or SDR team',
+  'Use WEBSITE CONTENT to name what the company really sells and who it targets, and to pick real options. If it is empty or unreadable, rely on role and industry.',
   'Use the visitor\'s vocabulary and industry. Every question is multi-select (type "multi"), so write options that can each apply on their own, not mutually exclusive ranges where only one fits. Each question: 3 to 6 options, each option under 60 characters. Keep question text under 110 characters.',
   '',
   'Format:',
@@ -1753,6 +1754,7 @@ const PLAYBOOK_REPORT_PROMPT = [
   'TASK: Write an Intent Lead Playbook for this visitor based on their role, industry, company and answers. The playbook lists the buying-intent signals they should track to find buyers who are showing buying intent, with a scheduled flow spec for each.',
   'Recommend 2 to 4 intent signals, ordered by fit with this visitor (best first). The SIGNAL CATALOG below is a set of EXAMPLES, not a limit. Use a catalog signal when it fits, and get creative with others that suit this visitor\'s industry, buyers and tools, as long as the signal comes from data a scheduled flow could actually observe (public sources, their own website, email or CRM).',
   'For a catalog signal, use its id as signal_id. For a signal you invent, make up a short snake_case signal_id and give it a clear name and one-sentence summary.',
+  'Use WEBSITE CONTENT to get specific about the offer, the buyers and the tools. If it is empty or unreadable, rely on the answers.',
   'Base every choice on the visitor\'s answers: who they sell to, where buyers spend time, the stack they already use, target volume and how they follow up. Name the real tools they said they use where it helps.',
   'For each signal return:',
   '- why_fit: two sentences on why this signal fits this visitor',
@@ -1816,7 +1818,7 @@ function playbookProfileText(s) {
   return [
     'Role: ' + s.role,
     'Industry: ' + s.industry,
-    'Company website: ' + (s.website || 'not provided'),
+    'Company website: ' + s.website,
   ].join('\n');
 }
 
@@ -2164,6 +2166,10 @@ async function handlePlaybookStart(req, res) {
     };
     if (!session.role || !session.industry) {
       respondJsonTo(res, 400, { error: 'Please choose your role and industry.' });
+      return;
+    }
+    if (!/^(https?:\/\/)?[^\s\/.]+(\.[^\s\/.]+)+(\/\S*)?$/i.test(session.website)) {
+      respondJsonTo(res, 400, { error: 'Please enter your company website, like yourcompany.com.' });
       return;
     }
 
