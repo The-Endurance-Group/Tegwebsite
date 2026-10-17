@@ -1734,7 +1734,7 @@ const PLAYBOOK_QUESTIONS_PROMPT = [
   PLAYBOOK_BASE_RULES,
   '',
   'TASK: A visitor is starting an Intent Lead Playbook. Write exactly 6 short multiple-choice questions tailored to their role and industry (and their company, if website content is provided).',
-  'The answers decide which buying-intent signals to track so they can find buyers who are showing buying intent. The 6 questions, in this order, must collect:',
+  'The answers decide which buying signals to track so they can find companies showing signs they may need what the visitor sells. The 6 questions, in this order, must collect:',
   '1. Who they sell to: buyer title and company size range',
   '2. What they sell and the typical deal size, with ranges as options',
   '3. Where their buyers spend time: LinkedIn, communities, review sites, job boards, events, search',
@@ -1751,7 +1751,7 @@ const PLAYBOOK_QUESTIONS_PROMPT = [
 const PLAYBOOK_REPORT_PROMPT = [
   PLAYBOOK_BASE_RULES,
   '',
-  'TASK: Write an Intent Lead Playbook for this visitor based on their role, industry, company and answers. The playbook lists the buying-intent signals they should track to find buyers who are showing buying intent, with a scheduled flow spec for each.',
+  'TASK: Write a lead playbook for this visitor based on their role, industry, company and answers. It is their plan for finding, qualifying and following up with potential buyers: the signals worth monitoring, with a scheduled flow for each. A signal suggests an opportunity, it does not prove someone is about to buy, so never claim certainty.',
   'Recommend 2 to 4 intent signals, ordered by fit with this visitor (best first). The SIGNAL CATALOG below is a set of EXAMPLES, not a limit. Use a catalog signal when it fits, and get creative with others that suit this visitor\'s industry, buyers and tools, as long as the signal comes from data a scheduled flow could actually observe (public sources, their own website, email or CRM).',
   'For a catalog signal, use its id as signal_id. For a signal you invent, make up a short snake_case signal_id and give it a clear name and one-sentence summary.',
   'Use WEBSITE CONTENT to get specific about the offer, the buyers and the tools. If it is empty or unreadable, rely on the answers.',
@@ -1765,7 +1765,7 @@ const PLAYBOOK_REPORT_PROMPT = [
   '- schedule: a suggested schedule, for example "Weekdays at 2am ET"',
   '- steps: a scheduled flow spec of 5 to 7 short imperative steps, each under 140 characters',
   '- guardrails: 3 to 5 short safeguards for the flow. See EXAMPLE GUARDRAILS below and adapt them as you see fit.',
-  'expected_output: one line in the form "About N screened leads per week, with reasoning", where the reasoning is one short clause tied to their volume target. It is an estimate. estimated_leads_per_week is the whole number N.',
+  'Do not estimate lead volumes, conversion rates or counts of leads. Real volume is validated later in a pilot.',
   'Do not invent clients, statistics, results or conversion rates. Never quote prices.',
   'ARTICLES: choose 1 to 3 relevant TEG blog posts by slug, ONLY from BLOG INDEX below, with a one-sentence reason each. Do not invent slugs.',
   '',
@@ -1797,9 +1797,7 @@ const PLAYBOOK_REPORT_PROMPT = [
   '      "guardrails": ["Guardrail 1", "Guardrail 2", "Guardrail 3"]',
   '    }',
   '  ],',
-  '  "expected_output": "About 15 screened leads per week, with reasoning.",',
-  '  "estimated_leads_per_week": 15,',
-  '  "first_step": "Two sentences on which flow to start with and why.",',
+  '  "first_step": "Two sentences on which signal to pilot first and why.",',
   '  "articles": [ { "slug": "ai-prospect-finder-hiring-signal", "why": "One sentence." } ]',
   '}',
 ].join('\n');
@@ -1925,13 +1923,10 @@ function sanitizePlaybook(data) {
       });
   }
 
-  var leads = Math.round(Number(data.estimated_leads_per_week));
   return {
     headline: cleanText(data.headline, 200) || 'Start with the signals your buyers already leave behind.',
     summary: cleanText(data.summary, 800) || 'These are the buying-intent signals worth tracking for your business, each with a scheduled flow that screens leads overnight and queues them for your approval.',
     signals: signals,
-    expected_output: cleanText(data.expected_output, 300),
-    estimated_leads_per_week: isFinite(leads) && leads > 0 ? Math.min(leads, 500) : null,
     first_step: cleanText(data.first_step, 600),
     articles: articles,
   };
@@ -1942,8 +1937,6 @@ function playbookPreview(report) {
   return {
     headline: report.headline,
     summary: report.summary,
-    expected_output: report.expected_output,
-    estimated_leads_per_week: report.estimated_leads_per_week,
     signals: report.signals.map(function (s, i) {
       return i === 0
         ? { id: s.id, name: s.name, summary: s.summary, schedule: s.schedule, locked: false }
@@ -2008,17 +2001,17 @@ function getPlaybookSession(id, token) {
 function playbookAsText(s) {
   var r = s.report;
   var lines = [r.headline, '', r.summary, ''];
-  if (r.expected_output) lines.push('Estimate: ' + r.expected_output, '');
+  lines.push('Ranked by fit with your answers. We validate real lead volume in a short pilot.', '');
   r.signals.forEach(function (sig, i) {
     lines.push((i + 1) + '. ' + sig.name + ' (' + sig.schedule + ')');
     lines.push('   Why it fits: ' + sig.why_fit);
     lines.push('   Where it comes from: ' + sig.source);
-    lines.push('   Keep: ' + sig.keep.join('; '));
-    lines.push('   Drop: ' + sig.drop.join('; '));
+    lines.push('   Who to pursue: ' + sig.keep.join('; '));
+    lines.push('   Who to skip: ' + sig.drop.join('; '));
     if (sig.angle) lines.push('   Messaging angle: ' + sig.angle);
-    lines.push('   Scheduled flow:');
+    lines.push('   Your plan:');
     sig.steps.forEach(function (st, n) { lines.push('     ' + (n + 1) + '. ' + st); });
-    lines.push('   Guardrails: ' + sig.guardrails.join('. ') + '.');
+    lines.push('   Safeguards: ' + sig.guardrails.join('. ') + '.');
     lines.push('');
   });
   if (r.first_step) lines.push('Where to start: ' + r.first_step, '');
@@ -2053,11 +2046,11 @@ function playbookAsHtml(s, firstName) {
         '<div style="' + font + 'font-size:15px;line-height:1.55;color:' + muted + ';">' + escHtml(sig.why_fit) + '</div>' +
         '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:12px;border-top:1px solid ' + line + ';">' +
           detail('Where it comes from', escHtml(sig.source)) +
-          detail('Keep', escHtml(sig.keep.join('; '))) +
-          detail('Drop', escHtml(sig.drop.join('; '))) +
+          detail('Who to pursue', escHtml(sig.keep.join('; '))) +
+          detail('Who to skip', escHtml(sig.drop.join('; '))) +
           (sig.angle ? detail('Messaging angle', escHtml(sig.angle)) : '') +
-          detail('Scheduled flow', list(sig.steps)) +
-          detail('Guardrails', escHtml(sig.guardrails.join('. ') + '.')) +
+          detail('Your plan', list(sig.steps)) +
+          detail('Safeguards', escHtml(sig.guardrails.join('. ') + '.')) +
         '</table>' +
       '</td></tr></table></td></tr>';
   }).join('');
@@ -2072,23 +2065,20 @@ function playbookAsHtml(s, firstName) {
     '<table role="presentation" width="640" cellpadding="0" cellspacing="0" style="width:100%;max-width:640px;">' +
       '<tr><td style="background:#ffffff;border-radius:12px 12px 0 0;padding:22px 28px 18px;border-bottom:1px solid ' + line + ';"><a href="https://www.theendurancegroup.com"><img src="https://www.theendurancegroup.com/images/logo-email.png" width="280" alt="The Endurance Group" style="display:block;width:280px;max-width:100%;height:auto;border:0;"></a></td></tr>' +
       '<tr><td style="background:' + purple + ';padding:20px 28px;' + font + 'color:#ffffff;">' +
-        '<div style="font-size:24px;font-weight:800;line-height:1.25;">Your Intent Lead Playbook</div>' +
+        '<div style="font-size:24px;font-weight:800;line-height:1.25;">Your lead playbook</div>' +
       '</td></tr>' +
       '<tr><td style="background:#ffffff;border-radius:0 0 12px 12px;padding:28px;' + font + 'color:' + ink + ';">' +
         '<p style="margin:0 0 16px;font-size:16px;line-height:1.6;">Hi ' + escHtml(firstName) + ',</p>' +
-        '<p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:' + muted + ';">Here is the Intent Lead Playbook you generated on theendurancegroup.com.</p>' +
+        '<p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:' + muted + ';">Here is the lead playbook you generated on theendurancegroup.com.</p>' +
         '<h1 style="margin:0 0 10px;font-size:22px;line-height:1.3;font-weight:800;color:' + ink + ';">' + escHtml(r.headline) + '</h1>' +
         '<p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:' + muted + ';">' + escHtml(r.summary) + '</p>' +
-        (r.expected_output ? '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 28px;background:' + tint + ';border-left:4px solid ' + pink + ';border-radius:8px;"><tr><td style="padding:16px 20px;">' +
-          '<div style="' + font + 'font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:' + muted + ';">Estimate</div>' +
-          '<div style="' + font + 'font-size:18px;font-weight:800;color:' + purple + ';padding-top:2px;">' + escHtml(r.expected_output) + '</div>' +
-        '</td></tr></table>' : '') +
+        '<p style="margin:0 0 24px;font-size:14px;line-height:1.6;color:' + muted + ';">Ranked by fit with your answers. We validate real lead volume in a short pilot.</p>' +
         '<table role="presentation" width="100%" cellpadding="0" cellspacing="0">' + signals + '</table>' +
         (r.first_step ? '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:8px 0 24px;background:#F3EEF6;border-radius:10px;"><tr><td style="padding:18px 20px;' + font + 'font-size:15px;line-height:1.6;color:' + ink + ';"><strong style="color:' + purple + ';">Where to start</strong><br>' + escHtml(r.first_step) + '</td></tr></table>' : '') +
         (reading ? '<div style="' + font + 'font-size:16px;font-weight:700;color:' + ink + ';padding:4px 0 6px;">Further reading</div><ul style="margin:0 0 24px;padding-left:20px;' + font + 'font-size:15px;line-height:1.5;">' + reading + '</ul>' : '') +
         '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:8px 0 8px;background:' + purple + ';border-radius:12px;"><tr><td align="center" style="padding:28px 24px;' + font + 'color:#ffffff;">' +
           '<div style="font-size:20px;font-weight:800;line-height:1.3;padding-bottom:8px;">Want these running for you?</div>' +
-          '<div style="font-size:15px;line-height:1.6;opacity:.92;padding-bottom:18px;">Book a call and we will build them as scheduled flows. Pricing is shared on the call.</div>' +
+          '<div style="font-size:15px;line-height:1.6;opacity:.92;padding-bottom:18px;">TEG builds your flows as Claude scheduled flows, then runs, monitors and improves them every month. Book a call to talk it through. Pricing is shared on the call.</div>' +
           '<a href="' + escHtml(PLAYBOOK_CALENDAR_URL) + '" style="display:inline-block;background:#ffffff;color:' + purple + ';font-weight:800;font-size:16px;text-decoration:none;padding:13px 28px;border-radius:8px;">Book a call</a>' +
         '</td></tr></table>' +
         '<p style="margin:20px 0 0;font-size:15px;line-height:1.6;color:' + muted + ';">Or just reply to this email with any questions.</p>' +
@@ -2130,15 +2120,15 @@ function sendPlaybookEmails(s) {
   sendResendEmail({
     to: [s.lead.email],
     reply_to: 'csullivan@theendurancegroup.com',
-    subject: 'Your Intent Lead Playbook from The Endurance Group',
+    subject: 'Your lead playbook from The Endurance Group',
     html: playbookAsHtml(s, s.lead.name.split(' ')[0]),
     text: [
       'Hi ' + s.lead.name.split(' ')[0] + ',',
       '',
-      'Here is the Intent Lead Playbook you generated on theendurancegroup.com.',
+      'Here is the lead playbook you generated on theendurancegroup.com.',
       '',
       playbookAsText(s),
-      'Want these running for you? Book a call and we will build them as scheduled flows. Pricing is shared on the call.',
+      'Want these running for you? TEG builds your flows as Claude scheduled flows, then runs, monitors and improves them every month. Book a call to talk it through. Pricing is shared on the call.',
       'Book a call: ' + PLAYBOOK_CALENDAR_URL,
       '',
       'Or just reply to this email with any questions.',
