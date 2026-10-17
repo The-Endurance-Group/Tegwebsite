@@ -816,19 +816,33 @@
           'Finding related TEG guides…',
           'Putting your playbook together…'
         ], 'This usually takes under a minute.');
-        postJson('/api/playbook/report', { sessionId: state.sessionId, token: state.token, answers: answers }).then(function (data) {
-          stopLoading();
-          state.token = data.token || state.token;
-          state.preview = data.preview;
-          renderPreview(data.preview);
-          show('screen-report');
-          $('r-headline').focus({ preventScroll: true });
-          track('playbook_preview_shown');
-        }).catch(function (err) {
+        var payload = { sessionId: state.sessionId, token: state.token, answers: answers };
+        var started = Date.now(), failures = 0;
+        function fail(message) {
           stopLoading();
           show('screen-questions');
-          alertInline(err.message);
-        });
+          alertInline(message);
+        }
+        // The server builds the playbook in the background. Ask until it is ready, and shrug off brief network drops.
+        function poll() {
+          if (Date.now() - started > 5 * 60 * 1000) { fail('This is taking longer than expected. Please try again.'); return; }
+          postJson('/api/playbook/report', payload).then(function (data) {
+            failures = 0;
+            if (data.pending) { setTimeout(poll, 3000); return; }
+            stopLoading();
+            state.token = data.token || state.token;
+            state.preview = data.preview;
+            renderPreview(data.preview);
+            show('screen-report');
+            $('r-headline').focus({ preventScroll: true });
+            track('playbook_preview_shown');
+          }).catch(function (err) {
+            // A thrown TypeError means the connection dropped, not that the server said no. Retry a few times.
+            if (err instanceof TypeError && ++failures <= 5) { setTimeout(poll, 3000); return; }
+            fail(err instanceof TypeError ? 'Your connection dropped. Please check it and try again.' : err.message);
+          });
+        }
+        poll();
       }
       function alertInline(message) {
         var p = $('q-error') || el('p', 'aa-error');
