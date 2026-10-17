@@ -1735,16 +1735,16 @@ const PLAYBOOK_QUESTIONS_PROMPT = [
   '',
   'TASK: A visitor is starting an Intent Lead Playbook. Write exactly 6 short multiple-choice questions tailored to their role and industry (and their company, if website content is provided).',
   'The answers decide which buying-intent signals to track so they can find buyers who are showing buying intent. The 6 questions, in this order, must collect:',
-  '1. Who they sell to: buyer title and company size range (single choice)',
-  '2. What they sell and the typical deal size, with ranges as options (single choice)',
-  '3. Where their buyers spend time: LinkedIn, communities, review sites, job boards, events, search (multi-select)',
-  '4. Their current stack: CRM, outreach tools and data tools, naming real products common in their industry (multi-select)',
-  '5. Target volume: new qualified conversations wanted per month, with ranges as options (single choice)',
-  '6. How they follow up today and who approves outreach: solo, small team or SDR team (single choice)',
-  'Use the visitor\'s vocabulary and industry. Each question: 3 to 6 options, each option under 60 characters. Keep question text under 110 characters.',
+  '1. Who they sell to: buyer title and company size range',
+  '2. What they sell and the typical deal size, with ranges as options',
+  '3. Where their buyers spend time: LinkedIn, communities, review sites, job boards, events, search',
+  '4. Their current stack: CRM, outreach tools and data tools, naming real products common in their industry',
+  '5. Target volume: new qualified conversations wanted per month, with ranges as options',
+  '6. How they follow up today and who approves outreach: solo, small team or SDR team',
+  'Use the visitor\'s vocabulary and industry. Every question is multi-select (type "multi"), so write options that can each apply on their own, not mutually exclusive ranges where only one fits. Each question: 3 to 6 options, each option under 60 characters. Keep question text under 110 characters.',
   '',
   'Format:',
-  '{ "intro": "One sentence acknowledging their role and industry.", "questions": [ { "id": "q1", "question": "...", "type": "single" or "multi", "options": ["...", "..."] } ] }',
+  '{ "intro": "One sentence acknowledging their role and industry.", "questions": [ { "id": "q1", "question": "...", "type": "multi", "options": ["...", "..."] } ] }',
 ].join('\n');
 
 const PLAYBOOK_REPORT_PROMPT = [
@@ -1752,6 +1752,7 @@ const PLAYBOOK_REPORT_PROMPT = [
   '',
   'TASK: Write an Intent Lead Playbook for this visitor based on their role, industry, company and answers. The playbook lists the buying-intent signals they should track to find buyers who are showing buying intent, with a scheduled flow spec for each.',
   'Choose 2 to 4 signals from the SIGNAL CATALOG below, ordered by fit with this visitor (best first). Use only the ids in the catalog. Never invent a signal that is not in the catalog.',
+  'Every answer can hold several selections. Where a visitor picked more than one range (deal size, volume), base the estimate on the lowest one picked.',
   'Base every choice on the visitor\'s answers: who they sell to, where buyers spend time, the stack they already use, target volume and how they follow up. Name the real tools they said they use where it helps.',
   'For each signal return:',
   '- why_fit: two sentences on why this signal fits this visitor',
@@ -1796,12 +1797,12 @@ const PLAYBOOK_REPORT_PROMPT = [
 
 // Used when the model returns too few usable questions, so the visitor always gets exactly six.
 const PLAYBOOK_FALLBACK_QUESTIONS = [
-  { question: 'Who do you sell to?', type: 'single', options: ['Owners and CEOs, 1-50 employees', 'Department heads, 51-200 employees', 'VPs and directors, 201-1,000 employees', 'Executives at 1,000+ employee companies', 'A mix of buyer titles and sizes'] },
-  { question: 'What do you sell, and what is a typical deal?', type: 'single', options: ['Services or software under $5K', '$5K to $25K', '$25K to $100K', 'Over $100K', 'It varies a lot'] },
+  { question: 'Who do you sell to?', type: 'multi', options: ['Owners and CEOs, 1-50 employees', 'Department heads, 51-200 employees', 'VPs and directors, 201-1,000 employees', 'Executives at 1,000+ employee companies', 'A mix of buyer titles and sizes'] },
+  { question: 'What do you sell, and what is a typical deal?', type: 'multi', options: ['Services or software under $5K', '$5K to $25K', '$25K to $100K', 'Over $100K', 'It varies a lot'] },
   { question: 'Where do your buyers spend time?', type: 'multi', options: ['LinkedIn', 'Online communities', 'Review sites', 'Job boards', 'Events and webinars', 'Search'] },
   { question: 'Which tools do you use today?', type: 'multi', options: ['HubSpot', 'Salesforce', 'A spreadsheet or other CRM', 'An email or sequence tool', 'LinkedIn Sales Navigator', 'A data or enrichment tool'] },
-  { question: 'How many new qualified conversations do you want each month?', type: 'single', options: ['1 to 5', '6 to 15', '16 to 30', 'More than 30'] },
-  { question: 'How do you follow up today, and who approves outreach?', type: 'single', options: ['I do it all myself', 'A small team shares it', 'An SDR team with a manager approving', 'Outreach is mostly ad hoc'] },
+  { question: 'How many new qualified conversations do you want each month?', type: 'multi', options: ['1 to 5', '6 to 15', '16 to 30', 'More than 30'] },
+  { question: 'How do you follow up today, and who approves outreach?', type: 'multi', options: ['I do it all myself', 'A small team shares it', 'An SDR team with a manager approving', 'Outreach is mostly ad hoc'] },
 ];
 
 function playbookProfileText(s) {
@@ -1826,8 +1827,8 @@ function sanitizePlaybookQuestions(data) {
     return {
       id: 'q' + (i + 1),
       question: usable ? question : fallback.question,
-      // Questions 3 (where buyers spend time) and 4 (stack) are always multi-select, the rest single choice.
-      type: i === 2 || i === 3 ? 'multi' : 'single',
+      // Buyers rarely fit one box, so every question is multi-select.
+      type: 'multi',
       options: usable ? options : fallback.options,
     };
   });
