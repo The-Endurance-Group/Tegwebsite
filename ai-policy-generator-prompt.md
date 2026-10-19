@@ -67,7 +67,7 @@ The "Before You Adopt This" question list from Step 3 above, clearly labeled as 
 === END_BEFORE_YOU_ADOPT ===
 
 === CLOSING_NOTE ===
-This draft gives you a real starting point, built on the same structure public companies use in their own filed governance documents. It isn't tailored to your actual tools, data, or team yet, that's the part that needs a conversation. If you'd like help working through it, The Endurance Group offers a free scoping session to build this out with your team. https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor
+This draft gives you a real starting point, built on the same structure public companies use in their own filed governance documents. It isn't tailored to your actual tools, data, or team yet, that's the part that needs a conversation. If you'd like help working through it, The Endurance Group offers a free scoping session to build this out with your team. https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b
 === END_CLOSING_NOTE ===
 
 ### Tone and constraints
