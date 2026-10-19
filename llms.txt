@@ -31,6 +31,7 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [How to Use Claude to Find Unanswered iMessages Every Morning](https://www.theendurancegroup.com/blog/claude-unanswered-imessage-daily-review.html)
 - [How to make every customer feel seen with AI (without the creepy part)](https://www.theendurancegroup.com/blog/make-customers-feel-seen-with-ai.html)
 - [Claude Now Builds Live Dashboards and Animations. Here's What Business Teams Should Do With Them.](https://www.theendurancegroup.com/blog/claude-dashboards-motion-docs-slides-design.html)
 - [How to Schedule a Task in Claude](https://www.theendurancegroup.com/blog/how-to-schedule-a-task-in-claude.html)
