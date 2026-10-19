@@ -1961,3 +1961,6 @@ details[open] .faq-q::after { content: "−"; }
   .career-nodes-line-fill { transition: none !important; transform: scaleX(1) !important; }
   .career-node-dot, .career-node-dot svg { transition: none !important; }
 }
+
+/* byline spacing under blog post lede */
+.post-meta { margin-top: 20px; }
