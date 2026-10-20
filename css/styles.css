@@ -1983,4 +1983,5 @@ details[open] .faq-q::after { content: "−"; }
 .cs-illustrative { font-size: 13px; color: var(--color-lavender); font-style: italic; margin: 0 0 28px; }
 @media (max-width: 700px) { .cs-glance dl { grid-template-columns: 1fr; gap: 4px; } .cs-glance dd { margin-bottom: 10px; } .cs-flow-ba { grid-template-columns: 1fr; } .cs-flow-ba .cs-arrow { transform: rotate(90deg); padding: 4px 0; } }
 
-.footer-cta { margin-top: 20px; }
+.footer-cta { margin-top: 24px; }
+.footer-cta .btn { display: inline-block; width: auto; padding: 10px 20px; font-size: 14px; }
