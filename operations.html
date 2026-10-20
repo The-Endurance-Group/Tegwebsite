@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/favicon-network.png">
-  <link rel="stylesheet" href="css/styles.css?v=20261020-footer">
+  <link rel="stylesheet" href="css/styles.css?v=20261020-video">
   <style>
     .home-trust { display:flex; flex-wrap:wrap; gap:8px 20px; list-style:none; padding:0; margin:24px 0 0; font-size:14px; font-weight:600; color:var(--color-lavender); }
     .home-trust li::before { content:"\2713"; color:var(--color-teal-dark); margin-right:8px; font-weight:800; }
@@ -405,6 +405,8 @@
           <div class="hero-video" id="heroVideo">
             <video
               class="hero-video__el"
+              width="720"
+              height="1280"
               playsinline
               autoplay
               muted
@@ -412,8 +414,8 @@
               preload="auto"
               poster="videos/hero-claude-poster.jpg"
               aria-label="The Endurance Group, Claude in action">
-              <source src="videos/hero-claude.webm" type="video/webm">
-              <source src="videos/hero-claude.mp4" type="video/mp4">
+              <source src="videos/hero-claude.mp4?v=20261020" type="video/mp4">
+              <source src="videos/hero-claude.webm?v=20261020" type="video/webm">
             </video>
 
             <!-- Big center play/pause tap target -->

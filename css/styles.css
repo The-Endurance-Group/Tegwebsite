@@ -489,7 +489,8 @@ textarea:focus-visible {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* fills the phone frame; source is already 9:16 so no crop */
+  object-fit: contain;    /* frame is 9:16 and so is the source; contain never zooms or crops */
+  background: var(--color-ink);
   display: block;
 }
 
