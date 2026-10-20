@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Ongoing Claude Team | The Endurance Group</title>
-  <meta name="description" content="Find measurable AI value with a free AI Value Assessment, build value-priced Claude workflows, and stay supported by TEG as your ongoing Claude team.">
-  <link rel="canonical" href="https://www.theendurancegroup.com/operations.html">
+  <title>Your Outsourced Claude Team | The Endurance Group</title>
+  <meta name="description" content="We find where Claude can create measurable value, build the solutions, and stay on as your Managed Claude team. Start with a free AI Value Assessment.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Endurance Group">
-  <meta property="og:title" content="Your Ongoing Claude Team | The Endurance Group">
-  <meta property="og:description" content="Find measurable AI value with a free AI Value Assessment, build value-priced Claude workflows, and stay supported by TEG as your ongoing Claude team.">
-  <meta property="og:url" content="https://www.theendurancegroup.com/operations.html">
+  <meta property="og:title" content="Your Outsourced Claude Team | The Endurance Group">
+  <meta property="og:description" content="We find where Claude can create measurable value, build the solutions, and stay on as your Managed Claude team. Start with a free AI Value Assessment.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/">
   <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Your Ongoing Claude Team | The Endurance Group">
-  <meta name="twitter:description" content="Find measurable AI value with a free AI Value Assessment, build value-priced Claude workflows, and stay supported by TEG as your ongoing Claude team.">
+  <meta name="twitter:title" content="Your Outsourced Claude Team | The Endurance Group">
+  <meta name="twitter:description" content="We find where Claude can create measurable value, build the solutions, and stay on as your Managed Claude team. Start with a free AI Value Assessment.">
   <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,22 @@
   <link rel="icon" type="image/png" href="images/favicon-network.png">
   <link rel="stylesheet" href="css/styles.css?v=20261008-contrast">
   <style>
+    .home-trust { display:flex; flex-wrap:wrap; gap:8px 20px; list-style:none; padding:0; margin:24px 0 0; font-size:14px; font-weight:600; color:var(--color-lavender); }
+    .home-trust li::before { content:"\2713"; color:var(--color-teal-dark); margin-right:8px; font-weight:800; }
+    .home-problem-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; margin-top:32px; }
+    .home-problem-grid .feature-card { padding:24px 28px; }
+    .home-problem-grid h3 { font-size:18px; margin-bottom:8px; }
+    .home-problem-lead { max-width:760px; margin-top:20px; font-size:18px; color:var(--color-lavender); }
+    .home-steps-note { max-width:760px; margin:0 auto 8px; text-align:center; font-weight:600; color:var(--color-purple); }
+    .home-price-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-top:32px; }
+    .home-price-grid .feature-card { padding:24px 28px; }
+    .home-price-grid .price-tag { display:block; margin:6px 0 10px; font-size:clamp(22px,2.6vw,30px); font-weight:800; color:var(--color-purple); line-height:1.2; }
+    .home-price-grid h3 { font-size:16px; margin:0; color:var(--color-lavender); text-transform:uppercase; letter-spacing:.05em; }
+    .home-build-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; margin-top:40px; }
+    .home-build-grid .service-card .example { margin-top:12px; font-size:13px; color:var(--color-lavender); font-style:italic; }
+    .home-proof-link { text-align:center; margin-top:32px; }
+    @media(max-width:1100px) { .home-build-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:768px) { .home-problem-grid, .home-price-grid, .home-build-grid { grid-template-columns:1fr; } }
     .home-process .section-head { max-width:740px; }
     .home-process-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; list-style:none; padding:0; margin:32px 0 24px; }
     .home-process-steps .feature-card { min-width:0; padding:28px; }
@@ -331,7 +347,9 @@
         <ul class="nav-list">
           <li><a href="about.html">About</a></li>
           <li><a href="how-we-work.html">How We Work</a></li>
-          <li><a href="specialties.html">Specialties</a></li>          <li><a href="success.html">Success</a></li>
+          <li><a href="managed-claude.html">Managed Claude</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="success.html">Success</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -342,18 +360,24 @@
 
   <main id="main-content">
 
+
     <!-- Hero -->
     <section class="hero hero--page section">
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
             <img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" style="height:56px; width:auto; border-radius:8px; display:block; margin-bottom:28px;">
-            <h1>Create More Value With Claude.</h1>
-            <p class="lede" style="max-width: 580px; margin-top: 20px;">We assess where Claude can create value, build the solution, train your people, and stay as your ongoing Claude team.</p>
+            <h1>You Have Claude. We Make It Valuable for Your Business.</h1>
+            <p class="lede" style="max-width: 580px; margin-top: 20px;">We determine how AI can help improve your team, build Claude-powered solutions, and stay on as your dedicated Claude team.</p>
             <div class="btn-group" style="margin-top: 32px;">
-              <a class="btn btn-primary" href="book-value-assessment.html">Start Your Free AI Value Assessment</a>
-              <a class="btn btn-secondary" href="how-we-work.html">How We Work</a>
+              <a class="btn btn-primary" href="book-value-assessment.html">Get Your Free AI Value Assessment</a>
+              <a class="btn btn-secondary" href="success.html">See What We’ve Built</a>
             </div>
+            <ul class="home-trust" aria-label="How TEG works">
+              <li>Free AI Value Assessment</li>
+              <li>Fixed-price builds</li>
+              <li>Managed Claude from $1,500/month</li>
+            </ul>
           </div>
           <div class="hero-video" id="heroVideo">
             <video
@@ -395,40 +419,118 @@
       </div>
     </section>
 
-    <!-- Our ongoing relationship, immediately after the hero -->
+    <!-- The problem -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal" style="max-width:800px;">
+          <span class="eyebrow">The problem</span>
+          <h2>Buying Claude is easy. Making it valuable is the hard part.</h2>
+          <p class="home-problem-lead">Most businesses are already using Claude. Few have turned it into reliable improvements in how work gets done.</p>
+        </div>
+        <div class="home-problem-grid reveal">
+          <div class="feature-card"><h3>Claude is used one person at a time</h3><p>Employees get value individually, but the team’s workflows are still manual.</p></div>
+          <div class="feature-card"><h3>Claude isn’t connected to your systems</h3><p>People copy and paste between Claude, the CRM, email and files.</p></div>
+          <div class="feature-card"><h3>Nobody owns it</h3><p>No one is responsible for implementation, maintenance or adoption after the excitement fades.</p></div>
+          <div class="feature-card"><h3>The opportunity is clear, the team isn’t there</h3><p>You can see where AI could help, but you don’t have the technical team to build it.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How TEG solves it -->
     <section class="section section--alt home-process" aria-labelledby="home-process-title">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">How we work</span>
-          <h2 id="home-process-title">Create more value with Claude, one step at a time.</h2>
+          <span class="eyebrow">How TEG solves it</span>
+          <h2 id="home-process-title">Assess. Build. Manage.</h2>
+          <p class="home-problem-lead">We become your ongoing Claude team, from finding the opportunity to keeping it working.</p>
         </div>
         <ol class="home-process-steps" aria-label="Three steps to working with TEG">
           <li class="feature-card">
             <span class="feature-num" aria-hidden="true">01</span>
-            <h3>Find the value</h3>
-            <p>We start with a free AI Value Assessment. Then, we listen to you and your team, understand your work, and estimate where Claude could free time, avoid costs or create value.</p>
+            <h3>Assess</h3>
+            <p>A free AI Value Assessment. We listen to your people, understand the work and find measurable opportunities to free time, avoid costs or create revenue.</p>
           </li>
           <li class="feature-card">
             <span class="feature-num" aria-hidden="true">02</span>
-            <h3>Build the solution</h3>
-            <p>We agree on the scope and a fixed build price, then build and test around your real process. We document the workflow and train your people to use it.</p>
+            <h3>Build</h3>
+            <p>We agree on scope and a fixed price based on expected value, then build, test, document and launch the solution with your team.</p>
           </li>
           <li class="feature-card">
             <span class="feature-num" aria-hidden="true">03</span>
-            <h3>Keep improving</h3>
-            <p>We stay as your ongoing Claude team: maintaining what we built, supporting employees and reviewing value. Further assessments are included in Managed Claude; new builds are separately scoped and priced.</p>
+            <h3>Manage</h3>
+            <p>Managed Claude is our standard ongoing relationship. We maintain what we built, support and train your people, and keep finding the next opportunity.</p>
           </li>
         </ol>
-        <div style="text-align: center; margin-top: 32px;"><a class="btn btn-secondary" href="how-we-work.html">See how the relationship works &rarr;</a></div>
+        <div class="btn-group btn-group--center" style="margin-top: 32px;"><a class="btn btn-secondary" href="how-we-work.html">See how the relationship works &rarr;</a><a class="btn btn-secondary" href="managed-claude.html">What Managed Claude includes &rarr;</a></div>
+      </div>
+    </section>
+
+    <!-- Pricing at a glance -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal" style="max-width:800px;">
+          <span class="eyebrow">Simple pricing</span>
+          <h2>Priced on value at every step.</h2>
+        </div>
+        <div class="home-price-grid reveal">
+          <div class="feature-card"><h3>Assessment</h3><span class="price-tag">Free</span><p>Find where Claude can create measurable value in your business.</p></div>
+          <div class="feature-card"><h3>Build</h3><span class="price-tag">Fixed price</span><p>Set before work begins, based on expected value and scope. Not hours worked.</p></div>
+          <div class="feature-card"><h3>Managed Claude</h3><span class="price-tag">From $1,500/month</span><p>Maintenance, support, training and improvement. New builds are separately scoped.</p></div>
+        </div>
+        <div class="value-pricing-links" style="margin-top:24px;">
+          <a class="feature-link" href="how-we-work.html">How value pricing works →</a>
+          <a class="feature-link" href="sample-ai-value-assessment.html">See a sample report →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we build -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal" style="max-width: 720px;">
+          <span class="eyebrow">What we build</span>
+          <h2>Less manual work. More time for the work that matters.</h2>
+          <p style="margin-top: 12px; color: var(--color-lavender); font-size: 16px;">The assessment tells us what to build. These are the areas where we most often find value.</p>
+        </div>
+        <div class="home-build-grid reveal--stagger reveal">
+          <div class="service-card">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+            <h3>Sales &amp; CRM automation</h3>
+            <p>Keep the CRM current and follow-ups moving. Claude turns approved notes into CRM updates, drafts proposals and flags stalled deals for review.</p>
+            
+            <a class="card-link" href="claude-for-sales.html">Claude for sales teams &rarr;</a>
+          </div>
+          <div class="service-card">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
+            <h3>Finance &amp; accounting workflows</h3>
+            <p>Check invoices against expected costs, support reconciliation and prepare reporting, with a person approving what matters.</p>
+            <p class="example">Example: invoice checks and accounting reconciliation at Offerpad.</p>
+            <a class="card-link" href="blog/offerpad-ai-partnership.html">Read the Offerpad story &rarr;</a>
+          </div>
+          <div class="service-card">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+            <h3>Operations &amp; document processing</h3>
+            <p>Review photos, documents and requests against your own criteria, so your team handles exceptions instead of every file.</p>
+            <p class="example">Example: Offerpad’s vendor photo review saves 1 to 2 hours a day.</p>
+            <a class="card-link" href="success.html#offerpad">See the results &rarr;</a>
+          </div>
+          <div class="service-card">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.3 11l7.4-4M8.3 13l7.4 4"/></svg></div>
+            <h3>Claude integrations &amp; enablement</h3>
+            <p>Connect Claude to your CRM, files and business systems, then train your people with shared Projects and Skills.</p>
+            
+            <a class="card-link" href="solutions.html">See all solutions &rarr;</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="section">
+    <section class="section" id="results">
       <div class="container">
         <div class="section-head section-head--center reveal">
-          <span class="eyebrow">Proof</span>
-          <h2>Teams that brought us in to find and create value.</h2>
+          <span class="eyebrow">Client results</span>
+          <h2>Real results from real client work.</h2>
         </div>
         <article class="home-offerpad" aria-labelledby="home-offerpad-title">
           <div class="home-offerpad-heading">
@@ -477,184 +579,8 @@
         </div>
       </div>
     </section>
-
-
-    <!-- Find, build, and stay -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head reveal" style="max-width:800px;">
-          <span class="eyebrow">Find the value</span>
-          <h2>You Know Your Business. We Find the AI Opportunities.</h2>
-          <p class="lede" style="margin-top:20px;">You know AI could help your business. Knowing where and how much is harder.</p>
-          <ul class="value-signals" aria-label="Where we look for value">
-            <li><span aria-hidden="true">◷</span> Free up time</li>
-            <li><span aria-hidden="true">↓</span> Avoid costs</li>
-            <li><span aria-hidden="true">↗</span> Create revenue</li>
-          </ul>
-          <p style="margin-top:20px; color:var(--color-lavender);">TEG starts with your people: what they do, where they’re stuck, and what they’d do with more time. We uncover the value, build with Claude, train your team, and keep improving as your business and the technology evolve.</p>
-        </div>
-        <div class="value-pricing reveal" aria-labelledby="value-pricing-title">
-          <h3 id="value-pricing-title">Priced on Value. Not Hours.</h3>
-          <p class="value-pricing-intro">Together, we estimate the solution’s expected 12-month economic value and agree on a percentage that makes sense for your business. That sets a fixed build price before work begins.</p>
-          <div class="value-pricing-links">
-            <a class="feature-link" href="how-we-work.html">How value pricing works →</a>
-            <a class="feature-link" href="sample-ai-value-assessment.html">See a sample report →</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- What we build -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal" style="max-width: 620px;">
-          <span class="eyebrow">What we build</span>
-          <h2>Claude solutions. Built for your work.</h2>
-          <p style="margin-top: 12px; color: var(--color-lavender); font-size: 16px;">The assessment tells us what to build. Here’s what it can look like.</p>
-        </div>
-        <div class="grid grid--3 reveal--stagger reveal" style="margin-top:40px;">
-
-          <div class="service-card">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-            </div>
-            <h3>Skills &amp; Projects</h3>
-            <p>Repeatable work, ready for your team to run.</p>
-            <a class="card-link" href="claude-plugins.html">Get free skills &amp; plugins &rarr;</a>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
-            <h3>System Integrations</h3>
-            <p>Connect Claude to your CRM, files and business systems.</p>
-            <button class="video-toggle" aria-expanded="false">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-              Watch the video
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="service-video-wrap">
-              <video class="service-video" controls preload="none">
-                <source src="videos/mcp-business-systems.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </div>
-            <h3>Automated Workflows</h3>
-            <p>Research, reporting and follow-up, without repeated manual steps.</p>
-            <button class="video-toggle" aria-expanded="false">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-              Watch the video
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="service-video-wrap">
-              <video class="service-video" controls preload="none">
-                <source src="videos/automated-workflows.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
-            </div>
-            <h3>Custom Claude Applications</h3>
-            <p>Purpose-built tools for employees or customers, powered by Claude.</p>
-            <button class="video-toggle" aria-expanded="false">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-              Watch the video
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="service-video-wrap">
-              <video class="service-video" controls preload="none">
-                <source src="videos/custom-claude-applications.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
-            </div>
-            <h3>Setup &amp; Training</h3>
-            <p>A ready-to-use environment. A team confident using it.</p>
-            <button class="video-toggle" aria-expanded="false">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-              Watch the video
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="service-video-wrap">
-              <video class="service-video" controls preload="none">
-                <source src="videos/claude-setup-training.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-icon">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
-            </div>
-            <h3>AI Governance</h3>
-            <p>Clear policies and guardrails for responsible AI use.</p>
-            <a class="card-link" href="ai-policy.html">Draft your policy free now &rarr;</a>
-          </div>
-
-        </div>
-        <div class="text-center reveal" style="margin-top:32px;">
-          <a class="btn btn-secondary" href="solutions.html">See all solutions &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why TEG -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head reveal" style="max-width: 600px;">
-          <span class="eyebrow">Why TEG</span>
-          <h2>Why teams choose TEG.</h2>
-        </div>
-        <div class="why-grid reveal">
-          <div class="why-item">
-            <div class="why-num">1</div>
-            <div>
-              <h3>Claude Certified Services Partner</h3>
-              <p>Part of the Claude Partner Network, with certified Claude expertise.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-num">2</div>
-            <div>
-              <h3>We build it</h3>
-              <p>From opportunity to working Claude solutions.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-num">3</div>
-            <div>
-              <h3>One team, start to finish</h3>
-              <p>Assessment, build and ongoing improvement together.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-num">4</div>
-            <div>
-              <h3>Value comes first</h3>
-              <p>Expected economic value guides what we build.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
     <!-- Case studies -->
-    <section class="section">
+    <section class="section section--alt">
       <div class="container">
         <div class="section-head reveal" style="max-width: 600px;">
           <span class="eyebrow">Client work</span>
@@ -687,6 +613,61 @@
             <a href="blog/housecall-pro-sync-alerts.html">Read the case study →</a>
           </div>
         </div>
+        <p class="home-proof-link"><a class="btn btn-secondary" href="success.html">See all client results &rarr;</a></p>
+      </div>
+    </section>
+    <!-- Why TEG -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal" style="max-width: 700px;">
+          <span class="eyebrow">Why TEG</span>
+          <h2>The outsourced Claude team for your business.</h2>
+          <p class="home-problem-lead">TEG is a Claude Certified Services Partner in the Claude Partner Network.</p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-item">
+            <div class="why-num">1</div>
+            <div>
+              <h3>Dedicated ongoing Claude expertise</h3>
+              <p>A team that knows your workflows and stays current as Claude changes.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">2</div>
+            <div>
+              <h3>We implement, not just advise</h3>
+              <p>From opportunity to a working solution your team uses every day.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">3</div>
+            <div>
+              <h3>Value-based project scoping</h3>
+              <p>Expected economic value guides what we build and sets a fixed build price.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">4</div>
+            <div>
+              <h3>You own what we build</h3>
+              <p>You own the workflows, Skills, integrations and code. We work inside the tools you already use.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">5</div>
+            <div>
+              <h3>Training and adoption</h3>
+              <p>We train your people, so Claude becomes part of how the team works.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">6</div>
+            <div>
+              <h3>Continued support and improvement</h3>
+              <p>Managed Claude maintains, supports and improves your workflows after launch.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -695,10 +676,10 @@
       <div class="container">
         <div class="section-head section-head--center reveal" style="max-width: 600px;">
           <h2 style="color: #fff;">Start with a free AI Value Assessment.</h2>
-          <p style="color: rgba(255,255,255,0.8); margin-top: 16px; font-size: 17px;">We listen to you and your team, understand your work, and estimate where Claude could free time, avoid costs or create value.</p>
+          <p style="color: rgba(255,255,255,0.8); margin-top: 16px; font-size: 17px;">Find where Claude can create value in your business, then let TEG build it and stay on as your Claude team.</p>
           <div class="btn-group btn-group--center" style="margin-top: 32px;">
-            <a class="btn btn-primary" href="book-value-assessment.html" style="background: #fff; color: var(--color-purple);">Start Your Free AI Value Assessment</a>
-            <a class="btn btn-secondary" href="how-we-work.html" style="border-color: rgba(255,255,255,0.4); color: #fff;">How We Work</a>
+            <a class="btn btn-primary" href="book-value-assessment.html" style="background: #fff; color: var(--color-purple);">Get Your Free AI Value Assessment</a>
+            <a class="btn btn-secondary" href="managed-claude.html" style="border-color: rgba(255,255,255,0.4); color: #fff;">Explore Managed Claude</a>
           </div>
         </div>
       </div>
@@ -714,12 +695,14 @@
           <a href="/"><img src="images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
           <p class="footer-tagline">Your Managed Claude Team</p>
           <img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+          <p class="footer-cta"><a class="btn btn-primary" href="book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
         </div>
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
             <li><a href="how-we-work.html">How We Work</a></li>
             <li><a href="managed-claude.html">Managed Claude</a></li>
+            <li><a href="claude-for-sales.html">Claude for Sales</a></li>
             <li><a href="claude-business-development.html">B2B Sales</a></li>
             <li><a href="solutions.html">Solutions</a></li>
             <li><a href="specialties.html">Specialties</a></li>
