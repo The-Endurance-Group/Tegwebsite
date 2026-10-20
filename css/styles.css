@@ -1964,3 +1964,23 @@ details[open] .faq-q::after { content: "−"; }
 
 /* byline spacing under blog post lede */
 .post-meta { margin-top: 20px; }
+
+/* ===== CASE STUDY: at-a-glance + illustrative before/after ===== */
+.cs-glance { margin: 8px 0 36px; padding: 28px; background: var(--color-white); border: 1px solid var(--border-light); border-radius: var(--radius-md); }
+.cs-glance h2 { font-size: 20px; margin: 0 0 16px; }
+.cs-glance dl { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 12px 24px; margin: 0; }
+.cs-glance dt { font-size: 13px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--color-pink); }
+.cs-glance dd { margin: 0; color: var(--color-ink); }
+.cs-glance .cs-glance-metric { font-weight: 800; color: var(--color-purple); }
+.cs-flow-ba { display: grid; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr); gap: 16px; align-items: stretch; margin: 28px 0 8px; }
+.cs-flow-ba > div { padding: 20px; border-radius: var(--radius-md); }
+.cs-flow-ba .cs-before { background: var(--tint-purple); }
+.cs-flow-ba .cs-after { background: var(--tint-teal); }
+.cs-flow-ba .cs-arrow { display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--color-purple); background: none; padding: 0; }
+.cs-flow-ba h3 { font-size: 15px; letter-spacing: .05em; text-transform: uppercase; margin: 0 0 10px; }
+.cs-flow-ba ol { margin: 0; padding-left: 20px; }
+.cs-flow-ba li { margin-bottom: 6px; }
+.cs-illustrative { font-size: 13px; color: var(--color-lavender); font-style: italic; margin: 0 0 28px; }
+@media (max-width: 700px) { .cs-glance dl { grid-template-columns: 1fr; gap: 4px; } .cs-glance dd { margin-bottom: 10px; } .cs-flow-ba { grid-template-columns: 1fr; } .cs-flow-ba .cs-arrow { transform: rotate(90deg); padding: 4px 0; } }
+
+.footer-cta { margin-top: 20px; }

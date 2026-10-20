@@ -16,6 +16,7 @@
 
 - [Home](https://www.theendurancegroup.com/): What we do and how we work - AI automations and strategy, built and run, not just advised.
 - [Solutions](https://www.theendurancegroup.com/solutions.html): The four things TEG does, system integrations, automated workflows, custom Claude applications, and Claude setup and training. New builds are separately scoped and value-priced.
+- [Claude for Sales and RevOps](https://www.theendurancegroup.com/claude-for-sales.html): Claude-powered sales workflows for CRM updates, proposals, lead qualification, pipeline monitoring, follow-up drafts and reporting. Customer-facing actions and important record changes are approved by the client. Start with a free AI Value Assessment.
 - [Managed Claude](https://www.theendurancegroup.com/managed-claude.html): Your Claude team beyond launch. Maintenance, employee support, training, technology and documentation updates, workflow improvement and monthly AI Value Reviews. Starts at $1,500/month; new builds are separately scoped and value-priced.
 - [Specialties](https://www.theendurancegroup.com/specialties.html): Functional specialties (sales & marketing automation, CRM, AI workflow design) and industry depth across Real Estate, B2B Technology, and Professional Services.
 - [Success](https://www.theendurancegroup.com/success.html): Case studies and client testimonials, including Offerpad, Realty ONE Group, FenestraPro, and Huron.

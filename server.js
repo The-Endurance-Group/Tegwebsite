@@ -2451,7 +2451,7 @@ http.createServer((req, res) => {
   if (urlPath === '/ai-policy') {
     req.url = '/ai-policy.html';
   }
-  if (urlPath === '/claude') {
+  if (urlPath === '/claude' || urlPath === '/claude.html') {
     res.writeHead(301, { Location: '/' });
     res.end();
     return;
