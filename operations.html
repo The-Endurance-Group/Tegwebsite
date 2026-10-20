@@ -41,6 +41,29 @@
     .home-proof-link { text-align:center; margin-top:32px; }
     @media(max-width:1100px) { .home-build-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media(max-width:768px) { .home-problem-grid, .home-price-grid, .home-build-grid { grid-template-columns:1fr; } }
+    .home-icon { display:flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:14px; background:var(--tint-teal, rgba(101,182,174,0.12)); color:var(--color-teal-dark); margin-bottom:14px; }
+    .home-problem-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .home-problem-grid .feature-card { padding:24px 22px; }
+    .home-problem-grid p { font-size:15px; margin:0; }
+    .home-process-steps .home-icon { margin-bottom:12px; }
+    .home-process-steps .feature-card .feature-num { display:none; }
+    .home-result-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-top:32px; }
+    .home-result { display:flex; flex-direction:column; padding:28px; background:var(--color-white); border:1px solid var(--border-light); border-radius:16px; }
+    .home-result img { height:36px; width:auto; max-width:150px; object-fit:contain; object-position:left center; margin-bottom:20px; }
+    .home-result .stat { font-size:clamp(40px,5vw,56px); font-weight:800; line-height:1.05; color:var(--color-purple); }
+    .home-result .stat-unit { font-size:15px; font-weight:700; color:var(--color-ink); margin:6px 0 4px; }
+    .home-result .stat-note { font-size:14px; color:var(--color-lavender); margin:0 0 16px; }
+    .home-result .feature-link { margin-top:auto; }
+    .home-logos { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:20px 36px; margin-top:40px; }
+    .home-logos img { height:30px; width:auto; max-width:130px; object-fit:contain; opacity:.85; }
+    .home-quote { max-width:760px; margin:40px auto 0; text-align:center; font-size:clamp(18px,2.2vw,22px); font-weight:600; font-style:italic; color:var(--color-purple); }
+    .home-quote cite { display:block; margin-top:10px; font-size:14px; font-style:normal; font-weight:600; color:var(--color-lavender); }
+    .home-why-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-top:32px; }
+    .home-why-grid .feature-card { padding:24px; }
+    .home-why-grid h3 { font-size:17px; margin:0 0 4px; }
+    .home-why-grid p { margin:0; font-size:14px; }
+    @media(max-width:1100px) { .home-problem-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:768px) { .home-result-grid, .home-why-grid, .home-problem-grid { grid-template-columns:1fr; } }
     .home-process .section-head { max-width:740px; }
     .home-process-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; list-style:none; padding:0; margin:32px 0 24px; }
     .home-process-steps .feature-card { min-width:0; padding:28px; }
@@ -425,13 +448,13 @@
         <div class="section-head reveal" style="max-width:800px;">
           <span class="eyebrow">The problem</span>
           <h2>Buying Claude is easy. Making it valuable is the hard part.</h2>
-          <p class="home-problem-lead">Most businesses are already using Claude. Few have turned it into reliable improvements in how work gets done.</p>
         </div>
         <div class="home-problem-grid reveal">
-          <div class="feature-card"><h3>Claude is used one person at a time</h3><p>Employees get value individually, but the team’s workflows are still manual.</p></div>
-          <div class="feature-card"><h3>Claude isn’t connected to your systems</h3><p>People copy and paste between Claude, the CRM, email and files.</p></div>
-          <div class="feature-card"><h3>Nobody owns it</h3><p>No one is responsible for implementation, maintenance or adoption after the excitement fades.</p></div>
-          <div class="feature-card"><h3>The opportunity is clear, the team isn’t there</h3><p>You can see where AI could help, but you don’t have the technical team to build it.</p></div>
+          <div class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Used one person at a time</h3><p>Team workflows stay manual.</p></div>
+          <div class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/><path d="M3 3l18 18"/></svg></span><h3>Not connected to your systems</h3><p>Copy and paste between tools.</p></div>
+          <div class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><h3>Nobody owns it</h3><p>No one maintains or drives adoption.</p></div>
+          <div class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><h3>No technical team to build it</h3><p>You see the opportunity. You can’t execute it.</p></div>
+          
         </div>
       </div>
     </section>
@@ -442,25 +465,12 @@
         <div class="section-head">
           <span class="eyebrow">How TEG solves it</span>
           <h2 id="home-process-title">Assess. Build. Manage.</h2>
-          <p class="home-problem-lead">We become your ongoing Claude team, from finding the opportunity to keeping it working.</p>
         </div>
         <ol class="home-process-steps" aria-label="Three steps to working with TEG">
-          <li class="feature-card">
-            <span class="feature-num" aria-hidden="true">01</span>
-            <h3>Assess</h3>
-            <p>A free AI Value Assessment. We listen to your people, understand the work and find measurable opportunities to free time, avoid costs or create revenue.</p>
-          </li>
-          <li class="feature-card">
-            <span class="feature-num" aria-hidden="true">02</span>
-            <h3>Build</h3>
-            <p>We agree on scope and a fixed price based on expected value, then build, test, document and launch the solution with your team.</p>
-          </li>
-          <li class="feature-card">
-            <span class="feature-num" aria-hidden="true">03</span>
-            <h3>Manage</h3>
-            <p>Managed Claude is our standard ongoing relationship. We maintain what we built, support and train your people, and keep finding the next opportunity.</p>
-          </li>
-        </ol>
+          <li class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></span><h3>Assess</h3><p>Free AI Value Assessment. Find measurable opportunities.</p></li>
+          <li class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg></span><h3>Build</h3><p>Fixed price. Built, tested and launched with your team.</p></li>
+          <li class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span><h3>Manage</h3><p>Managed Claude: maintain, support, improve.</p></li>
+          </ol>
         <div class="btn-group btn-group--center" style="margin-top: 32px;"><a class="btn btn-secondary" href="how-we-work.html">See how the relationship works &rarr;</a><a class="btn btn-secondary" href="managed-claude.html">What Managed Claude includes &rarr;</a></div>
       </div>
     </section>
@@ -490,34 +500,33 @@
         <div class="section-head reveal" style="max-width: 720px;">
           <span class="eyebrow">What we build</span>
           <h2>Less manual work. More time for the work that matters.</h2>
-          <p style="margin-top: 12px; color: var(--color-lavender); font-size: 16px;">The assessment tells us what to build. These are the areas where we most often find value.</p>
         </div>
         <div class="home-build-grid reveal--stagger reveal">
           <div class="service-card">
             <div class="service-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
             <h3>Sales &amp; CRM automation</h3>
-            <p>Keep the CRM current and follow-ups moving. Claude turns approved notes into CRM updates, drafts proposals and flags stalled deals for review.</p>
+            <p>CRM updates, proposals and follow-up, reviewed by your team.</p>
             
-            <a class="card-link" href="claude-for-sales.html">Claude for sales teams &rarr;</a>
+            <a class="card-link" href="claude-for-sales.html">For sales teams &rarr;</a>
           </div>
           <div class="service-card">
             <div class="service-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
             <h3>Finance &amp; accounting workflows</h3>
-            <p>Check invoices against expected costs, support reconciliation and prepare reporting, with a person approving what matters.</p>
-            <p class="example">Example: invoice checks and accounting reconciliation at Offerpad.</p>
-            <a class="card-link" href="blog/offerpad-ai-partnership.html">Read the Offerpad story &rarr;</a>
+            <p>Invoice checks, reconciliation and reporting.</p>
+            
+            <a class="card-link" href="blog/offerpad-ai-partnership.html">Offerpad story &rarr;</a>
           </div>
           <div class="service-card">
             <div class="service-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
             <h3>Operations &amp; document processing</h3>
-            <p>Review photos, documents and requests against your own criteria, so your team handles exceptions instead of every file.</p>
-            <p class="example">Example: Offerpad’s vendor photo review saves 1 to 2 hours a day.</p>
+            <p>Photos, documents and requests checked against your criteria.</p>
+            
             <a class="card-link" href="success.html#offerpad">See the results &rarr;</a>
           </div>
           <div class="service-card">
             <div class="service-card-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.3 11l7.4-4M8.3 13l7.4 4"/></svg></div>
             <h3>Claude integrations &amp; enablement</h3>
-            <p>Connect Claude to your CRM, files and business systems, then train your people with shared Projects and Skills.</p>
+            <p>Claude connected to your systems, with your team trained.</p>
             
             <a class="card-link" href="solutions.html">See all solutions &rarr;</a>
           </div>
@@ -526,148 +535,39 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="section" id="results">
+        <!-- Client results -->
+    <section class="section section--alt" id="results">
       <div class="container">
         <div class="section-head section-head--center reveal">
           <span class="eyebrow">Client results</span>
           <h2>Real results from real client work.</h2>
         </div>
-        <article class="home-offerpad" aria-labelledby="home-offerpad-title">
-          <div class="home-offerpad-heading">
-            <img src="images/clients/offerpad.webp?v=20260930" alt="Offerpad" loading="lazy">
-            <h3 id="home-offerpad-title">Less manual review for Offerpad’s renovations team.</h3>
-            <p>One workflow from an ongoing partnership across sales, renovations and accounting.</p>
+        <div class="home-result-grid reveal">
+          <div class="home-result"><img src="images/clients/offerpad.webp?v=20260930" alt="Offerpad" loading="lazy"><span class="stat">1 to 2</span><span class="stat-unit">hours saved per day</span><p class="stat-note">Vendor photo review</p><a class="feature-link" href="blog/offerpad-ai-partnership.html">Read the case study &rarr;</a></div>
+          <div class="home-result"><img src="images/clients/biproxi.webp?v=20260930" alt="Biproxi Capital Network" loading="lazy"><span class="stat">1 to 2</span><span class="stat-unit">hours saved per week</span><p class="stat-note">Investor research</p><a class="feature-link" href="blog/biproxi-investor-discovery.html">Read the case study &rarr;</a></div>
+          <div class="home-result"><img src="images/clients/market-savvy.webp?v=20260930" alt="Market Savvy" loading="lazy"><span class="stat">1 month</span><span class="stat-unit">of posts in minutes</span><p class="stat-note">Client-reported, HealthPost Genius</p><a class="feature-link" href="success.html#market-savvy">See the results &rarr;</a></div>
           </div>
-          <div class="home-offerpad-body">
-            <div class="home-offerpad-detail">
-              <h4>The problem</h4>
-              <p>Someone had to open every vendor photo by hand, every day, to check landscaping and pool work against Offerpad’s standards.</p>
-              <h4>What TEG built</h4>
-              <p>A vendor review platform that uses Claude to check incoming photos against Offerpad’s criteria. The platform also checks vendor invoices against expected costs.</p>
-            </div>
-            <div class="home-offerpad-result">
-              <span class="eyebrow">The result</span>
-              <strong>1 to 2</strong>
-              <span class="result-unit">hours saved per day</span>
-              <p>For the renovations team on vendor photo review.</p>
-            </div>
-          </div>
-          <div class="home-offerpad-relationship">
-            <h4>A team that keeps working with them</h4>
-            <p>TEG’s work with Offerpad also includes sales call coaching and accounting reconciliation. Each new initiative starts with the people closest to the problem, a scoped estimate and a small prototype, then is tested against real workflows before it expands.</p>
-          </div>
-          <blockquote>“They've worked across multiple teams and delivered consistently; they know how to scope, build, and iterate without a lot of hand-holding.”</blockquote>
-          <cite>Chris Carpenter, Chief Operating Officer, Offerpad</cite>
-          <a class="feature-link" href="blog/offerpad-ai-partnership.html">Read the full Offerpad story →</a>
-        </article>
-        <div class="testimonial-grid reveal--stagger reveal" style="margin-top: 40px;">
-          <div class="testimonial-card">
-            <img class="testimonial-card-logo" src="images/clients/home-impact-partners.webp?v=20260930" alt="Home Impact Partners">
-            <blockquote>"The Endurance Group helped us bring my platform, Impact Atlas, to life. They don't just execute on specs; they think alongside you and help shape the product. If you're working at the intersection of real estate and AI, TEG is the team to call."</blockquote>
-            <cite>Vin Ferrara, Founder · Home Impact Partners</cite>
-          </div>
-          <div class="testimonial-card">
-            <img class="testimonial-card-logo" src="images/clients/biproxi.webp?v=20260930" alt="Biproxi Capital Network">
-            <blockquote>"They came back with thoughtful, tailored solutions that directly addressed our needs and executed everything quickly and flawlessly. The entire process was collaborative, efficient, and exceeded our expectations."</blockquote>
-            <cite>Gieriet Bowen, Director of Investor Relations · Biproxi Capital Network</cite>
-          </div>
-          <div class="testimonial-card">
-            <img class="testimonial-card-logo" src="images/clients/market-savvy.webp?v=20260930" alt="Market Savvy">
-            <blockquote>"TEG has helped us create a high-powered, unique and time-saving tool for our health and medical clients worldwide."</blockquote>
-            <cite>Megan Walker, Founder · Market Savvy</cite>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Case studies -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head reveal" style="max-width: 600px;">
-          <span class="eyebrow">Client work</span>
-          <h2>See what changed.</h2>
-
-        </div>
-        <div class="case-study-grid reveal--stagger reveal">
-          <div class="case-study-card">
-            <span class="cs-eyebrow">Real estate ops · Offerpad</span>
-            <h3>1 to 2 hours saved daily</h3>
-            <p>Offerpad’s renovations team uses Claude to review vendor photos instead of opening each one by hand.</p>
-            <a href="blog/offerpad-ai-partnership.html">Read the case study →</a>
-          </div>
-          <div class="case-study-card">
-            <span class="cs-eyebrow">Investor relations · Biproxi</span>
-            <h3>Investor research, ready for outreach</h3>
-            <p>Research, contacts and outreach drafts in one workflow.</p>
-            <a href="blog/biproxi-investor-discovery.html">Read the case study →</a>
-          </div>
-          <div class="case-study-card">
-            <span class="cs-eyebrow">Network marketing · Coachonix</span>
-            <h3>Personalized AI coaching for Coachonix</h3>
-            <p>Coachonix tells network marketers who to contact, what to say, and when.</p>
-            <a href="blog/coachonix-network-marketing.html">Read the case study →</a>
-          </div>
-          <div class="case-study-card">
-            <span class="cs-eyebrow">Home services · Sync automation</span>
-            <h3>Fewer false sync alerts</h3>
-            <p>Fixing false-positive sync alerts without API access.</p>
-            <a href="blog/housecall-pro-sync-alerts.html">Read the case study →</a>
-          </div>
-        </div>
+        <blockquote class="home-quote reveal">“They know how to scope, build, and iterate without a lot of hand-holding.”<cite>Chris Carpenter, Chief Operating Officer, Offerpad</cite></blockquote>
+        <div class="home-logos reveal" aria-label="Clients we have worked with"><img src="images/clients/offerpad.webp?v=20260930" alt="Offerpad" loading="lazy"><img src="images/clients/biproxi.webp?v=20260930" alt="Biproxi" loading="lazy"><img src="images/clients/realty-one-group.webp?v=20260930" alt="Realty ONE Group" loading="lazy"><img src="images/clients/market-savvy.webp?v=20260930" alt="Market Savvy" loading="lazy"><img src="images/clients/home-impact-partners.webp?v=20260930" alt="Home Impact Partners" loading="lazy"><img src="images/clients/maine-technology-institute.webp?v=20260930" alt="Maine Technology Institute" loading="lazy"></div>
         <p class="home-proof-link"><a class="btn btn-secondary" href="success.html">See all client results &rarr;</a></p>
       </div>
     </section>
+
     <!-- Why TEG -->
     <section class="section">
       <div class="container">
         <div class="section-head reveal" style="max-width: 700px;">
           <span class="eyebrow">Why TEG</span>
           <h2>The outsourced Claude team for your business.</h2>
-          <p class="home-problem-lead">TEG is a Claude Certified Services Partner in the Claude Partner Network.</p>
         </div>
-        <div class="why-grid reveal">
-          <div class="why-item">
-            <div class="why-num">1</div>
-            <div>
-              <h3>Dedicated ongoing Claude expertise</h3>
-              <p>A team that knows your workflows and stays current as Claude changes.</p>
-            </div>
+        <div class="home-why-grid reveal">
+          <div class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Dedicated ongoing Claude expertise</h3><p>Stays current as Claude changes.</p></div>
+          <div class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></span><h3>We implement, not just advise</h3><p>From opportunity to working solution.</p></div>
+          <div class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/></svg></span><h3>Value-based scoping</h3><p>Fixed price, set by expected value.</p></div>
+          <div class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><h3>You own what we build</h3><p>Workflows, Skills and code.</p></div>
+          <div class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><h3>Training and adoption</h3><p>Your team learns to use it.</p></div>
+          <div class="feature-card"><span class="home-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24"/></svg></span><h3>Continued support</h3><p>Managed Claude keeps improving it.</p></div>
           </div>
-          <div class="why-item">
-            <div class="why-num">2</div>
-            <div>
-              <h3>We implement, not just advise</h3>
-              <p>From opportunity to a working solution your team uses every day.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-num">3</div>
-            <div>
-              <h3>Value-based project scoping</h3>
-              <p>Expected economic value guides what we build and sets a fixed build price.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-num">4</div>
-            <div>
-              <h3>You own what we build</h3>
-              <p>You own the workflows, Skills, integrations and code. We work inside the tools you already use.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-num">5</div>
-            <div>
-              <h3>Training and adoption</h3>
-              <p>We train your people, so Claude becomes part of how the team works.</p>
-            </div>
-          </div>
-          <div class="why-item">
-            <div class="why-num">6</div>
-            <div>
-              <h3>Continued support and improvement</h3>
-              <p>Managed Claude maintains, supports and improves your workflows after launch.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 

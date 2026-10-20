@@ -39,6 +39,15 @@
     .cfs-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; list-style:none; padding:0; margin:32px 0 0; }
     .cfs-steps .feature-card { padding:28px; }
     .cfs-logo { display:block; height:44px; width:auto; max-width:180px; object-fit:contain; object-position:left center; margin-bottom:16px; }
+    .cfs-result-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-top:32px; }
+    .cfs-result { display:flex; flex-direction:column; padding:28px; background:var(--color-white); border:1px solid var(--border-light); border-radius:16px; }
+    .cfs-result .cfs-logo { margin-bottom:16px; }
+    .cfs-result .cfs-label { align-self:flex-start; }
+    .cfs-stat { font-size:clamp(40px,5vw,56px); font-weight:800; line-height:1.05; color:var(--color-purple); }
+    .cfs-unit { font-size:15px; font-weight:700; margin:6px 0 10px; }
+    .cfs-result p { font-size:14px; color:var(--color-lavender); margin:0 0 16px; }
+    .cfs-result a { margin-top:auto; font-weight:700; color:var(--color-pink); }
+    @media(max-width:900px){ .cfs-result-grid { grid-template-columns:1fr; } }
     .cfs-label { display:inline-block; margin-bottom:10px; padding:3px 10px; border-radius:99px; background:var(--tint-teal); color:var(--color-teal-dark); font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
     .cfs-faq h3 { font-size:18px; margin-top:24px; }
     @media(max-width:900px){ .cfs-grid,.cfs-steps{grid-template-columns:1fr !important;} .cfs-time-grid{grid-template-columns:1fr;} }
@@ -148,12 +157,12 @@
     </div></section>
 
     <section class="section section--alt"><div class="container">
-      <div class="section-head reveal" style="max-width:800px;"><span class="eyebrow">The problem</span><h2>Where sales time disappears.</h2><p class="lede" style="margin-top:16px;">Your reps know how to sell. The administrative work around selling is what slows them down.</p></div>
+      <div class="section-head reveal" style="max-width:800px;"><span class="eyebrow">The problem</span><h2>Where sales time disappears.</h2></div>
       <ul class="cfs-time-grid reveal"><li>Manual CRM updates</li><li>Proposal creation</li><li>Meeting summaries</li><li>Lead research and qualification</li><li>Pipeline cleanup</li><li>Customer follow-up</li><li>Moving information between tools</li></ul>
     </div></section>
 
     <section class="section" id="solutions"><div class="container">
-      <div class="section-head reveal" style="max-width:800px;"><span class="eyebrow">What Claude can do</span><h2>Six places Claude can take work off your sales team.</h2><p class="lede" style="margin-top:16px;">Examples of what we build. The assessment identifies which are worth building for your team.</p></div>
+      <div class="section-head reveal" style="max-width:800px;"><span class="eyebrow">What Claude can do</span><h2>Six places Claude can take work off your sales team.</h2></div>
       <div class="cfs-grid reveal"><div class="feature-card"><h3>CRM updates</h3><p>Turn approved sales notes, emails and meeting summaries into structured CRM updates.</p><div class="cfs-flow" aria-label="Workflow"><span>Notes &amp; emails</span><i>&rarr;</i><span>Claude</span><i>&rarr;</i><span>CRM update</span></div></div><div class="feature-card"><h3>Proposal preparation</h3><p>Use existing customer data, templates and approved information to prepare proposal drafts.</p><div class="cfs-flow" aria-label="Workflow"><span>Customer data</span><i>&rarr;</i><span>Claude</span><i>&rarr;</i><span>Proposal draft</span></div></div><div class="feature-card"><h3>Lead qualification</h3><p>Research and organize leads using your defined qualification criteria.</p><div class="cfs-flow" aria-label="Workflow"><span>New lead</span><i>&rarr;</i><span>Claude</span><i>&rarr;</i><span>Scored &amp; organized</span></div></div><div class="feature-card"><h3>Pipeline monitoring</h3><p>Identify stalled opportunities, missing activities and records that need attention.</p><div class="cfs-flow" aria-label="Workflow"><span>CRM records</span><i>&rarr;</i><span>Claude</span><i>&rarr;</i><span>Attention list</span></div></div><div class="feature-card"><h3>Sales follow-up</h3><p>Draft personalized follow-up communications for your team to review.</p><div class="cfs-flow" aria-label="Workflow"><span>Deal context</span><i>&rarr;</i><span>Claude</span><i>&rarr;</i><span>Draft for review</span></div></div><div class="feature-card"><h3>Reporting</h3><p>Prepare pipeline summaries and sales-management briefings.</p><div class="cfs-flow" aria-label="Workflow"><span>Pipeline data</span><i>&rarr;</i><span>Claude</span><i>&rarr;</i><span>Weekly brief</span></div></div></div>
       <p class="cfs-approval reveal"><strong>You stay in control.</strong> Actions involving customers, financial commitments or important record changes are subject to approval by your team.</p>
     </div></section>
@@ -164,12 +173,8 @@
     </div></section>
 
     <section class="section" id="results"><div class="container">
-      <div class="section-head reveal" style="max-width:800px;"><span class="eyebrow">Client results</span><h2>Proof from real client work.</h2><p class="lede" style="margin-top:16px;">We label each example by what it is, so you can judge how closely it matches your needs.</p></div>
-      <div class="case-study-grid reveal" style="margin-top:32px;">
-        <div class="case-study-card"><img class="cfs-logo" src="images/clients/offerpad.webp?v=20260930" alt="Offerpad" loading="lazy"><span class="cfs-label">Claude implementation</span><span class="cs-eyebrow">Offerpad · Real estate</span><h3>AI tools across sales, renovations and accounting</h3><p>TEG’s ongoing work with Offerpad includes sales call coaching. A separate vendor photo review workflow saves the renovations team 1 to 2 hours a day. That workflow is operations, not sales.</p><a href="blog/offerpad-ai-partnership.html">Read the case study →</a></div>
-        <div class="case-study-card"><img class="cfs-logo" src="images/clients/biproxi.webp?v=20260930" alt="Biproxi" loading="lazy"><span class="cfs-label">Claude implementation</span><span class="cs-eyebrow">Biproxi · Investor relations</span><h3>Investor research, ready for outreach</h3><p>A Claude skill turns a firm name into a briefing, relevant contacts and an outreach draft, with research logged in the team’s investor spreadsheet.</p><a href="blog/biproxi-investor-discovery.html">Read the case study →</a></div>
-        <div class="case-study-card"><img class="cfs-logo" src="images/clients/realty-one-group.webp?v=20260930" alt="Realty ONE Group" loading="lazy"><span class="cfs-label">Sales execution + AI</span><span class="cs-eyebrow">Realty ONE Group · Real estate</span><h3>One CRM and a clear view of the pipeline</h3><p>Data migrated into HubSpot, custom workflows that removed manual work, leadership dashboards and a LinkedIn outreach approach.</p><a href="success.html#realty-one-group">See the results →</a></div>
-      </div>
+      <div class="section-head reveal" style="max-width:800px;"><span class="eyebrow">Client results</span><h2>Proof from real client work.</h2></div>
+      <div class="cfs-result-grid reveal"><div class="cfs-result"><img class="cfs-logo" src="images/clients/offerpad.webp?v=20260930" alt="Offerpad" loading="lazy"><span class="cfs-label">Claude implementation</span><span class="cfs-stat">1 to 2</span><span class="cfs-unit">hours saved per day</span><p>Renovations vendor photo review. Offerpad also uses TEG’s sales call coaching tool.</p><a href="blog/offerpad-ai-partnership.html">Read the case study &rarr;</a></div><div class="cfs-result"><img class="cfs-logo" src="images/clients/biproxi.webp?v=20260930" alt="Biproxi" loading="lazy"><span class="cfs-label">Claude implementation</span><span class="cfs-stat">1 to 2</span><span class="cfs-unit">hours saved per week</span><p>Investor research and outreach drafts in one Claude skill.</p><a href="blog/biproxi-investor-discovery.html">Read the case study &rarr;</a></div><div class="cfs-result"><img class="cfs-logo" src="images/clients/realty-one-group.webp?v=20260930" alt="Realty ONE Group" loading="lazy"><span class="cfs-label">Sales execution + AI</span><span class="cfs-stat">1 CRM</span><span class="cfs-unit">one view of the pipeline</span><p>HubSpot migration, custom workflows and leadership dashboards.</p><a href="success.html#realty-one-group">See the results &rarr;</a></div></div>
     </div></section>
 
     <section class="section section--alt"><div class="container">
