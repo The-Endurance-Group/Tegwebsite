@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Railway Breach Is Why Your Business Needs an AI Team | TEG</title>
+  <title>Railway Breach: Why You Need an AI Team | TEG</title>
   <meta name="description" content="Railway told customers to rotate every secret after a breach. Anyone can build an app with AI, but who responds when keys leak? Here is what it takes.">
   <link rel="canonical" href="https://www.theendurancegroup.com/blog/railway-breach-why-you-need-an-ai-team.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
-  <meta property="og:title" content="The Railway Breach Is Why Your Business Needs an AI Team">
+  <meta property="og:title" content="Railway Breach: Why You Need an AI Team">
   <meta property="og:description" content="Railway told customers to rotate every secret after a breach. Anyone can build an app with AI, but who responds when keys leak? Here is what it takes.">
   <meta property="og:url" content="https://www.theendurancegroup.com/blog/railway-breach-why-you-need-an-ai-team.html">
   <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
@@ -18,7 +18,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="author" content="Conor Sullivan">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Railway Breach Is Why Your Business Needs an AI Team">
+  <meta name="twitter:title" content="Railway Breach: Why You Need an AI Team">
   <meta name="twitter:description" content="Railway told customers to rotate every secret after a breach. Anyone can build an app with AI, but who responds when keys leak? Here is what it takes.">
   <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,23 @@
     }
   },
   "url": "https://www.theendurancegroup.com/blog/railway-breach-why-you-need-an-ai-team.html",
-  "image": "https://www.theendurancegroup.com/images/og-default.png"
+  "image": "https://www.theendurancegroup.com/images/og-default.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.theendurancegroup.com/blog/railway-breach-why-you-need-an-ai-team.html"
+  },
+  "keywords": "Railway breach, Railway security incident, rotate API keys, AI API key security, managed AI team",
+  "about": [
+    {
+      "@type": "Organization",
+      "name": "Railway"
+    },
+    {
+      "@type": "Thing",
+      "name": "API key security"
+    }
+  ],
+  "articleSection": "AI Automations"
 }
   </script>
   <script type="application/ld+json">
@@ -95,6 +111,32 @@
         "@type": "Answer",
         "text": "TEG's Managed Claude service maintains, supports and improves the Claude workflows we build, and helps your team keep track of the keys and accounts behind them. For incidents involving regulated or customer data, you may also need legal and security specialists."
       }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.theendurancegroup.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.theendurancegroup.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Railway Breach: Why You Need an AI Team",
+      "item": "https://www.theendurancegroup.com/blog/railway-breach-why-you-need-an-ai-team.html"
     }
   ]
 }
@@ -160,6 +202,8 @@
         <div class="container">
           <div class="prose reveal">
 
+            <p><strong>What should you do after the Railway breach?</strong> Replace every API key and password stored on Railway, redeploy your apps so they use the new ones, review your logs for activity nobody on your team authorized, and revoke the old keys everywhere. Here is why that is harder than it sounds.</p>
+
             <p>On October 21, Railway, a popular platform for hosting apps, told customers that an unauthorized party may have reached the secrets their apps depend on. Its advice: replace every key and password stored there. Anyone can build an app with AI now. Far fewer people know what to do on the day a breach notice arrives.</p>
 
             <div class="example-callout">
@@ -172,17 +216,17 @@
               </ul>
             </div>
 
-            <h2>What happened at Railway</h2>
+            <h2>What happened in the Railway breach?</h2>
             <p>Railway said it detected "anomalous activity" in the systems that store customer environment variables. In its <a href="https://blog.railway.com/p/security-disclosure-wednesday-october-21st">security disclosure</a>, the company said an unauthorized third party "may have accessed encrypted environment variables and, for some of them, obtained the decrypted contents."</p>
             <p>Railway said the impact may be limited to a subset of users, but it asked every customer to act. It paused deployments while it investigated, then began restoring service in stages. It also said the incident is likely part of a series of attacks on platform companies, aimed at compromising AI inference providers. <a href="https://techcrunch.com/2026/10/22/developer-platform-railway-urges-all-users-to-revoke-secret-keys-after-cyberattack/">TechCrunch</a> reported that Railway has not said how many users were affected, and that its CEO plans to publish a post-mortem.</p>
             <p>One more detail deserves a caution. Security researcher Taylor Monahan linked the incident to cryptocurrency thefts, according to <a href="https://thehackernews.com/2026/10/railway-says-intruder-may-have-accessed.html">The Hacker News</a>. Railway has not confirmed that link, so treat it as unverified.</p>
 
-            <h2>Why a leaked key is a big deal</h2>
+            <h2>Why is a leaked API key a big deal?</h2>
             <p>Apps keep their passwords and keys in a place called environment variables. An API key is a password that lets software use another service, such as an AI model, a database or a payment system. Anyone holding it can use that service as you.</p>
             <p>AI keys are especially attractive. As Symantec's Dick O'Brien put it, "anyone holding one can run inference at the owner's expense." A leaked key can turn into a surprise bill.</p>
 
-            <h2>Anyone can build an app. Who owns it on day two?</h2>
-            <p>AI has made building software easy. A founder or an operations manager can describe an app and have it running by the afternoon. That is a real advantage.</p>
+            <h2>How do you rotate API keys after a breach?</h2>
+            <p>AI has made building software easy. A founder or an operations manager can describe an app and have it running by the afternoon. That is a real advantage. The hard part is owning the app on day two.</p>
             <p>Then a notice like Railway's arrives, and the questions change. Railway's own guidance shows how much work sits behind the instruction to "rotate your keys":</p>
             <ol>
               <li><strong>Find every secret.</strong> Every API key, database password and registry credential stored in the platform.</li>
@@ -194,7 +238,7 @@
             </ol>
             <p>Each step has a way to go wrong. Miss one app and it keeps running on a stale key. Skip the log review and you never learn whether someone used the old one.</p>
 
-            <h2>Five questions to answer before it happens to you</h2>
+            <h2>Are you ready for the next breach notice?</h2>
             <ul>
               <li><strong>Who owns your accounts?</strong> Can you name the person who can log in to your hosting, AI and software accounts today?</li>
               <li><strong>Where do your keys live?</strong> Could you list every key your apps and automations use?</li>
@@ -203,7 +247,7 @@
               <li><strong>Who is watching?</strong> If a key were used by someone else tonight, who would notice tomorrow?</li>
             </ul>
 
-            <h2>What an AI team does</h2>
+            <h2>What does an AI team do when a breach happens?</h2>
             <p>This is why we say businesses need an AI team, not just an AI tool. A team keeps a current list of the accounts and keys behind your Claude workflows. It knows how to replace them and redeploy, and it does the work when a notice arrives. It also keeps documentation current, trains your people to spot problems and keeps improving what was built.</p>
             <p>That is what <a href="../managed-claude.html">Managed Claude</a> is for. We maintain, support, train and improve the Claude workflows we build for you, so nobody is figuring it out for the first time during an incident.</p>
             <p>One honest limit: for incidents involving regulated or customer data, you may also need legal and security specialists. A good AI team will tell you when.</p>
@@ -224,6 +268,14 @@
 
             <h3>Can TEG handle a security incident for us?</h3>
             <p>TEG's Managed Claude service maintains, supports and improves the Claude workflows we build, and helps your team keep track of the keys and accounts behind them. For incidents involving regulated or customer data, you may also need legal and security specialists.</p>
+
+            <h2>Related reading</h2>
+            <ul>
+              <li><a href="claude-data-privacy-business.html">Claude data privacy for business</a></li>
+              <li><a href="claude-implementation-cost.html">What Claude implementation costs</a></li>
+              <li><a href="../managed-claude.html">Managed Claude: your ongoing Claude team</a></li>
+              <li><a href="../how-we-work.html">How TEG works: assess, build, manage</a></li>
+            </ul>
 
             <h2>The bottom line</h2>
             <p>The Railway breach will pass. The next one will not announce itself either. The businesses that handle it well will be the ones where someone already owns the accounts, knows the keys and has done it before.</p>
