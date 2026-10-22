@@ -32,6 +32,7 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [Anthropic Mapped Three Futures for the AI Economy. Here Is What Your Business Should Do in Every One.](https://www.theendurancegroup.com/blog/anthropic-ai-economic-scenarios-business.html)
 - [The Railway Breach Is Why Your Business Needs an AI Team](https://www.theendurancegroup.com/blog/railway-breach-why-you-need-an-ai-team.html)
 - [How to Use Claude to Find Unanswered iMessages Every Morning](https://www.theendurancegroup.com/blog/claude-unanswered-imessage-daily-review.html)
 - [How to make every customer feel seen with AI (without the creepy part)](https://www.theendurancegroup.com/blog/make-customers-feel-seen-with-ai.html)
