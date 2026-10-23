@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-10-23",
+    "title": "Grant Writing AI for a Nonprofit: How United Way of West Central Connecticut Used It",
+    "slug": "united-way-grant-writing-ai-case-study",
+    "url": "https://www.theendurancegroup.com/blog/united-way-grant-writing-ai-case-study.html",
+    "path": "manual-conor-pov",
+    "angle_summary": "Client case study built from emails, Drive files and HubSpot records; quotes verified verbatim; no metrics published because none are documented.",
+    "deploy_verified": false,
+    "related_post_updated": "what-is-an-ai-automation.html"
+  },
+  {
+    "date": "2026-10-23",
+    "title": "Tax Advisory AI Case Study: How Benchmark Human Capital Built a Tax Code Reference Tool",
+    "slug": "benchmark-human-capital-tax-ai-case-study",
+    "url": "https://www.theendurancegroup.com/blog/benchmark-human-capital-tax-ai-case-study.html",
+    "path": "manual-conor-pov",
+    "angle_summary": "Client case study built from emails, Drive files and HubSpot records; quotes verified verbatim; no metrics published because none are documented.",
+    "deploy_verified": false,
+    "related_post_updated": "ai-tool-vs-ai-automation.html"
+  },
+  {
     "date": "2026-10-15",
     "title": "How to make every customer feel seen with AI (without the creepy part)",
     "slug": "make-customers-feel-seen-with-ai",

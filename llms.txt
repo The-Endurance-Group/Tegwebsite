@@ -32,6 +32,8 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [Tax Advisory AI Case Study: How Benchmark Human Capital Built a Tax Code Reference Tool](https://www.theendurancegroup.com/blog/benchmark-human-capital-tax-ai-case-study.html)
+- [Grant Writing AI for a Nonprofit: How United Way of West Central Connecticut Used It](https://www.theendurancegroup.com/blog/united-way-grant-writing-ai-case-study.html)
 - [Claude Duet Explained: Anthropic’s Proactive AI Agent and What It Means for Your Business](https://www.theendurancegroup.com/blog/claude-duet-what-business-owners-should-know.html)
 - [Anthropic’s Three AI Economy Scenarios, and What Your Business Should Do in Every One](https://www.theendurancegroup.com/blog/anthropic-ai-economic-scenarios-business.html)
 - [The Railway Breach Is Why Your Business Needs an AI Team](https://www.theendurancegroup.com/blog/railway-breach-why-you-need-an-ai-team.html)
