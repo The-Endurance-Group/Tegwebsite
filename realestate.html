@@ -49,8 +49,6 @@
     .bd-page .btn-group { margin-top:28px; }
     .bd-value-card { padding:32px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); }
     .bd-value-card h2 { font-size:26px; margin-bottom:24px; }
-    .bd-anchor-nav { display:flex; flex-wrap:wrap; gap:12px 28px; margin-top:36px; font-size:14px; font-weight:600; }
-    .bd-anchor-nav a { color:var(--color-purple); text-decoration:underline; text-underline-offset:4px; }
     .bd-page .section-head { max-width:760px; }
     .bd-page .section-head p { margin-top:20px; color:var(--color-lavender); }
     .bd-steps { display:grid; grid-template-columns:1fr 1fr; gap:24px; list-style:none; padding:0; margin:32px 0 0; }
@@ -179,6 +177,25 @@
     .re-mini { display:flex; align-items:center; gap:12px; padding:10px 12px; border-radius:10px; background:#faf7fb; font-size:14px; font-weight:600; }
     .re-mini-icon { display:grid; place-items:center; width:30px; height:30px; flex:0 0 30px; border-radius:8px; background:var(--tint-teal); color:var(--color-teal-dark); }
     .re-mini-icon svg { width:17px; height:17px; }
+    .re-case { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:24px; margin:32px 0 24px; align-items:stretch; }
+    .re-case-stat { display:flex; flex-direction:column; justify-content:center; gap:8px; padding:32px; border-radius:var(--radius-md); background:var(--color-purple); color:#fff; }
+    .re-case-logo { height:44px; width:auto; max-width:160px; object-fit:contain; object-position:left; background:#fff; border-radius:10px; padding:8px 12px; margin-bottom:12px; }
+    .re-stat-num { font-size:clamp(34px,4.4vw,52px); font-weight:800; line-height:1.05; }
+    .re-stat-label { font-size:16px; opacity:.9; }
+    .re-ba { display:grid; grid-template-columns:1fr auto 1fr; gap:16px; align-items:center; padding:28px; border:1px solid var(--border-light); border-radius:var(--radius-md); background:var(--color-white); }
+    .re-ba-box { padding:20px; border-radius:12px; background:#faf7fb; height:100%; box-sizing:border-box; }
+    .re-ba-box p { margin-top:8px; color:var(--color-lavender); }
+    .re-ba-after { background:var(--tint-teal); }
+    .re-ba-after .eyebrow { color:var(--color-teal-dark); }
+    .re-ba-arrow { font-size:32px; color:var(--color-purple); }
+    .re-case-quote { margin:32px 0 0; padding:24px 28px; border-left:4px solid var(--color-pink); background:var(--color-white); border-radius:var(--radius-sm); }
+    .re-case-quote blockquote { margin:0 0 12px; }
+    .re-case-quote cite { font-style:normal; font-weight:600; font-size:14px; margin-right:16px; }
+    .re-creds { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:32px; }
+    .re-cred { display:flex; align-items:center; gap:14px; padding:16px; border:1px solid var(--border-light); border-radius:12px; background:var(--color-white); }
+    .re-cred strong { font-size:15px; line-height:1.4; }
+    @media(max-width:900px){ .re-case { grid-template-columns:1fr; } .re-creds { grid-template-columns:1fr; } }
+    @media(max-width:600px){ .re-ba { grid-template-columns:1fr; } .re-ba-arrow { transform:rotate(90deg); justify-self:center; } }
     .re-quotes { margin-top:32px; }
     .re-quote { margin:0; }
     .re-quote blockquote { margin:0 0 12px; }
@@ -341,23 +358,36 @@
       </div>
     </section>
 
-    <section id="why-us" class="section section--alt">
+    <section id="case-study" class="section section--alt">
       <div class="container">
-        <div class="section-head"><span class="eyebrow">Why TEG</span><h2>Real estate experience, applied with AI.</h2></div>
-        <div class="grid grid--3 bd-platform-grid">
-          <div class="feature-card re-why"><div class="re-why-top"><span class="re-why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></span><span class="re-why-num">01</span></div><h3>We understand real estate</h3><p>We speak the language of real estate.</p><div class="tag-list" style="margin-top:16px;"><span class="tag">Investment</span><span class="tag">Underwriting</span><span class="tag">Capital markets</span><span class="tag">Brokerage</span><span class="tag">Property operations</span><span class="tag">Financial modeling</span></div></div>
-          <div class="feature-card re-why"><div class="re-why-top"><span class="re-why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span><span class="re-why-num">02</span></div><h3>We build custom applications</h3><p>Built around your workflows, not generic software.</p><div class="tag-list" style="margin-top:16px;"><span class="tag">Your workflows</span><span class="tag">Your systems</span><span class="tag">Your data</span></div></div>
-          <div class="feature-card re-why"><div class="re-why-top"><span class="re-why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><span class="re-why-num">03</span></div><h3>We deliver practical results</h3><p>Measurable outcomes, not experimentation.</p><div class="tag-list" style="margin-top:16px;"><span class="tag">Targeted pilot</span><span class="tag">Value within weeks</span></div></div>
+        <div class="section-head"><span class="eyebrow">Proof in real estate</span><h2>One AI partner for every department at Offerpad.</h2><p class="lede">Sales, renovations and accounting, built team by team on Claude.</p></div>
+        <div class="re-case">
+          <div class="re-case-stat">
+            <img class="re-case-logo" src="images/clients/offerpad.webp" alt="Offerpad" loading="lazy">
+            <span class="re-stat-num">1 to 2 hours</span>
+            <span class="re-stat-label">saved per day by the renovations team on vendor photo review</span>
+          </div>
+          <div class="re-ba">
+            <div class="re-ba-box"><span class="eyebrow">Before</span><p>A person opened every vendor photo by hand, every day.</p></div>
+            <span class="re-ba-arrow" aria-hidden="true">→</span>
+            <div class="re-ba-box re-ba-after"><span class="eyebrow">With Claude</span><p>Photos are checked against Offerpad's criteria. The team reviews exceptions.</p></div>
+          </div>
         </div>
+        <div class="grid grid--3 bd-platform-grid">
+          <div class="feature-card bd-platform-card"><span class="bd-platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><div><h3>Sales call coaching</h3><p>Scores calls against Offerpad's own scripts, so managers coach instead of listening to recordings.</p></div></div>
+          <div class="feature-card bd-platform-card"><span class="bd-platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span><div><h3>Vendor photo and invoice review</h3><p>Checks vendor photos and invoices against Offerpad's criteria. The team reviews exceptions, not every file.</p></div></div>
+          <div class="feature-card bd-platform-card"><span class="bd-platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 2h14v20l-3-2-2 2-2-2-2 2-2-2-3 2zM9 7h6M9 11h6M9 15h4"/></svg></span><div><h3>Invoice reconciliation</h3><p>Matches invoice line items to property records by address, cutting hours of manual cross-checking.</p></div></div>
+          </div>
+        <figure class="re-case-quote"><blockquote>TEG has been a great AI partner for us. They helped us build a suite of AI tools for our sales team and develop back-office automations that eliminated hours of manual work. They know how to scope, build, and iterate without a lot of hand-holding.</blockquote><figcaption><cite>Chris Carpenter, COO · Offerpad</cite> <a class="feature-link" href="blog/offerpad-ai-partnership.html">Read the full case study &rarr;</a></figcaption></figure>
+        <div class="re-creds"><div class="re-cred"><span class="bd-platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><strong>Serving real estate since 1999</strong></div><div class="re-cred"><span class="bd-platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8"/></svg></span><strong>Certified in the Claude Partner Network</strong></div><div class="re-cred"><span class="bd-platform-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"/></svg></span><strong>Investment, underwriting, brokerage and operations experience</strong></div></div>
       </div>
     </section>
 
     <section id="testimonials" class="section">
       <div class="container">
         <div class="section-head"><span class="eyebrow">Client stories</span><h2>What our clients say.</h2><p class="lede">Real estate leaders trust The Endurance Group to design AI that delivers measurable results.</p></div>
-        <div class="grid grid--2 re-quotes">
+        <div class="grid grid--3 re-quotes">
 <figure class="feature-card re-quote"><img class="re-qlogo" src="images/clients/realty-one-group.webp" alt="Realty ONE Group" loading="lazy"><blockquote>Working with The Endurance Group on our HubSpot implementation was absolutely amazing! They introduced a new LinkedIn outreach solution that has been a fantastic addition to our prospecting strategy. TEG totally exceeded our expectations.</blockquote><figcaption><cite>Sevag Sarkissian, VP, Growth Marketing · Realty ONE Group</cite></figcaption></figure>
-<figure class="feature-card re-quote"><img class="re-qlogo" src="images/clients/offerpad.webp" alt="Offerpad" loading="lazy"><blockquote>TEG has been a great AI partner for us. They helped us build a suite of AI tools for our sales team and develop back-office automations that eliminated hours of manual work. They know how to scope, build, and iterate without a lot of hand-holding.</blockquote><figcaption><cite>Chris Carpenter, COO · Offerpad</cite></figcaption></figure>
 <figure class="feature-card re-quote"><img class="re-qlogo re-qlogo-sq" src="images/clients/home-impact-partners.webp" alt="Home Impact Partners" loading="lazy"><blockquote>The Endurance Group helped us bring my platform, Impact Atlas, to life. They don't just execute on specs; they think alongside you and help shape the product. If you're working at the intersection of real estate and AI, TEG is the team to call.</blockquote><figcaption><cite>Vin Ferrara, CEO · Home Impact Partners</cite></figcaption></figure>
 <figure class="feature-card re-quote"><img class="re-qlogo" src="images/clients/fenestrapro.webp" alt="FenestraPro" loading="lazy"><blockquote>The Endurance Group's strategy of using shared experiences to establish connections and book meetings with prospects has worked incredibly well for FenestraPro. Their efforts have resulted in an average 30% response rate.</blockquote><figcaption><cite>David Palmer, CEO &amp; Founder · FenestraPro</cite></figcaption></figure>
         </div>
