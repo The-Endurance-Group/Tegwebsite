@@ -33,6 +33,7 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [AI that connects your systems: what I heard at CREtech New York](https://www.theendurancegroup.com/blog/cretech-new-york-ai-connected-systems.html)
 - [Connect Multiple Gmail and CRM Accounts to Claude](https://www.theendurancegroup.com/blog/composio-multiple-accounts-claude.html)
 - [Tax Advisory AI Case Study: How Benchmark Human Capital Built a Tax Code Reference Tool](https://www.theendurancegroup.com/blog/benchmark-human-capital-tax-ai-case-study.html)
 - [Grant Writing AI for a Nonprofit: How United Way of West Central Connecticut Used It](https://www.theendurancegroup.com/blog/united-way-grant-writing-ai-case-study.html)
