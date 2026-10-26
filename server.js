@@ -2384,6 +2384,12 @@ function handleVideoAccess(req, res) {
 
 http.createServer((req, res) => {
   var urlPath = req.url.split('?')[0];
+  // The old realestate. landing page now lives at /realestate on the main site.
+  if (/^realestate\./i.test(req.headers.host || '')) {
+    res.writeHead(301, { Location: 'https://www.theendurancegroup.com/realestate' });
+    res.end();
+    return;
+  }
   if (req.method === 'POST' && urlPath === '/api/chat') {
     handleChat(req, res);
     return;
