@@ -76,8 +76,7 @@
     .specialty-card h3 .title-link:hover, .feature-card h3 .title-link:hover { color: var(--color-pink-dark); }
     .specialty-card .btn, .feature-card .btn { white-space: normal; text-align: center; }
     #industry-depth .feature-card { display: flex; flex-direction: column; }
-    #industry-depth .feature-card > .btn { margin-top: auto !important; min-height: 72px; display: flex; align-items: center; justify-content: center; }
-    #industry-depth .feature-card > .testimonial { margin-bottom: 16px; }
+    .specialty-card--wide:hover { transform: none; }
   </style>
 </head>
 <body>
@@ -118,65 +117,83 @@
         <img class="hero-partner-badge" src="images/badges/claude-certified-services-partner-vertical.png" alt="Claude Certified Services Partner, Claude Partner Network">
         <span class="eyebrow">Three specialties</span>
         <h1>Where Claude can create business value.</h1>
-        <p class="lede">Revenue, finance and service operations are our deepest specialties. We draw on 20+ years of hands-on experience to find opportunities to free up time, avoid costs and create revenue.</p>
+        <p class="lede">Revenue is our largest specialty, followed by finance and service operations. We draw on 20+ years of hands-on experience to find opportunities to free up time, avoid costs and create revenue.</p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="#sales-and-marketing">By function</a>
+          <a class="btn btn-secondary" href="#industry-depth">By industry</a>
+        </div>
         <hr class="hero-divider">
       </div>
     </section>
 
-    <!-- Functional Specialties -->
+    <!-- Revenue (Business Development + RevOps) -->
     <section id="sales-and-marketing" class="section section--alt">
       <div class="container">
-        <span class="section-label reveal">Functional Specialties</span>
-        <div class="specialty-grid reveal--stagger reveal">
-          <div class="specialty-card specialty-card--featured">
-            <div class="icon-badge icon-badge--pink">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9v6h3l6 4V5L6 9H3z"></path><path d="M16 8a4 4 0 0 1 0 8"></path><path d="M19 5a8 8 0 0 1 0 14"></path></svg>
-            </div>
-            <span class="specialty-eyebrow">Our deepest specialty</span>
-            <h3><a class="title-link" href="claude-for-sales.html">Revenue operations (RevOps)</a></h3>
-            <p>Give your sales team more time to sell. Opportunities include faster proposals, better lead qualification and timely follow-up, or turning customer insights into a paid reporting service.</p>
-            <div class="industry-example" style="margin-top:16px;">For Realty ONE Group, we migrated their fragmented sales stack into HubSpot, built custom workflows that eliminated manual work, and created dashboards that gave leadership a live view of pipeline performance, turning disconnected systems into a single operating picture.</div>
-            <a class="btn btn-primary" style="margin-top:16px;" href="book-value-assessment.html">Find your RevOps opportunities →</a>
-            <a class="feature-link" style="display:inline-block; margin:16px 0 0 20px;" href="claude-for-sales.html">See Claude for sales teams →</a>
+        <span class="section-label reveal">Specialty 1 · Revenue</span>
+        <div class="specialty-card specialty-card--featured specialty-card--wide reveal">
+          <div class="icon-badge icon-badge--pink">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9v6h3l6 4V5L6 9H3z"></path><path d="M16 8a4 4 0 0 1 0 8"></path><path d="M19 5a8 8 0 0 1 0 14"></path></svg>
           </div>
+          <span class="specialty-eyebrow">Our largest specialty</span>
+          <h2 style="font-size:clamp(26px,3.4vw,36px); margin-bottom:12px;">Revenue: fill the pipeline, then run it better.</h2>
+          <p class="lede">We run outbound and relationship-based business development for you, and build the CRM, workflow and reporting systems that turn those conversations into closed revenue.</p>
+          <div class="grid grid--2" style="margin-top:24px;">
+            <div>
+              <h3><a class="title-link" href="claude-business-development.html">Business development, run for you</a></h3>
+              <p>We start with your relationships and reputation. Claude researches each account and prepares personal outreach, TEG runs the campaigns, and your people focus on the conversations.</p>
+              <div class="industry-example" style="margin-top:16px;">"Their efforts have resulted in an average 30% response rate and started conversations with key firms that we'd been interested in pursuing for years." - David Palmer, CEO &amp; Founder, FenestraPro</div>
+              <a class="btn btn-primary" style="margin-top:16px;" href="claude-business-development.html">Explore business development →</a>
+              <a class="feature-link" style="display:inline-block; margin:16px 0 0 20px;" href="intent-playbook.html">Get a free lead playbook →</a>
+            </div>
+            <div>
+              <h3><a class="title-link" href="claude-for-sales.html">Revenue operations (RevOps)</a></h3>
+              <p>Give your sales team more time to sell. Opportunities include faster proposals, better lead qualification and timely follow-up, or turning customer insights into a paid reporting service.</p>
+              <div class="industry-example" style="margin-top:16px;">For Realty ONE Group, we migrated their fragmented sales stack into HubSpot, built custom workflows that eliminated manual work, and created dashboards that gave leadership a live view of pipeline performance.</div>
+              <a class="btn btn-primary" style="margin-top:16px;" href="book-value-assessment.html">Find your RevOps opportunities →</a>
+              <a class="feature-link" style="display:inline-block; margin:16px 0 0 20px;" href="claude-for-sales.html">See Claude for sales teams →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operations specialties -->
+    <section id="operations" class="section">
+      <div class="container">
+        <span class="section-label reveal">Specialties 2 and 3 · Operations</span>
+        <div class="grid grid--2 reveal--stagger reveal">
           <div class="specialty-card">
             <div class="icon-badge icon-badge--teal">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
             </div>
-            <h3><a class="title-link" href="book-value-assessment.html">Finance operations (FinOps)</a></h3>
+            <h3>Finance operations (FinOps)</h3>
             <p>Reduce time spent reconciling invoices and preparing reports. We look for opportunities to remove vendor costs or handle growing volume without an additional hire.</p>
             <div class="industry-example" style="margin-top:16px;">For Offerpad, we built back-office automations that matched utility and vendor invoices against property records automatically, eliminating hours of manual reconciliation across multiple departments.</div>
-            <a class="btn btn-primary" style="margin-top:16px;" href="book-value-assessment.html">Find your FinOps opportunities →</a>
           </div>
           <div class="specialty-card">
             <div class="icon-badge icon-badge--purple">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"></rect><path d="M16 8h4l3 3v5h-7V8z"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
             </div>
-            <h3><a class="title-link" href="book-value-assessment.html">Service operations</a></h3>
+            <h3>Service operations</h3>
             <p>Handle more work with your existing team. Opportunities include fewer scheduling handoffs, faster billing after a completed job and less duplicate data entry across systems.</p>
             <div class="industry-example" style="margin-top:16px;">For a field service company, we automated the job completion chain: every closed job triggers the invoice, time log, customer record update, and accounting entry, with no manual reconciliation at week's end.</div>
-            <a class="btn btn-primary" style="margin-top:16px;" href="book-value-assessment.html">Find your service opportunities →</a>
           </div>
         </div>
-        <p class="reveal" style="margin-top:24px; color:var(--color-lavender); font-size:15px; text-align:center;">These are starting points, not promised results. Your free AI Value Assessment identifies the opportunities and expected value for your team, including HR, customer success, IT or other functions.</p>
-        <aside class="feature-card" style="margin-top:32px;" aria-labelledby="bd-specialty-title">
-          <span class="eyebrow">Business development, run for you</span>
-          <h2 id="bd-specialty-title" style="font-size:clamp(24px,3vw,32px); margin-bottom:12px;">Need help with business development?</h2>
-          <p>See how we use Claude to become your outsourced sales team: stronger relationships, qualified conversations and a clearer path to pipeline growth.</p>
-          <a class="feature-link" style="display:inline-block; margin-top:20px;" href="claude-business-development.html">Explore Claude-powered business development →</a>
-          <a class="feature-link" style="display:inline-block; margin:20px 0 0 24px;" href="intent-playbook.html">Get a free lead playbook →</a>
-        </aside>
+        <div class="text-center" style="margin-top:28px;">
+          <a class="btn btn-primary" href="book-value-assessment.html">Find your opportunities →</a>
+        </div>
+        <p class="reveal" style="margin-top:20px; color:var(--color-lavender); font-size:15px; text-align:center;">These are starting points, not promised results. Your free AI Value Assessment identifies the opportunities and expected value for your team, including HR, customer success, IT or other functions.</p>
       </div>
     </section>
 
     <!-- Industry Depth -->
-    <section id="industry-depth" class="section">
+    <section id="industry-depth" class="section section--alt">
       <div class="container">
         <span class="section-label reveal">Industry Depth</span>
         <p class="lede reveal" style="margin-bottom:24px;">Experience since 1999. These are areas we know deeply, not limits on who we work with. <a href="about.html">Meet TEG →</a></p>
         <div class="grid grid--3 reveal--stagger reveal">
           <div id="real-estate" class="feature-card">
-            <h3><a class="title-link" href="book-value-assessment.html">Real Estate</a></h3>
+            <h3><a class="title-link" href="https://realestate.theendurancegroup.com/" target="_blank" rel="noopener">Real Estate</a></h3>
             <p>Faster follow-up, less invoice reconciliation and clearer property workflows. We understand the systems used by agents, brokers, investors and property managers.</p>
             <div class="tag-list" style="margin-top:16px;">
               <span class="tag">Residential</span>
@@ -184,28 +201,20 @@
               <span class="tag">Investors</span>
               <span class="tag">Property Management</span>
             </div>
-            <div class="testimonial testimonial--nested">
-              <blockquote>If you're working at the intersection of real estate and AI, TEG is the team to call.</blockquote>
-              <cite>- Vin Ferrara, Founder · Home Impact Partners</cite>
-            </div>
-            <a class="btn btn-primary" style="margin-top:16px;" href="book-value-assessment.html">Find your real estate opportunities →</a>
+            <a class="feature-link" style="display:inline-block; margin-top:16px;" href="https://realestate.theendurancegroup.com/" target="_blank" rel="noopener">See our real estate page →</a>
           </div>
           <div id="b2b-technology" class="feature-card">
-            <h3><a class="title-link" href="book-value-assessment.html">B2B Technology &amp; SaaS</a></h3>
+            <h3><a class="title-link" href="blog/category/b2b-technology-saas.html">B2B Technology &amp; SaaS</a></h3>
             <p>Cleaner CRM data, faster lead routing and clearer pipeline reporting. Our experience comes from running sales and marketing operations inside software companies.</p>
             <div class="tag-list" style="margin-top:16px;">
               <span class="tag">SaaS</span>
               <span class="tag">Services</span>
               <span class="tag">RevOps</span>
             </div>
-            <div class="testimonial testimonial--nested">
-              <blockquote>Their efforts have resulted in an average 30% response rate and started conversations with key firms that we'd been interested in pursuing for years.</blockquote>
-              <cite>- David Palmer, CEO &amp; Founder · FenestraPro</cite>
-            </div>
-            <a class="btn btn-primary" style="margin-top:16px;" href="book-value-assessment.html">Find your B2B technology opportunities →</a>
+            <a class="feature-link" style="display:inline-block; margin-top:16px;" href="blog/category/b2b-technology-saas.html">Read B2B tech examples →</a>
           </div>
           <div id="professional-services" class="feature-card">
-            <h3><a class="title-link" href="book-value-assessment.html">Professional Services</a></h3>
+            <h3><a class="title-link" href="blog/category/professional-services.html">Professional Services</a></h3>
             <p>Less billing admin, smoother client onboarding and more capacity for client work. We bring two decades of experience with consultants, agencies, advisors and staffing firms.</p>
             <div class="tag-list" style="margin-top:16px;">
               <span class="tag">Agencies</span>
@@ -213,11 +222,17 @@
               <span class="tag">Advisory</span>
               <span class="tag">Staffing</span>
             </div>
-            <div class="testimonial testimonial--nested">
-              <blockquote>By connecting with prospects who you share backgrounds with, you are able to develop authentic connections and become a known entity.</blockquote>
-              <cite>- Ben Chrischelles, Senior Director · Huron</cite>
-            </div>
-            <a class="btn btn-primary" style="margin-top:16px;" href="book-value-assessment.html">Find your professional services opportunities →</a>
+            <a class="feature-link" style="display:inline-block; margin-top:16px;" href="blog/category/professional-services.html">Read professional services examples →</a>
+          </div>
+        </div>
+        <div class="grid grid--2 reveal" style="margin-top:32px;">
+          <div class="testimonial testimonial--nested">
+            <blockquote>If you're working at the intersection of real estate and AI, TEG is the team to call.</blockquote>
+            <cite>- Vin Ferrara, Founder · Home Impact Partners</cite>
+          </div>
+          <div class="testimonial testimonial--nested">
+            <blockquote>By connecting with prospects who you share backgrounds with, you are able to develop authentic connections and become a known entity.</blockquote>
+            <cite>- Ben Chrischelles, Senior Director · Huron</cite>
           </div>
         </div>
         <div class="text-center" style="margin-top:32px;">
