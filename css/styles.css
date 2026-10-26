@@ -337,13 +337,17 @@ textarea:focus-visible {
   .nav-list {
     flex-direction: row;
     align-items: center;
-    gap: 28px;
+    gap: clamp(14px, 1.7vw, 28px);
     padding: 0;
   }
   .nav-list a {
     padding: 8px 0;
     border-bottom: none;
+    white-space: nowrap;
+    font-size: 15px;
   }
+  .header-brand { flex-shrink: 0; }
+  .primary-nav { min-width: 0; }
   .nav-list .nav-cta {
     padding: 8px 16px;
     margin: 0 0 0 4px;
@@ -1993,3 +1997,7 @@ details[open] .faq-q::after { content: "−"; }
 
 .footer-cta { margin-top: 24px; }
 .footer-cta .btn { display: inline-block; width: auto; padding: 10px 20px; font-size: 14px; }
+
+@media (min-width: 1280px) {
+  .nav-list a { font-size: 16px; }
+}
