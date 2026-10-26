@@ -77,6 +77,9 @@
     .specialty-card .btn, .feature-card .btn { white-space: normal; text-align: center; }
     #industry-depth .feature-card { display: flex; flex-direction: column; }
     .specialty-card--wide:hover { transform: none; }
+    .rev-cols > div { display: flex; flex-direction: column; }
+    .rev-cols .industry-example { flex: 1; }
+    .rev-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 16px; }
   </style>
 </head>
 <body>
@@ -117,7 +120,7 @@
         <img class="hero-partner-badge" src="images/badges/claude-certified-services-partner-vertical.png" alt="Claude Certified Services Partner, Claude Partner Network">
         <span class="eyebrow">Our specialties</span>
         <h1>Where Claude can create business value.</h1>
-        <p class="lede">Revenue is our largest specialty. We draw on 20+ years of hands-on experience to find opportunities to free up time, avoid costs and create revenue.</p>
+        <p class="lede">Revenue is our core service. We draw on 20+ years of hands-on experience to find opportunities to free up time, avoid costs and create revenue.</p>
         <div class="btn-group">
           <a class="btn btn-primary" href="#sales-and-marketing">By function</a>
           <a class="btn btn-secondary" href="#industry-depth">By industry</a>
@@ -131,25 +134,23 @@
       <div class="container">
         <span class="section-label reveal">Functional Specialty</span>
         <div class="specialty-card specialty-card--featured specialty-card--wide reveal">
-          <span class="specialty-eyebrow">Our largest specialty</span>
+          <span class="specialty-eyebrow">Our core service</span>
           <h2 style="font-size:clamp(26px,3.4vw,36px); margin-bottom:12px;">Revenue: fill the pipeline, then run it better.</h2>
           <p class="lede">We run outbound and relationship-based business development for you, and build the CRM, workflow and reporting systems that turn those conversations into closed revenue.</p>
-          <div class="grid grid--2" style="margin-top:24px;">
+          <div class="grid grid--2 rev-cols" style="margin-top:24px;">
             <div>
               <div class="icon-badge icon-badge--pink" style="margin-bottom:16px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
               <h3><a class="title-link" href="claude-business-development.html">Business development, run for you</a></h3>
-              <p>We start with your relationships and reputation. Claude researches each account and prepares personal outreach, TEG runs the campaigns, and your people focus on the conversations.</p>
+              <p>We start with your relationships and reputation. Claude researches each account and prepares personal outreach. TEG runs the campaigns; your people focus on the conversations.</p>
               <div class="industry-example" style="margin-top:16px;">"Their efforts have resulted in an average 30% response rate and started conversations with key firms that we'd been interested in pursuing for years." - David Palmer, CEO &amp; Founder, FenestraPro</div>
-              <a class="btn btn-primary" style="margin-top:16px;" href="claude-business-development.html">Explore business development →</a>
-              <a class="feature-link" style="display:inline-block; margin:16px 0 0 20px;" href="intent-playbook.html">Get a free lead playbook →</a>
+              <div class="rev-actions"><a class="btn btn-primary" href="claude-business-development.html">Explore business development →</a><a class="feature-link" href="intent-playbook.html">Get a free lead playbook →</a></div>
             </div>
             <div>
               <div class="icon-badge icon-badge--teal" style="margin-bottom:16px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 15l4-4 3 3 5-6"></path></svg></div>
               <h3><a class="title-link" href="claude-for-sales.html">Revenue operations (RevOps)</a></h3>
               <p>Give your sales team more time to sell. Opportunities include faster proposals, better lead qualification and timely follow-up, or turning customer insights into a paid reporting service.</p>
               <div class="industry-example" style="margin-top:16px;">For Realty ONE Group, we migrated their fragmented sales stack into HubSpot, built custom workflows that eliminated manual work, and created dashboards that gave leadership a live view of pipeline performance.</div>
-              <a class="btn btn-primary" style="margin-top:16px;" href="book-value-assessment.html">Find your RevOps opportunities →</a>
-              <a class="feature-link" style="display:inline-block; margin:16px 0 0 20px;" href="claude-for-sales.html">See Claude for sales teams →</a>
+              <div class="rev-actions"><a class="btn btn-primary" href="book-value-assessment.html">Find your RevOps opportunities →</a><a class="feature-link" href="claude-for-sales.html">See Claude for sales teams →</a></div>
             </div>
           </div>
         </div>
