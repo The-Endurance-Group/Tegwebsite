@@ -39,7 +39,20 @@
     .blog-card h3 a:focus-visible::after{outline:3px solid var(--color-purple);outline-offset:2px;}
     .blog-card .eyebrow{position:relative;z-index:2;}
     .blog-card p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-    .blog-count{font-size:13px;color:#6b7280;margin-bottom:24px;}
+    .blog-count{font-size:13px;color:#6b7280;margin-bottom:16px;}
+    .blog-top{padding-block:32px 8px;}
+    .blog-top h1{font-size:clamp(26px,3.5vw,36px);margin-bottom:20px;}
+    .blog-intro{margin-top:20px;font-size:16px;color:var(--color-lavender);}
+    .blog-top-card{position:relative;cursor:pointer;}
+    .blog-top-card h3 a::after{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;}
+    .blog-top-card .eyebrow{position:relative;z-index:2;}
+    .blog-top-card p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    @media(max-width:700px){.blog-top-card p{display:none;}.blog-top-card{padding:20px;}}
+    .blog-list-section{padding-top:24px;}
+    .blog-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:12px;}
+    .blog-tools .blog-search{margin-bottom:0;flex:0 1 280px;}
+    .blog-tools .blog-filter{margin-bottom:0;flex:1 1 400px;}
+
   </style>
   <script type="application/ld+json">
   {
@@ -327,37 +340,41 @@
 
   <main id="main-content">
 
-    <!-- Hero -->
-    <section class="hero hero--page section">
+    <!-- Top three posts, then short intro -->
+    <section class="section blog-top">
       <div class="container">
-        <h1>Practical guides on AI implementation and automation</h1>
-        <p class="lede">Most of what we write is about AI: how we deploy it, how clients use it, and what actually works for teams using AI to create value.</p>
+        <h1>Latest from TEG</h1>
+        <div class="grid grid--3 blog-top-grid">
+<div class="feature-card blog-top-card" data-category="professional-services"><a class="eyebrow" href="blog/category/professional-services.html">Professional Services</a><h3><a href="blog/benchmark-human-capital-tax-ai-case-study.html">Tax Advisory AI Case Study: How Benchmark Human Capital Built a Tax Code Reference Tool</a></h3><p>How TEG built a tax advisory AI for Benchmark Human Capital, compared it with competing tools on realistic tax scenarios, and treated accuracy as the standard.</p></div>
+<div class="feature-card blog-top-card" data-category="ai-automations"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/united-way-grant-writing-ai-case-study.html">Grant Writing AI for a Nonprofit: How United Way of West Central Connecticut Used It</a></h3><p>How TEG built United Way of West Central Connecticut a custom AI trained on its own grant files, and what the team said after using it on a real application.</p></div>
+<div class="feature-card blog-top-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/claude-duet-what-business-owners-should-know.html">Claude Duet Explained: Anthropic’s Proactive AI Agent and What It Means for Your Business</a></h3><p>Claude Duet is Anthropic’s new proactive agent. Here is what it does, who can use it, its limits, and where a business still needs more than one app.</p></div>
+        </div>
+        <p class="lede blog-intro">Practical guides on how we deploy AI and what works for teams.</p>
       </div>
     </section>
 
     <!-- Blog Posts with Filter -->
-    <section class="section">
+    <section class="section blog-list-section">
       <div class="container">
-        <div class="blog-search">
-          <label for="blog-search-input" class="sr-only" style="position:absolute;left:-9999px;">Search blog posts</label>
-          <input type="search" id="blog-search-input" placeholder="Search posts by topic (e.g. HubSpot, ROI, real estate)" autocomplete="off">
+        <div class="blog-tools">
+          <div class="blog-search">
+            <label for="blog-search-input" class="sr-only" style="position:absolute;left:-9999px;">Search blog posts</label>
+            <input type="search" id="blog-search-input" placeholder="Search posts (e.g. HubSpot, ROI)" autocomplete="off">
+          </div>
+          <div class="blog-filter" role="group" aria-label="Filter posts by topic">
+            <button class="blog-filter-btn active" data-cat="all">All</button>
+            <button class="blog-filter-btn" data-cat="claude">Claude</button>
+            <button class="blog-filter-btn" data-cat="ai-automations">AI Automations</button>
+            <button class="blog-filter-btn" data-cat="growth-systems-ops">Ops &amp; CRM</button>
+            <button class="blog-filter-btn" data-cat="real-estate">Real Estate</button>
+            <button class="blog-filter-btn" data-cat="sales-execution">Client Engagement</button>
+            <button class="blog-filter-btn" data-cat="b2b-technology-saas">B2B Tech &amp; SaaS</button>
+            <button class="blog-filter-btn" data-cat="professional-services">Professional Services</button>
+          </div>
         </div>
-        <div class="blog-filter" role="group" aria-label="Filter posts by topic">
-          <button class="blog-filter-btn active" data-cat="all">All</button>
-          <button class="blog-filter-btn" data-cat="claude">Claude</button>
-          <button class="blog-filter-btn" data-cat="ai-automations">AI Automations</button>
-          <button class="blog-filter-btn" data-cat="growth-systems-ops">Ops &amp; CRM</button>
-          <button class="blog-filter-btn" data-cat="real-estate">Real Estate</button>
-          <button class="blog-filter-btn" data-cat="sales-execution">Client Engagement</button>
-          <button class="blog-filter-btn" data-cat="b2b-technology-saas">B2B Tech &amp; SaaS</button>
-          <button class="blog-filter-btn" data-cat="professional-services">Professional Services</button>
-        </div>
-        <p class="blog-count" id="blog-count">90 posts</p>
+        <p class="blog-count" id="blog-count">87 posts</p>
         <p class="blog-empty" id="blog-empty">No posts match your search. Try a different word.</p>
         <div class="grid grid--3" id="blog-grid">
-<div class="feature-card blog-card" data-category="professional-services"><a class="eyebrow" href="blog/category/professional-services.html">Professional Services</a><h3><a href="blog/benchmark-human-capital-tax-ai-case-study.html">Tax Advisory AI Case Study: How Benchmark Human Capital Built a Tax Code Reference Tool</a></h3><p>How TEG built a tax advisory AI for Benchmark Human Capital, compared it with competing tools on realistic tax scenarios, and treated accuracy as the standard.</p></div>
-<div class="feature-card blog-card" data-category="ai-automations"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/united-way-grant-writing-ai-case-study.html">Grant Writing AI for a Nonprofit: How United Way of West Central Connecticut Used It</a></h3><p>How TEG built United Way of West Central Connecticut a custom AI trained on its own grant files, and what the team said after using it on a real application.</p></div>
-<div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/claude-duet-what-business-owners-should-know.html">Claude Duet Explained: Anthropic’s Proactive AI Agent and What It Means for Your Business</a></h3><p>Claude Duet is Anthropic’s new proactive agent. Here is what it does, who can use it, its limits, and where a business still needs more than one app.</p></div>
 <div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/anthropic-ai-economic-scenarios-business.html">Anthropic’s Three AI Economy Scenarios, and What Your Business Should Do in Every One</a></h3><p>Anthropic modeled three paths for the US economy by 2030. Nobody knows which is coming. Here is what to do now that pays off in all three.</p></div>
 <div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/railway-breach-why-you-need-an-ai-team.html">The Railway Breach Is Why Your Business Needs an AI Team</a></h3><p>Railway told customers to rotate every secret after a breach. Anyone can build an app with AI, but who responds when keys leak?</p></div>
 <div class="feature-card blog-card" data-category="ai-automations claude"><a class="eyebrow" href="blog/category/ai-automations.html">AI Automations</a><h3><a href="blog/claude-unanswered-imessage-daily-review.html">How to Use Claude to Find Unanswered iMessages Every Morning</a></h3><p>Claude can review your iMessages each morning and list the texts you never answered. See how it works, who it helps, and how TEG builds it.</p></div>
