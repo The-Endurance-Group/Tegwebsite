@@ -2445,11 +2445,16 @@ http.createServer((req, res) => {
   if (urlPath === '/claude-setup') {
     req.url = '/claude-setup.html';
   }
-  if (urlPath === '/operations') {
-    req.url = '/operations.html';
-  }
-  if (urlPath === '/ai-policy') {
-    req.url = '/ai-policy.html';
+  // Duplicate URLs 301 to their canonical form so Search Console stops reporting them as alternates.
+  const canonicalRedirects = {
+    '/operations': '/', '/operations.html': '/',
+    '/ai-policy.html': '/ai-policy',
+    '/ai-policy-example.html': '/ai-policy-example'
+  };
+  if (canonicalRedirects[urlPath]) {
+    res.writeHead(301, { Location: canonicalRedirects[urlPath] });
+    res.end();
+    return;
   }
   if (urlPath === '/claude' || urlPath === '/claude.html') {
     res.writeHead(301, { Location: '/' });
