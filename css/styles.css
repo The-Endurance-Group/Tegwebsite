@@ -1186,6 +1186,13 @@ details[open] .faq-q::after { content: "−"; }
 /* Blog posts: larger, more readable long-form text */
 .blog-post .prose { max-width: 940px; font-size: 21px; line-height: 1.7; }
 .blog-post .prose p { margin-bottom: 24px; }
+.blog-post .prose a:not(.btn) {
+  color: var(--color-purple);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.blog-post .prose a:not(.btn):hover { color: var(--color-pink); }
 .blog-post .prose h2 { margin-top: 52px; margin-bottom: 18px; }
 .blog-post .prose h3 { font-size: 24px; }
 @media (max-width: 640px) {
