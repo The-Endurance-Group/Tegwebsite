@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect Multiple Gmail and CRM Accounts to Claude | TEG</title>
+  <meta name="description" content="Claude connectors allow one account per app. Composio lets Claude use your work and personal Gmail, or two CRMs, side by side. Here is how it works.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/composio-multiple-accounts-claude.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="Connect Multiple Gmail and CRM Accounts to Claude | TEG">
+  <meta property="og:description" content="Claude connectors allow one account per app. Composio lets Claude use your work and personal Gmail, or two CRMs, side by side. Here is how it works.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/composio-multiple-accounts-claude.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/conor-sullivan.html">
+  <meta property="article:published_time" content="2026-10-26T09:00:00-04:00">
+  <meta name="author" content="Conor Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Connect Multiple Gmail and CRM Accounts to Claude | TEG">
+  <meta name="twitter:description" content="Claude connectors allow one account per app. Composio lets Claude use your work and personal Gmail, or two CRMs, side by side. Here is how it works.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css?v=20261020-footer">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://www.theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": { "@type": "Person", "name": "Jim Sullivan" }
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "One login for every inbox and CRM: why Composio matters",
+  "description": "Claude connectors allow one account per app. Composio lets Claude use your work and personal Gmail, or two CRMs, side by side. Here is how it works.",
+  "image": "https://www.theendurancegroup.com/images/og-default.png",
+  "datePublished": "2026-10-26",
+  "dateModified": "2026-10-26",
+  "author": {
+    "@type": "Person",
+    "name": "Conor Sullivan",
+    "jobTitle": "Vice President"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Endurance Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.theendurancegroup.com/images/og-default.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.theendurancegroup.com/blog/composio-multiple-accounts-claude.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can Claude connect to more than one Gmail account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude's standard connectors usually allow one account per app at a time, so you can link your work Gmail or your personal Gmail but not both. Composio is a connection layer that lets you link several accounts for the same app, give each a nickname like \"work\" and \"personal,\" and tell Claude which one to use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Composio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Composio is a connection layer between an AI assistant like Claude and the apps you already use. You sign in to each app once, and Claude can then read from and act in them for you. It supports more than 500 apps, including Gmail, Outlook, Slack, Google Calendar, Notion and many CRMs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to give Claude access to my email?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a real decision, so the setup matters. You approve every connection through its own sign-in and can remove it at any time. A good habit is to have Claude create drafts first so nothing goes out until you read it, and sending, deleting or changing settings should always ask for a clear yes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need my IT admin to approve the connection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Possibly. Some company Google or Microsoft accounts restrict third-party apps, so an admin may need to approve the connection before it works."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
+  </script>
+</head>
+<body class="blog-post">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../how-we-work.html">How We Work</a></li>
+          <li><a href="../managed-claude.html">Managed Claude</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">AI Automations</span>
+        <h1>One login for every inbox and CRM: why Composio matters</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Vice President</span>
+          <span class="divider">·</span>
+          <span>October 26, 2026</span>
+        </div>
+        <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We help companies and individuals connect email, CRM, calendar and chat to Claude. <a href="../solutions.html">See our full Claude services.</a></em></p>
+
+          <div class="example-callout">
+            <h2>How do you connect two Gmail accounts or two CRMs to Claude?</h2>
+            <p>Claude's standard connectors usually allow one account per app. Composio is a connection layer that removes that limit: you sign in to each account once, give it a nickname like "work" or "personal," and tell Claude which one to use for any task.</p>
+          </div>
+
+          <p>When Claude can reach the apps where your work lives, it can read, draft and update things for you instead of just talking about them. Email, CRM, calendar, chat and project tools all count. Most setups are simple. But one problem comes up again and again: people who have two of the same thing.</p>
+
+          <h2>The catch: one account per app</h2>
+          <p>Claude's standard connectors usually allow one account per app at a time. You can connect your work Gmail, or your personal Gmail, but not both. The same goes for CRMs. If you run two companies, or work with a client who has their own HubSpot or Salesforce alongside yours, you hit a wall fast. Two companies, multiple accounts on the same tech, and Claude can only see one of them.</p>
+          <p>Now there is an answer: Composio.</p>
+
+          <h2>What Composio does</h2>
+          <p>Composio is a connection layer between an AI assistant like Claude and the apps you already use. You sign in to each app once, and Claude can then read from and act in them for you. It supports more than 500 apps, including Gmail, Outlook, Slack, Google Calendar, Notion and many CRMs.</p>
+          <p>The feature that matters most for busy people is multiple accounts per app. You can connect your work Gmail and your personal Gmail side by side, give each a simple nickname like "work" and "personal," and tell Claude which one to use for any task. For the single-account basics, see <a href="claude-connectors-gmail-how-to-connect.html">how to connect Gmail to Claude</a>.</p>
+
+          <h2>What it looks like in practice</h2>
+          <p>Setup takes a few minutes. You approve each account through a normal sign-in screen, and Claude confirms the connection is active. From there, you can ask in plain language:</p>
+          <ul>
+            <li>"Draft an email to my mom from my personal account and one to my dad from work."</li>
+            <li>"Check both inboxes and tell me what needs a reply today."</li>
+            <li>"Find the last email from this client and log a follow-up task in the CRM."</li>
+          </ul>
+          <p>Claude picks the right account, does the work, and tells you what it did. You stay in one conversation instead of five browser tabs.</p>
+
+          <h2>Where small teams feel it most</h2>
+          <ul>
+            <li><strong>One morning summary.</strong> Instead of opening each inbox, ask for a single digest across all accounts: client messages, urgent replies and everything else.</li>
+            <li><strong>Email to CRM, without retyping.</strong> A client email becomes a CRM note or task, linked to the right contact.</li>
+            <li><strong>Calendar awareness.</strong> Check work and family calendars together before you commit to a meeting.</li>
+            <li><strong>Faster proposals and follow-ups.</strong> Draft the reply, attach the context, and set a reminder to check back if no one answers.</li>
+            <li><strong>Inbox cleanup.</strong> Label, archive and sort in bulk across accounts, with you approving anything destructive.</li>
+          </ul>
+          <p>For a consultancy or a founder who wears several hats, the gain is less about any one task and more about not carrying the context in your head.</p>
+
+          <h2>Staying in control</h2>
+          <p>Giving an AI access to your email is a real decision, so the setup matters.</p>
+          <ul>
+            <li><strong>You approve every connection.</strong> Each account is linked through its own sign-in, and you can remove it at any time.</li>
+            <li><strong>Drafts before sends.</strong> A good habit is to have Claude create drafts first, so nothing goes out until you read it.</li>
+            <li><strong>Confirmation for risky actions.</strong> Sending, deleting and changing settings should always ask for a clear yes.</li>
+            <li><strong>Check your admin settings.</strong> Some company Google or Microsoft accounts restrict third-party apps, so an admin may need to approve the connection.</li>
+          </ul>
+
+          <h2>The takeaway</h2>
+          <p>If you have two inboxes, two CRMs or two companies running on the same tools, you no longer have to pick one for Claude to see. Composio lets Claude work across all of them, with each account clearly labeled so nothing gets mixed up.</p>
+          <p>We set up these connections for companies and individuals every day. If you want Claude working across all of your accounts, <a href="../contact.html">get in touch</a>, or see <a href="mcp-servers-for-business.html">what MCP servers mean for your business</a>.</p>
+
+          <h2>Frequently asked questions</h2>
+          <h3>Can Claude connect to more than one Gmail account?</h3>
+          <p>Claude's standard connectors usually allow one account per app at a time, so you can link your work Gmail or your personal Gmail but not both. Composio is a connection layer that lets you link several accounts for the same app, give each a nickname like "work" and "personal," and tell Claude which one to use.</p>
+
+          <h3>What is Composio?</h3>
+          <p>Composio is a connection layer between an AI assistant like Claude and the apps you already use. You sign in to each app once, and Claude can then read from and act in them for you. It supports more than 500 apps, including Gmail, Outlook, Slack, Google Calendar, Notion and many CRMs.</p>
+
+          <h3>Is it safe to give Claude access to my email?</h3>
+          <p>It is a real decision, so the setup matters. You approve every connection through its own sign-in and can remove it at any time. A good habit is to have Claude create drafts first so nothing goes out until you read it, and sending, deleting or changing settings should always ask for a clear yes.</p>
+
+          <h3>Do I need my IT admin to approve the connection?</h3>
+          <p>Possibly. Some company Google or Microsoft accounts restrict third-party apps, so an admin may need to approve the connection before it works.</p>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="../contact.html">Schedule a Call</a>
+            <a class="btn btn-secondary" href="../book-value-assessment.html">Start Your Free AI Value Assessment</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="claude-connectors-gmail-how-to-connect.html">How to Connect Gmail to Claude (Connectors Explained)</a></h3>
+            <p>The one-account basics: connect Gmail, what to ask, and how write permissions work.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="mcp-servers-for-business.html">What MCP Servers Are and What They Mean for Your Business</a></h3>
+            <p>How Claude reaches the systems your business already runs on.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="../images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+          <p class="footer-cta"><a class="btn btn-primary" href="../book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../how-we-work.html">How We Work</a></li>
+            <li><a href="../managed-claude.html">Managed Claude</a></li>
+            <li><a href="../claude-for-sales.html">Claude for Sales</a></li>
+            <li><a href="../claude-business-development.html">B2B Sales</a></li>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../specialties.html">Specialties</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Free Offerings</h4>
+          <ul>
+            <li><a href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="../intent-playbook.html">Free Intent Lead Playbook</a></li>
+            <li><a href="../ai-policy.html">Free AI Policy Draft</a></li>
+            <li><a href="../claude-tutorials.html">Free Claude Video Training</a></li>
+            <li><a href="../claude-plugins.html">Free Claude Plugins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js?v=20260930"></script>
+</body>
+</html>

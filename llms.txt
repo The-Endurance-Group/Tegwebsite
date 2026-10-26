@@ -32,6 +32,7 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [Connect Multiple Gmail and CRM Accounts to Claude](https://www.theendurancegroup.com/blog/composio-multiple-accounts-claude.html)
 - [Tax Advisory AI Case Study: How Benchmark Human Capital Built a Tax Code Reference Tool](https://www.theendurancegroup.com/blog/benchmark-human-capital-tax-ai-case-study.html)
 - [Grant Writing AI for a Nonprofit: How United Way of West Central Connecticut Used It](https://www.theendurancegroup.com/blog/united-way-grant-writing-ai-case-study.html)
 - [Claude Duet Explained: Anthropic’s Proactive AI Agent and What It Means for Your Business](https://www.theendurancegroup.com/blog/claude-duet-what-business-owners-should-know.html)
