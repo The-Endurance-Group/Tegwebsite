@@ -55,6 +55,7 @@
       background-position: center;
       background-repeat: no-repeat;
     }
+    #apply-success[hidden] { display: none !important; }
     .fellowship-story {
       display: grid;
       grid-template-columns: 1fr;
@@ -62,7 +63,8 @@
       align-items: start;
     }
     @media (min-width: 768px) {
-      .fellowship-story { grid-template-columns: 1fr 340px; gap: 64px; }
+      #apply-success[hidden] { display: none !important; }
+    .fellowship-story { grid-template-columns: 1fr 340px; gap: 64px; }
     }
     .fellowship-callout-box {
       background: var(--color-white);
