@@ -125,6 +125,7 @@
 .lab .price .amt { font-family: var(--font-head); font-size: clamp(2.8rem, 9vw, 4rem); font-weight: 700; line-height: 1.05; color: var(--plum); }
 .lab .price .usd { font-size: 1rem; color: var(--plum-soft); font-family: var(--font-body); font-weight: 500; margin-top: 6px; }
 .lab .price .split { margin-top: 16px; font-size: .98rem; color: var(--plum-soft); }
+.lab [hidden] { display: none !important; }
 .lab .price .gst { display: inline-block; margin-top: 12px; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--gold-tint); color: #7a5c14; padding: 4px 10px; border-radius: 6px; }
 .lab .price .btn { margin-top: 22px; }
 .lab .third { background: var(--pink-tint); border-radius: var(--r); padding: 22px 26px; margin-top: 24px; }
@@ -242,7 +243,7 @@
       <a class="btn btn-primary" href="#book" data-book data-cta="hero-book">Book a call</a>
       <a class="btn btn-ghost" href="#how" data-cta="hero-how">See how it works</a>
     </div>
-    <p class="fine">Fixed fee of <span data-price="aud">A$1,450</span>. Three working sessions of about an hour each.</p>
+    <p class="fine">Fixed fee of <span data-price="usd">US$998</span>. Three working sessions of about an hour each.</p>
   </div>
 </section>
 
@@ -404,9 +405,9 @@
     <h2>One fixed fee. No surprises.</h2>
     <div class="price-box">
       <div class="price">
-        <div class="amt" data-price="aud">A$1,450</div>
-        <div class="usd">(<span data-price="usd">US$998</span>, approximate A$ conversion)</div>
-        <p class="split"><span data-price="half-aud">A$725</span> on signing<br><span data-price="half-aud">A$725</span> on delivery</p>
+        <div class="amt" data-price="usd">US$998</div>
+        <div class="usd">Fixed fee, in US dollars</div>
+        <p class="split"><span data-price="half-usd">US$499</span> on signing<br><span data-price="half-usd">US$499</span> on delivery</p>
         <span class="gst" data-price="gst">GST: confirm</span>
         <div><a class="btn btn-primary" href="#book" data-book data-cta="price-book">Book a call</a></div>
       </div>
@@ -422,7 +423,7 @@
       </div>
     </div>
     <div class="third">
-      <p><strong>About the price.</strong> The Endurance Group is a US business. The fee is set in US dollars and the A$ figure is approximate. Please check the tax treatment with your own advisor.</p>
+      <p><strong>About the price.</strong> The Endurance Group is a US business. The fee is set in US dollars. Please check the tax treatment with your own advisor.</p>
       <p style="margin-top:.7em"><strong>Third-party costs are separate.</strong> You pay your own Claude plan, Canva, hosting and any other subscriptions directly to those providers. We do not mark them up or collect them.</p>
     </div>
   </div>
@@ -553,7 +554,7 @@
   <div class="container">
     <p>The Endurance Group is independent of Megan Walker and the Healthcare Thought Leaders' Lab. This is a separate service offered to Lab members.</p>
     <p>The Endurance Group does not provide legal, regulatory or clinical advice. AI outputs are drafts. You remain responsible for reviewing all content before it is published and for meeting your obligations under Ahpra, TGA and any other rules that apply to you. Results vary and are not guaranteed.</p>
-    <p>Prices are shown in Australian dollars as an approximate conversion from the US dollar fee. The US dollar fee is the fee that applies.</p>
+    <p>All prices are in US dollars.</p>
     <p><a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
   </div>
 </section>
@@ -630,8 +631,6 @@
   /* ===== CONFIG: edit these ===== */
   var CONFIG = {
     PRICE_USD: 998,                 // fixed fee in US dollars
-    USD_TO_AUD: 1.4529,             // conversion rate. 998 x 1.4529 = about A$1,450
-    PRICE_AUD_OVERRIDE: 1450,       // set to a number to show a fixed A$ price, or null to calculate
     GST_STATUS: "none",             // "confirm" | "inclusive" | "exclusive" | "none"
     FORM_ENDPOINT: "/api/contact",  // site contact endpoint (emails Conor). Set "" to use the mailto fallback.
     MAILTO: "csullivan@theendurancegroup.com",
@@ -640,13 +639,11 @@
   };
 
   var fmt = function (n) { return Math.round(n).toLocaleString("en-AU"); };
-  var aud = CONFIG.PRICE_AUD_OVERRIDE != null ? CONFIG.PRICE_AUD_OVERRIDE : CONFIG.PRICE_USD * CONFIG.USD_TO_AUD;
   var gstText = { confirm: "GST: confirm", inclusive: "Includes GST", exclusive: "Plus GST", none: "" }[CONFIG.GST_STATUS] || "";
 
   var values = {
-    "aud": "A$" + fmt(aud),
     "usd": "US$" + fmt(CONFIG.PRICE_USD),
-    "half-aud": "A$" + fmt(aud / 2),
+    "half-usd": "US$" + fmt(CONFIG.PRICE_USD / 2),
     "gst": gstText
   };
   document.querySelectorAll("[data-price]").forEach(function (el) {
