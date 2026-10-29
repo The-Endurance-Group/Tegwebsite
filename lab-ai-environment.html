@@ -8,13 +8,21 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Build your own AI environment in three sessions">
 <meta property="og:description" content="A fixed-fee offer for Healthcare Thought Leaders' Lab members. We build the AI layer, your VA keeps doing the execution.">
-<meta property="og:image" content="https://theendurancegroup.com/images/og-default.png">
+<meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.theendurancegroup.com/lab-ai-environment.html">
+<meta property="og:site_name" content="The Endurance Group">
+<meta property="og:url" content="https://www.theendurancegroup.com/lab-ai-environment.html">
+<meta property="og:locale" content="en_AU">
 <meta name="theme-color" content="#201c22">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/favicon-network.png">
+<link rel="stylesheet" href="css/styles.css?v=20261026-nav">
 
-<style>
-/* ===== Theme tokens. Retune here to match the Lab page. ===== */
-:root {
+<style>.lab{
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.7; color: var(--plum); background: var(--bg);
   --teal: #4a7c78;
   --teal-dark: #3a6360;
   --teal-tint: #e6efed;
@@ -37,207 +45,197 @@
   --pad: clamp(52px, 9vw, 96px);
   --r: 14px;
 }
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body { margin: 0; font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.7; color: var(--plum); background: var(--bg); }
-h1, h2, h3, p, ul, ol, figure, blockquote { margin: 0; }
-ul, ol { padding: 0; list-style: none; }
-h1, h2, h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.2; color: var(--plum); }
-h1 { font-size: clamp(2.1rem, 6.5vw, 3.6rem); }
-h2 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); }
-h3 { font-size: 1.2rem; }
-a { color: var(--pink-dark); }
-a:hover { color: var(--plum); }
-:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
-.skip { position: absolute; left: -999px; top: 0; background: var(--plum); color: #fff; padding: 10px 16px; z-index: 100; }
-.skip:focus { left: 8px; top: 8px; }
-.wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
-.narrow { max-width: 720px; }
-section { padding-block: var(--pad); }
-.alt { background: #f1ebee; }
-.dark { background: var(--plum); color: #f4eff2; }
-.dark h2, .dark h3 { color: #fff; }
-.eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 14px; }
-.dark .eyebrow { color: var(--gold); }
-.lead { font-size: 1.2rem; color: var(--plum-soft); }
-.center { text-align: center; }
-.center .narrow { margin-inline: auto; }
-.stack > * + * { margin-top: 1em; }
-h2 + * { margin-top: 18px; }
+.lab h1, .lab h2, .lab h3, .lab p, .lab ul, .lab ol, .lab figure, .lab blockquote { margin: 0; }
+.lab ul, .lab ol { padding: 0; list-style: none; }
+.lab h1, .lab h2, .lab h3 { font-family: var(--font-head); font-weight: 700; line-height: 1.2; color: var(--plum); }
+.lab h1 { font-size: clamp(2.1rem, 6.5vw, 3.6rem); }
+.lab h2 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); }
+.lab h3 { font-size: 1.2rem; }
+.lab a { color: var(--pink-dark); }
+.lab a:hover { color: var(--plum); }
+.lab :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+.lab .container { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.lab .narrow { max-width: 720px; }
+.lab section { padding-block: var(--pad); }
+.lab .alt { background: #f1ebee; }
+.lab .dark { background: var(--plum); color: #f4eff2; }
+.lab .dark h2, .lab .dark h3 { color: #fff; }
+.lab .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 14px; }
+.lab .dark .eyebrow { color: var(--gold); }
+.lab .lead { font-size: 1.2rem; color: var(--plum-soft); }
+.lab .center { text-align: center; }
+.lab .center .narrow { margin-inline: auto; }
+.lab .stack > * + * { margin-top: 1em; }
+.lab h2 + * { margin-top: 18px; }
+.lab .btn { display: inline-block; font: 700 1rem/1 var(--font-body); padding: 17px 30px; border-radius: 999px; border: 2px solid transparent; text-decoration: none; cursor: pointer; text-align: center; transition: background .2s, color .2s, transform .2s; }
+.lab .btn-primary { background: var(--pink-dark); color: #fff; }
+.lab .btn-primary:hover { background: var(--plum); color: #fff; transform: translateY(-1px); }
+.lab .btn-ghost { border-color: currentColor; color: inherit; background: transparent; }
+.lab .btn-ghost:hover { background: rgba(255,255,255,.12); color: inherit; }
+.lab .alt .btn-ghost, .lab .light .btn-ghost { color: var(--plum); }
+.lab .alt .btn-ghost:hover, .lab .light .btn-ghost:hover { background: var(--plum); color: #fff; }
+.lab .btn-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.lab .hero { background: radial-gradient(900px 400px at 85% -10%, rgba(196,92,138,.35), transparent 60%), radial-gradient(700px 400px at 0% 110%, rgba(74,124,120,.5), transparent 60%), var(--plum); color: #fff; padding-block: clamp(56px, 11vw, 120px); }
+.lab .hero h1 { color: #fff; max-width: 15em; }
+.lab .hero .lead { color: #e9e1e6; margin-top: 22px; max-width: 34em; }
+.lab .hero .eyebrow { color: var(--gold); }
+.lab .hero .fine { margin-top: 22px; font-size: .92rem; color: #cbbfc8; }
+.lab .hero .btn-ghost { color: #fff; }
+.lab .checks { display: grid; gap: 14px; margin-top: 30px; }
+.lab .checks li { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--pink); border-radius: var(--r); padding: 18px 22px; }
+.lab .close-line { margin-top: 30px; font-weight: 600; }
+.lab .vs { display: grid; gap: 20px; margin-top: 34px; }
+.lab .vs > div { border-radius: var(--r); padding: 28px; }
+.lab .vs .instead { background: #ece6ea; }
+.lab .vs .could { background: var(--teal-tint); border: 2px solid var(--teal); }
+.lab .vs h3 { font-family: var(--font-body); font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; color: var(--plum-soft); }
+.lab .vs .could h3 { color: var(--teal-dark); }
+.lab .vs li { padding: 9px 0 9px 28px; position: relative; }
+.lab .vs .instead li::before { content: "\00D7"; position: absolute; left: 4px; color: var(--plum-soft); font-weight: 800; }
+.lab .vs .could li::before { content: "\2713"; position: absolute; left: 3px; color: var(--teal-dark); font-weight: 800; }
+.lab .cards { display: grid; gap: 20px; margin-top: 36px; }
+.lab .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; box-shadow: 0 1px 0 rgba(32,28,34,.04); }
+.lab .card .ico { width: 46px; height: 46px; border-radius: 12px; background: var(--teal-tint); color: var(--teal-dark); display: grid; place-items: center; margin-bottom: 16px; }
+.lab .card:nth-child(even) .ico { background: var(--pink-tint); color: var(--pink-dark); }
+.lab .card .ico svg { width: 24px; height: 24px; }
+.lab .card h3 { margin-bottom: 8px; }
+.lab .card p { color: var(--plum-soft); font-size: 1rem; }
+.lab .card .eg { margin-top: 12px; font-size: .95rem; border-top: 1px dashed var(--line); padding-top: 12px; }
+.lab .card .eg b { color: var(--teal-dark); }
+.lab .note { margin-top: 28px; font-size: .95rem; color: var(--plum-soft); }
+.lab .steps { margin-top: 38px; display: grid; gap: 0; counter-reset: s; }
+.lab .step { position: relative; padding: 0 0 36px 74px; counter-increment: s; }
+.lab .step::before { content: counter(s); position: absolute; left: 0; top: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--pink-dark); color: #fff; font: 700 1.3rem/52px var(--font-head); text-align: center; }
+.lab .step::after { content: ""; position: absolute; left: 25px; top: 58px; bottom: 6px; width: 2px; background: rgba(255,255,255,.25); }
+.lab .step:last-child { padding-bottom: 0; }
+.lab .step:last-child::after { display: none; }
+.lab .step .when { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+.lab .step h3 { margin: 4px 0 8px; }
+.lab .step p { color: #e5dce2; }
+.lab .two { display: grid; gap: 28px; margin-top: 32px; }
+.lab .panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; }
+.lab .panel h3 { margin-bottom: 14px; }
+.lab .ticks li { padding: 8px 0 8px 30px; position: relative; }
+.lab .ticks li::before { content: "\2713"; position: absolute; left: 4px; color: var(--teal-dark); font-weight: 800; }
+.lab .member-note { margin-top: 28px; padding: 22px 26px; background: var(--gold-tint); border-left: 5px solid var(--gold); border-radius: var(--r); }
+.lab .proof { margin-top: 28px; border: 2px dashed var(--gold); border-radius: var(--r); padding: 22px 26px; background: #fffdf6; font-size: .95rem; }
+.lab .proof b { color: #7a5c14; }
+.lab .price-box { margin-top: 34px; display: grid; gap: 24px; }
+.lab .price { background: var(--card); border: 2px solid var(--teal); border-radius: 20px; padding: 34px 28px; text-align: center; }
+.lab .price .amt { font-family: var(--font-head); font-size: clamp(2.8rem, 9vw, 4rem); font-weight: 700; line-height: 1.05; color: var(--plum); }
+.lab .price .usd { font-size: 1rem; color: var(--plum-soft); font-family: var(--font-body); font-weight: 500; margin-top: 6px; }
+.lab .price .split { margin-top: 16px; font-size: .98rem; color: var(--plum-soft); }
+.lab .price .gst { display: inline-block; margin-top: 12px; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--gold-tint); color: #7a5c14; padding: 4px 10px; border-radius: 6px; }
+.lab .price .btn { margin-top: 22px; }
+.lab .third { background: var(--pink-tint); border-radius: var(--r); padding: 22px 26px; margin-top: 24px; }
+.lab .obj { margin-top: 32px; display: grid; gap: 20px; }
+.lab .obj article { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; }
+.lab .obj h3 { color: var(--pink-dark); margin-bottom: 10px; }
+.lab .faq { margin-top: 30px; border-top: 1px solid var(--line); }
+.lab .faq details { border-bottom: 1px solid var(--line); }
+.lab .faq summary { cursor: pointer; list-style: none; padding: 20px 44px 20px 0; font-weight: 700; position: relative; }
+.lab .faq summary::-webkit-details-marker { display: none; }
+.lab .faq summary::after { content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; color: var(--pink-dark); }
+.lab .faq details[open] summary::after { content: "\2212"; }
+.lab .faq .ans { padding: 0 0 22px; color: var(--plum-soft); }
+.lab .faq .ans p + p { margin-top: .8em; }
+.lab .about { display: grid; gap: 24px; align-items: start; }
+.lab .avatar { width: 96px; height: 96px; border-radius: 50%; background: var(--teal); color: #fff; display: grid; place-items: center; font: 700 1.8rem var(--font-head); }
+.lab .badge-note { font-size: .9rem; color: var(--plum-soft); }
+.lab .form-card { background: var(--card); color: var(--plum); border-radius: 20px; padding: clamp(24px, 5vw, 40px); margin-top: 32px; text-align: left; }
+.lab .field { margin-bottom: 18px; }
+.lab label { display: block; font-weight: 700; font-size: .95rem; margin-bottom: 6px; }
+.lab label .opt { font-weight: 500; color: var(--plum-soft); }
+.lab input[type=text], .lab input[type=email], .lab select, .lab textarea { width: 100%; font: inherit; color: var(--plum); background: #fff; border: 1.5px solid #9a8f97; border-radius: 10px; padding: 13px 14px; }
+.lab textarea { min-height: 110px; resize: vertical; }
+.lab input:focus, .lab select:focus, .lab textarea:focus { outline: 3px solid var(--gold); outline-offset: 1px; border-color: var(--plum); }
+.lab .grid2 { display: grid; gap: 0 18px; }
+.lab .form-msg { margin-top: 16px; padding: 14px 18px; border-radius: 10px; display: none; }
+.lab .form-msg.ok { display: block; background: var(--teal-tint); }
+.lab .form-msg.err { display: block; background: var(--pink-tint); }
+.lab .hp { position: absolute; left: -9999px; }
+.lab .call-line { margin-top: 26px; text-align: center; }
+@media (min-width: 720px){.lab .vs, .lab .two, .lab .grid2, .lab .obj { grid-template-columns: 1fr 1fr; }
+.lab .cards { grid-template-columns: repeat(2, 1fr); }
+.lab .price-box { grid-template-columns: 1fr 1fr; align-items: start; }
+.lab .obj article:last-child { grid-column: 1 / -1; }
 
-/* Buttons */
-.btn { display: inline-block; font: 700 1rem/1 var(--font-body); padding: 17px 30px; border-radius: 999px; border: 2px solid transparent; text-decoration: none; cursor: pointer; text-align: center; transition: background .2s, color .2s, transform .2s; }
-.btn-primary { background: var(--pink-dark); color: #fff; }
-.btn-primary:hover { background: var(--plum); color: #fff; transform: translateY(-1px); }
-.btn-ghost { border-color: currentColor; color: inherit; background: transparent; }
-.btn-ghost:hover { background: rgba(255,255,255,.12); color: inherit; }
-.alt .btn-ghost, .light .btn-ghost { color: var(--plum); }
-.alt .btn-ghost:hover, .light .btn-ghost:hover { background: var(--plum); color: #fff; }
-.btn-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
-
-/* Header: Lab logo left, TEG partner wordmark right */
-.top { background: #fff; border-bottom: 3px solid var(--lab-cyan); }
-.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 12px; }
-.lab-logo { display: flex; align-items: center; text-decoration: none; color: var(--navy); font-weight: 700; font-size: .85rem; }
-.lab-logo img { height: 38px; width: auto; max-width: 62vw; }
-.partner { text-align: right; line-height: 1.3; }
-.partner small { display: block; font-size: .7rem; color: var(--plum-soft); letter-spacing: .04em; }
-.wordmark { font-weight: 800; letter-spacing: .18em; font-size: .78rem; color: var(--plum); text-decoration: none; }
-.wordmark span { color: var(--teal-dark); }
-footer .wordmark { color: #fff; font-size: .9rem; }
-footer .wordmark span { color: var(--gold); }
-
-/* Hero */
-.hero { background: radial-gradient(900px 400px at 85% -10%, rgba(196,92,138,.35), transparent 60%), radial-gradient(700px 400px at 0% 110%, rgba(74,124,120,.5), transparent 60%), var(--plum); color: #fff; padding-block: clamp(56px, 11vw, 120px); }
-.hero h1 { color: #fff; max-width: 15em; }
-.hero .lead { color: #e9e1e6; margin-top: 22px; max-width: 34em; }
-.hero .eyebrow { color: var(--gold); }
-.hero .fine { margin-top: 22px; font-size: .92rem; color: #cbbfc8; }
-.hero .btn-ghost { color: #fff; }
-
-/* Familiar */
-.checks { display: grid; gap: 14px; margin-top: 30px; }
-.checks li { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--pink); border-radius: var(--r); padding: 18px 22px; }
-.close-line { margin-top: 30px; font-weight: 600; }
-
-/* Contrast */
-.vs { display: grid; gap: 20px; margin-top: 34px; }
-.vs > div { border-radius: var(--r); padding: 28px; }
-.vs .instead { background: #ece6ea; }
-.vs .could { background: var(--teal-tint); border: 2px solid var(--teal); }
-.vs h3 { font-family: var(--font-body); font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; color: var(--plum-soft); }
-.vs .could h3 { color: var(--teal-dark); }
-.vs li { padding: 9px 0 9px 28px; position: relative; }
-.vs .instead li::before { content: "\00D7"; position: absolute; left: 4px; color: var(--plum-soft); font-weight: 800; }
-.vs .could li::before { content: "\2713"; position: absolute; left: 3px; color: var(--teal-dark); font-weight: 800; }
-
-/* Cards */
-.cards { display: grid; gap: 20px; margin-top: 36px; }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; box-shadow: 0 1px 0 rgba(32,28,34,.04); }
-.card .ico { width: 46px; height: 46px; border-radius: 12px; background: var(--teal-tint); color: var(--teal-dark); display: grid; place-items: center; margin-bottom: 16px; }
-.card:nth-child(even) .ico { background: var(--pink-tint); color: var(--pink-dark); }
-.card .ico svg { width: 24px; height: 24px; }
-.card h3 { margin-bottom: 8px; }
-.card p { color: var(--plum-soft); font-size: 1rem; }
-.card .eg { margin-top: 12px; font-size: .95rem; border-top: 1px dashed var(--line); padding-top: 12px; }
-.card .eg b { color: var(--teal-dark); }
-.note { margin-top: 28px; font-size: .95rem; color: var(--plum-soft); }
-
-/* Timeline */
-.steps { margin-top: 38px; display: grid; gap: 0; counter-reset: s; }
-.step { position: relative; padding: 0 0 36px 74px; counter-increment: s; }
-.step::before { content: counter(s); position: absolute; left: 0; top: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--pink-dark); color: #fff; font: 700 1.3rem/52px var(--font-head); text-align: center; }
-.step::after { content: ""; position: absolute; left: 25px; top: 58px; bottom: 6px; width: 2px; background: rgba(255,255,255,.25); }
-.step:last-child { padding-bottom: 0; }
-.step:last-child::after { display: none; }
-.step .when { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
-.step h3 { margin: 4px 0 8px; }
-.step p { color: #e5dce2; }
-
-/* Two column */
-.two { display: grid; gap: 28px; margin-top: 32px; }
-.panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; }
-.panel h3 { margin-bottom: 14px; }
-.ticks li { padding: 8px 0 8px 30px; position: relative; }
-.ticks li::before { content: "\2713"; position: absolute; left: 4px; color: var(--teal-dark); font-weight: 800; }
-.member-note { margin-top: 28px; padding: 22px 26px; background: var(--gold-tint); border-left: 5px solid var(--gold); border-radius: var(--r); }
-.proof { margin-top: 28px; border: 2px dashed var(--gold); border-radius: var(--r); padding: 22px 26px; background: #fffdf6; font-size: .95rem; }
-.proof b { color: #7a5c14; }
-
-/* Investment */
-.price-box { margin-top: 34px; display: grid; gap: 24px; }
-.price { background: var(--card); border: 2px solid var(--teal); border-radius: 20px; padding: 34px 28px; text-align: center; }
-.price .amt { font-family: var(--font-head); font-size: clamp(2.8rem, 9vw, 4rem); font-weight: 700; line-height: 1.05; color: var(--plum); }
-.price .usd { font-size: 1rem; color: var(--plum-soft); font-family: var(--font-body); font-weight: 500; margin-top: 6px; }
-.price .split { margin-top: 16px; font-size: .98rem; color: var(--plum-soft); }
-.price .gst { display: inline-block; margin-top: 12px; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--gold-tint); color: #7a5c14; padding: 4px 10px; border-radius: 6px; }
-.price .btn { margin-top: 22px; }
-.third { background: var(--pink-tint); border-radius: var(--r); padding: 22px 26px; margin-top: 24px; }
-
-/* Objections */
-.obj { margin-top: 32px; display: grid; gap: 20px; }
-.obj article { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; }
-.obj h3 { color: var(--pink-dark); margin-bottom: 10px; }
-
-/* FAQ */
-.faq { margin-top: 30px; border-top: 1px solid var(--line); }
-.faq details { border-bottom: 1px solid var(--line); }
-.faq summary { cursor: pointer; list-style: none; padding: 20px 44px 20px 0; font-weight: 700; position: relative; }
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; color: var(--pink-dark); }
-.faq details[open] summary::after { content: "\2212"; }
-.faq .ans { padding: 0 0 22px; color: var(--plum-soft); }
-.faq .ans p + p { margin-top: .8em; }
-
-/* About */
-.about { display: grid; gap: 24px; align-items: start; }
-.avatar { width: 96px; height: 96px; border-radius: 50%; background: var(--teal); color: #fff; display: grid; place-items: center; font: 700 1.8rem var(--font-head); }
-.badge-note { font-size: .9rem; color: var(--plum-soft); }
-
-/* Form */
-.form-card { background: var(--card); color: var(--plum); border-radius: 20px; padding: clamp(24px, 5vw, 40px); margin-top: 32px; text-align: left; }
-.field { margin-bottom: 18px; }
-label { display: block; font-weight: 700; font-size: .95rem; margin-bottom: 6px; }
-label .opt { font-weight: 500; color: var(--plum-soft); }
-input[type=text], input[type=email], select, textarea { width: 100%; font: inherit; color: var(--plum); background: #fff; border: 1.5px solid #9a8f97; border-radius: 10px; padding: 13px 14px; }
-textarea { min-height: 110px; resize: vertical; }
-input:focus, select:focus, textarea:focus { outline: 3px solid var(--gold); outline-offset: 1px; border-color: var(--plum); }
-.grid2 { display: grid; gap: 0 18px; }
-.form-msg { margin-top: 16px; padding: 14px 18px; border-radius: 10px; display: none; }
-.form-msg.ok { display: block; background: var(--teal-tint); }
-.form-msg.err { display: block; background: var(--pink-tint); }
-.hp { position: absolute; left: -9999px; }
-.call-line { margin-top: 26px; text-align: center; }
-
-/* Footer */
-footer { background: #17131a; color: #cbbfc8; padding-block: 54px 40px; font-size: .92rem; }
-footer a { color: #f1e9ee; }
-footer .wordmark { display: inline-block; margin-bottom: 8px; }
-.tag { color: var(--gold); font-style: italic; margin-bottom: 18px; }
-.fgrid { display: grid; gap: 28px; }
-.flinks { display: flex; flex-wrap: wrap; gap: 8px 22px; }
-.disc { margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.14); font-size: .85rem; line-height: 1.6; }
-.disc p + p { margin-top: .7em; }
-
-@media (min-width: 720px) {
-  .vs, .two, .grid2, .obj { grid-template-columns: 1fr 1fr; }
-  .cards { grid-template-columns: repeat(2, 1fr); }
-  .price-box { grid-template-columns: 1fr 1fr; align-items: start; }
-  .about { grid-template-columns: 110px 1fr; }
-  .fgrid { grid-template-columns: 1.4fr 1fr; }
-  .obj article:last-child { grid-column: 1 / -1; }
 }
-@media (min-width: 1000px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
-  .obj { grid-template-columns: repeat(3, 1fr); }
-  .obj article:last-child { grid-column: auto; }
+@media (min-width: 1000px){.lab .cards { grid-template-columns: repeat(3, 1fr); }
+.lab .obj { grid-template-columns: repeat(3, 1fr); }
+.lab .obj article:last-child { grid-column: auto; }
+
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce){.lab html { scroll-behavior: auto; }
+.lab * { transition: none !important; }
+ }
+
+
+.lab .cobrand { display: flex; width: fit-content; align-items: center; gap: 14px; background: #fff; border-radius: 12px; padding: 10px 16px; margin-bottom: 28px; text-decoration: none; color: var(--navy); font-weight: 700; font-size: .85rem; }
+.lab .cobrand img { height: 38px; width: auto; max-width: 60vw; }
+.lab .cobrand small { color: var(--plum-soft); font-weight: 600; border-left: 1px solid var(--line); padding-left: 14px; }
+.lab .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.lab .avatar { width: 110px; height: 110px; overflow: hidden; }
+.lab .cal { min-height: 620px; margin-top: 8px; }
+.lab .cal-card { background: #fff; border-radius: 20px; padding: clamp(16px, 4vw, 28px); margin-top: 32px; }
+.lab .disclaimer { background: #17131a; color: #cbbfc8; padding-block: 36px; font-size: .88rem; line-height: 1.6; }
+.lab .disclaimer p { color: #cbbfc8; }
+.lab .disclaimer a { color: #f1e9ee; }
+.lab .disclaimer p + p { margin-top: .7em; }
 </style>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
+</script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-<header class="top">
-  <div class="wrap">
-    <!-- LOGO: save the Lab logo to images/lab-logo.png. Text shows until the file exists. -->
-    <a class="lab-logo" href="https://www.meganwalker.com/healthcare-thought-leaders-lab-Registration" rel="noopener" aria-label="Healthcare Thought Leaders' Lab">
-      <img src="images/lab-logo.png" alt="Healthcare Thought Leaders' Lab" width="72" height="38" onerror="this.replaceWith(document.createTextNode('Healthcare Thought Leaders\u2019 Lab'))">
-    </a>
-    <div class="partner"><small>In partnership with</small><a class="wordmark" href="https://theendurancegroup.com" aria-label="The Endurance Group home">THE ENDURANCE <span>GROUP</span></a></div>
-  </div>
-</header>
+  <!-- SHARED HEADER: keep in sync across all 8 pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="how-we-work.html">How We Work</a></li>
+          <li><a href="managed-claude.html">Managed Claude</a></li>
+          <li><a href="specialties.html">Specialties</a></li>
+          <li><a href="success.html">Success</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a class="nav-cta" href="book-value-assessment.html">Free AI Value Assessment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
 
-<main id="main">
+<main class="lab" id="main-content">
 
 <!-- 1. HERO -->
 <section class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Healthcare Thought Leaders' Lab x The Endurance Group</p>
+  <div class="container">
+    <!-- LOGO: save the Lab logo to images/lab-logo.png. Text shows until the file exists. -->
+    <a class="cobrand" href="https://www.meganwalker.com/healthcare-thought-leaders-lab-Registration" rel="noopener" aria-label="Healthcare Thought Leaders' Lab">
+      <img src="images/lab-logo.png" alt="Healthcare Thought Leaders' Lab" width="72" height="38" onerror="this.replaceWith(document.createTextNode('Healthcare Thought Leaders\u2019 Lab'))">
+      <small>x The Endurance Group</small>
+    </a>
+    <p class="eyebrow">A Lab member offer</p>
     <h1>Build your own AI environment in three sessions.</h1>
     <p class="lead">We set up a private AI workspace around the tools you already use, so your routine admin can run in the background and you can get back to your patients and your message.</p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="#enquire" data-cta="hero-enquire">Start with an enquiry</a>
+      <a class="btn btn-primary" href="#book" data-book data-cta="hero-book">Book a call</a>
       <a class="btn btn-ghost" href="#how" data-cta="hero-how">See how it works</a>
     </div>
     <p class="fine">Fixed fee of <span data-price="aud">A$1,450</span>. Three working sessions of about an hour each.</p>
@@ -246,7 +244,7 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
 
 <!-- 2. FAMILIAR -->
 <section>
-  <div class="wrap">
+  <div class="container">
     <p class="eyebrow">Sound like you?</p>
     <h2>Does this feel familiar?</h2>
     <ul class="checks">
@@ -262,7 +260,7 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
 
 <!-- 3. INSTEAD OF / YOU COULD BE -->
 <section class="alt">
-  <div class="wrap">
+  <div class="container">
     <h2>A different kind of week</h2>
     <div class="vs">
       <div class="instead">
@@ -292,7 +290,7 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
 
 <!-- 4. WHAT WE CAN BUILD -->
 <section id="build">
-  <div class="wrap">
+  <div class="container">
     <p class="eyebrow">What we can build</p>
     <h2>Six ways your AI environment can work for you</h2>
     <p class="lead" style="margin-top:14px">We choose the pieces that fit your practice in session one. Nobody gets all six.</p>
@@ -340,7 +338,7 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
 
 <!-- 5. HOW IT WORKS -->
 <section id="how" class="dark">
-  <div class="wrap">
+  <div class="container">
     <p class="eyebrow">How it works</p>
     <h2>Three sessions. About an hour each.</h2>
     <div class="steps">
@@ -365,7 +363,7 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
 
 <!-- 6. WALK AWAY / WHO FOR -->
 <section>
-  <div class="wrap">
+  <div class="container">
     <h2>What you walk away with</h2>
     <div class="two">
       <div class="panel">
@@ -392,25 +390,21 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
     <div class="member-note">
       <p><strong>Not a Lab member yet?</strong> This offer is designed for members of Megan Walker's Healthcare Thought Leaders' Lab. You can <a href="https://www.meganwalker.com/healthcare-thought-leaders-lab-Registration" rel="noopener">find out about joining the Lab here</a>.</p>
     </div>
-    <!-- PLACEHOLDER: social proof slot. Replace with real, permissioned quotes only. -->
-    <div class="proof" role="note">
-      <p><b>[PLACEHOLDER: SOCIAL PROOF]</b> Add a real member quote or result here once you have written permission. Remove this box if none is available at launch.</p>
-    </div>
   </div>
 </section>
 
 <!-- 7. INVESTMENT -->
 <section id="investment" class="alt">
-  <div class="wrap">
+  <div class="container">
     <p class="eyebrow">Investment</p>
     <h2>One fixed fee. No surprises.</h2>
     <div class="price-box">
       <div class="price">
         <div class="amt" data-price="aud">A$1,450</div>
-        <div class="usd">(<span data-price="usd">US$997</span>, approximate A$ conversion)</div>
+        <div class="usd">(<span data-price="usd">US$998</span>, approximate A$ conversion)</div>
         <p class="split"><span data-price="half-aud">A$725</span> on signing<br><span data-price="half-aud">A$725</span> on delivery</p>
         <span class="gst" data-price="gst">GST: confirm</span>
-        <div><a class="btn btn-primary" href="#enquire" data-cta="price-enquire">Enquire now</a></div>
+        <div><a class="btn btn-primary" href="#book" data-book data-cta="price-book">Book a call</a></div>
       </div>
       <div class="panel">
         <h3>What is included</h3>
@@ -431,7 +425,7 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
 
 <!-- 8. OBJECTIONS -->
 <section>
-  <div class="wrap">
+  <div class="container">
     <h2>A few honest questions</h2>
     <div class="obj">
       <article>
@@ -452,7 +446,7 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
 
 <!-- 9. FAQ -->
 <section class="alt" id="faq">
-  <div class="wrap narrow">
+  <div class="container narrow">
     <h2>Questions, answered</h2>
     <div class="faq">
       <details>
@@ -493,16 +487,15 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
 
 <!-- 10. ABOUT -->
 <section>
-  <div class="wrap">
+  <div class="container">
     <p class="eyebrow">About us</p>
     <h2>Who you will be working with</h2>
     <div class="about" style="margin-top:28px">
-      <div class="avatar" aria-hidden="true">CS</div>
+      <div class="avatar"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan, Vice President, The Endurance Group" width="110" height="110" loading="lazy"></div>
       <div class="stack">
         <p><strong>Conor Sullivan, Vice President, The Endurance Group.</strong></p>
         <p>The Endurance Group is a Claude Implementation Partner. We help businesses set up and use AI in their day-to-day work. We have built AI tools for health practitioners through our work with Market Savvy.</p>
         <p>Conor will be your primary contact from enquiry to session three.</p>
-        <!-- PLACEHOLDER: add Conor headshot (replace .avatar with <img alt="Conor Sullivan">) and any verified credentials. -->
         <p class="badge-note"><a href="https://theendurancegroup.com">theendurancegroup.com</a></p>
       </div>
     </div>
@@ -511,7 +504,7 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
 
 <!-- 11. FINAL CTA / FORM -->
 <section id="enquire" class="dark">
-  <div class="wrap narrow center">
+  <div class="container narrow center">
     <p class="eyebrow">Ready when you are</p>
     <h2>Tell us what you would like to automate</h2>
     <p class="lead" style="color:#e5dce2">Send a short enquiry. Conor will reply personally to arrange scoping.</p>
@@ -543,55 +536,103 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
       <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
     </form>
 
-    <p class="call-line">Prefer to talk first?<br><a class="btn btn-ghost" id="book" href="#" style="margin-top:14px" data-cta="book-call">Book a call</a></p>
+    <div class="cal-card" id="book">
+      <h3 style="color:var(--plum)">Prefer to talk first? Book a call with Conor.</h3>
+      <div class="cal meetings-iframe-container" data-src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b&embed=true"></div>
+    </div>
   </div>
 </section>
 
+
+<section class="disclaimer" aria-label="Important information">
+  <div class="container">
+    <p>The Endurance Group is independent of Megan Walker and the Healthcare Thought Leaders' Lab. This is a separate service offered to Lab members.</p>
+    <p>The Endurance Group does not provide legal, regulatory or clinical advice. AI outputs are drafts. You remain responsible for reviewing all content before it is published and for meeting your obligations under Ahpra, TGA and any other rules that apply to you. Results vary and are not guaranteed.</p>
+    <p>Prices are shown in Australian dollars as an approximate conversion from the US dollar fee. The US dollar fee is the fee that applies.</p>
+    <!-- PLACEHOLDER: replace # with the Product Agreement URL -->
+    <p><a href="#" data-placeholder="product-agreement">Product Agreement</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
+  </div>
+</section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="fgrid">
-      <div>
-        <a class="wordmark" href="https://theendurancegroup.com">THE ENDURANCE <span>GROUP</span></a>
-        <p class="tag">Relationships. Strategy. Results.</p>
-        <p>Conor Sullivan, Vice President<br>
-        <a href="mailto:csullivan@theendurancegroup.com">csullivan@theendurancegroup.com</a><br>
-        <a href="https://theendurancegroup.com">theendurancegroup.com</a></p>
-      </div>
-      <div>
-        <p><strong>Links</strong></p>
-        <!-- PLACEHOLDER: replace # with real URLs -->
-        <div class="flinks">
-          <a href="#" data-placeholder="terms">Terms</a>
-          <a href="#" data-placeholder="privacy">Privacy</a>
-          <a href="#" data-placeholder="product-agreement">Product Agreement</a>
+  <!-- SHARED FOOTER: keep in sync across all 8 pages (About page uses the full street address per its footer connector copy) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+          <p class="footer-cta"><a class="btn btn-primary" href="book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="how-we-work.html">How We Work</a></li>
+            <li><a href="managed-claude.html">Managed Claude</a></li>
+            <li><a href="claude-for-sales.html">Claude for Sales</a></li>
+            <li><a href="claude-business-development.html">B2B Sales</a></li>
+            <li><a href="realestate">Real Estate</a></li>
+            <li><a href="saas">B2B Tech &amp; SaaS</a></li>
+            <li><a href="professionalservices">Professional Services</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="specialties.html">Specialties</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Free Offerings</h4>
+          <ul>
+            <li><a href="book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="intent-playbook.html">Free Intent Lead Playbook</a></li>
+            <li><a href="ai-policy">Free AI Policy Draft</a></li>
+            <li><a href="claude-tutorials.html">Free Claude Video Training</a></li>
+            <li><a href="claude-plugins.html">Free Claude Plugins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="success.html">Success</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
         </div>
       </div>
+      <div class="footer-bottom">
+        <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+      </div>
     </div>
-    <div class="disc">
-      <p>The Endurance Group is independent of Megan Walker and the Healthcare Thought Leaders' Lab. This is a separate service offered to Lab members.</p>
-      <p>The Endurance Group does not provide legal, regulatory or clinical advice. AI outputs are drafts. You remain responsible for reviewing all content before it is published and for meeting your obligations under Ahpra, TGA and any other rules that apply to you. Results vary and are not guaranteed.</p>
-      <p>Prices are shown in Australian dollars as an approximate conversion from the US dollar fee. The US dollar fee is the fee that applies.</p>
-    </div>
-  </div>
-</footer>
+  </footer>
+  <!-- END SHARED FOOTER -->
 
+<script src="js/main.js?v=20260930" defer></script>
+<script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
 <script>
 (function () {
   "use strict";
 
   /* ===== CONFIG: edit these ===== */
   var CONFIG = {
-    PRICE_USD: 997,                 // fixed fee in US dollars
-    USD_TO_AUD: 1.4544,             // conversion rate. 997 x 1.4544 = about A$1,450
+    PRICE_USD: 998,                 // fixed fee in US dollars
+    USD_TO_AUD: 1.4529,             // conversion rate. 998 x 1.4529 = about A$1,450
     PRICE_AUD_OVERRIDE: 1450,       // set to a number to show a fixed A$ price, or null to calculate
     GST_STATUS: "confirm",          // "confirm" | "inclusive" | "exclusive" | "none"
-    FORM_ENDPOINT: "",              // PLACEHOLDER: POST URL (JSON). Leave "" to use the mailto fallback.
+    FORM_ENDPOINT: "/api/contact",  // site contact endpoint (emails Conor). Set "" to use the mailto fallback.
     MAILTO: "csullivan@theendurancegroup.com",
-    BOOKING_URL: "",                // PLACEHOLDER: booking link. Falls back to the enquiry form while empty.
-    DEFAULT_REF: "lab",
-    ANALYTICS_ID: ""                // PLACEHOLDER: e.g. "G-XXXXXXXXXX". Nothing loads while empty.
+    BOOKING_URL: "https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b",
+    DEFAULT_REF: "lab"
   };
 
   var fmt = function (n) { return Math.round(n).toLocaleString("en-AU"); };
@@ -622,12 +663,11 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
   ref = ref || CONFIG.DEFAULT_REF;
   document.getElementById("ref").value = ref;
 
-  /* ===== Booking button ===== */
-  var book = document.getElementById("book");
-  if (CONFIG.BOOKING_URL) {
-    var u = CONFIG.BOOKING_URL + (CONFIG.BOOKING_URL.indexOf("?") > -1 ? "&" : "?") + "ref=" + encodeURIComponent(ref);
-    book.setAttribute("href", u); book.setAttribute("rel", "noopener");
-  } else { book.setAttribute("href", "#enquiry"); }
+  /* ===== Booking buttons: open the HubSpot calendar in a new tab, with ref attached ===== */
+  var bookUrl = CONFIG.BOOKING_URL + (CONFIG.BOOKING_URL.indexOf("?") > -1 ? "&" : "?") + "ref=" + encodeURIComponent(ref);
+  document.querySelectorAll("[data-book]").forEach(function (a) {
+    a.setAttribute("href", bookUrl); a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
+  });
 
   /* ===== Form ===== */
   var form = document.getElementById("enquiry");
@@ -651,23 +691,16 @@ footer .wordmark { display: inline-block; margin-bottom: 8px; }
     }
     if (!CONFIG.FORM_ENDPOINT) { show("ok", "Opening your email app to send this. If nothing opens, email " + CONFIG.MAILTO + "."); mailto(data); return; }
     show("ok", "Sending...");
-    fetch(CONFIG.FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); form.reset(); document.getElementById("ref").value = ref; show("ok", "Thank you. Conor will be in touch shortly."); })
+    var payload = new URLSearchParams({
+      name: data.name, email: data.email, company: data.practice,
+      message: "AI environment enquiry (source: " + data.ref + ")\nPractice type: " + data.practice + "\nWant to automate: " + (data.goal || "Not provided") + "\nPreferred times and timezone: " + data.times
+    }).toString();
+    fetch(CONFIG.FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: payload })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { if (!j.ok) throw new Error("rejected"); form.reset(); document.getElementById("ref").value = ref; show("ok", "Thank you. Conor will be in touch shortly."); })
       .catch(function () { show("err", "That did not send. Opening your email app instead."); mailto(data); });
   });
 
-  /* ===== Analytics (loads only if an ID is set) ===== */
-  if (CONFIG.ANALYTICS_ID) {
-    var s = document.createElement("script"); s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(CONFIG.ANALYTICS_ID);
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { dataLayer.push(arguments); };
-    gtag("js", new Date()); gtag("config", CONFIG.ANALYTICS_ID);
-    document.addEventListener("click", function (ev) {
-      var t = ev.target.closest("[data-cta]"); if (t) gtag("event", "cta_click", { cta: t.getAttribute("data-cta"), ref: ref });
-    });
-  }
 })();
 </script>
 </body>
