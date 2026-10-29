@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Build Your Own AI Environment | The Endurance Group x Healthcare Thought Leaders' Lab</title>
-<meta name="description" content="Three one-hour sessions with The Endurance Group to build a private AI environment around the tools you already use. For members of Megan Walker's Healthcare Thought Leaders' Lab.">
+<title>We Build Your AI Environment For You | The Endurance Group x Healthcare Thought Leaders' Lab</title>
+<meta name="description" content="We build your private AI environment for you, in three one-hour sessions, around the tools you already use. For members of Megan Walker's Healthcare Thought Leaders' Lab.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Build your own AI environment in three sessions">
+<meta property="og:title" content="We build your AI environment for you, in three sessions">
 <meta property="og:description" content="A fixed-fee offer for Healthcare Thought Leaders' Lab members. We build the AI layer, your VA keeps doing the execution.">
 <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -155,7 +155,6 @@
 .lab .form-msg.ok { display: block; background: var(--teal-tint); }
 .lab .form-msg.err { display: block; background: var(--pink-tint); }
 .lab .hp { position: absolute; left: -9999px; }
-.lab .call-line { margin-top: 26px; text-align: center; }
 @media (min-width: 720px){.lab .vs, .lab .two, .lab .grid2, .lab .obj { grid-template-columns: 1fr 1fr; }
 .lab .cards { grid-template-columns: repeat(2, 1fr); }
 .lab .price-box { grid-template-columns: 1fr 1fr; align-items: start; }
@@ -176,12 +175,31 @@
 .lab .cobrand img { height: 72px; width: auto; max-width: 52vw; }
 .lab .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .lab .avatar { width: 110px; height: 110px; overflow: hidden; }
-.lab .cal { min-height: 620px; margin-top: 8px; }
-.lab .cal-card { background: #fff; border-radius: 20px; padding: clamp(16px, 4vw, 28px); margin-top: 32px; }
-.lab .disclaimer { background: #17131a; color: #cbbfc8; padding-block: 36px; font-size: .88rem; line-height: 1.6; }
-.lab .disclaimer p { color: #cbbfc8; }
-.lab .disclaimer a { color: #f1e9ee; }
-.lab .disclaimer p + p { margin-top: .7em; }
+
+.lab .tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 30px; }
+.lab .tile { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 22px 14px; text-align: center; font-weight: 700; font-size: .98rem; line-height: 1.35; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.lab .tico { width: 56px; height: 56px; border-radius: 50%; background: var(--pink-tint); color: var(--pink-dark); display: grid; place-items: center; }
+.lab .tile:nth-child(even) .tico { background: var(--teal-tint); color: var(--teal-dark); }
+.lab .perks .tico { background: var(--teal-tint); color: var(--teal-dark); }
+.lab .perks .tile:nth-child(even) .tico { background: var(--pink-tint); color: var(--pink-dark); }
+.lab .dia { width: 100%; height: auto; max-width: 320px; margin: 4px auto 14px; }
+.lab .short li { padding: 6px 0; font-weight: 600; text-align: center; }
+.lab .vs .instead li::before, .lab .vs .could li::before { content: none; }
+.lab .vs .short li { padding-left: 0; }
+.lab .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.lab .chips li { background: var(--teal-tint); color: var(--teal-dark); font-size: .82rem; font-weight: 700; padding: 5px 12px; border-radius: 999px; }
+.lab .chips.big { margin-top: 12px; }
+.lab .chips.big li { font-size: .95rem; padding: 9px 18px; background: var(--pink-tint); color: var(--pink-dark); }
+.lab .forlabel { margin-top: 38px; font-family: var(--font-body); font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; color: var(--plum-soft); }
+.lab .card .eg { border-top: 0; padding-top: 0; font-weight: 600; color: var(--teal-dark); }
+.lab .card .pill { color: #fff; }
+.lab .pill { margin-top: 12px; display: inline-block; background: var(--plum); color: #fff; border-radius: 999px; padding: 8px 16px; font-size: .88rem; }
+.lab .pill b { color: var(--gold); margin-right: 6px; }
+.lab .minivis { width: 120px; height: 44px; margin-top: 10px; }
+@media (min-width: 720px) { .lab .tiles { grid-template-columns: repeat(5, 1fr); } .lab .perks { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .lab .perks { grid-template-columns: repeat(6, 1fr); } }
+.lab-disc { font-size: .8rem; line-height: 1.6; opacity: .75; max-width: 900px; margin-bottom: 18px; }
+.lab-disc p + p { margin-top: .6em; }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -230,11 +248,11 @@
       <img src="images/lab-logo.png" alt="Healthcare Thought Leaders' Lab" width="222" height="72">
       <small>x The Endurance Group</small>
     </a>
-    <p class="eyebrow">A Lab member offer</p>
-    <h1>Build your own AI environment in three sessions.</h1>
-    <p class="lead">We set up a private AI workspace around the tools you already use, so your routine admin can run in the background and you can get back to your patients and your message.</p>
+    <p class="eyebrow">Done for you. A Lab member offer.</p>
+    <h1>We build your AI environment for you. In three sessions.</h1>
+    <p class="lead">Done for you, not by you. We build a private AI workspace around the tools you already use, working alongside you, so your routine admin can run in the background.</p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="#book" data-book data-cta="hero-book">Book a call</a>
+      <a class="btn btn-primary" href="#enquire" data-cta="hero-enquire">Send an enquiry</a>
       <a class="btn btn-ghost" href="#how" data-cta="hero-how">See how it works</a>
     </div>
     <p class="fine">Fixed fee of <span data-price="usd">US$998</span>. Three working sessions of about an hour each.</p>
@@ -246,14 +264,14 @@
   <div class="container">
     <p class="eyebrow">Sound like you?</p>
     <h2>Does this feel familiar?</h2>
-    <ul class="checks">
-      <li>You finish a full clinic day, then sit down to more admin. Emails, invoices, reports, posts.</li>
-      <li>You have a lot of good tools. Your course platform, your design app, your calendar, your ads. None of them talk to each other.</li>
-      <li>You have heard what AI can do. You have no idea where to start, and no spare weekend to find out.</li>
-      <li>You tried a few prompts once. It was interesting. Then the week got busy and it went nowhere.</li>
-      <li>You do not want to become a tech person. You want your tools to work for you.</li>
+    <ul class="tiles">
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>Admin after clinic hours</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18.8 12.3l1.7-1.7a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M5.2 11.7l-1.7 1.7a5 5 0 0 0 7 7l1.7-1.7"/><path d="M8 2v3M2 8h3M16 19v3M19 16h3"/></svg></span><span>Tools that do not talk</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><span>AI feels overwhelming</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg></span><span>Prompts that went nowhere</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><span>No wish to be a tech person</span></li>
     </ul>
-    <p class="close-line">If you nodded at two or more, this is for you.</p>
+    <p class="close-line">Nodded at two or more? This is for you.</p>
   </div>
 </section>
 
@@ -264,26 +282,16 @@
     <div class="vs">
       <div class="instead">
         <h3>Instead of</h3>
-        <ul>
-          <li>Copying details between five different apps</li>
-          <li>Starting every task from a blank page</li>
-          <li>Hunting for last month's numbers</li>
-          <li>Wondering what the new AI tool is and if it matters</li>
-          <li>Doing the same routine jobs by hand, every week</li>
-        </ul>
+        <svg class="dia" viewBox="0 0 240 150" role="img" aria-label="Five separate apps with tangled, broken links between them"><g stroke="#9a8f97" stroke-width="2" stroke-dasharray="5 5" fill="none"><path d="M47 43 L128 33"/><path d="M47 43 L77 123"/><path d="M128 33 L187 123"/><path d="M217 53 L77 123"/><path d="M128 33 L217 53"/><path d="M187 123 L47 43"/></g><rect x="30" y="30" width="34" height="26" rx="7" fill="#cfc5cb"/><rect x="111" y="20" width="34" height="26" rx="7" fill="#cfc5cb"/><rect x="200" y="40" width="34" height="26" rx="7" fill="#cfc5cb"/><rect x="60" y="110" width="34" height="26" rx="7" fill="#cfc5cb"/><rect x="170" y="110" width="34" height="26" rx="7" fill="#cfc5cb"/><g stroke="#a8446f" stroke-width="3" stroke-linecap="round"><path d="M92 28l10 10M102 28l-10 10"/><path d="M120 90l10 10M130 90l-10 10"/></g></svg>
+        <ul class="short"><li>Five apps, endless copy and paste</li><li>A blank page every time</li><li>Numbers scattered everywhere</li></ul>
       </div>
       <div class="could">
         <h3>You could be</h3>
-        <ul>
-          <li>Opening one workspace that already knows your tools</li>
-          <li>Starting from a draft in your own voice</li>
-          <li>Reading a daily summary that arrives in your inbox</li>
-          <li>Working with a setup built around how you actually work</li>
-          <li>Spending your time on care, teaching and ideas</li>
-        </ul>
+        <svg class="dia" viewBox="0 0 240 150" role="img" aria-label="Five apps all connected to one AI workspace in the centre"><g stroke="#4a7c78" stroke-width="2.5" fill="none"><path d="M47 43 L120 75"/><path d="M128 33 L120 75"/><path d="M217 53 L120 75"/><path d="M77 123 L120 75"/><path d="M187 123 L120 75"/></g><rect x="30" y="30" width="34" height="26" rx="7" fill="#c45c8a"/><rect x="111" y="20" width="34" height="26" rx="7" fill="#4a7c78"/><rect x="200" y="40" width="34" height="26" rx="7" fill="#c9a24b"/><rect x="60" y="110" width="34" height="26" rx="7" fill="#4a7c78"/><rect x="170" y="110" width="34" height="26" rx="7" fill="#c45c8a"/><circle cx="120" cy="75" r="26" fill="#05305a"/><path d="M120 62l3.5 9.5 9.5 3.5-9.5 3.5-3.5 9.5-3.5-9.5-9.5-3.5 9.5-3.5z" fill="#fff"/></svg>
+        <ul class="short"><li>One workspace that knows your tools</li><li>Drafts already in your voice</li><li>A daily summary in your inbox</li></ul>
       </div>
     </div>
-    <p class="note">Results vary by practice. Our goal is to reduce the routine work, not to promise a number.</p>
+    <p class="note">Results vary by practice. Our goal is to reduce routine work, not to promise a number.</p>
   </div>
 </section>
 
@@ -291,45 +299,15 @@
 <section id="build">
   <div class="container">
     <p class="eyebrow">What we can build</p>
-    <h2>Six ways your AI environment can work for you</h2>
-    <p class="lead" style="margin-top:14px">We choose the pieces that fit your practice in session one. Nobody gets all six.</p>
+    <h2>Six things we can build for you</h2>
+    <p class="lead" style="margin-top:14px">We choose the pieces that fit your practice in session one.</p>
     <div class="cards">
-      <article class="card">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div>
-        <h3>Connected systems</h3>
-        <p>We link your AI to the tools you already use, through their official connectors where they exist. That can include Kajabi, Canva, Meta Ads, Descript, Outlook email and calendar, Google Workspace and WordPress.</p>
-        <p class="eg"><b>For example:</b> ask for a first draft of this week's newsletter and have it appear ready in your design tool.</p>
-      </article>
-      <article class="card">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
-        <h3>Skills in your voice</h3>
-        <p>Reusable instructions and prompt libraries written in your brand voice, so the first draft already sounds like you.</p>
-        <p class="eg"><b>For example:</b> a one-click "turn this talk into a short email series" skill.</p>
-      </article>
-      <article class="card">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>Scheduled routines</h3>
-        <p>Jobs that run on a timer without you asking. You wake up to the result.</p>
-        <p class="eg"><b>For example:</b> a daily summary of your inbox, calendar and sales, emailed to you at 7am.</p>
-      </article>
-      <article class="card">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></div>
-        <h3>Projects with your content loaded</h3>
-        <p>A dedicated workspace that already holds your programs, FAQs, style guide and past material, so you never re-explain yourself.</p>
-        <p class="eg"><b>For example:</b> a "My Program" project that answers questions using your own course notes.</p>
-      </article>
-      <article class="card">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
-        <h3>Dashboards for your data</h3>
-        <p>One clear page for the numbers you check most. Membership, sales, ad performance and project status.</p>
-        <p class="eg"><b>For example:</b> a single view of this month's sign-ups, ad spend and open tasks.</p>
-      </article>
-      <article class="card">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Review-ready content checks</h3>
-        <p>A check that reads your draft and flags items for you to look at before you publish. It is a second pair of eyes, not a sign-off.</p>
-        <p class="eg"><b>For example:</b> a flag on wording that may need a second look, with a note on why.</p>
-      </article>
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><h3>Connected systems</h3><p>Your AI, linked to the tools you already use.</p><ul class="chips"><li>Kajabi</li><li>Canva</li><li>Meta Ads</li><li>Descript</li><li>Outlook</li><li>Google Workspace</li><li>WordPress</li></ul></article>
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div><h3>Skills in your voice</h3><p>Reusable prompts that sound like you.</p><p class="eg">A talk becomes an email series in one click.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Scheduled routines</h3><p>Jobs that run while you work.</p><p class="pill"><b>7:00am</b> Daily summary sent to your inbox</p></article>
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></div><h3>Projects with your content</h3><p>Your material loaded, so you never re-explain.</p><p class="eg">Ask questions of your own course notes.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div><h3>Dashboards for your data</h3><p>One page for the numbers you check.</p><svg class="minivis" viewBox="0 0 120 44" aria-hidden="true"><g fill="#4a7c78"><rect x="4" y="26" width="14" height="14" rx="3"/><rect x="26" y="18" width="14" height="22" rx="3"/><rect x="48" y="22" width="14" height="18" rx="3"/></g><g fill="#c45c8a"><rect x="70" y="8" width="14" height="32" rx="3"/><rect x="92" y="14" width="14" height="26" rx="3"/></g></svg><ul class="chips"><li>Membership</li><li>Sales</li><li>Ad performance</li><li>Project status</li></ul></article>
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Review-ready content checks</h3><p>A second pair of eyes before you publish.</p><p class="eg">Flags wording for you to review. You make the call.</p></article>
     </div>
     <p class="note">Connectors depend on what each provider currently offers. We confirm what is possible for your tools in session one.</p>
   </div>
@@ -364,28 +342,16 @@
 <section>
   <div class="container">
     <h2>What you walk away with</h2>
-    <div class="two">
-      <div class="panel">
-        <h3>You leave with</h3>
-        <ul class="ticks">
-          <li>A private AI environment set up around your practice</li>
-          <li>Connections to the tools you already use</li>
-          <li>Skills and prompts written in your voice</li>
-          <li>At least one routine running on its own</li>
-          <li>A simple guide to using what we built</li>
-          <li>A clear view of what to add next, if you want to</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>Who it is for</h3>
-        <ul class="ticks">
-          <li>Clinicians and practice owners building a platform, programs or a membership</li>
-          <li>Members who already use Lab.AI and want it connected to their systems</li>
-          <li>People with a VA who want the repeat work handled in the background</li>
-          <li>Busy people who want it done with them, not handed over as homework</li>
-        </ul>
-      </div>
-    </div>
+    <ul class="tiles perks">
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span>Your own private AI environment</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span><span>Your tools connected</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span><span>Skills in your voice</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><span>A routine running by itself</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span>A simple guide to what we built</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16l4-4-4-4M8 12h8"/></svg></span><span>A clear view of what to add next</span></li>
+    </ul>
+    <h3 class="forlabel">Who it is for</h3>
+    <ul class="chips big"><li>Clinicians and practice owners</li><li>Lab.AI users</li><li>People with a VA</li><li>Busy, not technical</li></ul>
     <div class="member-note">
       <p><strong>Not a Lab member yet?</strong> This offer is designed for members of Megan Walker's Healthcare Thought Leaders' Lab. You can <a href="https://www.meganwalker.com/healthcare-thought-leaders-lab-Registration" rel="noopener">find out about joining the Lab here</a>.</p>
     </div>
@@ -403,7 +369,7 @@
         <div class="usd">Fixed fee, in US dollars</div>
         <p class="split"><span data-price="half-usd">US$499</span> on signing<br><span data-price="half-usd">US$499</span> on delivery</p>
         <span class="gst" data-price="gst">GST: confirm</span>
-        <div><a class="btn btn-primary" href="#book" data-book data-cta="price-book">Book a call</a></div>
+        <div><a class="btn btn-primary" href="#enquire" data-cta="price-enquire">Send an enquiry</a></div>
       </div>
       <div class="panel">
         <h3>What is included</h3>
@@ -485,29 +451,12 @@
   </div>
 </section>
 
-<!-- 10. ABOUT -->
-<section>
-  <div class="container">
-    <p class="eyebrow">About us</p>
-    <h2>Who you will be working with</h2>
-    <div class="about" style="margin-top:28px">
-      <div class="avatar"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan, Vice President, The Endurance Group" width="110" height="110" loading="lazy"></div>
-      <div class="stack">
-        <p><strong>Conor Sullivan, Vice President, The Endurance Group.</strong></p>
-        <p>The Endurance Group is a Claude Implementation Partner. We help businesses set up and use AI in their day-to-day work. We have built AI tools for health practitioners through our work with Market Savvy.</p>
-        <p>Conor will be your primary contact from enquiry to session three.</p>
-        <p class="badge-note"><a href="https://theendurancegroup.com">theendurancegroup.com</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- 11. FINAL CTA / FORM -->
 <section id="enquire" class="dark">
   <div class="container narrow center">
     <p class="eyebrow">Ready when you are</p>
     <h2>Tell us what you would like to automate</h2>
-    <p class="lead" style="color:#e5dce2">Send a short enquiry. Conor will reply personally to arrange scoping.</p>
+    <p class="lead" style="color:#e5dce2">Send a short enquiry. We will reply personally to arrange scoping.</p>
 
     <form class="form-card" id="enquiry" novalidate>
       <input type="hidden" name="ref" id="ref" value="lab">
@@ -536,22 +485,10 @@
       <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
     </form>
 
-    <div class="cal-card" id="book">
-      <h3 style="color:var(--plum)">Prefer to talk first? Book a call with Conor.</h3>
-      <div class="cal meetings-iframe-container" data-src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b&embed=true"></div>
-    </div>
   </div>
 </section>
 
 
-<section class="disclaimer" aria-label="Important information">
-  <div class="container">
-    <p>The Endurance Group is independent of Megan Walker and the Healthcare Thought Leaders' Lab. This is a separate service offered to Lab members.</p>
-    <p>The Endurance Group does not provide legal, regulatory or clinical advice. AI outputs are drafts. You remain responsible for reviewing all content before it is published and for meeting your obligations under Ahpra, TGA and any other rules that apply to you. Results vary and are not guaranteed.</p>
-    <p>All prices are in US dollars.</p>
-    <p><a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
-  </div>
-</section>
 </main>
 
   <!-- SHARED FOOTER: keep in sync across all 8 pages (About page uses the full street address per its footer connector copy) -->
@@ -609,6 +546,10 @@
         </div>
       </div>
       <div class="footer-bottom">
+      <div class="lab-disc">
+        <p>The Endurance Group is independent of Megan Walker and the Healthcare Thought Leaders' Lab. This is a separate service offered to Lab members.</p>
+        <p>The Endurance Group does not provide legal, regulatory or clinical advice. AI outputs are drafts. You remain responsible for reviewing all content before it is published and for meeting your obligations under Ahpra, TGA and any other rules that apply to you. Results vary and are not guaranteed.</p>
+      </div>
         <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
         <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
@@ -617,7 +558,6 @@
   <!-- END SHARED FOOTER -->
 
 <script src="js/main.js?v=20260930" defer></script>
-<script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
 <script>
 (function () {
   "use strict";
@@ -628,7 +568,6 @@
     GST_STATUS: "none",             // "confirm" | "inclusive" | "exclusive" | "none"
     FORM_ENDPOINT: "/api/contact",  // site contact endpoint (emails Conor). Set "" to use the mailto fallback.
     MAILTO: "csullivan@theendurancegroup.com",
-    BOOKING_URL: "https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b",
     DEFAULT_REF: "lab"
   };
 
@@ -657,12 +596,6 @@
   } catch (e) {}
   ref = ref || CONFIG.DEFAULT_REF;
   document.getElementById("ref").value = ref;
-
-  /* ===== Booking buttons: open the HubSpot calendar in a new tab, with ref attached ===== */
-  var bookUrl = CONFIG.BOOKING_URL + (CONFIG.BOOKING_URL.indexOf("?") > -1 ? "&" : "?") + "ref=" + encodeURIComponent(ref);
-  document.querySelectorAll("[data-book]").forEach(function (a) {
-    a.setAttribute("href", bookUrl); a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener");
-  });
 
   /* ===== Form ===== */
   var form = document.getElementById("enquiry");
