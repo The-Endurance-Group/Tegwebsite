@@ -172,7 +172,11 @@
 
 
 .lab .cobrand { display: flex; width: fit-content; align-items: center; gap: 14px; background: #fff; border-radius: 12px; padding: 10px 16px; margin-bottom: 28px; text-decoration: none; color: var(--navy); font-weight: 700; font-size: .85rem; }
-.lab .cobrand img { height: 38px; width: auto; max-width: 60vw; }
+.lab .cobrand img { height: 40px; width: 40px; }
+.lab .lab-word { display: flex; flex-direction: column; line-height: 1; }
+.lab .lw-top { color: #0a7f9a; font-size: .62rem; letter-spacing: .04em; font-weight: 500; }
+.lab .lw-top b { font-weight: 800; }
+.lab .lw-lab { color: var(--navy); font-family: var(--font-head); font-size: 1.35rem; font-weight: 700; letter-spacing: .02em; margin-top: 3px; }
 .lab .cobrand small { color: var(--plum-soft); font-weight: 600; border-left: 1px solid var(--line); padding-left: 14px; }
 .lab .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .lab .avatar { width: 110px; height: 110px; overflow: hidden; }
@@ -226,9 +230,9 @@
 <!-- 1. HERO -->
 <section class="hero">
   <div class="container">
-    <!-- LOGO: save the Lab logo to images/lab-logo.png. Text shows until the file exists. -->
     <a class="cobrand" href="https://www.meganwalker.com/healthcare-thought-leaders-lab-Registration" rel="noopener" aria-label="Healthcare Thought Leaders' Lab">
-      <img src="images/lab-logo.png" alt="Healthcare Thought Leaders' Lab" width="72" height="38" onerror="this.replaceWith(document.createTextNode('Healthcare Thought Leaders\u2019 Lab'))">
+      <img src="images/lab-logo-mark.svg" alt="" width="40" height="40">
+      <span class="lab-word"><span class="lw-top"><b>HEALTH</b>CARE THOUGHT LEADERS&rsquo;</span><span class="lw-lab">LAB</span></span>
       <small>x The Endurance Group</small>
     </a>
     <p class="eyebrow">A Lab member offer</p>
@@ -418,7 +422,8 @@
       </div>
     </div>
     <div class="third">
-      <p><strong>Third-party costs are separate.</strong> You pay your own Claude plan, Canva, hosting and any other subscriptions directly to those providers. We do not mark them up or collect them.</p>
+      <p><strong>About the price.</strong> The Endurance Group is a US business. The fee is set in US dollars and the A$ figure is approximate. Please check the tax treatment with your own advisor.</p>
+      <p style="margin-top:.7em"><strong>Third-party costs are separate.</strong> You pay your own Claude plan, Canva, hosting and any other subscriptions directly to those providers. We do not mark them up or collect them.</p>
     </div>
   </div>
 </section>
@@ -549,8 +554,7 @@
     <p>The Endurance Group is independent of Megan Walker and the Healthcare Thought Leaders' Lab. This is a separate service offered to Lab members.</p>
     <p>The Endurance Group does not provide legal, regulatory or clinical advice. AI outputs are drafts. You remain responsible for reviewing all content before it is published and for meeting your obligations under Ahpra, TGA and any other rules that apply to you. Results vary and are not guaranteed.</p>
     <p>Prices are shown in Australian dollars as an approximate conversion from the US dollar fee. The US dollar fee is the fee that applies.</p>
-    <!-- PLACEHOLDER: replace # with the Product Agreement URL -->
-    <p><a href="#" data-placeholder="product-agreement">Product Agreement</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
+    <p><a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></p>
   </div>
 </section>
 </main>
@@ -628,7 +632,7 @@
     PRICE_USD: 998,                 // fixed fee in US dollars
     USD_TO_AUD: 1.4529,             // conversion rate. 998 x 1.4529 = about A$1,450
     PRICE_AUD_OVERRIDE: 1450,       // set to a number to show a fixed A$ price, or null to calculate
-    GST_STATUS: "confirm",          // "confirm" | "inclusive" | "exclusive" | "none"
+    GST_STATUS: "none",             // "confirm" | "inclusive" | "exclusive" | "none"
     FORM_ENDPOINT: "/api/contact",  // site contact endpoint (emails Conor). Set "" to use the mailto fallback.
     MAILTO: "csullivan@theendurancegroup.com",
     BOOKING_URL: "https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b",
