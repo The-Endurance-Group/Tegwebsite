@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1031 Exchange Prep for CPAs: What Claude Does, You Sign | TEG</title>
+  <meta name="description" content="Claude can roll basis forward, estimate gain and recapture, and draft Form 8824 support for a 1031 exchange. You review, decide and sign. A guide for CPAs.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/1031-exchange-cpa-prepared-with-claude.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="1031 Exchange Prep for CPAs: What Claude Does, You Sign | TEG">
+  <meta property="og:description" content="Claude can roll basis forward, estimate gain and recapture, and draft Form 8824 support for a 1031 exchange. You review, decide and sign. A guide for CPAs.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/1031-exchange-cpa-prepared-with-claude.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/jim-sullivan.html">
+  <meta property="article:published_time" content="2026-10-31T09:00:00-04:00">
+  <meta name="author" content="Jim Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="1031 Exchange Prep for CPAs: What Claude Does, You Sign | TEG">
+  <meta name="twitter:description" content="Claude can roll basis forward, estimate gain and recapture, and draft Form 8824 support for a 1031 exchange. You review, decide and sign. A guide for CPAs.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css?v=20261020-footer">
+  <style>
+    .model-summary { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0 32px; font-size: 17px; background: var(--color-white); border: 2px solid var(--color-purple); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 12px 32px rgba(112, 66, 130, .15); }
+    .model-summary caption { caption-side: top; text-align: left; font-size: 20px; font-weight: 800; color: var(--color-purple); padding-bottom: 12px; }
+    .model-summary th, .model-summary td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); line-height: 1.4; }
+    .model-summary thead th { background: var(--color-purple); color: #fff; font-weight: 800; border-bottom: 0; }
+    .model-summary tbody th { font-weight: 700; color: var(--color-ink); background: var(--tint-purple); width: 24%; }
+    .model-summary tbody td { font-weight: 600; }
+    .model-summary--plain tbody td:first-child { background: var(--tint-purple); font-weight: 700; color: var(--color-ink); }
+    .model-summary tbody tr:last-child th, .model-summary tbody tr:last-child td { border-bottom: 0; }
+    @media (max-width: 700px) { .blog-post .prose { overflow-x: auto; } .model-summary { font-size: 15px; } .model-summary th, .model-summary td { padding: 10px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://www.theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Your client's 1031 exchange, prepared by Claude and signed by you: a guide for accountants",
+  "description": "Claude can roll basis forward, estimate gain and recapture, and draft Form 8824 support for a 1031 exchange. You review, decide and sign. A guide for CPAs.",
+  "image": [
+    "https://www.theendurancegroup.com/images/og-default.png"
+  ],
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-10-31",
+  "author": {
+    "@type": "Person",
+    "name": "Jim Sullivan",
+    "jobTitle": "Founder",
+    "url": "https://www.theendurancegroup.com/authors/jim-sullivan.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Endurance Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.theendurancegroup.com/images/og-default.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.theendurancegroup.com/blog/1031-exchange-cpa-prepared-with-claude.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can AI prepare 1031 exchange tax work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With complete records, Claude can do much of the preparation: rolling basis forward, estimating gain and depreciation recapture, modeling full and partial exchanges, and drafting Form 8824 support. A CPA reviews the work, makes the judgment calls, and signs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What records does Claude need for a 1031 exchange?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prior returns, depreciation and fixed asset schedules, cost segregation studies, settlement statements for the purchase and the sale, loan payoff and new loan documents, and the exchange agreement. When a record is missing, Claude marks the related figure as unverified."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does using AI change who is responsible for the return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The preparer and signer remain responsible. Claude speeds up the preparation, and the professional judgment and the signature stay with the CPA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is client data safe when using AI for tax work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That depends on the environment. Use an enterprise setup where client data isn't used for training and access is controlled, never a personal chat account."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
+  </script>
+</head>
+<body class="blog-post">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../how-we-work.html">How We Work</a></li>
+          <li><a href="../managed-claude.html">Managed Claude</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a class="nav-cta" href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">Professional Services</span>
+        <h1>Your client's 1031 exchange, prepared by Claude and signed by you: a guide for accountants</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/jim-sullivan.html">Jim Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Founder</span>
+          <span class="divider">·</span>
+          <span>October 31, 2026</span>
+        </div>
+        <a class="category-badge" href="category/professional-services.html" style="margin-top:16px;">Professional Services</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We help professional firms put Claude to work on the parts of their practice that eat the most hours. <a href="../solutions.html">See our full Claude services.</a></em></p>
+
+          <p>It&rsquo;s the second week of December. A longtime client calls: &ldquo;We sold the office building. Do we owe tax?&rdquo;</p>
+
+          <p>The closing was last week. The client has a broker, a Qualified Intermediary, and three replacement properties in mind. Your file has a depreciation schedule from 2004, two cost segregation studies, and a box of closing statements.</p>
+
+          <p><strong>The short answer:</strong> The judgment in a 1031 exchange belongs to you. Most of the hours don&rsquo;t have to. Given the client&rsquo;s records, Claude can roll basis forward, estimate gain and depreciation recapture, model a full or partial exchange, test whether the replacement plan keeps the deferral intact, and draft the Form 8824 support, with a source on every figure. You review it, decide, and sign.</p>
+
+          <p>I started my career in public accounting, in Arthur Andersen&rsquo;s real estate practice in New York. The pattern then is the same now: on a real estate file, the scarce resource isn&rsquo;t knowledge of the rules. It&rsquo;s the hours spent finding, reconciling, and tying out the numbers before anyone can apply the rules.</p>
+
+          <p>That&rsquo;s the part AI has changed.</p>
+
+          <h2>Where do the hours go on a 1031 exchange file?</h2>
+          <p>Ask any CPA who handles exchanges where the time goes, and the answer is rarely the tax analysis. It&rsquo;s the preparation:</p>
+          <ul>
+            <li>Rebuilding basis for a property held for 20 years, across purchases, improvements, partial dispositions, and depreciation methods that changed along the way</li>
+            <li>Tying the settlement statements to what the client, the broker, and the Qualified Intermediary say happened</li>
+            <li>Tracking debt paid off, debt taken on, and cash in or out of the exchange account</li>
+            <li>Running the numbers again every time the client changes the replacement plan</li>
+          </ul>
+          <p>This work is necessary, but it isn&rsquo;t judgment. It&rsquo;s also the work clients least want to pay for, and it falls in the busiest weeks of your year.</p>
+
+          <h2>What can Claude prepare from the client&rsquo;s records?</h2>
+          <p>Give Claude the prior returns, depreciation schedules, cost segregation reports, settlement statements, loan payoff letters, and the exchange agreement. Ask it to reconcile, not to conclude. In our example, it produced this basis and gain summary, with every line tied to a source document:</p>
+
+          <table class="model-summary model-summary--plain">
+            <caption>Basis and gain summary (illustrative)</caption>
+            <thead><tr><th scope="col">Item</th><th scope="col">Amount</th><th scope="col">Source</th></tr></thead>
+            <tbody>
+              <tr><td>Original purchase (2004), land $1.2M and building $4.8M</td><td>$6.0M</td><td>2004 settlement statement</td></tr>
+              <tr><td>Capital improvements</td><td>$1.5M</td><td>Fixed asset ledger, 2009&ndash;2021</td></tr>
+              <tr><td>Depreciation taken</td><td>($3.4M)</td><td>Depreciation schedules, 2004&ndash;2026</td></tr>
+              <tr><td>Adjusted basis</td><td>$4.1M</td><td>Calculated</td></tr>
+              <tr><td>Sale price less $0.5M of selling costs</td><td>$13.5M</td><td>2026 settlement statement</td></tr>
+              <tr><td>Realized gain</td><td>$9.4M</td><td>Calculated</td></tr>
+              <tr><td>Of which, unrecaptured Section 1250 gain</td><td>$3.4M</td><td>Equal to depreciation taken</td></tr>
+            </tbody>
+          </table>
+          <p>All figures are illustrative.</p>
+
+          <p>The last line matters. Unrecaptured Section 1250 gain is taxed at a maximum 25% rate (<a href="https://www.irs.gov/taxtopics/tc409" rel="noopener">IRS Topic 409</a>), so it is often the number that convinces a client the exchange is worth doing. Claude then models the client&rsquo;s choices side by side: a full exchange, a partial exchange that takes some cash out, and an outright sale. You decide which estimate to rely on and how to present it.</p>
+          <p>Finally, Claude drafts the supporting schedule for Form 8824, which reports the property given up, the property received, the liabilities on each side, and the resulting deferred gain and new basis. <a href="https://www.irs.gov/instructions/i8824" rel="noopener">IRS: Instructions for Form 8824</a></p>
+
+          <h2>Which 1031 exchange traps does Claude flag before they become problems?</h2>
+          <p>The expensive mistakes in an exchange are rarely about knowing the rules. They come from a detail nobody checked in time. Claude checks the file against them and reports what it finds:</p>
+          <ul>
+            <li><strong>Trading down in debt.</strong> The client paid off a $5.0M loan and plans to finance the replacement with $4.0M. The Form 8824 instructions net liabilities relieved against liabilities assumed and cash paid. Unless the client adds at least $1.0M of cash, part of the gain may be recognized. Claude flags the gap before the client signs a loan commitment.</li>
+            <li><strong>The tax return deadline.</strong> For a sale late in the year, the exchange must be completed by the return&rsquo;s due date, including extensions, if that comes before day 180. Claude puts the dates in front of you so the extension decision isn&rsquo;t made by accident.</li>
+            <li><strong>Missing basis records.</strong> When a year of improvements or depreciation can&rsquo;t be traced to a document, Claude marks it as unverified instead of filling the gap. Deciding what to assume is your call.</li>
+            <li><strong>Patterns worth a second look.</strong> These include a seller related to the buyer, replacement property that may be held for resale, or an owner name on the new deed that doesn&rsquo;t match the old one. Claude doesn&rsquo;t decide these questions. It makes sure you see them.</li>
+          </ul>
+          <p>The value isn&rsquo;t that Claude knows something you don&rsquo;t. It never gets tired at 11 p.m. in the middle of tax season.</p>
+
+          <h2>What stays with the CPA?</h2>
+          <p>All of the judgment, and the signature.</p>
+          <p>Some in the exchange industry argue that AI shouldn&rsquo;t be used for 1031 tax work because it can&rsquo;t see the client&rsquo;s basis, losses, or tax history (<a href="https://www.1031exchange.com/why-using-ai-for-1031-exchanges-is-a-bad-idea/" rel="noopener">Equity Advantage</a>). They&rsquo;re right about a consumer typing a question into a chatbot. They&rsquo;re describing a missing-data problem and an accountability problem, and a CPA firm solves both. You have the records, and you own the answer.</p>
+          <p>So the division of work is simple:</p>
+
+          <table class="model-summary model-summary--plain">
+            <caption>Who does what on a 1031 exchange file</caption>
+            <thead><tr><th scope="col">Claude prepares</th><th scope="col">You decide</th></tr></thead>
+            <tbody>
+              <tr><td>Basis rollforward and gain estimates, with sources</td><td>Which positions to take, and how to treat gaps in the records</td></tr>
+              <tr><td>Full, partial, and no-exchange scenarios</td><td>What to recommend to the client</td></tr>
+              <tr><td>Debt and cash netting across the exchange</td><td>Whether the plan works for this client&rsquo;s broader tax picture</td></tr>
+              <tr><td>Draft Form 8824 support</td><td>What gets filed, and your signature</td></tr>
+            </tbody>
+          </table>
+
+          <p>Your clients still pay for your judgment. They stop paying for the hours spent assembling the numbers.</p>
+
+          <h2>What about client data security?</h2>
+          <p>Tax returns are among the most sensitive records a client has, so this belongs in an enterprise Claude environment, not a personal chat account. We set it up so client data isn&rsquo;t used to train models, access is limited to the people who work on the file, and the setup meets your firm&rsquo;s own data-handling policies. If your firm already uses Microsoft 365 Copilot, ask your IT team which models are enabled. Claude models are available inside Copilot for many organizations.</p>
+
+          <div class="example-callout"><strong>Try it on one exchange file</strong><p>Pick one exchange your firm is working on now or finished this year. Book a 30-minute call, and we&rsquo;ll show you what the preparation looks like when Claude does the assembly. If it&rsquo;s a fit, we&rsquo;ll set it up in your firm&rsquo;s environment, using your workpaper format and review standards, and train your staff to run it. <a href="https://meetings.hubspot.com/jsullivan9" rel="noopener">Book a time with Jim</a>.</p></div>
+
+          <p>If your clients are also choosing replacement properties, <a href="1031-exchange-replacement-property-claude.html">our article for owners</a> shows how Claude compares candidates against the whole portfolio before day 45. When the tax questions come up, it sends them to you.</p>
+
+          <h2>Frequently asked questions</h2>
+          <h3>Can AI prepare 1031 exchange tax work?</h3>
+          <p>With complete records, Claude can do much of the preparation: rolling basis forward, estimating gain and depreciation recapture, modeling full and partial exchanges, and drafting Form 8824 support. A CPA reviews the work, makes the judgment calls, and signs.</p>
+          <h3>What records does Claude need for a 1031 exchange?</h3>
+          <p>Prior returns, depreciation and fixed asset schedules, cost segregation studies, settlement statements for the purchase and the sale, loan payoff and new loan documents, and the exchange agreement. When a record is missing, Claude marks the related figure as unverified.</p>
+          <h3>Does using AI change who is responsible for the return?</h3>
+          <p>No. The preparer and signer remain responsible. Claude speeds up the preparation, and the professional judgment and the signature stay with the CPA.</p>
+          <h3>Is client data safe when using AI for tax work?</h3>
+          <p>That depends on the environment. Use an enterprise setup where client data isn't used for training and access is controlled, never a personal chat account.</p>
+
+          <p><em>Figures in the example are illustrative. This article is not tax or legal advice.</em></p>
+
+          <h2>Sources</h2>
+          <ul>
+            <li><a href="https://www.irs.gov/instructions/i8824" rel="noopener">IRS: Instructions for Form 8824, Like-Kind Exchanges</a></li>
+            <li><a href="https://www.irs.gov/taxtopics/tc409" rel="noopener">IRS: Topic no. 409, Capital gains and losses</a></li>
+            <li><a href="https://www.1031exchange.com/why-using-ai-for-1031-exchanges-is-a-bad-idea/" rel="noopener">Equity Advantage: Why Using AI for 1031 Exchanges Is a Bad Idea</a></li>
+          </ul>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="../book-value-assessment.html">Start Your Free AI Value Assessment</a>
+            <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">Real Estate</span>
+            <h3><a href="1031-exchange-replacement-property-claude.html">The best 1031 replacement property isn't the highest yield</a></h3>
+            <p>The owner-side companion: compare candidates against the whole portfolio before day 45.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">Professional Services</span>
+            <h3><a href="ai-automation-professional-services.html">Why professional services firms should map their network before they prospect</a></h3>
+            <p>How social capital mapping finds warm paths that already exist in your team's network.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="../images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+          <p class="footer-cta"><a class="btn btn-primary" href="../book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../how-we-work.html">How We Work</a></li>
+            <li><a href="../managed-claude.html">Managed Claude</a></li>
+            <li><a href="../claude-for-sales.html">Claude for Sales</a></li>
+            <li><a href="../claude-business-development.html">B2B Sales</a></li>
+            <li><a href="../realestate">Real Estate</a></li>
+            <li><a href="../saas">B2B Tech &amp; SaaS</a></li>
+            <li><a href="../professionalservices">Professional Services</a></li>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../specialties.html">Specialties</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Free Offerings</h4>
+          <ul>
+            <li><a href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="../intent-playbook.html">Free Intent Lead Playbook</a></li>
+            <li><a href="../ai-policy">Free AI Policy Draft</a></li>
+            <li><a href="../claude-tutorials.html">Free Claude Video Training</a></li>
+            <li><a href="../claude-plugins.html">Free Claude Plugins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js?v=20260930" defer></script>
+</body>
+</html>
