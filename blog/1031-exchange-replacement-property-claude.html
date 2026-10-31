@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1031 Exchange: Why the Highest-Yield Property Can Be Wrong | TEG</title>
+  <meta name="description" content="In a 1031 exchange, compare what each replacement property does to your whole portfolio, not its yield. How Claude builds that view inside the 45-day clock.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/1031-exchange-replacement-property-claude.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="1031 Exchange: Why the Highest-Yield Property Can Be Wrong | TEG">
+  <meta property="og:description" content="In a 1031 exchange, compare what each replacement property does to your whole portfolio, not its yield. How Claude builds that view inside the 45-day clock.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/1031-exchange-replacement-property-claude.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/jim-sullivan.html">
+  <meta property="article:published_time" content="2026-10-31T09:00:00-04:00">
+  <meta name="author" content="Jim Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="1031 Exchange: Why the Highest-Yield Property Can Be Wrong | TEG">
+  <meta name="twitter:description" content="In a 1031 exchange, compare what each replacement property does to your whole portfolio, not its yield. How Claude builds that view inside the 45-day clock.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css?v=20261020-footer">
+  <style>
+    .model-summary { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0 32px; font-size: 17px; background: var(--color-white); border: 2px solid var(--color-purple); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 12px 32px rgba(112, 66, 130, .15); }
+    .model-summary caption { caption-side: top; text-align: left; font-size: 20px; font-weight: 800; color: var(--color-purple); padding-bottom: 12px; }
+    .model-summary th, .model-summary td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); line-height: 1.4; }
+    .model-summary thead th { background: var(--color-purple); color: #fff; font-weight: 800; border-bottom: 0; }
+    .model-summary tbody th { font-weight: 700; color: var(--color-ink); background: var(--tint-purple); width: 24%; }
+    .model-summary tbody td { font-weight: 600; }
+    .model-summary tbody tr:last-child th, .model-summary tbody tr:last-child td { border-bottom: 0; }
+    @media (max-width: 700px) { .blog-post .prose { overflow-x: auto; } .model-summary { font-size: 15px; } .model-summary th, .model-summary td { padding: 10px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://www.theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The best 1031 replacement property isn't the highest yield: how Claude helps owners see what they'd miss under the 45-day clock",
+  "description": "In a 1031 exchange, compare what each replacement property does to your whole portfolio, not its yield. How Claude builds that view inside the 45-day clock.",
+  "image": [
+    "https://www.theendurancegroup.com/images/og-default.png"
+  ],
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-10-31",
+  "author": {
+    "@type": "Person",
+    "name": "Jim Sullivan",
+    "jobTitle": "Founder",
+    "url": "https://www.theendurancegroup.com/authors/jim-sullivan.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Endurance Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.theendurancegroup.com/images/og-default.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.theendurancegroup.com/blog/1031-exchange-replacement-property-claude.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why isn't the highest-yield 1031 replacement property always the best choice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yield measures one property by itself. An exchange changes your whole portfolio. A high-yield candidate can bring back the same lease rollover, concentration, or capital needs that led you to sell."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 1031 exchange deadlines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You must identify replacement property within 45 days of the sale. You must close within 180 days or by your tax return due date, including extensions, whichever comes first. Confirm your dates with your Qualified Intermediary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Claude help evaluate 1031 replacement properties?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Claude can standardize each candidate, show how each one changes your portfolio, gather public records, and draft an investment memo. Decisions stay with the owner, and tax questions stay with the CPA and Qualified Intermediary."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
+  </script>
+</head>
+<body class="blog-post">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../how-we-work.html">How We Work</a></li>
+          <li><a href="../managed-claude.html">Managed Claude</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a class="nav-cta" href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">Real Estate</span>
+        <h1>The best 1031 replacement property isn't the highest yield: how Claude helps owners see what they'd miss under the 45-day clock</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/jim-sullivan.html">Jim Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Founder</span>
+          <span class="divider">·</span>
+          <span>October 31, 2026</span>
+        </div>
+        <a class="category-badge" href="category/real-estate.html" style="margin-top:16px;">Real Estate</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We help real estate owners and teams put Claude to work on the decisions that matter most. <a href="../solutions.html">See our full Claude services.</a></em></p>
+
+          <p>An owner sells a suburban office building. Within a week, the broker brings three replacement properties: an industrial building at a 6.0% cap rate, a grocery-anchored retail center at 7.0%, and an apartment community at 5.6%.</p>
+
+          <p>The broker likes the retail center. It has the highest yield, and the 45-day clock is running.</p>
+
+          <p>In this case, choosing the retail center would be a mistake, and it is a common one.</p>
+
+          <p><strong>The short answer:</strong> In a 1031 exchange, owners tend to compare replacement properties with each other. The better question is what each one does to the portfolio you will own afterward. The highest-yield candidate is often the one that brings back the problem you sold to get rid of. Claude, Anthropic&rsquo;s AI model, can build that portfolio view for every candidate in hours, so you get the answer while there is still time to use it.</p>
+
+          <p>I learned this long before AI. Early in my career I worked in Arthur Andersen&rsquo;s real estate valuation practice, and later I underwrote commercial mortgage loans for securitization. A lender never judges a property on its own. It looks at the borrower&rsquo;s whole exposure. Owners in an exchange should do the same, but the deadline pushes them to compare deals rather than portfolios.</p>
+
+          <p>What has changed is how quickly that portfolio view can be built. In our example, the family gave Claude four things: a portfolio summary with tenant names and addresses masked, the three offering memorandums, the expected closing date, and the family&rsquo;s goals. In one working session, Claude:</p>
+          <ul>
+            <li>Put all three candidates into the same one-page format, including what each memorandum left out</li>
+            <li>Rebuilt the whole portfolio three times, once with each candidate in place of the office building</li>
+            <li>Calculated the exchange deadlines and flagged that the tax return would come due before day 180</li>
+            <li>Pulled public records on each property and its seller, with a source for every item</li>
+            <li>Drafted the questions to ask each broker before the identification deadline</li>
+          </ul>
+          <p>An analyst would usually need a couple of weeks for that work. With Claude, the family spent its 45 days deciding instead of compiling.</p>
+
+          <h2>Why can the highest-yield replacement be the wrong choice?</h2>
+          <p>Look at why the owner is selling. The office building had heavy lease rollover: almost a third of its rent was coming due within three years. The family wanted steadier income and fewer management headaches.</p>
+          <p>Now look at the same three candidates in terms of what each one does to the whole portfolio:</p>
+
+          <table class="model-summary">
+            <caption>What each replacement does to the portfolio (illustrative)</caption>
+            <thead><tr><th scope="col">Portfolio effect</th><th scope="col">Industrial (6.0%)</th><th scope="col">Retail center (7.0%)</th><th scope="col">Apartments (5.6%)</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Portfolio income</th><td>Up slightly</td><td>Up the most</td><td>Flat</td></tr>
+              <tr><th scope="row">Rent expiring within 3 years</th><td>Falls sharply</td><td>Barely changes</td><td>Falls</td></tr>
+              <tr><th scope="row">New risk it adds</th><td>One tenant becomes 22% of rent</td><td>A roof replacement and an unfamiliar market</td><td>More exposure to a metro the family already owns in</td></tr>
+            </tbody>
+          </table>
+
+          <p>The retail center pays the most, but 35% of its rent expires within three years. The family would be paying a premium to buy back the same rollover risk it is selling, in a market it doesn&rsquo;t know.</p>
+          <p>The industrial building solves the real problem but creates a new one: a large share of rent depends on one tenant. Whether that is acceptable depends on that tenant&rsquo;s credit, which the offering memorandum doesn&rsquo;t show.</p>
+          <p>You can&rsquo;t see any of this by comparing cap rates. Claude caught it because it was asked to rebuild the portfolio, not to rank the deals. How you frame the question to the AI matters as much as the AI itself. (The figures in this example are illustrative.)</p>
+
+          <h2>Is your deadline really 180 days?</h2>
+          <p>Possibly not. You must identify replacement property within 45 days and receive it within 180 days, or by your tax return due date including extensions, whichever comes first. <a href="https://www.irs.gov/instructions/i8824" rel="noopener">IRS: Instructions for Form 8824</a></p>
+          <p>The second part catches people. Suppose a sale closes in mid-November. Day 180 falls in mid-May, but the owner&rsquo;s tax return is due April 15. Unless the return is extended, the exchange has to close almost a month earlier than the owner planned.</p>
+          <p>Your Qualified Intermediary and CPA own these dates. The practical point is simpler: you have less time than you think, so start the portfolio analysis before the sale closes, not after.</p>
+
+          <h2>What three questions should you ask about every replacement property?</h2>
+          <p>After years of underwriting, I&rsquo;ve found that three questions do most of the work:</p>
+          <ol>
+            <li><strong>What problem am I selling, and does this property solve it or bring it back?</strong> Write down why you&rsquo;re selling before you look at a single candidate.</li>
+            <li><strong>Is this a risk I already carry, or a new one?</strong> More of a risk you understand is different from a risk you&rsquo;ve never managed.</li>
+            <li><strong>What would have to be true for this to be a good decision in two years?</strong> If you can&rsquo;t name it, you can&rsquo;t check it. Most owners never look back at whether their thesis held.</li>
+          </ol>
+          <p>The questions are simple. Answering them for three or four candidates, against your actual portfolio, inside 45 days, is the hard part.</p>
+
+          <h2>What won&rsquo;t the offering memorandum tell you?</h2>
+          <p>An offering memorandum is a sales document. It tells you what the seller wants you to focus on. Some of the most useful information is public, but it is scattered across county records, loan reporting, permits, and court filings that few buyers check during an exchange.</p>
+          <p>In our example, two findings changed the conversation:</p>
+          <ul>
+            <li>The retail center&rsquo;s seller had a loan maturing in eight months. That may explain the 7.0% asking cap rate, and it changes how you negotiate.</li>
+            <li>The industrial tenant had operated from the same building for 19 years with no liens or significant litigation. That isn&rsquo;t a substitute for financial statements, but it told the family exactly what to ask for before naming the property.</li>
+          </ul>
+          <p>Neither finding appeared in the memorandum. Claude found both by searching county and court records and citing a source for each, in hours rather than weeks. Coverage varies by county and state, and Claude says when it can&rsquo;t find something.</p>
+
+          <h2>Where does Claude fit, and where doesn&rsquo;t it?</h2>
+          <p>Claude handles the work that the deadline usually squeezes out. It can put every candidate into the same format, rebuild the portfolio with each one, gather public records with a source on every item, and draft a short investment memo that you can check in two years.</p>
+          <p>It does that consistently and quickly, and it works on masked data, so tenant names and addresses don&rsquo;t need to leave your environment.</p>
+          <p>Claude doesn&rsquo;t decide which property you buy, and it doesn&rsquo;t give tax advice. You make the decision, and your CPA and Qualified Intermediary handle the exchange. Our role is to make sure the AI does the analysis the way an experienced underwriter would.</p>
+
+          <div class="example-callout"><strong>Planning an exchange? Let&rsquo;s look at your candidates together.</strong>
+            <p>If you have a sale closing in the next six months, or you&rsquo;re already inside the 45-day window, book a 30-minute call. Bring your portfolio summary and whatever candidates you&rsquo;re considering. Masked figures are fine. On the call, I&rsquo;ll:</p>
+            <ul>
+              <li>Ask the questions an underwriter would ask about your portfolio and each candidate</li>
+              <li>Point out the risk most likely to be hiding in your shortlist</li>
+              <li>Show you what the full portfolio analysis looks like when it runs in your own Claude environment</li>
+            </ul>
+            <p>You&rsquo;ll leave with a clearer view of your shortlist, whether or not we work together. <a href="https://meetings.hubspot.com/jsullivan9" rel="noopener">Book a time with Jim</a>.</p>
+          </div>
+
+          <p>The Endurance Group builds this workflow for real estate owners, family offices, and their advisors as a reusable Claude skill connected to your own data, so every future exchange and acquisition gets the same disciplined review. See how we work with real estate firms on our <a href="https://www.theendurancegroup.com/realestate">real estate page</a>. For the same method applied to an acquisition, see <a href="multifamily-valuation-cap-rate-claude.html">how to value a multifamily deal with Claude</a>.</p>
+
+          <h2>Frequently asked questions</h2>
+          <h3>Why isn't the highest-yield 1031 replacement property always the best choice?</h3>
+          <p>Yield measures one property by itself. An exchange changes your whole portfolio. A high-yield candidate can bring back the same lease rollover, concentration, or capital needs that led you to sell.</p>
+          <h3>What are the 1031 exchange deadlines?</h3>
+          <p>You must identify replacement property within 45 days of the sale. You must close within 180 days or by your tax return due date, including extensions, whichever comes first. Confirm your dates with your Qualified Intermediary.</p>
+          <h3>Can Claude help evaluate 1031 replacement properties?</h3>
+          <p>Yes. Claude can standardize each candidate, show how each one changes your portfolio, gather public records, and draft an investment memo. Decisions stay with the owner, and tax questions stay with the CPA and Qualified Intermediary.</p>
+
+          <p><em>Figures in the example are illustrative. This article is not tax, legal, or investment advice.</em></p>
+
+          <h2>Sources</h2>
+          <ul>
+            <li><a href="https://www.irs.gov/instructions/i8824" rel="noopener">IRS: Instructions for Form 8824, Like-Kind Exchanges</a></li>
+          </ul>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="../book-value-assessment.html">Start Your Free AI Value Assessment</a>
+            <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">Real Estate</span>
+            <h3><a href="ai-tools-commercial-real-estate.html">AI tools for commercial real estate brokers: what's actually useful</a></h3>
+            <p>Where AI saves CRE teams the most time, and what to skip.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">Real Estate</span>
+            <h3><a href="multifamily-valuation-cap-rate-claude.html">How to value a multifamily deal with Claude: the right cap rate is not the market average</a></h3>
+            <p>An underwriter's method for separating in-place, normalized and business-plan value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="../images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+          <p class="footer-cta"><a class="btn btn-primary" href="../book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../how-we-work.html">How We Work</a></li>
+            <li><a href="../managed-claude.html">Managed Claude</a></li>
+            <li><a href="../claude-for-sales.html">Claude for Sales</a></li>
+            <li><a href="../claude-business-development.html">B2B Sales</a></li>
+            <li><a href="../realestate">Real Estate</a></li>
+            <li><a href="../saas">B2B Tech &amp; SaaS</a></li>
+            <li><a href="../professionalservices">Professional Services</a></li>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../specialties.html">Specialties</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Free Offerings</h4>
+          <ul>
+            <li><a href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="../intent-playbook.html">Free Intent Lead Playbook</a></li>
+            <li><a href="../ai-policy">Free AI Policy Draft</a></li>
+            <li><a href="../claude-tutorials.html">Free Claude Video Training</a></li>
+            <li><a href="../claude-plugins.html">Free Claude Plugins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js?v=20260930" defer></script>
+</body>
+</html>

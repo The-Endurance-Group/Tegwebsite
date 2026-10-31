@@ -35,6 +35,7 @@
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [The best 1031 replacement property isn't the highest yield: how Claude helps owners see what they'd miss under the 45-day clock](https://www.theendurancegroup.com/blog/1031-exchange-replacement-property-claude.html)
 - [How to value a multifamily deal with Claude: the right cap rate is not the market average](https://www.theendurancegroup.com/blog/multifamily-valuation-cap-rate-claude.html)
 - [Already Have Copilot? Here's What Claude Adds](https://www.theendurancegroup.com/blog/claude-vs-copilot-chat-what-claude-adds.html)
 - [AI for real estate: connect your systems (what I heard at CREtech New York)](https://www.theendurancegroup.com/blog/cretech-new-york-ai-connected-systems.html)
