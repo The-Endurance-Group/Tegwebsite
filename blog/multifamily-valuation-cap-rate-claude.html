@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Value a Multifamily Deal With Claude | TEG</title>
+  <meta name="description" content="Value a multifamily deal with Claude: separate in-place, normalized and business-plan NOI, build cap rates from relevant comps, and verify with public records.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/multifamily-valuation-cap-rate-claude.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="How to Value a Multifamily Deal With Claude | TEG">
+  <meta property="og:description" content="Value a multifamily deal with Claude: separate in-place, normalized and business-plan NOI, build cap rates from relevant comps, and verify with public records.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/multifamily-valuation-cap-rate-claude.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/jim-sullivan.html">
+  <meta property="article:published_time" content="2026-10-31T09:00:00-04:00">
+  <meta name="author" content="Jim Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Value a Multifamily Deal With Claude | TEG">
+  <meta name="twitter:description" content="Value a multifamily deal with Claude: separate in-place, normalized and business-plan NOI, build cap rates from relevant comps, and verify with public records.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css?v=20261020-footer">
+  <style>
+    .model-summary { width: 100%; border-collapse: separate; border-spacing: 0; margin: 8px 0 32px; font-size: 17px; background: var(--color-white); border: 2px solid var(--color-purple); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 12px 32px rgba(112, 66, 130, .15); }
+    .model-summary caption { caption-side: top; text-align: left; font-size: 20px; font-weight: 800; color: var(--color-purple); padding-bottom: 12px; }
+    .model-summary th, .model-summary td { padding: 14px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); line-height: 1.4; }
+    .model-summary thead th { background: var(--color-purple); color: #fff; font-weight: 800; border-bottom: 0; }
+    .model-summary tbody th { font-weight: 700; color: var(--color-ink); background: var(--tint-purple); width: 24%; }
+    .model-summary tbody td { font-weight: 600; }
+    .model-summary tbody tr:last-child th, .model-summary tbody tr:last-child td { border-bottom: 0; }
+    @media (max-width: 700px) { .blog-post .prose { overflow-x: auto; } .model-summary { font-size: 15px; } .model-summary th, .model-summary td { padding: 10px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://www.theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Jim Sullivan"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The right cap rate is not the market average: how to value a multifamily deal with Claude",
+  "description": "Value a multifamily deal with Claude: separate in-place, normalized and business-plan NOI, build cap rates from relevant comps, and verify with public records.",
+  "image": [
+    "https://www.theendurancegroup.com/images/og-default.png"
+  ],
+  "datePublished": "2026-10-31",
+  "dateModified": "2026-10-31",
+  "author": {
+    "@type": "Person",
+    "name": "Jim Sullivan",
+    "jobTitle": "Founder",
+    "url": "https://www.theendurancegroup.com/authors/jim-sullivan.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Endurance Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.theendurancegroup.com/images/og-default.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.theendurancegroup.com/blog/multifamily-valuation-cap-rate-claude.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you value a multifamily property with Claude?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Give Claude the rent roll, trailing 12-month statement, offering memorandum and capital plan, and have it build three NOI cases (in-place, normalized and business-plan) with a source for every adjustment. Then have it assemble comparable sales from public records, derive cap rate ranges from the relevant comps, and show a value range for each case. A person reviews every conclusion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the market average cap rate the wrong cap rate for a deal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A market cap rate is an inference from past sales, not a constant. Comps differ in occupancy, condition, income basis and timing, so the average blends deals that are not comparable to your subject. A defensible cap rate comes from the sales that most resemble the property on the same income basis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What public records can show a multifamily property's real performance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agency loan disclosures from Fannie Mae and Freddie Mac, CMBS loan-level reporting, county deed and mortgage records, state business filings, building permits and code records, and property tax appeals. Coverage varies by county and state, and Claude flags where the record is silent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between in-place, normalized and business-plan value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In-place value reflects what the current rent roll and trailing operations support today. Normalized value corrects for one-time income and expenses. Business-plan value reflects what the property could be worth after renovations or lease-up, net of the time, cost and execution risk to get there."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
+  </script>
+</head>
+<body class="blog-post">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../how-we-work.html">How We Work</a></li>
+          <li><a href="../managed-claude.html">Managed Claude</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a class="nav-cta" href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">Real Estate</span>
+        <h1>The right cap rate is not the market average: how to value a multifamily deal with Claude</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/jim-sullivan.html">Jim Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Founder</span>
+          <span class="divider">·</span>
+          <span>October 31, 2026</span>
+        </div>
+        <a class="category-badge" href="category/real-estate.html" style="margin-top:16px;">Real Estate</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+          <p><em>TEG is an official member of the Anthropic Claude Partner Network. We build Claude Skills, Projects, and MCP integrations for B2B ops teams. <a href="../solutions.html">See our full Claude services.</a></em></p>
+
+          <p><strong>The short answer:</strong> A multifamily value is only as good as the income and the comps behind it. Keep three NOI cases apart (in-place, normalized and business-plan), derive the cap rate from sales that truly resemble the subject, and use Claude to rebuild the income, assemble public-record comps, and prepare better questions for the brokers and owners who know the rest. The investor still makes the call.</p>
+
+          <p>A broker says the building is worth $18 million. The trailing numbers suggest $16 million. The offering memorandum&rsquo;s stabilized case points to $21 million.</p>
+
+          <p>Which number is right?</p>
+
+          <p>I spent the early part of my career in Arthur Andersen&rsquo;s real estate valuation practice and later underwriting commercial mortgage loans for securitization. The lesson from that work still holds: the answer is rarely the average cap rate. It comes from deciding which income is real, which sales deserve weight, and what the people who did those deals actually know.</p>
+
+          <p>What has changed is how fast that work can get done. Claude can rebuild the income from the source documents, pull comp data from public records and loan disclosures that most investors never look at, and prepare you for sharper conversations with the brokers and owners who know the rest.</p>
+
+          <p>To be clear about my role: I am not here to value your deals. I am here to make sure the AI your team uses values them the way an experienced underwriter would. Here is the method, applied to one illustrative property.</p>
+
+          <div class="example-callout"><strong>The example property</strong><p>96 units, built in 1987, garden-style, 92% occupied. Sixty units are unrenovated. Asking price: $18.0 million. All figures in this example are illustrative.</p></div>
+
+          <h2>What are the three values of a multifamily property?</h2>
+          <p>A useful valuation keeps three cases apart:</p>
+          <ul>
+            <li><strong>In-place value:</strong> what the current rent roll and trailing operations support today.</li>
+            <li><strong>Normalized value:</strong> what the property earns once unusual or one-time income and expenses are corrected.</li>
+            <li><strong>Business-plan value:</strong> what it could be worth after renovations or lease-up, and the time, cost, and execution risk to get there.</li>
+          </ul>
+          <p>Collapse them into one NOI figure and you lose the argument before it starts. Freddie Mac describes direct capitalization as converting expected NOI into value, which makes the choice of NOI as important as the choice of cap rate. <a href="https://mf.freddiemac.com/docs/capitalization_rate_guidance.pdf" rel="noopener">Freddie Mac: Capitalization Rate Guidance</a></p>
+
+          <h2>How do you rebuild the income from the documents?</h2>
+          <p>Give Claude the rent roll, trailing 12-month statement, leases or abstracts, offering memorandum, and capital plan. Ask it to reconcile, not summarize. It should tie rent-roll totals to the operating statement, flag concessions, bad debt, and unusual items, and separate actual income from projected income.</p>
+          <p>The output that matters is a traceable adjustment schedule: every add-back or rent increase shows its source, its amount, and whether it is verified. &ldquo;Market rent&rdquo; is never a fact just because it sounds plausible.</p>
+          <p>In our example, the verified trailing NOI is $960,000. Claude finds $60,000 of one-time costs: a $38,000 legal settlement and a $22,000 storm repair. The insurance reimbursement for the repair arrived after the trailing period closed and never appeared in trailing income, so Claude adds back the $22,000 and confirms the reimbursement is not counted twice. Normalized NOI is $1,020,000.</p>
+          <p>The offering memorandum&rsquo;s $1,140,000 &ldquo;stabilized&rdquo; figure assumes $150 monthly premiums on the 60 unrenovated units plus $12,000 of new fee income. That is a business plan, not today&rsquo;s income, and the memorandum capitalizes it at 5.4% to reach $21.1 million.</p>
+
+          <h2>What public records show a multifamily property&rsquo;s real numbers?</h2>
+          <p>This is the step most investors skip, and the one I find most valuable. Having worked on the lending side, I know how much property data travels with a loan. For financed multifamily, much of what investors assume is private has been disclosed somewhere. Claude can do the digging:</p>
+          <ul>
+            <li><strong>Agency loan disclosures.</strong> Fannie Mae publishes data on loans in its multifamily securities through <a href="https://fanniemae.com/newsroom/fannie-mae-news/fannie-mae-launches-dus-disclose-website" rel="noopener">DUS Disclose</a>, and Freddie Mac publishes <a href="https://www.nationalmortgagenews.com/news/freddie-mac-provides-expanded-multifamily-disclosures" rel="noopener">loan-level disclosures</a> for its K-Deal securities. For many properties these include operating and occupancy information.</li>
+            <li><strong>CMBS reporting.</strong> Securitized loans carry ongoing loan-level reporting filed with the SEC, often including NOI and occupancy over time.</li>
+            <li><strong>County records.</strong> The deed, the recorded price where the state discloses it, transfer tax, and the mortgage: lender, loan amount, and date.</li>
+            <li><strong>State business filings.</strong> The LLC on the deed, traced to the sponsor behind it.</li>
+            <li><strong>Permits, code records, and tax appeals.</strong> Renovation spending, deferred maintenance, and, occasionally, an owner arguing for lower income in a tax appeal than it showed buyers.</li>
+          </ul>
+          <p>Claude can assemble these into one comp file, with every figure labeled by source and date. Coverage varies by county and state, since some portals are paywalled and some states do not disclose sale prices. Where the record is silent, Claude says so.</p>
+
+          <div class="example-callout"><strong>Why this matters</strong><p>In our example, the closest-looking comp sold for $22.4 million, and the broker&rsquo;s announcement called it a 5.25% cap. The agency loan disclosure showed the property was 84% occupied when the loan was made. That buyer was paying for lease-up upside our subject does not have. Apply 5.25% to our in-place income and you overpay. Claude moved that sale from &ldquo;closest comp&rdquo; to &ldquo;context only.&rdquo;</p></div>
+
+          <h2>How do you build a cap rate from relevant sales?</h2>
+          <p>A market cap rate is an inference from transactions, not a constant. CBRE&rsquo;s survey shows rates varying by market, quality, and property type. It is useful context, not a substitute for local sales. <a href="https://www.cbre.com/insights/reports/us-cap-rate-survey-h1-2026" rel="noopener">CBRE U.S. Cap Rate Survey, H1 2026</a></p>
+          <p>For each comp, have Claude capture the date, submarket, units, vintage, condition, occupancy, price, NOI and its period, and stated cap rate, then recalculate where it can. The flags are often worth more than the table:</p>
+          <ul>
+            <li>A comp quoted on stabilized NOI being compared to the subject&rsquo;s trailing NOI</li>
+            <li>A renovated, fully leased asset treated as comparable to one with deferred maintenance</li>
+            <li>A broker figure with no source for price or NOI</li>
+            <li>A stale sale weighted the same as a recent one</li>
+          </ul>
+          <p>Keep closed sales, asking prices, surveys, and broker opinions in separate columns. In our example, the evidence supports 5.9% to 6.3% on in-place income for a property of this age and condition, and 5.5% to 5.9% once renovated and stabilized.</p>
+
+          <h2>How do brokers and owners fill in what the records leave out?</h2>
+          <p>Public records tell you what happened. Brokers and owners tell you why. Throughout my career the best information has come from conversations, not databases. AI does not change that. It changes how prepared you are when you pick up the phone.</p>
+          <ul>
+            <li><strong>Find the right people.</strong> Claude identifies the listing broker, the buyer-side broker, and the owning sponsor for each strong comp, with a cited source for each role, and ranks whom to call first.</li>
+            <li><strong>Ask what the record cannot answer.</strong> Brokers field plenty of &ldquo;what was the cap rate?&rdquo; calls. Far fewer callers say: &ldquo;The loan disclosure shows 84% occupancy at closing. Was the buyer underwriting lease-up, or were concessions part of the story?&rdquo; A specific question earns a specific answer, and often a relationship.</li>
+            <li><strong>Talk to owners as a peer.</strong> Owners often speak more freely than brokers about expenses, insurance, staffing, and what they would do differently. Approach them for market perspective, or as a prospective buyer only if you are one.</li>
+            <li><strong>Keep it clean.</strong> Claude drafts; a person reviews and sends. Be truthful about who you are and why you are asking. Never pose as a buyer, imply a relationship that does not exist, or press for information someone is not free to share. With email and CRM <a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" rel="noopener">connected</a>, Claude can log the outreach and fold the answers back into the comp file.</li>
+          </ul>
+
+          <h2>What is the indicated value range?</h2>
+          <p>With income and cap rates separated by case, the answer becomes a range tied to evidence. Normalized NOI earns a slightly lower cap range than in-place because corrected income is cleaner and easier for a buyer or lender to defend. That is a judgment call, and the investor owns it.</p>
+
+          <table class="model-summary">
+            <caption>Indicated value by case (illustrative)</caption>
+            <thead><tr><th scope="col">Case</th><th scope="col">NOI basis</th><th scope="col">Cap rate range</th><th scope="col">Indicated value</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">In-place</th><td>$960,000 verified trailing NOI</td><td>5.9% to 6.3%</td><td>$15.2M to $16.3M</td></tr>
+              <tr><th scope="row">Normalized</th><td>$1,020,000 after one-time costs</td><td>5.8% to 6.2%</td><td>$16.5M to $17.6M</td></tr>
+              <tr><th scope="row">Business plan, stabilized</th><td>$1,140,000 after renovations</td><td>5.5% to 5.9%</td><td>$19.3M to $20.7M</td></tr>
+              <tr><th scope="row">Business plan, today</th><td>Stabilized value less $900K capex and about $150K lost income</td><td>Same</td><td>$18.3M to $19.7M before profit or risk</td></tr>
+            </tbody>
+          </table>
+
+          <p>So which number is right? The analysis does not pick one for you. It shows what each one depends on.</p>
+          <ul>
+            <li><strong>The trailing $16 million</strong> is real but carries $60,000 of one-time cost.</li>
+            <li><strong>The broker&rsquo;s $18 million</strong> is about a 5.7% cap on normalized NOI, below the 5.8% to 6.2% the comps support. It holds up only if you credit the normalization and pay for part of the renovation upside before doing the work.</li>
+            <li><strong>The $21.1 million memorandum figure</strong> assumes every renovation succeeds, at a cap rate below what stabilized comps support, and asks you to pay today for value you would create yourself.</li>
+          </ul>
+          <p>With that laid out, the investment team can decide how much of the business plan it is willing to pay the seller for, and how much it keeps as its own upside. Then stress the case: lower NOI and a higher exit cap compound, and a pro forma that assumes both rent growth and cap-rate compression usually overstates the case. GRM is a useful second check, but it should never overrule an expense-based NOI.</p>
+
+          <h2>What prompt should you give Claude?</h2>
+          <p>Use this with your deal documents. It requires sources, labels uncertainty, and keeps a person in charge of every outreach.</p>
+
+          <div class="example-callout"><strong>Claude valuation research prompt</strong>
+            <p>I am evaluating a multifamily property in [metro and submarket]. The subject is [unit count, vintage, condition, occupancy, rent restrictions, renovation status, known capital needs]. My purpose is [acquisition screening / investment committee / refinancing / disposition].</p>
+            <p>Review the attached rent roll, trailing 12-month operating statement, offering memorandum, leases or abstracts, capital plan, and comp materials. Do not invent missing information or treat pro forma claims as verified.</p>
+            <ol>
+              <li>Reconcile the rent roll, leases, and operating statement. Cite the document and page or row for every material figure.</li>
+              <li>Build in-place, normalized, and business-plan NOI cases. Show each adjustment, its source, and whether it is verified, estimated, or unverified.</li>
+              <li>For each comparable sale, search public sources: county deed and mortgage records, transfer tax, state business filings for the owning entity, building permits, code records, tax appeals, and any agency (Fannie Mae, Freddie Mac) or CMBS loan disclosures. Record each figure with its source and date.</li>
+              <li>Capture date, location, units, vintage, condition, occupancy, price, NOI and its period, stated cap rate, and GRM. Recalculate where the inputs allow. Flag any comp whose quoted cap rate rests on a different NOI basis or occupancy than the subject.</li>
+              <li>Rank comps by relevance. Keep closed sales separate from asking prices, surveys, and broker opinions. Explain every exclusion.</li>
+              <li>For the strongest comps, identify the listing and buyer-side brokers and the owning sponsor from cited sources. Use only publicly listed business contact information.</li>
+              <li>Draft short, specific outreach for my review that references what the public record shows and asks what it cannot: NOI basis, concessions, renovations, and unusual terms. Be truthful about who I am and why I am asking. Send nothing without my approval.</li>
+              <li>Recommend low, base, and high cap rates supported by the comps, and show a valuation matrix for each NOI case. Name the assumptions that move value most.</li>
+              <li>List open questions and evidence to verify. Do not call this an appraisal or an investment recommendation.</li>
+            </ol>
+          </div>
+
+          <h2>How does TEG set this up for real estate teams?</h2>
+          <p>A prompt is a starting point. The real gain comes when this method runs inside your own environment, on your own data, the same way on every deal. As a member of Anthropic&rsquo;s Claude Partner Network, that is what The Endurance Group builds for real estate teams:</p>
+          <ul>
+            <li><strong>Connect Claude to your data:</strong> rent rolls, operating statements, licensed comp data and your CRM, so analysis starts from your records, not copy and paste.</li>
+            <li><strong>Turn the method into a reusable skill:</strong> your underwriting standards and comp criteria, run the same way by every analyst.</li>
+            <li><strong>Build in the guardrails:</strong> source citations on every figure, clear verified labels, human approval before any outreach, and a record of how each conclusion was reached.</li>
+            <li><strong>Get your team using it:</strong> training and support so your analysts own the work and the judgment.</li>
+          </ul>
+          <p>Valuation is usually the first workflow. Most teams follow it with lease abstraction, investor reporting, or asset management reviews built on the same foundation. See how we work with firms on our <a href="https://www.theendurancegroup.com/realestate">real estate page</a>.</p>
+
+          <p>Claude can sharpen the work. It cannot own the conclusion. The value is not a &ldquo;correct&rdquo; cap rate. It is a traceable path from rent rolls, public records, loan disclosures, comps, and real conversations to a valuation your investment committee can challenge, built far faster than the manual version.</p>
+
+          <div class="example-callout"><strong>Let&rsquo;s talk about one of your deals</strong><p>Pick one deal your team is evaluating. We will set this workflow up in your Claude environment, with your documents and data, and your analyst runs it alongside us. You keep the conclusion and the capability. Start with a 30-minute call. Bring the deal; I will bring the questions an underwriter would ask. <a href="https://meetings.hubspot.com/jsullivan9" rel="noopener">Book a time with Jim</a>.</p></div>
+
+          <h2>Frequently asked questions</h2>
+          <h3>How do you value a multifamily property with Claude?</h3>
+          <p>Give Claude the rent roll, trailing 12-month statement, offering memorandum and capital plan, and have it build three NOI cases (in-place, normalized and business-plan) with a source for every adjustment. Then have it assemble comparable sales from public records, derive cap rate ranges from the relevant comps, and show a value range for each case. A person reviews every conclusion.</p>
+          <h3>Why is the market average cap rate the wrong cap rate for a deal?</h3>
+          <p>A market cap rate is an inference from past sales, not a constant. Comps differ in occupancy, condition, income basis and timing, so the average blends deals that are not comparable to your subject. A defensible cap rate comes from the sales that most resemble the property on the same income basis.</p>
+          <h3>What public records can show a multifamily property's real performance?</h3>
+          <p>Agency loan disclosures from Fannie Mae and Freddie Mac, CMBS loan-level reporting, county deed and mortgage records, state business filings, building permits and code records, and property tax appeals. Coverage varies by county and state, and Claude flags where the record is silent.</p>
+          <h3>What is the difference between in-place, normalized and business-plan value?</h3>
+          <p>In-place value reflects what the current rent roll and trailing operations support today. Normalized value corrects for one-time income and expenses. Business-plan value reflects what the property could be worth after renovations or lease-up, net of the time, cost and execution risk to get there.</p>
+
+          <p><em>Figures in the example are illustrative. This article is not an appraisal or investment advice.</em></p>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="../book-value-assessment.html">Start Your Free AI Value Assessment</a>
+            <a class="btn btn-secondary" href="../contact.html">Schedule a Call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">Real Estate</span>
+            <h3><a href="ai-tools-commercial-real-estate.html">AI tools for commercial real estate brokers: what's actually useful</a></h3>
+            <p>Where AI saves CRE teams the most time, and what to skip.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">Real Estate</span>
+            <h3><a href="cretech-new-york-ai-connected-systems.html">AI for real estate: connect your systems (what I heard at CREtech New York)</a></h3>
+            <p>Why real estate teams want AI across every tool, and why it needs a partner to maintain.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="../images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+          <p class="footer-cta"><a class="btn btn-primary" href="../book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../how-we-work.html">How We Work</a></li>
+            <li><a href="../managed-claude.html">Managed Claude</a></li>
+            <li><a href="../claude-for-sales.html">Claude for Sales</a></li>
+            <li><a href="../claude-business-development.html">B2B Sales</a></li>
+            <li><a href="../realestate">Real Estate</a></li>
+            <li><a href="../saas">B2B Tech &amp; SaaS</a></li>
+            <li><a href="../professionalservices">Professional Services</a></li>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../specialties.html">Specialties</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Free Offerings</h4>
+          <ul>
+            <li><a href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="../intent-playbook.html">Free Intent Lead Playbook</a></li>
+            <li><a href="../ai-policy">Free AI Policy Draft</a></li>
+            <li><a href="../claude-tutorials.html">Free Claude Video Training</a></li>
+            <li><a href="../claude-plugins.html">Free Claude Plugins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js?v=20260930" defer></script>
+</body>
+</html>
