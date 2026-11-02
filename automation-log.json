@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-02",
+    "title": "Post to social media directly from Claude with Composio",
+    "slug": "composio-claude-social-media-posting",
+    "url": "https://www.theendurancegroup.com/blog/composio-claude-social-media-posting.html",
+    "path": "manual-request",
+    "angle_summary": "How Composio connects Claude to social platforms (LinkedIn, X, Facebook, Instagram) to draft, approve and publish posts from the chat. Angle: TEG sets it up (Composio connection, brand voice Skill, content Project, human approval workflow, training) as part of a Claude marketing strategy. Complements composio-multiple-accounts-claude.",
+    "deploy_verified": false,
+    "related_post_updated": "composio-multiple-accounts-claude.html, mcp-servers-for-business.html"
+  },
+  {
     "date": "2026-10-28",
     "title": "Already Have Copilot? Here's What Claude Adds",
     "slug": "claude-vs-copilot-chat-what-claude-adds",
