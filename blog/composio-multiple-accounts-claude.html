@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connect Multiple Gmail and CRM Accounts to Claude | TEG</title>
+  <title>Connect Multiple Gmail and CRM Accounts to Claude with Composio | TEG</title>
   <meta name="description" content="Claude connectors allow one account per app. Composio lets Claude use your work and personal Gmail, or two CRMs, side by side. Here is how it works.">
   <link rel="canonical" href="https://www.theendurancegroup.com/blog/composio-multiple-accounts-claude.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="The Endurance Group">
-  <meta property="og:title" content="Connect Multiple Gmail and CRM Accounts to Claude | TEG">
+  <meta property="og:title" content="Connect Multiple Gmail and CRM Accounts to Claude with Composio | TEG">
   <meta property="og:description" content="Claude connectors allow one account per app. Composio lets Claude use your work and personal Gmail, or two CRMs, side by side. Here is how it works.">
   <meta property="og:url" content="https://www.theendurancegroup.com/blog/composio-multiple-accounts-claude.html">
   <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
@@ -19,7 +19,7 @@
   <meta property="article:published_time" content="2026-10-26T09:00:00-04:00">
   <meta name="author" content="Conor Sullivan">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Connect Multiple Gmail and CRM Accounts to Claude | TEG">
+  <meta name="twitter:title" content="Connect Multiple Gmail and CRM Accounts to Claude with Composio | TEG">
   <meta name="twitter:description" content="Claude connectors allow one account per app. Composio lets Claude use your work and personal Gmail, or two CRMs, side by side. Here is how it works.">
   <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,15 +68,17 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "One login for every inbox and CRM: why Composio matters",
+  "headline": "Connect Multiple Gmail and CRM Accounts to Claude with Composio",
   "description": "Claude connectors allow one account per app. Composio lets Claude use your work and personal Gmail, or two CRMs, side by side. Here is how it works.",
   "image": "https://www.theendurancegroup.com/images/og-default.png",
   "datePublished": "2026-10-26",
-  "dateModified": "2026-10-26",
+  "dateModified": "2026-11-02",
   "author": {
     "@type": "Person",
     "name": "Conor Sullivan",
-    "jobTitle": "Vice President"
+    "url": "https://www.theendurancegroup.com/authors/conor-sullivan.html",
+    "jobTitle": "Vice President",
+    "worksFor": { "@type": "Organization", "name": "The Endurance Group" }
   },
   "publisher": {
     "@type": "Organization",
@@ -140,6 +142,19 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to connect multiple Gmail or CRM accounts to Claude with Composio",
+  "step": [
+    {"@type": "HowToStep", "name": "Add Composio to Claude", "text": "Add Composio to Claude as a connector."},
+    {"@type": "HowToStep", "name": "Sign in to each account", "text": "Sign in to each account, such as work Gmail and personal Gmail, through the normal sign-in screen."},
+    {"@type": "HowToStep", "name": "Give each account a nickname", "text": "Name each account something simple like work or personal."},
+    {"@type": "HowToStep", "name": "Ask Claude in plain language", "text": "Tell Claude which account to use for each task. Claude confirms which one it used."}
+  ]
+}
+  </script>
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -184,13 +199,15 @@
     <section class="hero hero--page section">
       <div class="container">
         <span class="eyebrow">AI Automations</span>
-        <h1>One login for every inbox and CRM: why Composio matters</h1>
+        <h1>Connect Multiple Gmail and CRM Accounts to Claude with Composio</h1>
         <div class="case-study-meta" style="margin-top:20px;">
           <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
           <span class="divider">·</span>
           <span>Vice President</span>
           <span class="divider">·</span>
           <span>October 26, 2026</span>
+          <span class="divider">·</span>
+          <span>Updated November 2, 2026</span>
         </div>
         <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
       </div>
@@ -210,16 +227,23 @@
 
           <p>When Claude can reach the apps where your work lives, it can read, draft and update things for you instead of just talking about them. Email, CRM, calendar, chat and project tools all count. Most setups are simple. But one problem comes up again and again: people who have two of the same thing.</p>
 
-          <h2>The catch: one account per app</h2>
-          <p>Claude's standard connectors usually allow one account per app at a time. You can connect your work Gmail, or your personal Gmail, but not both. The same goes for CRMs. If you run two companies, or work with a client who has their own HubSpot or Salesforce alongside yours, you hit a wall fast. Two companies, multiple accounts on the same tech, and Claude can only see one of them.</p>
-          <p>Now there is an answer: Composio.</p>
+          <h2>Why can't Claude connect two Gmail accounts?</h2>
+          <p>Claude's standard connectors usually allow one account per app at a time. You can connect your work Gmail, or your personal Gmail, but not both. The same goes for CRMs. If you run two companies, or work with a client who has their own HubSpot or Salesforce alongside yours, you hit a wall fast. Claude can only see one of the accounts.</p>
+          <p>Composio solves this by sitting between Claude and your apps, so you can link as many accounts as you need.</p>
 
-          <h2>What Composio does</h2>
-          <p><a href="https://composio.dev" rel="noopener">Composio</a> is a connection layer between an AI assistant like Claude and the apps you already use. You sign in to each app once, and Claude can then read from and act in them for you. It supports more than 500 apps, including Gmail, Outlook, Slack, Google Calendar, Notion and many CRMs.</p>
+          <h2>What is Composio and what does it do?</h2>
+          <p><a href="https://composio.dev" rel="noopener">Composio</a> is a connection layer between an AI assistant like Claude and the apps you already use. You sign in to each app once, and Claude can then read from and act in them for you. It supports more than 500 apps, including Gmail, Outlook, Slack, Google Calendar, Notion and many CRMs (see the <a href="https://docs.composio.dev" rel="noopener">Composio documentation</a> for the current list). Claude's own connectors are covered in <a href="https://support.claude.com" rel="noopener">Anthropic's help center</a>.</p>
           <p>The feature that matters most for busy people is multiple accounts per app. You can connect your work Gmail and your personal Gmail side by side, give each a simple nickname like "work" and "personal," and tell Claude which one to use for any task. For the single-account basics, see <a href="claude-connectors-gmail-how-to-connect.html">how to connect Gmail to Claude</a>. Composio also connects Claude to your social accounts, so you can <a href="composio-claude-social-media-posting.html">post to LinkedIn, X, Facebook and Instagram directly from Claude</a>.</p>
 
-          <h2>What it looks like in practice</h2>
-          <p>Setup takes a few minutes. You approve each account through a normal sign-in screen, and Claude confirms the connection is active. From there, you can ask in plain language:</p>
+          <h2>How do you set up multiple accounts in Claude?</h2>
+          <p>Setup takes a few minutes:</p>
+          <ol>
+            <li><strong>Add Composio to Claude</strong> as a connector.</li>
+            <li><strong>Sign in to each account</strong> (for example work Gmail, then personal Gmail) through the normal sign-in screen.</li>
+            <li><strong>Give each account a nickname</strong> like "work" or "personal."</li>
+            <li><strong>Ask Claude in plain language</strong> and name the account to use. Claude confirms which one it used.</li>
+          </ol>
+          <p>From there, you can ask things like:</p>
           <ul>
             <li>"Draft an email to my mom from my personal account and one to my dad from work."</li>
             <li>"Check both inboxes and tell me what needs a reply today."</li>
@@ -228,7 +252,7 @@
           <p>Claude picks the right account, does the work, and tells you what it did. You stay in one conversation instead of five browser tabs.</p>
           <p>This is the kind of setup that is quick when someone has done it before and fiddly when they have not. Each app has its own sign-in quirks, and the nicknames and permissions are what keep a work email from going out of your personal account. It is a big part of what we do for clients.</p>
 
-          <h2>Where small teams feel it most</h2>
+          <h2>What can you do with multiple accounts connected?</h2>
           <ul>
             <li><strong>One morning summary.</strong> Instead of opening each inbox, ask for a single digest across all accounts: client messages, urgent replies and everything else.</li>
             <li><strong>Email to CRM, without retyping.</strong> A client email becomes a CRM note or task, linked to the right contact.</li>
@@ -238,7 +262,7 @@
           </ul>
           <p>For a consultancy or a founder who wears several hats, the gain is less about any one task and more about not carrying the context in your head.</p>
 
-          <h2>Staying in control</h2>
+          <h2>Is it safe to give Claude access to several inboxes?</h2>
           <p>Giving an AI access to your email is a real decision, so the setup matters.</p>
           <ul>
             <li><strong>You approve every connection.</strong> Each account is linked through its own sign-in, and you can remove it at any time.</li>
