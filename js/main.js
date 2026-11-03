@@ -394,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Autoplay must start muted; browsers may still block it — reflect real state.
+  // Autoplay must start muted; browsers may still block it, reflect real state.
   syncPlayIcons();
   syncMuteIcon();
   var attempt = video.play();
