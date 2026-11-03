@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-03",
+    "title": "AI Finally Makes Personalization at Scale Real in B2B Sales",
+    "slug": "ai-personalization-at-scale-b2b-sales",
+    "url": "https://theendurancegroup.com/blog/ai-personalization-at-scale-b2b-sales.html",
+    "path": "series-personalization-at-scale-part-1",
+    "angle_summary": "Part 1 (pillar) of Jim's series on AI and personalization at scale in B2B sales: the two questions (what do you hate most / what would you do with unlimited time), the unlimited-time prospecting list, why personalization at scale failed before, what changed, the relevant-not-creepy rule, and the series roadmap.",
+    "deploy_verified": false,
+    "related_post_updated": "outsourced-sales-execution-guide.html"
+  },
+  {
     "date": "2026-09-03",
     "title": "Does Claude Remember Your Conversations Now? What B2B Teams Need to Know",
     "slug": "claude-memory-update-b2b-teams",
