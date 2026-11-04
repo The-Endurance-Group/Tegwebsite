@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-04",
+    "title": "AI for real estate agents: what to automate first",
+    "slug": "ai-for-real-estate-agents",
+    "url": "https://www.theendurancegroup.com/blog/ai-for-real-estate-agents.html",
+    "path": "manual-request",
+    "angle_summary": "AI for individual real estate agents and brokers: what to automate first (listing and buyer checklists, marketing drafts, document follow-up), turning SOPs into skills, ChatGPT vs Claude, what stays human, brokerage platforms that block AI, safety. Built to rank for AI for real estate agents and feed the agents/brokers landing page.",
+    "deploy_verified": false,
+    "related_post_updated": "claude-for-real-estate.html"
+  },
+  {
     "date": "2026-11-03",
     "title": "Every Salesperson Has a Wish List. AI Just Made It Possible.",
     "slug": "ai-personalization-at-scale-b2b-sales",
