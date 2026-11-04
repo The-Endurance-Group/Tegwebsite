@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Build an AI-Native Revenue Organization With Claude | TEG</title>
+  <meta name="description" content="What an AI-native revenue organization is, and how to build one with Claude: the maturity ladder, pilot plan and ROI metrics from Anthropic's guide.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/ai-native-revenue-organization.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="How to Build an AI-Native Revenue Organization With Claude | TEG">
+  <meta property="og:description" content="What an AI-native revenue organization is, and how to build one with Claude: the maturity ladder, pilot plan and ROI metrics from Anthropic's guide.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/ai-native-revenue-organization.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="https://www.theendurancegroup.com/authors/conor-sullivan.html">
+  <meta property="article:published_time" content="2026-11-04T09:00:00-04:00">
+  <meta name="author" content="Conor Sullivan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Build an AI-Native Revenue Organization With Claude | TEG">
+  <meta name="twitter:description" content="What an AI-native revenue organization is, and how to build one with Claude: the maturity ladder, pilot plan and ROI metrics from Anthropic's guide.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css?v=20261026-nav">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://www.theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": { "@type": "Person", "name": "Jim Sullivan" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Build an AI-Native Revenue Organization With Claude",
+    "description": "What an AI-native revenue organization is, and how to build one with Claude: the maturity ladder, pilot plan and ROI metrics from Anthropic's guide.",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "datePublished": "2026-11-04",
+    "dateModified": "2026-11-04",
+    "author": { "@type": "Person", "name": "Conor Sullivan", "jobTitle": "Vice President" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Endurance Group",
+      "logo": { "@type": "ImageObject", "url": "https://www.theendurancegroup.com/images/og-default.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.theendurancegroup.com/blog/ai-native-revenue-organization.html" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an AI-native revenue organization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An AI-native revenue organization is a sales team where Claude is connected to the CRM, call recordings, email and content tools, and runs shared workflows such as call prep, follow-up and forecasting. The team's best methods are written down as skills everyone uses, and leaders measure results against pipeline and win rate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to roll Claude out to a sales team?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anthropic's guide describes three phases: set up, pilot on two or three teams, then scale in waves. Cyera, a customer featured in the guide, rolled Claude out to its entire company in 17 days after a brief pilot. Your timeline depends on how fast IT and security complete their reviews."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who should own a Claude rollout for sales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Revenue operations is usually the strongest owner because it already owns the CRM, the connected systems and the pipeline reporting. Pair the program owner with an IT counterpart for provisioning and single sign-on, and name a sponsoring executive such as the chief revenue officer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you measure ROI from Claude in sales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pick one activity metric and one revenue metric before the pilot, such as call-prep briefs generated and pipeline per rep. Then compare the pilot group against the rest of the team in the same quarter. Sort returns into efficiency, expansion and new capabilities rather than hours saved alone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a smaller company follow this approach without a RevOps team?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The same sequence works at any size: name an owner, connect the CRM and call recordings, pick one pilot team, measure one activity and one revenue metric, and set a decision date. A small team can run the pilot with one or two champions instead of a formal program."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
+  </script>
+</head>
+<body class="blog-post">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../how-we-work.html">How We Work</a></li>
+          <li><a href="../managed-claude.html">Managed Claude</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a class="nav-cta" href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">Sales Execution</span>
+        <h1>How to Build an AI-Native Revenue Organization With Claude</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Vice President</span>
+          <span class="divider">·</span>
+          <span>November 4, 2026</span>
+        </div>
+        <a class="category-badge" href="category/sales-execution.html" style="margin-top:16px;">Sales Execution</a>
+      </div>
+    </section>
+
+    <!-- Article body -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="prose">
+
+          <p><em>The Endurance Group (TEG) is a Claude Implementation Partner and an official member of the Anthropic Claude Partner Network. We build Claude Skills, Projects, and MCP integrations for B2B ops teams. This post turns Anthropic's revenue leader guide into a plan you can use. <a href="../solutions.html">See our full Claude services.</a></em></p>
+
+          <div class="example-callout">
+            <h2>What is an AI-native revenue organization?</h2>
+            <p>An AI-native revenue organization is a sales team that has connected Claude to its CRM, call recordings, email and content, and runs shared workflows on top of them, such as call prep, follow-up and forecasting. Individual reps save time, and the whole team compounds those gains into pipeline and win rate.</p>
+          </div>
+
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>An AI-native revenue organization connects Claude to its CRM, calls, email and content, then runs shared workflows instead of one-off prompts.</li>
+            <li>Results depend less on how many seats you buy and more on which systems Claude can read and write, and how much work you trust it to finish.</li>
+            <li>Roll out in phases: set up, pilot on two or three teams, scale in waves, then operate with governance.</li>
+            <li>Measure one activity metric and one revenue metric, and compare a pilot group to the rest of the team in the same quarter.</li>
+            <li>Three mistakes stall most rollouts: no end date for the pilot, scaling seats without scaling champions, and ignoring spend until the first invoice.</li>
+          </ul>
+
+          <p>Anthropic recently published <a href="https://claude.com/resources/articles/building-an-ai-native-revenue-organization" rel="noopener">Building an AI-native revenue organization</a>, a 28-page <a href="https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/6aa8884a409cf1cabf867265_Claude-eBook-Building-an-AI-native-revenue-organization-09142026.pdf" rel="noopener">guide for revenue leaders</a>. We read all of it. Here is the version for a business owner or sales leader deciding what to do next, with our notes on where small and mid-sized teams should adapt it.</p>
+
+          <h2>Why do two sales teams with the same Claude seats get different results?</h2>
+
+          <p>Because the seats are not the product. What a rep gets from Claude depends on which systems it can read and write, how much of the work it is trusted to finish, and whether the team's best methods are written down where everyone can run them.</p>
+
+          <p>The guide describes four levels of AI maturity, and each step up lets Claude do more complex work:</p>
+
+          <ol>
+            <li><strong>Individual tasks.</strong> Reps prompt Claude and connect it to their own tools.</li>
+            <li><strong>Team workflows.</strong> Team expertise is codified as skills and plugins the whole team runs.</li>
+            <li><strong>Department KPIs.</strong> Department workflows are rebuilt as plugins or managed agents pointed at KPIs or OKRs.</li>
+            <li><strong>Critical business processes.</strong> Claude runs the process end to end, with human oversight as needed.</li>
+          </ol>
+
+          <p>Most teams start at level one, where reps can save hours a week drafting emails and doing research. The returns grow as the organization extends Claude more access and more trust. For the difference between a one-off prompt and a repeatable workflow, see <a href="claude-skills.html">what Claude Skills are and why they matter</a>.</p>
+
+          <h2>What results are AI-native sales teams reporting?</h2>
+
+          <p>Anthropic's guide cites several named examples. These are the customers' own figures, as published by Anthropic in 2026.</p>
+
+          <ul>
+            <li><strong>Cox Communications</strong> reported a <a href="https://claude.com/customers/cox-and-accenture" rel="noopener">7x return in its first year of AI investment</a>. It cut the cost of validating and enriching sales leads by 86% and raised accuracy from 18% to 97%.</li>
+            <li><strong>Cyera</strong> has <a href="https://claude.com/customers/cyera" rel="noopener">88% of roughly 1,500 employees using Claude weekly</a>. Its BDRs draft outreach with a skill built from top performers' best work.</li>
+            <li><strong>Anthropic's own sales team</strong> reports call prep briefings in about two minutes, down from thirty minutes of digging through CRM notes, email threads and call recordings.</li>
+            <li><strong>Workato</strong> reports deal prep falling from three or four hours to 45 minutes.</li>
+          </ul>
+
+          <p>Notice what the larger numbers measure. Cox measured the cost and accuracy of a whole process, not minutes saved per rep. That is the gap between efficiency and ROI, which we cover in <a href="saving-time-isnt-the-same-as-creating-roi.html">why saving time is not the same as creating ROI</a>.</p>
+
+          <h2>What should you decide before you start a Claude rollout?</h2>
+
+          <p>Make seven decisions before the pilot begins. Skipping them is the most common reason a rollout drifts.</p>
+
+          <ol>
+            <li><strong>Owner.</strong> Revenue operations is a strong choice because it owns the CRM, the connected systems and the pipeline reporting.</li>
+            <li><strong>Connected systems.</strong> The more systems Claude connects to, such as the CRM, call recordings, email and calendar, enrichment data and content, the more work it finishes on its own. Having reps upload transcripts by hand is the weakest setup, and connecting Claude directly to the call recorder is the best.</li>
+            <li><strong>IT counterpart.</strong> Name an IT owner for workspace provisioning, single sign-on and admin consent, and agree on provisioning dates before you commit to a pilot date.</li>
+            <li><strong>Security review.</strong> Start it early. It typically covers data boundaries, the connector permission model, auditability and telemetry export. Anthropic publishes its documentation at <a href="https://trust.anthropic.com" rel="noopener">trust.anthropic.com</a>, and our guide to <a href="claude-data-privacy-business.html">Claude data privacy for business</a> covers the questions to ask.</li>
+            <li><strong>Success metrics.</strong> Pick one activity metric, such as call-prep briefs generated, and one revenue metric, such as pipeline per rep or cycle length. Record a baseline before deployment.</li>
+            <li><strong>Spend visibility.</strong> Set limits by organization, group and user, and read usage analytics from the first week.</li>
+            <li><strong>Pilot cohort.</strong> Choose two or three teams with motivated leaders instead of scattered volunteers, and provision plugins at the admin level so setups do not splinter.</li>
+          </ol>
+
+          <h2>What does a three-phase Claude rollout plan look like?</h2>
+
+          <p>A sales team can go from first seats to a fully provisioned team running shared skills in three phases, followed by an ongoing operating rhythm.</p>
+
+          <ol>
+            <li><strong>Set up.</strong> IT handles workspace and single sign-on while RevOps configures the first connectors and installs plugins at the admin level. Name your champions at the same time. Success looks like every pilot rep having a working seat, connected tools and a first command run.</li>
+            <li><strong>Pilot.</strong> Two or three teams each run two or three use cases. Champions demo on live accounts, hold office hours and write the first skills. The guide's benchmark is weekly active use above 70% by week four, with at least three documented wins and one converted skeptic.</li>
+            <li><strong>Scale.</strong> Provision in waves, commonly 25 seats, then 150, then everyone. Skills reps built during the pilot move into a shared team bundle. Reps bring forecast projections to the weekly call, and managers build QBR decks in Claude.</li>
+            <li><strong>Operate.</strong> Assign governance and skill library ownership, onboard new hires with the plugin on day one, and refresh skills quarterly against the playbook.</li>
+          </ol>
+
+          <p>Plan for two or three champions per department, or one for every 25 to 50 users, with dedicated hours for the work. The guide calls the number of champion-written skills that pilot teams use regularly the best early signal of how scaling will go.</p>
+
+          <h2>Which Claude use cases should a sales team start with?</h2>
+
+          <p>Start with two or three, and let the rest wait for the scale phase. These are the use cases revenue teams run most, by who benefits:</p>
+
+          <ul>
+            <li><strong>Call prep and follow-up</strong> for account executives: a pre-call brief from CRM, email and call history, then a follow-up email and CRM update afterward.</li>
+            <li><strong>Account research briefs</strong> for AEs and SDRs: a researched brief on any company or contact.</li>
+            <li><strong>Outreach at scale</strong> for SDRs and BDRs: researched, personalized email and LinkedIn drafts from a shared skill.</li>
+            <li><strong>Pipeline review and weighted forecast</strong> for RevOps and sales leadership: deal-health flags and forecast projections from live pipeline data.</li>
+            <li><strong>The team playbook as a skill</strong> for sales leadership: top performers' methods written down so new reps start with working methods on day one.</li>
+          </ul>
+
+          <p>One example from the guide shows why account scoring matters. An Anthropic sales leader running a 4,000-account book estimates he saves about 90 minutes a day on tasks like call prep, and Claude scores every account in his book overnight, work that could otherwise take hundreds of hours across RevOps, FP&amp;A and marketing. If you already use HubSpot, our <a href="claude-hubspot-plugin.html">Claude HubSpot plugin guide</a> shows how the CRM connection works.</p>
+
+          <h2>How do you measure ROI from Claude in a sales organization?</h2>
+
+          <p>Measure in four stages, because returns show up in order: adoption first, then activity, then outcomes in the CRM, then cost.</p>
+
+          <ol>
+            <li><strong>Adoption.</strong> Share of seats active weekly and connectors authorized per rep.</li>
+            <li><strong>Activity.</strong> Call-prep briefs generated and opportunity updates written, with a quality check such as forecast accuracy.</li>
+            <li><strong>Outcomes.</strong> Pipeline per rep, accounts covered per rep, cycle length, win rate and new-rep ramp time.</li>
+            <li><strong>Cost.</strong> Spend per rep per day and cost per unit of work.</li>
+          </ol>
+
+          <p>Then sort the returns into three groups. <strong>Efficiency</strong> is the same work done faster. <strong>Expansion</strong> is more output from the same team, such as more accounts covered and more pipeline per rep. <strong>New capabilities</strong> unlock work that never happened before, like reaching the long tail of accounts no rep had time to touch.</p>
+
+          <p>Compare the pilot group against the rest of the team in the same quarter, not before and after. Both groups sell into the same market in the same season, so a difference is easier to credit to the program. The guide also warns against building the case on hours saved alone, because a CFO can only value freed-up time at what the team is paid for it. Lead with expansion and new capabilities. Our walkthrough on <a href="how-to-calculate-roi-ai-workflow.html">how to calculate the ROI of an AI workflow</a> shows how to put numbers on each group.</p>
+
+          <h2>What stalls an AI rollout across a sales team?</h2>
+
+          <p>Three patterns stall most org-wide rollouts, according to the guide, and all three are avoidable at setup.</p>
+
+          <ul>
+            <li><strong>Running the pilot without an end date.</strong> The pilot goes well, so it keeps going, and a year later the program is still 25 seats. Set a scale decision date on the sponsoring executive's calendar, name the decision maker and agree on what a yes requires.</li>
+            <li><strong>Scaling seats without scaling champions.</strong> Widening to 150 seats with three champions leaves later waves with a bad first week. Hold the ratio of one champion for every 25 to 50 users.</li>
+            <li><strong>Ignoring spend until the first invoice.</strong> With usage-based billing, costs rise as more reps run more work. Set limits by organization, group and user before the pilot, and read usage analytics weekly. When a rep spends heavily and produces little, coach first and lower their cap only if coaching does not change their output.</li>
+          </ul>
+
+          <p>For more on why rollouts stall, see <a href="why-ai-projects-fail.html">why AI projects fail</a>.</p>
+
+          <h2>How should a smaller team adapt this?</h2>
+
+          <p>The guide is written for large revenue organizations, and the sequence still holds at small scale. In our experience, the roles collapse into fewer people, but the decisions stay the same.</p>
+
+          <ul>
+            <li>One person owns the program, usually the sales leader or whoever manages the CRM.</li>
+            <li>Connect the CRM and the call recorder first, because those two connections remove the most manual work.</li>
+            <li>Pilot with one team and one or two champions, and write down the first skill from your best seller's routine.</li>
+            <li>Pick one activity metric and one revenue metric, set a baseline and put a decision date on the calendar.</li>
+          </ul>
+
+          <p>That is also where a partner helps most. TEG's <a href="../claude-for-sales.html">Claude for Sales and RevOps</a> work covers the setup, connectors and skills, and <a href="../managed-claude.html">Managed Claude</a> keeps the skill library, governance and training current after launch.</p>
+
+          <h2>Can TEG help you build an AI-native revenue organization?</h2>
+
+          <p>Yes. TEG works with sales and RevOps leaders to connect Claude to the CRM and call tools, build the first skills from your best performers, set up measurement and run the pilot. We start with a free <a href="../book-value-assessment.html">AI Value Assessment</a> of one team, which estimates where Claude could free time, avoid costs or create new revenue. If you would rather talk it through, <a href="../contact.html">schedule a call</a>.</p>
+
+          <h2>Frequently asked questions</h2>
+
+          <h3>What is an AI-native revenue organization?</h3>
+          <p>An AI-native revenue organization is a sales team where Claude is connected to the CRM, call recordings, email and content tools, and runs shared workflows such as call prep, follow-up and forecasting. The team's best methods are written down as skills everyone uses, and leaders measure results against pipeline and win rate.</p>
+
+          <h3>How long does it take to roll Claude out to a sales team?</h3>
+          <p>Anthropic's guide describes three phases: set up, pilot on two or three teams, then scale in waves. Cyera, a customer featured in the guide, rolled Claude out to its entire company in 17 days after a brief pilot. Your timeline depends on how fast IT and security complete their reviews.</p>
+
+          <h3>Who should own a Claude rollout for sales?</h3>
+          <p>Revenue operations is usually the strongest owner because it already owns the CRM, the connected systems and the pipeline reporting. Pair the program owner with an IT counterpart for provisioning and single sign-on, and name a sponsoring executive such as the chief revenue officer.</p>
+
+          <h3>How do you measure ROI from Claude in sales?</h3>
+          <p>Pick one activity metric and one revenue metric before the pilot, such as call-prep briefs generated and pipeline per rep. Then compare the pilot group against the rest of the team in the same quarter. Sort returns into efficiency, expansion and new capabilities rather than hours saved alone.</p>
+
+          <h3>Can a smaller company follow this approach without a RevOps team?</h3>
+          <p>Yes. The same sequence works at any size: name an owner, connect the CRM and call recordings, pick one pilot team, measure one activity and one revenue metric, and set a decision date. A small team can run the pilot with one or two champions instead of a formal program.</p>
+
+          <div class="btn-group">
+            <a class="btn btn-primary" href="../contact.html">Schedule a Call</a>
+            <a class="btn btn-secondary" href="../book-value-assessment.html">Start Your Free AI Value Assessment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related reading -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <h2>Related reading</h2>
+        </div>
+        <div class="grid grid--2">
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="saving-time-isnt-the-same-as-creating-roi.html">Saving Time Isn’t the Same as Creating ROI</a></h3>
+            <p>Distinguish AI time savings from cash savings, avoided hiring, capacity and revenue contribution.</p>
+          </div>
+          <div class="feature-card">
+            <span class="eyebrow">AI Automations</span>
+            <h3><a href="claude-hubspot-plugin.html">How to use Claude with HubSpot: a free plugin for deals, tasks, and meeting prep</a></h3>
+            <p>How Claude connects to your CRM so call prep, follow-up and updates draw on live data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="../images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+          <p class="footer-cta"><a class="btn btn-primary" href="../book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../how-we-work.html">How We Work</a></li>
+            <li><a href="../managed-claude.html">Managed Claude</a></li>
+            <li><a href="../claude-for-sales.html">Claude for Sales</a></li>
+            <li><a href="../claude-business-development.html">B2B Sales</a></li>
+            <li><a href="../realestate">Real Estate</a></li>
+            <li><a href="../saas">B2B Tech &amp; SaaS</a></li>
+            <li><a href="../professionalservices">Professional Services</a></li>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../specialties.html">Specialties</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Free Offerings</h4>
+          <ul>
+            <li><a href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="../intent-playbook.html">Free Intent Lead Playbook</a></li>
+            <li><a href="../ai-policy">Free AI Policy Draft</a></li>
+            <li><a href="../claude-tutorials.html">Free Claude Video Training</a></li>
+            <li><a href="../claude-plugins.html">Free Claude Plugins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js?v=20260930"></script>
+</body>
+</html>
