@@ -249,9 +249,9 @@
 @media (min-width: 820px) { .lab .demo { grid-template-columns: 1fr 1fr; align-items: start; } }
 @media (min-width: 1000px) { .lab .sec-grid { grid-template-columns: repeat(3, 1fr); } }
 .lab .book { display: inline-block; margin-top: 10px; font-weight: 700; }
-/* single-exit page: no site navigation, form is the only way out */
-.site-header .nav-toggle, .site-header .primary-nav, .site-footer .footer-col, .site-footer .footer-cta { display: none !important; }
-.site-header .logo, .site-footer .footer-brand > a { pointer-events: none; cursor: default; }
+/* footer link columns hidden on this landing page */
+.site-footer .footer-col, .site-footer .footer-cta { display: none !important; }
+.site-footer .footer-brand > a { pointer-events: none; cursor: default; }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -268,7 +268,7 @@
   <header class="site-header">
     <div class="container">
       <div class="header-brand">
-        <a class="logo" aria-label="The Endurance Group" tabindex="-1"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <a class="logo" href="/"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
         <img src="images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
       </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
