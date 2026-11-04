@@ -226,6 +226,13 @@
 @media (min-width: 720px) { .lab .vs.bold .could { transform: translateY(-8px); } }
 .lab .builtfor { padding-block: clamp(32px, 5vw, 52px); background: #fff; border-bottom: 1px solid var(--line); }
 .lab .builtfor .eyebrow { margin-bottom: 4px; }
+.lab .quotes { margin-top: 32px; display: grid; gap: 20px; }
+.lab .quote { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--gold); border-radius: var(--r); padding: 30px 28px; display: flex; flex-direction: column; gap: 18px; margin: 0; }
+.lab .quote img { height: 40px; width: auto; max-width: 160px; object-fit: contain; object-position: left; }
+.lab .quote blockquote { font-family: var(--font-head); font-size: clamp(1.15rem, 2.4vw, 1.4rem); line-height: 1.45; color: var(--plum); }
+.lab .quote figcaption { margin-top: auto; }
+.lab .quote cite { font-style: normal; font-weight: 700; font-size: .92rem; color: var(--plum-soft); }
+@media (min-width: 720px) { .lab .quotes { grid-template-columns: 1fr 1fr; } }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -392,6 +399,26 @@
       <div class="step"><p class="when">Call 3</p><h3>We refine it</h3><p>Your fixes and ideas, done.</p></div>
     </div>
     <p class="callout">Your time: about 3 hours.</p>
+  </div>
+</section>
+
+<!-- 6b. TESTIMONIALS -->
+<section class="alt">
+  <div class="container">
+    <p class="eyebrow">What people say</p>
+    <h2>Hands-on training that stuck.</h2>
+    <div class="quotes">
+      <figure class="quote">
+        <img src="images/clients/maine-technology-institute.webp?v=20260930" alt="Maine Technology Institute" loading="lazy">
+        <blockquote>&ldquo;The Claude training has made me more effective and efficient at work and has already saved me untold hours.&rdquo;</blockquote>
+        <figcaption><cite>Scott Bursey, Investment Officer, Maine Technology Institute</cite></figcaption>
+      </figure>
+      <figure class="quote">
+        <img src="images/clients/global-brain-health-institute.webp?v=20261002" alt="Global Brain Health Institute" loading="lazy">
+        <blockquote>&ldquo;They were able to really move my understanding of how to use Claude to the next level. They were clear and methodical, as well as genuinely curious about what I wanted to achieve, and then were able to help me get there.&rdquo;</blockquote>
+        <figcaption><cite>Jake Broder, Global Brain Health Institute</cite></figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
