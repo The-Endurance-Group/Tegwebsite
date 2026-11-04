@@ -216,6 +216,23 @@
 @media (min-width: 720px) { .lab .vs.bold .could { transform: translateY(-8px); } }
 .lab .builtfor { padding-block: clamp(32px, 5vw, 52px); background: #fff; border-bottom: 1px solid var(--line); }
 .lab .builtfor .eyebrow { margin-bottom: 4px; }
+.lab .quotes { margin-top: 32px; display: grid; gap: 20px; }
+.lab .quote { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--gold); border-radius: var(--r); padding: 30px 28px; display: flex; flex-direction: column; gap: 18px; margin: 0; }
+.lab .quote img { height: 40px; width: auto; max-width: 160px; object-fit: contain; object-position: left; }
+.lab .quote blockquote { font-family: var(--font-head); font-size: clamp(1.1rem, 2.3vw, 1.3rem); line-height: 1.45; color: var(--plum); }
+.lab .quote figcaption { margin-top: auto; }
+.lab .quote cite { font-style: normal; font-weight: 700; font-size: .92rem; color: var(--plum-soft); }
+@media (min-width: 720px) { .lab .quotes { grid-template-columns: 1fr 1fr; } }
+.lab .partner { margin-top: 28px; text-align: center; }
+.lab .partner img { height: 64px; width: auto; max-width: 100%; display: block; margin-inline: auto; }
+.lab .more { margin-top: 26px; }
+.lab .more summary { display: inline-block; cursor: pointer; list-style: none; font-weight: 700; padding: 13px 24px; border: 2px solid var(--plum); border-radius: 999px; }
+.lab .more summary::-webkit-details-marker { display: none; }
+.lab .more summary::after { content: " +"; }
+.lab .more[open] summary::after { content: " \2212"; }
+.lab .more summary:hover { background: var(--plum); color: #fff; }
+.lab .more[open] .cards { margin-top: 28px; }
+.lab .book { display: inline-block; margin-top: 10px; font-weight: 700; }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -228,32 +245,7 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- SHARED HEADER: keep in sync across all 8 pages -->
-  <header class="site-header">
-    <div class="container">
-      <div class="header-brand">
-        <a class="logo" href="/"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
-        <img src="images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
-      </div>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
-        <ul class="nav-list">
-          <li><a href="about.html">About</a></li>
-          <li><a href="how-we-work.html">How We Work</a></li>
-          <li><a href="managed-claude.html">Managed Claude</a></li>
-          <li><a href="specialties.html">Specialties</a></li>
-          <li><a href="success.html">Success</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a class="nav-cta" href="book-value-assessment.html">Free AI Value Assessment</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <!-- END SHARED HEADER -->
+  
 
 <main class="lab" id="main-content">
 
@@ -264,12 +256,12 @@
       <img src="images/lab-logo.png" alt="Healthcare Thought Leaders' Lab" width="222" height="72">
       <small>x The Endurance Group</small>
     </a>
-    <p class="eyebrow">White-glove. Done for you. A Lab member offer.</p>
+    <p class="eyebrow">White-glove. Done for you. A Lab member offer for Australian practitioners.</p>
     <h1>We build your AI environment for you.</h1>
     <p class="lead">Not an app to figure out. We listen, we build it, we install it, and we walk you through it.</p>
     <div class="btn-row">
       <a class="btn btn-primary" href="#enquire" data-cta="hero-enquire">Send an enquiry</a>
-      <a class="btn btn-ghost" href="#how" data-cta="hero-how">See how it works</a>
+      <a class="btn btn-ghost" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book">Book a scoping call</a>
     </div>
     <p class="fine">Fixed fee of <span data-price="usd">US$998</span>. About 3 hours of your time.</p>
   </div>
@@ -345,16 +337,23 @@
 <section id="build" class="alt">
   <div class="container">
     <p class="eyebrow">What we can build</p>
-    <h2>Six things we can build for you</h2>
+    <h2>Things we can build for you</h2>
     <p class="lead" style="margin-top:14px">We choose the pieces that fit your practice on call one.</p>
     <div class="cards">
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><h3>Connected systems</h3><p>Your AI, linked to the tools you already use.</p><ul class="logos" aria-label="Works with Kajabi, Canva, Meta Ads, Descript, Outlook, Google Workspace, WordPress, Facebook and Instagram"><li><span class="wm">Kajabi</span></li><li><img src="images/tools/canva.svg" alt="Canva" height="24" loading="lazy"></li><li><img src="images/tools/meta.svg" alt="Meta Ads" height="24" loading="lazy"></li><li><img src="images/tools/descript.svg" alt="Descript" height="24" loading="lazy"></li><li><img src="images/tools/outlook.svg" alt="Outlook" height="24" loading="lazy"></li><li><img src="images/tools/google-workspace.svg" alt="Google Workspace" height="24" loading="lazy"></li><li><img src="images/tools/wordpress.svg" alt="WordPress" height="24" loading="lazy"></li><li><img src="images/tools/facebook.svg" alt="Facebook" height="24" loading="lazy"></li><li><img src="images/tools/instagram.svg" alt="Instagram" height="24" loading="lazy"></li></ul><p style="margin-top:14px">Draft, schedule and publish Facebook and Instagram posts from Claude, using a posting tool we set up for you.</p></article>
       <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div><h3>Skills in your voice</h3><p>Reusable prompts that sound like you.</p><p class="eg">A talk becomes an email series in one click.</p></article>
       <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Scheduled routines</h3><p>Jobs that run while you work.</p><p class="pill"><b>7:00am</b> Daily summary sent to your inbox</p></article>
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><h3>Connected systems</h3><p>Your AI, linked to the tools you already use.</p><p class="eg">Draft and schedule Facebook and Instagram posts from Claude.</p></article>
+    </div>
+    <details class="more">
+      <summary>See everything else we can build</summary>
+      <div class="cards">
       <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></div><h3>Projects with your content</h3><p>Your material loaded, so you never re-explain.</p><p class="eg">Ask questions of your own course notes.</p></article>
       <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div><h3>Dashboards for your data</h3><p>One page for the numbers you check.</p><svg class="minivis" viewBox="0 0 120 44" aria-hidden="true"><g fill="#4a7c78"><rect x="4" y="26" width="14" height="14" rx="3"/><rect x="26" y="18" width="14" height="22" rx="3"/><rect x="48" y="22" width="14" height="18" rx="3"/></g><g fill="#c45c8a"><rect x="70" y="8" width="14" height="32" rx="3"/><rect x="92" y="14" width="14" height="26" rx="3"/></g></svg><ul class="chips"><li>Membership</li><li>Sales</li><li>Ad performance</li><li>Project status</li></ul></article>
       <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Review-ready content checks</h3><p>A second pair of eyes before you publish.</p><p class="eg">Flags wording for you to review. You make the call.</p></article>
-    </div>
+      </div>
+      <h3 class="forlabel">Tools we connect</h3>
+      <ul class="chips"><li>Kajabi</li><li>Canva</li><li>Meta Ads</li><li>Descript</li><li>Outlook</li><li>Google Workspace</li><li>WordPress</li><li>Facebook</li><li>Instagram</li></ul>
+    </details>
     <p class="note">Connectors depend on what each provider currently offers. Social posting works with Facebook Pages and Instagram Business or Creator accounts. We confirm what is possible for your tools on call one.</p>
   </div>
 </section>
@@ -393,8 +392,28 @@
   </div>
 </section>
 
+<!-- 6b. TESTIMONIALS -->
+<section class="alt">
+  <div class="container">
+    <p class="eyebrow">What people say</p>
+    <h2>Real people. Real time saved.</h2>
+    <div class="quotes">
+      <figure class="quote">
+        <img src="images/clients/market-savvy.webp?v=20260930" alt="Market Savvy" loading="lazy">
+        <blockquote>&ldquo;TEG has helped us create a high-powered, unique and time-saving tool for our health and medical clients worldwide. With HealthPost Genius, practices can create a month's worth of compliant social media posts in minutes.&rdquo;</blockquote>
+        <figcaption><cite>Megan Walker, Founder, Market Savvy</cite></figcaption>
+      </figure>
+      <figure class="quote">
+        <img src="images/clients/maine-technology-institute.webp?v=20260930" alt="Maine Technology Institute" loading="lazy">
+        <blockquote>&ldquo;[They] have made me more effective and efficient at work and have already saved me untold hours.&rdquo;</blockquote>
+        <figcaption><cite>Scott Bursey, Investment Officer, Maine Technology Institute</cite></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- 7. INVESTMENT -->
-<section id="investment" class="alt">
+<section id="investment">
   <div class="container">
     <p class="eyebrow">Investment</p>
     <h2>One fixed fee.</h2>
@@ -403,8 +422,8 @@
         <div class="amt" data-price="usd">US$998</div>
         <div class="usd">Fixed fee, in US dollars</div>
         <p class="split"><span data-price="half-usd">US$499</span> on signing<br><span data-price="half-usd">US$499</span> on delivery</p>
-        <span class="gst" data-price="gst">GST: confirm</span>
         <div><a class="btn btn-primary" href="#enquire" data-cta="price-enquire">Send an enquiry</a></div>
+        <div><a class="btn btn-ghost" style="margin-top:12px" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="price-book">Book a scoping call</a></div>
       </div>
       <div class="panel">
         <h3>What is included</h3>
@@ -421,11 +440,12 @@
       <p><strong>About the price.</strong> The Endurance Group is a US business. The fee is set in US dollars. Please check the tax treatment with your own advisor.</p>
       <p style="margin-top:.7em"><strong>Third-party costs are separate.</strong> You pay your own Claude plan, Canva, hosting, any social posting tool and any other subscriptions directly to those providers. We do not mark them up or collect them.</p>
     </div>
+    <p class="partner"><img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" loading="lazy"></p>
   </div>
 </section>
 
 <!-- 8. OBJECTIONS -->
-<section>
+<section class="alt">
   <div class="container">
     <h2>A few honest questions</h2>
     <div class="obj">
@@ -563,19 +583,16 @@
   /* ===== CONFIG: edit these ===== */
   var CONFIG = {
     PRICE_USD: 998,                 // fixed fee in US dollars
-    GST_STATUS: "none",             // "confirm" | "inclusive" | "exclusive" | "none"
     FORM_ENDPOINT: "/api/contact",  // site contact endpoint (emails Conor). Set "" to use the mailto fallback.
     MAILTO: "csullivan@theendurancegroup.com",
     DEFAULT_REF: "lab"
   };
 
   var fmt = function (n) { return Math.round(n).toLocaleString("en-AU"); };
-  var gstText = { confirm: "GST: confirm", inclusive: "Includes GST", exclusive: "Plus GST", none: "" }[CONFIG.GST_STATUS] || "";
 
   var values = {
     "usd": "US$" + fmt(CONFIG.PRICE_USD),
-    "half-usd": "US$" + fmt(CONFIG.PRICE_USD / 2),
-    "gst": gstText
+    "half-usd": "US$" + fmt(CONFIG.PRICE_USD / 2)
   };
   document.querySelectorAll("[data-price]").forEach(function (el) {
     var v = values[el.getAttribute("data-price")];
@@ -606,6 +623,15 @@
     location.href = "mailto:" + CONFIG.MAILTO + "?subject=" + encodeURIComponent("AI environment enquiry (" + data.ref + ")") + "&body=" + encodeURIComponent(body);
   }
 
+  var BOOK_URL = "https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b";
+  function showBooked() {
+    msg.className = "form-msg ok";
+    msg.textContent = "Thank you. We will be in touch shortly. Want to skip the back and forth? ";
+    var a = document.createElement("a");
+    a.className = "book"; a.href = BOOK_URL; a.target = "_blank"; a.rel = "noopener";
+    a.textContent = "Book a scoping call";
+    msg.appendChild(a);
+  }
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (form.website.value) return; // honeypot
@@ -623,7 +649,7 @@
     }).toString();
     fetch(CONFIG.FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: payload })
       .then(function (r) { return r.json(); })
-      .then(function (j) { if (!j.ok) throw new Error("rejected"); form.reset(); document.getElementById("ref").value = ref; show("ok", "Thank you. Conor will be in touch shortly."); })
+      .then(function (j) { if (!j.ok) throw new Error("rejected"); form.reset(); document.getElementById("ref").value = ref; showBooked(); })
       .catch(function () { show("err", "That did not send. Opening your email app instead."); mailto(data); });
   });
 
