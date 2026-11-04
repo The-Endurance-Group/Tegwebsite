@@ -232,8 +232,26 @@
 .lab .quote blockquote { font-family: var(--font-head); font-size: clamp(1.15rem, 2.4vw, 1.4rem); line-height: 1.45; color: var(--plum); }
 .lab .quote figcaption { margin-top: auto; }
 .lab .quote cite { font-style: normal; font-weight: 700; font-size: .92rem; color: var(--plum-soft); }
-@media (min-width: 720px) { .lab .quotes { grid-template-columns: 1fr 1fr; } .lab .quotes .quote:last-child { grid-column: 1 / -1; } }
-@media (min-width: 1000px) { .lab .quotes { grid-template-columns: 1.2fr 1.5fr 1fr; } .lab .quotes .quote:last-child { grid-column: auto; } }
+@media (min-width: 720px) { .lab .quotes { grid-template-columns: 1fr 1fr; } }
+.lab .demo { margin-top: 32px; display: grid; gap: 20px; }
+.lab .demo-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 26px 28px; box-shadow: 0 14px 34px -18px rgba(32,28,34,.35); }
+.lab .demo-label { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-dark); }
+.lab .demo-card h3 { margin: 8px 0 14px; }
+.lab .demo-list li { display: flex; flex-direction: column; padding: 11px 0; border-top: 1px solid var(--line); }
+.lab .demo-list b { font-size: 1.05rem; }
+.lab .demo-list span { color: var(--plum-soft); font-size: .95rem; }
+.lab .demo-draft { background: #fffdf6; border-color: var(--gold); }
+.lab .demo-meta { margin-top: 10px; font-size: .88rem; color: var(--plum-soft); }
+.lab .demo-body { margin-top: 12px; font-size: 1.05rem; line-height: 1.6; }
+.lab .demo-actions { margin-top: 18px; display: flex; gap: 10px; }
+.lab .demo-btn { display: inline-block; padding: 9px 20px; border-radius: 999px; border: 2px solid var(--plum-soft); font-weight: 700; font-size: .9rem; }
+.lab .demo-ok { background: var(--teal-dark); border-color: var(--teal-dark); color: #fff; }
+@media (min-width: 820px) { .lab .demo { grid-template-columns: 1fr 1fr; align-items: start; } }
+@media (min-width: 1000px) { .lab .sec-grid { grid-template-columns: repeat(3, 1fr); } }
+.lab .book { display: inline-block; margin-top: 10px; font-weight: 700; }
+/* single-exit page: no site navigation, form is the only way out */
+.site-header .nav-toggle, .site-header .primary-nav, .site-footer .footer-col, .site-footer .footer-cta { display: none !important; }
+.site-header .logo, .site-footer .footer-brand > a { pointer-events: none; cursor: default; }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -250,7 +268,7 @@
   <header class="site-header">
     <div class="container">
       <div class="header-brand">
-        <a class="logo" href="/"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <a class="logo" aria-label="The Endurance Group" tabindex="-1"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
         <img src="images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
       </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
@@ -328,6 +346,7 @@
         <ul class="short"><li>One assistant that knows your accounts</li><li>Replies drafted in your voice</li><li>A morning brief</li></ul>
       </div>
     </div>
+    <div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="#enquire" data-cta="week-enquire">Get started</a></div>
   </div>
 </section>
 
@@ -345,8 +364,35 @@
   </div>
 </section>
 
-<!-- 4. NOT AN APP -->
+<!-- 3b. SAMPLE -->
 <section class="alt">
+  <div class="container">
+    <p class="eyebrow">Sample</p>
+    <h2>Here is what that looks like.</h2>
+    <div class="demo">
+      <div class="demo-card">
+        <p class="demo-label">Your morning brief &middot; 7:00 am</p>
+        <h3>Good morning. Here is your Tuesday.</h3>
+        <ul class="demo-list">
+          <li><b>3 need you today</b><span>Quote sign-off, renewal question, school form</span></li>
+          <li><b>4 replies drafted</b><span>Ready for your approval</span></li>
+          <li><b>2 waiting on others</b><span>Nudge drafted for the one past 4 days</span></li>
+          <li><b>Due this week</b><span>Auto insurance renewal, Friday</span></li>
+        </ul>
+      </div>
+      <div class="demo-card demo-draft">
+        <p class="demo-label">A drafted reply, in your voice</p>
+        <p class="demo-meta">To: Dana R. &middot; Re: revised quote</p>
+        <p class="demo-body">Hi Dana, thanks for sending this over. The revised numbers look right to me. Thursday at 2 works for a call, and I will send an invite now.</p>
+        <p class="demo-actions"><span class="demo-btn demo-ok">Approve</span><span class="demo-btn">Edit</span></p>
+      </div>
+    </div>
+    <p class="note">Illustration only. Names and details are made up.</p>
+  </div>
+</section>
+
+<!-- 4. NOT AN APP -->
+<section>
   <div class="container">
     <h2>Not an app. A service.</h2>
     <div class="vs bold">
@@ -368,7 +414,7 @@
 </section>
 
 <!-- 5. WHAT WE BUILD -->
-<section id="build">
+<section id="build" class="alt">
   <div class="container">
     <p class="eyebrow">What we can build</p>
     <h2>A great assistant does these things. Yours will too.</h2>
@@ -404,7 +450,7 @@
 </section>
 
 <!-- 6b. TESTIMONIALS -->
-<section class="alt">
+<section>
   <div class="container">
     <p class="eyebrow">What people say</p>
     <h2>Real people. Real time saved.</h2>
@@ -419,12 +465,21 @@
         <blockquote>&ldquo;They were able to really move my understanding of how to use Claude to the next level. They were clear and methodical, as well as genuinely curious about what I wanted to achieve, and then were able to help me get there.&rdquo;</blockquote>
         <figcaption><cite>Jake Broder, Global Brain Health Institute</cite></figcaption>
       </figure>
-      <figure class="quote">
-        <img src="images/clients/offerpad.webp" alt="Offerpad" loading="lazy">
-        <blockquote>&ldquo;This saves me 2 hours a day.&rdquo;</blockquote>
-        <figcaption><cite>Operations team member, Offerpad</cite></figcaption>
-      </figure>
     </div>
+  </div>
+</section>
+
+<!-- 6c. SECURITY -->
+<section class="alt" id="safe">
+  <div class="container">
+    <p class="eyebrow">Is it safe?</p>
+    <h2>Your accounts. Your control.</h2>
+    <div class="cards sec-grid">
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 2 2 3-3M8 16h8"/></svg></div><h3>Draft-only by default</h3><p class="eg">It reads and drafts. Nothing is sent without your click.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>You choose what it sees</h3><p class="eg">We connect only the accounts you pick. Your data is used to do the work, never sold or shared.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></div><h3>Revoke any time</h3><p class="eg">Remove access in your Google, Microsoft or other account settings and it stops. Data in our systems is deleted or returned within 30 days of ending.</p></article>
+    </div>
+    <p class="note">Your employer's rules come first. If work email is off limits, we leave it out.</p>
   </div>
 </section>
 
@@ -464,7 +519,7 @@
       <article><h3>"I don't have time."</h3><p>That's why we do the building. You give us about 3 hours.</p></article>
       <article><h3>"I'm not technical."</h3><p>You don't need to be. You ask in everyday words.</p></article>
       <article><h3>"I already use ChatGPT."</h3><p>Great. We build on Claude or ChatGPT, whichever you use.</p></article>
-      <article><h3>"Is it safe with my email?"</h3><p>It only touches accounts you choose, and drafts wait for your approval.</p></article>
+      <article><h3>"Is it safe with my email?"</h3><p>Draft-only, you pick the accounts, and you can revoke access any time. Details above.</p></article>
     </div>
   </div>
 </section>
@@ -474,7 +529,7 @@
   <div class="container narrow center">
     <p class="eyebrow">Ready when you are</p>
     <h2>Ready to hand off the chaos?</h2>
-    <p class="lead" style="color:#e5dce2">Tell us what's eating your day. We'll reply personally.</p>
+    <p class="lead" style="color:#e5dce2">Tell us what's eating your day. Then pick a time for your first call.</p>
 
     <form class="form-card" id="enquiry" novalidate>
       <input type="hidden" name="ref" id="ref" value="individual">
@@ -497,8 +552,7 @@
         </select>
       </div>
       <div class="field"><label for="goal">What's eating your day? <span class="opt">(optional)</span></label><textarea id="goal" name="goal" placeholder="For example: too many inboxes, follow-ups slipping."></textarea></div>
-      <div class="field"><label for="times">Best times for a first call, with your timezone</label><input type="text" id="times" name="times" placeholder="For example: Tuesday mornings, ET" required></div>
-      <button class="btn btn-primary" type="submit" data-cta="form-submit">Send</button>
+      <button class="btn btn-primary" type="submit" data-cta="form-submit">Send and pick a time</button>
       <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
     </form>
   </div>
@@ -511,7 +565,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="/"><img src="images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <a aria-label="The Endurance Group" tabindex="-1"><img src="images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
           <p class="footer-tagline">Your Managed Claude Team</p>
           <img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
           <p class="footer-cta"><a class="btn btn-primary" href="book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
@@ -594,26 +648,35 @@
   var msg = document.getElementById("form-msg");
   function show(cls, text) { msg.className = "form-msg " + cls; msg.textContent = text; }
   function mailto(data) {
-    var body = ["Name: " + data.name, "Email: " + data.email, "Role: " + data.practice, "What's eating my day: " + data.goal, "Best times: " + data.times, "Source: " + data.ref].join("\n");
+    var body = ["Name: " + data.name, "Email: " + data.email, "Role: " + data.practice, "What's eating my day: " + data.goal, "Source: " + data.ref].join("\n");
     location.href = "mailto:" + CONFIG.MAILTO + "?subject=" + encodeURIComponent("AI environment enquiry (" + data.ref + ")") + "&body=" + encodeURIComponent(body);
+  }
+  var BOOK_URL = "https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b";
+  function showBooked() {
+    msg.className = "form-msg ok";
+    msg.textContent = "Thank you. We'll be in touch shortly. Want to skip the back and forth? ";
+    var a = document.createElement("a");
+    a.className = "book"; a.href = BOOK_URL; a.target = "_blank"; a.rel = "noopener";
+    a.textContent = "Book your first call";
+    msg.appendChild(a);
   }
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (form.website.value) return;
     var data = {};
     new FormData(form).forEach(function (v, k) { data[k] = String(v).trim(); });
-    if (!data.name || !data.email || !/^\S+@\S+\.\S+$/.test(data.email) || !data.practice || !data.times) {
-      show("err", "Please fill in your name, a valid email, what you do and best times.");
+    if (!data.name || !data.email || !/^\S+@\S+\.\S+$/.test(data.email) || !data.practice) {
+      show("err", "Please fill in your name, a valid email and what you do.");
       return;
     }
     show("ok", "Sending...");
     var payload = new URLSearchParams({
       name: data.name, email: data.email, company: data.practice,
-      message: "AI environment enquiry (source: " + data.ref + ")\nRole: " + data.practice + "\nWhat's eating their day: " + (data.goal || "Not provided") + "\nBest times: " + data.times
+      message: "AI environment enquiry (source: " + data.ref + ")\nRole: " + data.practice + "\nWhat's eating their day: " + (data.goal || "Not provided") + ""
     }).toString();
     fetch(CONFIG.FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: payload })
       .then(function (r) { return r.json(); })
-      .then(function (j) { if (!j.ok) throw new Error("rejected"); form.reset(); document.getElementById("ref").value = ref; show("ok", "Thank you. We'll be in touch shortly."); })
+      .then(function (j) { if (!j.ok) throw new Error("rejected"); form.reset(); document.getElementById("ref").value = ref; showBooked(); })
       .catch(function () { show("err", "That did not send. Opening your email app instead."); mailto(data); });
   });
 })();
