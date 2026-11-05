@@ -58,8 +58,9 @@
 .lab .narrow { max-width: 720px; }
 .lab section { padding-block: var(--pad); }
 .lab .alt { background: #f1ebee; }
-.lab .vid { max-width: 960px; margin-inline: auto; }
-.lab .vid video { width: 100%; height: auto; display: block; border-radius: 14px; box-shadow: 0 18px 50px rgba(60,20,50,.22); background: #000; }
+.lab .hero-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+.lab .hero-vid video { width: 100%; height: auto; display: block; border-radius: 14px; box-shadow: 0 18px 50px rgba(0,0,0,.45); background: #000; }
+@media (min-width: 900px) { .lab .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 48px; } }
 .lab .dark { background: var(--plum); color: #f4eff2; }
 .lab .dark h2, .lab .dark h3 { color: #fff; }
 .lab .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 14px; }
@@ -297,7 +298,8 @@
 
 <!-- 1. HERO -->
 <section class="hero">
-  <div class="container">
+  <div class="container hero-grid">
+    <div class="hero-copy">
     <p class="eyebrow">White-glove. Done for you.</p>
     <h1>We build your AI environment for you.</h1>
     <p class="lead">Not an app to figure out. We listen, we build it, we install it, and we walk you through it.</p>
@@ -306,13 +308,8 @@
       <a class="btn btn-ghost" href="#how" data-cta="hero-how">See how it works</a>
     </div>
     <p class="fine">Fixed fee of <span data-price="usd">$998</span>. About 3 hours of your time. We only take on three clients per month, so sign up now.</p>
-  </div>
-</section>
-
-<!-- 1a. VIDEO -->
-<section>
-  <div class="container center">
-    <div class="vid">
+    </div>
+    <div class="hero-vid">
       <video controls playsinline preload="metadata" poster="videos/personal-ai-assistant-poster.jpg" aria-label="A walkthrough of a personal AI assistant built by The Endurance Group">
         <source src="videos/personal-ai-assistant.mp4" type="video/mp4">
       </video>
