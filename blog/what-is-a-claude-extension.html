@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is a Claude Extension? (And How It Reads Your Texts) | TEG</title>
+  <meta name="description" content="A Claude extension lets Claude reach things on your computer, like your texts, WhatsApp and Notes. Here is how one works and how it differs from a plugin, with a video walkthrough.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/what-is-a-claude-extension.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="What Is a Claude Extension? (And How It Reads Your Texts)">
+  <meta property="og:description" content="A Claude extension lets Claude reach things on your computer, like your texts, WhatsApp and Notes. Here is how one works and how it differs from a plugin, with a video walkthrough.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/what-is-a-claude-extension.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-11-05T09:00:00-04:00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Is a Claude Extension? (And How It Reads Your Texts)">
+  <meta name="twitter:description" content="A Claude extension lets Claude reach things on your computer, like your texts, WhatsApp and Notes. Here is how one works and how it differs from a plugin, with a video walkthrough.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css?v=20261026-nav">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://www.theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": { "@type": "Person", "name": "Jim Sullivan" }
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is a Claude Extension? (And How It Reads Your Texts)",
+  "description": "A Claude extension lets Claude reach things on your computer, like your texts, WhatsApp and Notes. Here is how one works and how it differs from a plugin, with a video walkthrough.",
+  "datePublished": "2026-11-05",
+  "dateModified": "2026-11-05",
+  "author": {
+    "@type": "Organization",
+    "name": "The Endurance Group",
+    "url": "https://www.theendurancegroup.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Endurance Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.theendurancegroup.com/images/og-default.png"
+    }
+  },
+  "url": "https://www.theendurancegroup.com/blog/what-is-a-claude-extension.html",
+  "image": "https://www.theendurancegroup.com/images/og-default.png"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Claude extension?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Claude extension is a small file you install in the Claude desktop app. It runs on your own computer and lets Claude reach things that live there, like your texts, WhatsApp and Notes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I install a Claude extension?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the Claude desktop app and drag the .mcpb file into the window. Review what it can access, click Install and confirm. Your Mac may also ask you to allow access."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a Claude extension and a plugin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An extension gives Claude access. A plugin tells Claude what to do with that access. In our example, the extension reads your messages, and the plugin holds your people, your rules and what counts as urgent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between an extension and a connector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A connector links Claude to an online service, like Gmail. An extension runs on your own computer, so it can reach apps and files that have no online connection for Claude to use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Claude send messages without my approval?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not in the setup shown in this post. Claude drafts the reply, you can change it, and nothing goes out until you click."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Claude on your Mac: how a Claude extension reads your apps",
+  "description": "A Claude extension lets Claude reach things on your computer, like your texts, WhatsApp and Notes. Here is how one works and how it differs from a plugin, with a video walkthrough.",
+  "thumbnailUrl": "https://www.theendurancegroup.com/videos/claude-extensions-poster.jpg",
+  "uploadDate": "2026-11-05",
+  "duration": "PT1M11S",
+  "contentUrl": "https://www.theendurancegroup.com/videos/claude-extensions.mp4",
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Endurance Group"
+  }
+}
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
+  </script>
+</head>
+<body class="blog-post">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../how-we-work.html">How We Work</a></li>
+          <li><a href="../managed-claude.html">Managed Claude</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a class="nav-cta" href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <article>
+
+      <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">AI Automations</span>
+        <h1>What Is a Claude Extension? (And How It Reads Your Texts)</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span>The Endurance Group</span>
+          <span class="divider">·</span>
+          <span>November 5, 2026</span>
+        </div>
+        <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+      </div>
+    </section>
+
+      <section class="section section--alt">
+        <div class="container">
+          <div class="prose">
+
+            <p>A Claude extension is a small file you install in the Claude desktop app. It lets Claude reach things on your computer, like your texts, WhatsApp and Notes. Here is what one does, how it differs from a plugin, and what it looks like in real use, with a video walkthrough.</p>
+
+            <div class="video-embed" style="margin-bottom:40px;">
+              <video controls preload="metadata" poster="../videos/claude-extensions-poster.jpg" style="width:100%; border-radius:8px; display:block;">
+                <source src="../videos/claude-extensions.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <p><em>TEG is an official member of the Anthropic Claude Partner Network. We build Claude skills, plugins and extensions for people and teams who want Claude working inside their real day. <a href="../solutions.html">See our full Claude services.</a></em></p>
+
+            <h2>What is a Claude extension?</h2>
+            <p>A Claude extension is a small program that runs on your own computer and gives Claude a new set of tools. It works much like an extension in your web browser: you install it once, and Claude can do something it could not do before.</p>
+            <p>That matters because <a href="claude-connectors-gmail-how-to-connect.html">connectors</a> only reach online services like Gmail. A lot of what needs you never lives there. Your texts, your WhatsApp messages and your Notes app all sit on your Mac. An extension is how Claude gets to them.</p>
+            <p>Under the hood, an extension is a local <a href="mcp-servers-for-business.html">MCP server</a> packaged as one file ending in .mcpb. You do not need to know that to use one.</p>
+
+            <h2>How to install a Claude extension</h2>
+            <ol>
+              <li><strong>Open the Claude desktop app.</strong> Extensions run on your computer, so they need the desktop app, not the browser.</li>
+              <li><strong>Drag the file in.</strong> Drop the .mcpb file onto the Claude window. You can also double-click it.</li>
+              <li><strong>Review and install.</strong> Claude shows what the extension is and what it can access. Click Install and confirm.</li>
+              <li><strong>Allow access on your Mac.</strong> An extension that reads your messages also needs your Mac's permission. You grant it once in System Settings.</li>
+              <li><strong>Check the tools.</strong> Open the extension in Claude's settings to see its tools listed. In the video, those tools let Claude read the apps from the opening shot.</li>
+            </ol>
+
+            <h2>Extension vs plugin: what is the difference?</h2>
+            <p>The two get mixed up all the time, and you often want both. The short version:</p>
+            <ul>
+              <li><strong>The extension gives Claude access.</strong> It opens the door to your messages and notes.</li>
+              <li><strong>The plugin tells Claude what to do with that access.</strong> It holds the instructions: your people, your rules and what counts as urgent.</li>
+            </ul>
+            <p>A <a href="claude-skills.html">skill</a> is one set of those instructions. A plugin is a package that can hold several skills and connectors, installed together. A connector links Claude to an online service. An extension does the same job for what is on your computer.</p>
+            <p>You can change a plugin whenever you like. In the video we add a new rule by typing it in plain English.</p>
+
+            <h2>What it looks like: one page for everything</h2>
+            <p>The example in the video is a daily brief. Once the extension and plugin are on, you ask Claude to run your brief, and it pulls everything together:</p>
+            <ul>
+              <li><strong>One page.</strong> Everything that needs you, from email, texts, WhatsApp and Notes, sorted by what is urgent.</li>
+              <li><strong>Replies already written.</strong> Claude drafts a response to each message. You can change anything you want.</li>
+              <li><strong>You send it.</strong> Nothing goes out until you click.</li>
+              <li><strong>It runs on a schedule.</strong> Set it to run whenever you want, change what shows up, and connect things like Gmail and your calendar.</li>
+            </ul>
+            <p>The names and messages in the video are made up. We would never show real ones.</p>
+
+            <h2>What to know before you install one</h2>
+            <ul>
+              <li><strong>Only install extensions you trust.</strong> An extension runs on your computer, and one that reads your messages can see all of them. Check who made it first.</li>
+              <li><strong>Your computer needs to be on.</strong> Extensions run locally, so scheduled runs need your computer awake and Claude open. Anything that arrives while it sleeps shows up on the next run.</li>
+              <li><strong>Local does not mean private from Claude.</strong> The extension runs on your machine, but what it reads goes into your Claude conversation. Read <a href="claude-data-privacy-business.html">how Claude handles business data</a> before you connect anything sensitive.</li>
+              <li><strong>Your company may control this.</strong> On Team and Enterprise plans, admins can turn extensions off or limit which ones you can install.</li>
+            </ul>
+
+            <h2>Learn more about extending Claude</h2>
+            <p>For the other pieces, read <a href="claude-skills.html">our guide to Claude skills</a>, <a href="claude-connectors-gmail-how-to-connect.html">how to connect Gmail to Claude</a> and <a href="how-to-schedule-a-task-in-claude.html">how to schedule a task in Claude</a>. Anthropic's <a href="https://www.anthropic.com/engineering/desktop-extensions" rel="noopener">post on desktop extensions</a> covers the technical side.</p>
+
+            <h2>Frequently asked questions</h2>
+
+            <h3>What is a Claude extension?</h3>
+            <p>A Claude extension is a small file you install in the Claude desktop app. It runs on your own computer and lets Claude reach things that live there, like your texts, WhatsApp and Notes.</p>
+
+            <h3>How do I install a Claude extension?</h3>
+            <p>Open the Claude desktop app and drag the .mcpb file into the window. Review what it can access, click Install and confirm. Your Mac may also ask you to allow access.</p>
+
+            <h3>What is the difference between a Claude extension and a plugin?</h3>
+            <p>An extension gives Claude access. A plugin tells Claude what to do with that access. In our example, the extension reads your messages, and the plugin holds your people, your rules and what counts as urgent.</p>
+
+            <h3>What is the difference between an extension and a connector?</h3>
+            <p>A connector links Claude to an online service, like Gmail. An extension runs on your own computer, so it can reach apps and files that have no online connection for Claude to use.</p>
+
+            <h3>Can Claude send messages without my approval?</h3>
+            <p>Not in the setup shown in this post. Claude drafts the reply, you can change it, and nothing goes out until you click.</p>
+
+            <div class="example-callout">
+              <strong>Want this without doing the setup?</strong> We build your personal AI assistant around your people and your apps, install it and walk you through it. <a href="../ai-environment.html">See how it works.</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Related reading -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <h2>Related reading</h2>
+          </div>
+          <div class="grid grid--2">
+            <div class="feature-card">
+              <span class="eyebrow">AI Automations</span>
+              <h3><a href="how-to-create-a-claude-skill.html">How to Create a Claude Skill (Step by Step)</a></h3>
+              <p>A skill is a saved recipe: write the steps once and Claude follows them every time.</p>
+            </div>
+            <div class="feature-card">
+              <span class="eyebrow">AI Automations</span>
+              <h3><a href="claude-connectors-gmail-how-to-connect.html">How to Connect Gmail to Claude (Connectors Explained)</a></h3>
+              <p>What connectors do, how to link Gmail, and how write permissions work.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--alt">
+        <div class="container">
+          <div class="prose reveal">
+            <h2>Ready to get more out of AI at work?</h2>
+            <p>TEG trains your team and builds the workflows that make AI part of the daily job. Fixed scope, certified engineers, clear results.</p>
+            <a href="../contact.html" class="btn btn-primary">Talk to TEG</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="../images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+          <p class="footer-cta"><a class="btn btn-primary" href="../book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../how-we-work.html">How We Work</a></li>
+            <li><a href="../managed-claude.html">Managed Claude</a></li>
+            <li><a href="../claude-for-sales.html">Claude for Sales</a></li>
+            <li><a href="../claude-business-development.html">B2B Sales</a></li>
+            <li><a href="../realestate">Real Estate</a></li>
+            <li><a href="../saas">B2B Tech &amp; SaaS</a></li>
+            <li><a href="../professionalservices">Professional Services</a></li>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../specialties.html">Specialties</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Free Offerings</h4>
+          <ul>
+            <li><a href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="../intent-playbook.html">Free Intent Lead Playbook</a></li>
+            <li><a href="../ai-policy">Free AI Policy Draft</a></li>
+            <li><a href="../claude-tutorials.html">Free Claude Video Training</a></li>
+            <li><a href="../claude-plugins.html">Free Claude Plugins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js?v=20260930" defer></script>
+  <script src="../js/video-gate.js?v=20261009b"></script>
+</body>
+</html>
