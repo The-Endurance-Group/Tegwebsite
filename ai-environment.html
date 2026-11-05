@@ -58,6 +58,8 @@
 .lab .narrow { max-width: 720px; }
 .lab section { padding-block: var(--pad); }
 .lab .alt { background: #f1ebee; }
+.lab .vid { max-width: 960px; margin-inline: auto; }
+.lab .vid video { width: 100%; height: auto; display: block; border-radius: 14px; box-shadow: 0 18px 50px rgba(60,20,50,.22); background: #000; }
 .lab .dark { background: var(--plum); color: #f4eff2; }
 .lab .dark h2, .lab .dark h3 { color: #fff; }
 .lab .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 14px; }
@@ -304,6 +306,17 @@
       <a class="btn btn-ghost" href="#how" data-cta="hero-how">See how it works</a>
     </div>
     <p class="fine">Fixed fee of <span data-price="usd">$998</span>. About 3 hours of your time. We only take on three clients per month, so sign up now.</p>
+  </div>
+</section>
+
+<!-- 1a. VIDEO -->
+<section>
+  <div class="container center">
+    <div class="vid">
+      <video controls playsinline preload="metadata" poster="videos/personal-ai-assistant-poster.jpg" aria-label="A walkthrough of a personal AI assistant built by The Endurance Group">
+        <source src="videos/personal-ai-assistant.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 </section>
 
