@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-05",
+    "title": "What Is a Claude Extension? (And How It Reads Your Texts)",
+    "slug": "what-is-a-claude-extension",
+    "url": "https://www.theendurancegroup.com/blog/what-is-a-claude-extension.html",
+    "path": "manual-maria-video",
+    "angle_summary": "Plain-language explainer of Claude desktop extensions and how they differ from plugins, built around the Mac assistant demo video.",
+    "deploy_verified": false,
+    "related_post_updated": "claude-connectors-gmail-how-to-connect.html"
+  },
+  {
     "date": "2026-11-04",
     "title": "How to Build an AI-Native Revenue Organization With Claude",
     "slug": "ai-native-revenue-organization",
