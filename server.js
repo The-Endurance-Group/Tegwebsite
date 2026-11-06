@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { handleBuilds } = require('./builds-api');
 
 const PORT = process.env.PORT || 8080;
 const ROOT = __dirname;
@@ -2388,6 +2389,10 @@ http.createServer((req, res) => {
   if (/^realestate\./i.test(req.headers.host || '')) {
     res.writeHead(301, { Location: 'https://www.theendurancegroup.com/realestate' });
     res.end();
+    return;
+  }
+  if (urlPath === '/api/builds') {
+    handleBuilds(req, res, readBody);
     return;
   }
   if (req.method === 'POST' && urlPath === '/api/chat') {
