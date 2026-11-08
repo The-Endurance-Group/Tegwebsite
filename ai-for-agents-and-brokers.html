@@ -346,6 +346,44 @@
 .lab .promise { margin-top: 24px; text-align: center; font-weight: 700; color: var(--plum); }
 .lab .or { margin-top: 30px; color: #cbbfc8; font-size: .95rem; }
 .lab .btn-lg { font-size: 1.1rem; padding: 16px 34px; }
+
+.lab .ex-grid { margin-top: 34px; display: grid; gap: 22px; }
+@media (min-width: 820px) { .lab .ex-grid { grid-template-columns: 1fr 1fr; } }
+.lab .ex { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px 16px 24px; box-shadow: 0 14px 34px -22px rgba(32,28,34,.35); display: flex; flex-direction: column; }
+.lab .ex > h3, .lab .ex > p, .lab .ex > .btn { margin-inline: 8px; }
+.lab .ex-media { aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; background: #f3eee9; }
+.lab .ex-media video { width: 100%; height: 100%; object-fit: cover; display: block; background: #000; }
+.lab .ex-tag { margin-top: 18px; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-dark); }
+.lab .ex-tag.tag-b { color: var(--pink-dark); }
+.lab .ex h3 { margin-top: 4px; margin-bottom: 6px; }
+.lab .ex > p:last-of-type { color: var(--plum-soft); }
+.lab .ex .btn { margin-top: 18px; align-self: flex-start; }
+.lab .ex-art { display: grid; place-items: center; padding: 18px; background: linear-gradient(160deg, #f7efd9, #f8e9f0); }
+.lab .mock { width: 100%; max-width: 380px; background: #fff; border-radius: 12px; padding: 14px 16px; box-shadow: 0 10px 28px -14px rgba(32,28,34,.4); }
+.lab .mock-h { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.lab .mock-h span { font-family: var(--font-body); font-size: .75rem; color: var(--plum-soft); font-weight: 600; }
+.lab .mrow { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); }
+.lab .mrow > b { width: 24px; height: 24px; border-radius: 50%; background: var(--plum); color: #fff; font-size: .75rem; display: grid; place-items: center; flex: none; }
+.lab .mname { flex: 1; font-weight: 700; font-size: .9rem; line-height: 1.2; }
+.lab .mname small { display: block; font-weight: 500; color: var(--plum-soft); font-size: .75rem; }
+.lab .mrow em { font-style: normal; font-size: .7rem; font-weight: 700; padding: 4px 9px; border-radius: 999px; white-space: nowrap; }
+.lab .chip-warm { background: var(--gold-tint); color: #7a5a14; }
+.lab .chip-draft { background: var(--teal-tint); color: var(--teal-dark); }
+.lab .docskills { display: flex; align-items: center; gap: 14px; width: 100%; max-width: 420px; }
+.lab .doc { flex: 0 0 38%; background: #fff; border-radius: 8px; padding: 14px 12px; box-shadow: 0 10px 28px -14px rgba(32,28,34,.4); }
+.lab .doc p { font-family: var(--font-head); font-weight: 700; font-size: .85rem; margin-bottom: 8px; line-height: 1.2; }
+.lab .doc i { display: block; height: 6px; border-radius: 3px; background: #e7e0e3; margin-top: 7px; }
+.lab .doc i:nth-child(odd) { width: 80%; }
+.lab .docskills .arrow { font-size: 1.6rem; color: var(--gold); font-weight: 700; }
+.lab .skills { flex: 1; display: grid; gap: 6px; }
+.lab .skills li { background: var(--plum); color: #fff; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .72rem; padding: 6px 10px; border-radius: 8px; border-left: 3px solid var(--gold); }
+.lab .ex-yours { background: var(--plum); border-color: var(--plum); color: #fff; }
+.lab .ex-yours h3 { color: #fff; }
+.lab .ex-yours > p:last-of-type { color: #e5dce2; }
+.lab .ex-yours .ex-tag { color: var(--gold); }
+.lab .ex-plus { display: grid; place-items: center; background: rgba(255,255,255,.06); border: 2px dashed rgba(201,162,75,.7); }
+@media (max-width: 819px) { .lab .ex-art { aspect-ratio: auto; min-height: 220px; } .lab .skills li { font-size: .66rem; padding: 5px 8px; white-space: nowrap; } .lab .doc { flex-basis: 30%; } .lab .docskills { gap: 8px; } .lab .ex-art { padding: 14px; } .lab .mrow em { font-size: .64rem; padding: 3px 7px; } }
+.lab .ex-plus span { font-size: 7rem; font-weight: 300; color: var(--gold); line-height: 1; }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -480,50 +518,66 @@
   </div>
 </section>
 
-<!-- 5. IN ACTION -->
-<section>
+<!-- 5. EXAMPLES -->
+<section id="examples">
   <div class="container">
     <div class="center">
-      <p class="eyebrow">See it in action</p>
-      <h2>One message in. The work is done.</h2>
+      <p class="eyebrow">Examples</p>
+      <h2>A few things we have built.</h2>
     </div>
-    <p class="flow-label">Agent: a new listing</p>
-    <ol class="flow "><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><em>You type</em><b>"Agreement signed, 12 Palm Ave"</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 2 2 3-3M8 16h8"/></svg></span><b>Seller checklist created</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><b>E-blast and MLS steps drafted</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9"/></svg></span><b>You approve</b></li></ol>
-    <p class="flow-label">Broker: recruiting</p>
-    <ol class="flow "><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span><b>Top agents in your market ranked</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span><b>Warm introduction found</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><b>Personal outreach drafted</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span><b>You send. Meeting booked.</b></li></ol>
-  </div>
-</section>
+    <div class="ex-grid">
 
-<!-- 3b. SAMPLE -->
-<section class="alt">
-  <div class="container">
-    <p class="eyebrow">Sample</p>
-    <h2>Your morning, handled.</h2>
-    <div class="demo">
-      <div class="demo-card">
-        <p class="demo-label">Your morning brief &middot; 7:00 am</p>
-        <h3>Good morning. Here is your Tuesday.</h3>
-        <ul class="demo-list">
-          <li><b>3 need you today</b><span>Seller signature, buyer question, photographer confirm</span></li>
-          <li><b>4 drafts ready</b><span>Just-listed e-blast, 2 replies, 1 follow-up</span></li>
-          <li><b>2 listings need a step</b><span>12 Palm Ave: photos not filed. 88 Bay Dr: open house not on the MLS</span></li>
-          <li><b>Closing this week</b><span>Signed documents verified for 3 of 4</span></li>
-        </ul>
-      </div>
-      <div class="demo-card demo-draft">
-        <p class="demo-label">You type: agreement signed 12 Palm Ave</p>
-        <p class="demo-meta">New note &middot; 12 Palm Ave &middot; seller checklist</p>
-        <ul class="demo-check">
-          <li class="done">Photography booked</li>
-          <li>Photos filed in Dropbox</li>
-          <li>Just-listed e-blast (draft ready)</li>
-          <li>MLS entry and open house</li>
-          <li>Signed documents verified</li>
-        </ul>
-        <p class="demo-actions"><span class="demo-btn demo-ok">Approve e-blast</span><span class="demo-btn">Edit</span></p>
-      </div>
+      <article class="ex">
+        <div class="ex-media">
+          <video controls playsinline preload="metadata" poster="videos/personal-ai-assistant-poster.jpg" aria-label="Demo: a daily brief built from texts, WhatsApp, notes, email and calendar">
+            <source src="videos/personal-ai-assistant.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="ex-tag">For everyone</p>
+        <h3>Your daily brief</h3>
+        <p>Texts, WhatsApp, email, notes and calendar in one page every morning, with replies drafted.</p>
+      </article>
+
+      <article class="ex">
+        <!-- VIDEO SLOT: when the recruiting video is ready, replace this .ex-media div with:
+             <div class="ex-media"><video controls playsinline preload="metadata" poster="videos/recruiting-system-poster.jpg"><source src="videos/recruiting-system.mp4" type="video/mp4"></video></div> -->
+        <div class="ex-media ex-art" role="img" aria-label="Illustration: a ranked list of recruiting targets with warm introductions and drafted outreach">
+          <div class="mock">
+            <p class="mock-h">Recruiting brief <span>Friday</span></p>
+            <div class="mrow"><b>1</b><span class="mname">Agent A<small>38 closings · trending up</small></span><em class="chip-warm">Warm intro</em></div>
+            <div class="mrow"><b>2</b><span class="mname">Agent B<small>31 closings · team split up</small></span><em class="chip-draft">Draft ready</em></div>
+            <div class="mrow"><b>3</b><span class="mname">Agent C<small>27 closings · brokerage merging</small></span><em class="chip-draft">Draft ready</em></div>
+          </div>
+        </div>
+        <p class="ex-tag tag-b">For brokers</p>
+        <h3>A recruiting system</h3>
+        <p>The right agents in your market, ranked, with warm introductions and personal outreach drafted.</p>
+      </article>
+
+      <article class="ex">
+        <!-- VIDEO SLOT: when the listing video is ready, replace this .ex-media div with:
+             <div class="ex-media"><video controls playsinline preload="metadata" poster="videos/listing-skills-poster.jpg"><source src="videos/listing-skills.mp4" type="video/mp4"></video></div> -->
+        <div class="ex-media ex-art" role="img" aria-label="Illustration: a listing process document turned into a set of Claude skills">
+          <div class="docskills">
+            <div class="doc"><p>Our listing process</p><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+            <ul class="skills"><li>listing-intake</li><li>photos-and-media</li><li>mls-entry</li><li>just-listed-marketing</li><li>open-house</li><li>closing-checklist</li></ul>
+          </div>
+        </div>
+        <p class="ex-tag">For agents and teams</p>
+        <h3>Your listing process, as Claude skills</h3>
+        <p>Every step of your process becomes a skill. One message starts the whole checklist.</p>
+      </article>
+
+      <article class="ex ex-yours">
+        <div class="ex-media ex-plus"><span aria-hidden="true">+</span></div>
+        <p class="ex-tag">Your idea</p>
+        <h3>Don't see it here? We build whatever you want.</h3>
+        <p>Tell us on the call what you want AI to do. If it can be built, we build it.</p>
+        <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="examples-book">Book a call</a>
+      </article>
+
     </div>
-    <p class="note">Buyers get the same setup: one checklist per client, from first showing to closing. Illustration only. Addresses and names are made up.</p>
   </div>
 </section>
 
