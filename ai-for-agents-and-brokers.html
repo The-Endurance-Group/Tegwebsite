@@ -259,6 +259,49 @@
 .lab .demo-check li::before { content: ""; position: absolute; left: 4px; top: 50%; width: 18px; height: 18px; margin-top: -9px; border: 2px solid var(--plum-soft); border-radius: 5px; }
 .lab .demo-check li.done { color: var(--plum-soft); text-decoration: line-through; }
 .lab .demo-check li.done::before { background: var(--teal-dark); border-color: var(--teal-dark); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7'/%3E%3C/svg%3E"); background-size: 14px; background-position: center; background-repeat: no-repeat; }
+
+.lab .narrow { max-width: 820px; }
+.lab .prose p { margin-top: 16px; font-size: 1.08rem; }
+.lab .xlist, .lab .vlist { margin-top: 26px; display: grid; gap: 12px; }
+.lab .xlist li, .lab .vlist li { position: relative; padding: 14px 18px 14px 52px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; font-weight: 600; }
+.lab .xlist li::before, .lab .vlist li::before { position: absolute; left: 16px; top: 13px; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: .8rem; font-weight: 800; }
+.lab .xlist li::before { content: "\2715"; background: var(--pink-tint); color: var(--pink-dark); }
+.lab .vlist li::before { content: "\2713"; background: var(--teal-tint); color: var(--teal-dark); }
+.lab .delivs { margin-top: 36px; display: grid; gap: 22px; }
+.lab .deliv { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--gold); border-radius: var(--r); padding: clamp(24px, 4vw, 36px); }
+.lab .deliv-n { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.lab .deliv h3 { margin: 6px 0 10px; font-size: clamp(1.3rem, 2.6vw, 1.6rem); }
+.lab .deliv > p { color: var(--plum-soft); }
+.lab .deliv .group-h { margin-top: 28px; }
+.lab .deliv .cards { gap: 14px; }
+.lab .deliv .card { padding: 20px; background: var(--bg); }
+.lab .replaces { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: .98rem; }
+.lab .replaces b { color: var(--teal-dark); }
+.lab .fit { margin-top: 32px; display: grid; gap: 20px; }
+.lab .fit > div { border-radius: var(--r); padding: 28px 30px; }
+.lab .fit-yes { background: var(--card); border: 2px solid var(--teal); }
+.lab .fit-no { background: #efe9ec; border: 1px solid var(--line); }
+.lab .fit h3 { margin-bottom: 12px; }
+.lab .fit li { padding: 8px 0 8px 28px; position: relative; }
+.lab .fit-yes li::before { content: "\2713"; position: absolute; left: 0; color: var(--teal-dark); font-weight: 800; }
+.lab .fit-no li::before { content: "\2715"; position: absolute; left: 0; color: var(--pink-dark); font-weight: 800; }
+.lab .guarantee { margin-top: 32px; background: var(--plum); color: #fff; border-radius: var(--r); padding: clamp(28px, 5vw, 44px); text-align: center; }
+.lab .guarantee .eyebrow { color: var(--gold); }
+.lab .guarantee h3 { color: #fff; font-size: clamp(1.25rem, 2.8vw, 1.6rem); line-height: 1.35; margin: 10px auto 10px; max-width: 760px; }
+.lab .guarantee p { color: #e5dce2; }
+.lab .team { margin-top: 32px; display: grid; gap: 22px; }
+.lab .team article { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 28px; }
+.lab .team img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin-bottom: 14px; }
+.lab .team .role { color: var(--teal-dark); font-weight: 700; font-size: .92rem; margin: 2px 0 12px; }
+.lab .team p:last-child { color: var(--plum-soft); }
+.lab .deliv h3.group-h { font-family: var(--font-body); font-size: .85rem; margin: 28px 0 0; color: var(--teal-dark); }
+.lab .hero .gold { color: var(--gold); }
+.lab .people { display: flex; gap: 12px; margin-top: 28px; align-items: center; flex-wrap: wrap; }
+.lab .people img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+.lab .people span { color: #e9e1e6; font-size: .95rem; font-weight: 600; }
+.lab .partner-line { margin-top: 28px; text-align: center; }
+.lab .partner-line img { height: 56px; width: auto; max-width: 100%; display: inline-block; }
+@media (min-width: 720px) { .lab .fit, .lab .team { grid-template-columns: 1fr 1fr; } }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -304,70 +347,120 @@
 <section class="hero">
   <div class="container">
     <p class="eyebrow">A premium, white-glove service for agents and brokers.</p>
-    <h1>Tell us everything you want AI to do. We build it.</h1>
+    <h1>Tell us everything you want AI to do. <span class="gold">We build it.</span></h1>
     <p class="lead">Listings and buyers if you're an agent. Recruiting and retention if you run the office. This is not software you install. A real person figures out exactly what you need, builds it, installs it with you and makes sure it actually works.</p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="#enquire" data-cta="hero-enquire">Get started</a>
+      <a class="btn btn-primary" href="#enquire" data-cta="hero-enquire">Apply for a spot</a>
       <a class="btn btn-ghost" href="#how" data-cta="hero-how">See how it works</a>
     </div>
-    <p class="fine">Three sessions. Fixed fee of <span data-price="usd">$998</span>. About 3 hours of your time. We only take on three clients per month, so sign up now.</p>
+    <div class="people"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan"><span>Built for you, personally, by Jim and Conor Sullivan</span></div>
+    <p class="fine">No payment to apply. Tell us about your business and we will tell you honestly whether we are a fit.</p>
   </div>
 </section>
 
-<!-- 1b. BUILT FOR -->
+<!-- 1b. TRUST STRIP -->
 <section class="builtfor">
   <div class="container center">
-    <p class="eyebrow">Built for</p>
-    <ul class="chips big" style="justify-content:center"><li>Listing agents</li><li>Buyer's agents</li><li>Team leads</li><li>Brokers and office managers</li></ul>
+    <ul class="chips big" style="justify-content:center"><li>Three clients per month</li><li>A real person on every session</li><li>Built on your own accounts</li><li>By application</li></ul>
+    <p class="note" style="margin-top:14px">For listing agents, buyer's agents, team leads, brokers and office managers.</p>
   </div>
 </section>
 
-<!-- 2. FAMILIAR -->
+<!-- 2. THE PROBLEM -->
+<section>
+  <div class="container narrow">
+    <p class="eyebrow">Sound like you?</p>
+    <h2>You got into real estate to work with people. Not to babysit software.</h2>
+    <div class="prose">
+      <p>Everyone at the last sales meeting said you should be using AI. You probably tried it. Maybe you asked ChatGPT for a listing description, got something generic and went back to doing it yourself. Learning a new tool properly is a project, and your calendar is already full of showings, listing appointments and agents who need you.</p>
+      <p>So the work keeps running the way it always has: on memory, sticky notes, late nights and a lot of effort. The checklists live in your head. The follow-up happens when you remember it. If you run an office, recruiting happens in whatever time is left over, which is usually none.</p>
+    </div>
+    <ul class="xlist">
+      <li>Deal steps tracked in your head, so one busy week means something gets missed</li>
+      <li>Leads from open houses and showings that go cold before anyone follows up</li>
+      <li>Marketing and seller updates that take an afternoon you do not have</li>
+      <li>Recruiting that only happens when someone leaves, and onboarding that starts from scratch every time</li>
+      <li>A business that only runs if you are in it, so nothing can really be handed off</li>
+    </ul>
+    <p class="lead" style="margin-top:28px">The fix is not you learning to prompt. The fix is a system built around how you already work, by people who understand both the technology and the business of real estate.</p>
+  </div>
+</section>
+
+<!-- 4. NOT AN APP -->
 <section>
   <div class="container">
-    <p class="eyebrow">Sound like you?</p>
-    <h2>Does this feel familiar?</h2>
-    <ul class="tiles">
-      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span>Documents scattered everywhere</span></li>
-      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>Checklists living in your head</span></li>
-      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span><span>Follow-ups slipping</span></li>
-      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg></span><span>Marketing and recruiting eat your afternoons</span></li>
-      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><span>No wish to be a tech person</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- 2b. A DIFFERENT KIND OF WEEK -->
-<section class="alt">
-  <div class="container">
-    <h2>A different kind of week</h2>
-    <div class="vs">
+    <h2>Not a product. A premium service.</h2>
+    <p class="lead" style="margin-top:14px">Most AI tools hand you software and wish you luck. We do the opposite. A real person does every step with you, from the first conversation to the day it's working.</p>
+    <div class="vs bold">
       <div class="instead">
-        <h3>Your week today</h3>
-        <svg class="dia" viewBox="0 0 240 150" role="img" aria-label="Five separate inboxes and apps with tangled, broken links between them"><g stroke="#9a8f97" stroke-width="2" stroke-dasharray="5 5" fill="none"><path d="M47 43 L128 33"/><path d="M47 43 L77 123"/><path d="M128 33 L187 123"/><path d="M217 53 L77 123"/><path d="M128 33 L217 53"/><path d="M187 123 L47 43"/></g><rect x="30" y="30" width="34" height="26" rx="7" fill="#cfc5cb"/><rect x="111" y="20" width="34" height="26" rx="7" fill="#cfc5cb"/><rect x="200" y="40" width="34" height="26" rx="7" fill="#cfc5cb"/><rect x="60" y="110" width="34" height="26" rx="7" fill="#cfc5cb"/><rect x="170" y="110" width="34" height="26" rx="7" fill="#cfc5cb"/><g stroke="#a8446f" stroke-width="3" stroke-linecap="round"><path d="M92 28l10 10M102 28l-10 10"/><path d="M120 90l10 10M130 90l-10 10"/></g></svg>
-        <ul class="short"><li>Listings, buyers and recruits across MLS, email and Dropbox</li><li>Checklists in your head</li><li>Follow-ups slipping</li></ul>
+        <h3>Not this</h3>
+        <ul class="short"><li>Software you install and figure out</li><li>Tutorials and prompt libraries</li><li>A support ticket when it breaks</li></ul>
       </div>
       <div class="could">
-        <h3>Your week with us</h3>
-        <svg class="dia" viewBox="0 0 240 150" role="img" aria-label="Five inboxes and apps all connected to one AI assistant in the centre"><g stroke="#4a7c78" stroke-width="2.5" fill="none"><path d="M47 43 L120 75"/><path d="M128 33 L120 75"/><path d="M217 53 L120 75"/><path d="M77 123 L120 75"/><path d="M187 123 L120 75"/></g><rect x="30" y="30" width="34" height="26" rx="7" fill="#c45c8a"/><rect x="111" y="20" width="34" height="26" rx="7" fill="#4a7c78"/><rect x="200" y="40" width="34" height="26" rx="7" fill="#c9a24b"/><rect x="60" y="110" width="34" height="26" rx="7" fill="#4a7c78"/><rect x="170" y="110" width="34" height="26" rx="7" fill="#c45c8a"/><circle cx="120" cy="75" r="26" fill="#05305a"/><path d="M120 62l3.5 9.5 9.5 3.5-9.5 3.5-3.5 9.5-3.5-9.5-9.5-3.5 9.5-3.5z" fill="#fff"/></svg>
-        <ul class="short"><li>One assistant that knows every property, client and recruit</li><li>Checklists that check themselves off</li><li>Marketing and outreach drafted for you</li></ul>
+        <h3>This</h3>
+        <ul class="short"><li>A real person figures out exactly what you need</li><li>A real person builds it</li><li>A real person installs it and makes sure it works</li></ul>
       </div>
     </div>
-    <div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="#enquire" data-cta="week-enquire">Get started</a></div>
+    <ul class="tiles three perks">
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>You have no time to learn it</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg></span><span>You do not want to troubleshoot it</span></li>
+      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span>You want someone to call</span></li>
+    </ul>
   </div>
 </section>
 
-<!-- 3. ASSISTANT -->
-<section>
-  <div class="container center">
-    <h2>Remember having someone who just handled the details?</h2>
-    <p class="lead" style="margin-top:14px">This will be the best personal assistant you've ever had.</p>
-    <ul class="chips big" style="justify-content:center">
-      <li>Works while you sleep</li>
-      <li>Knows every listing and agent</li>
-      <li>Never forgets a step</li>
-      <li>You approve everything</li>
-    </ul>
+<!-- 5. WHAT YOU GET -->
+<section id="build" class="alt">
+  <div class="container">
+    <p class="eyebrow">What you get</p>
+    <h2>A complete AI system, built around your business.</h2>
+    <p class="lead" style="margin-top:14px">Not a course. Not a template. Every piece is built on your real listings, clients, agents and processes, and it is yours to keep.</p>
+    <div class="delivs">
+    <article class="deliv">
+      <p class="deliv-n">Deliverable 1</p>
+      <h3>Your AI, set up on your business</h3>
+      <p>We set up Claude (or ChatGPT, if that is what you use) from scratch on your business: your listings, clients, vendors, market, voice and standards. It answers like someone on your team, not a generic chatbot, and you stop re-explaining context every time.</p>
+      <p class="replaces"><b>What this replaces:</b> generic AI output that never sounds like you, and the time spent fixing it.</p>
+    </article>
+    <article class="deliv">
+      <p class="deliv-n">Deliverable 2</p>
+      <h3>A library of custom skills</h3>
+      <p>Your checklists and SOPs turned into skills the assistant follows step by step. Update the document and it follows the new version. These are examples. Session one is where you tell us everything.</p>
+      <h3 class="group-h">For agents and teams</h3>
+          <div class="cards">
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 2 2 3-3M8 16h8"/></svg></div><h3>A checklist for every deal</h3><p class="eg">Type "agreement signed 12 Palm Ave" and the seller checklist appears. Buyers get one too.</p></article>
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><h3>Just-listed marketing</h3><p class="eg">E-blasts, listing descriptions and social posts, drafted.</p></article>
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div><h3>Buyer search and follow-up</h3><p class="eg">New matches sent, showings lined up, follow-ups drafted.</p></article>
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3>Showings and open houses</h3><p class="eg">Scheduled, added to the MLS, invites sent, follow-ups drafted.</p></article>
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div><h3>Transaction coordination</h3><p class="eg">Every pending item and signed document, tracked and chased.</p></article>
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div><h3>Morning brief</h3><p class="eg">Your listings, deals and priorities in one message.</p></article>
+          </div>
+            <h3 class="group-h">For brokers and office managers</h3>
+          <div class="cards">
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.2.6 3.5 2.6 3.5 6"/></svg></div><h3>A recruiting pipeline</h3><p class="eg">Target agents ranked, warm introductions found, personal outreach drafted for you to send.</p></article>
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 2 2 3-3M8 16h8"/></svg></div><h3>Agent onboarding</h3><p class="eg">Type "Sarah starts Monday" and her onboarding checklist, welcome email and setup tasks appear.</p></article>
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><h3>Retention watch</h3><p class="eg">Agents whose activity is slipping, flagged early, with a note on what to talk about.</p></article>
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div><h3>Office production brief</h3><p class="eg">Listings, pendings and closings across the office, in one weekly message.</p></article>
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></div><h3>Compliance file review</h3><p class="eg">Deal files checked against your list. Missing documents flagged before closing.</p></article>
+            <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><h3>Office marketing and recruiting content</h3><p class="eg">Newsletters, recruiting posts and agent announcements, drafted.</p></article>
+          </div>
+      
+      <p class="replaces"><b>What this replaces:</b> the hours each week spent on retyping, chasing and remembering.</p>
+    </article>
+    <article class="deliv">
+      <p class="deliv-n">Deliverable 3</p>
+      <h3>Routines that run on their own</h3>
+      <p>Jobs that run on a schedule without anyone asking: your morning brief, a Friday recruiting update, a weekly list of follow-ups, a seller update draft every Monday. Connected to the tools you already use, like email, calendar, Dropbox, Google Drive and your CRM.</p>
+      <p class="replaces"><b>What this replaces:</b> the to-do list you rebuild in your head every morning.</p>
+    </article>
+    <article class="deliv">
+      <p class="deliv-n">Deliverable 4</p>
+      <h3>White-glove support the whole way</h3>
+      <p>Three private, one-on-one sessions with the people who build your system. Questions answered by text or email between sessions. You are never stuck and never guessing. It is the level of service you give your best clients, pointed back at your own business.</p>
+      <p class="replaces"><b>What this replaces:</b> the support ticket, the help article and the YouTube tutorial.</p>
+    </article>
+    </div>
+    <p class="note">On session one we put your list in order and build the highest-impact pieces first. If something is bigger than this package, we tell you and quote it separately. Brokerage-owned platforms may block AI, so we build around them. Everything is drafted for your approval.</p>
   </div>
 </section>
 
@@ -404,92 +497,37 @@
   </div>
 </section>
 
-<!-- 4. NOT AN APP -->
-<section>
-  <div class="container">
-    <h2>Not a product. A premium service.</h2>
-    <p class="lead" style="margin-top:14px">Most AI tools hand you software and wish you luck. We do the opposite. A real person does every step with you, from the first conversation to the day it's working.</p>
-    <div class="vs bold">
-      <div class="instead">
-        <h3>Not this</h3>
-        <ul class="short"><li>Software you install and figure out</li><li>Tutorials and prompt libraries</li><li>A support ticket when it breaks</li></ul>
-      </div>
-      <div class="could">
-        <h3>This</h3>
-        <ul class="short"><li>A real person figures out exactly what you need</li><li>A real person builds it</li><li>A real person installs it and makes sure it works</li></ul>
-      </div>
-    </div>
-    <ul class="tiles three perks">
-      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>You have no time to learn it</span></li>
-      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg></span><span>You do not want to troubleshoot it</span></li>
-      <li class="tile"><span class="tico"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span>You want someone to call</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- 5. WHAT WE BUILD -->
-<section id="build" class="alt">
-  <div class="container">
-    <p class="eyebrow">What we can build</p>
-    <h2>A great assistant does these things. Yours will too.</h2>
-    <p class="lead" style="margin-top:14px">These are examples, not a menu. Session one is yours: tell us everything.</p>
-    <h3 class="group-h">For agents and teams</h3>
-    <div class="cards">
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 2 2 3-3M8 16h8"/></svg></div><h3>A checklist for every deal</h3><p class="eg">Type "agreement signed 12 Palm Ave" and the seller checklist appears. Buyers get one too.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><h3>Just-listed marketing</h3><p class="eg">E-blasts, listing descriptions and social posts, drafted.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div><h3>Buyer search and follow-up</h3><p class="eg">New matches sent, showings lined up, follow-ups drafted.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3>Showings and open houses</h3><p class="eg">Scheduled, added to the MLS, invites sent, follow-ups drafted.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div><h3>Transaction coordination</h3><p class="eg">Every pending item and signed document, tracked and chased.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div><h3>Morning brief</h3><p class="eg">Your listings, deals and priorities in one message.</p></article>
-    </div>
-    <h3 class="group-h">For brokers and office managers</h3>
-    <div class="cards">
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.2.6 3.5 2.6 3.5 6"/></svg></div><h3>A recruiting pipeline</h3><p class="eg">Target agents ranked, warm introductions found, personal outreach drafted for you to send.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 2 2 3-3M8 16h8"/></svg></div><h3>Agent onboarding</h3><p class="eg">Type "Sarah starts Monday" and her onboarding checklist, welcome email and setup tasks appear.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div><h3>Retention watch</h3><p class="eg">Agents whose activity is slipping, flagged early, with a note on what to talk about.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div><h3>Office production brief</h3><p class="eg">Listings, pendings and closings across the office, in one weekly message.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></div><h3>Compliance file review</h3><p class="eg">Deal files checked against your list. Missing documents flagged before closing.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><h3>Office marketing and recruiting content</h3><p class="eg">Newsletters, recruiting posts and agent announcements, drafted.</p></article>
-    </div>
-    <p class="note">On session one we put your list in order and build the highest-impact pieces first. If something is bigger than this package, we tell you and quote it separately. Brokerage-owned platforms may block AI, so we build around them. Everything is drafted for your approval.</p>
-  </div>
-</section>
-
-<!-- 5b. SOPS -->
-<section>
-  <div class="container center">
-    <p class="eyebrow">What we build with</p>
-    <h2>Skills, routines and extensions. Built around your process.</h2>
-  </div>
-  <div class="container">
-    <div class="cards">
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 2 2 3-3M8 16h8"/></svg></div><h3>Skills</h3><p class="eg">Your SOPs and checklists, turned into steps the assistant follows. Update the document and it follows the new version.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Routines</h3><p class="eg">Jobs that run on a schedule, like your morning brief, Friday recruiting update or weekly follow-up list.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0z"/><path d="M12 18v4"/></svg></div><h3>Extensions</h3><p class="eg">Connections to the tools you already use: email, calendar, Dropbox, Google Drive, your CRM.</p></article>
-    </div>
-  </div>
-  <div class="container center">
-    <ul class="chips big" style="justify-content:center">
-      <li>Your SOPs stay yours</li>
-      <li>Built on your accounts</li>
-      <li>Moves with you if you change brokerages</li>
-    </ul>
-  </div>
-</section>
-
 <!-- 6. HOW IT WORKS -->
 <section id="how" class="dark">
   <div class="container">
     <p class="eyebrow">How it works</p>
-    <h2>You talk. We do the rest.</h2>
+    <h2>Three sessions. About an hour each. A working system at the end.</h2>
     <div class="steps">
-      <div class="step"><p class="when">Session 1</p><h3>Tell us everything</h3><p>Everything you want AI to do for you, your team or your office. Nothing is too small or too big to mention.</p></div>
-      <div class="step"><p class="when">Behind the scenes</p><h3>We build it</h3><p>A real person on our team builds your skills, routines and extensions. No homework for you.</p></div>
-      <div class="step"><p class="when">Session 2</p><h3>We install it and walk you through</h3><p>On screen, in plain language.</p></div>
-      <div class="step"><p class="when">One week</p><h3>You use it</h3><p>Text us anything that feels off.</p></div>
-      <div class="step"><p class="when">Session 3</p><h3>We see how it's going</h3><p>What's working, what's not, and your new ideas. We fine-tune it.</p></div>
+      <div class="step"><p class="when">Session 1</p><h3>Tell us everything</h3><p>A private conversation about your business: your listings or your office, your workflows, your tools and your priorities. Everything you want AI to do, big or small. We leave with a clear, prioritized build plan.</p></div>
+      <div class="step"><p class="when">Behind the scenes</p><h3>We build it</h3><p>A real person on our team builds your skills, routines and extensions on your actual business. No homework for you.</p></div>
+      <div class="step"><p class="when">Session 2</p><h3>We install it and walk you through</h3><p>We install everything on your own accounts and run each piece live with you, on screen, in plain language. You leave with it working.</p></div>
+      <div class="step"><p class="when">One week</p><h3>You use it in your real work</h3><p>Text or email us anything that feels off. We fix it as you go.</p></div>
+      <div class="step"><p class="when">Session 3</p><h3>We make sure it is working</h3><p>We review what is working and what is not, fine-tune it and add your new ideas. Then it is yours. No platform fee and no dependency on us.</p></div>
     </div>
     <p class="callout">A real person on every session. Your time: about 3 hours.</p>
+  </div>
+</section>
+
+<!-- 6a. WHAT CHANGES -->
+<section>
+  <div class="container narrow">
+    <p class="eyebrow">What changes</p>
+    <h2>What changes, in plain terms</h2>
+    <ul class="vlist">
+      <li>You type "agreement signed 12 Palm Ave" and the whole seller checklist is waiting, with the first drafts done.</li>
+      <li>Your day starts with one message: what needs you today, what is drafted and ready, and what is slipping.</li>
+      <li>Showing feedback, open house leads and buyer follow-ups get handled the same day, not when you remember.</li>
+      <li>Seller updates and just-listed marketing go out on time, in your voice, after a quick read and a click.</li>
+      <li>Brokers see a ranked list of agents worth a conversation, with personal outreach already drafted.</li>
+      <li>A new agent's first week runs from a checklist instead of from your memory.</li>
+      <li>Your process lives in a system, not just in your head, so you can finally hand things off.</li>
+      <li>You never have to learn a tool or watch a tutorial. That is the whole point.</li>
+    </ul>
   </div>
 </section>
 
@@ -510,6 +548,61 @@
         <figcaption><cite>Jake Broder, Global Brain Health Institute</cite></figcaption>
       </figure>
     </div>
+  </div>
+</section>
+
+<!-- 6d. FIT -->
+<section class="alt">
+  <div class="container">
+    <p class="eyebrow">Is this a fit?</p>
+    <h2>This is for a specific kind of agent and broker.</h2>
+    <div class="fit">
+      <div class="fit-yes">
+        <h3>This is for you if</h3>
+        <ul>
+          <li>You run a busy practice, team or office and the details are starting to slip</li>
+          <li>You want the advantage of AI without becoming a tech person</li>
+          <li>You would rather invest once and have it done properly than piece it together yourself</li>
+          <li>You care about discretion, quality and getting it right the first time</li>
+        </ul>
+      </div>
+      <div class="fit-no">
+        <h3>This is not for you if</h3>
+        <ul>
+          <li>You want a cheap course to check the AI box. There are plenty of those.</li>
+          <li>You enjoy tinkering with software and would rather build it yourself</li>
+          <li>You are not willing to give us about three hours of your time</li>
+        </ul>
+      </div>
+    </div>
+    <div class="guarantee">
+      <p class="eyebrow">Our white-glove promise</p>
+      <h3>If it is not working in your business by session three, we keep working with you at no charge until it is.</h3>
+      <p>We take three clients a month so that we can make that promise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6e. WHO BUILDS IT -->
+<section>
+  <div class="container">
+    <p class="eyebrow">Who builds it</p>
+    <h2>Real estate experience. Claude expertise. The same people on every session.</h2>
+    <div class="team">
+      <article>
+        <img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan" loading="lazy">
+        <h3>Jim Sullivan</h3>
+        <p class="role">Founder and President, The Endurance Group</p>
+        <p>Jim started his career in real estate in New York: valuation, development and commercial lending, with a Master of Science in Real Estate from NYU. He founded The Endurance Group in 1999 and spent two decades running business development and relationship selling for clients. He knows which work actually moves revenue, and he makes sure every build is aimed at it.</p>
+      </article>
+      <article>
+        <img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" loading="lazy">
+        <h3>Conor Sullivan</h3>
+        <p class="role">AI implementation lead, The Endurance Group</p>
+        <p>Conor leads Claude implementation and automation at TEG and lectures at The Roux Institute at Northeastern University. A former teacher, he is good at the part most AI projects skip: listening to how you actually work and turning it into clear steps the assistant can follow.</p>
+      </article>
+    </div>
+    <p class="partner-line"><img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" loading="lazy"></p>
   </div>
 </section>
 
@@ -537,7 +630,7 @@
         <div class="amt" data-price="usd">$998</div>
         <div class="usd">Fixed fee</div>
         <p class="split"><span data-price="half-usd">$499</span> on signing<br><span data-price="half-usd">$499</span> on delivery</p>
-        <div><a class="btn btn-primary" href="#enquire" data-cta="price-enquire">Get started</a></div>
+        <div><a class="btn btn-primary" href="#enquire" data-cta="price-enquire">Apply for a spot</a></div>
       </div>
       <div class="panel">
         <h3>Included</h3>
@@ -558,14 +651,16 @@
 <!-- 8. FAQ -->
 <section class="alt">
   <div class="container">
-    <h2>A few honest questions</h2>
+    <h2>Questions you are probably asking</h2>
     <div class="faq">
+      <article><h3>"I'm not technical. Is that a problem?"</h3><p>It is the reason this service exists. We do the building. You talk to us in plain English and approve what it drafts.</p></article>
+      <article><h3>"How much of my time does it take?"</h3><p>About three hours across three sessions, plus a week of using it in your normal work.</p></article>
       <article><h3>"I'm a broker. Is this for me?"</h3><p>Yes. Same three sessions. We build for recruiting, onboarding, retention and office reporting instead of listings.</p></article>
       <article><h3>"What if my list is long?"</h3><p>Good. We put it in order and build the highest-impact pieces first. Anything bigger gets quoted separately, never as a surprise.</p></article>
-      <article><h3>"I don't have time."</h3><p>That's why we do the building. You give us about 3 hours.</p></article>
+      <article><h3>"What about my clients' information?"</h3><p>It is built on your own accounts and you own it. It drafts only, you pick what it can see and you can revoke access any time. Details above.</p></article>
+      <article><h3>"What does it cost after the three sessions?"</h3><p>Nothing to us unless you want ongoing help. You pay your own AI subscription directly to the provider.</p></article>
       <article><h3>"What if I change brokerages?"</h3><p>It is built on your own accounts, so it comes with you.</p></article>
       <article><h3>"I already use ChatGPT."</h3><p>Great. We build on Claude or ChatGPT, whichever you use.</p></article>
-      <article><h3>"Is it safe with my email?"</h3><p>Draft-only, you pick the accounts, and you can revoke access any time. Details above.</p></article>
     </div>
   </div>
 </section>
@@ -573,9 +668,9 @@
 <!-- 9. FINAL CTA / FORM -->
 <section id="enquire" class="dark">
   <div class="container narrow center">
-    <p class="eyebrow">Ready when you are</p>
-    <h2>Ready to hand off the chaos?</h2>
-    <p class="lead" style="color:#e5dce2">Because a real person does every build, we only take on three clients per month. Tell us what you want AI to do, then pick a time for your first session.</p>
+    <p class="eyebrow">By application</p>
+    <h2>Apply for a spot</h2>
+    <p class="lead" style="color:#e5dce2">This is not a checkout page, on purpose. Because a real person does every build, we take three clients a month. Tell us about your business and we will come back within one business day with honest next steps.</p>
 
     <form class="form-card" id="enquiry" novalidate>
       <input type="hidden" name="ref" id="ref" value="realestate">
@@ -584,6 +679,10 @@
       <div class="grid2">
         <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+      </div>
+      <div class="grid2">
+        <div class="field"><label for="market">Your market <span class="opt">(optional)</span></label><input type="text" id="market" name="market" placeholder="For example: Portland, Maine"></div>
+        <div class="field"><label for="brokerage">Brokerage <span class="opt">(optional)</span></label><input type="text" id="brokerage" name="brokerage"></div>
       </div>
       <div class="field">
         <label for="practice">What do you do?</label>
@@ -598,7 +697,7 @@
         </select>
       </div>
       <div class="field"><label for="goal">What do you want AI to do? <span class="opt">(optional)</span></label><textarea id="goal" name="goal" placeholder="For example: listing checklists and e-blasts, or recruiting outreach and agent onboarding."></textarea></div>
-      <button class="btn btn-primary" type="submit" data-cta="form-submit">Send and pick a time</button>
+      <button class="btn btn-primary" type="submit" data-cta="form-submit">Apply for a spot</button>
       <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
     </form>
   </div>
@@ -694,16 +793,16 @@
   var msg = document.getElementById("form-msg");
   function show(cls, text) { msg.className = "form-msg " + cls; msg.textContent = text; }
   function mailto(data) {
-    var body = ["Name: " + data.name, "Email: " + data.email, "Role: " + data.practice, "What's eating my day: " + data.goal, "Source: " + data.ref].join("\n");
+    var body = ["Name: " + data.name, "Email: " + data.email, "Role: " + data.practice, "Market: " + (data.market || ""), "Brokerage: " + (data.brokerage || ""), "What they want AI to do: " + data.goal, "Source: " + data.ref].join("\n");
     location.href = "mailto:" + CONFIG.MAILTO + "?subject=" + encodeURIComponent("AI environment enquiry (" + data.ref + ")") + "&body=" + encodeURIComponent(body);
   }
   var BOOK_URL = "https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b";
   function showBooked() {
     msg.className = "form-msg ok";
-    msg.textContent = "Thank you. We'll be in touch shortly. Want to skip the back and forth? ";
+    msg.textContent = "Thank you. We will come back to you within one business day. Want to skip the back and forth? ";
     var a = document.createElement("a");
     a.className = "book"; a.href = BOOK_URL; a.target = "_blank"; a.rel = "noopener";
-    a.textContent = "Book your first call";
+    a.textContent = "Book your first session";
     msg.appendChild(a);
   }
   form.addEventListener("submit", function (e) {
@@ -718,7 +817,7 @@
     show("ok", "Sending...");
     var payload = new URLSearchParams({
       name: data.name, email: data.email, company: data.practice,
-      message: "AI environment enquiry (source: " + data.ref + ")\nRole: " + data.practice + "\nWhat's eating their day: " + (data.goal || "Not provided") + ""
+      message: "AI environment enquiry (source: " + data.ref + ")\nRole: " + data.practice + "\nMarket: " + (data.market || "Not provided") + "\nBrokerage: " + (data.brokerage || "Not provided") + "\nWhat they want AI to do: " + (data.goal || "Not provided")
     }).toString();
     fetch(CONFIG.FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: payload })
       .then(function (r) { return r.json(); })
