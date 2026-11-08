@@ -416,6 +416,10 @@
   .lab .bp-card li { padding: 7px 0 7px 28px; font-size: .95rem; }
   .lab .bp-fine { margin-top: 8px; }
 }
+.lab .real-person { display: flex; align-items: center; gap: 12px; margin-top: 22px; color: #e9e1e6; font-weight: 600; font-size: .95rem; }
+.lab .real-person small { color: var(--gold); font-weight: 500; font-size: .82rem; }
+.lab .rp-ico { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); color: var(--gold); display: grid; place-items: center; flex: none; }
+.lab .team-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-weight: 600; font-size: .95rem; }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -464,9 +468,9 @@
       <p class="eyebrow" data-v="eyebrow">Premium, white-glove AI for agents and brokers</p>
       <h1 data-v="h1">Close more. Work less.</h1>
       <p class="sub-gold" data-v="sub">We build the AI that does the busywork.</p>
-      <p class="lead" data-v="lead">A real person builds it, installs it and makes sure it works.</p>
+      <p class="lead" data-v="lead">We build it, install it with you and make sure it works.</p>
       <a class="btn btn-primary m-only" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book-mobile">Book your free build plan</a>
-      <div class="people"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan"><span>Built personally by Jim and Conor Sullivan<br><small>Claude Certified Services Partner</small></span></div>
+      <div class="real-person"><span class="rp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span><span>A real person on every call and every build. Never a bot.<br><small>Claude Certified Services Partner</small></span></div>
     </div>
     <div class="bp-card">
       <p class="bp-label">Free build plan call</p>
@@ -484,7 +488,7 @@
 <!-- 1b. TRUST STRIP -->
 <section class="builtfor">
   <div class="container center">
-    <ul class="chips big" style="justify-content:center"><li>A real person on every session</li><li>About 3 hours of your time</li><li>No monthly fee to us</li><li>Three clients per month</li></ul>
+    <ul class="chips big" style="justify-content:center"><li>Built on your own accounts</li><li>About 3 hours of your time</li><li>No monthly fee to us</li><li>Three clients per month</li></ul>
   </div>
 </section>
 
@@ -611,9 +615,10 @@
         <div><a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="price-book">Book your free build plan</a></div>
       </div>
       <div class="panel team-mini">
-        <h3>Who builds it</h3>
+        <h3>Led by</h3>
         <div class="tm"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan" loading="lazy"><div><b>Jim Sullivan</b><span>Founder. Began his career in New York real estate valuation and development. MS in Real Estate, NYU.</span></div></div>
-        <div class="tm"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" loading="lazy"><div><b>Conor Sullivan</b><span>Leads every AI build. Lecturer at The Roux Institute at Northeastern University.</span></div></div>
+        <div class="tm"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" loading="lazy"><div><b>Conor Sullivan</b><span>Leads AI implementation. Lecturer at The Roux Institute at Northeastern University.</span></div></div>
+        <p class="team-note">Every call and every build is done by a real person on our team. Never a bot, never a product.</p>
         <img class="badge" src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" loading="lazy">
       </div>
     </div>
@@ -761,13 +766,13 @@
       eyebrow: "Premium, white-glove AI for real estate agents",
       h1: "More listings. Less admin.",
       sub: "We build the AI that runs your deals.",
-      lead: "Checklists, marketing and follow-up, handled. A real person builds it, installs it and makes sure it works."
+      lead: "Checklists, marketing and follow-up, handled. We build it, install it with you and make sure it works."
     },
     brokers: {
       eyebrow: "Premium, white-glove AI for brokers and office managers",
       h1: "Recruit more agents. Keep the ones you have.",
       sub: "We build the AI that does it.",
-      lead: "Recruiting, onboarding and retention, handled. A real person builds it, installs it and makes sure it works."
+      lead: "Recruiting, onboarding and retention, handled. We build it, install it with you and make sure it works."
     }
   };
   var f = "";
