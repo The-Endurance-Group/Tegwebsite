@@ -420,6 +420,10 @@
 .lab .real-person small { color: var(--gold); font-weight: 500; font-size: .82rem; }
 .lab .rp-ico { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); color: var(--gold); display: grid; place-items: center; flex: none; }
 .lab .team-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-weight: 600; font-size: .95rem; }
+.lab .team-stack { display: flex; flex: none; }
+.lab .team-stack img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); background: var(--plum); }
+.lab .team-stack img + img { margin-left: -12px; }
+@media (max-width: 899px) { .lab .real-person { flex-direction: column; align-items: flex-start; gap: 10px; } }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -470,7 +474,7 @@
       <p class="sub-gold" data-v="sub">We build the AI that does the busywork.</p>
       <p class="lead" data-v="lead">We build it, install it with you and make sure it works.</p>
       <a class="btn btn-primary m-only" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book-mobile">Book your free build plan</a>
-      <div class="real-person"><span class="rp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span><span>A real person on every call and every build. Never a bot.<br><small>Claude Certified Services Partner</small></span></div>
+      <div class="real-person"><span class="team-stack"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan"><img src="images/team/maria-jose-pava.webp" alt="Maria Jose Pava"><img src="images/team/nolan-cary.webp" alt="Nolan Cary"></span><span>A real person from our team on every call and every build. Never a bot.<br><small>Claude Certified Services Partner</small></span></div>
     </div>
     <div class="bp-card">
       <p class="bp-label">Free build plan call</p>
