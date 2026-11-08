@@ -424,6 +424,15 @@
 .lab .bp-urgent { margin-top: 12px; padding: 10px 12px; border-radius: 10px; background: var(--gold-tint); color: #6b4f12; font-size: .88rem; font-weight: 700; line-height: 1.4; }
 .lab .plan-urgent { margin: -12px auto 26px; max-width: 520px; color: #e5dce2; font-size: .95rem; }
 .lab .page-disc { margin: 0 auto; padding: 18px 0; color: var(--plum-soft); }
+.lab .cal-card { background: #fff; border-radius: 18px; padding: 8px; margin: 8px auto 0; max-width: 760px; box-shadow: 0 18px 50px rgba(0,0,0,.4); }
+.lab .meetings-iframe-container { min-height: 640px; }
+.lab .reach-out { margin-top: 30px; }
+.lab .reach-out summary { cursor: pointer; color: #e5dce2; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; list-style: none; }
+.lab .reach-out summary::-webkit-details-marker { display: none; }
+html { scroll-behavior: smooth; }
+#book { scroll-margin-top: 90px; }
+.lab .cal-fallback { margin-top: 12px; font-size: .9rem; color: #cbbfc8; }
+.lab .cal-fallback a { color: #fff; text-decoration: underline; }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -473,7 +482,7 @@
       <h1 data-v="h1">Close more. Work less.</h1>
       <p class="sub-gold" data-v="sub">We build the AI that does the busywork for real estate professionals.</p>
       <p class="lead" data-v="lead">We build it, install it with you and make sure it works.</p>
-      <a class="btn btn-primary m-only" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book-mobile">Book your free build plan</a>
+      <a class="btn btn-primary m-only" href="#book" data-cta="hero-book-mobile">Book your free build plan</a>
       <div class="real-person"><span class="team-stack"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan"><img src="images/team/maria-jose-pava.webp" alt="Maria Jose Pava"><img src="images/team/nolan-cary.webp" alt="Nolan Cary"></span><span>A real person from our team on every call and every build. Never a bot.<br><small>Claude Certified Services Partner</small></span></div>
     </div>
     <div class="bp-card">
@@ -483,7 +492,7 @@
         <li>What we would build first</li>
         <li>A straight answer on fit</li>
       </ul>
-      <a class="btn btn-primary d-only" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book">Book your free build plan</a>
+      <a class="btn btn-primary d-only" href="#book" data-cta="hero-book">Book your free build plan</a>
       <p class="bp-fine">Yours to keep, whether you hire us or not.</p>
       <p class="bp-urgent">We take a limited number of new clients each month. Book early to get this month&rsquo;s spot.</p>
     </div>
@@ -553,7 +562,7 @@
         <p class="ex-tag">Your idea</p>
         <h3>Don't see it here? We build whatever you want.</h3>
         <p>Tell us on the call what you want AI to do. If it can be built, we build it.</p>
-        <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="examples-book">Book your free build plan</a>
+        <a class="btn btn-primary" href="#book" data-cta="examples-book">Book your free build plan</a>
       </article>
 
     </div>
@@ -617,7 +626,7 @@
         <div class="amt" data-price="usd">$998</div>
         <div class="usd">Three sessions. Fixed fee. Yours to keep.</div>
         <p class="split"><span data-price="half-usd">$499</span> on signing &middot; <span data-price="half-usd">$499</span> on delivery<br>No monthly fee to us. Only your own AI subscription.</p>
-        <div><a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="price-book">Book your free build plan</a></div>
+        <div><a class="btn btn-primary" href="#book" data-cta="price-book">Book your free build plan</a></div>
       </div>
       <div class="panel team-mini">
         <h3>Led by</h3>
@@ -662,8 +671,12 @@
     </ul>
     <p class="plan-note">Yours to keep, whether you hire us or not.</p>
     <p class="plan-urgent">We take a limited number of new clients each month. Book early to get this month&rsquo;s spot.</p>
-    <div class="btn-row" style="justify-content:center"><a class="btn btn-primary btn-lg" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="final-book">Pick a time</a></div>
-    <p class="or">Or have us reach out:</p>
+    <div class="cal-card" id="book">
+      <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b&embed=true"></div>
+    </div>
+    <p class="cal-fallback">Calendar not loading? <a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="calendar-fallback">Open it in a new tab</a></p>
+    <details class="reach-out">
+      <summary>Prefer we reach out? Leave your details</summary>
 
     <form class="form-card" id="enquiry" novalidate>
       <input type="hidden" name="ref" id="ref" value="realestate">
@@ -694,6 +707,7 @@
       <button class="btn btn-primary" type="submit" data-cta="form-submit">Send</button>
       <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
     </form>
+    </details>
   </div>
 </section>
 
@@ -793,6 +807,16 @@
   document.documentElement.classList.add("for-" + f);
   var a = document.getElementById("audience"); if (a) a.value = f;
 })();
+</script>
+<script src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+<script>
+/* Fires when someone completes a booking in the embedded HubSpot calendar.
+   Reports it to Meta (if the Pixel is installed) and Clarity. */
+window.addEventListener("message", function (e) {
+  if (!e.data || !e.data.meetingBookSucceeded) return;
+  try { if (window.fbq) window.fbq("track", "Schedule"); } catch (err) {}
+  try { if (window.clarity) window.clarity("event", "build_plan_booked"); } catch (err) {}
+});
 </script>
 <script src="js/main.js?v=20260930" defer></script>
 <script>
