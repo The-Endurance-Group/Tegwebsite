@@ -552,39 +552,56 @@
 .lab #build.bd-play .igrid li:nth-child(6) .fi { animation-delay: 2.0s; }
 .lab #build.bd-play .igrid li:nth-child(6) .fi::after { animation-delay: 2.45s; }
 @media (prefers-reduced-motion: reduce) { .lab #build .aud, .lab #build .igrid li { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #build .igrid .fi, .lab #build .igrid .fi::after { animation: none !important; } .lab #build .igrid .fi::after { display: none; } }
-/* your-idea animation (14s loop) */
-@keyframes yoPlus{0.0%{opacity:1;transform:none}7.86%{opacity:1;transform:none}10.71%{opacity:0;transform:scale(.6)}94.29%{opacity:0;transform:scale(.6)}97.86%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes yoP1{0.0%{opacity:0}10.71%{opacity:0}12.14%{opacity:1}28.57%{opacity:1}30.71%{opacity:0}100.0%{opacity:0}}
-@keyframes yoT1{0.0%{clip-path:inset(0 100% 0 0)}10.71%{clip-path:inset(0 100% 0 0)}20.0%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
-@keyframes yoC1{0.0%{opacity:0;transform:translateY(6px) scale(.9)}21.43%{opacity:0;transform:translateY(6px) scale(.9)}24.29%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes yoP2{0.0%{opacity:0}31.43%{opacity:0}32.86%{opacity:1}49.29%{opacity:1}51.43%{opacity:0}100.0%{opacity:0}}
-@keyframes yoT2{0.0%{clip-path:inset(0 100% 0 0)}31.43%{clip-path:inset(0 100% 0 0)}40.71%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
-@keyframes yoC2{0.0%{opacity:0;transform:translateY(6px) scale(.9)}42.14%{opacity:0;transform:translateY(6px) scale(.9)}45.0%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes yoP3{0.0%{opacity:0}52.14%{opacity:0}53.57%{opacity:1}70.0%{opacity:1}72.14%{opacity:0}100.0%{opacity:0}}
-@keyframes yoT3{0.0%{clip-path:inset(0 100% 0 0)}52.14%{clip-path:inset(0 100% 0 0)}61.43%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
-@keyframes yoC3{0.0%{opacity:0;transform:translateY(6px) scale(.9)}62.86%{opacity:0;transform:translateY(6px) scale(.9)}65.71%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes yoP4{0.0%{opacity:0}72.86%{opacity:0}74.29%{opacity:1}90.71%{opacity:1}92.86%{opacity:0}100.0%{opacity:0}}
-@keyframes yoT4{0.0%{clip-path:inset(0 100% 0 0)}72.86%{clip-path:inset(0 100% 0 0)}82.14%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
-@keyframes yoC4{0.0%{opacity:0;transform:translateY(6px) scale(.9)}83.57%{opacity:0;transform:translateY(6px) scale(.9)}86.43%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-.lab .ex-plus.yo { position: relative; overflow: hidden; }
-.lab .yo .yo-plus { animation: yoPlus 14s linear infinite; }
-.lab .yo .yo-p { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 0 14px; opacity: 0; text-align: center; }
-.lab .yo .yo-t { display: block; white-space: nowrap; font-family: var(--font-head); font-weight: 700; font-size: clamp(.95rem, 2.4vw, 1.2rem); line-height: 1.2; color: #fff; font-size: 1.15rem; }
-.lab .yo .yo-c { display: inline-block; font-family: var(--font-body); font-weight: 700; font-size: .78rem; line-height: 1; color: #1d3a37; background: #cfe7e3; padding: 7px 12px; border-radius: 999px; opacity: 0; }
-.lab .yo .yo-p:nth-of-type(1) { animation: yoP1 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(1) .yo-t { animation: yoT1 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(1) .yo-c { animation: yoC1 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(2) { animation: yoP2 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(2) .yo-t { animation: yoT2 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(2) .yo-c { animation: yoC2 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(3) { animation: yoP3 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(3) .yo-t { animation: yoT3 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(3) .yo-c { animation: yoC3 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(4) { animation: yoP4 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(4) .yo-t { animation: yoT4 14s linear infinite; }
-.lab .yo .yo-p:nth-of-type(4) .yo-c { animation: yoC4 14s linear infinite; }
-@media (max-width: 819px) { .lab .yo .yo-t { font-size: .98rem; } .lab .yo .yo-plus { font-size: 5.5rem; } }
-@media (prefers-reduced-motion: reduce) { .lab .yo * { animation: none !important; } .lab .yo .yo-p { display: none; } }
+/* your-idea animation (14.5s loop): ideas stay and fill the box */
+@keyframes yoPlus{0.0%{opacity:1;transform:none}6.9%{opacity:1;transform:none}9.66%{opacity:0;transform:scale(.6)}93.79%{opacity:0;transform:scale(.6)}97.93%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB1{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}9.66%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}12.07%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}13.79%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT1{0.0%{clip-path:inset(0 100% 0 0)}11.03%{clip-path:inset(0 100% 0 0)}16.55%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC1{0.0%{opacity:0;transform:translateY(5px) scale(.9)}17.24%{opacity:0;transform:translateY(5px) scale(.9)}19.66%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB2{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}20.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}22.41%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}24.14%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT2{0.0%{clip-path:inset(0 100% 0 0)}21.38%{clip-path:inset(0 100% 0 0)}26.9%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC2{0.0%{opacity:0;transform:translateY(5px) scale(.9)}27.59%{opacity:0;transform:translateY(5px) scale(.9)}30.0%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB3{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}30.34%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}32.76%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}34.48%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT3{0.0%{clip-path:inset(0 100% 0 0)}31.72%{clip-path:inset(0 100% 0 0)}37.24%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC3{0.0%{opacity:0;transform:translateY(5px) scale(.9)}37.93%{opacity:0;transform:translateY(5px) scale(.9)}40.34%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB4{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}40.69%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}43.1%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}44.83%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT4{0.0%{clip-path:inset(0 100% 0 0)}42.07%{clip-path:inset(0 100% 0 0)}47.59%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC4{0.0%{opacity:0;transform:translateY(5px) scale(.9)}48.28%{opacity:0;transform:translateY(5px) scale(.9)}50.69%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB5{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}51.03%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}53.45%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}55.17%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT5{0.0%{clip-path:inset(0 100% 0 0)}52.41%{clip-path:inset(0 100% 0 0)}57.93%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC5{0.0%{opacity:0;transform:translateY(5px) scale(.9)}58.62%{opacity:0;transform:translateY(5px) scale(.9)}61.03%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB6{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}61.38%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}63.79%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}65.52%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT6{0.0%{clip-path:inset(0 100% 0 0)}62.76%{clip-path:inset(0 100% 0 0)}68.28%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC6{0.0%{opacity:0;transform:translateY(5px) scale(.9)}68.97%{opacity:0;transform:translateY(5px) scale(.9)}71.38%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@media (min-width: 820px) { .lab .ex-yours .ex-plus.yo { aspect-ratio: 16 / 10; } }
+.lab .ex-plus.yo { position: relative; overflow: hidden; display: block; }
+.lab .yo .yo-plus { position: absolute; inset: 0; display: grid; place-items: center; animation: yoPlus 14.5s linear infinite; }
+.lab .yo .yo-grid { position: absolute; inset: 12px 12px 18px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 14px 10px; }
+.lab .yo .yo-b { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 6px 8px; text-align: center; background: rgba(255,255,255,.07); border: 1.5px solid rgba(201,162,75,.6); border-radius: 16px; opacity: 0; }
+.lab .yo .yo-b::before, .lab .yo .yo-b::after { content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,.07); border: 1.5px solid rgba(201,162,75,.6); }
+.lab .yo .yo-b::before { width: 7px; height: 7px; left: 16px; bottom: -11px; }
+.lab .yo .yo-b::after { width: 4px; height: 4px; left: 10px; bottom: -17px; }
+.lab .yo .yo-t { display: block; font-family: var(--font-head); font-weight: 700; font-size: .78rem; line-height: 1.2; color: #fff; font-size: clamp(.74rem, 1.7vw, .95rem); }
+.lab .yo .yo-c { display: inline-block; font-family: var(--font-body); font-weight: 700; font-size: .62rem; line-height: 1; color: #1d3a37; background: #cfe7e3; padding: 5px 9px; border-radius: 999px; opacity: 0; }
+.lab .yo .yo-b:nth-child(1) { animation: yoB1 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(1) .yo-t { animation: yoT1 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(1) .yo-c { animation: yoC1 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(2) { animation: yoB2 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(2) .yo-t { animation: yoT2 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(2) .yo-c { animation: yoC2 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(3) { animation: yoB3 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(3) .yo-t { animation: yoT3 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(3) .yo-c { animation: yoC3 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(4) { animation: yoB4 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(4) .yo-t { animation: yoT4 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(4) .yo-c { animation: yoC4 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(5) { animation: yoB5 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(5) .yo-t { animation: yoT5 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(5) .yo-c { animation: yoC5 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(6) { animation: yoB6 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(6) .yo-t { animation: yoT6 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(6) .yo-c { animation: yoC6 14.5s linear infinite; }
+@media (max-width: 819px) { .lab .ex-plus.yo { aspect-ratio: auto; min-height: 290px; } .lab .yo .yo-plus { font-size: 5.5rem; } .lab .yo .yo-t { font-size: .72rem; } .lab .yo .yo-c { font-size: .56rem; padding: 4px 7px; white-space: nowrap; } }
+@media (prefers-reduced-motion: reduce) { .lab .yo * { animation: none !important; } .lab .yo .yo-grid { display: none; } }
 
 .lab .hero .people small { font-weight: 500; color: var(--gold); font-size: .82rem; }
 .lab .hero .fine { max-width: 34em; }
@@ -776,7 +793,7 @@ html { scroll-behavior: smooth; }
       </article>
 
       <article class="ex ex-yours">
-        <div class="ex-media ex-plus yo" role="img" aria-label="Animation: a plus sign turns into example requests such as chasing overdue follow-ups, summarizing open deals, drafting a market update and sorting an inbox, each finishing with a check mark."><span class="yo-plus" aria-hidden="true">+</span><div class="yo-p" aria-hidden="true"><span class="yo-t">Chase my overdue follow-ups</span><span class="yo-c">&check; 7 follow-ups drafted</span></div><div class="yo-p" aria-hidden="true"><span class="yo-t">Summarize every open deal</span><span class="yo-c">&check; 12 deals summarized</span></div><div class="yo-p" aria-hidden="true"><span class="yo-t">Draft my weekly market update</span><span class="yo-c">&check; Update drafted</span></div><div class="yo-p" aria-hidden="true"><span class="yo-t">Sort my inbox</span><span class="yo-c">&check; Inbox sorted</span></div></div>
+        <div class="ex-media ex-plus yo" role="img" aria-label="Animation: a plus sign turns into a growing set of thought bubbles, such as chasing overdue follow-ups, summarizing open deals, drafting a market update, sorting an inbox, prepping showings and finding agents ready to move. Each one gets a checked result, until the box is full."><span class="yo-plus" aria-hidden="true">+</span><div class="yo-grid" aria-hidden="true"><div class="yo-b"><span class="yo-t">Chase overdue follow-ups</span><span class="yo-c">&check; 7 follow-ups drafted</span></div><div class="yo-b"><span class="yo-t">Summarize every open deal</span><span class="yo-c">&check; 12 deals summarized</span></div><div class="yo-b"><span class="yo-t">Draft my market update</span><span class="yo-c">&check; Update drafted</span></div><div class="yo-b"><span class="yo-t">Sort my inbox</span><span class="yo-c">&check; Inbox sorted</span></div><div class="yo-b"><span class="yo-t">Prep my showings</span><span class="yo-c">&check; 3 briefs ready</span></div><div class="yo-b"><span class="yo-t">Find agents ready to move</span><span class="yo-c">&check; Ranked list ready</span></div></div></div>
         <p class="ex-tag">Your idea</p>
         <h3>Don't see it here? We build whatever you want.</h3>
         <p>Tell us on the call what you want AI to do. If it can be built, we build it.</p>
