@@ -380,45 +380,44 @@
 .lab .ex-yours .ex-tag { color: var(--gold); }
 .lab .ex-plus { display: grid; place-items: center; background: rgba(255,255,255,.06); border: 2px dashed rgba(201,162,75,.7); }
 @media (max-width: 819px) { .lab .ex-art { aspect-ratio: auto; min-height: 220px; } .lab .skills li { font-size: .66rem; padding: 5px 8px; white-space: nowrap; } .lab .doc { flex-basis: 30%; } .lab .docskills { gap: 8px; } .lab .ex-art { padding: 14px; } .lab .mrow em { font-size: .64rem; padding: 3px 7px; } }
-/* recruiting animation (14s loop) */
-@keyframes rcL1{0.0%{clip-path:inset(0 100% 0 0)}2.14%{clip-path:inset(0 100% 0 0)}13.57%{clip-path:inset(0 0 0 0)}57.14%{clip-path:inset(0 0 0 0)}60.0%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
-@keyframes rcL2{0.0%{clip-path:inset(0 100% 0 0)}13.57%{clip-path:inset(0 100% 0 0)}21.43%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
-@keyframes rcPrompt{0.0%{opacity:1;transform:none}57.14%{opacity:1;transform:none}60.71%{opacity:0}95.71%{opacity:0}99.29%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcSend{0.0%{background:#c9bfc6;transform:none}22.14%{background:#c9bfc6;transform:none}23.57%{background:var(--pink);transform:scale(.88)}25.71%{background:var(--pink);transform:none}100.0%{background:var(--pink);transform:none}}
-@keyframes rcSrc{0.0%{opacity:0}25.0%{opacity:0}27.14%{opacity:1;transform:none}56.43%{opacity:1;transform:none}59.29%{opacity:0}100.0%{opacity:0}}
-@keyframes rcR1{0.0%{opacity:0;transform:translateY(6px)}27.14%{opacity:0;transform:translateY(6px)}29.29%{opacity:1;transform:none}56.43%{opacity:1;transform:none}59.29%{opacity:0}100.0%{opacity:0}}
-@keyframes rcSp1{0.0%{opacity:0}27.14%{opacity:0}29.29%{opacity:1}35.71%{opacity:1}37.14%{opacity:0}100.0%{opacity:0}}
-@keyframes rcCk1{0.0%{opacity:0;transform:scale(.4)}35.71%{opacity:0;transform:scale(.4)}37.5%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcR2{0.0%{opacity:0;transform:translateY(6px)}33.57%{opacity:0;transform:translateY(6px)}35.71%{opacity:1;transform:none}56.43%{opacity:1;transform:none}59.29%{opacity:0}100.0%{opacity:0}}
-@keyframes rcSp2{0.0%{opacity:0}33.57%{opacity:0}35.71%{opacity:1}42.14%{opacity:1}43.57%{opacity:0}100.0%{opacity:0}}
-@keyframes rcCk2{0.0%{opacity:0;transform:scale(.4)}42.14%{opacity:0;transform:scale(.4)}43.93%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcR3{0.0%{opacity:0;transform:translateY(6px)}40.0%{opacity:0;transform:translateY(6px)}42.14%{opacity:1;transform:none}56.43%{opacity:1;transform:none}59.29%{opacity:0}100.0%{opacity:0}}
-@keyframes rcSp3{0.0%{opacity:0}40.0%{opacity:0}42.14%{opacity:1}48.57%{opacity:1}50.0%{opacity:0}100.0%{opacity:0}}
-@keyframes rcCk3{0.0%{opacity:0;transform:scale(.4)}48.57%{opacity:0;transform:scale(.4)}50.36%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcLg1{0.0%{opacity:0;transform:scale(.6)}28.57%{opacity:0;transform:scale(.6)}31.43%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcLg2{0.0%{opacity:0;transform:scale(.6)}35.0%{opacity:0;transform:scale(.6)}37.86%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcLg3{0.0%{opacity:0;transform:scale(.6)}41.43%{opacity:0;transform:scale(.6)}44.29%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcBrief{0.0%{opacity:0}59.29%{opacity:0}62.14%{opacity:1}95.0%{opacity:1}98.57%{opacity:0}100.0%{opacity:0}}
-@keyframes rcB1{0.0%{opacity:0;transform:translateY(6px)}61.43%{opacity:0;transform:translateY(6px)}63.93%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcB2{0.0%{opacity:0;transform:translateY(6px)}64.29%{opacity:0;transform:translateY(6px)}66.79%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcB3{0.0%{opacity:0;transform:translateY(6px)}67.14%{opacity:0;transform:translateY(6px)}69.64%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcC1{0.0%{opacity:0;transform:scale(.7)}71.43%{opacity:0;transform:scale(.7)}73.57%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcC2{0.0%{opacity:0;transform:scale(.7)}73.57%{opacity:0;transform:scale(.7)}75.71%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcC3{0.0%{opacity:0;transform:scale(.7)}75.71%{opacity:0;transform:scale(.7)}77.86%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcDim{0.0%{opacity:1}78.57%{opacity:1}81.43%{opacity:.18}100.0%{opacity:.18}}
-@keyframes rcDraft{0.0%{opacity:0;transform:translateY(14px)}80.0%{opacity:0;transform:translateY(14px)}83.57%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
-@keyframes rcSent{0.0%{opacity:0;transform:scale(.8)}87.86%{opacity:0;transform:scale(.8)}90.71%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+/* recruiting animation (18s loop) */
+@keyframes rcL1{0.0%{clip-path:inset(0 100% 0 0)}1.67%{clip-path:inset(0 100% 0 0)}10.56%{clip-path:inset(0 0 0 0)}44.44%{clip-path:inset(0 0 0 0)}46.67%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes rcL2{0.0%{clip-path:inset(0 100% 0 0)}10.56%{clip-path:inset(0 100% 0 0)}16.67%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes rcPrompt{0.0%{opacity:1;transform:none}44.44%{opacity:1;transform:none}47.22%{opacity:0}98.33%{opacity:0}99.44%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcSend{0.0%{background:#c9bfc6;transform:none}17.22%{background:#c9bfc6;transform:none}18.33%{background:var(--pink);transform:scale(.88)}20.0%{background:var(--pink);transform:none}100.0%{background:var(--pink);transform:none}}
+@keyframes rcSrc{0.0%{opacity:0}19.44%{opacity:0}21.11%{opacity:1;transform:none}43.89%{opacity:1;transform:none}46.11%{opacity:0}100.0%{opacity:0}}
+@keyframes rcR1{0.0%{opacity:0;transform:translateY(6px)}21.11%{opacity:0;transform:translateY(6px)}22.78%{opacity:1;transform:none}43.89%{opacity:1;transform:none}46.11%{opacity:0}100.0%{opacity:0}}
+@keyframes rcSp1{0.0%{opacity:0}21.11%{opacity:0}22.78%{opacity:1}27.78%{opacity:1}28.89%{opacity:0}100.0%{opacity:0}}
+@keyframes rcCk1{0.0%{opacity:0;transform:scale(.4)}27.78%{opacity:0;transform:scale(.4)}29.17%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcR2{0.0%{opacity:0;transform:translateY(6px)}26.11%{opacity:0;transform:translateY(6px)}27.78%{opacity:1;transform:none}43.89%{opacity:1;transform:none}46.11%{opacity:0}100.0%{opacity:0}}
+@keyframes rcSp2{0.0%{opacity:0}26.11%{opacity:0}27.78%{opacity:1}32.78%{opacity:1}33.89%{opacity:0}100.0%{opacity:0}}
+@keyframes rcCk2{0.0%{opacity:0;transform:scale(.4)}32.78%{opacity:0;transform:scale(.4)}34.17%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcR3{0.0%{opacity:0;transform:translateY(6px)}31.11%{opacity:0;transform:translateY(6px)}32.78%{opacity:1;transform:none}43.89%{opacity:1;transform:none}46.11%{opacity:0}100.0%{opacity:0}}
+@keyframes rcSp3{0.0%{opacity:0}31.11%{opacity:0}32.78%{opacity:1}37.78%{opacity:1}38.89%{opacity:0}100.0%{opacity:0}}
+@keyframes rcCk3{0.0%{opacity:0;transform:scale(.4)}37.78%{opacity:0;transform:scale(.4)}39.17%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcLg1{0.0%{opacity:0;transform:scale(.6)}22.22%{opacity:0;transform:scale(.6)}24.44%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcLg2{0.0%{opacity:0;transform:scale(.6)}27.22%{opacity:0;transform:scale(.6)}29.44%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcLg3{0.0%{opacity:0;transform:scale(.6)}32.22%{opacity:0;transform:scale(.6)}34.44%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcBrief{0.0%{opacity:0}46.11%{opacity:0}48.33%{opacity:1}95.56%{opacity:1}98.33%{opacity:0}100.0%{opacity:0}}
+@keyframes rcB1{0.0%{opacity:0;transform:translateY(6px)}47.78%{opacity:0;transform:translateY(6px)}49.72%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcB2{0.0%{opacity:0;transform:translateY(6px)}50.0%{opacity:0;transform:translateY(6px)}51.94%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcB3{0.0%{opacity:0;transform:translateY(6px)}52.22%{opacity:0;transform:translateY(6px)}54.17%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcC1{0.0%{opacity:0;transform:scale(.7)}55.56%{opacity:0;transform:scale(.7)}57.22%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcC2{0.0%{opacity:0;transform:scale(.7)}57.22%{opacity:0;transform:scale(.7)}58.89%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcC3{0.0%{opacity:0;transform:scale(.7)}58.89%{opacity:0;transform:scale(.7)}60.56%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcDim{0.0%{opacity:1}61.11%{opacity:1}63.33%{opacity:.18}100.0%{opacity:.18}}
+@keyframes rcDraft{0.0%{opacity:0;transform:translateY(14px)}62.22%{opacity:0;transform:translateY(14px)}65.0%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcSent{0.0%{opacity:0;transform:scale(.8)}70.0%{opacity:0;transform:scale(.8)}72.22%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
 @keyframes rcSpin{0.0%{transform:rotate(0)}100.0%{transform:rotate(2520deg)}}
-
 .lab .mock.rec { position: relative; height: 196px; padding: 12px 14px; overflow: hidden; }
 .lab .ex-recruit .ex-art { aspect-ratio: auto; min-height: 232px; }
-.lab .rec .rc-prompt { display: flex; align-items: center; gap: 8px; border: 1.5px solid var(--line); border-radius: 12px; padding: 7px 8px 7px 11px; font-size: .78rem; font-weight: 700; line-height: 1.3; animation: rcPrompt 14.0s linear infinite; }
+.lab .rec .rc-prompt { display: flex; align-items: center; gap: 8px; border: 1.5px solid var(--line); border-radius: 12px; padding: 7px 8px 7px 11px; font-size: .78rem; font-weight: 700; line-height: 1.3; animation: rcPrompt 18s linear infinite; }
 .lab .rec .rc-txt { flex: 1; }
 .lab .rec .rc-txt span { display: block; white-space: nowrap; }
-.lab .rec .rc-txt .l1 { animation: rcL1 14.0s linear infinite; }
-.lab .rec .rc-txt .l2 { animation: rcL2 14.0s linear infinite; }
-.lab .rec .rc-send { width: 24px; height: 24px; border-radius: 50%; flex: none; display: grid; place-items: center; color: #fff; font-size: .8rem; background: #c9bfc6; animation: rcSend 14.0s linear infinite; }
-.lab .rec .rc-src { margin-top: 9px; display: grid; gap: 6px; animation: rcSrc 14.0s linear infinite; }
+.lab .rec .rc-txt .l1 { animation: rcL1 18s linear infinite; }
+.lab .rec .rc-txt .l2 { animation: rcL2 18s linear infinite; }
+.lab .rec .rc-send { width: 24px; height: 24px; border-radius: 50%; flex: none; display: grid; place-items: center; color: #fff; font-size: .8rem; background: #c9bfc6; animation: rcSend 18s linear infinite; }
+.lab .rec .rc-src { margin-top: 9px; display: grid; gap: 6px; animation: rcSrc 18s linear infinite; }
 .lab .rec .rc-src li { display: flex; align-items: center; gap: 8px; font-size: .74rem; font-weight: 600; color: var(--plum-soft); }
 .lab .rec .rc-src .lbl { flex: 1; white-space: nowrap; }
 .lab .rec .lg { display: inline-flex; gap: 4px; }
@@ -431,38 +430,72 @@
 .lab .rec .st { position: relative; width: 16px; height: 16px; flex: none; }
 .lab .rec .sp { position: absolute; inset: 1px; border: 2px solid var(--line); border-top-color: var(--pink); border-radius: 50%; opacity: 0; animation: rcSpin 2.4s linear infinite; }
 .lab .rec .ck { position: absolute; inset: 0; border-radius: 50%; background: var(--teal); color: #fff; font-size: .62rem; display: grid; place-items: center; opacity: 0; }
-.lab .rec .rc-brief { position: absolute; inset: 12px 14px; opacity: 0; animation: rcBrief 14.0s linear infinite; }
+.lab .rec .rc-brief { position: absolute; inset: 12px 14px; opacity: 0; animation: rcBrief 18s linear infinite; }
 .lab .rec .rc-brief .mock-h { margin-bottom: 2px; }
 .lab .rec .rc-brief .mrow { padding: 6px 0; }
-.lab .rec .rc-list { animation: rcDim 14.0s linear infinite; }
-.lab .rec .rc-draft { position: absolute; left: 0; right: 0; bottom: -2px; background: var(--teal-tint); border-radius: 10px; padding: 8px 10px; font-size: .72rem; line-height: 1.35; color: var(--plum); opacity: 0; animation: rcDraft 14.0s linear infinite; }
+.lab .rec .rc-list { animation: rcDim 18s linear infinite; }
+.lab .rec .rc-draft { position: absolute; left: 0; right: 0; bottom: -2px; background: var(--teal-tint); border-radius: 10px; padding: 8px 10px; font-size: .72rem; line-height: 1.35; color: var(--plum); opacity: 0; animation: rcDraft 18s linear infinite; }
+.lab .rec .rc-draft b img { display: inline-block; height: 12px; width: auto; vertical-align: -1px; margin-right: 6px; }
 .lab .rec .rc-draft b { display: block; font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 2px; }
-.lab .rec .rc-sent { position: absolute; right: 8px; top: -9px; background: var(--teal-dark); color: #fff; font-size: .62rem; font-weight: 700; padding: 3px 8px; border-radius: 999px; opacity: 0; animation: rcSent 14.0s linear infinite; }
+.lab .rec .rc-sent { position: absolute; right: 8px; top: -9px; background: var(--teal-dark); color: #fff; font-size: .62rem; font-weight: 700; padding: 3px 8px; border-radius: 999px; opacity: 0; animation: rcSent 18s linear infinite; }
 @media (max-width: 819px) { .lab .mock.rec { height: 204px; } .lab .rec .rc-prompt { font-size: .72rem; } .lab .rec .rc-src li { font-size: .7rem; } }
 @media (prefers-reduced-motion: reduce) {
   .lab .rec * { animation: none !important; }
   .lab .rec .rc-prompt, .lab .rec .rc-src, .lab .rec .rc-draft, .lab .rec .rc-sent { display: none; }
   .lab .rec .rc-brief { opacity: 1; }
 }
-.lab .rec .rc-src li:nth-child(1) { animation: rcR1 14.0s linear infinite; }
-.lab .rec .rc-src li:nth-child(1) .sp { animation: rcSp1 14.0s linear infinite, rcSpin 2.4s linear infinite; }
-.lab .rec .rc-src li:nth-child(1) .ck { animation: rcCk1 14.0s linear infinite; }
-.lab .rec .rc-src li:nth-child(1) .lg i, .lab .rec .rc-src li:nth-child(1) .lg img { animation: rcLg1 14.0s linear infinite; }
-.lab .rec .rc-list .mrow:nth-of-type(1) { animation: rcB1 14.0s linear infinite; }
-.lab .rec .rc-list .mrow:nth-of-type(1) em { animation: rcC1 14.0s linear infinite; }
-.lab .rec .rc-src li:nth-child(2) { animation: rcR2 14.0s linear infinite; }
-.lab .rec .rc-src li:nth-child(2) .sp { animation: rcSp2 14.0s linear infinite, rcSpin 2.4s linear infinite; }
-.lab .rec .rc-src li:nth-child(2) .ck { animation: rcCk2 14.0s linear infinite; }
-.lab .rec .rc-src li:nth-child(2) .lg i, .lab .rec .rc-src li:nth-child(2) .lg img { animation: rcLg2 14.0s linear infinite; }
-.lab .rec .rc-list .mrow:nth-of-type(2) { animation: rcB2 14.0s linear infinite; }
-.lab .rec .rc-list .mrow:nth-of-type(2) em { animation: rcC2 14.0s linear infinite; }
-.lab .rec .rc-src li:nth-child(3) { animation: rcR3 14.0s linear infinite; }
-.lab .rec .rc-src li:nth-child(3) .sp { animation: rcSp3 14.0s linear infinite, rcSpin 2.4s linear infinite; }
-.lab .rec .rc-src li:nth-child(3) .ck { animation: rcCk3 14.0s linear infinite; }
-.lab .rec .rc-src li:nth-child(3) .lg i, .lab .rec .rc-src li:nth-child(3) .lg img { animation: rcLg3 14.0s linear infinite; }
-.lab .rec .rc-list .mrow:nth-of-type(3) { animation: rcB3 14.0s linear infinite; }
-.lab .rec .rc-list .mrow:nth-of-type(3) em { animation: rcC3 14.0s linear infinite; }
+.lab .rec .rc-src li:nth-child(1) { animation: rcR1 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(1) .sp { animation: rcSp1 18s linear infinite, rcSpin 2.4s linear infinite; }
+.lab .rec .rc-src li:nth-child(1) .ck { animation: rcCk1 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(1) .lg i, .lab .rec .rc-src li:nth-child(1) .lg img { animation: rcLg1 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(1) { animation: rcB1 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(1) em { animation: rcC1 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) { animation: rcR2 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) .sp { animation: rcSp2 18s linear infinite, rcSpin 2.4s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) .ck { animation: rcCk2 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) .lg i, .lab .rec .rc-src li:nth-child(2) .lg img { animation: rcLg2 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(2) { animation: rcB2 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(2) em { animation: rcC2 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) { animation: rcR3 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) .sp { animation: rcSp3 18s linear infinite, rcSpin 2.4s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) .ck { animation: rcCk3 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) .lg i, .lab .rec .rc-src li:nth-child(3) .lg img { animation: rcLg3 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(3) { animation: rcB3 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(3) em { animation: rcC3 18s linear infinite; }
 .lab .ex-plus span { font-size: 7rem; font-weight: 300; color: var(--gold); line-height: 1; }
+/* your-idea animation (14s loop) */
+@keyframes yoPlus{0.0%{opacity:1;transform:none}7.86%{opacity:1;transform:none}10.71%{opacity:0;transform:scale(.6)}94.29%{opacity:0;transform:scale(.6)}97.86%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoP1{0.0%{opacity:0}10.71%{opacity:0}12.14%{opacity:1}28.57%{opacity:1}30.71%{opacity:0}100.0%{opacity:0}}
+@keyframes yoT1{0.0%{clip-path:inset(0 100% 0 0)}10.71%{clip-path:inset(0 100% 0 0)}20.0%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC1{0.0%{opacity:0;transform:translateY(6px) scale(.9)}21.43%{opacity:0;transform:translateY(6px) scale(.9)}24.29%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoP2{0.0%{opacity:0}31.43%{opacity:0}32.86%{opacity:1}49.29%{opacity:1}51.43%{opacity:0}100.0%{opacity:0}}
+@keyframes yoT2{0.0%{clip-path:inset(0 100% 0 0)}31.43%{clip-path:inset(0 100% 0 0)}40.71%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC2{0.0%{opacity:0;transform:translateY(6px) scale(.9)}42.14%{opacity:0;transform:translateY(6px) scale(.9)}45.0%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoP3{0.0%{opacity:0}52.14%{opacity:0}53.57%{opacity:1}70.0%{opacity:1}72.14%{opacity:0}100.0%{opacity:0}}
+@keyframes yoT3{0.0%{clip-path:inset(0 100% 0 0)}52.14%{clip-path:inset(0 100% 0 0)}61.43%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC3{0.0%{opacity:0;transform:translateY(6px) scale(.9)}62.86%{opacity:0;transform:translateY(6px) scale(.9)}65.71%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoP4{0.0%{opacity:0}72.86%{opacity:0}74.29%{opacity:1}90.71%{opacity:1}92.86%{opacity:0}100.0%{opacity:0}}
+@keyframes yoT4{0.0%{clip-path:inset(0 100% 0 0)}72.86%{clip-path:inset(0 100% 0 0)}82.14%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC4{0.0%{opacity:0;transform:translateY(6px) scale(.9)}83.57%{opacity:0;transform:translateY(6px) scale(.9)}86.43%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+.lab .ex-plus.yo { position: relative; overflow: hidden; }
+.lab .yo .yo-plus { animation: yoPlus 14s linear infinite; }
+.lab .yo .yo-p { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 0 14px; opacity: 0; text-align: center; }
+.lab .yo .yo-t { display: block; white-space: nowrap; font-family: var(--font-head); font-weight: 700; font-size: clamp(.95rem, 2.4vw, 1.2rem); line-height: 1.2; color: #fff; font-size: 1.15rem; }
+.lab .yo .yo-c { display: inline-block; font-family: var(--font-body); font-weight: 700; font-size: .78rem; line-height: 1; color: #1d3a37; background: #cfe7e3; padding: 7px 12px; border-radius: 999px; opacity: 0; }
+.lab .yo .yo-p:nth-of-type(1) { animation: yoP1 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(1) .yo-t { animation: yoT1 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(1) .yo-c { animation: yoC1 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(2) { animation: yoP2 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(2) .yo-t { animation: yoT2 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(2) .yo-c { animation: yoC2 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(3) { animation: yoP3 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(3) .yo-t { animation: yoT3 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(3) .yo-c { animation: yoC3 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(4) { animation: yoP4 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(4) .yo-t { animation: yoT4 14s linear infinite; }
+.lab .yo .yo-p:nth-of-type(4) .yo-c { animation: yoC4 14s linear infinite; }
+@media (max-width: 819px) { .lab .yo .yo-t { font-size: .98rem; } .lab .yo .yo-plus { font-size: 5.5rem; } }
+@media (prefers-reduced-motion: reduce) { .lab .yo * { animation: none !important; } .lab .yo .yo-p { display: none; } }
 
 .lab .hero .people small { font-weight: 500; color: var(--gold); font-size: .82rem; }
 .lab .hero .fine { max-width: 34em; }
@@ -629,7 +662,7 @@ html { scroll-behavior: smooth; }
                 <div class="mrow"><b>2</b><span class="mname">Agent B<small>31 closings · team split up</small></span><em class="chip-draft">Draft ready</em></div>
                 <div class="mrow"><b>3</b><span class="mname">Agent C<small>27 closings · merging</small></span><em class="chip-draft">Draft ready</em></div>
               </div>
-              <div class="rc-draft"><span class="rc-sent">Sent &middot; Logged to CRM &check;</span><b>Draft for Agent A</b>Hi Agent A, congrats on a big year. I'd love to share how we support top producers. Coffee this week?</div>
+              <div class="rc-draft"><span class="rc-sent">Sent &middot; Logged to CRM &check;</span><b><img src="images/logos/gmail.png" alt="Gmail" width="16" height="12">Draft for Agent A</b>Hi Agent A, congrats on a big year. I'd love to share how we support top producers. Coffee this week?</div>
             </div>
           </div>
         </div>
@@ -654,7 +687,7 @@ html { scroll-behavior: smooth; }
       </article>
 
       <article class="ex ex-yours">
-        <div class="ex-media ex-plus"><span aria-hidden="true">+</span></div>
+        <div class="ex-media ex-plus yo" role="img" aria-label="Animation: a plus sign turns into example requests such as chasing overdue follow-ups, summarizing open deals, drafting a market update and sorting an inbox, each finishing with a check mark."><span class="yo-plus" aria-hidden="true">+</span><div class="yo-p" aria-hidden="true"><span class="yo-t">Chase my overdue follow-ups</span><span class="yo-c">&check; 7 follow-ups drafted</span></div><div class="yo-p" aria-hidden="true"><span class="yo-t">Summarize every open deal</span><span class="yo-c">&check; 12 deals summarized</span></div><div class="yo-p" aria-hidden="true"><span class="yo-t">Draft my weekly market update</span><span class="yo-c">&check; Update drafted</span></div><div class="yo-p" aria-hidden="true"><span class="yo-t">Sort my inbox</span><span class="yo-c">&check; Inbox sorted</span></div></div>
         <p class="ex-tag">Your idea</p>
         <h3>Don't see it here? We build whatever you want.</h3>
         <p>Tell us on the call what you want AI to do. If it can be built, we build it.</p>
