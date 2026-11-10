@@ -552,6 +552,45 @@
 .lab #build.bd-play .igrid li:nth-child(6) .fi { animation-delay: 2.0s; }
 .lab #build.bd-play .igrid li:nth-child(6) .fi::after { animation-delay: 2.45s; }
 @media (prefers-reduced-motion: reduce) { .lab #build .aud, .lab #build .igrid li { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #build .igrid .fi, .lab #build .igrid .fi::after { animation: none !important; } .lab #build .igrid .fi::after { display: none; } }
+/* premium-service animation: JS adds .pm-ready, then .pm-play while in view */
+.lab #premium.pm-ready .vs .short li, .lab #premium.pm-ready .safe-row li { opacity: 0; transform: translateY(8px); }
+.lab #premium.pm-ready .vs .instead { opacity: 0; }
+.lab #premium.pm-ready .vs .could { opacity: .3; }
+.lab #premium.pm-ready .vs .instead li span { text-decoration: none; background: linear-gradient(#7a6f78, #7a6f78) no-repeat 0 58% / 0% 2px; }
+.lab #premium.pm-play .vs .instead { animation: pmFade .5s ease-out both; }
+.lab #premium.pm-play .vs .could { animation: pmCould .7s ease-out 2.8s both; }
+.lab #premium.pm-play .vs .instead li { animation: pmItem .45s ease-out both, pmDim .4s ease-out both; }
+.lab #premium.pm-play .vs .instead li span { animation: pmStrike .55s ease-out both; }
+.lab #premium.pm-play .vs .instead li::before, .lab #premium.pm-play .vs .could li::before { animation: pmPop .45s ease-out both; }
+.lab #premium.pm-play .vs .could li { animation: pmItem .5s ease-out both; }
+.lab #premium.pm-play .safe-row li { animation: pmItem .5s ease-out both; }
+@keyframes pmFade{from{opacity:0}to{opacity:1}}
+@keyframes pmCould{0%{opacity:.3;box-shadow:0 18px 40px -12px rgba(58,99,96,.0)}60%{opacity:1;box-shadow:0 0 0 8px rgba(201,162,75,.3),0 18px 40px -12px rgba(58,99,96,.55)}100%{opacity:1;box-shadow:0 18px 40px -12px rgba(58,99,96,.55)}}
+@keyframes pmItem{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes pmDim{from{color:#2b2430}to{color:#7a6f78}}
+@keyframes pmStrike{from{background-size:0% 2px}to{background-size:100% 2px}}
+@keyframes pmPop{0%{transform:scale(.4)}65%{transform:scale(1.2)}100%{transform:scale(1)}}
+.lab #premium.pm-play .vs .instead li:nth-child(1) { animation-delay: 0.3s, 0.75s; }
+.lab #premium.pm-play .vs .instead li:nth-child(1) span { animation-delay: 0.75s; }
+.lab #premium.pm-play .vs .instead li:nth-child(1)::before { animation-delay: 0.75s; }
+.lab #premium.pm-play .vs .instead li:nth-child(2) { animation-delay: 1.0s, 1.45s; }
+.lab #premium.pm-play .vs .instead li:nth-child(2) span { animation-delay: 1.45s; }
+.lab #premium.pm-play .vs .instead li:nth-child(2)::before { animation-delay: 1.45s; }
+.lab #premium.pm-play .vs .instead li:nth-child(3) { animation-delay: 1.7s, 2.15s; }
+.lab #premium.pm-play .vs .instead li:nth-child(3) span { animation-delay: 2.15s; }
+.lab #premium.pm-play .vs .instead li:nth-child(3)::before { animation-delay: 2.15s; }
+.lab #premium.pm-play .vs .could li:nth-child(1) { animation-delay: 3.1s; }
+.lab #premium.pm-play .vs .could li:nth-child(1)::before { animation-delay: 3.3s; }
+.lab #premium.pm-play .vs .could li:nth-child(2) { animation-delay: 3.8s; }
+.lab #premium.pm-play .vs .could li:nth-child(2)::before { animation-delay: 4.0s; }
+.lab #premium.pm-play .vs .could li:nth-child(3) { animation-delay: 4.5s; }
+.lab #premium.pm-play .vs .could li:nth-child(3)::before { animation-delay: 4.7s; }
+.lab #premium.pm-play .safe-row li:nth-child(1) { animation-delay: 5.5s; }
+.lab #premium.pm-play .safe-row li:nth-child(2) { animation-delay: 5.8s; }
+.lab #premium.pm-play .safe-row li:nth-child(3) { animation-delay: 6.1s; }
+.lab #premium.pm-play .safe-row li:nth-child(4) { animation-delay: 6.4s; }
+.lab #premium.pm-play .safe-row li:nth-child(5) { animation-delay: 6.7s; }
+@media (prefers-reduced-motion: reduce) { .lab #premium .vs .short li, .lab #premium .safe-row li, .lab #premium .vs > div { opacity: 1 !important; transform: none !important; animation: none !important; } }
 /* your-idea animation (14.5s loop): ideas stay and fill the box */
 @keyframes yoPlus{0.0%{opacity:1;transform:none}6.9%{opacity:1;transform:none}9.66%{opacity:0;transform:scale(.6)}93.79%{opacity:0;transform:scale(.6)}97.93%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
 @keyframes yoB1{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}9.66%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}12.07%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}13.79%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
@@ -836,13 +875,13 @@ html { scroll-behavior: smooth; }
 </section>
 
 <!-- 6. NOT A PRODUCT -->
-<section>
+<section id="premium">
   <div class="container">
     <h2 class="center">Not a product. A premium service.</h2>
     <div class="vs bold">
       <div class="instead">
         <h3>Not this</h3>
-        <ul class="short"><li>Software you figure out</li><li>Tutorials and prompts</li><li>A support ticket</li></ul>
+        <ul class="short"><li><span>Software you figure out</span></li><li><span>Tutorials and prompts</span></li><li><span>A support ticket</span></li></ul>
       </div>
       <div class="could">
         <h3>This</h3>
@@ -1056,7 +1095,7 @@ window.addEventListener("message", function (e) {
 <script>
 (function () {
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  [['how', 'hw', 0.4], ['build', 'bd', 0.3]].forEach(function (c) {
+  [['how', 'hw', 0.4], ['build', 'bd', 0.3], ['premium', 'pm', 0.35]].forEach(function (c) {
     var s = document.getElementById(c[0]);
     if (!s) return;
     s.classList.add(c[1] + '-ready');
