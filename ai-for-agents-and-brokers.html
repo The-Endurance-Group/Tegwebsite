@@ -519,6 +519,39 @@
 .lab #how.hw-play .flow li:nth-child(5):not(:last-child)::after { animation-delay: 4.3s; }
 .lab #how.hw-play .flow li:nth-child(5):nth-child(even)::before { animation-delay: 3.8s; }
 @media (prefers-reduced-motion: reduce) { .lab #how .flow li, .lab #how .callout { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #how .flow li::before, .lab #how .flow li .fi::before, .lab #how .flow li:not(:last-child)::after { animation: none !important; } .lab #how .flow li:nth-child(even)::before { display: none; } .lab #how .flow li:not(:last-child)::after { opacity: 1 !important; } }
+/* what-we-build animation: JS adds .bd-ready, then .bd-play while in view */
+.lab #build.bd-ready .aud { opacity: .25; transform: translateY(14px); }
+.lab #build.bd-ready .igrid li { opacity: 0; transform: translateX(-10px); }
+.lab #build .igrid .fi { position: relative; }
+.lab #build .igrid .fi::after { content: "\2713"; position: absolute; right: -4px; top: -4px; width: 16px; height: 16px; border-radius: 50%; background: var(--teal-dark); color: #fff; font-size: .62rem; font-weight: 800; line-height: 16px; text-align: center; border: 2px solid var(--card); box-sizing: content-box; opacity: 0; }
+.lab #build .aud-b .igrid .fi::after { background: var(--pink-dark); }
+.lab #build.bd-play .aud { animation: bdCard .6s ease-out both; }
+.lab #build.bd-play .aud-b { animation-delay: .15s; }
+.lab #build.bd-play .igrid li { animation: bdItem .5s ease-out both; }
+.lab #build.bd-play .igrid .fi { animation: hwPop .5s ease-out both; }
+.lab #build.bd-play .igrid .fi::after { animation: bdCheck .4s ease-out both; }
+@keyframes bdCard{from{opacity:.25;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes bdItem{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+@keyframes bdCheck{0%{opacity:0;transform:scale(.3)}70%{opacity:1;transform:scale(1.25)}100%{opacity:1;transform:scale(1)}}
+.lab #build.bd-play .igrid li:nth-child(1) { animation-delay: 0.4s; }
+.lab #build.bd-play .igrid li:nth-child(1) .fi { animation-delay: 0.5s; }
+.lab #build.bd-play .igrid li:nth-child(1) .fi::after { animation-delay: 0.95s; }
+.lab #build.bd-play .igrid li:nth-child(2) { animation-delay: 0.7s; }
+.lab #build.bd-play .igrid li:nth-child(2) .fi { animation-delay: 0.8s; }
+.lab #build.bd-play .igrid li:nth-child(2) .fi::after { animation-delay: 1.25s; }
+.lab #build.bd-play .igrid li:nth-child(3) { animation-delay: 1.0s; }
+.lab #build.bd-play .igrid li:nth-child(3) .fi { animation-delay: 1.1s; }
+.lab #build.bd-play .igrid li:nth-child(3) .fi::after { animation-delay: 1.55s; }
+.lab #build.bd-play .igrid li:nth-child(4) { animation-delay: 1.3s; }
+.lab #build.bd-play .igrid li:nth-child(4) .fi { animation-delay: 1.4s; }
+.lab #build.bd-play .igrid li:nth-child(4) .fi::after { animation-delay: 1.85s; }
+.lab #build.bd-play .igrid li:nth-child(5) { animation-delay: 1.6s; }
+.lab #build.bd-play .igrid li:nth-child(5) .fi { animation-delay: 1.7s; }
+.lab #build.bd-play .igrid li:nth-child(5) .fi::after { animation-delay: 2.15s; }
+.lab #build.bd-play .igrid li:nth-child(6) { animation-delay: 1.9s; }
+.lab #build.bd-play .igrid li:nth-child(6) .fi { animation-delay: 2.0s; }
+.lab #build.bd-play .igrid li:nth-child(6) .fi::after { animation-delay: 2.45s; }
+@media (prefers-reduced-motion: reduce) { .lab #build .aud, .lab #build .igrid li { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #build .igrid .fi, .lab #build .igrid .fi::after { animation: none !important; } .lab #build .igrid .fi::after { display: none; } }
 /* your-idea animation (14s loop) */
 @keyframes yoPlus{0.0%{opacity:1;transform:none}7.86%{opacity:1;transform:none}10.71%{opacity:0;transform:scale(.6)}94.29%{opacity:0;transform:scale(.6)}97.86%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
 @keyframes yoP1{0.0%{opacity:0}10.71%{opacity:0}12.14%{opacity:1}28.57%{opacity:1}30.71%{opacity:0}100.0%{opacity:0}}
@@ -1005,14 +1038,17 @@ window.addEventListener("message", function (e) {
 <script src="js/main.js?v=20260930" defer></script>
 <script>
 (function () {
-  var s = document.getElementById('how');
-  if (!s || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  s.classList.add('hw-ready');
-  new IntersectionObserver(function (e) {
-    var r = e[0].intersectionRatio;
-    if (r >= 0.4) s.classList.add('hw-play');
-    else if (r === 0) s.classList.remove('hw-play');
-  }, { threshold: [0, 0.4] }).observe(s);
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  [['how', 'hw', 0.4], ['build', 'bd', 0.3]].forEach(function (c) {
+    var s = document.getElementById(c[0]);
+    if (!s) return;
+    s.classList.add(c[1] + '-ready');
+    new IntersectionObserver(function (e) {
+      var r = e[0].intersectionRatio;
+      if (r >= c[2]) s.classList.add(c[1] + '-play');
+      else if (r === 0) s.classList.remove(c[1] + '-play');
+    }, { threshold: [0, c[2]] }).observe(s);
+  });
 })();
 </script>
 <script>
