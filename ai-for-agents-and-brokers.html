@@ -518,7 +518,7 @@
 .lab #how.hw-play .flow li:nth-child(5) .fi::before { animation-delay: 3.9s; }
 .lab #how.hw-play .flow li:nth-child(5):not(:last-child)::after { animation-delay: 4.3s; }
 .lab #how.hw-play .flow li:nth-child(5):nth-child(even)::before { animation-delay: 3.8s; }
-@media (prefers-reduced-motion: reduce) { .lab #how .flow li, .lab #how .callout { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #how .flow li::before, .lab #how .flow li .fi::before, .lab #how .flow li:not(:last-child)::after { animation: none !important; } .lab #how .flow li:nth-child(even)::before { display: none; } .lab #how .flow li:not(:last-child)::after { opacity: 1 !important; } }
+@media (prefers-reduced-motion: reduce) { .lab #how .section-cta, .lab #premium .section-cta { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #how .flow li, .lab #how .callout { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #how .flow li::before, .lab #how .flow li .fi::before, .lab #how .flow li:not(:last-child)::after { animation: none !important; } .lab #how .flow li:nth-child(even)::before { display: none; } .lab #how .flow li:not(:last-child)::after { opacity: 1 !important; } }
 /* what-we-build animation: JS adds .bd-ready, then .bd-play while in view */
 .lab #build.bd-ready .aud { opacity: .25; transform: translateY(14px); }
 .lab #build.bd-ready .igrid li { opacity: 0; transform: translateX(-10px); }
@@ -552,6 +552,11 @@
 .lab #build.bd-play .igrid li:nth-child(6) .fi { animation-delay: 2.0s; }
 .lab #build.bd-play .igrid li:nth-child(6) .fi::after { animation-delay: 2.45s; }
 @media (prefers-reduced-motion: reduce) { .lab #build .aud, .lab #build .igrid li { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #build .igrid .fi, .lab #build .igrid .fi::after { animation: none !important; } .lab #build .igrid .fi::after { display: none; } }
+.lab .section-cta { margin-top: 28px; text-align: center; }
+.lab #how.hw-ready .section-cta { opacity: 0; transform: translateY(8px); }
+.lab #how.hw-play .section-cta { animation: hwCall .6s ease-out 5.3s both; }
+.lab #premium.pm-ready .section-cta { opacity: 0; transform: translateY(8px); }
+.lab #premium.pm-play .section-cta { animation: pmItem .5s ease-out 7.2s both; }
 /* premium-service animation: JS adds .pm-ready, then .pm-play while in view */
 .lab #premium.pm-ready .vs .short li, .lab #premium.pm-ready .safe-row li { opacity: 0; transform: translateY(8px); }
 .lab #premium.pm-ready .vs .instead { opacity: 0; }
@@ -850,6 +855,7 @@ html { scroll-behavior: smooth; }
     <h2>You talk. We do the rest.</h2>
     <ol class="flow dark5"><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><em>Session 1</em><b>Tell us everything</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg></span><em>We build</em><b>Built around your process</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0z"/><path d="M12 18v4"/></svg></span><em>Session 2</em><b>We install it with you</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><em>One week</em><b>You use it</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9"/></svg></span><em>Session 3</em><b>We make sure it works</b></li></ol>
     <p class="callout">A real person on every step. Your time: about 3 hours.</p>
+    <div class="section-cta"><a class="btn btn-primary" href="#book" data-cta="how-book">Book your free build plan</a></div>
   </div>
 </section>
 
@@ -871,6 +877,7 @@ html { scroll-behavior: smooth; }
       <div class="aud aud-b"><h3>For brokers</h3><ul class="igrid"><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.2.6 3.5 2.6 3.5 6"/></svg></span>Recruiting pipeline</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.8-9.8M17 6l3 3"/></svg></span>Agent onboarding</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>Retention watch</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></span>Office production</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span>Compliance review</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>Office marketing</li></ul></div>
     </div>
     <p class="note center">Examples only. Session 1 is where you tell us everything.</p>
+    <div class="section-cta"><a class="btn btn-primary" href="#book" data-cta="build-book">Book your free build plan</a></div>
   </div>
 </section>
 
@@ -889,6 +896,7 @@ html { scroll-behavior: smooth; }
       </div>
     </div>
     <ul class="safe-row"><li><span class="fi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/><path d="m9 15 2 2 4-4"/></svg></span>Listing copy checked for fair-housing language</li><li><span class="fi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg></span>Your brokerage's rules come first</li><li><span class="fi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 2 2 3-3M8 16h8"/></svg></span>Draft-only by default</li><li><span class="fi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>You choose what it sees</li><li><span class="fi"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></span>Revoke access any time</li></ul>
+    <div class="section-cta"><a class="btn btn-primary" href="#book" data-cta="premium-book">Book your free build plan</a></div>
   </div>
 </section>
 
