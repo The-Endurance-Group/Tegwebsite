@@ -472,6 +472,53 @@
   .lab .ex-recruit .ex-art { padding: 18px; }
   .lab .mock.rec { zoom: 1.2; width: calc(100% / 1.2); max-width: none; height: 196px; }
 }
+/* how-it-works animation: JS adds .hw-ready, then .hw-play while in view */
+.lab #how.hw-ready .flow li { opacity: .28; transform: translateY(10px); }
+.lab #how.hw-ready .flow li:not(:last-child)::after { opacity: .2; }
+.lab #how.hw-ready .callout { opacity: 0; transform: translateY(8px); }
+.lab #how.hw-play .flow li { animation: hwIn .6s ease-out both; }
+.lab #how.hw-play .flow li .fi { animation: hwPop .6s ease-out both; position: relative; }
+.lab #how.hw-play .flow li:not(:last-child)::after { animation: hwArrow .5s ease-out both; }
+.lab #how.hw-play .callout { animation: hwCall .6s ease-out 4.7s both; }
+.lab #how .flow li .fi::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--pink); opacity: 0; }
+.lab #how.hw-play .flow li:nth-child(odd) .fi::before { animation: hwRing 1.1s ease-out 2 both; }
+.lab #how .flow li:nth-child(even) { overflow: hidden; }
+.lab #how.hw-ready .flow li:nth-child(even)::before { content: ""; position: absolute; left: 16px; right: 16px; bottom: 9px; height: 3px; border-radius: 3px; background: linear-gradient(var(--gold), var(--gold)) no-repeat left center / 0% 100%, rgba(255,255,255,.14); }
+.lab #how.hw-play .flow li:nth-child(even)::before { animation: hwBar .9s ease-out both; }
+.lab #how.hw-play .flow li:last-child { animation: hwIn .6s ease-out 3.6s both, hwGlow 1.6s ease-in-out 4.2s 2; }
+@keyframes hwIn{from{opacity:.28;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes hwCall{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes hwPop{0%{transform:scale(.6)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+@keyframes hwArrow{from{opacity:.2}to{opacity:1}}
+@keyframes hwRing{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.9);opacity:0}}
+@keyframes hwBar{from{background-size:0% 100%,100% 100%}to{background-size:100% 100%,100% 100%}}
+@keyframes hwGlow{0%,100%{box-shadow:0 0 0 0 rgba(201,162,75,0)}50%{box-shadow:0 0 0 6px rgba(201,162,75,.28)}}
+.lab #how.hw-play .flow li:nth-child(1) { animation-delay: 0.0s; }
+.lab #how.hw-play .flow li:nth-child(1) .fi { animation-delay: 0.15s; }
+.lab #how.hw-play .flow li:nth-child(1) .fi::before { animation-delay: 0.3s; }
+.lab #how.hw-play .flow li:nth-child(1):not(:last-child)::after { animation-delay: 0.7s; }
+.lab #how.hw-play .flow li:nth-child(1):nth-child(even)::before { animation-delay: 0.2s; }
+.lab #how.hw-play .flow li:nth-child(2) { animation-delay: 0.9s; }
+.lab #how.hw-play .flow li:nth-child(2) .fi { animation-delay: 1.05s; }
+.lab #how.hw-play .flow li:nth-child(2) .fi::before { animation-delay: 1.2s; }
+.lab #how.hw-play .flow li:nth-child(2):not(:last-child)::after { animation-delay: 1.6s; }
+.lab #how.hw-play .flow li:nth-child(2):nth-child(even)::before { animation-delay: 1.1s; }
+.lab #how.hw-play .flow li:nth-child(3) { animation-delay: 1.8s; }
+.lab #how.hw-play .flow li:nth-child(3) .fi { animation-delay: 1.95s; }
+.lab #how.hw-play .flow li:nth-child(3) .fi::before { animation-delay: 2.1s; }
+.lab #how.hw-play .flow li:nth-child(3):not(:last-child)::after { animation-delay: 2.5s; }
+.lab #how.hw-play .flow li:nth-child(3):nth-child(even)::before { animation-delay: 2.0s; }
+.lab #how.hw-play .flow li:nth-child(4) { animation-delay: 2.7s; }
+.lab #how.hw-play .flow li:nth-child(4) .fi { animation-delay: 2.85s; }
+.lab #how.hw-play .flow li:nth-child(4) .fi::before { animation-delay: 3.0s; }
+.lab #how.hw-play .flow li:nth-child(4):not(:last-child)::after { animation-delay: 3.4s; }
+.lab #how.hw-play .flow li:nth-child(4):nth-child(even)::before { animation-delay: 2.9s; }
+.lab #how.hw-play .flow li:nth-child(5) { animation-delay: 3.6s, 4.2s; }
+.lab #how.hw-play .flow li:nth-child(5) .fi { animation-delay: 3.75s; }
+.lab #how.hw-play .flow li:nth-child(5) .fi::before { animation-delay: 3.9s; }
+.lab #how.hw-play .flow li:nth-child(5):not(:last-child)::after { animation-delay: 4.3s; }
+.lab #how.hw-play .flow li:nth-child(5):nth-child(even)::before { animation-delay: 3.8s; }
+@media (prefers-reduced-motion: reduce) { .lab #how .flow li, .lab #how .callout { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #how .flow li::before, .lab #how .flow li .fi::before, .lab #how .flow li:not(:last-child)::after { animation: none !important; } .lab #how .flow li:nth-child(even)::before { display: none; } .lab #how .flow li:not(:last-child)::after { opacity: 1 !important; } }
 /* your-idea animation (14s loop) */
 @keyframes yoPlus{0.0%{opacity:1;transform:none}7.86%{opacity:1;transform:none}10.71%{opacity:0;transform:scale(.6)}94.29%{opacity:0;transform:scale(.6)}97.86%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
 @keyframes yoP1{0.0%{opacity:0}10.71%{opacity:0}12.14%{opacity:1}28.57%{opacity:1}30.71%{opacity:0}100.0%{opacity:0}}
@@ -849,7 +896,6 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<div class="container"><p class="lab-disc page-disc">AI outputs are drafts. You remain responsible for reviewing them before use. We only work through accounts you own and are permitted to share. Results vary and are not guaranteed.</p></div>
 </main>
 
   <!-- SHARED FOOTER: keep in sync across all pages -->
@@ -957,6 +1003,18 @@ window.addEventListener("message", function (e) {
 });
 </script>
 <script src="js/main.js?v=20260930" defer></script>
+<script>
+(function () {
+  var s = document.getElementById('how');
+  if (!s || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  s.classList.add('hw-ready');
+  new IntersectionObserver(function (e) {
+    var r = e[0].intersectionRatio;
+    if (r >= 0.4) s.classList.add('hw-play');
+    else if (r === 0) s.classList.remove('hw-play');
+  }, { threshold: [0, 0.4] }).observe(s);
+})();
+</script>
 <script>
 (function () {
   "use strict";
