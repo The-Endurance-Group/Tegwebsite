@@ -380,6 +380,85 @@
 .lab .ex-yours .ex-tag { color: var(--gold); }
 .lab .ex-plus { display: grid; place-items: center; background: rgba(255,255,255,.06); border: 2px dashed rgba(201,162,75,.7); }
 @media (max-width: 819px) { .lab .ex-art { aspect-ratio: auto; min-height: 220px; } .lab .skills li { font-size: .66rem; padding: 5px 8px; white-space: nowrap; } .lab .doc { flex-basis: 30%; } .lab .docskills { gap: 8px; } .lab .ex-art { padding: 14px; } .lab .mrow em { font-size: .64rem; padding: 3px 7px; } }
+/* recruiting animation (14s loop) */
+@keyframes rcL1{0.0%{clip-path:inset(0 100% 0 0)}2.14%{clip-path:inset(0 100% 0 0)}13.57%{clip-path:inset(0 0 0 0)}57.14%{clip-path:inset(0 0 0 0)}60.0%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes rcL2{0.0%{clip-path:inset(0 100% 0 0)}13.57%{clip-path:inset(0 100% 0 0)}21.43%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes rcPrompt{0.0%{opacity:1;transform:none}57.14%{opacity:1;transform:none}60.71%{opacity:0}95.71%{opacity:0}99.29%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcSend{0.0%{background:#c9bfc6;transform:none}22.14%{background:#c9bfc6;transform:none}23.57%{background:var(--pink);transform:scale(.88)}25.71%{background:var(--pink);transform:none}100.0%{background:var(--pink);transform:none}}
+@keyframes rcSrc{0.0%{opacity:0}25.0%{opacity:0}27.14%{opacity:1;transform:none}56.43%{opacity:1;transform:none}59.29%{opacity:0}100.0%{opacity:0}}
+@keyframes rcR1{0.0%{opacity:0;transform:translateY(6px)}27.14%{opacity:0;transform:translateY(6px)}29.29%{opacity:1;transform:none}56.43%{opacity:1;transform:none}59.29%{opacity:0}100.0%{opacity:0}}
+@keyframes rcSp1{0.0%{opacity:0}27.14%{opacity:0}29.29%{opacity:1}35.71%{opacity:1}37.14%{opacity:0}100.0%{opacity:0}}
+@keyframes rcCk1{0.0%{opacity:0;transform:scale(.4)}35.71%{opacity:0;transform:scale(.4)}37.5%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcR2{0.0%{opacity:0;transform:translateY(6px)}33.57%{opacity:0;transform:translateY(6px)}35.71%{opacity:1;transform:none}56.43%{opacity:1;transform:none}59.29%{opacity:0}100.0%{opacity:0}}
+@keyframes rcSp2{0.0%{opacity:0}33.57%{opacity:0}35.71%{opacity:1}42.14%{opacity:1}43.57%{opacity:0}100.0%{opacity:0}}
+@keyframes rcCk2{0.0%{opacity:0;transform:scale(.4)}42.14%{opacity:0;transform:scale(.4)}43.93%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcR3{0.0%{opacity:0;transform:translateY(6px)}40.0%{opacity:0;transform:translateY(6px)}42.14%{opacity:1;transform:none}56.43%{opacity:1;transform:none}59.29%{opacity:0}100.0%{opacity:0}}
+@keyframes rcSp3{0.0%{opacity:0}40.0%{opacity:0}42.14%{opacity:1}48.57%{opacity:1}50.0%{opacity:0}100.0%{opacity:0}}
+@keyframes rcCk3{0.0%{opacity:0;transform:scale(.4)}48.57%{opacity:0;transform:scale(.4)}50.36%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcLg1{0.0%{opacity:0;transform:scale(.6)}28.57%{opacity:0;transform:scale(.6)}31.43%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcLg2{0.0%{opacity:0;transform:scale(.6)}35.0%{opacity:0;transform:scale(.6)}37.86%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcLg3{0.0%{opacity:0;transform:scale(.6)}41.43%{opacity:0;transform:scale(.6)}44.29%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcBrief{0.0%{opacity:0}59.29%{opacity:0}62.14%{opacity:1}95.0%{opacity:1}98.57%{opacity:0}100.0%{opacity:0}}
+@keyframes rcB1{0.0%{opacity:0;transform:translateY(6px)}61.43%{opacity:0;transform:translateY(6px)}63.93%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcB2{0.0%{opacity:0;transform:translateY(6px)}64.29%{opacity:0;transform:translateY(6px)}66.79%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcB3{0.0%{opacity:0;transform:translateY(6px)}67.14%{opacity:0;transform:translateY(6px)}69.64%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcC1{0.0%{opacity:0;transform:scale(.7)}71.43%{opacity:0;transform:scale(.7)}73.57%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcC2{0.0%{opacity:0;transform:scale(.7)}73.57%{opacity:0;transform:scale(.7)}75.71%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcC3{0.0%{opacity:0;transform:scale(.7)}75.71%{opacity:0;transform:scale(.7)}77.86%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcDim{0.0%{opacity:1}78.57%{opacity:1}81.43%{opacity:.18}100.0%{opacity:.18}}
+@keyframes rcDraft{0.0%{opacity:0;transform:translateY(14px)}80.0%{opacity:0;transform:translateY(14px)}83.57%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcSent{0.0%{opacity:0;transform:scale(.8)}87.86%{opacity:0;transform:scale(.8)}90.71%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcSpin{0.0%{transform:rotate(0)}100.0%{transform:rotate(2520deg)}}
+
+.lab .mock.rec { position: relative; height: 196px; padding: 12px 14px; overflow: hidden; }
+.lab .ex-recruit .ex-art { aspect-ratio: auto; min-height: 232px; }
+.lab .rec .rc-prompt { display: flex; align-items: center; gap: 8px; border: 1.5px solid var(--line); border-radius: 12px; padding: 7px 8px 7px 11px; font-size: .78rem; font-weight: 700; line-height: 1.3; animation: rcPrompt 14.0s linear infinite; }
+.lab .rec .rc-txt { flex: 1; }
+.lab .rec .rc-txt span { display: block; white-space: nowrap; }
+.lab .rec .rc-txt .l1 { animation: rcL1 14.0s linear infinite; }
+.lab .rec .rc-txt .l2 { animation: rcL2 14.0s linear infinite; }
+.lab .rec .rc-send { width: 24px; height: 24px; border-radius: 50%; flex: none; display: grid; place-items: center; color: #fff; font-size: .8rem; background: #c9bfc6; animation: rcSend 14.0s linear infinite; }
+.lab .rec .rc-src { margin-top: 9px; display: grid; gap: 6px; animation: rcSrc 14.0s linear infinite; }
+.lab .rec .rc-src li { display: flex; align-items: center; gap: 8px; font-size: .74rem; font-weight: 600; color: var(--plum-soft); }
+.lab .rec .rc-src .lbl { flex: 1; white-space: nowrap; }
+.lab .rec .lg { display: inline-flex; gap: 4px; }
+.lab .rec .lg i { font-style: normal; display: inline-grid; place-items: center; height: 20px; min-width: 20px; padding: 0 6px; border-radius: 6px; font-size: .62rem; font-weight: 800; color: #fff; background: var(--plum-soft); }
+.lab .rec .lg img { height: 20px; width: auto; display: block; border-radius: 4px; }
+.lab .rec .lg i.li { background: #0a66c2; } .lab .rec .lg i.fb { background: #1877f2; } .lab .rec .lg i.ig { background: linear-gradient(45deg,#f9a03f,#e1306c,#833ab4); } .lab .rec .lg i.zl { background: #006aff; }
+.lab .rec .st { position: relative; width: 16px; height: 16px; flex: none; }
+.lab .rec .sp { position: absolute; inset: 1px; border: 2px solid var(--line); border-top-color: var(--pink); border-radius: 50%; opacity: 0; animation: rcSpin 2.4s linear infinite; }
+.lab .rec .ck { position: absolute; inset: 0; border-radius: 50%; background: var(--teal); color: #fff; font-size: .62rem; display: grid; place-items: center; opacity: 0; }
+.lab .rec .rc-brief { position: absolute; inset: 12px 14px; opacity: 0; animation: rcBrief 14.0s linear infinite; }
+.lab .rec .rc-brief .mock-h { margin-bottom: 2px; }
+.lab .rec .rc-brief .mrow { padding: 6px 0; }
+.lab .rec .rc-list { animation: rcDim 14.0s linear infinite; }
+.lab .rec .rc-draft { position: absolute; left: 0; right: 0; bottom: -2px; background: var(--teal-tint); border-radius: 10px; padding: 8px 10px; font-size: .72rem; line-height: 1.35; color: var(--plum); opacity: 0; animation: rcDraft 14.0s linear infinite; }
+.lab .rec .rc-draft b { display: block; font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 2px; }
+.lab .rec .rc-sent { position: absolute; right: 8px; top: -9px; background: var(--teal-dark); color: #fff; font-size: .62rem; font-weight: 700; padding: 3px 8px; border-radius: 999px; opacity: 0; animation: rcSent 14.0s linear infinite; }
+@media (max-width: 819px) { .lab .mock.rec { height: 204px; } .lab .rec .rc-prompt { font-size: .72rem; } .lab .rec .rc-src li { font-size: .7rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .lab .rec * { animation: none !important; }
+  .lab .rec .rc-prompt, .lab .rec .rc-src, .lab .rec .rc-draft, .lab .rec .rc-sent { display: none; }
+  .lab .rec .rc-brief { opacity: 1; }
+}
+.lab .rec .rc-src li:nth-child(1) { animation: rcR1 14.0s linear infinite; }
+.lab .rec .rc-src li:nth-child(1) .sp { animation: rcSp1 14.0s linear infinite, rcSpin 2.4s linear infinite; }
+.lab .rec .rc-src li:nth-child(1) .ck { animation: rcCk1 14.0s linear infinite; }
+.lab .rec .rc-src li:nth-child(1) .lg i, .lab .rec .rc-src li:nth-child(1) .lg img { animation: rcLg1 14.0s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(1) { animation: rcB1 14.0s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(1) em { animation: rcC1 14.0s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) { animation: rcR2 14.0s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) .sp { animation: rcSp2 14.0s linear infinite, rcSpin 2.4s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) .ck { animation: rcCk2 14.0s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) .lg i, .lab .rec .rc-src li:nth-child(2) .lg img { animation: rcLg2 14.0s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(2) { animation: rcB2 14.0s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(2) em { animation: rcC2 14.0s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) { animation: rcR3 14.0s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) .sp { animation: rcSp3 14.0s linear infinite, rcSpin 2.4s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) .ck { animation: rcCk3 14.0s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) .lg i, .lab .rec .rc-src li:nth-child(3) .lg img { animation: rcLg3 14.0s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(3) { animation: rcB3 14.0s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(3) em { animation: rcC3 14.0s linear infinite; }
 .lab .ex-plus span { font-size: 7rem; font-weight: 300; color: var(--gold); line-height: 1; }
 
 .lab .hero .people small { font-weight: 500; color: var(--gold); font-size: .82rem; }
@@ -529,12 +608,26 @@ html { scroll-behavior: smooth; }
       <article class="ex ex-recruit">
         <!-- VIDEO SLOT: when the recruiting video is ready, replace this .ex-media div with:
              <div class="ex-media"><video controls playsinline preload="metadata" poster="videos/recruiting-system-poster.jpg"><source src="videos/recruiting-system.mp4" type="video/mp4"></video></div> -->
-        <div class="ex-media ex-art" role="img" aria-label="Illustration: a ranked list of recruiting targets with warm introductions and drafted outreach">
-          <div class="mock">
-            <p class="mock-h">Recruiting brief <span>Friday</span></p>
-            <div class="mrow"><b>1</b><span class="mname">Agent A<small>38 closings · trending up</small></span><em class="chip-warm">Warm intro</em></div>
-            <div class="mrow"><b>2</b><span class="mname">Agent B<small>31 closings · team split up</small></span><em class="chip-draft">Draft ready</em></div>
-            <div class="mrow"><b>3</b><span class="mname">Agent C<small>27 closings · brokerage merging</small></span><em class="chip-draft">Draft ready</em></div>
+        <div class="ex-media ex-art" role="img" aria-label="Animation: a broker asks the AI to find the most productive agents in Houston to recruit. It checks agent data and social profiles, skips people already in the CRM, then returns a ranked list with a drafted message that is sent and logged.">
+          <div class="mock rec" aria-hidden="true">
+            <div class="rc-prompt">
+              <div class="rc-txt"><span class="l1">Find me the most productive agents</span><span class="l2">in Houston I can recruit</span></div>
+              <span class="rc-send">&uarr;</span>
+            </div>
+            <ul class="rc-src">
+              <li><span class="lbl">Top producers</span><span class="lg"><i>Courted</i><i>BrokerMetrics</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
+              <li><span class="lbl">Reading profiles</span><span class="lg"><i class="li">in</i><i class="fb">f</i><i class="ig">ig</i><i class="zl">Z</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
+              <li><span class="lbl">Skipping your contacts</span><span class="lg"><i>CRM</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
+            </ul>
+            <div class="rc-brief">
+              <p class="mock-h">Recruiting brief <span>Houston</span></p>
+              <div class="rc-list">
+                <div class="mrow"><b>1</b><span class="mname">Agent A<small>38 closings · trending up</small></span><em class="chip-warm">Warm intro</em></div>
+                <div class="mrow"><b>2</b><span class="mname">Agent B<small>31 closings · team split up</small></span><em class="chip-draft">Draft ready</em></div>
+                <div class="mrow"><b>3</b><span class="mname">Agent C<small>27 closings · merging</small></span><em class="chip-draft">Draft ready</em></div>
+              </div>
+              <div class="rc-draft"><span class="rc-sent">Sent &middot; Logged to CRM &check;</span><b>Draft for Agent A</b>Hi Agent A, congrats on a big year. I'd love to share how we support top producers. Coffee this week?</div>
+            </div>
           </div>
         </div>
         <p class="ex-tag tag-b">For brokers</p>
