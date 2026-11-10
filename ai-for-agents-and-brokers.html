@@ -518,7 +518,7 @@
 .lab #how.hw-play .flow li:nth-child(5) .fi::before { animation-delay: 3.9s; }
 .lab #how.hw-play .flow li:nth-child(5):not(:last-child)::after { animation-delay: 4.3s; }
 .lab #how.hw-play .flow li:nth-child(5):nth-child(even)::before { animation-delay: 3.8s; }
-@media (prefers-reduced-motion: reduce) { .lab #how .section-cta, .lab #premium .section-cta { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #how .flow li, .lab #how .callout { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #how .flow li::before, .lab #how .flow li .fi::before, .lab #how .flow li:not(:last-child)::after { animation: none !important; } .lab #how .flow li:nth-child(even)::before { display: none; } .lab #how .flow li:not(:last-child)::after { opacity: 1 !important; } }
+@media (prefers-reduced-motion: reduce) { .lab #how .flow li, .lab #how .callout { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #how .flow li::before, .lab #how .flow li .fi::before, .lab #how .flow li:not(:last-child)::after { animation: none !important; } .lab #how .flow li:nth-child(even)::before { display: none; } .lab #how .flow li:not(:last-child)::after { opacity: 1 !important; } }
 /* what-we-build animation: JS adds .bd-ready, then .bd-play while in view */
 .lab #build.bd-ready .aud { opacity: .25; transform: translateY(14px); }
 .lab #build.bd-ready .igrid li { opacity: 0; transform: translateX(-10px); }
@@ -553,10 +553,6 @@
 .lab #build.bd-play .igrid li:nth-child(6) .fi::after { animation-delay: 2.45s; }
 @media (prefers-reduced-motion: reduce) { .lab #build .aud, .lab #build .igrid li { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #build .igrid .fi, .lab #build .igrid .fi::after { animation: none !important; } .lab #build .igrid .fi::after { display: none; } }
 .lab .section-cta { margin-top: 28px; text-align: center; }
-.lab #how.hw-ready .section-cta { opacity: 0; transform: translateY(8px); }
-.lab #how.hw-play .section-cta { animation: hwCall .6s ease-out 5.3s both; }
-.lab #premium.pm-ready .section-cta { opacity: 0; transform: translateY(8px); }
-.lab #premium.pm-play .section-cta { animation: pmItem .5s ease-out 7.2s both; }
 /* premium-service animation: JS adds .pm-ready, then .pm-play while in view */
 .lab #premium.pm-ready .vs .short li, .lab #premium.pm-ready .safe-row li { opacity: 0; transform: translateY(8px); }
 .lab #premium.pm-ready .vs .instead { opacity: 0; }
