@@ -423,7 +423,10 @@
 .lab .rec .rc-src .lbl { flex: 1; white-space: nowrap; }
 .lab .rec .lg { display: inline-flex; gap: 4px; }
 .lab .rec .lg i { font-style: normal; display: inline-grid; place-items: center; height: 20px; min-width: 20px; padding: 0 6px; border-radius: 6px; font-size: .62rem; font-weight: 800; color: #fff; background: var(--plum-soft); }
-.lab .rec .lg img { height: 20px; width: auto; display: block; border-radius: 4px; }
+.lab .rec .lg { align-items: center; }
+.lab .rec .lg img { height: 20px; width: auto; display: block; border-radius: 5px; }
+.lab .rec .lg img[alt="BrokerMetrics"], .lab .rec .lg img[alt="Courted"] { border-radius: 0; }
+.lab .rec .lg img[alt="BrokerMetrics"] { height: 24px; }
 .lab .rec .lg i.li { background: #0a66c2; } .lab .rec .lg i.fb { background: #1877f2; } .lab .rec .lg i.ig { background: linear-gradient(45deg,#f9a03f,#e1306c,#833ab4); } .lab .rec .lg i.zl { background: #006aff; }
 .lab .rec .st { position: relative; width: 16px; height: 16px; flex: none; }
 .lab .rec .sp { position: absolute; inset: 1px; border: 2px solid var(--line); border-top-color: var(--pink); border-radius: 50%; opacity: 0; animation: rcSpin 2.4s linear infinite; }
@@ -615,8 +618,8 @@ html { scroll-behavior: smooth; }
               <span class="rc-send">&uarr;</span>
             </div>
             <ul class="rc-src">
-              <li><span class="lbl">Top producers</span><span class="lg"><i>Courted</i><i>BrokerMetrics</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
-              <li><span class="lbl">Reading profiles</span><span class="lg"><i class="li">in</i><i class="fb">f</i><i class="ig">ig</i><i class="zl">Z</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
+              <li><span class="lbl">Top producers</span><span class="lg"><img src="images/logos/courted.png" alt="Courted" width="20" height="20"><img src="images/logos/brokermetrics.png" alt="BrokerMetrics" width="64" height="24"></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
+              <li><span class="lbl">Reading profiles</span><span class="lg"><i class="li">in</i><img src="images/logos/facebook.png" alt="Facebook" width="20" height="20"><img src="images/logos/instagram.png" alt="Instagram" width="20" height="20"><img src="images/logos/zillow.png" alt="Zillow" width="20" height="20"></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
               <li><span class="lbl">Skipping your contacts</span><span class="lg"><i>CRM</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
             </ul>
             <div class="rc-brief">
