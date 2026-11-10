@@ -463,6 +463,15 @@
 .lab .rec .rc-list .mrow:nth-of-type(3) { animation: rcB3 18s linear infinite; }
 .lab .rec .rc-list .mrow:nth-of-type(3) em { animation: rcC3 18s linear infinite; }
 .lab .ex-plus span { font-size: 7rem; font-weight: 300; color: var(--gold); line-height: 1; }
+@media (min-width: 820px) {
+  .lab .ex-recruit .ex-art, .lab .ex-yours .ex-media { aspect-ratio: 16 / 10; min-height: 0; }
+  .lab .ex-recruit .ex-art { padding: 8px; }
+  .lab .mock.rec { height: 186px; }
+}
+@media (min-width: 1100px) {
+  .lab .ex-recruit .ex-art { padding: 18px; }
+  .lab .mock.rec { zoom: 1.2; width: calc(100% / 1.2); max-width: none; height: 196px; }
+}
 /* your-idea animation (14s loop) */
 @keyframes yoPlus{0.0%{opacity:1;transform:none}7.86%{opacity:1;transform:none}10.71%{opacity:0;transform:scale(.6)}94.29%{opacity:0;transform:scale(.6)}97.86%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
 @keyframes yoP1{0.0%{opacity:0}10.71%{opacity:0}12.14%{opacity:1}28.57%{opacity:1}30.71%{opacity:0}100.0%{opacity:0}}
