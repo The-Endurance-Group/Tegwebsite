@@ -219,6 +219,7 @@
                 <li>Claude Sheets launched in beta on November 10, 2026 for all paid Claude plans, on web, desktop and mobile.</li>
                 <li>Team plans have it on by default. Enterprise admins must turn it on.</li>
                 <li>It builds multi-tab sheets with formulas, formatting and drop-downs, lists each cell change it makes, and exports to .xlsx or CSV.</li>
+                <li>In our test, one prompt produced a working budget tracker, and its totals matched a hand check after we added a row and sorted it.</li>
                 <li>Anthropic says it is not built for sophisticated financial modeling yet. Claude for Excel covers the heavy jobs.</li>
                 <li>The bigger question for a business is not the sheet. It is who keeps the data in it current.</li>
               </ul>
@@ -246,10 +247,22 @@
             </ol>
             <p>Engadget notes it also works with Anthropic's Google Workspace plugin. For how that connection fits in, see our post on <a href="claude-connectors-gmail-how-to-connect.html">how to connect Claude to Gmail</a>.</p>
 
+            <h2>What happened when we tested Claude Sheets?</h2>
+            <p>We asked Claude on mobile to build a household budget tracker in Claude Sheets, then asked it to add a row, sort by amount, chart spend by category and highlight overdue items. Claude built a working sheet from one prompt, and the numbers checked out when we added them up ourselves.</p>
+            <ul>
+              <li><strong>One prompt, a finished sheet.</strong> Claude produced six line items with a Status drop-down, Paid checkboxes, currency formatting, wrapped notes and a small totals block beside the table.</li>
+              <li><strong>Claude checked its own formulas.</strong> It read the formulas back and reported a total of $3,505.48, with $2,715.49 paid and $789.99 still owed.</li>
+              <li><strong>The edits stayed correct.</strong> After we added a seventh item, the export showed a $3,540.48 total, $2,715.49 paid and $824.99 still owed. Adding the line items by hand gives the same figures.</li>
+              <li><strong>The category totals matched.</strong> Housing, Food, Kids, Utilities, Transport and Health added up to the same $3,540.48.</li>
+              <li><strong>The sort worked.</strong> The rows came back ordered from the largest amount to the smallest.</li>
+            </ul>
+            <p>One limit showed up in the export. A CSV file carries values only, so the chart and the red highlight for overdue items do not travel with it. If you need those, share the sheet inside Claude or export to .xlsx and check the result.</p>
+            <p>This was a small test with seven rows and simple sums, not a stress test. It tells you Claude Sheets handles a basic tracker well. It does not tell you how it behaves with large files or nested formulas.</p>
+
             <h2>What can't Claude Sheets do yet?</h2>
             <p>Claude Sheets is not a replacement for Excel. Anthropic describes the spreadsheet functionality as "simple, with more in development" and sends people who need the full Excel feature set to the existing Claude for Excel add-in.</p>
             <p>A Bloomberg interview with Anthropic product leader Nicholas Lin, reported by <a href="https://mlq.ai/news/anthropic-launches-claude-sheets-and-meetings-in-a-push-into-office-software-as-microsoft-shares-fall/" rel="noopener">MLQ</a>, adds that it is not built for sophisticated financial modeling or advanced enterprise workloads. Lin said Anthropic expects its integrations with existing spreadsheet software to handle those jobs.</p>
-            <p>None of the launch coverage describes importing an existing spreadsheet, data connectors specific to Sheets, or usage limits. We have not tested Claude Sheets ourselves yet, so treat those as open questions until Anthropic documents them.</p>
+            <p>None of the launch coverage describes importing an existing spreadsheet, data connectors specific to Sheets, or usage limits. Our own test above was small, so treat those as open questions until Anthropic documents them.</p>
 
             <h2>How does Claude Sheets compare with Excel and Google Sheets?</h2>
             <p>Claude Sheets sits at the start of the spreadsheet workflow. Excel and Google Sheets still own the long middle, where files grow large and many people depend on them.</p>
