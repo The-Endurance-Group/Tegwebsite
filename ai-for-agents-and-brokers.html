@@ -702,6 +702,17 @@ html { scroll-behavior: smooth; }
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "yrynbf5pfi");
 </script>
+<!-- Meta Pixel: TEG Website (dataset 2017384266114983) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2017384266114983');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2017384266114983&ev=PageView&noscript=1"></noscript>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -1156,7 +1167,12 @@ window.addEventListener("message", function (e) {
     }).toString();
     fetch(CONFIG.FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: payload })
       .then(function (r) { return r.json(); })
-      .then(function (j) { if (!j.ok) throw new Error("rejected"); form.reset(); document.getElementById("ref").value = ref; showBooked(); })
+      .then(function (j) {
+        if (!j.ok) throw new Error("rejected");
+        try { if (window.fbq) window.fbq("track", "Lead"); } catch (err) {}
+        try { if (window.clarity) window.clarity("event", "enquiry_sent"); } catch (err) {}
+        form.reset(); document.getElementById("ref").value = ref; showBooked();
+      })
       .catch(function () { show("err", "That did not send. Opening your email app instead."); mailto(data); });
   });
 })();
