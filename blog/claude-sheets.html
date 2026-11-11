@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Sheets: What It Is and Who Should Use It | TEG</title>
+  <meta name="description" content="Claude Sheets launched in beta on Nov 10, 2026. Here is what it does, who gets it, where it falls short of Excel, and when a spreadsheet should be automated.">
+  <link rel="canonical" href="https://www.theendurancegroup.com/blog/claude-sheets.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Endurance Group">
+  <meta property="og:title" content="Claude Sheets: What It Is and Who Should Use It">
+  <meta property="og:description" content="Claude Sheets launched in beta on Nov 10, 2026. Here is what it does, who gets it, where it falls short of Excel, and when a spreadsheet should be automated.">
+  <meta property="og:url" content="https://www.theendurancegroup.com/blog/claude-sheets.html">
+  <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:modified_time" content="2026-11-11T09:00:00-05:00">
+  <meta property="article:published_time" content="2026-11-11T09:00:00-05:00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Sheets: What It Is and Who Should Use It">
+  <meta name="twitter:description" content="Claude Sheets launched in beta on Nov 10, 2026. Here is what it does, who gets it, where it falls short of Excel, and when a spreadsheet should be automated.">
+  <meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/favicon-network.png">
+  <link rel="stylesheet" href="../css/styles.css?v=20261026-nav">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Endurance Group",
+    "alternateName": "TEG",
+    "url": "https://www.theendurancegroup.com/",
+    "logo": "https://www.theendurancegroup.com/images/og-default.png",
+    "image": "https://www.theendurancegroup.com/images/og-default.png",
+    "description": "Claude implementation and ongoing support for any team seeking measurable business value.",
+    "foundingDate": "1999",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "16 Middle St, 2nd Floor",
+      "addressLocality": "Portland",
+      "addressRegion": "ME",
+      "postalCode": "04101",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-207-846-6000",
+    "areaServed": "US",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-endurance-group",
+      "https://www.facebook.com/TheEnduranceGroupMaine/",
+      "https://www.instagram.com/theendurancegroup/",
+      "https://x.com/_EnduranceGroup",
+      "https://www.youtube.com/channel/UCXjowEhOlFqTuSlVxCpdkYw"
+    ],
+    "founder": { "@type": "Person", "name": "Jim Sullivan" }
+  }
+  </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Claude Sheets: What It Is, What It Can't Do Yet, and Who Should Use It",
+  "description": "Claude Sheets launched in beta on Nov 10, 2026. Here is what it does, who gets it, where it falls short of Excel, and when a spreadsheet should be automated.",
+  "datePublished": "2026-11-11",
+  "dateModified": "2026-11-11",
+  "author": {
+    "@type": "Person",
+    "name": "Conor Sullivan",
+    "jobTitle": "Vice President",
+    "url": "https://www.theendurancegroup.com/authors/conor-sullivan.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Endurance Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.theendurancegroup.com/images/og-default.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.theendurancegroup.com/blog/claude-sheets.html"
+  },
+  "url": "https://www.theendurancegroup.com/blog/claude-sheets.html",
+  "image": "https://www.theendurancegroup.com/images/og-default.png"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Claude Sheets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude Sheets is a spreadsheet built into Claude. It builds and edits sheets with multiple tabs, formulas, formatting and drop-down menus from a plain-language request. Anthropic launched it in beta on November 10, 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who can use Claude Sheets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude Sheets is in beta on all paid Claude plans, on web, desktop and mobile. It is on by default for Team plans and off by default for Enterprise plans, where an admin turns it on in the Artifacts section of Organization settings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Claude Sheets replace Excel or Google Sheets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not yet. Anthropic calls the functionality simple for now, with more in development, and points people who need full Excel features to Claude for Excel. Claude Sheets is best for trackers, budgets and first drafts, not complex financial models."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I export a Claude Sheet to Excel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Anthropic says Claude Sheets files export to .xlsx or CSV, so you can finish heavier work in Excel or hand the file to another tool."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Claude Sheets cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anthropic announced no new price. Claude Sheets comes with existing paid Claude subscriptions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should a spreadsheet become an automation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When people copy data into it on a schedule, or when the next step depends on what is in it. A sheet that someone updates by hand every week is a candidate for a connected workflow that fills it, checks it and acts on it."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yrynbf5pfi");
+  </script>
+</head>
+<body class="blog-post">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- SHARED HEADER: keep in sync across all pages -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="../images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../how-we-work.html">How We Work</a></li>
+          <li><a href="../managed-claude.html">Managed Claude</a></li>
+          <li><a href="../specialties.html">Specialties</a></li>
+          <li><a href="../success.html">Success</a></li>
+          <li><a href="../blog.html" aria-current="page">Blog</a></li>
+          <li><a class="nav-cta" href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- END SHARED HEADER -->
+
+  <main id="main-content">
+
+    <article>
+
+      <section class="hero hero--page section">
+      <div class="container">
+        <span class="eyebrow">AI Automations</span>
+        <h1>Claude Sheets: What It Is, What It Can't Do Yet, and Who Should Use It</h1>
+        <div class="case-study-meta" style="margin-top:20px;">
+          <span><a href="../authors/conor-sullivan.html">Conor Sullivan</a></span>
+          <span class="divider">·</span>
+          <span>Vice President</span>
+          <span class="divider">·</span>
+          <span>November 11, 2026</span>
+          <span class="divider">·</span>
+          <span>Last updated November 11, 2026</span>
+        </div>
+        <a class="category-badge" href="category/ai-automations.html" style="margin-top:16px;">AI Automations</a>
+      </div>
+    </section>
+
+      <section class="section section--alt">
+        <div class="container">
+          <div class="prose">
+
+            <p>Claude Sheets is a spreadsheet built into Claude that creates and edits sheets from a plain-language request. Anthropic launched it in beta on November 10, 2026, on all paid plans. It handles tabs, formulas, formatting and drop-downs, but Anthropic calls it simple for now. Use it for trackers and budgets. Keep Excel for heavy modeling.</p>
+
+            <p><em>The Endurance Group (TEG) is a Claude Implementation Partner and an official member of the Anthropic Claude Partner Network. We build and maintain Claude setups for business teams. <a href="../managed-claude.html">See how Managed Claude works.</a></em></p>
+
+            <div class="example-callout"><h2>Key takeaways</h2>
+              <ul>
+                <li>Claude Sheets launched in beta on November 10, 2026 for all paid Claude plans, on web, desktop and mobile.</li>
+                <li>Team plans have it on by default. Enterprise admins must turn it on.</li>
+                <li>It builds multi-tab sheets with formulas, formatting and drop-downs, lists each cell change it makes, and exports to .xlsx or CSV.</li>
+                <li>Anthropic says it is not built for sophisticated financial modeling yet. Claude for Excel covers the heavy jobs.</li>
+                <li>The bigger question for a business is not the sheet. It is who keeps the data in it current.</li>
+              </ul>
+            </div>
+
+            <h2>What is Claude Sheets?</h2>
+            <p>Claude Sheets is a spreadsheet inside Claude where you describe what you need and Claude builds it. Reports from the launch give two examples: a campaign tracker and a hiring budget. Claude sets up the file, and your team keeps editing the same sheet.</p>
+            <p>A sheet can hold multiple tabs, formulas, standard formatting and drop-down menus. Anyone with edit access can change it, and Claude lists each cell it changes so coworkers can review the edits. Anthropic announced it at an event in San Francisco alongside Claude Whiteboards and Claude Meetings, according to <a href="https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/" rel="noopener">TechCrunch</a>.</p>
+
+            <h2>Who can use Claude Sheets, and what does it cost?</h2>
+            <p>Claude Sheets is in beta on all paid Claude plans, across web, desktop and mobile. Anthropic announced no new prices, so it comes with the subscription you already have.</p>
+            <ul>
+              <li><strong>Team plans:</strong> on by default.</li>
+              <li><strong>Enterprise plans:</strong> off by default. An admin can turn it on in the Artifacts section of Organization settings, according to <a href="https://www.unite.ai/anthropic-launches-claude-whiteboards-and-sheets-in-beta/" rel="noopener">Unite.AI</a>.</li>
+              <li><strong>Free plan:</strong> not included. The coverage lists paid plans only.</li>
+            </ul>
+
+            <h2>What can Claude Sheets do?</h2>
+            <p>Claude Sheets builds a working spreadsheet from a request and then edits it with you. In practice that covers four jobs.</p>
+            <ol>
+              <li><strong>Build from a prompt.</strong> Ask for a tracker, budget or schedule and get tabs, formulas and drop-downs set up.</li>
+              <li><strong>Edit alongside your team.</strong> Claude changes cells directly and outlines each change.</li>
+              <li><strong>Share.</strong> The finished sheet can be shared with a team, and anyone with edit access can change it.</li>
+              <li><strong>Export.</strong> Files export to .xlsx or CSV. Anthropic also named Airtable, Asana, monday.com and Smartsheet as handoff partners.</li>
+            </ol>
+            <p>Engadget notes it also works with Anthropic's Google Workspace plugin. For how that connection fits in, see our post on <a href="claude-connectors-gmail-how-to-connect.html">how to connect Claude to Gmail</a>.</p>
+
+            <h2>What can't Claude Sheets do yet?</h2>
+            <p>Claude Sheets is not a replacement for Excel. Anthropic describes the spreadsheet functionality as "simple, with more in development" and sends people who need the full Excel feature set to the existing Claude for Excel add-in.</p>
+            <p>A Bloomberg interview with Anthropic product leader Nicholas Lin, reported by <a href="https://mlq.ai/news/anthropic-launches-claude-sheets-and-meetings-in-a-push-into-office-software-as-microsoft-shares-fall/" rel="noopener">MLQ</a>, adds that it is not built for sophisticated financial modeling or advanced enterprise workloads. Lin said Anthropic expects its integrations with existing spreadsheet software to handle those jobs.</p>
+            <p>None of the launch coverage describes importing an existing spreadsheet, data connectors specific to Sheets, or usage limits. We have not tested Claude Sheets ourselves yet, so treat those as open questions until Anthropic documents them.</p>
+
+            <h2>How does Claude Sheets compare with Excel and Google Sheets?</h2>
+            <p>Claude Sheets sits at the start of the spreadsheet workflow. Excel and Google Sheets still own the long middle, where files grow large and many people depend on them.</p>
+            <table class="compare-table">
+              <caption>Where each spreadsheet option fits</caption>
+              <thead>
+                <tr><th scope="col">Tool</th><th scope="col">Best for</th><th scope="col">Watch out for</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Claude Sheets</td><td>Fast first drafts, trackers, budgets, shared planning with Claude editing in view</td><td>Beta. Simple feature set. Not for complex modeling.</td></tr>
+                <tr><td>Claude for Excel</td><td>Heavier analysis and models that need the full Excel feature set</td><td>Needs Excel and the add-in.</td></tr>
+                <tr><td>Claude in Google Workspace</td><td>Working with Claude inside files you already keep in Google Sheets, Docs and Slides</td><td>Still in beta. Sidebar launched October 6, 2026 for paid plans.</td></tr>
+                <tr><td>Excel or Google Sheets alone</td><td>Large, long-lived files the whole company relies on</td><td>You build and audit the formulas yourself.</td></tr>
+              </tbody>
+            </table>
+            <p>Microsoft noticed. Shares fell about 3% midday on launch day after the announcement, per a CNBC update cited by MLQ. That is a market reaction to a beta, not a verdict on the product.</p>
+
+            <h2>What else did Anthropic launch with Claude Sheets?</h2>
+            <p>Claude Sheets arrived as part of a bigger push to make Claude the place where team work happens. We covered the earlier step in our post on <a href="claude-dashboards-motion-docs-slides-design.html">Claude Dashboards, Motion, Docs, Slides and Design</a>.</p>
+            <ul>
+              <li><strong>Claude Whiteboards (beta):</strong> a shared canvas where Claude turns a discussion into timelines, owners and dates, and can convert a board into a document or slide deck.</li>
+              <li><strong>Claude Meetings (beta):</strong> Claude joins Google Meet calls as a named participant on Team and Enterprise plans. It leaves if an outside guest joins unless an admin allows guests.</li>
+              <li><strong>Claude Data:</strong> Claude Dashboards is now generally available under this name. Certified queries and live sharing remain in beta.</li>
+            </ul>
+            <p>It is the second time in a week a Claude feature changed shape. Standalone Claude Design closes December 14, which we explain in <a href="move-claude-design-to-claude.html">how to move your Claude Design projects</a>.</p>
+
+            <h2>Should your business use Claude Sheets?</h2>
+            <p>Yes, for low-risk work where speed matters more than depth. No, for anything where a formula error would cost real money. A practical test:</p>
+            <ul>
+              <li><strong>Try it now:</strong> campaign trackers, hiring plans, simple budgets, project schedules and one-off planning sheets.</li>
+              <li><strong>Pilot with review:</strong> anything a client or finance will see. Have a person check every formula and the totals.</li>
+              <li><strong>Keep in Excel:</strong> financial models, large datasets and files other systems read automatically.</li>
+            </ul>
+            <p>On Enterprise plans, confirm with your admin before anyone builds on it. It is off by default, and a beta feature can change.</p>
+
+            <h2>When should a spreadsheet become an automation?</h2>
+            <p>A spreadsheet should become an automation when people feed it by hand or when the next step depends on what is in it. Claude Sheets makes the sheet easier to build. It does not fill the sheet, keep it current or act on it.</p>
+            <p>Most teams we work with have the same pattern. A tracker starts as a good idea, then someone spends an hour each week copying numbers from the CRM, inbox or billing system into it. The fix is a connected workflow that reads the source, writes the row, flags what needs attention and queues the follow-up for approval.</p>
+            <p>That is the work behind <a href="../managed-claude.html">Managed Claude</a> from TEG. We build the workflows that keep sheets like these accurate, maintain them as Claude changes, and train your team on the new version. Managed Claude starts at $1,500 per month, and you own what we build. If you are not sure which sheets are worth automating, our free <a href="../book-value-assessment.html">AI Value Assessment</a> is a good first step. For a comparison of Claude with other assistants in a Microsoft shop, read <a href="claude-vs-copilot-chat-what-claude-adds.html">Claude vs. Copilot Chat</a>.</p>
+
+            <h2>Frequently asked questions</h2>
+
+            <h3>What is Claude Sheets?</h3>
+            <p>Claude Sheets is a spreadsheet built into Claude. It builds and edits sheets with multiple tabs, formulas, formatting and drop-down menus from a plain-language request. Anthropic launched it in beta on November 10, 2026.</p>
+
+            <h3>Who can use Claude Sheets?</h3>
+            <p>Claude Sheets is in beta on all paid Claude plans, on web, desktop and mobile. It is on by default for Team plans and off by default for Enterprise plans, where an admin turns it on in the Artifacts section of Organization settings.</p>
+
+            <h3>Does Claude Sheets replace Excel or Google Sheets?</h3>
+            <p>Not yet. Anthropic calls the functionality simple for now, with more in development, and points people who need full Excel features to Claude for Excel. Claude Sheets is best for trackers, budgets and first drafts, not complex financial models.</p>
+
+            <h3>Can I export a Claude Sheet to Excel?</h3>
+            <p>Yes. Anthropic says Claude Sheets files export to .xlsx or CSV, so you can finish heavier work in Excel or hand the file to another tool.</p>
+
+            <h3>How much does Claude Sheets cost?</h3>
+            <p>Anthropic announced no new price. Claude Sheets comes with existing paid Claude subscriptions.</p>
+
+            <h3>When should a spreadsheet become an automation?</h3>
+            <p>When people copy data into it on a schedule, or when the next step depends on what is in it. A sheet that someone updates by hand every week is a candidate for a connected workflow that fills it, checks it and acts on it.</p>
+
+            <div class="example-callout">
+              <strong>Which of your spreadsheets are really processes in disguise?</strong> If a person updates it by hand every week, it can probably run itself. TEG builds the workflow, maintains it and trains your team. <a href="../managed-claude.html">See Managed Claude.</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Related reading -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <h2>Related reading</h2>
+          </div>
+          <div class="grid grid--2">
+            <div class="feature-card">
+              <span class="eyebrow">AI Automations</span>
+              <h3><a href="claude-dashboards-motion-docs-slides-design.html">Claude Now Builds Live Dashboards and Animations. Here's What Business Teams Should Do With Them.</a></h3>
+              <p>What Anthropic launched for Dashboards, Motion, Docs, Slides and Design, and where to start.</p>
+            </div>
+            <div class="feature-card">
+              <span class="eyebrow">AI Automations</span>
+              <h3><a href="move-claude-design-to-claude.html">How to Move Your Claude Design Projects Before Dec 14</a></h3>
+              <p>What moves, what stays behind, and who owns the move.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section--alt">
+        <div class="container">
+          <div class="prose reveal">
+            <h2>Want your spreadsheets to run themselves?</h2>
+            <p>TEG builds your Claude workflows, then stays on to maintain them, update them and train your team. Clear scope, certified engineers, monthly value reviews.</p>
+            <a href="../contact.html" class="btn btn-primary">Talk to TEG</a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+
+  </main>
+
+  <!-- SHARED FOOTER: keep in sync across all pages -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="../images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">Your Managed Claude Team</p>
+          <img src="../images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+          <p class="footer-cta"><a class="btn btn-primary" href="../book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../how-we-work.html">How We Work</a></li>
+            <li><a href="../managed-claude.html">Managed Claude</a></li>
+            <li><a href="../claude-for-sales.html">Claude for Sales</a></li>
+            <li><a href="../claude-business-development.html">B2B Sales</a></li>
+            <li><a href="../realestate">Real Estate</a></li>
+            <li><a href="../saas">B2B Tech &amp; SaaS</a></li>
+            <li><a href="../professionalservices">Professional Services</a></li>
+            <li><a href="../solutions.html">Solutions</a></li>
+            <li><a href="../specialties.html">Specialties</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Free Offerings</h4>
+          <ul>
+            <li><a href="../book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="../intent-playbook.html">Free Intent Lead Playbook</a></li>
+            <li><a href="../ai-policy">Free AI Policy Draft</a></li>
+            <li><a href="../claude-tutorials.html">Free Claude Video Training</a></li>
+            <li><a href="../claude-plugins.html">Free Claude Plugins</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../success.html">Success</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../fellowship.html">Fellowship</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/_EnduranceGroup" rel="noopener">X</a></li>
+            <li><a href="https://www.facebook.com/TheEnduranceGroupMaine/" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/theendurancegroup/" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="../privacy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- END SHARED FOOTER -->
+
+  <script src="../js/main.js?v=20260930" defer></script>
+  <script src="../js/video-gate.js?v=20261009b"></script>
+</body>
+</html>
