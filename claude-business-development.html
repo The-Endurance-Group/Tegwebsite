@@ -151,6 +151,11 @@
       .bd-journey p { max-width:600px; }
     }
     @media(max-width:600px) { .bd-platform-card { padding:24px; gap:14px; } .bd-network li { gap:14px; } .bd-network strong { font-size:17px; } .bd-steps.bd-journey li { column-gap:20px; } }
+    .re-logos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px 28px; align-items:center; margin-top:20px; max-width:520px; }
+    .re-logos img { display:block; height:40px; width:auto; max-width:100%; margin:0 auto 0 0; object-fit:contain; object-position:left center; }
+    .re-logos img.re-logo-lg { height:60px; }
+    .re-logos img.re-logo-dark { background:var(--color-ink); padding:8px 10px; border-radius:10px; box-sizing:content-box; }
+    @media(max-width:600px){ .re-logos { grid-template-columns:repeat(2,minmax(0,1fr)); } }
   </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -219,6 +224,8 @@
               <a class="btn btn-secondary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b">Talk to us about your pipeline</a>
             </div>
             <p class="bd-hero-note">The playbook takes about 3 minutes and needs no email. Or book a 30-minute conversation about your targets and network.</p>
+            <p class="bd-hero-note" style="margin-top:28px;">Trusted by consulting, advisory and agency teams</p>
+            <div class="re-logos"><img class="re-logo-lg" src="images/clients/aarete.webp" alt="AArete" loading="lazy"><img src="images/clients/huron.webp" alt="Huron" loading="lazy"><img class="re-logo-dark" src="images/clients/edify.webp" alt="Edify Software" loading="lazy"></div>
           </div>
           <figure class="bd-value-card bd-map" aria-labelledby="bd-value-title">
             <span class="eyebrow">Find a warmer way in</span>
