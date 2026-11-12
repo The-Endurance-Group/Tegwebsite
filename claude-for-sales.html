@@ -51,6 +51,11 @@
     .cfs-label { display:inline-block; margin-bottom:10px; padding:3px 10px; border-radius:99px; background:var(--tint-teal); color:var(--color-teal-dark); font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
     .cfs-faq h3 { font-size:18px; margin-top:24px; }
     @media(max-width:900px){ .cfs-grid,.cfs-steps{grid-template-columns:1fr !important;} .cfs-time-grid{grid-template-columns:1fr;} }
+    .re-logos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px 28px; align-items:center; margin-top:20px; max-width:520px; }
+    .re-logos img { display:block; height:40px; width:auto; max-width:100%; margin:0 auto 0 0; object-fit:contain; object-position:left center; }
+    .re-logos img.re-logo-lg { height:60px; }
+    .re-logos img.re-logo-dark { background:var(--color-ink); padding:8px 10px; border-radius:10px; box-sizing:content-box; }
+    @media(max-width:600px){ .re-logos { grid-template-columns:repeat(2,minmax(0,1fr)); } }
   </style>
   <script type="application/ld+json">
 {
@@ -154,6 +159,8 @@
       <p class="lede" style="max-width:720px;">TEG builds Claude-powered sales workflows that reduce administrative work, connect your systems, and help your team spend more time with customers.</p>
       <div class="btn-group"><a class="btn btn-primary" href="book-value-assessment.html">Find Where Your Sales Team Loses Time</a><a class="btn btn-secondary" href="#results">See client results</a></div>
       <p class="cfs-hero-note">Start with our free AI Value Assessment. You see your results without entering an email address.</p>
+      <p class="cfs-hero-note" style="margin-top:28px;">Trusted by consulting, advisory and agency teams</p>
+      <div class="re-logos"><img class="re-logo-lg" src="images/clients/aarete.webp" alt="AArete" loading="lazy"><img src="images/clients/huron.webp" alt="Huron" loading="lazy"><img class="re-logo-dark" src="images/clients/edify.webp" alt="Edify Software" loading="lazy"></div>
     </div></section>
 
     <section class="section section--alt"><div class="container">
