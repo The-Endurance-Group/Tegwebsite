@@ -698,12 +698,9 @@
 .lab .cal-card { background: #fff; border-radius: 18px; padding: 8px; margin: 8px auto 0; max-width: 760px; box-shadow: 0 18px 50px rgba(0,0,0,.4); }
 .lab .meetings-iframe-container { min-height: 640px; }
 .lab .reach-out { margin-top: 30px; }
-.lab .reach-out summary { cursor: pointer; color: #e5dce2; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; list-style: none; }
-.lab .reach-out summary::-webkit-details-marker { display: none; }
+.lab .reach-out-title { color: #e5dce2; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; margin: 0 0 18px; }
 html { scroll-behavior: smooth; }
 #book { scroll-margin-top: 90px; }
-.lab .cal-fallback { margin-top: 12px; font-size: .9rem; color: #cbbfc8; }
-.lab .cal-fallback a { color: #fff; text-decoration: underline; }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -963,9 +960,8 @@ fbq('track', 'PageView');
     <div class="cal-card" id="book">
       <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b&embed=true"></div>
     </div>
-    <p class="cal-fallback">Calendar not loading? <a href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="calendar-fallback">Open it in a new tab</a></p>
-    <details class="reach-out">
-      <summary>Prefer we reach out? Leave your details</summary>
+    <div class="reach-out">
+      <p class="reach-out-title">Prefer we reach out? Leave your details</p>
 
     <form class="form-card" id="enquiry" novalidate>
       <input type="hidden" name="ref" id="ref" value="realestate">
@@ -996,7 +992,7 @@ fbq('track', 'PageView');
       <button class="btn btn-primary" type="submit" data-cta="form-submit">Send</button>
       <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
     </form>
-    </details>
+    </div>
   </div>
 </section>
 
