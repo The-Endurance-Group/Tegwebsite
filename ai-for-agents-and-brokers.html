@@ -697,8 +697,10 @@
 .lab .page-disc { margin: 0 auto; padding: 18px 0; color: var(--plum-soft); }
 .lab .cal-card { background: #fff; border-radius: 18px; padding: 8px; margin: 8px auto 0; max-width: 760px; box-shadow: 0 18px 50px rgba(0,0,0,.4); }
 .lab .meetings-iframe-container { min-height: 640px; }
-.lab .reach-out { margin-top: 30px; }
-.lab .reach-out-title { color: #e5dce2; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; margin: 0 0 18px; }
+.lab .reach-out { margin-top: 56px; padding-top: 44px; border-top: 1px solid rgba(255,255,255,.14); text-align: center; }
+.lab .reach-out-eyebrow { color: #e58fb4; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 10px; }
+.lab .reach-out-title { font-family: var(--font-head); color: #fff; font-weight: 700; font-size: clamp(1.4rem, 4vw, 1.9rem); line-height: 1.25; margin: 0 0 10px; }
+.lab .reach-out-sub { color: #cbbfc8; font-size: 1rem; margin: 0 auto; max-width: 520px; }
 html { scroll-behavior: smooth; }
 #book { scroll-margin-top: 90px; }
 </style>
@@ -961,7 +963,9 @@ fbq('track', 'PageView');
       <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b&embed=true"></div>
     </div>
     <div class="reach-out">
-      <p class="reach-out-title">Prefer we reach out? Leave your details</p>
+      <p class="reach-out-eyebrow">Not ready to book?</p>
+      <h3 class="reach-out-title">Prefer we reach out? Leave your details</h3>
+      <p class="reach-out-sub">We&rsquo;ll follow up within one business day.</p>
 
     <form class="form-card" id="enquiry" novalidate>
       <input type="hidden" name="ref" id="ref" value="realestate">
