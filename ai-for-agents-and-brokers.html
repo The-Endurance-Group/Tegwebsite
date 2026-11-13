@@ -679,6 +679,10 @@
 .lab .rp-ico { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); color: var(--gold); display: grid; place-items: center; flex: none; }
 .lab .team-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-weight: 600; font-size: .95rem; }
 .lab .team-stack { display: flex; flex: none; }
+.lab .book-head { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.lab .book-head img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); flex: none; }
+.lab .book-head h2 { margin: 0; text-align: left; }
+@media (max-width: 560px) { .lab .book-head { flex-direction: column; gap: 12px; } .lab .book-head h2 { text-align: center; } }
 .lab .people-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 28px; font-weight: 600; text-align: left; }
 .lab .people-row .team-stack img { width: 56px; height: 56px; }
 @media (max-width: 560px) { .lab .people-row { flex-direction: column; text-align: center; } }
@@ -945,7 +949,7 @@ fbq('track', 'PageView');
 <section id="enquire" class="dark">
   <div class="container narrow center">
     <p class="eyebrow">Free. No obligation.</p>
-    <h2>Book your free build plan</h2>
+    <div class="book-head"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="72" height="72" loading="lazy"><h2>Book your free build plan with Conor</h2></div>
     <ul class="plan">
       <li>The five things AI should be doing in your business, ranked</li>
       <li>What we would build first</li>
