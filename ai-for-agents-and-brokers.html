@@ -1096,7 +1096,30 @@ fbq('track', 'PageView');
   var a = document.getElementById("audience"); if (a) a.value = f;
 })();
 </script>
-<script src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+<script>
+/* Load the HubSpot calendar only when the visitor nears it (or clicks a #book link),
+   so it doesn't slow the first screen for ad traffic. */
+(function () {
+  var box = document.querySelector(".meetings-iframe-container");
+  if (!box) return;
+  var loaded = false;
+  function load() {
+    if (loaded) return; loaded = true;
+    var s = document.createElement("script");
+    s.src = "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
+    s.async = true;
+    document.body.appendChild(s);
+  }
+  if (location.hash === "#book" || !("IntersectionObserver" in window)) { load(); return; }
+  new IntersectionObserver(function (e, o) {
+    if (e[0].isIntersecting) { o.disconnect(); load(); }
+  }, { rootMargin: "1200px 0px" }).observe(box);
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href$="#book"]');
+    if (a) load();
+  });
+})();
+</script>
 <script>
 /* Fires when someone completes a booking in the embedded HubSpot calendar.
    Reports it to Meta (if the Pixel is installed) and Clarity. */

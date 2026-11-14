@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 const { handleBuilds } = require('./builds-api');
 
 const PORT = process.env.PORT || 8080;
@@ -203,6 +204,7 @@ const MIME_TYPES = {
   '.webm': 'video/webm',
   '.mov': 'video/quicktime',
 };
+const COMPRESSIBLE_EXT = new Set(['.html', '', '.css', '.js', '.json', '.svg', '.xml', '.txt']);
 
 function readBody(req) {
   return new Promise((resolve, reject) => {
@@ -402,6 +404,18 @@ function serveStatic(req, res) {
     const headers = { 'Content-Type': contentType, 'Cache-Control': cacheControl };
     if (isHtml && RB2B_SNIPPET) {
       data = data.toString('utf8').replace('</head>', RB2B_SNIPPET + '</head>');
+    }
+    // Compress text responses (HTML/CSS/JS/JSON/SVG/XML/TXT): ~75% smaller on slow mobile connections.
+    if (COMPRESSIBLE_EXT.has(ext) && data.length > 1024) {
+      headers['Vary'] = 'Accept-Encoding';
+      const accept = req.headers['accept-encoding'] || '';
+      if (/\bbr\b/.test(accept)) {
+        headers['Content-Encoding'] = 'br';
+        data = zlib.brotliCompressSync(data, { params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 5 } });
+      } else if (/\bgzip\b/.test(accept)) {
+        headers['Content-Encoding'] = 'gzip';
+        data = zlib.gzipSync(data, { level: 6 });
+      }
     }
     res.writeHead(200, headers);
     res.end(data);
