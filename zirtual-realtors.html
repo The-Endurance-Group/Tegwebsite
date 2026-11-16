@@ -394,6 +394,233 @@
 .lab .reach-out-eyebrow { color: #e58fb4; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 10px; }
 .lab .reach-out-title { font-family: var(--font-head); color: #fff; font-weight: 700; font-size: clamp(1.4rem, 4vw, 1.9rem); line-height: 1.25; margin: 0 0 10px; }
 .lab .reach-out-sub { color: #cbbfc8; font-size: 1rem; margin: 0 auto; max-width: 520px; }
+/* recruiting animation (18s loop) */
+@keyframes rcL1{0.0%{clip-path:inset(0 100% 0 0)}1.67%{clip-path:inset(0 100% 0 0)}10.56%{clip-path:inset(0 0 0 0)}44.44%{clip-path:inset(0 0 0 0)}46.67%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes rcL2{0.0%{clip-path:inset(0 100% 0 0)}10.56%{clip-path:inset(0 100% 0 0)}16.67%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes rcPrompt{0.0%{opacity:1;transform:none}44.44%{opacity:1;transform:none}47.22%{opacity:0}98.33%{opacity:0}99.44%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcSend{0.0%{background:#c9bfc6;transform:none}17.22%{background:#c9bfc6;transform:none}18.33%{background:var(--pink);transform:scale(.88)}20.0%{background:var(--pink);transform:none}100.0%{background:var(--pink);transform:none}}
+@keyframes rcSrc{0.0%{opacity:0}19.44%{opacity:0}21.11%{opacity:1;transform:none}43.89%{opacity:1;transform:none}46.11%{opacity:0}100.0%{opacity:0}}
+@keyframes rcR1{0.0%{opacity:0;transform:translateY(6px)}21.11%{opacity:0;transform:translateY(6px)}22.78%{opacity:1;transform:none}43.89%{opacity:1;transform:none}46.11%{opacity:0}100.0%{opacity:0}}
+@keyframes rcSp1{0.0%{opacity:0}21.11%{opacity:0}22.78%{opacity:1}27.78%{opacity:1}28.89%{opacity:0}100.0%{opacity:0}}
+@keyframes rcCk1{0.0%{opacity:0;transform:scale(.4)}27.78%{opacity:0;transform:scale(.4)}29.17%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcR2{0.0%{opacity:0;transform:translateY(6px)}26.11%{opacity:0;transform:translateY(6px)}27.78%{opacity:1;transform:none}43.89%{opacity:1;transform:none}46.11%{opacity:0}100.0%{opacity:0}}
+@keyframes rcSp2{0.0%{opacity:0}26.11%{opacity:0}27.78%{opacity:1}32.78%{opacity:1}33.89%{opacity:0}100.0%{opacity:0}}
+@keyframes rcCk2{0.0%{opacity:0;transform:scale(.4)}32.78%{opacity:0;transform:scale(.4)}34.17%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcR3{0.0%{opacity:0;transform:translateY(6px)}31.11%{opacity:0;transform:translateY(6px)}32.78%{opacity:1;transform:none}43.89%{opacity:1;transform:none}46.11%{opacity:0}100.0%{opacity:0}}
+@keyframes rcSp3{0.0%{opacity:0}31.11%{opacity:0}32.78%{opacity:1}37.78%{opacity:1}38.89%{opacity:0}100.0%{opacity:0}}
+@keyframes rcCk3{0.0%{opacity:0;transform:scale(.4)}37.78%{opacity:0;transform:scale(.4)}39.17%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcLg1{0.0%{opacity:0;transform:scale(.6)}22.22%{opacity:0;transform:scale(.6)}24.44%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcLg2{0.0%{opacity:0;transform:scale(.6)}27.22%{opacity:0;transform:scale(.6)}29.44%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcLg3{0.0%{opacity:0;transform:scale(.6)}32.22%{opacity:0;transform:scale(.6)}34.44%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcBrief{0.0%{opacity:0}46.11%{opacity:0}48.33%{opacity:1}95.56%{opacity:1}98.33%{opacity:0}100.0%{opacity:0}}
+@keyframes rcB1{0.0%{opacity:0;transform:translateY(6px)}47.78%{opacity:0;transform:translateY(6px)}49.72%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcB2{0.0%{opacity:0;transform:translateY(6px)}50.0%{opacity:0;transform:translateY(6px)}51.94%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcB3{0.0%{opacity:0;transform:translateY(6px)}52.22%{opacity:0;transform:translateY(6px)}54.17%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcC1{0.0%{opacity:0;transform:scale(.7)}55.56%{opacity:0;transform:scale(.7)}57.22%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcC2{0.0%{opacity:0;transform:scale(.7)}57.22%{opacity:0;transform:scale(.7)}58.89%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcC3{0.0%{opacity:0;transform:scale(.7)}58.89%{opacity:0;transform:scale(.7)}60.56%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcDim{0.0%{opacity:1}61.11%{opacity:1}63.33%{opacity:.18}100.0%{opacity:.18}}
+@keyframes rcDraft{0.0%{opacity:0;transform:translateY(14px)}62.22%{opacity:0;transform:translateY(14px)}65.0%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcSent{0.0%{opacity:0;transform:scale(.8)}70.0%{opacity:0;transform:scale(.8)}72.22%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes rcSpin{0.0%{transform:rotate(0)}100.0%{transform:rotate(2520deg)}}
+.lab .mock.rec { position: relative; height: 196px; padding: 12px 14px; overflow: hidden; }
+.lab .ex-recruit .ex-art { aspect-ratio: auto; min-height: 232px; }
+.lab .rec .rc-prompt { display: flex; align-items: center; gap: 8px; border: 1.5px solid var(--line); border-radius: 12px; padding: 7px 8px 7px 11px; font-size: .78rem; font-weight: 700; line-height: 1.3; animation: rcPrompt 18s linear infinite; }
+.lab .rec .rc-txt { flex: 1; }
+.lab .rec .rc-txt span { display: block; white-space: nowrap; }
+.lab .rec .rc-txt .l1 { animation: rcL1 18s linear infinite; }
+.lab .rec .rc-txt .l2 { animation: rcL2 18s linear infinite; }
+.lab .rec .rc-send { width: 24px; height: 24px; border-radius: 50%; flex: none; display: grid; place-items: center; color: #fff; font-size: .8rem; background: #c9bfc6; animation: rcSend 18s linear infinite; }
+.lab .rec .rc-src { margin-top: 9px; display: grid; gap: 6px; animation: rcSrc 18s linear infinite; }
+.lab .rec .rc-src li { display: flex; align-items: center; gap: 8px; font-size: .74rem; font-weight: 600; color: var(--plum-soft); }
+.lab .rec .rc-src .lbl { flex: 1; white-space: nowrap; }
+.lab .rec .lg { display: inline-flex; gap: 4px; }
+.lab .rec .lg i { font-style: normal; display: inline-grid; place-items: center; height: 20px; min-width: 20px; padding: 0 6px; border-radius: 6px; font-size: .62rem; font-weight: 800; color: #fff; background: var(--plum-soft); }
+.lab .rec .lg { align-items: center; }
+.lab .rec .lg img { height: 20px; width: auto; display: block; border-radius: 5px; }
+.lab .rec .lg img[alt="BrokerMetrics"], .lab .rec .lg img[alt="Courted"], .lab .rec .lg img[alt="HubSpot"], .lab .rec .lg img[alt="Salesforce"] { border-radius: 0; }
+.lab .rec .lg img[alt="BrokerMetrics"] { height: 24px; }
+.lab .rec .lg i.li { background: #0a66c2; } .lab .rec .lg i.fb { background: #1877f2; } .lab .rec .lg i.ig { background: linear-gradient(45deg,#f9a03f,#e1306c,#833ab4); } .lab .rec .lg i.zl { background: #006aff; }
+.lab .rec .st { position: relative; width: 16px; height: 16px; flex: none; }
+.lab .rec .sp { position: absolute; inset: 1px; border: 2px solid var(--line); border-top-color: var(--pink); border-radius: 50%; opacity: 0; animation: rcSpin 2.4s linear infinite; }
+.lab .rec .ck { position: absolute; inset: 0; border-radius: 50%; background: var(--teal); color: #fff; font-size: .62rem; display: grid; place-items: center; opacity: 0; }
+.lab .rec .rc-brief { position: absolute; inset: 12px 14px; opacity: 0; animation: rcBrief 18s linear infinite; }
+.lab .rec .rc-brief .mock-h { margin-bottom: 2px; }
+.lab .rec .rc-brief .mrow { padding: 6px 0; }
+.lab .rec .rc-list { animation: rcDim 18s linear infinite; }
+.lab .rec .rc-draft { position: absolute; left: 0; right: 0; bottom: -2px; background: var(--teal-tint); border-radius: 10px; padding: 8px 10px; font-size: .72rem; line-height: 1.35; color: var(--plum); opacity: 0; animation: rcDraft 18s linear infinite; }
+.lab .rec .rc-draft b img { display: inline-block; height: 12px; width: auto; vertical-align: -1px; margin-right: 6px; }
+.lab .rec .rc-draft b { display: block; font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 2px; }
+.lab .rec .rc-sent { position: absolute; right: 8px; top: -9px; background: var(--teal-dark); color: #fff; font-size: .62rem; font-weight: 700; padding: 3px 8px; border-radius: 999px; opacity: 0; animation: rcSent 18s linear infinite; }
+@media (max-width: 819px) { .lab .mock.rec { height: 204px; } .lab .rec .rc-prompt { font-size: .72rem; } .lab .rec .rc-src li { font-size: .7rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .lab .rec * { animation: none !important; }
+  .lab .rec .rc-prompt, .lab .rec .rc-src, .lab .rec .rc-draft, .lab .rec .rc-sent { display: none; }
+  .lab .rec .rc-brief { opacity: 1; }
+}
+.lab .rec .rc-src li:nth-child(1) { animation: rcR1 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(1) .sp { animation: rcSp1 18s linear infinite, rcSpin 2.4s linear infinite; }
+.lab .rec .rc-src li:nth-child(1) .ck { animation: rcCk1 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(1) .lg i, .lab .rec .rc-src li:nth-child(1) .lg img { animation: rcLg1 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(1) { animation: rcB1 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(1) em { animation: rcC1 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) { animation: rcR2 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) .sp { animation: rcSp2 18s linear infinite, rcSpin 2.4s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) .ck { animation: rcCk2 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(2) .lg i, .lab .rec .rc-src li:nth-child(2) .lg img { animation: rcLg2 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(2) { animation: rcB2 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(2) em { animation: rcC2 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) { animation: rcR3 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) .sp { animation: rcSp3 18s linear infinite, rcSpin 2.4s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) .ck { animation: rcCk3 18s linear infinite; }
+.lab .rec .rc-src li:nth-child(3) .lg i, .lab .rec .rc-src li:nth-child(3) .lg img { animation: rcLg3 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(3) { animation: rcB3 18s linear infinite; }
+.lab .rec .rc-list .mrow:nth-of-type(3) em { animation: rcC3 18s linear infinite; }
+@media (min-width: 820px) {
+  .lab .ex-recruit .ex-art, .lab .ex-yours .ex-media { aspect-ratio: 16 / 10; min-height: 0; }
+  .lab .ex-recruit .ex-art { padding: 8px; }
+  .lab .mock.rec { height: 186px; }
+}
+@media (min-width: 1100px) {
+  .lab .ex-recruit .ex-art { padding: 18px; }
+  .lab .mock.rec { zoom: 1.2; width: calc(100% / 1.2); max-width: none; height: 196px; }
+}
+/* how-it-works animation: JS adds .hw-ready, then .hw-play while in view */
+.lab #how.hw-ready .flow li { opacity: .28; transform: translateY(10px); }
+.lab #how.hw-ready .flow li:not(:last-child)::after { opacity: .2; }
+.lab #how.hw-ready .callout { opacity: 0; transform: translateY(8px); }
+.lab #how.hw-play .flow li { animation: hwIn .6s ease-out both; }
+.lab #how.hw-play .flow li .fi { animation: hwPop .6s ease-out both; position: relative; }
+.lab #how.hw-play .flow li:not(:last-child)::after { animation: hwArrow .5s ease-out both; }
+.lab #how.hw-play .callout { animation: hwCall .6s ease-out 4.7s both; }
+.lab #how .flow li .fi::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--pink); opacity: 0; }
+.lab #how.hw-play .flow li:nth-child(odd) .fi::before { animation: hwRing 1.1s ease-out 2 both; }
+.lab #how .flow li:nth-child(even) { overflow: hidden; }
+.lab #how.hw-ready .flow li:nth-child(even)::before { content: ""; position: absolute; left: 16px; right: 16px; bottom: 9px; height: 3px; border-radius: 3px; background: linear-gradient(var(--gold), var(--gold)) no-repeat left center / 0% 100%, rgba(255,255,255,.14); }
+.lab #how.hw-play .flow li:nth-child(even)::before { animation: hwBar .9s ease-out both; }
+.lab #how.hw-play .flow li:last-child { animation: hwIn .6s ease-out 3.6s both, hwGlow 1.6s ease-in-out 4.2s 2; }
+@keyframes hwIn{from{opacity:.28;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes hwCall{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes hwPop{0%{transform:scale(.6)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+@keyframes hwArrow{from{opacity:.2}to{opacity:1}}
+@keyframes hwRing{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.9);opacity:0}}
+@keyframes hwBar{from{background-size:0% 100%,100% 100%}to{background-size:100% 100%,100% 100%}}
+@keyframes hwGlow{0%,100%{box-shadow:0 0 0 0 rgba(201,162,75,0)}50%{box-shadow:0 0 0 6px rgba(201,162,75,.28)}}
+.lab #how.hw-play .flow li:nth-child(1) { animation-delay: 0.0s; }
+.lab #how.hw-play .flow li:nth-child(1) .fi { animation-delay: 0.15s; }
+.lab #how.hw-play .flow li:nth-child(1) .fi::before { animation-delay: 0.3s; }
+.lab #how.hw-play .flow li:nth-child(1):not(:last-child)::after { animation-delay: 0.7s; }
+.lab #how.hw-play .flow li:nth-child(1):nth-child(even)::before { animation-delay: 0.2s; }
+.lab #how.hw-play .flow li:nth-child(2) { animation-delay: 0.9s; }
+.lab #how.hw-play .flow li:nth-child(2) .fi { animation-delay: 1.05s; }
+.lab #how.hw-play .flow li:nth-child(2) .fi::before { animation-delay: 1.2s; }
+.lab #how.hw-play .flow li:nth-child(2):not(:last-child)::after { animation-delay: 1.6s; }
+.lab #how.hw-play .flow li:nth-child(2):nth-child(even)::before { animation-delay: 1.1s; }
+.lab #how.hw-play .flow li:nth-child(3) { animation-delay: 1.8s; }
+.lab #how.hw-play .flow li:nth-child(3) .fi { animation-delay: 1.95s; }
+.lab #how.hw-play .flow li:nth-child(3) .fi::before { animation-delay: 2.1s; }
+.lab #how.hw-play .flow li:nth-child(3):not(:last-child)::after { animation-delay: 2.5s; }
+.lab #how.hw-play .flow li:nth-child(3):nth-child(even)::before { animation-delay: 2.0s; }
+.lab #how.hw-play .flow li:nth-child(4) { animation-delay: 2.7s; }
+.lab #how.hw-play .flow li:nth-child(4) .fi { animation-delay: 2.85s; }
+.lab #how.hw-play .flow li:nth-child(4) .fi::before { animation-delay: 3.0s; }
+.lab #how.hw-play .flow li:nth-child(4):not(:last-child)::after { animation-delay: 3.4s; }
+.lab #how.hw-play .flow li:nth-child(4):nth-child(even)::before { animation-delay: 2.9s; }
+.lab #how.hw-play .flow li:nth-child(5) { animation-delay: 3.6s, 4.2s; }
+.lab #how.hw-play .flow li:nth-child(5) .fi { animation-delay: 3.75s; }
+.lab #how.hw-play .flow li:nth-child(5) .fi::before { animation-delay: 3.9s; }
+.lab #how.hw-play .flow li:nth-child(5):not(:last-child)::after { animation-delay: 4.3s; }
+.lab #how.hw-play .flow li:nth-child(5):nth-child(even)::before { animation-delay: 3.8s; }
+@media (prefers-reduced-motion: reduce) { .lab #how .flow li, .lab #how .callout { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #how .flow li::before, .lab #how .flow li .fi::before, .lab #how .flow li:not(:last-child)::after { animation: none !important; } .lab #how .flow li:nth-child(even)::before { display: none; } .lab #how .flow li:not(:last-child)::after { opacity: 1 !important; } }
+/* premium-service animation: JS adds .pm-ready, then .pm-play while in view */
+.lab #premium.pm-ready .vs .short li, .lab #premium.pm-ready .safe-row li { opacity: 0; transform: translateY(8px); }
+.lab #premium.pm-ready .vs .instead { opacity: 0; }
+.lab #premium.pm-ready .vs .could { opacity: .3; }
+.lab #premium.pm-ready .vs .instead li span { text-decoration: none; background: linear-gradient(#7a6f78, #7a6f78) no-repeat 0 58% / 0% 2px; }
+.lab #premium.pm-play .vs .instead { animation: pmFade .5s ease-out both; }
+.lab #premium.pm-play .vs .could { animation: pmCould .7s ease-out 2.8s both; }
+.lab #premium.pm-play .vs .instead li { animation: pmItem .45s ease-out both, pmDim .4s ease-out both; }
+.lab #premium.pm-play .vs .instead li span { animation: pmStrike .55s ease-out both; }
+.lab #premium.pm-play .vs .instead li::before, .lab #premium.pm-play .vs .could li::before { animation: pmPop .45s ease-out both; }
+.lab #premium.pm-play .vs .could li { animation: pmItem .5s ease-out both; }
+.lab #premium.pm-play .safe-row li { animation: pmItem .5s ease-out both; }
+@keyframes pmFade{from{opacity:0}to{opacity:1}}
+@keyframes pmCould{0%{opacity:.3;box-shadow:0 18px 40px -12px rgba(58,99,96,.0)}60%{opacity:1;box-shadow:0 0 0 8px rgba(201,162,75,.3),0 18px 40px -12px rgba(58,99,96,.55)}100%{opacity:1;box-shadow:0 18px 40px -12px rgba(58,99,96,.55)}}
+@keyframes pmItem{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes pmDim{from{color:#2b2430}to{color:#7a6f78}}
+@keyframes pmStrike{from{background-size:0% 2px}to{background-size:100% 2px}}
+@keyframes pmPop{0%{transform:scale(.4)}65%{transform:scale(1.2)}100%{transform:scale(1)}}
+.lab #premium.pm-play .vs .instead li:nth-child(1) { animation-delay: 0.3s, 0.75s; }
+.lab #premium.pm-play .vs .instead li:nth-child(1) span { animation-delay: 0.75s; }
+.lab #premium.pm-play .vs .instead li:nth-child(1)::before { animation-delay: 0.75s; }
+.lab #premium.pm-play .vs .instead li:nth-child(2) { animation-delay: 1.0s, 1.45s; }
+.lab #premium.pm-play .vs .instead li:nth-child(2) span { animation-delay: 1.45s; }
+.lab #premium.pm-play .vs .instead li:nth-child(2)::before { animation-delay: 1.45s; }
+.lab #premium.pm-play .vs .instead li:nth-child(3) { animation-delay: 1.7s, 2.15s; }
+.lab #premium.pm-play .vs .instead li:nth-child(3) span { animation-delay: 2.15s; }
+.lab #premium.pm-play .vs .instead li:nth-child(3)::before { animation-delay: 2.15s; }
+.lab #premium.pm-play .vs .could li:nth-child(1) { animation-delay: 3.1s; }
+.lab #premium.pm-play .vs .could li:nth-child(1)::before { animation-delay: 3.3s; }
+.lab #premium.pm-play .vs .could li:nth-child(2) { animation-delay: 3.8s; }
+.lab #premium.pm-play .vs .could li:nth-child(2)::before { animation-delay: 4.0s; }
+.lab #premium.pm-play .vs .could li:nth-child(3) { animation-delay: 4.5s; }
+.lab #premium.pm-play .vs .could li:nth-child(3)::before { animation-delay: 4.7s; }
+.lab #premium.pm-play .safe-row li:nth-child(1) { animation-delay: 5.5s; }
+.lab #premium.pm-play .safe-row li:nth-child(2) { animation-delay: 5.8s; }
+.lab #premium.pm-play .safe-row li:nth-child(3) { animation-delay: 6.1s; }
+.lab #premium.pm-play .safe-row li:nth-child(4) { animation-delay: 6.4s; }
+.lab #premium.pm-play .safe-row li:nth-child(5) { animation-delay: 6.7s; }
+@media (prefers-reduced-motion: reduce) { .lab #premium .vs .short li, .lab #premium .safe-row li, .lab #premium .vs > div { opacity: 1 !important; transform: none !important; animation: none !important; } }
+/* your-idea animation (14.5s loop): ideas stay and fill the box */
+@keyframes yoPlus{0.0%{opacity:1;transform:none}6.9%{opacity:1;transform:none}9.66%{opacity:0;transform:scale(.6)}93.79%{opacity:0;transform:scale(.6)}97.93%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB1{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}9.66%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}12.07%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}13.79%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT1{0.0%{clip-path:inset(0 100% 0 0)}11.03%{clip-path:inset(0 100% 0 0)}16.55%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC1{0.0%{opacity:0;transform:translateY(5px) scale(.9)}17.24%{opacity:0;transform:translateY(5px) scale(.9)}19.66%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB2{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}20.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}22.41%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}24.14%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT2{0.0%{clip-path:inset(0 100% 0 0)}21.38%{clip-path:inset(0 100% 0 0)}26.9%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC2{0.0%{opacity:0;transform:translateY(5px) scale(.9)}27.59%{opacity:0;transform:translateY(5px) scale(.9)}30.0%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB3{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}30.34%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}32.76%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}34.48%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT3{0.0%{clip-path:inset(0 100% 0 0)}31.72%{clip-path:inset(0 100% 0 0)}37.24%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC3{0.0%{opacity:0;transform:translateY(5px) scale(.9)}37.93%{opacity:0;transform:translateY(5px) scale(.9)}40.34%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB4{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}40.69%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}43.1%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}44.83%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT4{0.0%{clip-path:inset(0 100% 0 0)}42.07%{clip-path:inset(0 100% 0 0)}47.59%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC4{0.0%{opacity:0;transform:translateY(5px) scale(.9)}48.28%{opacity:0;transform:translateY(5px) scale(.9)}50.69%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB5{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}51.03%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}53.45%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}55.17%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT5{0.0%{clip-path:inset(0 100% 0 0)}52.41%{clip-path:inset(0 100% 0 0)}57.93%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC5{0.0%{opacity:0;transform:translateY(5px) scale(.9)}58.62%{opacity:0;transform:translateY(5px) scale(.9)}61.03%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@keyframes yoB6{0.0%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}61.38%{opacity:0;transform:scale(.6);box-shadow:0 0 0 0 rgba(201,162,75,0)}63.79%{opacity:1;transform:scale(1.06);box-shadow:0 0 0 0 rgba(201,162,75,0)}65.52%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}75.86%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}80.69%{opacity:1;transform:none;box-shadow:0 0 0 5px rgba(201,162,75,.3)}86.21%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}88.97%{opacity:1;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}93.1%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}100.0%{opacity:0;transform:none;box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+@keyframes yoT6{0.0%{clip-path:inset(0 100% 0 0)}62.76%{clip-path:inset(0 100% 0 0)}68.28%{clip-path:inset(0 0 0 0)}100.0%{clip-path:inset(0 0 0 0)}}
+@keyframes yoC6{0.0%{opacity:0;transform:translateY(5px) scale(.9)}68.97%{opacity:0;transform:translateY(5px) scale(.9)}71.38%{opacity:1;transform:none}100.0%{opacity:1;transform:none}}
+@media (min-width: 820px) { .lab .ex-yours .ex-plus.yo { aspect-ratio: 16 / 10; } }
+.lab .ex-plus.yo { position: relative; overflow: hidden; display: block; }
+.lab .yo .yo-plus { position: absolute; inset: 0; display: grid; place-items: center; animation: yoPlus 14.5s linear infinite; }
+.lab .yo .yo-grid { position: absolute; inset: 12px 12px 18px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 14px 10px; }
+.lab .yo .yo-b { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 6px 8px; text-align: center; background: rgba(255,255,255,.07); border: 1.5px solid rgba(201,162,75,.6); border-radius: 16px; opacity: 0; }
+.lab .yo .yo-b::before, .lab .yo .yo-b::after { content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,.07); border: 1.5px solid rgba(201,162,75,.6); }
+.lab .yo .yo-b::before { width: 7px; height: 7px; left: 16px; bottom: -11px; }
+.lab .yo .yo-b::after { width: 4px; height: 4px; left: 10px; bottom: -17px; }
+.lab .yo .yo-t { display: block; font-family: var(--font-head); font-weight: 700; font-size: .78rem; line-height: 1.2; color: #fff; font-size: clamp(.74rem, 1.7vw, .95rem); }
+.lab .yo .yo-c { display: inline-block; font-family: var(--font-body); font-weight: 700; font-size: .62rem; line-height: 1; color: #1d3a37; background: #cfe7e3; padding: 5px 9px; border-radius: 999px; opacity: 0; }
+.lab .yo .yo-b:nth-child(1) { animation: yoB1 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(1) .yo-t { animation: yoT1 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(1) .yo-c { animation: yoC1 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(2) { animation: yoB2 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(2) .yo-t { animation: yoT2 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(2) .yo-c { animation: yoC2 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(3) { animation: yoB3 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(3) .yo-t { animation: yoT3 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(3) .yo-c { animation: yoC3 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(4) { animation: yoB4 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(4) .yo-t { animation: yoT4 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(4) .yo-c { animation: yoC4 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(5) { animation: yoB5 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(5) .yo-t { animation: yoT5 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(5) .yo-c { animation: yoC5 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(6) { animation: yoB6 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(6) .yo-t { animation: yoT6 14.5s linear infinite; }
+.lab .yo .yo-b:nth-child(6) .yo-c { animation: yoC6 14.5s linear infinite; }
+@media (max-width: 819px) { .lab .ex-plus.yo { aspect-ratio: auto; min-height: 290px; } .lab .yo .yo-plus { font-size: 5.5rem; } .lab .yo .yo-t { font-size: .72rem; } .lab .yo .yo-c { font-size: .56rem; padding: 4px 7px; white-space: nowrap; } }
+@media (prefers-reduced-motion: reduce) { .lab .yo * { animation: none !important; } .lab .yo .yo-grid { display: none; } }
 
 /* Zirtual x TEG additions */
 .lab .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -434,6 +661,9 @@
 .lab .reach-out { margin-top: 44px; padding-top: 0; border-top: 0; }
 .lab .faq { max-width: 780px; margin-inline: auto; }
 .lab .btn-row.cx { justify-content: center; }
+.lab #how .flow.dark3 li { padding-bottom: 30px; }
+.lab #how.hw-play .flow.dark3 li:nth-child(3) { animation-delay: 1.8s, 2.4s; }
+.lab #how.hw-play .flow.dark3 ~ .callout { animation-delay: 3.2s; }
 .lab .btn-row.cx + .plan-urgent { margin: 18px auto 22px; }
 .lab .team-mini .tm span { display: block; }
 .lab .week .note { text-align: center; }
@@ -629,11 +859,11 @@
     <h2>What is the Zirtual x TEG AI offer?</h2>
     <p class="answer">This is a human-led AI setup for real estate agents and brokers who already work with a Zirtual assistant. Start with a free 30-minute call. If you want us to build, we build what we agreed for a fixed $998, install it, and check in a week later. You approve everything.</p>
     <h3 class="flow-label">Key takeaways</h3>
-    <ul class="vlist"><li>The first 30-minute call is free. The $998 only applies if you want us to build.</li><li>$998 is fixed and one time. There is no subscription and no monthly fee to us.</li><li>Daily brief, follow-ups, listing content and showing prep, drafted for you to approve.</li><li>A real person is on every call, working alongside your Zirtual assistant.</li></ul>
+    <ul class="vlist"><li>The first 30-minute call is free. The $998 only applies if you want us to build.</li><li>$998 is fixed and one time. There is no subscription and no monthly fee to us.</li><li>A daily brief, a recruiting system and your listing process, built for you and drafted for you to approve.</li><li>A real person is on every call, working alongside your Zirtual assistant.</li></ul>
   </div>
 </section>
 <!-- HUMAN-LED -->
-<section id="human" class="alt">
+<section id="premium" class="alt">
   <div class="container">
     <div class="center">
       <p class="eyebrow">Human-led AI</p>
@@ -643,7 +873,7 @@
     <div class="vs bold">
       <div class="instead">
         <h3>Not this</h3>
-        <ul class="short"><li>Software you figure out</li><li>Tutorials and prompts</li><li>A support ticket</li></ul>
+        <ul class="short"><li><span>Software you figure out</span></li><li><span>Tutorials and prompts</span></li><li><span>A support ticket</span></li></ul>
       </div>
       <div class="could">
         <h3>This</h3>
@@ -670,49 +900,41 @@
         <h3>Daily AI executive brief</h3>
         <p>Scans your email, iMessage and Notes each morning and shows who needs a reply, with one-click draft replies on a simple page you open.</p>
       </article>
+      <article class="ex ex-recruit">
+        <div class="ex-media ex-art" role="img" aria-label="Animation: a broker asks the AI to find the most productive agents in Houston to recruit. It checks agent data and social profiles, skips people already in the CRM, then returns a ranked list with a drafted message that is sent and logged.">
+          <div class="mock rec" aria-hidden="true">
+            <div class="rc-prompt">
+              <div class="rc-txt"><span class="l1">Find me the most productive agents</span><span class="l2">in Houston I can recruit</span></div>
+              <span class="rc-send">&uarr;</span>
+            </div>
+            <ul class="rc-src">
+              <li><span class="lbl">Top producers</span><span class="lg"><img src="images/logos/courted.png" alt="Courted" width="20" height="20"><img src="images/logos/brokermetrics.png" alt="BrokerMetrics" width="64" height="24"></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
+              <li><span class="lbl">Reading profiles</span><span class="lg"><img src="images/logos/linkedin.png" alt="LinkedIn" width="20" height="20"><img src="images/logos/facebook.png" alt="Facebook" width="20" height="20"><img src="images/logos/instagram.png" alt="Instagram" width="20" height="20"><img src="images/logos/zillow.png" alt="Zillow" width="20" height="20"></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
+              <li><span class="lbl">Skipping your contacts</span><span class="lg"><img src="images/logos/hubspot.png" alt="HubSpot" width="20" height="20"><img src="images/logos/salesforce.png" alt="Salesforce" width="28" height="20"></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li>
+            </ul>
+            <div class="rc-brief">
+              <p class="mock-h">Recruiting brief <span>Houston</span></p>
+              <div class="rc-list">
+                <div class="mrow"><b>1</b><span class="mname">Marcus Delgado<small>38 closings · trending up</small></span><em class="chip-warm">Warm intro</em></div>
+                <div class="mrow"><b>2</b><span class="mname">Priya Raman<small>31 closings · team split</small></span><em class="chip-draft">Draft ready</em></div>
+                <div class="mrow"><b>3</b><span class="mname">Tyler Brooks<small>27 closings · merging</small></span><em class="chip-draft">Draft ready</em></div>
+              </div>
+              <div class="rc-draft"><span class="rc-sent">Sent &middot; Logged to CRM &check;</span><b><img src="images/logos/gmail.png" alt="Gmail" width="16" height="12">Draft for Marcus</b>Hi Marcus, congrats on a big year. I'd love to share how we support top producers. Coffee this week?</div>
+            </div>
+          </div>
+        </div>
+        <p class="ex-tag tag-b">For brokers</p>
+        <h3>A recruiting system</h3>
+        <p>The right agents in your market, ranked, with warm introductions and personal outreach drafted.</p>
+      </article>
       <article class="ex">
         <div class="ex-media"><video controls playsinline preload="metadata" poster="videos/listing-skills-poster.jpg" aria-label="Demo: a listing process turned into steps the AI follows from one message"><source src="videos/listing-skills.mp4" type="video/mp4"></video></div>
         <p class="ex-tag">For agents and teams</p>
         <h3>Your listing process, automated</h3>
         <p>We turn your listing process into steps the AI follows. One message starts the whole checklist.</p>
       </article>
-      <article class="ex">
-        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Listing content<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Listing post<small>In your voice</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Market update<small>Monthly email</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Flyer text<small>Ready to review</small></span><em class="chip-draft">Draft ready</em></div></div></div>
-        <p class="cap">Example listing content</p>
-        <p class="ex-tag">For agents and teams</p>
-        <h3>Listing and market-update content</h3>
-        <p>Posts, emails and market updates drafted in your voice for you to review.</p>
-      </article>
-      <article class="ex">
-        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Follow-ups<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Past client<small>Check-in note</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Sphere<small>Holiday note</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Past client<small>Closing anniversary</small></span><em class="chip-warm">Due soon</em></div></div></div>
-        <p class="cap">Example follow-ups</p>
-        <p class="ex-tag">For agents and teams</p>
-        <h3>Follow-up sequences</h3>
-        <p>Check-ins for past clients and your sphere, drafted on a schedule for you to approve.</p>
-      </article>
-      <article class="ex">
-        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Showing prep<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Showing brief<small>Property facts and talking points</small></span><em class="chip-draft">Ready</em></div><div class="mrow"><b>2</b><span class="mname">Sign-in follow-up<small>A draft for each guest</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Checklist<small>Before you leave the office</small></span><em class="chip-soft">Ready</em></div></div></div>
-        <p class="cap">Example showing prep</p>
-        <p class="ex-tag">For agents and teams</p>
-        <h3>Open house and showing prep</h3>
-        <p>A one-page brief before each showing or open house, with talking points and follow-up drafts after.</p>
-      </article>
-      <article class="ex">
-        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Drafts<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">CMA write-up<small>From the comps you provide</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Listing description<small>A few lengths to choose from</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Fact check<small>You review every detail</small></span><em class="chip-warm">You check</em></div></div></div>
-        <p class="cap">Example drafts</p>
-        <p class="ex-tag">For agents and teams</p>
-        <h3>CMA and listing-description drafts</h3>
-        <p>First drafts of your CMA write-up and listing description from the details you provide. You check every fact.</p>
-      </article>
-      <article class="ex">
-        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Weekly review<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Not in touch lately<small>People to reach out to</small></span><em class="chip-warm">Review</em></div><div class="mrow"><b>2</b><span class="mname">Draft note<small>One for each person</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Your call<small>Approve or skip</small></span><em class="chip-soft">You decide</em></div></div></div>
-        <p class="cap">Example weekly review</p>
-        <p class="ex-tag">For everyone</p>
-        <h3>A weekly who-have-I-not-talked-to review</h3>
-        <p>Once a week, a short list of the people you have not been in touch with lately, with a draft note for each.</p>
-      </article>
       <article class="ex ex-yours">
-        <div class="ex-media ex-plus" aria-hidden="true"><span>+</span></div>
+        <div class="ex-media ex-plus yo" role="img" aria-label="Animation: a plus sign turns into a growing set of thought bubbles, such as chasing overdue follow-ups, summarizing open deals, drafting a market update, sorting an inbox, prepping showings and finding agents ready to move. Each one gets a checked result, until the box is full."><span class="yo-plus" aria-hidden="true">+</span><div class="yo-grid" aria-hidden="true"><div class="yo-b"><span class="yo-t">Chase overdue follow-ups</span><span class="yo-c">&check; Follow-ups drafted</span></div><div class="yo-b"><span class="yo-t">Summarize every open deal</span><span class="yo-c">&check; Deals summarized</span></div><div class="yo-b"><span class="yo-t">Draft my market update</span><span class="yo-c">&check; Update drafted</span></div><div class="yo-b"><span class="yo-t">Sort my inbox</span><span class="yo-c">&check; Inbox sorted</span></div><div class="yo-b"><span class="yo-t">Prep my showings</span><span class="yo-c">&check; Briefs ready</span></div><div class="yo-b"><span class="yo-t">Find agents ready to move</span><span class="yo-c">&check; Ranked list ready</span></div></div></div>
         <p class="ex-tag">Your idea</p>
         <h3>Don't see it here? Tell us what you want AI to do.</h3>
         <p>On the free call we talk it through. If it fits our scope, we build it.</p>
@@ -816,7 +1038,6 @@
     <div class="panel covers">
       <h3>What the $998 covers</h3>
       <ul class="ticks"><li>A free 30-minute first call, whether or not you build</li><li>The builds we agree on that call, within scope</li><li>Installation and a walk-through with you, including computer access for the daily brief if you want it</li><li>A follow-up call about a week later to make sure everything works</li></ul>
-      <p class="note">Agreed scope means what we agree on the free call, as long as it fits the four buildable types listed in the scope box.</p>
     </div>
   </div>
 </section>
@@ -953,6 +1174,22 @@
 
 
 <script src="js/main.js?v=20260930" defer></script>
+<script>
+/* Scroll-triggered reveals for #how and #premium, same approach as ai-for-agents-and-brokers.html */
+(function () {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  [['how', 'hw', 0.4], ['premium', 'pm', 0.35]].forEach(function (c) {
+    var s = document.getElementById(c[0]);
+    if (!s) return;
+    s.classList.add(c[1] + '-ready');
+    new IntersectionObserver(function (e) {
+      var r = e[0].intersectionRatio;
+      if (r >= c[2]) s.classList.add(c[1] + '-play');
+      else if (r === 0) s.classList.remove(c[1] + '-play');
+    }, { threshold: [0, c[2]] }).observe(s);
+  });
+})();
+</script>
 <script>
 /* Load the HubSpot calendar only when the visitor nears it, so it does not slow the first screen. */
 (function () {
