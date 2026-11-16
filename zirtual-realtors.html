@@ -673,6 +673,67 @@
 .lab .faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--pink-dark); }
 .lab .faq details[open] summary::after { content: "\2212"; }
 .lab .faq details p { padding: 0 22px 20px; color: var(--plum-soft); }
+/* week-in-life reveal: JS adds .wk-ready, then .wk-play while in view */
+.lab #week.wk-ready .vs .short li, .lab #week.wk-ready .safe-row li { opacity: 0; transform: translateY(8px); }
+.lab #week.wk-ready .vs .instead { opacity: 0; }
+.lab #week.wk-ready .vs .could { opacity: .3; }
+.lab #week.wk-ready .vs .instead li span { text-decoration: none; background: linear-gradient(#7a6f78, #7a6f78) no-repeat 0 58% / 0% 2px; }
+.lab #week.wk-play .vs .instead { animation: pmFade .5s ease-out both; }
+.lab #week.wk-play .vs .could { animation: pmCould .7s ease-out 2.8s both; }
+.lab #week.wk-play .vs .instead li { animation: pmItem .45s ease-out both, pmDim .4s ease-out both; }
+.lab #week.wk-play .vs .instead li span { animation: pmStrike .55s ease-out both; }
+.lab #week.wk-play .vs .instead li::before, .lab #week.wk-play .vs .could li::before { animation: pmPop .45s ease-out both; }
+.lab #week.wk-play .vs .could li { animation: pmItem .5s ease-out both; }
+.lab #week.wk-play .safe-row li { animation: pmItem .5s ease-out both; }
+.lab #week.wk-play .vs .instead li:nth-child(1) { animation-delay: 0.3s, 0.75s; }
+.lab #week.wk-play .vs .instead li:nth-child(1) span { animation-delay: 0.75s; }
+.lab #week.wk-play .vs .instead li:nth-child(1)::before { animation-delay: 0.75s; }
+.lab #week.wk-play .vs .instead li:nth-child(2) { animation-delay: 1.0s, 1.45s; }
+.lab #week.wk-play .vs .instead li:nth-child(2) span { animation-delay: 1.45s; }
+.lab #week.wk-play .vs .instead li:nth-child(2)::before { animation-delay: 1.45s; }
+.lab #week.wk-play .vs .instead li:nth-child(3) { animation-delay: 1.7s, 2.15s; }
+.lab #week.wk-play .vs .instead li:nth-child(3) span { animation-delay: 2.15s; }
+.lab #week.wk-play .vs .instead li:nth-child(3)::before { animation-delay: 2.15s; }
+.lab #week.wk-play .vs .could li:nth-child(1) { animation-delay: 3.1s; }
+.lab #week.wk-play .vs .could li:nth-child(1)::before { animation-delay: 3.3s; }
+.lab #week.wk-play .vs .could li:nth-child(2) { animation-delay: 3.8s; }
+.lab #week.wk-play .vs .could li:nth-child(2)::before { animation-delay: 4.0s; }
+.lab #week.wk-play .vs .could li:nth-child(3) { animation-delay: 4.5s; }
+.lab #week.wk-play .vs .could li:nth-child(3)::before { animation-delay: 4.7s; }
+.lab #week.wk-play .safe-row li:nth-child(1) { animation-delay: 5.5s; }
+.lab #week.wk-play .safe-row li:nth-child(2) { animation-delay: 5.8s; }
+.lab #week.wk-play .safe-row li:nth-child(3) { animation-delay: 6.1s; }
+.lab #week.wk-play .safe-row li:nth-child(4) { animation-delay: 6.4s; }
+.lab #week.wk-play .safe-row li:nth-child(5) { animation-delay: 6.7s; }
+@media (prefers-reduced-motion: reduce) { .lab #week .vs .short li, .lab #week .safe-row li, .lab #week .vs > div { opacity: 1 !important; transform: none !important; animation: none !important; } }
+.lab #week.wk-play .vs .could li:nth-child(4) { animation-delay: 5.2s; }
+.lab #week.wk-play .vs .could li:nth-child(4)::before { animation-delay: 5.4s; }
+/* scope reveal: JS adds .sc-ready, then .sc-play while in view */
+.lab #scope.sc-ready .chips li { opacity: 0; transform: translateY(8px) scale(.94); }
+.lab #scope.sc-ready .fit > div { opacity: .25; transform: translateY(14px); }
+.lab #scope.sc-ready .fit li { opacity: 0; transform: translateX(-10px); }
+.lab #scope.sc-play .chips li { animation: scChip .45s ease-out both; }
+.lab #scope.sc-play .fit > div { animation: scCard .6s ease-out both; }
+.lab #scope.sc-play .fit li { animation: scItem .45s ease-out both; }
+.lab #scope.sc-play .fit li::before { animation: scPop .4s ease-out both; }
+@keyframes scChip { from { opacity: 0; transform: translateY(8px) scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes scCard { from { opacity: .25; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes scItem { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: none; } }
+@keyframes scPop { 0% { transform: scale(.3); } 70% { transform: scale(1.3); } 100% { transform: scale(1); } }
+.lab #scope.sc-play .chips li:nth-child(1) { animation-delay: .1s; }
+.lab #scope.sc-play .chips li:nth-child(2) { animation-delay: .3s; }
+.lab #scope.sc-play .chips li:nth-child(3) { animation-delay: .5s; }
+.lab #scope.sc-play .chips li:nth-child(4) { animation-delay: .7s; }
+.lab #scope.sc-play .fit-yes { animation-delay: 1.3s; }
+.lab #scope.sc-play .fit-no { animation-delay: 3s; }
+.lab #scope.sc-play .fit-yes li:nth-child(1), .lab #scope.sc-play .fit-yes li:nth-child(1)::before { animation-delay: 1.7s; }
+.lab #scope.sc-play .fit-yes li:nth-child(2), .lab #scope.sc-play .fit-yes li:nth-child(2)::before { animation-delay: 2s; }
+.lab #scope.sc-play .fit-yes li:nth-child(3), .lab #scope.sc-play .fit-yes li:nth-child(3)::before { animation-delay: 2.3s; }
+.lab #scope.sc-play .fit-no li:nth-child(1), .lab #scope.sc-play .fit-no li:nth-child(1)::before { animation-delay: 3.4s; }
+.lab #scope.sc-play .fit-no li:nth-child(2), .lab #scope.sc-play .fit-no li:nth-child(2)::before { animation-delay: 3.7s; }
+.lab #scope.sc-play .fit-no li:nth-child(3), .lab #scope.sc-play .fit-no li:nth-child(3)::before { animation-delay: 4s; }
+.lab #scope.sc-play .fit-no li:nth-child(4), .lab #scope.sc-play .fit-no li:nth-child(4)::before { animation-delay: 4.3s; }
+@media (prefers-reduced-motion: reduce) { .lab #scope .chips li, .lab #scope .fit > div, .lab #scope .fit li { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #scope .fit li::before { animation: none !important; } }
 </style>
 <script type="application/ld+json">
 {
@@ -740,22 +801,6 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "A fixed price for everything we agree on the first call, as long as it fits our scope. That includes building it, installing it, walking you through it and a follow-up call about a week later. You pay $499 on signing and $499 on delivery."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Will it send messages or post for me?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Everything is a draft until you approve it. You review replies, follow-ups and listing content before anything is sent or published, and you stay responsible for the final wording, including fair housing language."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does the daily brief need access to?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A brief that reads iMessage and Notes needs access to your computer. We configure that with you on the install call, and you choose what it can see. Email and calendar connect through the tools you already use."
           }
         },
         {
@@ -857,9 +902,9 @@
   <div class="container center">
     <p class="eyebrow">The offer</p>
     <h2>What is the Zirtual x TEG AI offer?</h2>
-    <p class="answer">This is a human-led AI setup for real estate agents and brokers who already work with a Zirtual assistant. Start with a free 30-minute call. If you want us to build, we build what we agreed for a fixed $998, install it, and check in a week later. You approve everything.</p>
+    <p class="answer">This is a human-led AI setup for real estate agents and brokers who already work with a Zirtual assistant. Start with a free 30-minute call. If you want us to build, we build what we agreed for a fixed $998, install it, and check in a week later.</p>
     <h3 class="flow-label">Key takeaways</h3>
-    <ul class="vlist"><li>The first 30-minute call is free. The $998 only applies if you want us to build.</li><li>$998 is fixed and one time. There is no subscription and no monthly fee to us.</li><li>A daily brief, a recruiting system and your listing process, built for you and drafted for you to approve.</li><li>A real person is on every call, working alongside your Zirtual assistant.</li></ul>
+    <ul class="vlist"><li>The first 30-minute call is free. The $998 only applies if you want us to build.</li><li>$998 is fixed and one time. There is no subscription and no monthly fee to us.</li><li>A daily brief, a recruiting system and your listing process, built for you.</li><li>A real person is on every call, working alongside your Zirtual assistant.</li></ul>
   </div>
 </section>
 <!-- HUMAN-LED -->
@@ -882,7 +927,7 @@
     </div>
     <div class="people-row"><span class="team-stack"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan" width="46" height="46" loading="lazy"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="46" height="46" loading="lazy"><img src="images/team/maria-jose-pava.webp" alt="Maria Jose Pava" width="46" height="46" loading="lazy"><img src="images/team/nolan-cary.webp" alt="Nolan Cary" width="46" height="46" loading="lazy"><img src="images/team/simon.webp" alt="Simon Garcia" width="46" height="46" loading="lazy"></span><span>Jim, Conor, Maria, Nolan and Simon. One of them is on every call and every build.</span></div>
     <p class="promise">Your Zirtual assistant keeps doing what they do. The builds give them a clearer brief and ready drafts to work from.</p>
-    <ul class="safe-row"><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 21v-1a6 6 0 0 1 12 0v1"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"/></svg></span>Works alongside your Zirtual assistant</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>Draft-only: you approve everything</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>You choose what it can see</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg></span>Your brokerage's rules come first</li></ul>
+    <ul class="safe-row"><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 21v-1a6 6 0 0 1 12 0v1"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"/></svg></span>Works alongside your Zirtual assistant</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>You choose what it can see</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg></span>Your brokerage's rules come first</li></ul>
   </div>
 </section>
 <!-- WHAT WE CAN BUILD -->
@@ -941,7 +986,7 @@
       </article>
     </div>
     <p class="note center"><strong>About the daily brief.</strong> A brief that reads iMessage and Notes needs access to your computer. We configure that with you on the install call, and you choose what it can see.</p>
-    <p class="note center">Listing copy is a draft for you to review, including for <a href="https://www.hud.gov/program_offices/fair_housing_equal_opp" rel="noopener">fair housing</a> language. Want to see how agents use AI more broadly? Read <a href="blog/ai-for-real-estate-agents.html">AI for real estate agents</a>.</p>
+    <p class="note center">Review listing copy for <a href="https://www.hud.gov/program_offices/fair_housing_equal_opp" rel="noopener">fair housing</a> language before it goes out. Want to see how agents use AI more broadly? Read <a href="blog/ai-for-real-estate-agents.html">AI for real estate agents</a>.</p>
   </div>
 </section>
 <!-- WEEK IN THE LIFE -->
@@ -954,7 +999,7 @@
     <div class="vs bold">
       <div class="instead">
         <h3>Your week today</h3>
-        <ul class="short"><li>Replies pile up across email, texts and notes</li><li>Your listing steps live in your head</li><li>Recruiting research done by hand</li></ul>
+        <ul class="short"><li><span>Replies pile up across email, texts and notes</span></li><li><span>Your listing steps live in your head</span></li><li><span>Recruiting research done by hand</span></li></ul>
       </div>
       <div class="could">
         <h3>Your week with us</h3>
@@ -1051,8 +1096,6 @@
     <div class="faq">
       <details><summary>Is the first call really free?</summary><p>Yes. The 30-minute call is free and carries no obligation. We talk about what you want AI to do. The $998 only applies if you then decide you want us to build it.</p></details>
       <details><summary>What does the $998 cover?</summary><p>A fixed price for everything we agree on the first call, as long as it fits our scope. That includes building it, installing it, walking you through it and a follow-up call about a week later. You pay $499 on signing and $499 on delivery.</p></details>
-      <details><summary>Will it send messages or post for me?</summary><p>No. Everything is a draft until you approve it. You review replies, follow-ups and listing content before anything is sent or published, and you stay responsible for the final wording, including fair housing language.</p></details>
-      <details><summary>What does the daily brief need access to?</summary><p>A brief that reads iMessage and Notes needs access to your computer. We configure that with you on the install call, and you choose what it can see. Email and calendar connect through the tools you already use.</p></details>
       <details><summary>Does this replace my Zirtual assistant?</summary><p>No. A real person from our team is on every call, and the setup is designed to work alongside your Zirtual assistant. Your assistant keeps doing what they do, with a clearer brief and drafts already waiting.</p></details>
       <details><summary>What is not included?</summary><p>Custom software, scrapers, building new integrations and website migrations are out of scope. We quote those separately, and we tell you on the free call if something you want falls into that group.</p></details>
       
@@ -1178,7 +1221,7 @@
 /* Scroll-triggered reveals for #how and #premium, same approach as ai-for-agents-and-brokers.html */
 (function () {
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  [['how', 'hw', 0.4], ['premium', 'pm', 0.35]].forEach(function (c) {
+  [['how', 'hw', 0.4], ['premium', 'pm', 0.35], ['week', 'wk', 0.35], ['scope', 'sc', 0.3]].forEach(function (c) {
     var s = document.getElementById(c[0]);
     if (!s) return;
     s.classList.add(c[1] + '-ready');

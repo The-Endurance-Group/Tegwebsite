@@ -673,6 +673,67 @@
 .lab .faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--pink-dark); }
 .lab .faq details[open] summary::after { content: "\2212"; }
 .lab .faq details p { padding: 0 22px 20px; color: var(--plum-soft); }
+/* week-in-life reveal: JS adds .wk-ready, then .wk-play while in view */
+.lab #week.wk-ready .vs .short li, .lab #week.wk-ready .safe-row li { opacity: 0; transform: translateY(8px); }
+.lab #week.wk-ready .vs .instead { opacity: 0; }
+.lab #week.wk-ready .vs .could { opacity: .3; }
+.lab #week.wk-ready .vs .instead li span { text-decoration: none; background: linear-gradient(#7a6f78, #7a6f78) no-repeat 0 58% / 0% 2px; }
+.lab #week.wk-play .vs .instead { animation: pmFade .5s ease-out both; }
+.lab #week.wk-play .vs .could { animation: pmCould .7s ease-out 2.8s both; }
+.lab #week.wk-play .vs .instead li { animation: pmItem .45s ease-out both, pmDim .4s ease-out both; }
+.lab #week.wk-play .vs .instead li span { animation: pmStrike .55s ease-out both; }
+.lab #week.wk-play .vs .instead li::before, .lab #week.wk-play .vs .could li::before { animation: pmPop .45s ease-out both; }
+.lab #week.wk-play .vs .could li { animation: pmItem .5s ease-out both; }
+.lab #week.wk-play .safe-row li { animation: pmItem .5s ease-out both; }
+.lab #week.wk-play .vs .instead li:nth-child(1) { animation-delay: 0.3s, 0.75s; }
+.lab #week.wk-play .vs .instead li:nth-child(1) span { animation-delay: 0.75s; }
+.lab #week.wk-play .vs .instead li:nth-child(1)::before { animation-delay: 0.75s; }
+.lab #week.wk-play .vs .instead li:nth-child(2) { animation-delay: 1.0s, 1.45s; }
+.lab #week.wk-play .vs .instead li:nth-child(2) span { animation-delay: 1.45s; }
+.lab #week.wk-play .vs .instead li:nth-child(2)::before { animation-delay: 1.45s; }
+.lab #week.wk-play .vs .instead li:nth-child(3) { animation-delay: 1.7s, 2.15s; }
+.lab #week.wk-play .vs .instead li:nth-child(3) span { animation-delay: 2.15s; }
+.lab #week.wk-play .vs .instead li:nth-child(3)::before { animation-delay: 2.15s; }
+.lab #week.wk-play .vs .could li:nth-child(1) { animation-delay: 3.1s; }
+.lab #week.wk-play .vs .could li:nth-child(1)::before { animation-delay: 3.3s; }
+.lab #week.wk-play .vs .could li:nth-child(2) { animation-delay: 3.8s; }
+.lab #week.wk-play .vs .could li:nth-child(2)::before { animation-delay: 4.0s; }
+.lab #week.wk-play .vs .could li:nth-child(3) { animation-delay: 4.5s; }
+.lab #week.wk-play .vs .could li:nth-child(3)::before { animation-delay: 4.7s; }
+.lab #week.wk-play .safe-row li:nth-child(1) { animation-delay: 5.5s; }
+.lab #week.wk-play .safe-row li:nth-child(2) { animation-delay: 5.8s; }
+.lab #week.wk-play .safe-row li:nth-child(3) { animation-delay: 6.1s; }
+.lab #week.wk-play .safe-row li:nth-child(4) { animation-delay: 6.4s; }
+.lab #week.wk-play .safe-row li:nth-child(5) { animation-delay: 6.7s; }
+@media (prefers-reduced-motion: reduce) { .lab #week .vs .short li, .lab #week .safe-row li, .lab #week .vs > div { opacity: 1 !important; transform: none !important; animation: none !important; } }
+.lab #week.wk-play .vs .could li:nth-child(4) { animation-delay: 5.2s; }
+.lab #week.wk-play .vs .could li:nth-child(4)::before { animation-delay: 5.4s; }
+/* scope reveal: JS adds .sc-ready, then .sc-play while in view */
+.lab #scope.sc-ready .chips li { opacity: 0; transform: translateY(8px) scale(.94); }
+.lab #scope.sc-ready .fit > div { opacity: .25; transform: translateY(14px); }
+.lab #scope.sc-ready .fit li { opacity: 0; transform: translateX(-10px); }
+.lab #scope.sc-play .chips li { animation: scChip .45s ease-out both; }
+.lab #scope.sc-play .fit > div { animation: scCard .6s ease-out both; }
+.lab #scope.sc-play .fit li { animation: scItem .45s ease-out both; }
+.lab #scope.sc-play .fit li::before { animation: scPop .4s ease-out both; }
+@keyframes scChip { from { opacity: 0; transform: translateY(8px) scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes scCard { from { opacity: .25; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes scItem { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: none; } }
+@keyframes scPop { 0% { transform: scale(.3); } 70% { transform: scale(1.3); } 100% { transform: scale(1); } }
+.lab #scope.sc-play .chips li:nth-child(1) { animation-delay: .1s; }
+.lab #scope.sc-play .chips li:nth-child(2) { animation-delay: .3s; }
+.lab #scope.sc-play .chips li:nth-child(3) { animation-delay: .5s; }
+.lab #scope.sc-play .chips li:nth-child(4) { animation-delay: .7s; }
+.lab #scope.sc-play .fit-yes { animation-delay: 1.3s; }
+.lab #scope.sc-play .fit-no { animation-delay: 3s; }
+.lab #scope.sc-play .fit-yes li:nth-child(1), .lab #scope.sc-play .fit-yes li:nth-child(1)::before { animation-delay: 1.7s; }
+.lab #scope.sc-play .fit-yes li:nth-child(2), .lab #scope.sc-play .fit-yes li:nth-child(2)::before { animation-delay: 2s; }
+.lab #scope.sc-play .fit-yes li:nth-child(3), .lab #scope.sc-play .fit-yes li:nth-child(3)::before { animation-delay: 2.3s; }
+.lab #scope.sc-play .fit-no li:nth-child(1), .lab #scope.sc-play .fit-no li:nth-child(1)::before { animation-delay: 3.4s; }
+.lab #scope.sc-play .fit-no li:nth-child(2), .lab #scope.sc-play .fit-no li:nth-child(2)::before { animation-delay: 3.7s; }
+.lab #scope.sc-play .fit-no li:nth-child(3), .lab #scope.sc-play .fit-no li:nth-child(3)::before { animation-delay: 4s; }
+.lab #scope.sc-play .fit-no li:nth-child(4), .lab #scope.sc-play .fit-no li:nth-child(4)::before { animation-delay: 4.3s; }
+@media (prefers-reduced-motion: reduce) { .lab #scope .chips li, .lab #scope .fit > div, .lab #scope .fit li { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #scope .fit li::before { animation: none !important; } }
 </style>
 <script type="application/ld+json">
 {
@@ -882,7 +943,7 @@
     </div>
     <div class="people-row"><span class="team-stack"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan" width="46" height="46" loading="lazy"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="46" height="46" loading="lazy"><img src="images/team/maria-jose-pava.webp" alt="Maria Jose Pava" width="46" height="46" loading="lazy"><img src="images/team/nolan-cary.webp" alt="Nolan Cary" width="46" height="46" loading="lazy"><img src="images/team/simon.webp" alt="Simon Garcia" width="46" height="46" loading="lazy"></span><span>Jim, Conor, Maria, Nolan and Simon. One of them is on every call and every build.</span></div>
     <p class="promise">Your Zirtual assistant keeps doing what they do. The builds give them better drafts and a clearer daily brief to work from.</p>
-    <ul class="safe-row"><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 21v-1a6 6 0 0 1 12 0v1"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"/></svg></span>Works alongside your Zirtual assistant</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>Draft-only: you review before anything is sent</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>You choose what it can see</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg></span>Your organization's rules come first</li></ul>
+    <ul class="safe-row"><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 21v-1a6 6 0 0 1 12 0v1"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"/></svg></span>Works alongside your Zirtual assistant</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>You choose what it can see</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg></span>Your organization's rules come first</li></ul>
   </div>
 </section>
 <!-- BUDGET LINES -->
@@ -906,14 +967,14 @@
         <p class="cap">Example donor drafts</p>
         <p class="ex-tag">Budget line: Development/Fundraising</p>
         <h3>Donor outreach and stewardship drafts</h3>
-        <p>Drafts thank-you notes, impact updates and renewal asks in your voice from your donor notes. You review and send.</p>
+        <p>Drafts thank-you notes, impact updates and renewal asks in your voice from your donor notes.</p>
       </article>
       <article class="ex">
         <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Event versions<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Email version<small>From one event post</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Social post<small>Ready to review</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Website blurb<small>Ready to review</small></span><em class="chip-draft">Draft ready</em></div></div></div>
         <p class="cap">Example event versions</p>
         <p class="ex-tag">Budget line: Marketing and Communications</p>
         <h3>Event and newsletter syndication</h3>
-        <p>Turns one event or newsletter item into versions for email, social and your website, ready for you to review and post.</p>
+        <p>Turns one event or newsletter item into versions for email, social and your website.</p>
       </article>
       <article class="ex">
         <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Daily brief<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Overdue task<small>Flagged from your board</small></span><em class="chip-warm">Overdue</em></div><div class="mrow"><b>2</b><span class="mname">Due today<small>Needs attention</small></span><em class="chip-draft">Today</em></div><div class="mrow"><b>3</b><span class="mname">Coming up<small>Later this week</small></span><em class="chip-soft">Soon</em></div></div></div>
@@ -1152,7 +1213,7 @@
 /* Scroll-triggered reveals for #how and #premium, same approach as ai-for-agents-and-brokers.html */
 (function () {
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  [['how', 'hw', 0.4], ['premium', 'pm', 0.35]].forEach(function (c) {
+  [['how', 'hw', 0.4], ['premium', 'pm', 0.35], ['week', 'wk', 0.35], ['scope', 'sc', 0.3]].forEach(function (c) {
     var s = document.getElementById(c[0]);
     if (!s) return;
     s.classList.add(c[1] + '-ready');
