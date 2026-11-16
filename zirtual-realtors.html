@@ -8,11 +8,15 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI for real estate agents, built for you for $998">
 <meta property="og:description" content="Human-led AI for agents and brokers. A daily brief, follow-ups and listing content, built for you. Start with a free 30-minute call.">
-<meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
+<meta property="og:image" content="https://www.theendurancegroup.com/images/og-zirtual-realtors.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AI for real estate agents, built for you for $998">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI for real estate agents, built for you for $998">
 <meta name="twitter:description" content="Human-led AI for agents and brokers. A daily brief, follow-ups and listing content, built for you. Start with a free 30-minute call.">
-<meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-default.png">
+<meta name="twitter:image" content="https://www.theendurancegroup.com/images/og-zirtual-realtors.png">
+<meta name="twitter:image:alt" content="AI for real estate agents, built for you for $998">
 <link rel="canonical" href="https://www.theendurancegroup.com/zirtual-realtors.html">
 <meta property="og:site_name" content="The Endurance Group">
 <meta property="og:url" content="https://www.theendurancegroup.com/zirtual-realtors.html">
@@ -236,60 +240,208 @@
 .lab .more summary:hover { background: var(--plum); color: #fff; }
 .lab .more[open] .cards { margin-top: 28px; }
 .lab .book { display: inline-block; margin-top: 10px; font-weight: 700; }
+.lab .xlist, .lab .vlist { margin-top: 26px; display: grid; gap: 12px; }
+.lab .xlist li, .lab .vlist li { position: relative; padding: 14px 18px 14px 52px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; font-weight: 600; }
+.lab .xlist li::before, .lab .vlist li::before { position: absolute; left: 16px; top: 13px; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: .8rem; font-weight: 800; }
+.lab .xlist li::before { content: "\2715"; background: var(--pink-tint); color: var(--pink-dark); }
+.lab .vlist li::before { content: "\2713"; background: var(--teal-tint); color: var(--teal-dark); }
+.lab .fit { margin-top: 32px; display: grid; gap: 20px; }
+.lab .fit > div { border-radius: var(--r); padding: 28px 30px; }
+.lab .fit-yes { background: var(--card); border: 2px solid var(--teal); }
+.lab .fit-no { background: #efe9ec; border: 1px solid var(--line); }
+.lab .fit h3 { margin-bottom: 12px; }
+.lab .fit li { padding: 8px 0 8px 28px; position: relative; }
+.lab .fit-yes li::before { content: "\2713"; position: absolute; left: 0; color: var(--teal-dark); font-weight: 800; }
+.lab .fit-no li::before { content: "\2715"; position: absolute; left: 0; color: var(--pink-dark); font-weight: 800; }
+@media (min-width: 720px) { .lab .fit, .lab .team { grid-template-columns: 1fr 1fr; } }
+.lab .hero .gold { color: var(--gold); }
+.lab .people { display: flex; gap: 12px; margin-top: 28px; align-items: center; flex-wrap: wrap; }
+.lab .people img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+.lab .people span { color: #e9e1e6; font-size: .95rem; font-weight: 600; }
+.lab .partner-line { margin-top: 28px; text-align: center; }
+.lab .partner-line img { height: 56px; width: auto; max-width: 100%; display: inline-block; }
+.lab .hero-grid { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; }
+.lab .hero-vis .hub { width: 100%; max-width: 480px; height: auto; display: block; margin-inline: auto; }
+@media (min-width: 900px) { .lab .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 48px; } }
+.lab .fi { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--teal-tint); color: var(--teal-dark); flex: none; }
+.lab .fi.big { width: 64px; height: 64px; background: var(--gold-tint); color: #8a6a1f; }
+.lab .flow { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 30px; counter-reset: none; text-align: center; }
+.lab .flow li { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 22px 16px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.lab .flow li em { font-style: normal; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.lab .flow li b { font-size: 1.02rem; line-height: 1.3; }
+.lab .flow li:last-child { border: 2px solid var(--teal); }
+.lab .flow li:not(:last-child)::after { content: ""; position: absolute; left: 50%; bottom: -24px; width: 20px; height: 20px; margin-left: -10px; background: no-repeat center/20px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9a24b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v16M6 14l6 6 6-6'/%3E%3C/svg%3E"); transform: none; }
+@media (min-width: 820px) {
+  .lab .flow { grid-template-columns: repeat(4, 1fr); gap: 34px; }
+  .lab .flow.dark5 { grid-template-columns: repeat(5, 1fr); }
+  .lab .flow li:not(:last-child)::after { left: auto; right: -29px; top: 50%; bottom: auto; margin: -10px 0 0; transform: rotate(-90deg); }
+}
+.lab .dark .flow li { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.18); color: #fff; }
+.lab .dark .flow li:last-child { border-color: var(--gold); }
+.lab .dark .flow .fi { background: var(--pink); color: #fff; }
+.lab .flow-label { margin-top: 40px; font-weight: 700; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-dark); }
+.lab .trio { margin-top: 34px; display: grid; gap: 18px; text-align: center; }
+.lab .trio > div { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 26px 20px; }
+.lab .trio h3 { margin: 12px 0 4px; }
+.lab .trio p { color: var(--plum-soft); font-size: .98rem; }
+.lab .two-col { margin-top: 22px; display: grid; gap: 18px; }
+.lab .aud { background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--teal); border-radius: var(--r); padding: 24px; }
+.lab .aud-b { border-top-color: var(--pink); }
+.lab .aud-b .fi { background: var(--pink-tint); color: var(--pink-dark); }
+.lab .igrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.lab .igrid li { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: .96rem; line-height: 1.25; }
+.lab .igrid .fi { width: 40px; height: 40px; }
+@media (min-width: 720px) { .lab .trio { grid-template-columns: repeat(3, 1fr); } .lab .two-col { grid-template-columns: 1fr 1fr; } }
+.lab .safe-row { margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 26px; }
+.lab .safe-row li { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--plum-soft); }
+.lab .safe-row .fi { width: 36px; height: 36px; }
+.lab .team-mini .tm { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
+.lab .team-mini .tm img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+.lab .team-mini .tm b { display: block; }
+.lab .team-mini .tm span { color: var(--plum-soft); font-size: .95rem; }
+.lab .team-mini .badge { margin-top: 20px; height: 44px; width: auto; max-width: 100%; }
+.lab .promise { margin-top: 24px; text-align: center; font-weight: 700; color: var(--plum); }
+.lab .or { margin-top: 30px; color: #cbbfc8; font-size: .95rem; }
+.lab .btn-lg { font-size: 1.1rem; padding: 16px 34px; }
+.lab .ex-grid { margin-top: 34px; display: grid; gap: 22px; }
+@media (min-width: 820px) { .lab .ex-grid { grid-template-columns: 1fr 1fr; } }
+.lab .ex { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px 16px 24px; box-shadow: 0 14px 34px -22px rgba(32,28,34,.35); display: flex; flex-direction: column; }
+.lab .ex > h3, .lab .ex > p, .lab .ex > .btn { margin-inline: 8px; }
+.lab .ex-media { aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; background: #f3eee9; }
+.lab .ex-media video { width: 100%; height: 100%; object-fit: cover; display: block; background: #000; }
+.lab .ex-tag { margin-top: 18px; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-dark); }
+.lab .ex-tag.tag-b { color: var(--pink-dark); }
+.lab .ex h3 { margin-top: 4px; margin-bottom: 6px; }
+.lab .ex > p:last-of-type { color: var(--plum-soft); }
+.lab .ex .btn { margin-top: 18px; align-self: flex-start; }
+.lab .ex-art { display: grid; place-items: center; padding: 18px; background: linear-gradient(160deg, #f7efd9, #f8e9f0); }
+.lab .mock { width: 100%; max-width: 380px; background: #fff; border-radius: 12px; padding: 14px 16px; box-shadow: 0 10px 28px -14px rgba(32,28,34,.4); }
+.lab .mock-h { font-family: var(--font-head); font-weight: 700; font-size: 1.05rem; display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.lab .mock-h span { font-family: var(--font-body); font-size: .75rem; color: var(--plum-soft); font-weight: 600; }
+.lab .mrow { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); }
+.lab .mrow > b { width: 24px; height: 24px; border-radius: 50%; background: var(--plum); color: #fff; font-size: .75rem; display: grid; place-items: center; flex: none; }
+.lab .mname { flex: 1; font-weight: 700; font-size: .9rem; line-height: 1.2; }
+.lab .mname small { display: block; font-weight: 500; color: var(--plum-soft); font-size: .75rem; }
+.lab .mrow em { font-style: normal; font-size: .7rem; font-weight: 700; padding: 4px 9px; border-radius: 999px; white-space: nowrap; }
+.lab .chip-warm { background: var(--gold-tint); color: #7a5a14; }
+.lab .chip-draft { background: var(--teal-tint); color: var(--teal-dark); }
+.lab .docskills { display: flex; align-items: center; gap: 14px; width: 100%; max-width: 420px; }
+.lab .doc { flex: 0 0 38%; background: #fff; border-radius: 8px; padding: 14px 12px; box-shadow: 0 10px 28px -14px rgba(32,28,34,.4); }
+.lab .doc p { font-family: var(--font-head); font-weight: 700; font-size: .85rem; margin-bottom: 8px; line-height: 1.2; }
+.lab .doc i { display: block; height: 6px; border-radius: 3px; background: #e7e0e3; margin-top: 7px; }
+.lab .doc i:nth-child(odd) { width: 80%; }
+.lab .docskills .arrow { font-size: 1.6rem; color: var(--gold); font-weight: 700; }
+.lab .skills { flex: 1; display: grid; gap: 6px; }
+.lab .skills li { background: var(--plum); color: #fff; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .72rem; padding: 6px 10px; border-radius: 8px; border-left: 3px solid var(--gold); }
+.lab .ex-yours { background: var(--plum); border-color: var(--plum); color: #fff; }
+.lab .ex-yours h3 { color: #fff; }
+.lab .ex-yours > p:last-of-type { color: #e5dce2; }
+.lab .ex-yours .ex-tag { color: var(--gold); }
+.lab .ex-plus { display: grid; place-items: center; background: rgba(255,255,255,.06); border: 2px dashed rgba(201,162,75,.7); }
+@media (max-width: 819px) { .lab .ex-art { aspect-ratio: auto; min-height: 220px; } .lab .skills li { font-size: .66rem; padding: 5px 8px; white-space: nowrap; } .lab .doc { flex-basis: 30%; } .lab .docskills { gap: 8px; } .lab .ex-art { padding: 14px; } .lab .mrow em { font-size: .64rem; padding: 3px 7px; } }
+.lab .ex-plus span { font-size: 7rem; font-weight: 300; color: var(--gold); line-height: 1; }
+.lab .section-cta { margin-top: 28px; text-align: center; }
+.lab .plan { margin: 26px auto 0; display: grid; gap: 12px; max-width: 520px; text-align: left; }
+.lab .plan li { position: relative; padding: 14px 18px 14px 52px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; color: #fff; font-weight: 600; }
+.lab .plan li::before { content: "\2713"; position: absolute; left: 16px; top: 13px; width: 24px; height: 24px; border-radius: 50%; background: var(--gold); color: var(--plum); display: grid; place-items: center; font-size: .8rem; font-weight: 800; }
+.lab .plan-note { margin: 14px 0 26px; color: var(--gold); font-weight: 700; }
+
+.lab .hero { padding-block: clamp(36px, 6vw, 72px); }
+.lab .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); }
+.lab .hero .sub-gold { font-family: var(--font-head); color: var(--gold); font-size: clamp(1.25rem, 2.6vw, 1.7rem); font-weight: 700; line-height: 1.3; margin-top: 8px; }
+.lab .hero .lead { margin-top: 14px; }
+.lab .hero .people { margin-top: 22px; }
+.lab .hero .m-only { margin-top: 22px; }
+.lab .bp-card { background: #fff; color: var(--plum); border-radius: 18px; padding: 24px 26px; box-shadow: 0 18px 50px rgba(0,0,0,.4); }
+.lab .bp-label { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-dark); }
+.lab .bp-card ul { margin: 10px 0 18px; }
+.lab .bp-card li { padding: 9px 0 9px 30px; position: relative; font-weight: 600; border-top: 1px solid var(--line); }
+.lab .bp-card li::before { content: "\2713"; position: absolute; left: 2px; color: var(--teal-dark); font-weight: 800; }
+.lab .bp-fine { margin-top: 12px; font-size: .9rem; color: var(--plum-soft); }
+@media (min-width: 900px) { .lab .m-only { display: none; } }
+@media (max-width: 899px) {
+  .lab .d-only { display: none; }
+  .lab .hero-grid { gap: 26px; }
+  .lab .bp-card { padding: 18px 20px; }
+  .lab .bp-card ul { margin: 6px 0 0; }
+  .lab .bp-card li { padding: 7px 0 7px 28px; font-size: .95rem; }
+  .lab .bp-fine { margin-top: 8px; }
+}
+.lab .real-person { display: flex; align-items: center; gap: 12px; margin-top: 22px; color: #e9e1e6; font-weight: 600; font-size: .95rem; }
+.lab .real-person small { color: var(--gold); font-weight: 500; font-size: .82rem; }
+.lab .rp-ico { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); color: var(--gold); display: grid; place-items: center; flex: none; }
+.lab .team-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-weight: 600; font-size: .95rem; }
+.lab .team-stack { display: flex; flex: none; }
+.lab .bp-head { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.lab .bp-head img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); flex: none; }
+.lab .bp-head .bp-label { margin: 0; }
+.lab .book-head { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.lab .book-head img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); flex: none; }
+.lab .book-head h2 { margin: 0; text-align: left; }
+@media (max-width: 560px) { .lab .book-head { flex-direction: column; gap: 12px; } .lab .book-head h2 { text-align: center; } }
+.lab .people-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 28px; font-weight: 600; text-align: left; }
+.lab .people-row .team-stack img { width: 56px; height: 56px; }
+@media (max-width: 560px) { .lab .people-row { flex-direction: column; text-align: center; } }
+.lab .team-stack img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); background: var(--plum); }
+.lab .team-stack img + img { margin-left: -12px; }
+@media (max-width: 899px) { .lab .real-person { flex-direction: column; align-items: flex-start; gap: 10px; } }
+.lab .bp-urgent { margin-top: 12px; padding: 10px 12px; border-radius: 10px; background: var(--gold-tint); color: #6b4f12; font-size: .88rem; font-weight: 700; line-height: 1.4; }
+.lab .plan-urgent { margin: -12px auto 26px; max-width: 520px; color: #e5dce2; font-size: .95rem; }
+.lab .page-disc { margin: 0 auto; padding: 18px 0; color: var(--plum-soft); }
+.lab .cal-card { background: #fff; border-radius: 18px; padding: 8px; margin: 8px auto 0; max-width: 760px; box-shadow: 0 18px 50px rgba(0,0,0,.4); }
+.lab .meetings-iframe-container { min-height: 640px; }
+.lab .reach-out { margin-top: 56px; padding-top: 44px; border-top: 1px solid rgba(255,255,255,.14); text-align: center; }
+.lab .reach-out-eyebrow { color: #e58fb4; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 10px; }
+.lab .reach-out-title { font-family: var(--font-head); color: #fff; font-weight: 700; font-size: clamp(1.4rem, 4vw, 1.9rem); line-height: 1.25; margin: 0 0 10px; }
+.lab .reach-out-sub { color: #cbbfc8; font-size: 1rem; margin: 0 auto; max-width: 520px; }
+
 /* Zirtual x TEG additions */
 .lab .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.lab .lockup { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; width: fit-content; max-width: 100%; background: #fff; border-radius: 12px; padding: 12px 20px; margin-bottom: 28px; color: #0b0f1a; }
-.lab .lockup .lk-z { font: 800 1.6rem/1 var(--font-body); letter-spacing: -.02em; }
+.lab .narrow { max-width: 820px; }
+.lab .lockup { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; width: fit-content; max-width: 100%; background: #fff; border-radius: 12px; padding: 12px 20px; margin-bottom: 14px; color: #0b0f1a; }
 .lab .lockup .lk-x { font-weight: 700; color: var(--plum-soft); }
 .lab .lockup img { height: 38px; width: auto; max-width: 60vw; }
 .lab .lockup img[src*="zirtual"] { height: 34px; }
-.lab .hero-grid { display: grid; gap: 36px; align-items: center; }
-.lab .hero-price { background: #fff; color: var(--plum); border-radius: 20px; padding: 30px 26px; text-align: center; box-shadow: 0 24px 50px -18px rgba(0,0,0,.55); }
-.lab .hero-price .hp-label { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-dark); }
-.lab .hero-price .hp-amt { font-family: var(--font-head); font-weight: 700; font-size: clamp(4.5rem, 16vw, 7rem); line-height: 1; color: var(--plum); margin-top: 6px; }
-.lab .hero-price .hp-sub { font-weight: 700; color: var(--pink-dark); margin-top: 4px; }
-.lab .hero-price .hp-free { margin-top: 16px; font-size: 1rem; color: var(--plum-soft); }
-.lab .hero-price .btn { margin-top: 20px; width: 100%; line-height: 1.3; }
-.lab .answer { font-size: 1.15rem; max-width: 46em; }
-.lab .takeaways { margin-top: 26px; background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--gold); border-radius: var(--r); padding: 24px 28px; }
-.lab .takeaways h3 { margin-bottom: 10px; }
+.lab .lockup-line { font-size: .95rem; color: #e9e1e6; margin-bottom: 22px; }
+.lab .hp { width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+.lab .form-note { margin-top: 12px; font-size: .85rem; color: var(--plum-soft); }
+.lab .dark .note { color: #e5dce2; }
+.lab .bp-price { text-align: center; background: var(--gold-tint); border-radius: 14px; padding: 14px 10px 12px; margin: 4px 0 8px; }
+.lab .bp-amt { font-family: var(--font-head); font-weight: 700; font-size: clamp(4rem, 9vw, 5.6rem); line-height: 1; color: var(--plum); }
+.lab .bp-amt-sub { font-weight: 700; color: var(--pink-dark); margin-top: 6px; font-size: .95rem; }
+.lab .bp-card .btn { width: 100%; line-height: 1.3; }
+.lab .answer { font-size: 1.15rem; text-align: center; max-width: 46em; margin-inline: auto; }
+.lab .vlist { max-width: 720px; margin-inline: auto; }
 .lab .price.mega .amt { font-size: clamp(5rem, 18vw, 8rem); }
 .lab .price.mega .sub { font-weight: 700; color: var(--pink-dark); margin-top: 6px; }
-.lab .budget { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 30px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
-.lab .budget th, .lab .budget td { padding: 16px 18px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
-.lab .budget tbody tr:last-child th, .lab .budget tbody tr:last-child td { border-bottom: 0; }
-.lab .budget thead th { background: var(--teal-dark); color: #fff; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; }
-.lab .budget tbody th { font-family: var(--font-head); font-size: 1.05rem; width: 24%; }
-.lab .budget td:nth-child(2) { color: var(--plum-soft); }
-.lab .budget .line { display: inline-block; background: var(--pink-tint); color: var(--pink-dark); font-weight: 700; border-radius: 999px; padding: 4px 12px; font-size: .88rem; }
-@media (max-width: 719px) {
-  .lab .budget, .lab .budget tbody, .lab .budget tr, .lab .budget th, .lab .budget td { display: block; width: auto; }
-  .lab .budget thead { position: absolute; left: -9999px; }
-  .lab .budget tbody th { width: auto; }
-  .lab .budget tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
-  .lab .budget tbody tr:last-child { border-bottom: 0; }
-  .lab .budget th, .lab .budget td { border-bottom: 0; padding: 8px 18px; }
-  .lab .budget td::before { content: attr(data-label); display: block; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--teal-dark); margin-bottom: 2px; }
-}
-.lab .crosses li { padding: 8px 0 8px 30px; position: relative; }
-.lab .crosses li::before { content: "\2715"; position: absolute; left: 4px; color: var(--pink-dark); font-weight: 800; }
-.lab .scope-box { margin-top: 32px; border: 2px solid var(--teal); border-radius: 20px; padding: clamp(22px, 4vw, 34px); background: var(--card); }
-.lab .scope-box .two { margin-top: 20px; }
-.lab .scope-box .panel { background: #faf7f4; }
+.lab .covers { margin-top: 24px; }
+.lab .covers .ticks { display: grid; gap: 0 28px; }
+@media (min-width: 720px) { .lab .covers .ticks { grid-template-columns: 1fr 1fr; } }
+.lab .ex .cap { margin: 8px 8px 0; font-size: .8rem; color: var(--plum-soft); }
+.lab .ex-art .mock { max-width: 400px; }
+.lab .mrow em.chip-soft { background: #efe9ec; color: var(--plum-soft); }
+.lab .idea { margin-top: 22px; background: var(--plum); color: #fff; border-radius: 18px; padding: clamp(24px, 4vw, 36px); text-align: center; }
+.lab .idea .eyebrow { color: var(--gold); }
+.lab .idea h3 { color: #fff; }
+.lab .idea p { color: #e5dce2; margin-top: 8px; }
+.lab .flow.dark3 { max-width: 980px; margin-inline: auto; }
+@media (min-width: 820px) { .lab .flow.dark3 { grid-template-columns: repeat(3, 1fr); } }
+.lab .flow li .fd { font-size: .92rem; font-weight: 400; line-height: 1.45; color: #e5dce2; }
+.lab .dark .callout { margin-top: 34px; }
+.lab .fit { max-width: 900px; margin-inline: auto; }
+.lab .chips.big.cx { justify-content: center; }
+.lab .third.terms { background: var(--gold-tint); }
+.lab .reach-out { margin-top: 44px; padding-top: 0; border-top: 0; }
+.lab .faq { max-width: 780px; margin-inline: auto; }
+.lab .btn-row.cx { justify-content: center; }
+.lab .team-mini .tm span { display: block; }
+.lab .week .note { text-align: center; }
 .lab .faq details { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); margin-top: 12px; }
-.lab .faq summary { cursor: pointer; font-weight: 700; padding: 18px 22px; list-style: none; position: relative; padding-right: 52px; }
+.lab .faq summary { cursor: pointer; font-weight: 700; padding: 18px 52px 18px 22px; list-style: none; position: relative; }
 .lab .faq summary::-webkit-details-marker { display: none; }
 .lab .faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 1.4rem; color: var(--pink-dark); }
 .lab .faq details[open] summary::after { content: "\2212"; }
 .lab .faq details p { padding: 0 22px 20px; color: var(--plum-soft); }
-.lab .leaders { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 26px; }
-.lab .leader { display: flex; align-items: center; gap: 14px; }
-.lab .leader img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
-.lab .leader p { font-size: .95rem; color: var(--plum-soft); line-height: 1.4; }
-.lab .leader b { color: var(--plum); display: block; }
-.lab .cobrand-note { font-size: .92rem; color: #cbbfc8; margin-top: 18px; }
-.lab .hero .btn-primary { background: var(--pink-dark); }
-@media (min-width: 860px) { .lab .hero-grid { grid-template-columns: 1.15fr .85fr; gap: 56px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -440,61 +592,137 @@
 <section class="hero">
   <div class="container hero-grid">
     <div>
-    <div class="lockup" role="img" aria-label="Zirtual and The Endurance Group">
-      <img src="images/zirtual-logo.png" alt="" width="125" height="34">
+    <div class="lockup">
+      <img src="images/zirtual-logo.png" alt="Zirtual logo" width="125" height="34">
       <span class="lk-x" aria-hidden="true">x</span>
-      <img src="images/logo.webp" alt="" height="38">
+      <img src="images/logo.webp" alt="The Endurance Group logo" height="38">
     </div>
+    <p class="lockup-line">Offered to Zirtual clients by The Endurance Group, an independent AI consultancy.</p>
     <p class="eyebrow">A Zirtual client offer for agents and brokers</p>
     <h1>AI for real estate agents, built for you for a fixed $998.</h1>
-    <p class="lead">A real person builds it, installs it and walks you through it. It works alongside your Zirtual assistant, so replies and follow-ups are drafted before you ask.</p>
-    <p class="cobrand-note">A real person on every call. Built to work alongside your Zirtual assistant, not replace them.</p>
+    <p class="sub-gold">A real person builds it, installs it and walks you through it.</p>
+    <p class="lead">It works alongside your Zirtual assistant, so replies and follow-ups are drafted before you ask.</p>
+    <div class="real-person"><span class="team-stack"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan" width="46" height="46" loading="lazy"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="46" height="46" loading="lazy"><img src="images/team/maria-jose-pava.webp" alt="Maria Jose Pava" width="46" height="46" loading="lazy"><img src="images/team/nolan-cary.webp" alt="Nolan Cary" width="46" height="46" loading="lazy"><img src="images/team/simon.webp" alt="Simon Garcia" width="46" height="46" loading="lazy"></span><span>A real person from our team on every call and every build.<br><small>Never a bot.</small></span></div>
     </div>
-    <div class="hero-price">
-      <p class="hp-label">Fixed price to build</p>
-      <p class="hp-amt">$998</p>
-      <p class="hp-sub">One time. No subscription.</p>
-      <p class="hp-free"><strong>The first call is free.</strong> The $998 only applies if you want us to build.</p>
+    <div class="bp-card">
+      <div class="bp-head"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="52" height="52" loading="lazy"><p class="bp-label">Free 30-minute call with Conor</p></div>
+      <div class="bp-price">
+        <p class="bp-amt">$998</p>
+        <p class="bp-amt-sub">Fixed price to build. One time. No subscription.</p>
+      </div>
+      <ul>
+        <li>Talk through what you want AI to do</li>
+        <li>Hear what we would build</li>
+        <li>A straight answer on fit</li>
+      </ul>
       <!-- TODO: swap this scheduling link if Zirtual needs its own booking link. Currently the same HubSpot link as lab-ai-environment.html. -->
 <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book">Book your free 30-minute call to talk through what you want AI to do</a>
+      <p class="bp-fine"><strong>The first call is free.</strong> The $998 only applies if you want us to build.</p>
     </div>
   </div>
 </section>
 <!-- 2. ANSWER FIRST + KEY TAKEAWAYS -->
 <section>
-  <div class="container">
+  <div class="container center">
+    <p class="eyebrow">The offer</p>
     <h2>What is the Zirtual x TEG AI offer?</h2>
     <p class="answer">This is a human-led AI setup for real estate agents and brokers who already work with a Zirtual assistant. Start with a free 30-minute call. If you want us to build, we build what we agreed for a fixed $998, install it, and check in a week later. You approve everything.</p>
-    <div class="takeaways">
-      <h3>Key takeaways</h3>
-      <ul class="ticks"><li>The first 30-minute call is free. The $998 only applies if you want us to build.</li><li>$998 is fixed and one time. There is no subscription and no monthly fee to us.</li><li>Daily brief, follow-ups, listing content and showing prep, drafted for you to approve.</li><li>A real person is on every call, working alongside your Zirtual assistant.</li></ul>
+    <h3 class="flow-label">Key takeaways</h3>
+    <ul class="vlist"><li>The first 30-minute call is free. The $998 only applies if you want us to build.</li><li>$998 is fixed and one time. There is no subscription and no monthly fee to us.</li><li>Daily brief, follow-ups, listing content and showing prep, drafted for you to approve.</li><li>A real person is on every call, working alongside your Zirtual assistant.</li></ul>
+  </div>
+</section>
+<!-- HUMAN-LED -->
+<section id="human" class="alt">
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Human-led AI</p>
+      <h2>Who is on the other side of the call?</h2>
+      <p class="lead" style="margin-top:12px">A real person, on every call and every build. Not a product.</p>
     </div>
+    <div class="vs bold">
+      <div class="instead">
+        <h3>Not this</h3>
+        <ul class="short"><li>Software you figure out</li><li>Tutorials and prompts</li><li>A support ticket</li></ul>
+      </div>
+      <div class="could">
+        <h3>This</h3>
+        <ul class="short"><li>A real person listens to what you want</li><li>A real person builds it and installs it</li><li>A real person makes sure it works</li></ul>
+      </div>
+    </div>
+    <div class="people-row"><span class="team-stack"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan" width="46" height="46" loading="lazy"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="46" height="46" loading="lazy"><img src="images/team/maria-jose-pava.webp" alt="Maria Jose Pava" width="46" height="46" loading="lazy"><img src="images/team/nolan-cary.webp" alt="Nolan Cary" width="46" height="46" loading="lazy"><img src="images/team/simon.webp" alt="Simon Garcia" width="46" height="46" loading="lazy"></span><span>Jim, Conor, Maria, Nolan and Simon. One of them is on every call and every build.</span></div>
+    <p class="promise">Your Zirtual assistant keeps doing what they do. The builds give them a clearer brief and ready drafts to work from.</p>
+    <ul class="safe-row"><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 21v-1a6 6 0 0 1 12 0v1"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"/></svg></span>Works alongside your Zirtual assistant</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>Draft-only: you approve everything</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>You choose what it can see</li><li><span class="fi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg></span>Your brokerage's rules come first</li></ul>
   </div>
 </section>
 <!-- WHAT WE CAN BUILD -->
-<section id="build" class="alt">
+<section id="build">
   <div class="container">
-    <p class="eyebrow">What we can build</p>
-    <h2>What can AI do for an agent or broker?</h2>
-    <p class="lead" style="margin-top:14px">We choose the pieces that fit how you work on the free call. Here is what agents ask for most.</p>
-    <div class="cards">
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><h3>Daily AI executive brief</h3><p>Scans your email, iMessage and Notes each morning and shows who needs a reply, with one-click draft replies on a simple page you open.</p><p class="pill"><b>7:00am</b> Your brief is ready</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div><h3>Listing and market-update content</h3><p>Posts, emails and market updates drafted in your voice for you to review.</p><p class="eg">One listing becomes a post, an email and a flyer draft.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 21v-1a6 6 0 0 1 12 0v1"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"/></svg></div><h3>Follow-up sequences</h3><p>Check-ins for past clients and your sphere, drafted on a schedule so nobody goes quiet.</p><p class="eg">Anniversary and check-in notes, ready to approve.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></div><h3>Open house and showing prep</h3><p>A one-page brief before each showing or open house, with talking points and follow-up drafts after.</p><p class="eg">Prep waiting before you leave the office.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div><h3>CMA and listing-description drafts</h3><p>First drafts of your CMA write-up and listing description from the details you provide. You check every fact.</p><p class="eg">A starting point, not a final copy.</p></article>
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h3>Weekly who-have-I-not-talked-to review</h3><p>Once a week, a short list of the people you have not been in touch with lately, with a draft note for each.</p><p class="pill"><b>Monday</b> Your weekly review</p></article>
+    <div class="center">
+      <p class="eyebrow">What we can build</p>
+      <h2>What can AI do for an agent or broker?</h2>
+      <p class="lead" style="margin-top:12px">We choose the pieces that fit how you work on the free call. Here is what agents ask for most.</p>
     </div>
-    <p class="note"><strong>About the daily brief.</strong> A brief that reads iMessage and Notes needs access to your computer. We configure that with you on the install call, and you choose what it can see.</p>
-    <p class="note"><strong>We put a value on each flow before we install it</strong> and make sure we hit it. For example, if you tell us a daily brief will save you an hour each day, we will confirm that it does.</p>
-    <p class="note">Listing copy is a draft for you to review, including for <a href="https://www.hud.gov/program_offices/fair_housing_equal_opp" rel="noopener">fair housing</a> language. Want to see how agents use AI more broadly? Read <a href="blog/ai-for-real-estate-agents.html">AI for real estate agents</a>.</p>
+    <div class="ex-grid">
+      <article class="ex">
+        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Daily brief<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Needs a reply<small>Open house guest</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Needs a reply<small>Past client, quick question</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Follow up<small>Buyer, showing this week</small></span><em class="chip-warm">Warm</em></div></div></div>
+        <p class="cap">Example daily brief</p>
+        <p class="ex-tag">For everyone</p>
+        <h3>Daily AI executive brief</h3>
+        <p>Scans your email, iMessage and Notes each morning and shows who needs a reply, with one-click draft replies on a simple page you open.</p>
+      </article>
+      <article class="ex">
+        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Listing content<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Listing post<small>In your voice</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Market update<small>Monthly email</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Flyer text<small>Ready to review</small></span><em class="chip-draft">Draft ready</em></div></div></div>
+        <p class="cap">Example listing content</p>
+        <p class="ex-tag">For agents and teams</p>
+        <h3>Listing and market-update content</h3>
+        <p>Posts, emails and market updates drafted in your voice for you to review.</p>
+      </article>
+      <article class="ex">
+        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Follow-ups<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Past client<small>Check-in note</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Sphere<small>Holiday note</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Past client<small>Closing anniversary</small></span><em class="chip-warm">Due soon</em></div></div></div>
+        <p class="cap">Example follow-ups</p>
+        <p class="ex-tag">For agents and teams</p>
+        <h3>Follow-up sequences</h3>
+        <p>Check-ins for past clients and your sphere, drafted on a schedule for you to approve.</p>
+      </article>
+      <article class="ex">
+        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Showing prep<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Showing brief<small>Property facts and talking points</small></span><em class="chip-draft">Ready</em></div><div class="mrow"><b>2</b><span class="mname">Sign-in follow-up<small>A draft for each guest</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Checklist<small>Before you leave the office</small></span><em class="chip-soft">Ready</em></div></div></div>
+        <p class="cap">Example showing prep</p>
+        <p class="ex-tag">For agents and teams</p>
+        <h3>Open house and showing prep</h3>
+        <p>A one-page brief before each showing or open house, with talking points and follow-up drafts after.</p>
+      </article>
+      <article class="ex">
+        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Drafts<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">CMA write-up<small>From the comps you provide</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Listing description<small>A few lengths to choose from</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Fact check<small>You review every detail</small></span><em class="chip-warm">You check</em></div></div></div>
+        <p class="cap">Example drafts</p>
+        <p class="ex-tag">For agents and teams</p>
+        <h3>CMA and listing-description drafts</h3>
+        <p>First drafts of your CMA write-up and listing description from the details you provide. You check every fact.</p>
+      </article>
+      <article class="ex">
+        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Weekly review<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Not in touch lately<small>People to reach out to</small></span><em class="chip-warm">Review</em></div><div class="mrow"><b>2</b><span class="mname">Draft note<small>One for each person</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Your call<small>Approve or skip</small></span><em class="chip-soft">You decide</em></div></div></div>
+        <p class="cap">Example weekly review</p>
+        <p class="ex-tag">For everyone</p>
+        <h3>A weekly who-have-I-not-talked-to review</h3>
+        <p>Once a week, a short list of the people you have not been in touch with lately, with a draft note for each.</p>
+      </article>
+    </div>
+    <div class="idea">
+      <p class="eyebrow">Your idea</p>
+      <h3>Don't see it here? Tell us what you want AI to do.</h3>
+      <p>On the free call we talk it through. If it fits our scope, we build it.</p>
+    </div>
+    <p class="note center"><strong>About the daily brief.</strong> A brief that reads iMessage and Notes needs access to your computer. We configure that with you on the install call, and you choose what it can see.</p>
+    <p class="note center">On the free call we talk through where AI could save you time, so you can decide what is worth building.</p>
+    <p class="note center">Listing copy is a draft for you to review, including for <a href="https://www.hud.gov/program_offices/fair_housing_equal_opp" rel="noopener">fair housing</a> language. Want to see how agents use AI more broadly? Read <a href="blog/ai-for-real-estate-agents.html">AI for real estate agents</a>.</p>
   </div>
 </section>
 <!-- WEEK IN THE LIFE -->
-<section id="week">
+<section id="week" class="alt week">
   <div class="container">
-    <p class="eyebrow">A different kind of week</p>
-    <h2>What does a week look like with and without it?</h2>
+    <div class="center">
+      <p class="eyebrow">A different kind of week</p>
+      <h2>What does a week look like with and without it?</h2>
+    </div>
     <div class="vs bold">
       <div class="instead">
         <h3>Your week today</h3>
@@ -508,109 +736,97 @@
     <p class="note">Results vary by agent. Our goal is to reduce routine work, not to promise a number.</p>
   </div>
 </section>
-<!-- HUMAN-LED -->
-<section id="human" class="alt">
-  <div class="container">
-    <p class="eyebrow">Human-led AI</p>
-    <h2>Who is on the other side of the call?</h2>
-    <p class="lead" style="margin-top:14px">A real person, on every call and every build. Never a bot.</p>
-    <div class="two">
-      <div class="panel">
-        <h3>Built to work with your Zirtual assistant</h3>
-        <p>You keep your Zirtual assistant. The builds give them a clearer brief and ready drafts, and they can review and send what you approve. We design each build with that handoff in mind, and we ask about it on the free call.</p>
-      </div>
-      <div class="panel">
-        <h3>What a real person means here</h3>
-        <ul class="ticks">
-          <li>A person listens to what you want on the free call</li>
-          <li>A person builds it and installs it with you</li>
-          <li>A person calls you a week later to check it works</li>
-          <li>Nothing is sent or published without your approval</li>
-        </ul>
-      </div>
-    </div>
-    <div class="leaders">
-      <div class="leader"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="64" height="64" loading="lazy"><p><b>Conor Sullivan</b>Leads AI implementation. Lecturer at The Roux Institute at Northeastern University.</p></div>
-      <div class="leader"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan" width="64" height="64" loading="lazy"><p><b>Jim Sullivan</b>Founder of The Endurance Group. Began his career in New York real estate valuation and development.</p></div>
-    </div>
-    <p class="note"><a href="https://www.theendurancegroup.com/about.html">The Endurance Group (TEG)</a> is an AI implementation partner based in Portland, Maine, founded in 1999. <a href="how-we-work.html">See how we work with teams</a>.</p>
-  </div>
-</section>
 <!-- 3 STEPS -->
 <section id="how" class="dark">
-  <div class="container">
+  <div class="container center">
     <p class="eyebrow">How it works</p>
     <h2>How does it work, and when do you pay?</h2>
-    <div class="steps">
-      <div class="step"><p class="when">Step 1 &middot; Free</p><h3>Free 30-minute call</h3><p>We talk about what you want AI to do. The call is free and there is no obligation to build.</p></div>
-      <div class="step"><p class="when">Step 2 &middot; Fixed $998</p><h3>We build it, install it and walk you through it</h3><p>If you want us to build, the price is a fixed $998, paid $499 on signing and $499 on delivery.</p></div>
-      <div class="step"><p class="when">About a week later</p><h3>Follow-up call</h3><p>We check that everything works and fix what does not.</p></div>
-    </div>
+    <ol class="flow dark3">
+      <li><span class="fi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><em>Step 1 &middot; Free</em><b>Free 30-minute call</b><span class="fd">We talk about what you want AI to do. It is free, with no obligation to build.</span></li>
+      <li><span class="fi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg></span><em>Step 2 &middot; Fixed $998</em><b>We build it, install it and walk you through it</b><span class="fd">If you want us to build, the price is a fixed $998, paid $499 on signing and $499 on delivery.</span></li>
+      <li><span class="fi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg></span><em>About a week later</em><b>Follow-up call</b><span class="fd">We check that everything works and fix what does not.</span></li>
+    </ol>
     <p class="callout">The call is free. The $998 only applies if you want us to build.</p>
-    <div class="btn-row"><!-- TODO: swap this scheduling link if Zirtual needs its own booking link. Currently the same HubSpot link as lab-ai-environment.html. -->
+    <p class="note">All three calls are completed within 30 days of signing.</p>
+    <div class="section-cta"><!-- TODO: swap this scheduling link if Zirtual needs its own booking link. Currently the same HubSpot link as lab-ai-environment.html. -->
 <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="steps-book">Book your free 30-minute call to talk through what you want AI to do</a></div>
   </div>
 </section>
 <!-- SCOPE -->
 <section id="scope">
   <div class="container">
-    <p class="eyebrow">Scope</p>
-    <h2>What is included, and what is not?</h2>
-    <div class="scope-box">
-      <p>We build what we agree on the first call, as long as it can be built as one of these four things:</p>
-      <ul class="chips big"><li>An assistant skill</li><li>A project with your documents loaded</li><li>A scheduled flow</li><li>A connection to an integration that already exists</li></ul>
-      <div class="two">
-        <div class="panel">
-          <h3>Included in the $998</h3>
-          <ul class="ticks">
-            <li>Anything agreed on the call that fits the list above</li>
-            <li>Installation and a walk-through</li>
-            <li>A follow-up call about a week later</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Quoted separately</h3>
-          <ul class="crosses">
-            <li>Custom software</li>
-            <li>Scrapers</li>
-            <li>Building new integrations</li>
-            <li>Website migrations</li>
-          </ul>
-        </div>
+    <div class="center">
+      <p class="eyebrow">Scope</p>
+      <h2>What is included, and what is not?</h2>
+      <p class="lead" style="margin-top:12px">We build what we agree on the first call, as long as it can be built as one of these four things:</p>
+      <ul class="chips big cx"><li>An assistant skill</li><li>A project with your documents loaded</li><li>A scheduled flow</li><li>A connection to an integration that already exists</li></ul>
+    </div>
+    <div class="fit">
+      <div class="fit-yes">
+        <h3>Included in the $998</h3>
+        <ul>
+          <li>Anything agreed on the call that fits the list above</li>
+          <li>Installation and a walk-through</li>
+          <li>A follow-up call about a week later</li>
+        </ul>
       </div>
-      <div class="third">
-        <p><strong>Third-party costs are separate.</strong> You pay your AI plan and any other subscriptions directly to those providers. We do not mark them up or collect them.</p>
+      <div class="fit-no">
+        <h3>Quoted separately</h3>
+        <ul>
+          <li>Custom software</li>
+          <li>Scrapers</li>
+          <li>Building new integrations</li>
+          <li>Website migrations</li>
+        </ul>
       </div>
+    </div>
+    <div class="third" style="max-width:900px;margin-inline:auto">
+      <p><strong>Third-party costs are separate.</strong> You pay your AI plan and any other subscriptions directly to those providers. We do not mark them up or collect them.</p>
+    </div>
+    <div class="third terms" style="max-width:900px;margin-inline:auto">
+      <p><strong>Terms in brief.</strong> The $499 paid on signing is a deposit. It is non-refundable once the first paid session has been held, and refunded if we cancel before starting. We may decline anything we cannot deliver in three sessions, and will propose a separate quote instead.</p>
     </div>
   </div>
 </section>
 <!-- PRICING -->
 <section id="investment" class="alt">
   <div class="container">
-    <p class="eyebrow">Investment</p>
-    <h2>One fixed price. Not a subscription.</h2>
+    <div class="center">
+      <p class="eyebrow">Investment</p>
+      <h2>One fixed price. Not a subscription.</h2>
+    </div>
     <div class="price-box">
       <div class="price mega">
         <div class="amt">$998</div>
-        <div class="usd">Fixed price, in US dollars</div>
-        <p class="sub">One time. No monthly fee to us.</p>
-        <p class="split">$499 on signing<br>$499 on delivery</p>
+        <div class="usd">Fixed price, in US dollars. One time.</div>
+        <p class="sub">No subscription. No monthly fee to us.</p>
+        <p class="split">$499 on signing &middot; $499 on delivery</p>
         <p class="split"><strong>The first call is free.</strong> You only pay if you want us to build.</p>
         <div><!-- TODO: swap this scheduling link if Zirtual needs its own booking link. Currently the same HubSpot link as lab-ai-environment.html. -->
 <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="price-book">Book your free 30-minute call</a></div>
       </div>
-      <div class="panel">
-        <h3>What the $998 covers</h3>
-        <ul class="ticks"><li>A free 30-minute first call, whether or not you build</li><li>The builds we agree on that call, within scope</li><li>Installation and a walk-through with you, including computer access for the daily brief if you want it</li><li>A follow-up call about a week later to make sure everything works</li></ul>
+      <div class="panel team-mini">
+        <h3>Led by</h3>
+        <div class="tm"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan" width="64" height="64" loading="lazy"><div><b>Jim Sullivan</b><span>Founder of The Endurance Group. Began his career in New York real estate valuation and development.</span></div></div>
+        <div class="tm"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="64" height="64" loading="lazy"><div><b>Conor Sullivan</b><span>Leads AI implementation. Lecturer at The Roux Institute at Northeastern University.</span></div></div>
+        <p class="team-note">Every call and every build is done by a real person on our team. Never a bot, never a product.</p>
+        <p class="note"><a href="https://www.theendurancegroup.com/about.html">The Endurance Group (TEG)</a> is an AI implementation partner based in Portland, Maine, founded in 1999. <a href="how-we-work.html">See how we work with teams</a>.</p>
       </div>
+    </div>
+    <div class="panel covers">
+      <h3>What the $998 covers</h3>
+      <ul class="ticks"><li>A free 30-minute first call, whether or not you build</li><li>The builds we agree on that call, within scope</li><li>Installation and a walk-through with you, including computer access for the daily brief if you want it</li><li>A follow-up call about a week later to make sure everything works</li></ul>
+      <p class="note">Agreed scope means what we agree on the free call, as long as it fits the four buildable types listed in the scope box.</p>
     </div>
   </div>
 </section>
 <!-- FAQ -->
 <section id="faq">
-  <div class="container narrow">
-    <p class="eyebrow">Questions</p>
-    <h2>Frequently asked questions</h2>
+  <div class="container">
+    <div class="center">
+      <p class="eyebrow">Questions</p>
+      <h2>Frequently asked questions</h2>
+    </div>
     <div class="faq">
       <details><summary>Is the first call really free?</summary><p>Yes. The 30-minute call is free and carries no obligation. We talk about what you want AI to do. The $998 only applies if you then decide you want us to build it.</p></details>
       <details><summary>What does the $998 cover?</summary><p>A fixed price for everything we agree on the first call, as long as it fits our scope. That includes building it, installing it, walking you through it and a follow-up call about a week later. You pay $499 on signing and $499 on delivery.</p></details>
@@ -620,18 +836,32 @@
       <details><summary>What is not included?</summary><p>Custom software, scrapers, building new integrations and website migrations are out of scope. We quote those separately, and we tell you on the free call if something you want falls into that group.</p></details>
       
     </div>
-    <p class="note">Last updated November 16, 2026.</p>
+    <p class="note center">Last updated November 16, 2026.</p>
   </div>
 </section>
-<!-- ENQUIRY FORM -->
-<section id="enquire" class="dark">
+<!-- FINAL CTA + INQUIRY FORM -->
+<section id="inquire" class="dark">
   <div class="container narrow center">
-    <p class="eyebrow">Prefer an email first?</p>
-    <h2>Tell us what you would like AI to do</h2>
-    <p class="lead" style="color:#e5dce2">Send a short note and we will reply personally. Or skip the back and forth and book the free call.</p>
-    <div class="btn-row" style="justify-content:center"><!-- TODO: swap this scheduling link if Zirtual needs its own booking link. Currently the same HubSpot link as lab-ai-environment.html. -->
-<a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="form-book">Book your free 30-minute call</a></div>
-    <form class="form-card" id="enquiry" novalidate>
+    <p class="eyebrow">Free. No obligation.</p>
+    <div class="book-head"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="72" height="72" loading="lazy"><h2>Book your free 30-minute call with Conor</h2></div>
+    <ul class="plan">
+      <li>Talk through what you want AI to do</li>
+      <li>Hear what we would build</li>
+      <li>A straight answer on whether we are a fit</li>
+    </ul>
+    <p class="plan-note">The call is free. The $998 only applies if you want us to build.</p>
+    <div class="btn-row cx"><!-- TODO: swap this scheduling link if Zirtual needs its own booking link. Currently the same HubSpot link as lab-ai-environment.html. -->
+<a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="form-book">Book your free 30-minute call to talk through what you want AI to do</a></div>
+    <p class="plan-urgent">Or pick a time below.</p>
+    <!-- TODO: swap this embedded calendar URL if Zirtual needs its own booking link. Currently the same HubSpot calendar as the buttons. -->
+    <div class="cal-card" id="book">
+      <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b&embed=true"></div>
+    </div>
+    <div class="reach-out">
+      <p class="reach-out-eyebrow">Not ready to book?</p>
+      <h3 class="reach-out-title">Prefer we reach out? Leave your details</h3>
+      <p class="reach-out-sub">Send a short note and we will reply personally.</p>
+    <form class="form-card" id="inquiry" novalidate>
       <input type="hidden" name="ref" id="ref" value="zirtual-realtors">
       <input type="hidden" name="offer" value="Zirtual x TEG realtors, $998">
       <div class="hp" aria-hidden="true"><label>Leave blank <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -644,9 +874,11 @@
         <div class="field"><label for="va">Your Zirtual assistant <span class="opt">(optional)</span></label><input type="text" id="va" name="va" placeholder="First name is fine"></div>
       </div>
       <div class="field"><label for="goal">What would you like AI to do? <span class="opt">(optional)</span></label><textarea id="goal" name="goal" placeholder="For example: a morning brief of who needs a reply, or follow-ups for past clients."></textarea></div>
-      <button class="btn btn-primary" type="submit" data-cta="form-submit">Send enquiry</button>
+      <button class="btn btn-primary" type="submit" data-cta="form-submit">Send inquiry</button>
+      <p class="form-note">By submitting you agree to be contacted about this offer. See our <a href="privacy.html">Privacy Policy</a>.</p>
       <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
     </form>
+    </div>
   </div>
 </section>
 
@@ -722,6 +954,29 @@
 
 <script src="js/main.js?v=20260930" defer></script>
 <script>
+/* Load the HubSpot calendar only when the visitor nears it, so it does not slow the first screen. */
+(function () {
+  var box = document.querySelector(".meetings-iframe-container");
+  if (!box) return;
+  var loaded = false;
+  function load() {
+    if (loaded) return; loaded = true;
+    var s = document.createElement("script");
+    s.src = "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
+    s.async = true;
+    document.body.appendChild(s);
+  }
+  if (location.hash === "#book" || !("IntersectionObserver" in window)) { load(); return; }
+  new IntersectionObserver(function (e, o) {
+    if (e[0].isIntersecting) { o.disconnect(); load(); }
+  }, { rootMargin: "1200px 0px" }).observe(box);
+})();
+window.addEventListener("message", function (e) {
+  if (!e.data || !e.data.meetingBookSucceeded) return;
+  try { if (window.clarity) window.clarity("event", "zirtual_call_booked"); } catch (err) {}
+});
+</script>
+<script>
 (function () {
   "use strict";
   var CONFIG = {
@@ -740,7 +995,7 @@
   ref = ref || CONFIG.DEFAULT_REF;
   document.getElementById("ref").value = ref;
 
-  var form = document.getElementById("enquiry");
+  var form = document.getElementById("inquiry");
   var msg = document.getElementById("form-msg");
   function show(cls, text) { msg.className = "form-msg " + cls; msg.textContent = text; }
   function addBookLink(label) {
@@ -761,7 +1016,7 @@
     show("ok", "Sending...");
     var payload = new URLSearchParams({
       name: data.name, email: data.email, company: data.org || "",
-      message: "Zirtual x TEG enquiry, realtors (source: " + data.ref + ")\nZirtual assistant: " + (data.va || "Not provided") + "\nWant AI to do: " + (data.goal || "Not provided")
+      message: "Zirtual x TEG inquiry, realtors (source: " + data.ref + ")\nZirtual assistant: " + (data.va || "Not provided") + "\nWant AI to do: " + (data.goal || "Not provided")
     }).toString();
     fetch(CONFIG.FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: payload })
       .then(function (r) { return r.json(); })
