@@ -639,6 +639,7 @@
 .lab .bp-card .btn { width: 100%; line-height: 1.3; }
 .lab .answer { font-size: 1.15rem; text-align: center; max-width: 46em; margin-inline: auto; }
 .lab .vlist { max-width: 720px; margin-inline: auto; }
+.lab .vlist li { text-align: left; }
 .lab .price.mega .amt { font-size: clamp(5rem, 18vw, 8rem); }
 .lab .price.mega .sub { font-weight: 700; color: var(--pink-dark); margin-top: 6px; }
 .lab .covers { margin-top: 24px; }
@@ -662,6 +663,28 @@
 .lab .faq { max-width: 780px; margin-inline: auto; }
 .lab .btn-row.cx { justify-content: center; }
 .lab #how .flow.dark3 li { padding-bottom: 30px; }
+/* offer reveal: JS adds .of-ready, then .of-play while in view */
+.lab #offer.of-ready .eyebrow, .lab #offer.of-ready h2, .lab #offer.of-ready .answer, .lab #offer.of-ready .flow-label { opacity: 0; transform: translateY(12px); }
+.lab #offer.of-ready .vlist li { opacity: 0; transform: translateX(-14px); }
+.lab #offer.of-play .eyebrow, .lab #offer.of-play h2, .lab #offer.of-play .answer, .lab #offer.of-play .flow-label { animation: ofUp .55s ease-out both; }
+.lab #offer.of-play h2 { animation-delay: .15s; }
+.lab #offer.of-play .answer { animation-delay: .45s; }
+.lab #offer.of-play .flow-label { animation-delay: 1.1s; }
+.lab #offer.of-play .vlist li { animation: ofItem .5s ease-out both, ofGlow 1.2s ease-out both; }
+.lab #offer.of-play .vlist li::before { animation: ofPop .45s ease-out both; }
+.lab #offer.of-play .vlist li:nth-child(1) { animation-delay: 1.4s, 1.7s; }
+.lab #offer.of-play .vlist li:nth-child(2) { animation-delay: 1.9s, 2.2s; }
+.lab #offer.of-play .vlist li:nth-child(3) { animation-delay: 2.4s, 2.7s; }
+.lab #offer.of-play .vlist li:nth-child(4) { animation-delay: 2.9s, 3.2s; }
+.lab #offer.of-play .vlist li:nth-child(1)::before { animation-delay: 1.55s; }
+.lab #offer.of-play .vlist li:nth-child(2)::before { animation-delay: 2.05s; }
+.lab #offer.of-play .vlist li:nth-child(3)::before { animation-delay: 2.55s; }
+.lab #offer.of-play .vlist li:nth-child(4)::before { animation-delay: 3.05s; }
+@keyframes ofUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes ofItem { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+@keyframes ofPop { 0% { transform: scale(.3); } 70% { transform: scale(1.3); } 100% { transform: scale(1); } }
+@keyframes ofGlow { 0% { box-shadow: 0 0 0 0 rgba(201,162,75,0); } 35% { box-shadow: 0 0 0 7px rgba(201,162,75,.35); } 100% { box-shadow: 0 0 0 0 rgba(201,162,75,0); } }
+@media (prefers-reduced-motion: reduce) { .lab #offer .eyebrow, .lab #offer h2, .lab #offer .answer, .lab #offer .flow-label, .lab #offer .vlist li { opacity: 1 !important; transform: none !important; animation: none !important; } .lab #offer .vlist li::before { animation: none !important; } }
 .lab #how.hw-play .flow.dark3 li:nth-child(3) { animation-delay: 1.8s, 2.4s; }
 .lab #how.hw-play .flow.dark3 ~ .callout { animation-delay: 3.2s; }
 .lab .btn-row.cx + .plan-urgent { margin: 18px auto 22px; }
@@ -898,7 +921,7 @@
   </div>
 </section>
 <!-- 2. ANSWER FIRST + KEY TAKEAWAYS -->
-<section>
+<section id="offer">
   <div class="container center">
     <p class="eyebrow">The offer</p>
     <h2>What is the Zirtual x TEG AI offer?</h2>
@@ -1218,7 +1241,7 @@
 /* Scroll-triggered reveals for #how and #premium, same approach as ai-for-agents-and-brokers.html */
 (function () {
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  [['how', 'hw', 0.4], ['premium', 'pm', 0.35], ['week', 'wk', 0.35], ['scope', 'sc', 0.3]].forEach(function (c) {
+  [['how', 'hw', 0.4], ['premium', 'pm', 0.35], ['week', 'wk', 0.35], ['scope', 'sc', 0.3], ['offer', 'of', 0.3]].forEach(function (c) {
     var s = document.getElementById(c[0]);
     if (!s) return;
     s.classList.add(c[1] + '-ready');
