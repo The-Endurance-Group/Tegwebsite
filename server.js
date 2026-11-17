@@ -441,6 +441,33 @@ function handleContact(req, res) {
 
     console.log('[CONTACT]', JSON.stringify({name, email, company, message, ip, ts: new Date().toISOString()}));
 
+    // Realty ONE Group partner page: also log the lead to the shared Google Sheet.
+    // ROG_SHEET_WEBHOOK_URL is the Apps Script web app URL (integrations/rog-sheet-apps-script.gs).
+    var rogHook = process.env.ROG_SHEET_WEBHOOK_URL;
+    if (rogHook && params.get('source') === 'realty-one-group') {
+      fetch(rogHook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        redirect: 'follow',
+        body: JSON.stringify({
+          secret: process.env.ROG_SHEET_WEBHOOK_SECRET || '',
+          type: (params.get('type') || 'Inquiry').slice(0, 40),
+          name: name,
+          email: email,
+          office: (params.get('office') || '').slice(0, 200).trim(),
+          market: company,
+          goal: (params.get('goal') || '').slice(0, 1000).trim(),
+          source: 'realty-one-group',
+          ref: (params.get('ref') || '').slice(0, 40),
+          page: 'realty-one-group-agents'
+        })
+      }).then(function(r) {
+        if (!r.ok) console.error('[CONTACT] ROG sheet webhook error', r.status);
+      }).catch(function(err) {
+        console.error('[CONTACT] ROG sheet webhook error:', err.message);
+      });
+    }
+
     var resendKey = process.env.RESEND_API_KEY;
     if (resendKey) {
       fetch('https://api.resend.com/emails', {
