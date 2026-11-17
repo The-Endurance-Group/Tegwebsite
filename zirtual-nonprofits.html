@@ -790,7 +790,7 @@
       "@type": "Service",
       "@id": "https://www.theendurancegroup.com/zirtual-nonprofits.html#service",
       "name": "AI setup for nonprofits",
-      "description": "A human-led AI build for nonprofit teams: grant finder and drafting, donor outreach drafts, event and newsletter syndication, a daily task brief and reporting reminders, built and installed for a fixed price.",
+      "description": "A human-led AI build for nonprofit teams: a grant finder and drafting assistant, event and newsletter syndication and a daily task brief, built and installed for a fixed price.",
       "url": "https://www.theendurancegroup.com/zirtual-nonprofits.html",
       "serviceType": "AI implementation",
       "areaServed": "US",
@@ -831,7 +831,7 @@
           "name": "Which budget line should the $998 come from?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It depends on the build and on your funders' rules. Grant and donor builds usually fit Development/Fundraising. Event and newsletter builds usually fit Marketing and Communications. Task briefs fit Operations/Administration, and reminders fit Finance and Compliance. Confirm coding with your finance lead or auditor."
+            "text": "It depends on the build and on your funders' rules. Grant builds usually fit Development/Fundraising. Event and newsletter builds usually fit Marketing and Communications. Task briefs fit Operations/Administration. Confirm coding with your finance lead or auditor."
           }
         },
         {
@@ -930,8 +930,7 @@
         <li>Hear what we would build</li>
         <li>A straight answer on fit</li>
       </ul>
-      <!-- TODO: swap this scheduling link if Zirtual needs its own booking link. Currently the same HubSpot link as lab-ai-environment.html. -->
-<a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book">Book your free 30-minute call to talk through what you want AI to do</a>
+      <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book">Book your free 30-minute call to talk through what you want AI to do</a>
       <p class="bp-fine"><strong>The first call is free.</strong> The $998 only applies if you want us to build.</p>
     </div>
   </div>
@@ -978,40 +977,62 @@
       <p class="lead" style="margin-top:12px">On the free call we learn what your team needs help with. Then we work out which budget line item the build can be applied to, so you know where the $998 fits before you commit. Here is where each build usually sits.</p>
     </div>
     <div class="ex-grid">
-      <article class="ex">
-        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Grant matches<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Grants to review<small>Matched to your criteria</small></span><em class="chip-warm">Weekly</em></div><div class="mrow"><b>2</b><span class="mname">Draft application<small>From your program materials</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Letter of inquiry<small>Outline for you to edit</small></span><em class="chip-draft">Draft ready</em></div></div></div>
-        <p class="cap">Example grant matches</p>
+      <article class="ex ex-recruit">
+        <div class="ex-media ex-art" role="img" aria-label="Animation: a staff member asks the AI to find grants that fit a youth literacy program. It searches grant listings, matches the criteria and skips grants already applied for, then returns a short list of matches with a drafted letter of inquiry ready to edit.">
+          <div class="mock rec" aria-hidden="true">
+            <div class="rc-prompt">
+              <div class="rc-txt"><span class="l1">Find grants that fit our</span><span class="l2">youth literacy program</span></div>
+              <span class="rc-send">&uarr;</span>
+            </div>
+            <ul class="rc-src"><li><span class="lbl">Searching grant listings</span><span class="lg"><i>Grants</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li><li><span class="lbl">Matching your criteria</span><span class="lg"><i>Criteria</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li><li><span class="lbl">Skipping ones you applied to</span><span class="lg"><i>Your list</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li></ul>
+            <div class="rc-brief">
+              <p class="mock-h">Grant matches <span>Example</span></p>
+              <div class="rc-list"><div class="mrow"><b>1</b><span class="mname">Local community foundation<small>Fits your criteria</small></span><em class="chip-warm">Strong fit</em></div><div class="mrow"><b>2</b><span class="mname">State education grant<small>Matches program area</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Family foundation<small>Letter of inquiry first</small></span><em class="chip-draft">Draft ready</em></div></div>
+              <div class="rc-draft"><span class="rc-sent">Ready for your edits &check;</span><b>Draft letter of inquiry</b>Dear program officer, thank you for considering our youth literacy program. We would welcome the chance to share how it serves our community.</div>
+            </div>
+          </div>
+        </div>
         <p class="ex-tag">Budget line: Development/Fundraising</p>
         <h3>Grant finder and grant drafting assistant</h3>
         <p>Searches for open grants that match your criteria on a schedule, then drafts first-pass applications and letters of inquiry from your own program materials for you to edit.</p>
       </article>
-      <article class="ex">
-        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Donor drafts<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Thank-you note<small>In your voice</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Impact update<small>From your notes</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Renewal ask<small>Ready for review</small></span><em class="chip-draft">Draft ready</em></div></div></div>
-        <p class="cap">Example donor drafts</p>
-        <p class="ex-tag">Budget line: Development/Fundraising</p>
-        <h3>Donor outreach and stewardship drafts</h3>
-        <p>Drafts thank-you notes, impact updates and renewal asks in your voice from your donor notes.</p>
-      </article>
-      <article class="ex">
-        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Event versions<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Email version<small>From one event post</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Social post<small>Ready to review</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Website blurb<small>Ready to review</small></span><em class="chip-draft">Draft ready</em></div></div></div>
-        <p class="cap">Example event versions</p>
+      <article class="ex ex-recruit">
+        <div class="ex-media ex-art" role="img" aria-label="Animation: a staff member asks the AI to share a spring gala across email and social. It reads the event page, matches the organization's voice and checks the channels, then returns an email, a social post and a newsletter blurb, with a drafted email ready to schedule.">
+          <div class="mock rec" aria-hidden="true">
+            <div class="rc-prompt">
+              <div class="rc-txt"><span class="l1">Share our spring gala</span><span class="l2">across email and social</span></div>
+              <span class="rc-send">&uarr;</span>
+            </div>
+            <ul class="rc-src"><li><span class="lbl">Reading your event page</span><span class="lg"><i>Event</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li><li><span class="lbl">Matching your voice</span><span class="lg"><i>Your voice</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li><li><span class="lbl">Checking your channels</span><span class="lg"><img src="images/logos/gmail.png" alt="Gmail" width="20" height="20"><img src="images/logos/facebook.png" alt="Facebook" width="20" height="20"><img src="images/logos/instagram.png" alt="Instagram" width="20" height="20"></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li></ul>
+            <div class="rc-brief">
+              <p class="mock-h">Event versions <span>Example</span></p>
+              <div class="rc-list"><div class="mrow"><b>1</b><span class="mname">Email to supporters<small>Subject line and body</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>2</b><span class="mname">Social post<small>For Facebook and Instagram</small></span><em class="chip-draft">Draft ready</em></div><div class="mrow"><b>3</b><span class="mname">Newsletter blurb<small>Short and long versions</small></span><em class="chip-draft">Draft ready</em></div></div>
+              <div class="rc-draft"><span class="rc-sent">Ready to schedule &check;</span><b>Draft email</b>Join us this spring for an evening of community and celebration. Here is how to reserve your seat.</div>
+            </div>
+          </div>
+        </div>
         <p class="ex-tag">Budget line: Marketing and Communications</p>
         <h3>Event and newsletter syndication</h3>
         <p>Turns one event or newsletter item into versions for email, social and your website.</p>
       </article>
-      <article class="ex">
-        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Daily brief<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Overdue task<small>Flagged from your board</small></span><em class="chip-warm">Overdue</em></div><div class="mrow"><b>2</b><span class="mname">Due today<small>Needs attention</small></span><em class="chip-draft">Today</em></div><div class="mrow"><b>3</b><span class="mname">Coming up<small>Later this week</small></span><em class="chip-soft">Soon</em></div></div></div>
-        <p class="cap">Example daily brief</p>
+      <article class="ex ex-recruit">
+        <div class="ex-media ex-art" role="img" aria-label="Animation: a staff member asks what needs attention on the team board today. The AI reads the task board, checks due dates and flags overdue tasks, then returns a morning brief with the overdue, due today and coming up items.">
+          <div class="mock rec" aria-hidden="true">
+            <div class="rc-prompt">
+              <div class="rc-txt"><span class="l1">What needs my attention</span><span class="l2">on the team board today?</span></div>
+              <span class="rc-send">&uarr;</span>
+            </div>
+            <ul class="rc-src"><li><span class="lbl">Reading your task board</span><span class="lg"><i>Trello</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li><li><span class="lbl">Checking due dates</span><span class="lg"><i>Dates</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li><li><span class="lbl">Flagging overdue tasks</span><span class="lg"><i>Overdue</i></span><span class="st"><span class="sp"></span><span class="ck">&check;</span></span></li></ul>
+            <div class="rc-brief">
+              <p class="mock-h">Morning brief <span>Example</span></p>
+              <div class="rc-list"><div class="mrow"><b>1</b><span class="mname">Donor report<small>Past its due date</small></span><em class="chip-warm">Overdue</em></div><div class="mrow"><b>2</b><span class="mname">Event signage<small>Due today</small></span><em class="chip-draft">Today</em></div><div class="mrow"><b>3</b><span class="mname">Newsletter<small>Coming up this week</small></span><em class="chip-soft">Soon</em></div></div>
+              <div class="rc-draft"><span class="rc-sent">Delivered to your inbox &check;</span><b>Brief for your inbox</b>Good morning. You have an overdue task and a few due soon. Start with the donor report.</div>
+            </div>
+          </div>
+        </div>
         <p class="ex-tag">Budget line: Operations/Administration</p>
         <h3>Daily brief from Trello or a similar task tool</h3>
         <p>Reads your task board each morning and sends a short brief that flags overdue tasks and what needs attention today.</p>
-      </article>
-      <article class="ex">
-        <div class="ex-media ex-art"><div class="mock" aria-hidden="true"><p class="mock-h">Reminders<span>Example</span></p><div class="mrow"><b>1</b><span class="mname">Funder report<small>Due soon</small></span><em class="chip-warm">Reminder</em></div><div class="mrow"><b>2</b><span class="mname">Annual filing<small>Coming up</small></span><em class="chip-draft">Reminder</em></div><div class="mrow"><b>3</b><span class="mname">Report outline<small>When a report is due</small></span><em class="chip-draft">Draft ready</em></div></div></div>
-        <p class="cap">Example reminders</p>
-        <p class="ex-tag">Budget line: Finance and Compliance</p>
-        <h3>Reporting and filing reminders</h3>
-        <p>Tracks your funder report and filing dates and reminds you ahead of time, with a draft outline when a report is due.</p>
       </article>
       <article class="ex ex-yours">
         <div class="ex-media ex-plus yo" role="img" aria-label="Animation: a plus sign turns into a growing set of thought bubbles, such as finding grants, drafting donor thank-yous, sharing an event, flagging overdue tasks, reminding you of filings and drafting a newsletter. Each one gets a checked result, until the box is full."><span class="yo-plus" aria-hidden="true">+</span><div class="yo-grid" aria-hidden="true"><div class="yo-b"><span class="yo-t">Find grants that fit us</span><span class="yo-c">&check; Matches ready</span></div><div class="yo-b"><span class="yo-t">Draft donor thank-yous</span><span class="yo-c">&check; Notes drafted</span></div><div class="yo-b"><span class="yo-t">Share my event</span><span class="yo-c">&check; Versions ready</span></div><div class="yo-b"><span class="yo-t">Flag overdue tasks</span><span class="yo-c">&check; Brief sent</span></div><div class="yo-b"><span class="yo-t">Remind me of filings</span><span class="yo-c">&check; Reminders set</span></div><div class="yo-b"><span class="yo-t">Draft my newsletter</span><span class="yo-c">&check; Draft ready</span></div></div></div>
@@ -1034,8 +1055,7 @@
     </ol>
     <p class="callout">The call is free. The $998 only applies if you want us to build.</p>
     <p class="note">The build, install and follow-up call are completed within 30 days of signing.</p>
-    <div class="section-cta"><!-- TODO: swap this scheduling link if Zirtual needs its own booking link. Currently the same HubSpot link as lab-ai-environment.html. -->
-<a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="steps-book">Book your free 30-minute call to talk through what you want AI to do</a></div>
+    <div class="section-cta"><a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="steps-book">Book your free 30-minute call to talk through what you want AI to do</a></div>
   </div>
 </section>
 <!-- SCOPE -->
@@ -1081,8 +1101,7 @@
         <div class="usd">Fixed price, in US dollars. One time.</div>
         <p class="sub">No subscription. No monthly fee to us.</p>
         <p class="split"><strong>The first call is free.</strong> You only pay if you want us to build.</p>
-        <div><!-- TODO: swap this scheduling link if Zirtual needs its own booking link. Currently the same HubSpot link as lab-ai-environment.html. -->
-<a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="price-book">Book your free 30-minute call</a></div>
+        <div><a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="price-book">Book your free 30-minute call</a></div>
       </div>
       <div class="panel team-mini">
         <h3>Led by</h3>
@@ -1108,7 +1127,7 @@
     <div class="faq">
       <details><summary>Is the first call really free?</summary><p>Yes. The 30-minute call is free and carries no obligation. We talk about what you want AI to do. The $998 only applies if you then decide you want us to build it.</p></details>
       <details><summary>What does the $998 cover?</summary><p>A fixed price for everything we agree on the first call, as long as it fits our scope. That includes building it, installing it, walking you through it and a follow-up call about a week later.</p></details>
-      <details><summary>Which budget line should the $998 come from?</summary><p>It depends on the build and on your funders' rules. Grant and donor builds usually fit Development/Fundraising. Event and newsletter builds usually fit Marketing and Communications. Task briefs fit Operations/Administration, and reminders fit Finance and Compliance. Confirm coding with your finance lead or auditor.</p></details>
+      <details><summary>Which budget line should the $998 come from?</summary><p>It depends on the build and on your funders' rules. Grant builds usually fit Development/Fundraising. Event and newsletter builds usually fit Marketing and Communications. Task briefs fit Operations/Administration. Confirm coding with your finance lead or auditor.</p></details>
       <details><summary>Is this a subscription?</summary><p>No. $998 is a one-time fixed price with no monthly fee to us.</p></details>
       <details><summary>Does this replace my Zirtual assistant?</summary><p>No. A real person from our team is on every call, and the setup is designed to work alongside your Zirtual assistant. Your assistant keeps doing what they do, with better drafts and briefs to work from.</p></details>
       <details><summary>What is not included?</summary><p>Custom software, scrapers, building new integrations and website migrations are out of scope. We quote those separately, and we tell you on the free call if something you want falls into that group.</p></details>
@@ -1128,10 +1147,8 @@
       <li>A straight answer on whether we are a fit</li>
     </ul>
     <p class="plan-note">The call is free. The $998 only applies if you want us to build.</p>
-    <div class="btn-row cx"><!-- TODO: swap this scheduling link if Zirtual needs its own booking link. Currently the same HubSpot link as lab-ai-environment.html. -->
-<a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="form-book">Book your free 30-minute call to talk through what you want AI to do</a></div>
+    <div class="btn-row cx"><a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="form-book">Book your free 30-minute call to talk through what you want AI to do</a></div>
     <p class="plan-urgent">Or pick a time below.</p>
-    <!-- TODO: swap this embedded calendar URL if Zirtual needs its own booking link. Currently the same HubSpot calendar as the buttons. -->
     <div class="cal-card" id="book">
       <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b&embed=true"></div>
     </div>
@@ -1220,7 +1237,7 @@
       <div class="footer-bottom">
       <div class="lab-disc">
         <p>The Endurance Group is independent of Zirtual. This is a separate service that The Endurance Group offers to Zirtual clients.</p>
-        <p>The Endurance Group does not provide legal, tax, accounting or other professional advice. AI outputs are drafts. You remain responsible for reviewing all content before it is used or sent. Results vary and are not guaranteed.</p>
+        <p>The Endurance Group does not provide legal, tax, accounting or other professional advice. Results vary and are not guaranteed.</p>
       </div>
         <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
         <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
@@ -1277,7 +1294,7 @@ window.addEventListener("message", function (e) {
     FORM_ENDPOINT: "/api/contact",  // site contact endpoint, same as lab-ai-environment.html
     DEFAULT_REF: "zirtual-nonprofits"
   };
-  var BOOK_URL = "https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b"; // TODO: swap if Zirtual needs its own scheduling link
+  var BOOK_URL = "https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b";
 
   function safeRef(v) { return String(v || "").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40); }
   var ref = "";
