@@ -7,8 +7,8 @@ const { handleBuilds } = require('./builds-api');
 const PORT = process.env.PORT || 8080;
 const ROOT = __dirname;
 
-const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001';
-const AI_POLICY_MODEL = process.env.AI_POLICY_MODEL || 'claude-sonnet-4-6';
+const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5';
+const AI_POLICY_MODEL = process.env.AI_POLICY_MODEL || 'claude-sonnet-5-5';
 const CHAT_RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const CHAT_RATE_LIMIT_MAX = 30;
 const chatRateLimitHits = new Map();
