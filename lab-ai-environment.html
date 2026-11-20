@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>We Build Your AI Environment For You | The Endurance Group x Healthcare Thought Leaders' Lab</title>
-<meta name="description" content="We build your private AI environment for you, around the tools you already use. White-glove and done for you. For members of Megan Walker's Healthcare Thought Leaders' Lab.">
+<meta name="description" content="We build your private AI environment for you, around the tools you already use. White-glove and done for you. Your first call is free. For members of Megan Walker's Healthcare Thought Leaders' Lab.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="We build your AI environment for you">
-<meta property="og:description" content="A fixed-fee offer for Healthcare Thought Leaders' Lab members. We build the AI layer, your VA keeps doing the execution.">
+<meta property="og:description" content="Your first call is free. Then a fixed fee for Healthcare Thought Leaders' Lab members. We build the AI layer, your VA keeps doing the execution.">
 <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.theendurancegroup.com/lab-ai-environment.html">
@@ -233,6 +233,104 @@
 .lab .more summary:hover { background: var(--plum); color: #fff; }
 .lab .more[open] .cards { margin-top: 28px; }
 .lab .book { display: inline-block; margin-top: 10px; font-weight: 700; }
+/* ===== free call ===== */
+.lab .free-pill { display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; background: rgba(201,162,75,.16); border: 1.5px solid var(--gold); color: #fff; border-radius: 999px; padding: 10px 20px; font-size: 1rem; }
+.lab .free-pill b { color: var(--gold); }
+.lab .free-pill .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--gold); flex: none; animation: freePulse 2s ease-out infinite; }
+@keyframes freePulse { 0% { box-shadow: 0 0 0 0 rgba(201,162,75,.75); } 70%, 100% { box-shadow: 0 0 0 13px rgba(201,162,75,0); } }
+.lab .tag-free { display: inline-block; margin-left: 8px; background: var(--gold); color: var(--plum); font-size: .72rem; letter-spacing: .08em; padding: 2px 9px; border-radius: 999px; animation: tagGlow 2.4s ease-in-out infinite; }
+@keyframes tagGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(201,162,75,0); } 50% { box-shadow: 0 0 0 6px rgba(201,162,75,.3); } }
+.lab .freebar { display: flex; align-items: center; gap: 14px; margin-top: 22px; background: var(--gold-tint); border: 2px solid var(--gold); color: #5c4410; border-radius: var(--r); padding: 18px 22px; }
+.lab .freebar .fb-ico { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--gold); color: var(--plum); display: grid; place-items: center; font-weight: 800; }
+.lab .tico.num { font: 700 1.5rem var(--font-head); }
+.lab #offer .tile { font-weight: 500; }
+.lab #offer .tile b { font-weight: 700; }
+.lab #offer .lead { margin-top: 14px; }
+
+/* ===== motion ===== */
+.lab .hero .container > * { animation: labUp .7s ease-out both; }
+.lab .hero .container > :nth-child(2) { animation-delay: .08s; }
+.lab .hero .container > :nth-child(3) { animation-delay: .16s; }
+.lab .hero .container > :nth-child(4) { animation-delay: .24s; }
+.lab .hero .container > :nth-child(5) { animation-delay: .34s; }
+.lab .hero .container > :nth-child(6) { animation-delay: .44s; }
+.lab .hero .container > :nth-child(7) { animation-delay: .54s; }
+@keyframes labUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.lab .btn-primary { box-shadow: 0 0 0 0 rgba(168,68,111,.0); }
+.lab .btn-primary:hover { box-shadow: 0 10px 24px -8px rgba(168,68,111,.55); }
+
+/* generic scroll reveal (classes added by JS only) */
+.lab .rv { opacity: 0; transform: translateY(18px); transition: opacity .6s ease-out var(--d, 0s), transform .6s ease-out var(--d, 0s); }
+.lab .rv.rv-in { opacity: 1; transform: none; }
+.lab .tile.rv { transform: translateY(18px) scale(.94); }
+.lab .tile.rv.rv-in { transform: none; }
+.lab .tile .tico { transition: transform .25s; }
+.lab .tile:hover .tico { transform: scale(1.1) rotate(-4deg); }
+.lab .card, .lab .quote, .lab .obj article, .lab .panel { transition: transform .25s, box-shadow .25s; }
+.lab .card:hover, .lab .obj article:hover { transform: translateY(-4px); box-shadow: 0 14px 28px -14px rgba(32,28,34,.28); }
+.lab .rv.rv-in.rv-done { transition: transform .25s, box-shadow .25s; }
+
+/* not-an-app: strike the old way, light up the new one */
+.lab #service.sv-ready .vs .short li { opacity: 0; transform: translateY(8px); }
+.lab #service.sv-ready .vs .instead li { text-decoration-color: transparent; }
+.lab #service.sv-ready .vs .could { opacity: .35; }
+.lab #service.sv-play .vs .instead li { animation: svItem .5s ease-out var(--a) both, svStrike .5s ease-out calc(var(--a) + .6s) both; }
+.lab #service.sv-play .vs .could li { animation: svItem .5s ease-out var(--a) both; }
+.lab #service.sv-play .vs .could { animation: svCould .8s ease-out 2s both; }
+.lab #service .vs .instead li:nth-child(1) { --a: .1s; } .lab #service .vs .instead li:nth-child(2) { --a: .5s; } .lab #service .vs .instead li:nth-child(3) { --a: .9s; }
+.lab #service .vs .could li:nth-child(1) { --a: 2.3s; } .lab #service .vs .could li:nth-child(2) { --a: 2.6s; } .lab #service .vs .could li:nth-child(3) { --a: 2.9s; }
+@keyframes svItem { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes svStrike { from { text-decoration-color: transparent; color: var(--plum); } to { text-decoration-color: rgba(122,111,120,.6); color: #7a6f78; } }
+@keyframes svCould { 0% { opacity: .35; } 60% { opacity: 1; box-shadow: 0 0 0 8px rgba(201,162,75,.3), 0 18px 40px -12px rgba(58,99,96,.55); } 100% { opacity: 1; box-shadow: 0 18px 40px -12px rgba(58,99,96,.55); } }
+
+/* different kind of week: tangled vs connected */
+.lab #week .dia rect, .lab #week .dia circle { transform-box: fill-box; transform-origin: center; }
+.lab #week.wk-ready .dia rect, .lab #week.wk-ready .dia circle { opacity: 0; transform: scale(.5); }
+.lab #week.wk-ready .could .dia g path { stroke-dasharray: 140; stroke-dashoffset: 140; }
+.lab #week.wk-ready .short li { opacity: 0; }
+.lab #week.wk-play .dia rect, .lab #week.wk-play .dia circle { animation: wkPop .5s ease-out both; }
+.lab #week .dia rect:nth-of-type(2) { animation-delay: .12s !important; } .lab #week .dia rect:nth-of-type(3) { animation-delay: .24s !important; } .lab #week .dia rect:nth-of-type(4) { animation-delay: .36s !important; } .lab #week .dia rect:nth-of-type(5) { animation-delay: .48s !important; }
+.lab #week.wk-play .could .dia g path { animation: wkDraw .7s ease-out 1.1s both; }
+.lab #week.wk-play .could .dia circle { animation: wkPop .6s cubic-bezier(.3,1.5,.5,1) 1.8s both; }
+.lab #week.wk-play .instead .dia g path { animation: wkMarch 1.4s linear infinite; }
+.lab #week.wk-play .short li { animation: svItem .5s ease-out var(--a, 0s) both; }
+.lab #week .instead li:nth-child(1) { --a: .3s; } .lab #week .instead li:nth-child(2) { --a: .6s; } .lab #week .instead li:nth-child(3) { --a: .9s; }
+.lab #week .could li:nth-child(1) { --a: 2.2s; } .lab #week .could li:nth-child(2) { --a: 2.5s; } .lab #week .could li:nth-child(3) { --a: 2.8s; }
+@keyframes wkPop { from { opacity: 0; transform: scale(.5); } to { opacity: 1; transform: scale(1); } }
+@keyframes wkDraw { to { stroke-dashoffset: 0; } }
+@keyframes wkMarch { to { stroke-dashoffset: -20; } }
+
+/* how it works */
+.lab #how.hw-ready .step { opacity: .28; transform: translateY(10px); }
+.lab #how.hw-ready .step::after { transform: scaleY(0); transform-origin: top; }
+.lab #how.hw-ready .callout { opacity: 0; transform: translateY(8px); }
+.lab #how.hw-play .step { animation: hwIn .6s ease-out var(--a) both; }
+.lab #how.hw-play .step::before { animation: hwPop .6s ease-out var(--a) both; }
+.lab #how.hw-play .step::after { transform-origin: top; animation: hwLine .6s ease-out calc(var(--a) + .4s) both; }
+.lab #how.hw-play .callout { animation: hwIn .6s ease-out 4.3s both; }
+.lab #how .step:nth-child(1) { --a: 0s; } .lab #how .step:nth-child(2) { --a: .7s; } .lab #how .step:nth-child(3) { --a: 1.4s; } .lab #how .step:nth-child(4) { --a: 2.1s; } .lab #how .step:nth-child(5) { --a: 2.8s; } .lab #how .step:nth-child(6) { --a: 3.5s; }
+@keyframes hwIn { from { opacity: .28; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes hwPop { 0% { transform: scale(.6); } 60% { transform: scale(1.18); } 100% { transform: scale(1); } }
+@keyframes hwLine { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* looping mini demo in the skills card */
+.lab .demo { position: relative; margin-top: 14px; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+.lab .demo .d-in { display: flex; align-items: center; gap: 8px; background: #fff; border: 1.5px solid var(--line); border-radius: 10px; padding: 6px 6px 6px 10px; font-size: .8rem; font-weight: 700; color: var(--plum); }
+.lab .demo .d-type { flex: 1; white-space: nowrap; overflow: hidden; animation: dType 8s linear infinite; }
+.lab .demo .d-send { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: .8rem; color: #fff; background: var(--pink); animation: dSend 8s linear infinite; }
+.lab .demo .d-out { display: grid; gap: 6px; margin-top: 12px; }
+.lab .demo .d-out span { height: 8px; border-radius: 4px; background: var(--teal-tint); transform-origin: left; animation: dLine 8s linear infinite both; }
+.lab .demo .d-out span:nth-child(1) { animation-delay: .3s; } .lab .demo .d-out span:nth-child(2) { width: 84%; animation-delay: .6s; } .lab .demo .d-out span:nth-child(3) { width: 62%; animation-delay: .9s; }
+.lab .demo .d-done { position: absolute; right: 10px; bottom: 8px; background: var(--teal-dark); color: #fff; font-style: normal; font-size: .64rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; animation: dDone 8s linear infinite both; }
+@keyframes dType { 0%, 4% { clip-path: inset(0 100% 0 0); } 28% { clip-path: inset(0 0 0 0); } 92% { clip-path: inset(0 0 0 0); } 97%, 100% { clip-path: inset(0 100% 0 0); } }
+@keyframes dSend { 0%, 28% { background: #c9bfc6; transform: none; } 31% { background: var(--pink); transform: scale(.85); } 34%, 100% { background: var(--pink); transform: none; } }
+@keyframes dLine { 0%, 32% { opacity: 0; transform: scaleX(0); } 44%, 90% { opacity: 1; transform: scaleX(1); } 97%, 100% { opacity: 0; transform: scaleX(1); } }
+@keyframes dDone { 0%, 52% { opacity: 0; transform: scale(.8); } 57%, 90% { opacity: 1; transform: none; } 97%, 100% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .lab *, .lab *::before, .lab *::after { animation: none !important; }
+  .lab .rv, .lab .tile.rv { opacity: 1 !important; transform: none !important; }
+}
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -259,11 +357,12 @@
     <p class="eyebrow">White-glove. Done for you. A Lab member offer for Australian practitioners.</p>
     <h1>We build your AI environment for you.</h1>
     <p class="lead">Not an app to figure out. We listen, we build it, we install it, and we walk you through it.</p>
+    <p class="free-pill"><span class="dot" aria-hidden="true"></span><span><b>Your first call is free.</b> 30 minutes, no obligation.</span></p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="#enquire" data-cta="hero-enquire">Send an enquiry</a>
-      <a class="btn btn-ghost" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book">Book a scoping call</a>
+      <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book">Book your free call</a>
+      <a class="btn btn-ghost" href="#enquire" data-cta="hero-enquire">Send an enquiry</a>
     </div>
-    <p class="fine">Fixed fee of <span data-price="usd">US$998</span>. About 3 hours of your time. We only take on three clients per month, so sign up now.</p>
+    <p class="fine">The first call is free. The fixed fee of <span data-price="usd">US$998</span> only applies if you want us to build. About 3 hours of your time after that. We only take on three clients per month, so sign up now.</p>
   </div>
 </section>
 
@@ -275,8 +374,22 @@
   </div>
 </section>
 
+<!-- 1c. THE OFFER -->
+<section id="offer">
+  <div class="container center">
+    <p class="eyebrow">The offer</p>
+    <h2>Start with a free call</h2>
+    <p class="lead narrow">Talk it through with us first. If you want us to build, we build what we agreed for a fixed fee, install it and walk you through it.</p>
+    <ul class="tiles three perks">
+      <li class="tile"><span class="tico num">1</span><span><b>Free 30-minute call.</b><br>Tell us what you want AI to do. No obligation.</span></li>
+      <li class="tile"><span class="tico num">2</span><span><b><span data-price="usd">US$998</span>, only if you build.</b><br>Fixed and one time. Nothing to pay before you decide.</span></li>
+      <li class="tile"><span class="tico num">3</span><span><b>We build, you try it.</b><br>Installed, explained, then refined after a week.</span></li>
+    </ul>
+  </div>
+</section>
+
 <!-- 2. FAMILIAR -->
-<section>
+<section id="familiar">
   <div class="container">
     <p class="eyebrow">Sound like you?</p>
     <h2>Does this feel familiar?</h2>
@@ -292,7 +405,7 @@
 </section>
 
 <!-- 3. NOT AN APP -->
-<section class="alt">
+<section class="alt" id="service">
   <div class="container">
     <h2>Not an app. A service.</h2>
     <div class="vs bold">
@@ -314,7 +427,7 @@
 </section>
 
 <!-- 3b. A DIFFERENT KIND OF WEEK -->
-<section>
+<section id="week">
   <div class="container">
     <h2>A different kind of week</h2>
     <div class="vs">
@@ -340,7 +453,7 @@
     <h2>Things we can build for you</h2>
     <p class="lead" style="margin-top:14px">We choose the pieces that fit your practice on call one.</p>
     <div class="cards">
-      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div><h3>Skills in your voice</h3><p>Reusable prompts that sound like you.</p><p class="eg">A talk becomes an email series in one click.</p></article>
+      <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div><h3>Skills in your voice</h3><p>Reusable prompts that sound like you.</p><p class="eg">A talk becomes an email series in one click.</p><div class="demo" aria-hidden="true"><div class="d-in"><span class="d-type">Turn my talk into 5 emails</span><i class="d-send">&#8593;</i></div><div class="d-out"><span></span><span></span><span></span></div><em class="d-done">Draft ready</em></div></article>
       <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Scheduled routines</h3><p>Jobs that run while you work.</p><p class="pill"><b>7:00am</b> Daily summary sent to your inbox</p></article>
       <article class="card"><div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><h3>Connected systems</h3><p>Your AI, linked to the tools you already use.</p><p class="eg">Draft and schedule Facebook and Instagram posts from Claude.</p></article>
     </div>
@@ -364,13 +477,14 @@
     <p class="eyebrow">How it works</p>
     <h2>You talk. We do the rest.</h2>
     <div class="steps">
+      <div class="step free"><p class="when">Free call <span class="tag-free">Free</span></p><h3>We talk it through</h3><p>30 minutes. You tell us what you want AI to do, we tell you what we would build and whether it fits. No obligation. Build only starts if you say yes.</p></div>
       <div class="step"><p class="when">Call 1</p><h3>We listen</h3><p>What would make your days less chaotic?</p></div>
       <div class="step"><p class="when">Behind the scenes</p><h3>We build it</h3><p>No homework for you.</p></div>
       <div class="step"><p class="when">Call 2</p><h3>We install and walk you through</h3><p>On screen, in plain language.</p></div>
       <div class="step"><p class="when">One week</p><h3>You try it</h3><p>Text us anything that feels off. We reply within one business day.</p></div>
       <div class="step"><p class="when">Call 3</p><h3>We refine it</h3><p>Your fixes and ideas, done.</p></div>
     </div>
-    <p class="callout">Your time: about 3 hours.</p>
+    <p class="callout">Your first call is free. After that, about 3 hours of your time.</p>
   </div>
 </section>
 
@@ -416,19 +530,21 @@
 <section id="investment">
   <div class="container">
     <p class="eyebrow">Investment</p>
-    <h2>One fixed fee.</h2>
+    <h2>One fixed fee. Your first call is free.</h2>
+    <p class="freebar"><span class="fb-ico" aria-hidden="true">&#10003;</span><span><strong>Call 1 is free.</strong> Talk it through with us first. The <span data-price="usd">US$998</span> only applies if you decide you want us to build.</span></p>
     <div class="price-box">
       <div class="price">
         <div class="amt" data-price="usd">US$998</div>
         <div class="usd">Fixed fee, in US dollars</div>
-        <p class="split"><span data-price="half-usd">US$499</span> on signing<br><span data-price="half-usd">US$499</span> on delivery</p>
-        <div><a class="btn btn-primary" href="#enquire" data-cta="price-enquire">Send an enquiry</a></div>
-        <div><a class="btn btn-ghost" style="margin-top:12px" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="price-book">Book a scoping call</a></div>
+        <p class="split">After your free call, if you go ahead:<br><span data-price="half-usd">US$499</span> on signing<br><span data-price="half-usd">US$499</span> on delivery</p>
+        <div><a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="price-book">Book your free call</a></div>
+        <div><a class="btn btn-ghost" style="margin-top:12px" href="#enquire" data-cta="price-enquire">Send an enquiry</a></div>
       </div>
       <div class="panel">
         <h3>What is included</h3>
         <ul class="ticks">
-          <li>Three calls of about an hour</li>
+          <li>A free 30-minute first call</li>
+          <li>Three build calls of about an hour</li>
           <li>Your environment, built and installed</li>
           <li>Skills and prompts in your brand voice</li>
           <li>A simple written guide</li>
@@ -449,6 +565,10 @@
   <div class="container">
     <h2>A few honest questions</h2>
     <div class="obj">
+      <article>
+        <h3>"Is the first call really free?"</h3>
+        <p>Yes. The 30-minute call is free and carries no obligation. The fixed fee only applies if you then decide you want us to build.</p>
+      </article>
       <article>
         <h3>"I don't have time."</h3>
         <p>That is why we do the building. You give us about 3 hours.</p>
@@ -474,7 +594,7 @@
   <div class="container narrow center">
     <p class="eyebrow">Ready when you are</p>
     <h2>Tell us what you would like to automate</h2>
-    <p class="lead" style="color:#e5dce2">We only take on three clients per month, so sign up now. Send a short enquiry and we will reply personally to arrange scoping.</p>
+    <p class="lead" style="color:#e5dce2">Your first call is free. We only take on three clients per month, so sign up now. Send a short enquiry and we will reply personally to arrange your free call.</p>
 
     <form class="form-card" id="enquiry" novalidate>
       <input type="hidden" name="ref" id="ref" value="lab">
@@ -653,6 +773,57 @@
       .catch(function () { show("err", "That did not send. Opening your email app instead."); mailto(data); });
   });
 
+})();
+</script>
+<script>
+/* Scroll-triggered reveals. Skipped for reduced motion, so content is always visible. */
+(function () {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  [['service', 'sv', 0.35], ['week', 'wk', 0.35], ['how', 'hw', 0.3]].forEach(function (c) {
+    var s = document.getElementById(c[0]);
+    if (!s) return;
+    s.classList.add(c[1] + '-ready');
+    new IntersectionObserver(function (e) {
+      var r = e[0].intersectionRatio;
+      if (r >= c[2]) s.classList.add(c[1] + '-play');
+      else if (r === 0) s.classList.remove(c[1] + '-play');
+    }, { threshold: [0, c[2]] }).observe(s);
+  });
+
+  var sel = '.lab section:not(.hero):not(.builtfor) h2, .lab section:not(.hero) .eyebrow, .lab section:not(.hero) > .container > .lead, .lab .tile, .lab .card, .lab .quote, .lab .obj article, .lab .panel, .lab .price, .lab .third, .lab .freebar, .lab .member-note, .lab .more, .lab .partner';
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var el = en.target;
+      el.classList.add('rv-in');
+      io.unobserve(el);
+      setTimeout(function () { el.style.removeProperty('--d'); el.classList.add('rv-done'); }, 1400);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+  document.querySelectorAll(sel).forEach(function (el) {
+    var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.setProperty('--d', (Math.min(i, 5) * 0.09).toFixed(2) + 's');
+    el.classList.add('rv');
+    io.observe(el);
+  });
+
+  /* count up the price when it scrolls into view */
+  var amt = document.querySelector('.price .amt');
+  if (amt) {
+    var target = parseInt(amt.textContent.replace(/\D/g, ''), 10), done = false;
+    new IntersectionObserver(function (e, o) {
+      if (!e[0].isIntersecting || done) return;
+      done = true; o.disconnect();
+      var t0 = null;
+      (function tick(t) {
+        if (t0 === null) t0 = t;
+        var p = Math.min((t - t0) / 1000, 1), k = 1 - Math.pow(1 - p, 3);
+        amt.textContent = 'US$' + Math.round(target * k).toLocaleString('en-AU');
+        if (p < 1) requestAnimationFrame(tick);
+      })(performance.now());
+    }, { threshold: 0.6 }).observe(amt);
+  }
 })();
 </script>
 </body>
