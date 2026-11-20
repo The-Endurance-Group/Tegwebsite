@@ -17,7 +17,8 @@
 <meta name="theme-color" content="#201c22">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 <link rel="icon" type="image/png" href="images/favicon-network.png">
 <link rel="stylesheet" href="css/styles.css?v=20261026-nav">
 
@@ -711,23 +712,44 @@ html { scroll-behavior: smooth; }
 .topcap button:hover{background:#c45c8a}
 .topcap .tc-msg{width:100%;font-size:.9rem;margin:0}
 .topcap .tc-hp{position:absolute;left:-9999px}
+/* Mobile first screen + clickable "dead" elements */
+.lab [data-book] { cursor: pointer; }
+.lab .bp-card[data-book]:hover { box-shadow: 0 18px 50px rgba(0,0,0,.55); }
+@media (max-width: 899px) {
+  .lab .hero { padding-block: 28px 32px; }
+  .lab .hero .eyebrow { font-size: .78rem; margin-bottom: 6px; }
+  .lab .hero h1 { font-size: clamp(2rem, 9vw, 2.4rem); line-height: 1.1; }
+  .lab .hero .sub-gold { font-size: 1.15rem; margin-top: 6px; }
+  .lab .hero .lead { margin-top: 10px; font-size: 1rem; line-height: 1.5; }
+  .lab .hero .m-only { display: block; width: 100%; text-align: center; margin-top: 16px; }
+  .lab .hero .real-person { display: none; }
+  .lab .bp-card .btn { display: block; width: 100%; text-align: center; }
+}
+.lab .topcap { padding: 14px 20px; }
+@media (max-width: 560px) { .topcap label { font-size: 1.05rem; } }
+
 </style>
 <script type="text/javascript">
+window.addEventListener("load", function () {
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "yrynbf5pfi");
+});
 </script>
 <!-- Meta Pixel: TheEnduranceGroup-May-2022 (dataset 378981807487516) -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+window.fbq = window.fbq || function () { (window.fbq.q = window.fbq.q || []).push(arguments); };
+window.addEventListener("load", function () {
+!function(f,b,e,v,n,t,s){if(f.fbq&&f.fbq.callMethod)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '378981807487516');
 fbq('track', 'PageView');
+});
 </script>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=378981807487516&ev=PageView&noscript=1"></noscript>
 </head>
@@ -773,16 +795,16 @@ fbq('track', 'PageView');
       <p class="sub-gold" data-v="sub">We build the AI that does the busywork for real estate professionals.</p>
       <p class="lead" data-v="lead">A real person builds it, installs it with you and makes sure it works.</p>
       <a class="btn btn-primary m-only" href="#book" data-cta="hero-book-mobile">Book your free build plan with Conor</a>
-      <div class="real-person"><span class="team-stack"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan"><img src="images/team/maria-jose-pava.webp" alt="Maria Jose Pava"><img src="images/team/nolan-cary.webp" alt="Nolan Cary"><img src="images/team/simon.webp" alt="Simon Garcia"></span><span>A real person from our team on every call and every build. Never a bot.</span></div>
+      <div class="real-person" data-book><span class="team-stack"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan" width="46" height="46"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="46" height="46"><img src="images/team/maria-jose-pava.webp" alt="Maria Jose Pava" width="46" height="46"><img src="images/team/nolan-cary.webp" alt="Nolan Cary" width="46" height="46"><img src="images/team/simon.webp" alt="Simon Garcia" width="46" height="46"></span><span>A real person from our team on every call and every build. Never a bot.</span></div>
     </div>
-    <div class="bp-card">
+    <div class="bp-card" data-book>
       <div class="bp-head"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="52" height="52" loading="lazy"><p class="bp-label">Free build plan call with Conor</p></div>
       <ul>
         <li>Your top five AI opportunities</li>
         <li>What we would build first</li>
         <li>A straight answer on fit</li>
       </ul>
-      <a class="btn btn-primary d-only" href="#book" data-cta="hero-book">Book your free build plan with Conor</a>
+      <a class="btn btn-primary" href="#book" data-cta="hero-book">Book your free build plan with Conor</a>
       <p class="bp-fine">Yours to keep, whether you hire us or not.</p>
       <p class="bp-urgent">Limited new clients each month. Book early.</p>
     </div>
@@ -831,7 +853,7 @@ fbq('track', 'PageView');
 
       <article class="ex">
         <div class="ex-media">
-          <video controls playsinline preload="metadata" poster="videos/assistant-extension-poster.jpg" aria-label="Demo: a daily brief built from texts, WhatsApp, notes, email and calendar">
+          <video controls playsinline preload="none" poster="videos/assistant-extension-poster.jpg" aria-label="Demo: a daily brief built from texts, WhatsApp, notes, email and calendar">
             <source src="videos/assistant-extension.mp4" type="video/mp4">
           </video>
         </div>
@@ -840,9 +862,9 @@ fbq('track', 'PageView');
         <p>Texts, WhatsApp, email, notes and calendar in one page every morning, with replies drafted.</p>
       </article>
 
-      <article class="ex ex-recruit">
+      <article class="ex ex-recruit" data-book>
         <!-- VIDEO SLOT: when the recruiting video is ready, replace this .ex-media div with:
-             <div class="ex-media"><video controls playsinline preload="metadata" poster="videos/recruiting-system-poster.jpg"><source src="videos/recruiting-system.mp4" type="video/mp4"></video></div> -->
+             <div class="ex-media"><video controls playsinline preload="none" poster="videos/recruiting-system-poster.jpg"><source src="videos/recruiting-system.mp4" type="video/mp4"></video></div> -->
         <div class="ex-media ex-art" role="img" aria-label="Animation: a broker asks the AI to find the most productive agents in Houston to recruit. It checks agent data and social profiles, skips people already in the CRM, then returns a ranked list with a drafted message that is sent and logged.">
           <div class="mock rec" aria-hidden="true">
             <div class="rc-prompt">
@@ -872,7 +894,7 @@ fbq('track', 'PageView');
 
       <article class="ex">
         <div class="ex-media">
-          <video controls playsinline preload="metadata" poster="videos/listing-skills-poster.jpg" aria-label="Demo: a listing process turned into steps the AI follows from one message">
+          <video controls playsinline preload="none" poster="videos/listing-skills-poster.jpg" aria-label="Demo: a listing process turned into steps the AI follows from one message">
             <source src="videos/listing-skills.mp4" type="video/mp4">
           </video>
         </div>
@@ -881,7 +903,7 @@ fbq('track', 'PageView');
         <p>We turn your listing process into steps the AI follows. One message starts the whole checklist.</p>
       </article>
 
-      <article class="ex ex-yours">
+      <article class="ex ex-yours" data-book>
         <div class="ex-media ex-plus yo" role="img" aria-label="Animation: a plus sign turns into a growing set of thought bubbles, such as chasing overdue follow-ups, summarizing open deals, drafting a market update, sorting an inbox, prepping showings and finding agents ready to move. Each one gets a checked result, until the box is full."><span class="yo-plus" aria-hidden="true">+</span><div class="yo-grid" aria-hidden="true"><div class="yo-b"><span class="yo-t">Chase overdue follow-ups</span><span class="yo-c">&check; 7 follow-ups drafted</span></div><div class="yo-b"><span class="yo-t">Summarize every open deal</span><span class="yo-c">&check; 12 deals summarized</span></div><div class="yo-b"><span class="yo-t">Draft my market update</span><span class="yo-c">&check; Update drafted</span></div><div class="yo-b"><span class="yo-t">Sort my inbox</span><span class="yo-c">&check; Inbox sorted</span></div><div class="yo-b"><span class="yo-t">Prep my showings</span><span class="yo-c">&check; 3 briefs ready</span></div><div class="yo-b"><span class="yo-t">Find agents ready to move</span><span class="yo-c">&check; Ranked list ready</span></div></div></div>
         <p class="ex-tag">Your idea</p>
         <h3>Don't see it here? We build whatever you want.</h3>
@@ -952,12 +974,12 @@ fbq('track', 'PageView');
   <!-- TESTIMONIALS: swap in real estate quotes (with permission) when available. -->
   <div class="container">
     <div class="quotes">
-      <figure class="quote">
+      <figure class="quote" data-book>
         <img src="images/clients/maine-technology-institute.webp?v=20260930" alt="Maine Technology Institute" loading="lazy">
         <blockquote>&ldquo;[They] have made me more effective and efficient at work and have already saved me untold hours.&rdquo;</blockquote>
         <figcaption><cite>Scott Bursey, Investment Officer, Maine Technology Institute</cite></figcaption>
       </figure>
-      <figure class="quote">
+      <figure class="quote" data-book>
         <img src="images/clients/global-brain-health-institute.webp?v=20261002" alt="Global Brain Health Institute" loading="lazy">
         <blockquote>&ldquo;They were clear and methodical, as well as genuinely curious about what I wanted to achieve, and then were able to help me get there.&rdquo;</blockquote>
         <figcaption><cite>Jake Broder, Global Brain Health Institute</cite></figcaption>
@@ -1129,6 +1151,7 @@ fbq('track', 'PageView');
     s.async = true;
     document.body.appendChild(s);
   }
+  window.tegLoadBook = load;
   if (location.hash === "#book" || !("IntersectionObserver" in window)) { load(); return; }
   new IntersectionObserver(function (e, o) {
     if (e[0].isIntersecting) { o.disconnect(); load(); }
@@ -1146,6 +1169,18 @@ window.addEventListener("message", function (e) {
   if (!e.data || !e.data.meetingBookSucceeded) return;
   try { if (window.fbq) window.fbq("track", "Schedule"); } catch (err) {}
   try { if (window.clarity) window.clarity("event", "build_plan_booked"); } catch (err) {}
+});
+</script>
+<script>
+/* Anything that looks tappable (cards, avatars, example tiles) jumps to the booking calendar. */
+document.addEventListener("click", function (e) {
+  var el = e.target.closest && e.target.closest("[data-book]");
+  if (!el || e.target.closest("a, button, input, textarea, select, video, label")) return;
+  var b = document.getElementById("book");
+  if (!b) return;
+  if (window.tegLoadBook) window.tegLoadBook();
+  try { if (window.clarity) window.clarity("event", "tap_to_book"); } catch (err) {}
+  b.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 </script>
 <script src="js/main.js?v=20260930" defer></script>

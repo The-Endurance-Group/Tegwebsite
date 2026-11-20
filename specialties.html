@@ -81,6 +81,12 @@
     .rev-cols .industry-example { flex: 1; }
     .rev-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 16px; }
   </style>
+<style>
+a.tag--link{text-decoration:none;transition:background .15s,color .15s}
+a.tag--link:hover,a.tag--link:focus-visible{background:var(--teal,#4a7c78);color:#fff}
+.feature-card--click{cursor:pointer}
+.feature-card--click:hover{box-shadow:0 14px 34px -18px rgba(32,28,34,.45)}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -184,38 +190,38 @@
         <span class="section-label reveal">Industry Depth</span>
         <p class="lede reveal" style="margin-bottom:24px;">Experience since 1999. These are areas we know deeply, not limits on who we work with. <a href="about.html">Meet TEG →</a></p>
         <div class="grid grid--3 reveal--stagger reveal">
-          <div id="real-estate" class="feature-card">
+          <div id="real-estate" class="feature-card feature-card--click" data-href="realestate">
             <div class="icon-badge icon-badge--pink" style="margin-bottom:16px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg></div>
             <h3><a class="title-link" href="realestate">Real Estate</a></h3>
             <p>Your systems, working together. Claude connects email, CRMs, property platforms and documents so teams spend less time connecting the dots.</p>
             <div class="tag-list" style="margin-top:16px;">
-              <span class="tag">Residential</span>
-              <span class="tag">Commercial</span>
-              <span class="tag">Investors</span>
-              <span class="tag">Property Management</span>
+              <a class="tag tag--link" href="ai-for-agents-and-brokers.html">Residential</a>
+              <a class="tag tag--link" href="realestate">Commercial</a>
+              <a class="tag tag--link" href="realestate">Investors</a>
+              <a class="tag tag--link" href="realestate">Property Management</a>
             </div>
             <a class="feature-link" style="display:inline-block; margin-top:16px;" href="realestate">See our real estate page →</a>
           </div>
-          <div id="b2b-technology" class="feature-card">
+          <div id="b2b-technology" class="feature-card feature-card--click" data-href="saas">
             <div class="icon-badge icon-badge--teal" style="margin-bottom:16px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"></rect><path d="M8 21h8M12 17v4"></path><path d="m9 9-2 2 2 2M15 9l2 2-2 2"></path></svg></div>
             <h3><a class="title-link" href="saas">B2B Technology &amp; SaaS</a></h3>
             <p>Cleaner CRM data, faster lead routing and clearer pipeline reporting. Our experience comes from running sales and marketing operations inside software companies.</p>
             <div class="tag-list" style="margin-top:16px;">
-              <span class="tag">SaaS</span>
-              <span class="tag">Services</span>
-              <span class="tag">RevOps</span>
+              <a class="tag tag--link" href="saas">SaaS</a>
+              <a class="tag tag--link" href="saas">Services</a>
+              <a class="tag tag--link" href="claude-for-sales.html">RevOps</a>
             </div>
             <a class="feature-link" style="display:inline-block; margin-top:16px;" href="saas">See our B2B tech page →</a>
           </div>
-          <div id="professional-services" class="feature-card">
+          <div id="professional-services" class="feature-card feature-card--click" data-href="professionalservices">
             <div class="icon-badge icon-badge--purple" style="margin-bottom:16px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path><path d="M2 13h20"></path></svg></div>
             <h3><a class="title-link" href="professionalservices">Professional Services</a></h3>
             <p>Less billing admin, smoother client onboarding and more capacity for client work. We bring two decades of experience with consultants, agencies, advisors and staffing firms.</p>
             <div class="tag-list" style="margin-top:16px;">
-              <span class="tag">Agencies</span>
-              <span class="tag">Consulting</span>
-              <span class="tag">Advisory</span>
-              <span class="tag">Staffing</span>
+              <a class="tag tag--link" href="professionalservices">Agencies</a>
+              <a class="tag tag--link" href="professionalservices">Consulting</a>
+              <a class="tag tag--link" href="professionalservices">Advisory</a>
+              <a class="tag tag--link" href="professionalservices">Staffing</a>
             </div>
             <a class="feature-link" style="display:inline-block; margin-top:16px;" href="professionalservices">See our professional services page →</a>
           </div>
@@ -301,5 +307,13 @@
   <!-- END SHARED FOOTER -->
 
   <script src="js/main.js?v=20260930" defer></script>
+<script>
+/* Whole specialty cards are clickable, not just the titles. */
+document.addEventListener("click",function(e){
+  var c=e.target.closest&&e.target.closest("[data-href]");
+  if(!c||e.target.closest("a,button")) return;
+  location.href=c.getAttribute("data-href");
+});
+</script>
 </body>
 </html>
