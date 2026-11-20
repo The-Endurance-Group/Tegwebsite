@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI for Real Estate Agents and Brokers, Built For You | The Endurance Group</title>
-<meta name="description" content="Premium, white-glove AI for real estate agents and brokers. Listings, follow-up, marketing and recruiting, handled. A real person builds it, installs it and makes sure it works. Book a free build plan.">
+<meta name="description" content="Premium, white-glove AI for real estate agents and brokers. Listings, follow-up, marketing and recruiting, handled. A real person builds it, installs it and makes sure it works. The first call is free. Book your free build plan.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Close more. Work less. We build the AI that does the busywork for real estate professionals.">
-<meta property="og:description" content="Premium, white-glove AI for agents and brokers. Built for you by a real person. Book a free build plan and leave with the five things AI should be doing in your business.">
+<meta property="og:description" content="Premium, white-glove AI for agents and brokers. Built for you by a real person. The first call is free. Book your free build plan and leave with the five things AI should be doing in your business.">
 <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.theendurancegroup.com/ai-for-agents-and-brokers.html">
@@ -728,6 +728,22 @@ html { scroll-behavior: smooth; }
 .lab .topcap { padding: 14px 20px; }
 @media (max-width: 560px) { .topcap label { font-size: 1.05rem; } }
 
+
+/* ===== free first call ===== */
+.lab .free-pill { display: inline-flex; align-items: center; gap: 12px; margin-top: 22px; background: rgba(201,162,75,.16); border: 1.5px solid var(--gold); color: #fff; border-radius: 999px; padding: 10px 20px; font-size: 1rem; }
+.lab .free-pill b { color: var(--gold); }
+.lab .free-pill .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--gold); flex: none; animation: freePulse 2s ease-out infinite; }
+@keyframes freePulse { 0% { box-shadow: 0 0 0 0 rgba(201,162,75,.75); } 70%, 100% { box-shadow: 0 0 0 13px rgba(201,162,75,0); } }
+.lab .tag-free { display: inline-block; margin-left: 8px; background: var(--gold); color: var(--plum); font-size: .72rem; letter-spacing: .08em; padding: 2px 9px; border-radius: 999px; }
+.lab .freebar { display: flex; align-items: center; gap: 14px; margin: 22px auto 0; max-width: 760px; text-align: left; background: var(--gold-tint); border: 2px solid var(--gold); color: #5c4410; border-radius: var(--r); padding: 18px 22px; animation: freeSheen 3.2s ease-in-out infinite; }
+.lab .freebar .fb-ico { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--gold); color: var(--plum); display: grid; place-items: center; font-weight: 800; }
+@keyframes freeSheen { 0%, 100% { box-shadow: 0 0 0 0 rgba(201,162,75,0); } 50% { box-shadow: 0 0 0 7px rgba(201,162,75,.22); } }
+.lab .tico.num { font: 700 1.5rem var(--font-head); }
+.lab #offer .tile { font-weight: 500; }
+.lab #offer .tile b { font-weight: 700; }
+.lab #offer .lead { margin-top: 14px; }
+.lab .bp-free { margin-top: 10px; font-weight: 700; color: #5c4410; background: var(--gold-tint); border-radius: 8px; padding: 8px 12px; font-size: .92rem; }
+@media (prefers-reduced-motion: reduce) { .lab .free-pill .dot, .lab .freebar { animation: none !important; } }
 </style>
 <script type="text/javascript">
 window.addEventListener("load", function () {
@@ -794,18 +810,19 @@ fbq('track', 'PageView');
       <h1 data-v="h1">Close more. Work less.</h1>
       <p class="sub-gold" data-v="sub">We build the AI that does the busywork for real estate professionals.</p>
       <p class="lead" data-v="lead">A real person builds it, installs it with you and makes sure it works.</p>
+      <p class="free-pill"><span class="dot" aria-hidden="true"></span><span><b>Your first call is free.</b> 30 minutes, no obligation.</span></p>
       <a class="btn btn-primary m-only" href="#book" data-cta="hero-book-mobile">Book your free build plan with Conor</a>
       <div class="real-person" data-book><span class="team-stack"><img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan" width="46" height="46"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="46" height="46"><img src="images/team/maria-jose-pava.webp" alt="Maria Jose Pava" width="46" height="46"><img src="images/team/nolan-cary.webp" alt="Nolan Cary" width="46" height="46"><img src="images/team/simon.webp" alt="Simon Garcia" width="46" height="46"></span><span>A real person from our team on every call and every build. Never a bot.</span></div>
     </div>
     <div class="bp-card" data-book>
-      <div class="bp-head"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="52" height="52" loading="lazy"><p class="bp-label">Free build plan call with Conor</p></div>
+      <div class="bp-head"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="52" height="52" loading="lazy"><p class="bp-label">Free 30-minute call with Conor</p></div>
       <ul>
         <li>Your top five AI opportunities</li>
         <li>What we would build first</li>
         <li>A straight answer on fit</li>
       </ul>
       <a class="btn btn-primary" href="#book" data-cta="hero-book">Book your free build plan with Conor</a>
-      <p class="bp-fine">Yours to keep, whether you hire us or not.</p>
+      <p class="bp-free">The first call is free. The plan is yours to keep, whether you hire us or not.</p>
       <p class="bp-urgent">Limited new clients each month. Book early.</p>
     </div>
   </div>
@@ -820,6 +837,20 @@ fbq('track', 'PageView');
       <p class="tc-msg" id="topcap-msg" role="status" aria-live="polite"></p>
     </form>
   </div>
+
+<!-- THE OFFER: first call free -->
+<section id="offer">
+  <div class="container center">
+    <p class="eyebrow">The offer</p>
+    <h2>Start with a free call</h2>
+    <p class="lead narrow">Your first call is free. You leave with a ranked plan, and you only pay if you want us to build it.</p>
+    <ul class="tiles three perks">
+      <li class="tile"><span class="tico num">1</span><span><b>Free 30-minute call.</b><br>Your top five AI opportunities, ranked. No obligation.</span></li>
+      <li class="tile"><span class="tico num">2</span><span><b>A plan to keep.</b><br>Yours whether you hire us or not.</span></li>
+      <li class="tile"><span class="tico num">3</span><span><b><span data-price="usd">$998</span>, only if you build.</b><br>Fixed and one time. Three sessions.</span></li>
+    </ul>
+  </div>
+</section>
 
 <!-- 2. NOT A PRODUCT (moved up: our differentiator) -->
 <section id="premium" class="alt">
@@ -920,8 +951,9 @@ fbq('track', 'PageView');
   <div class="container center">
     <p class="eyebrow">How it works</p>
     <h2>You talk. We do the rest.</h2>
+    <p class="freebar"><span class="fb-ico" aria-hidden="true">&#10003;</span><span><strong>Start with a free 30-minute call.</strong> The three sessions below only begin if you decide you want us to build.</span></p>
     <ol class="flow dark5"><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><em>Session 1</em><b>Tell us everything</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg></span><em>We build</em><b>Built around your process</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0z"/><path d="M12 18v4"/></svg></span><em>Session 2</em><b>We install it with you</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><em>One week</em><b>You use it</b></li><li><span class="fi"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9"/></svg></span><em>Session 3</em><b>We make sure it works</b></li></ol>
-    <p class="callout">A real person on every step. Your time: about 3 hours.</p>
+    <p class="callout">Your first call is free. A real person on every step. After that, about 3 hours of your time.</p>
     <div class="section-cta"><a class="btn btn-primary" href="#book" data-cta="how-book">Book your free build plan with Conor</a></div>
   </div>
 </section>
@@ -951,11 +983,12 @@ fbq('track', 'PageView');
 <!-- 7. TEAM + PRICE -->
 <section class="alt" id="investment">
   <div class="container">
-    <div class="price-box">
+    <p class="freebar"><span class="fb-ico" aria-hidden="true">&#10003;</span><span><strong>Your first call is free.</strong> Book the build plan call first. The <span data-price="usd">$998</span> only applies if you decide you want us to build.</span></p>
+    <div class="price-box" style="margin-top:28px">
       <div class="price">
         <div class="amt" data-price="usd">$998</div>
         <div class="usd">Three sessions. Fixed fee. Yours to keep.</div>
-        <p class="split"><span data-price="half-usd">$499</span> on signing &middot; <span data-price="half-usd">$499</span> on delivery<br>No monthly fee to us. Only your own AI subscription.</p>
+        <p class="split">After your free call, if you go ahead:<br><span data-price="half-usd">$499</span> on signing &middot; <span data-price="half-usd">$499</span> on delivery<br>No monthly fee to us. Only your own AI subscription.</p>
         <div><a class="btn btn-primary" href="#book" data-cta="price-book">Book your free build plan with Conor</a></div>
       </div>
       <div class="panel team-mini">
@@ -991,14 +1024,14 @@ fbq('track', 'PageView');
 <!-- 9. FINAL CTA / FORM -->
 <section id="enquire" class="dark">
   <div class="container narrow center">
-    <p class="eyebrow">Free. No obligation.</p>
+    <p class="eyebrow">Your first call is free. No obligation.</p>
     <div class="book-head"><img src="images/team/conor-sullivan.webp" alt="Conor Sullivan" width="72" height="72" loading="lazy"><h2>Book your free build plan with Conor</h2></div>
     <ul class="plan">
       <li>The five things AI should be doing in your business, ranked</li>
       <li>What we would build first</li>
       <li>A straight answer on whether we are a fit</li>
     </ul>
-    <p class="plan-note">Yours to keep, whether you hire us or not.</p>
+    <p class="plan-note">The first call is free. The plan is yours to keep, whether you hire us or not.</p>
     <p class="plan-urgent">We take a limited number of new clients each month. Book early to get this month&rsquo;s spot.</p>
     <div class="cal-card" id="book">
       <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b&embed=true"></div>

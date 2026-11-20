@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Your Personal AI Assistant, Built For You | The Endurance Group</title>
-<meta name="description" content="A done-for-you AI environment for busy people. We listen, build it, install it and walk you through it. Fixed fee of $998.">
+<meta name="description" content="A done-for-you AI environment for busy people. We listen, build it, install it and walk you through it. Your first call is free. Fixed fee of $998 only if you build.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="We build your AI environment for you">
-<meta property="og:description" content="A white-glove service for busy professionals. We listen, we build, we install it and walk you through it. Fixed fee of $998.">
+<meta property="og:description" content="A white-glove service for busy professionals. Your first call is free. Then we build, install it and walk you through it for a fixed fee of $998.">
 <meta property="og:image" content="https://www.theendurancegroup.com/images/og-default.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://www.theendurancegroup.com/ai-environment.html">
@@ -397,6 +397,22 @@
 /* footer link columns hidden on this landing page */
 .site-footer .footer-col, .site-footer .footer-cta { display: none !important; }
 .site-footer .footer-brand > a { pointer-events: none; cursor: default; }
+
+/* ===== free first call ===== */
+.lab .free-pill { display: inline-flex; align-items: center; gap: 12px; margin-top: 22px; background: rgba(201,162,75,.16); border: 1.5px solid var(--gold); color: #fff; border-radius: 999px; padding: 10px 20px; font-size: 1rem; }
+.lab .free-pill b { color: var(--gold); }
+.lab .free-pill .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--gold); flex: none; animation: freePulse 2s ease-out infinite; }
+@keyframes freePulse { 0% { box-shadow: 0 0 0 0 rgba(201,162,75,.75); } 70%, 100% { box-shadow: 0 0 0 13px rgba(201,162,75,0); } }
+.lab .tag-free { display: inline-block; margin-left: 8px; background: var(--gold); color: var(--plum); font-size: .72rem; letter-spacing: .08em; padding: 2px 9px; border-radius: 999px; }
+.lab .freebar { display: flex; align-items: center; gap: 14px; margin: 22px auto 0; max-width: 760px; text-align: left; background: var(--gold-tint); border: 2px solid var(--gold); color: #5c4410; border-radius: var(--r); padding: 18px 22px; animation: freeSheen 3.2s ease-in-out infinite; }
+.lab .freebar .fb-ico { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--gold); color: var(--plum); display: grid; place-items: center; font-weight: 800; }
+@keyframes freeSheen { 0%, 100% { box-shadow: 0 0 0 0 rgba(201,162,75,0); } 50% { box-shadow: 0 0 0 7px rgba(201,162,75,.22); } }
+.lab .tico.num { font: 700 1.5rem var(--font-head); }
+.lab #offer .tile { font-weight: 500; }
+.lab #offer .tile b { font-weight: 700; }
+.lab #offer .lead { margin-top: 14px; }
+.lab .bp-free { margin-top: 10px; font-weight: 700; color: #5c4410; background: var(--gold-tint); border-radius: 8px; padding: 8px 12px; font-size: .92rem; }
+@media (prefers-reduced-motion: reduce) { .lab .free-pill .dot, .lab .freebar { animation: none !important; } }
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -445,17 +461,32 @@
     <p class="eyebrow">White-glove. Done for you.</p>
     <h1>We build your AI environment for you.</h1>
     <p class="lead">Not an app to figure out. We listen, we build it, we install it, and we walk you through it.</p>
+    <p class="free-pill"><span class="dot" aria-hidden="true"></span><span><b>Your first call is free.</b> 30 minutes, no obligation.</span></p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="#enquire" data-cta="hero-enquire">Get started</a>
+      <a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="hero-book">Book your free call</a>
       <a class="btn btn-ghost" href="#how" data-cta="hero-how">See how it works</a>
     </div>
-    <p class="fine">Fixed fee of <span data-price="usd">$998</span>. About 3 hours of your time. We only take on three clients per month, so sign up now.</p>
+    <p class="fine">The first call is free. The fixed fee of <span data-price="usd">$998</span> only applies if you want us to build. About 3 hours of your time after that. We only take on three clients per month, so sign up now.</p>
     </div>
     <div class="hero-vid">
       <video controls playsinline preload="metadata" poster="videos/assistant-extension-poster.jpg" aria-label="A walkthrough of a personal AI assistant built by The Endurance Group">
         <source src="videos/assistant-extension.mp4" type="video/mp4">
       </video>
     </div>
+  </div>
+</section>
+
+<!-- THE OFFER: first call free -->
+<section id="offer">
+  <div class="container center">
+    <p class="eyebrow">The offer</p>
+    <h2>Start with a free call</h2>
+    <p class="lead narrow">Talk it through with us first. If you want us to build, we build what we agreed for a fixed fee, install it and walk you through it.</p>
+    <ul class="tiles three perks">
+      <li class="tile"><span class="tico num">1</span><span><b>Free 30-minute call.</b><br>Tell us what is eating your day. No obligation.</span></li>
+      <li class="tile"><span class="tico num">2</span><span><b><span data-price="usd">$998</span>, only if you build.</b><br>Fixed and one time. Nothing to pay before you decide.</span></li>
+      <li class="tile"><span class="tico num">3</span><span><b>We build, you try it.</b><br>Installed, explained, then refined after a week.</span></li>
+    </ul>
   </div>
 </section>
 
@@ -588,6 +619,7 @@
   <div class="container center">
     <p class="eyebrow">How it works</p>
     <h2>You talk. We do the rest.</h2>
+    <p class="freebar"><span class="fb-ico" aria-hidden="true">&#10003;</span><span><strong>Start with a free 30-minute call.</strong> The five steps below only begin if you decide you want us to build.</span></p>
     <ol class="flow dark5">
       <li><span class="fi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><em>Call 1</em><b>We listen</b><span class="fd">What would make life less chaotic?</span></li>
       <li><span class="fi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></svg></span><em>Behind the scenes</em><b>We build it</b><span class="fd">No homework for you.</span></li>
@@ -595,7 +627,7 @@
       <li><span class="fi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><em>One week</em><b>You try it</b><span class="fd">Text us anything that feels off.</span></li>
       <li><span class="fi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg></span><em>Call 3</em><b>We refine it</b><span class="fd">Your fixes and ideas, done.</span></li>
     </ol>
-    <p class="callout">Your time: about 3 hours.</p>
+    <p class="callout">Your first call is free. After that, about 3 hours of your time.</p>
   </div>
 </section>
 
@@ -637,18 +669,20 @@
 <section id="investment">
   <div class="container">
     <p class="eyebrow">Investment</p>
-    <h2>One fixed fee.</h2>
+    <h2>One fixed fee. Your first call is free.</h2>
+    <p class="freebar"><span class="fb-ico" aria-hidden="true">&#10003;</span><span><strong>Call 1 is free.</strong> Talk it through with us first. The <span data-price="usd">$998</span> only applies if you decide you want us to build.</span></p>
     <div class="price-box">
       <div class="price">
         <div class="amt" data-price="usd">$998</div>
         <div class="usd">Fixed fee</div>
-        <p class="split"><span data-price="half-usd">$499</span> on signing<br><span data-price="half-usd">$499</span> on delivery</p>
-        <div><a class="btn btn-primary" href="#enquire" data-cta="price-enquire">Get started</a></div>
+        <p class="split">After your free call, if you go ahead:<br><span data-price="half-usd">$499</span> on signing<br><span data-price="half-usd">$499</span> on delivery</p>
+        <div><a class="btn btn-primary" href="https://meetings.hubspot.com/conor-sullivan/follow-up-with-conor?uuid=d520bf93-7373-4ce8-b8a2-4ae02209364b" target="_blank" rel="noopener" data-cta="price-book">Book your free call</a></div>
       </div>
       <div class="panel">
         <h3>Included</h3>
         <ul class="ticks">
-          <li>Three calls of about an hour</li>
+          <li>A free 30-minute first call</li>
+          <li>Three build calls of about an hour</li>
           <li>Your assistant, built and installed</li>
           <li>A simple guide to what we built</li>
           <li>Support all week by reply or text</li>
@@ -666,6 +700,7 @@
   <div class="container">
     <h2>A few honest questions</h2>
     <div class="faq">
+      <article><h3>"Is the first call really free?"</h3><p>Yes. The 30-minute call is free and carries no obligation. The fixed fee only applies if you then decide you want us to build.</p></article>
       <article><h3>"I don't have time."</h3><p>That's why we do the building. You give us about 3 hours.</p></article>
       <article><h3>"I'm not technical."</h3><p>You don't need to be. You ask in everyday words.</p></article>
       <article><h3>"I already use ChatGPT."</h3><p>Great. We build on Claude or ChatGPT, whichever you use.</p></article>
@@ -679,7 +714,7 @@
   <div class="container narrow center">
     <p class="eyebrow">Ready when you are</p>
     <h2>Ready to hand off the chaos?</h2>
-    <p class="lead" style="color:#e5dce2">We only take on three clients per month, so sign up now. Tell us what's eating your day, then pick a time for your first call.</p>
+    <p class="lead" style="color:#e5dce2">We only take on three clients per month, so sign up now. Your first call is free. Tell us what's eating your day, then pick a time.</p>
 
     <form class="form-card" id="enquiry" novalidate>
       <input type="hidden" name="ref" id="ref" value="individual">
@@ -820,7 +855,7 @@
     msg.textContent = "Thank you. We'll be in touch shortly. Want to skip the back and forth? ";
     var a = document.createElement("a");
     a.className = "book"; a.href = BOOK_URL; a.target = "_blank"; a.rel = "noopener";
-    a.textContent = "Book your first call";
+    a.textContent = "Book your free call";
     msg.appendChild(a);
   }
   form.addEventListener("submit", function (e) {
