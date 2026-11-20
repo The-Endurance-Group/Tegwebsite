@@ -1597,6 +1597,17 @@ details[open] .faq-q::after { content: "−"; }
   color: var(--color-white);
 }
 .ai-chat-message--pending { opacity: 0.6; }
+.ai-chat-message a {
+  color: var(--color-pink-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.5px;
+  overflow-wrap: anywhere;
+}
+.ai-chat-message a:hover,
+.ai-chat-message a:focus-visible { color: var(--color-ink); }
+.ai-chat-message--user a { color: inherit; }
 
 .ai-chat-form {
   display: flex;
