@@ -137,13 +137,6 @@
     .rh-link circle { fill:var(--color-purple); }
     .rh-link line { stroke:var(--color-teal); stroke-width:2; stroke-dasharray:6 6; animation:rhDash 1.2s linear infinite; }
 
-    /* Free */
-    .rh-free { display:flex; align-items:center; gap:16px; color:inherit; transition:transform .25s ease; }
-    .rh-free:hover { transform:translateY(-3px); }
-    .rh-free .rh-door-icon { flex-shrink:0; }
-    .rh-free h3 { margin:0; font-size:18px; }
-    .rh-free p { margin:2px 0 0; font-size:14px; }
-
     .rh-faq { max-width:760px; margin-inline:auto; }
     .rh-cta .btn-primary { animation:rhBtn 2.2s infinite; }
 
