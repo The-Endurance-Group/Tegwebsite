@@ -108,23 +108,18 @@
     .rh-proof blockquote { margin:auto 0 0; padding-top:12px; border-top:1px solid var(--border-light); font-weight:600; color:var(--color-purple); font-size:15px; }
     .rh-proof cite { display:block; margin-top:6px; font-style:normal; font-weight:500; font-size:13px; color:var(--color-lavender); }
 
-    /* Compare */
-    .rh-cmp-wrap { margin-top:32px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); overflow:hidden; }
-    .rh-cmp { width:100%; border-collapse:collapse; font-size:15px; }
-    .rh-cmp th, .rh-cmp td { padding:14px 10px; text-align:center; border-top:1px solid var(--border-light); }
-    .rh-cmp thead th { border-top:none; background:var(--bg-light); font-size:13px; }
-    .rh-cmp tbody th { text-align:left; padding-left:20px; font-weight:700; width:34%; }
-    .rh-cmp .rh-us { background:var(--tint-pink); }
-    .rh-cmp thead .rh-us { background:var(--color-pink); color:#fff; }
-    .rh-ic { display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; font-size:14px; font-weight:800; opacity:0; }
-    .rh-ic.yes { background:var(--tint-teal); color:var(--color-teal-dark); }
-    .rh-us .rh-ic.yes { background:var(--color-pink); color:#fff; }
-    .rh-ic.part { background:var(--bg-light); color:var(--color-lavender); }
-    .rh-ic.no { background:var(--bg-light); color:#b9b2b7; }
-    .rh-cmp-wrap.is-visible .rh-ic { animation:rhPop .45s both; }
-    .rh-cmp-wrap.is-visible tr:nth-child(1) .rh-ic { animation-delay:.1s; } .rh-cmp-wrap.is-visible tr:nth-child(2) .rh-ic { animation-delay:.25s; } .rh-cmp-wrap.is-visible tr:nth-child(3) .rh-ic { animation-delay:.4s; }
-    .rh-cmp-wrap.is-visible tr:nth-child(4) .rh-ic { animation-delay:.55s; } .rh-cmp-wrap.is-visible tr:nth-child(5) .rh-ic { animation-delay:.7s; } .rh-cmp-wrap.is-visible tr:nth-child(6) .rh-ic { animation-delay:.85s; }
-    .rh-legend { margin-top:14px; font-size:13px; color:var(--color-lavender); text-align:center; }
+    /* Where we fit */
+    .rh-fit { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-top:32px; align-items:start; }
+    .rh-fit-card { padding:24px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); }
+    .rh-fit-tag { display:block; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--color-lavender); margin-bottom:10px; }
+    .rh-fit-card h3 { margin:0 0 6px; font-size:19px; }
+    .rh-fit-card p { margin:0; color:var(--color-lavender); font-size:15px; }
+    .rh-fit-us { background:var(--color-purple); border-color:var(--color-purple); box-shadow:0 18px 40px -20px rgba(112,66,130,.6); }
+    .rh-fit-us .rh-fit-tag { color:#f4c7da; }
+    .rh-fit-us h3 { color:#fff; }
+    .rh-fit-us ul { list-style:none; margin:10px 0 0; padding:0; display:flex; flex-direction:column; gap:8px; }
+    .rh-fit-us li { display:flex; align-items:center; gap:10px; color:#fff; font-weight:600; font-size:15px; }
+    .rh-fit-us li::before { content:"\2713"; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; width:22px; height:22px; border-radius:50%; background:var(--color-pink); color:#fff; font-size:12px; font-weight:800; }
 
     /* Doors */
     .rh-door { display:flex; flex-direction:column; gap:10px; color:inherit; transition:transform .25s ease, box-shadow .25s ease; }
@@ -166,6 +161,7 @@
     .rh-cta .btn-primary { animation:rhBtn 2.2s infinite; }
 
     @media (max-width:900px) {
+      .rh-fit { grid-template-columns:repeat(2,minmax(0,1fr)); }
       .rh-hero-grid, .rh-jim { grid-template-columns:1fr; gap:32px; }
       .rh-jim img { max-width:220px; }
     }
@@ -173,12 +169,12 @@
       .rh-stats { grid-template-columns:1fr; }
       .rh-ba { grid-template-columns:1fr; }
       .rh-ba-arrow { transform:rotate(90deg); }
-      .rh-cmp { font-size:13px; }
-      .rh-cmp tbody th { padding-left:12px; }
+      .rh-fit { grid-template-columns:1fr; }
+      .rh-fit-us { order:-1; }
     }
     @media (prefers-reduced-motion: reduce) {
       .rh-page *, .rh-page *::before, .rh-page *::after { animation:none !important; }
-      .rh-hero h1, .rh-hero .lede, .rh-chips li, .rh-hero .btn-group, .rh-price, .rh-hub, .rh-ic { opacity:1 !important; }
+      .rh-hero h1, .rh-hero .lede, .rh-chips li, .rh-hero .btn-group, .rh-price, .rh-hub { opacity:1 !important; }
       .rh-bar i { width:100%; } .rh-shield path { stroke-dashoffset:0; }
       .rh-flow li { opacity:1 !important; transform:none !important; }
     }
@@ -358,23 +354,38 @@
     <section id="compare" class="section" style="padding-top:0;">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">How we are different</span>
-          <h2>Most firms have AI. Few get results.</h2>
+          <span class="eyebrow">Where we fit</span>
+          <h2>AI tools are everywhere. Results take more than tools.</h2>
         </div>
-        <div class="rh-cmp-wrap reveal">
-          <table class="rh-cmp">
-            <thead><tr><th></th><th>Software</th><th>Consultants</th><th>Courses</th><th class="rh-us">TEG</th></tr></thead>
-            <tbody>
-              <tr><th>Works across your systems</th><td><span class="rh-ic no">&#x2715;</span></td><td><span class="rh-ic part">~</span></td><td><span class="rh-ic no">&#x2715;</span></td><td class="rh-us"><span class="rh-ic yes">&#x2713;</span></td></tr>
-              <tr><th>Trains your team</th><td><span class="rh-ic no">&#x2715;</span></td><td><span class="rh-ic part">~</span></td><td><span class="rh-ic yes">&#x2713;</span></td><td class="rh-us"><span class="rh-ic yes">&#x2713;</span></td></tr>
-              <tr><th>Writes your AI policy</th><td><span class="rh-ic no">&#x2715;</span></td><td><span class="rh-ic part">~</span></td><td><span class="rh-ic part">~</span></td><td class="rh-us"><span class="rh-ic yes">&#x2713;</span></td></tr>
-              <tr><th>Builds it for you</th><td><span class="rh-ic no">&#x2715;</span></td><td><span class="rh-ic part">~</span></td><td><span class="rh-ic no">&#x2715;</span></td><td class="rh-us"><span class="rh-ic yes">&#x2713;</span></td></tr>
-              <tr><th>Fixed, published pricing</th><td><span class="rh-ic part">~</span></td><td><span class="rh-ic no">&#x2715;</span></td><td><span class="rh-ic yes">&#x2713;</span></td><td class="rh-us"><span class="rh-ic yes">&#x2713;</span></td></tr>
-              <tr><th>Measured result</th><td><span class="rh-ic no">&#x2715;</span></td><td><span class="rh-ic part">~</span></td><td><span class="rh-ic no">&#x2715;</span></td><td class="rh-us"><span class="rh-ic yes">&#x2713;</span></td></tr>
-            </tbody>
-          </table>
+        <div class="rh-fit reveal reveal--stagger">
+          <article class="rh-fit-card">
+            <span class="rh-fit-tag">AI software</span>
+            <h3>Best at one job</h3>
+            <p>Inside its own tool.</p>
+          </article>
+          <article class="rh-fit-card">
+            <span class="rh-fit-tag">Consultants</span>
+            <h3>Best at strategy</h3>
+            <p>Recommendations and plans.</p>
+          </article>
+          <article class="rh-fit-card">
+            <span class="rh-fit-tag">Courses</span>
+            <h3>Best at awareness</h3>
+            <p>Skills and a starting point.</p>
+          </article>
+          <article class="rh-fit-card rh-fit-us">
+            <span class="rh-fit-tag">TEG</span>
+            <h3>Connects it all</h3>
+            <ul>
+              <li>Training</li>
+              <li>AI policy</li>
+              <li>Automations built for you</li>
+              <li>Fixed price</li>
+              <li>Success measured up front</li>
+            </ul>
+          </article>
         </div>
-        <p class="rh-legend">&#x2713; yes &nbsp; ~ partly &nbsp; &#x2715; no</p>
+        <p class="rh-note reveal">We work alongside your CRM and tools, not instead of them.</p>
       </div>
     </section>
 
