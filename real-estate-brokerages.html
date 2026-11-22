@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20261120-chat">
   <link rel="stylesheet" href="css/concept-re.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do all our agents have to use it?", "acceptedAnswer": {"@type": "Answer", "text": "No. We pilot with volunteers first. Adoption by staff can be required."}}, {"@type": "Question", "name": "Do we need a policy first?", "acceptedAnswer": {"@type": "Answer", "text": "No. Policy, training and automation each stand alone."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "The intro meeting is free. Builds are value-priced and fixed before work begins. Managed Claude starts at $1,500 a month. Agents can start at $998."}}, {"@type": "Question", "name": "Who owns what you build?", "acceptedAnswer": {"@type": "Answer", "text": "You do. You own the workflows, Skills, integrations and code we build."}}]}</script>
 </head>
 <body class="rh-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -33,7 +34,7 @@
           <li class="rh-dd">
             <a href="#start">Solutions</a>
             <ul class="rh-sub">
-              <li><a href="realestate">Commercial real estate</a></li>
+              <li><a href="real-estate-commercial.html">Commercial real estate</a></li>
               <li><a href="real-estate-brokerages.html" aria-current="page">Residential brokerages</a></li>
               <li><a href="ai-for-agents-and-brokers.html">Agents and brokers</a></li>
               <li><a href="managed-claude.html">Managed Claude</a></li>
@@ -44,7 +45,7 @@
           <li><a href="#proof">Results</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="blog.html">Resources</a></li>
-          <li><a class="nav-cta" href="contact.html">Free intro meeting</a></li>
+          <li><a class="nav-cta" href="contact.html" data-cta="home-cta-1">Free intro meeting</a></li>
         </ul>
       </nav>
     </div>
@@ -211,12 +212,12 @@
           <a href="concept-realestate-home.html"><img src="images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
           <p class="footer-tagline">AI for real estate</p>
           <img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
-          <p class="footer-cta"><a class="btn btn-primary" href="contact.html">Book a free intro meeting</a></p>
+          <p class="footer-cta"><a class="btn btn-primary" href="contact.html" data-cta="home-cta-4">Book a free intro meeting</a></p>
         </div>
         <div class="footer-col">
           <h4>Solutions</h4>
           <ul>
-            <li><a href="realestate">Commercial real estate</a></li>
+            <li><a href="real-estate-commercial.html">Commercial real estate</a></li>
             <li><a href="real-estate-brokerages.html">Residential brokerages</a></li>
             <li><a href="ai-for-agents-and-brokers.html">Agents and brokers</a></li>
             <li><a href="managed-claude.html">Managed Claude</a></li>
@@ -235,6 +236,7 @@
           <ul>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="success.html">Success stories</a></li>
+            <li><a href="https://www.linkedin.com/company/the-endurance-group" rel="noopener">LinkedIn</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -255,5 +257,12 @@
   </footer>
 
   <script src="js/main.js?v=20260930" defer></script>
+  <script>
+    /* Conversion tracking hook: fires a Clarity event per CTA once the Clarity tag is installed at launch. */
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('[data-cta]');
+      if (a && window.clarity) { window.clarity('event', a.getAttribute('data-cta')); }
+    });
+  </script>
 </body>
 </html>
