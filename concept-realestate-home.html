@@ -196,6 +196,13 @@
     .rh-badges img { height:44px; width:auto; }
     .rh-badges a { font-weight:700; font-size:14px; color:var(--color-pink); }
     @media (max-width:900px) { .rh-team { grid-template-columns:repeat(2,minmax(0,1fr)); } .rh-agenda { margin-left:0; } }
+    @media (max-width:700px) {
+      .rh-page a.go, .rh-page a.feature-link, .rh-page .rh-badges a, .rh-page .rh-note a { display:inline-block; padding:11px 0; }
+      .rh-agenda i { display:none; }
+    }
+    @media (max-width:767px) {
+      .rh-page .process-track { justify-items:start; }
+    }
 
     .rh-faq { max-width:760px; margin-inline:auto; }
     .rh-cta .btn-primary { animation:rhBtn 2.2s infinite; }
@@ -427,7 +434,7 @@
           <span>Client data in personal accounts</span>
           <span>Admin hours lost every week</span>
         </div>
-        <p class="rh-note reveal">NAR is already publishing guidance: <a href="https://www.nar.realtor/magazine/broker-news/why-every-brokerage-needs-an-ai-use-policy" rel="noopener">why every brokerage needs an AI use policy &rarr;</a></p>
+        <p class="rh-note reveal">REALTOR&reg; Magazine (NAR) makes the case: <a href="https://www.nar.realtor/magazine/broker-news/why-every-brokerage-needs-an-ai-use-policy" rel="noopener">why every brokerage needs an AI use policy &rarr;</a></p>
       </div>
     </section>
 
