@@ -54,9 +54,6 @@
     .rh-price { margin-top:16px; font-weight:700; font-size:14px; color:var(--color-lavender); animation:rhRise .7s .8s both; }
     .rh-price a { color:var(--color-pink); }
 
-    .rh-switch { display:inline-flex; gap:4px; padding:4px; margin-bottom:20px; border-radius:999px; background:var(--tint-purple); animation:rhRise .6s both; }
-    .rh-switch button { appearance:none; border:none; background:transparent; font:700 14px Raleway,sans-serif; color:var(--color-purple); padding:9px 18px; border-radius:999px; cursor:pointer; transition:background .25s ease, color .25s ease; }
-    .rh-switch button[aria-selected="true"] { background:var(--color-purple); color:#fff; }
     .rh-aud[hidden] { display:none; }
     .rh-aud:not([hidden]) { animation:rhRise .45s both; }
 
@@ -181,7 +178,7 @@
     }
     @media (prefers-reduced-motion: reduce) {
       .rh-page *, .rh-page *::before, .rh-page *::after { animation:none !important; }
-      .rh-hero h1, .rh-hero .lede, .rh-chips li, .rh-hero .btn-group, .rh-price, .rh-hub, .rh-ic, .rh-switch { opacity:1 !important; }
+      .rh-hero h1, .rh-hero .lede, .rh-chips li, .rh-hero .btn-group, .rh-price, .rh-hub, .rh-ic { opacity:1 !important; }
       .rh-bar i { width:100%; } .rh-shield path { stroke-dashoffset:0; }
       .rh-flow li { opacity:1 !important; transform:none !important; }
     }
@@ -207,14 +204,14 @@
           <li class="rh-dd">
             <a href="#start">Solutions</a>
             <ul class="rh-sub">
-              <li><a href="#start">Commercial real estate</a></li>
-              <li><a href="#start">Residential</a></li>
-              <li><a href="#start">Agents and brokers</a></li>
+              <li><a href="realestate">Commercial real estate</a></li>
+              <li><a href="real-estate-brokerages.html">Residential brokerages</a></li>
+              <li><a href="ai-for-agents-and-brokers.html">Agents and brokers</a></li>
               <li><a href="managed-claude.html">Managed Claude</a></li>
             </ul>
           </li>
-          <li><a href="#train">Training</a></li>
-          <li><a href="#govern">AI Policy and Governance</a></li>
+          <li><a href="real-estate-training.html">Training</a></li>
+          <li><a href="real-estate-ai-policy.html">AI Policy and Governance</a></li>
           <li><a href="#proof">Results</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="blog.html">Resources</a></li>
@@ -231,38 +228,19 @@
         <div class="rh-hero-grid">
           <div>
             <img class="rh-badge" src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner">
-            <div class="rh-switch" role="tablist" aria-label="Who are you?">
-              <button type="button" role="tab" id="rh-tab-firm" aria-selected="true" aria-controls="rh-copy-firm" data-aud="firm">I run a firm</button>
-              <button type="button" role="tab" id="rh-tab-agent" aria-selected="false" aria-controls="rh-copy-agent" data-aud="agent">I'm an agent or broker</button>
-            </div>
-            <div class="rh-aud" data-aud="firm" id="rh-copy-firm" role="tabpanel" aria-labelledby="rh-tab-firm">
-              <h1>AI for real estate that actually gets used and pays off.</h1>
-              <p class="lede">Training, policy or automation. Use one or all three.</p>
-            </div>
-            <div class="rh-aud" data-aud="agent" id="rh-copy-agent" role="tabpanel" aria-labelledby="rh-tab-agent" hidden>
-              <h1>Get hours back every week. Your own AI, built for you.</h1>
-              <p class="lede">Listings, follow-up and admin on autopilot. A real person builds it.</p>
-            </div>
+            <h1>AI for real estate that actually gets used and pays off.</h1>
+            <p class="lede">Training, policy or automation. Use one or all three.</p>
             <ul class="rh-chips">
               <li>Arthur Andersen CRE roots</li>
               <li>Since 1999</li>
               <li>Commercial and residential</li>
               <li>Claude certified</li>
             </ul>
-            <div class="rh-aud" data-aud="firm">
-              <div class="btn-group">
-                <a class="btn btn-primary" href="book-value-assessment.html">Get your top 5 AI opportunities, free</a>
-                <a class="btn btn-secondary" href="#proof">See results</a>
-              </div>
-              <p class="rh-price">Free assessment. Fixed-price builds.</p>
+            <div class="btn-group">
+              <a class="btn btn-primary" href="book-value-assessment.html">Get your top 5 AI opportunities, free</a>
+              <a class="btn btn-secondary" href="#proof">See results</a>
             </div>
-            <div class="rh-aud" data-aud="agent" hidden>
-              <div class="btn-group">
-                <a class="btn btn-primary" href="ai-for-agents-and-brokers.html">Get your top 5 AI opportunities, free</a>
-                <a class="btn btn-secondary" href="ai-for-agents-and-brokers.html">See what we build</a>
-              </div>
-              <p class="rh-price">Free first call. $998 only if you proceed.</p>
-            </div>
+            <p class="rh-price">Free assessment. Fixed-price builds. <a href="ai-for-agents-and-brokers.html">Agent setup $998 &rarr;</a></p>
           </div>
           <div class="rh-hub" aria-label="Example of AI working in the background">
             <div class="rh-aud" data-aud="firm">
@@ -413,13 +391,13 @@
             <p>Owners, investors, developers</p>
             <span class="go">Deal lifecycle &rarr;</span>
           </a>
-          <a class="feature-card rh-door" href="#govern">
+          <a class="feature-card rh-door" href="real-estate-brokerages.html">
             <span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg></span>
             <h3>Brokerage</h3>
-            <p>Policy, platform, rollout</p>
-            <span class="go">Govern &rarr;</span>
+            <p>Policy, training, rollout</p>
+            <span class="go">Brokerage solutions &rarr;</span>
           </a>
-          <a class="feature-card rh-door" href="blog/offerpad-ai-partnership.html">
+          <a class="feature-card rh-door" href="realestate#case-study">
             <span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span>
             <h3>Operator</h3>
             <p>One AI partner, every team</p>
@@ -447,19 +425,19 @@
             <div class="rh-anim"><div class="rh-bar"><i></i></div></div>
             <h3>Train</h3>
             <ul><li>Team training</li><li>Workshops</li><li>Free videos</li></ul>
-            <a class="go" href="free-training.html">Start here &rarr;</a>
+            <a class="go" href="real-estate-training.html">Start here &rarr;</a>
           </article>
           <article id="govern" class="feature-card rh-pillar">
             <div class="rh-anim"><svg class="rh-shield" width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="var(--color-purple)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 5 L48 13 V28 C48 40 39 48 28 52 C17 48 8 40 8 28 V13 Z"/><path class="tick" d="M19 28 L26 35 L38 21" stroke="var(--color-pink)"/></svg></div>
             <h3>Govern</h3>
             <ul><li>AI policy</li><li>Platform choice</li><li>Data permissions</li></ul>
-            <a class="go" href="ai-policy">Start here &rarr;</a>
+            <a class="go" href="real-estate-ai-policy.html">Start here &rarr;</a>
           </article>
           <article id="automate" class="feature-card rh-pillar">
             <div class="rh-anim"><svg class="rh-link" width="150" height="56" viewBox="0 0 150 56" aria-hidden="true"><line x1="22" y1="28" x2="75" y2="28"/><line x1="75" y1="28" x2="128" y2="28"/><circle cx="22" cy="28" r="9"/><circle cx="75" cy="28" r="9" style="fill:var(--color-pink)"/><circle cx="128" cy="28" r="9"/></svg></div>
             <h3>Automate</h3>
             <ul><li>CRM</li><li>Deal data</li><li>Follow-up</li></ul>
-            <a class="go" href="book-value-assessment.html">Start here &rarr;</a>
+            <a class="go" href="realestate">Start here &rarr;</a>
           </article>
         </div>
       </div>
@@ -557,7 +535,7 @@
           <h4>Solutions</h4>
           <ul>
             <li><a href="realestate">Commercial real estate</a></li>
-            <li><a href="#start">Residential</a></li>
+            <li><a href="real-estate-brokerages.html">Residential brokerages</a></li>
             <li><a href="ai-for-agents-and-brokers.html">Agents and brokers</a></li>
             <li><a href="managed-claude.html">Managed Claude</a></li>
           </ul>
@@ -565,9 +543,9 @@
         <div class="footer-col">
           <h4>Training and policy</h4>
           <ul>
-            <li><a href="#train">Claude training</a></li>
+            <li><a href="real-estate-training.html">Claude training</a></li>
             <li><a href="free-training.html">Free training call</a></li>
-            <li><a href="#govern">AI policy and governance</a></li>
+            <li><a href="real-estate-ai-policy.html">AI policy and governance</a></li>
             <li><a href="ai-policy">Free AI policy draft</a></li>
           </ul>
         </div>
@@ -600,15 +578,16 @@
 
   <script src="js/main.js?v=20260930" defer></script>
   <script>
-    /* Audience switch: swaps hero copy, buttons and example. Deep link with #agent. */
+    /* Hero example rotates between the firm and agent scenarios every 10 seconds. */
     (function () {
-      var tabs = document.querySelectorAll('.rh-switch button');
-      function pick(aud) {
-        tabs.forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-aud') === aud ? 'true' : 'false'); });
-        document.querySelectorAll('.rh-aud').forEach(function (el) { el.hidden = el.getAttribute('data-aud') !== aud; });
-      }
-      tabs.forEach(function (b) { b.addEventListener('click', function () { pick(b.getAttribute('data-aud')); }); });
-      if (location.hash === '#agent') pick('agent');
+      var panels = document.querySelectorAll('.rh-hub .rh-aud');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (panels.length < 2 || reduce) return;
+      var i = 0;
+      setInterval(function () {
+        i = (i + 1) % panels.length;
+        panels.forEach(function (el, n) { el.hidden = n !== i; });
+      }, 10000);
     })();
   </script>
   <script>
