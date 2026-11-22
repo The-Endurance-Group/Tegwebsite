@@ -33,7 +33,19 @@
     .rh-badge { display:block; height:56px; width:auto; max-width:100%; margin-bottom:28px; }
     .rh-hero .lede { margin-top:24px; max-width:620px; }
     .rh-hero .btn-group { margin-top:28px; }
-    .rh-sub-link { margin-top:20px; color:var(--color-lavender); font-size:15px; }
+    .rh-sub-link { margin-top:16px; color:var(--color-lavender); font-size:15px; }
+    .rh-founder { margin-top:16px; max-width:620px; font-weight:600; color:var(--color-purple); }
+    .rh-price { margin-top:20px; font-weight:700; font-size:15px; color:var(--color-ink); }
+
+    /* Comparison */
+    .rh-compare-wrap { overflow-x:auto; margin-top:32px; border:1px solid var(--border-light); border-radius:var(--radius-md); background:var(--color-white); }
+    .rh-compare { width:100%; min-width:760px; border-collapse:collapse; font-size:15px; }
+    .rh-compare th, .rh-compare td { padding:16px 18px; text-align:left; vertical-align:top; border-top:1px solid var(--border-light); }
+    .rh-compare thead th { border-top:none; font-size:14px; background:var(--bg-light); }
+    .rh-compare tbody th { width:16%; color:var(--color-lavender); font-weight:700; }
+    .rh-compare td { color:var(--color-lavender); }
+    .rh-compare .rh-us { background:var(--tint-pink); color:var(--color-ink); font-weight:600; }
+    .rh-compare thead .rh-us { background:var(--color-pink); color:#fff; }
     .rh-cred { padding:32px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); }
     .rh-cred h2 { font-size:22px; margin-bottom:20px; }
     .rh-cred ul { list-style:none; margin:0; padding:0; }
@@ -146,12 +158,14 @@
           <div>
             <img class="rh-badge" src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner">
             <span class="eyebrow">AI for real estate</span>
-            <h1>AI for real estate, built by people who started in it.</h1>
-            <p class="lede">We train your team to use Claude, write the policy that keeps it safe, and build the automations that give your people their time back. Serving real estate since 1999.</p>
+            <h1>AI for real estate that actually gets used and pays off.</h1>
+            <p class="lede">We train your team to use Claude, write the policy that keeps it safe, and build the automations that give your people their time back.</p>
+            <p class="rh-founder">Built by people who started in real estate. Founded by a former Arthur Andersen commercial real estate professional, serving real estate since 1999.</p>
             <div class="btn-group">
               <a class="btn btn-primary" href="book-value-assessment.html">Book a free AI Value Assessment</a>
               <a class="btn btn-secondary" href="#proof">See our results</a>
             </div>
+            <p class="rh-price">Free assessment. Fixed-price builds. Agent setup for $998.</p>
             <p class="rh-sub-link">Individual agent or broker? <a class="feature-link" href="ai-for-agents-and-brokers.html">Get your own AI, built for you, for $998 &rarr;</a></p>
           </div>
           <aside class="rh-cred" aria-label="Why TEG">
@@ -228,6 +242,30 @@
         </div>
         <!-- TESTIMONIAL SLOT: add RealtyONE agent and broker quotes here once collected -->
         <p style="margin-top:24px;"><a class="feature-link" href="success.html">See all success stories &rarr;</a></p>
+      </div>
+    </section>
+
+    <section id="compare" class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How we are different</span>
+          <h2>Most firms have AI. Few get results from it.</h2>
+          <p class="lede">Software gives you its AI. Consultants give you a strategy deck. Courses give you awareness. We connect your systems, train your people and measure the result.</p>
+        </div>
+        <div class="rh-compare-wrap">
+          <table class="rh-compare">
+            <thead>
+              <tr><th></th><th>AI software vendors</th><th>Generic AI consultants</th><th>Courses and workshops</th><th class="rh-us">TEG</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>What you get</th><td>Their AI, inside their product</td><td>Strategy and recommendations</td><td>Awareness and a policy template</td><td class="rh-us">Training, policy and working automations</td></tr>
+              <tr><th>Your systems</th><td>Works with their tool only</td><td>Varies by project</td><td>Not connected to anything</td><td class="rh-us">Connected across your CRM, documents and deal data</td></tr>
+              <tr><th>Pricing</th><td>Per seat, per month</td><td>Hourly or "get in touch"</td><td>Per ticket</td><td class="rh-us">Free assessment, fixed-price builds, $998 agent setup</td></tr>
+              <tr><th>Real estate depth</th><td>Product-specific</td><td>General AI experience</td><td>Instructors</td><td class="rh-us">Arthur Andersen commercial real estate roots, since 1999</td></tr>
+              <tr><th>Ends with</th><td>A login</td><td>A deck</td><td>A certificate</td><td class="rh-us">A working system and a measured result</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
