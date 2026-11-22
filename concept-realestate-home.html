@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONCEPT | AI for Real Estate Home Page | TEG</title>
+  <meta name="description" content="Internal concept: what The Endurance Group home page would look like if real estate were all we did.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="images/favicon-network.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20261120-chat">
+  <style>
+    .rh-banner { background:var(--color-ink); color:#fff; text-align:center; font-size:13px; font-weight:600; padding:8px 16px; letter-spacing:.02em; }
+    .rh-page .btn { white-space:normal; text-align:center; }
+    .rh-page section[id] { scroll-margin-top:96px; }
+
+    /* Nav dropdown */
+    .rh-dd > a::after { content:"\25BE"; margin-left:6px; font-size:11px; color:var(--color-pink); }
+    .rh-sub { list-style:none; margin:0; padding:0 0 0 16px; }
+    .rh-sub a { font-weight:500 !important; }
+    @media (min-width:1024px) {
+      .rh-dd { position:relative; }
+      .rh-sub { display:none; position:absolute; top:100%; left:-16px; min-width:260px; padding:10px 0; background:#fff; border:1px solid var(--border-light); border-radius:var(--radius-md); box-shadow:0 12px 32px rgba(30,23,34,.12); z-index:50; }
+      .rh-dd:hover .rh-sub, .rh-dd:focus-within .rh-sub { display:block; }
+      .rh-sub a { padding:10px 20px !important; display:block; }
+      .rh-sub a:hover { background:var(--tint-pink); }
+    }
+
+    /* Hero */
+    .rh-hero-grid { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:48px; align-items:center; }
+    .rh-badge { display:block; height:56px; width:auto; max-width:100%; margin-bottom:28px; }
+    .rh-hero .lede { margin-top:24px; max-width:620px; }
+    .rh-hero .btn-group { margin-top:28px; }
+    .rh-sub-link { margin-top:20px; color:var(--color-lavender); font-size:15px; }
+    .rh-cred { padding:32px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); }
+    .rh-cred h2 { font-size:22px; margin-bottom:20px; }
+    .rh-cred ul { list-style:none; margin:0; padding:0; }
+    .rh-cred li { display:grid; grid-template-columns:28px minmax(0,1fr); gap:12px; padding:14px 0; border-top:1px solid var(--border-light); font-weight:600; }
+    .rh-cred li:first-child { border-top:none; padding-top:0; }
+    .rh-check { display:flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; background:var(--tint-teal); color:var(--color-teal-dark); }
+    .rh-check svg { width:15px; height:15px; }
+    .rh-cred p { margin:20px 0 0; color:var(--color-lavender); font-size:14px; }
+
+    /* Jim */
+    .rh-jim { display:grid; grid-template-columns:minmax(0,300px) minmax(0,1fr); gap:48px; align-items:center; }
+    .rh-jim img { width:100%; height:auto; border-radius:var(--radius-lg); display:block; }
+    .rh-jim p { color:var(--color-lavender); margin-top:18px; }
+    .rh-jim .rh-sig { margin-top:24px; font-weight:700; color:var(--color-ink); }
+
+    /* Proof */
+    .rh-stat { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:32px; align-items:center; padding:32px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); margin-top:32px; }
+    .rh-stat img { height:44px; width:auto; display:block; margin-bottom:16px; }
+    .rh-stat-num { display:block; font-size:clamp(34px,5vw,52px); font-weight:800; color:var(--color-purple); line-height:1.1; }
+    .rh-stat-label { display:block; margin-top:8px; color:var(--color-lavender); font-weight:600; }
+    .rh-stat blockquote { margin:0; font-size:18px; line-height:1.55; }
+    .rh-stat cite { display:block; margin-top:14px; font-size:14px; font-style:normal; font-weight:700; color:var(--color-purple); }
+    .rh-proof-card { display:flex; flex-direction:column; gap:12px; }
+    .rh-proof-card img { height:36px; width:auto; max-width:150px; object-fit:contain; object-position:left; }
+    .rh-proof-card .rh-tag { font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--color-pink); }
+    .rh-proof-card h3 { font-size:19px; margin:0; }
+    .rh-proof-card blockquote { margin:auto 0 0; padding-top:12px; border-top:1px solid var(--border-light); font-size:15px; color:var(--color-lavender); }
+    .rh-proof-card cite { display:block; margin-top:8px; font-style:normal; font-weight:700; font-size:13px; color:var(--color-purple); }
+
+    /* Doors */
+    .rh-door { display:flex; flex-direction:column; gap:12px; }
+    .rh-door-icon { width:44px; height:44px; border-radius:50%; background:var(--tint-purple); color:var(--color-purple); display:flex; align-items:center; justify-content:center; }
+    .rh-door-icon svg { width:22px; height:22px; }
+    .rh-door h3 { margin:0; font-size:20px; }
+    .rh-door p { margin:0; }
+    .rh-door .feature-link { margin-top:auto; padding-top:8px; }
+
+    /* Three tiles */
+    .rh-tile { padding:32px; }
+    .rh-tile .rh-num { font-size:13px; font-weight:800; letter-spacing:.1em; color:var(--color-pink); }
+    .rh-tile h3 { margin:8px 0 12px; font-size:24px; }
+    .rh-tile ul { margin:16px 0 0; padding-left:18px; color:var(--color-lavender); }
+    .rh-tile li { margin-top:6px; }
+
+    /* Method */
+    .rh-steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; list-style:none; padding:0; margin:32px 0 0; counter-reset:s; }
+    .rh-steps li { padding:24px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); }
+    .rh-steps li::before { counter-increment:s; content:"0" counter(s); display:block; font-weight:800; color:var(--color-pink); font-size:14px; letter-spacing:.1em; margin-bottom:10px; }
+    .rh-steps h3 { font-size:20px; margin:0 0 8px; }
+    .rh-steps p { margin:0; color:var(--color-lavender); font-size:15px; }
+
+    /* Free ways in */
+    .rh-free { display:flex; flex-direction:column; gap:10px; }
+    .rh-free .rh-tag { font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--color-teal-dark); }
+    .rh-free h3 { margin:0; font-size:20px; }
+    .rh-free p { margin:0; }
+
+    .rh-faq { max-width:820px; margin-inline:auto; }
+
+    @media (max-width:1000px) { .rh-steps { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:900px) {
+      .rh-hero-grid, .rh-jim, .rh-stat { grid-template-columns:1fr; gap:32px; }
+      .rh-jim img { max-width:260px; }
+    }
+    @media (max-width:600px) { .rh-steps { grid-template-columns:1fr; } .rh-stat { padding:24px; } }
+  </style>
+</head>
+<body class="rh-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="rh-banner">Internal concept only: what the TEG home page could look like if real estate were all we did. Not linked from the live site.</div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a class="logo" href="concept-realestate-home.html"><img src="images/logo.webp" alt="The Endurance Group" class="logo-img"></a>
+        <img src="images/claude-logo.jpg" alt="Claude" class="header-claude-mark">
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li class="rh-dd">
+            <a href="#start">Solutions</a>
+            <ul class="rh-sub">
+              <li><a href="#start">Commercial real estate</a></li>
+              <li><a href="#start">Residential</a></li>
+              <li><a href="#start">Agents and brokers</a></li>
+              <li><a href="managed-claude.html">Managed Claude</a></li>
+            </ul>
+          </li>
+          <li><a href="#train">Training</a></li>
+          <li><a href="#govern">AI Policy and Governance</a></li>
+          <li><a href="#proof">Results</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Resources</a></li>
+          <li><a class="nav-cta" href="book-value-assessment.html">Free AI Value Assessment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero hero--page section rh-hero">
+      <div class="container">
+        <div class="rh-hero-grid">
+          <div>
+            <img class="rh-badge" src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner">
+            <span class="eyebrow">AI for real estate</span>
+            <h1>AI for real estate, commercial and residential, built by people who started in it.</h1>
+            <p class="lede">We train your team to use Claude, write the policy that keeps it safe, and build the automations that give your people their time back. Serving real estate since 1999.</p>
+            <div class="btn-group">
+              <a class="btn btn-primary" href="book-value-assessment.html">Book a free AI Value Assessment</a>
+              <a class="btn btn-secondary" href="#proof">See our results</a>
+            </div>
+            <p class="rh-sub-link">Individual agent or broker? <a class="feature-link" href="ai-for-agents-and-brokers.html">Get your own AI, built for you, for $998 &rarr;</a></p>
+          </div>
+          <aside class="rh-cred" aria-label="Why TEG">
+            <h2>Why real estate teams pick TEG</h2>
+            <ul>
+              <li><span class="rh-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span>Serving real estate since 1999</li>
+              <li><span class="rh-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span>Founded by a former Arthur Andersen commercial real estate professional</li>
+              <li><span class="rh-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span>Commercial and residential: investment, underwriting, brokerage and operations</li>
+              <li><span class="rh-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span>Claude-certified architects and developers</li>
+              <li><span class="rh-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span>A real person on every call and every build</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="roots" class="section section--alt">
+      <div class="container">
+        <div class="rh-jim">
+          <img src="images/team/jim-sullivan-headshot.webp" alt="Jim Sullivan, founder and president of The Endurance Group" loading="lazy">
+          <div>
+            <span class="eyebrow">Our real estate roots</span>
+            <h2>We started in commercial real estate.</h2>
+            <p>Jim Sullivan founded The Endurance Group in 1999, after beginning his career at Arthur Andersen with a focus on commercial real estate. He learned the business from the inside: scattered property data, manual follow-up, and work that should run automatically but never does.</p>
+            <p>Those are the problems we now solve with Claude, in commercial and residential real estate alike. After real estate, Jim spent two decades running outsourced B2B sales and marketing for clients, which is why we put revenue and relationships first. He spoke at CREtech New York on why AI for real estate only works when it is connected to every system you use.</p>
+            <p class="rh-sig">Jim, Conor, Maria, Nolan and Simon. One of them is on every call and every build.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Proof</span>
+          <h2>Real estate work, in our clients' words.</h2>
+        </div>
+
+        <div class="rh-stat">
+          <div>
+            <img src="images/clients/offerpad.webp" alt="Offerpad" loading="lazy">
+            <span class="rh-stat-num">1 to 2 hours</span>
+            <span class="rh-stat-label">saved per day by the renovations team on vendor photo review</span>
+          </div>
+          <div>
+            <blockquote>TEG has been a great AI partner for us. They helped us build a suite of AI tools for our sales team and develop back-office automations that eliminated hours of manual work. They know how to scope, build, and iterate without a lot of hand-holding.</blockquote>
+            <cite>Chris Carpenter, COO, Offerpad</cite>
+            <p style="margin-top:14px;color:var(--color-lavender);">One AI partner across sales, renovations and accounting: vendor photos and invoices checked against Offerpad's criteria, and calls scored against their own scripts so managers coach instead of listening to recordings. <a class="feature-link" href="blog/offerpad-ai-partnership.html">Read the case study &rarr;</a></p>
+          </div>
+        </div>
+
+        <div class="grid grid--3" style="margin-top:24px;">
+          <article class="feature-card rh-proof-card">
+            <img src="images/clients/realty-one-group.webp" alt="Realty ONE Group" loading="lazy">
+            <span class="rh-tag">Franchise operations</span>
+            <h3>Sales stack migrated into HubSpot</h3>
+            <p>Custom workflows that removed manual work, live pipeline dashboards for leadership, and a LinkedIn outreach solution.</p>
+            <blockquote>TEG totally exceeded our expectations.<cite>Sevag Sarkissian, VP, Growth Marketing</cite></blockquote>
+          </article>
+          <article class="feature-card rh-proof-card">
+            <img src="images/clients/biproxi.webp" alt="Biproxi Capital Network" loading="lazy">
+            <span class="rh-tag">Commercial capital</span>
+            <h3>Investor research in one workflow</h3>
+            <p>A Claude agent turns a firm name into an investor briefing, relevant contacts and an outreach draft. It saves 2 to 3 hours a week.</p>
+            <blockquote>Conor took the time to understand our business and the challenges we were trying to solve.<cite>Gieriet Bowen, Director of Investor Relations</cite></blockquote>
+          </article>
+          <article class="feature-card rh-proof-card">
+            <img src="images/clients/home-impact-partners.webp" alt="Home Impact Partners" loading="lazy">
+            <span class="rh-tag">Real estate platform</span>
+            <h3>An AI platform brought to life</h3>
+            <p>We built alongside the team to bring Impact Atlas, a platform at the intersection of real estate and AI, to market.</p>
+            <blockquote>If you're working at the intersection of real estate and AI, TEG is the team to call.<cite>Vin Ferrara, CEO</cite></blockquote>
+          </article>
+        </div>
+        <p style="margin-top:24px;"><a class="feature-link" href="success.html">See all success stories &rarr;</a></p>
+      </div>
+    </section>
+
+    <section id="start" class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Where to start</span>
+          <h2>Pick your starting point.</h2>
+          <p class="lede">Commercial or residential, the first step is the same: a free conversation about where AI pays off first.</p>
+        </div>
+        <div class="grid grid--4" style="margin-top:32px;">
+          <article class="feature-card rh-door">
+            <span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2"/></svg></span>
+            <h3>Commercial owner, investor or developer</h3>
+            <p>Deal documents, underwriting and investor reporting live in separate systems. We connect them.</p>
+            <a class="feature-link" href="realestate">Deal lifecycle builds &rarr;</a>
+          </article>
+          <article class="feature-card rh-door">
+            <span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg></span>
+            <h3>Brokerage or franchisor</h3>
+            <p>You need a policy, a platform and a rollout your people will actually adopt, including independent contractors.</p>
+            <a class="feature-link" href="#govern">Policy and rollout &rarr;</a>
+          </article>
+          <article class="feature-card rh-door">
+            <span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span>
+            <h3>Operator or property manager</h3>
+            <p>You have volume across sales, renovations, accounting and maintenance. We build one AI partner across departments.</p>
+            <a class="feature-link" href="blog/offerpad-ai-partnership.html">See the Offerpad build &rarr;</a>
+          </article>
+          <article class="feature-card rh-door">
+            <span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
+            <h3>Individual agent or broker</h3>
+            <p>You want AI working for you this week. Free first call, a written scope, and $998 only if you proceed.</p>
+            <a class="feature-link" href="ai-for-agents-and-brokers.html">The $998 setup &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">What we do</span>
+          <h2>Train it. Govern it. Automate it.</h2>
+        </div>
+        <div class="grid grid--3" style="margin-top:32px;">
+          <article id="train" class="feature-card rh-tile">
+            <span class="rh-num">01 TRAIN</span>
+            <h3>Teach your team to use Claude.</h3>
+            <p>Live, hands-on sessions built around each person's actual work, from listings and client communication to underwriting and lead follow-up.</p>
+            <ul>
+              <li>Team and brokerage training</li>
+              <li>Workshops for conventions and associations</li>
+              <li>Free Claude video training</li>
+            </ul>
+          </article>
+          <article id="govern" class="feature-card rh-tile">
+            <span class="rh-num">02 GOVERN</span>
+            <h3>Write the policy before the problem.</h3>
+            <p>A firm-wide AI usage policy, a platform recommendation, and data permissions that mirror how your firm already works.</p>
+            <ul>
+              <li>Broker liability for AI output</li>
+              <li>Client data protection and incident reporting</li>
+              <li>Built for independent contractor models</li>
+            </ul>
+          </article>
+          <article id="automate" class="feature-card rh-tile">
+            <span class="rh-num">03 AUTOMATE</span>
+            <h3>Connect your systems.</h3>
+            <p>Claude connected to your CRM, documents and deal data, so work moves without someone retyping it.</p>
+            <ul>
+              <li>Deal sourcing, diligence and underwriting</li>
+              <li>Investor reporting and operations</li>
+              <li>Listings, lead nurture and follow-up</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How we work</span>
+          <h2>Policy and training come before automation.</h2>
+        </div>
+        <ol class="rh-steps">
+          <li><h3>Govern</h3><p>Agree the rules, the platform and who can see what.</p></li>
+          <li><h3>Train</h3><p>Teach people to use Claude on their actual work.</p></li>
+          <li><h3>Build</h3><p>Automate the work your team hates first.</p></li>
+          <li><h3>Manage</h3><p>We keep the system tuned as the tools change, from $1,500 a month.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Start free</span>
+          <h2>Three free ways in.</h2>
+        </div>
+        <div class="grid grid--3" style="margin-top:32px;">
+          <article class="feature-card rh-free">
+            <span class="rh-tag">30 minutes</span>
+            <h3>Free AI Value Assessment</h3>
+            <p>We listen to your team and estimate where Claude frees time, avoids cost or creates value.</p>
+            <a class="feature-link" href="book-value-assessment.html">Start the assessment &rarr;</a>
+          </article>
+          <article class="feature-card rh-free">
+            <span class="rh-tag">About 6 minutes</span>
+            <h3>Free Claude video training</h3>
+            <p>Five short videos: a tour of Claude, projects, connecting Gmail, skills and more.</p>
+            <a class="feature-link" href="claude-tutorials.html">Watch the videos &rarr;</a>
+          </article>
+          <article class="feature-card rh-free">
+            <span class="rh-tag">Set up with you</span>
+            <h3>Free Claude plugins</h3>
+            <p>Including a Commercial Real Estate plugin, set up with you on a call so it works when you hang up.</p>
+            <a class="feature-link" href="claude-plugins.html">See the plugins &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container rh-faq">
+        <div class="section-head">
+          <span class="eyebrow">Questions</span>
+          <h2>Frequently asked questions.</h2>
+        </div>
+        <div class="faq-list" style="margin-top:24px;">
+          <details class="faq-item"><summary class="faq-q">Do you work with residential as well as commercial?</summary><p class="faq-a">Yes. Offerpad and Realty ONE Group are residential, and the agent setup covers listings, follow-up, marketing and recruiting. Our roots are in commercial real estate, and we work across both.</p></details>
+          <details class="faq-item"><summary class="faq-q">Do you only work with Claude?</summary><p class="faq-a">We are a Claude Certified Services Partner, so Claude is where we go deepest. We also build ChatGPT skills and meet you where you are.</p></details>
+          <details class="faq-item"><summary class="faq-q">Is our client data safe?</summary><p class="faq-a">The policy and permissions come first. Your AI workspace mirrors your existing access rules, so people only see what they should.</p></details>
+          <details class="faq-item"><summary class="faq-q">How do you handle independent contractor agents?</summary><p class="faq-a">We pilot with volunteers and let adoption earn its place. A clear firm-wide policy matters most when brokers are 1099.</p></details>
+          <details class="faq-item"><summary class="faq-q">How much does it cost?</summary><p class="faq-a">The assessment is free. For individual agents the setup is a fixed $998. For firms we agree the expected value first, then a fixed build price, with Managed Claude from $1,500 a month if you want us to keep it running.</p></details>
+          <details class="faq-item"><summary class="faq-q">Why a real estate partner?</summary><p class="faq-a">Our founder started in commercial real estate at Arthur Andersen, and we have served real estate since 1999. We know where the work gets stuck.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark text-center">
+      <div class="container">
+        <h2>Book your free call with Conor.</h2>
+        <p class="lede" style="margin-inline:auto;">Thirty minutes. We look at your workflow and tell you where AI pays off first.</p>
+        <div class="btn-group btn-group--center">
+          <a class="btn btn-primary" href="book-value-assessment.html">Book a free call</a>
+          <a class="btn btn-secondary" href="ai-for-agents-and-brokers.html">The $998 agent setup</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="concept-realestate-home.html"><img src="images/logo.webp" alt="The Endurance Group" class="footer-logo"></a>
+          <p class="footer-tagline">AI for real estate</p>
+          <img src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner, Claude Partner Network" class="footer-partner-badge" loading="lazy">
+          <p class="footer-cta"><a class="btn btn-primary" href="book-value-assessment.html">Get Your Free AI Value Assessment</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="realestate">Commercial real estate</a></li>
+            <li><a href="#start">Residential</a></li>
+            <li><a href="ai-for-agents-and-brokers.html">Agents and brokers</a></li>
+            <li><a href="managed-claude.html">Managed Claude</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Training and policy</h4>
+          <ul>
+            <li><a href="#train">Claude training</a></li>
+            <li><a href="free-training.html">Free training call</a></li>
+            <li><a href="#govern">AI policy and governance</a></li>
+            <li><a href="ai-policy">Free AI policy draft</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Free resources</h4>
+          <ul>
+            <li><a href="book-value-assessment.html">Free AI Value Assessment</a></li>
+            <li><a href="claude-tutorials.html">Free Claude video training</a></li>
+            <li><a href="claude-plugins.html">Free Claude plugins</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="success.html">Success stories</a></li>
+            <li><a href="fellowship.html">Fellowship</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="specialties.html">Other industries</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-address">16 Middle St, 2nd Floor, Portland, ME 04101 &middot; (207) 846-6000</p>
+        <p>&copy; 2026 The Endurance Group. All rights reserved. &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=20260930" defer></script>
+</body>
+</html>
