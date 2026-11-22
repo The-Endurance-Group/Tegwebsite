@@ -46,6 +46,19 @@
     .rh-compare td { color:var(--color-lavender); }
     .rh-compare .rh-us { background:var(--tint-pink); color:var(--color-ink); font-weight:600; }
     .rh-compare thead .rh-us { background:var(--color-pink); color:#fff; }
+    @media (max-width:700px) {
+      .rh-compare-wrap { overflow:visible; border:none; background:transparent; }
+      .rh-compare { min-width:0; display:block; }
+      .rh-compare thead { display:none; }
+      .rh-compare tbody { display:flex; flex-direction:column; gap:16px; }
+      .rh-compare tr { display:flex; flex-direction:column; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); overflow:hidden; }
+      .rh-compare tbody th { display:block; width:auto; padding:14px 18px; background:var(--bg-light); color:var(--color-ink); border-top:none; }
+      .rh-compare td { display:block; padding:12px 18px; }
+      .rh-compare td::before { content:attr(data-label); display:block; font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--color-lavender); margin-bottom:2px; }
+      .rh-compare td.rh-us { order:-1; border-top:none; }
+      .rh-compare td.rh-us::before { color:var(--color-pink); }
+      .rh-compare tbody th { order:-2; }
+    }
     .rh-cred { padding:32px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); }
     .rh-cred h2 { font-size:22px; margin-bottom:20px; }
     .rh-cred ul { list-style:none; margin:0; padding:0; }
@@ -258,11 +271,11 @@
               <tr><th></th><th>AI software vendors</th><th>Generic AI consultants</th><th>Courses and workshops</th><th class="rh-us">TEG</th></tr>
             </thead>
             <tbody>
-              <tr><th>What you get</th><td>Their AI, inside their product</td><td>Strategy and recommendations</td><td>Awareness and a policy template</td><td class="rh-us">Training, policy and working automations</td></tr>
-              <tr><th>Your systems</th><td>Works with their tool only</td><td>Varies by project</td><td>Not connected to anything</td><td class="rh-us">Connected across your CRM, documents and deal data</td></tr>
-              <tr><th>Pricing</th><td>Per seat, per month</td><td>Hourly or "get in touch"</td><td>Per ticket</td><td class="rh-us">Free assessment, fixed-price builds, $998 agent setup</td></tr>
-              <tr><th>Real estate depth</th><td>Product-specific</td><td>General AI experience</td><td>Instructors</td><td class="rh-us">Arthur Andersen commercial real estate roots, since 1999</td></tr>
-              <tr><th>Ends with</th><td>A login</td><td>A deck</td><td>A certificate</td><td class="rh-us">A working system and a measured result</td></tr>
+              <tr><th>What you get</th><td data-label="AI software vendors">Their AI, inside their product</td><td data-label="Generic AI consultants">Strategy and recommendations</td><td data-label="Courses and workshops">Awareness and a policy template</td><td class="rh-us" data-label="TEG">Training, policy and working automations</td></tr>
+              <tr><th>Your systems</th><td data-label="AI software vendors">Works with their tool only</td><td data-label="Generic AI consultants">Varies by project</td><td data-label="Courses and workshops">Not connected to anything</td><td class="rh-us" data-label="TEG">Connected across your CRM, documents and deal data</td></tr>
+              <tr><th>Pricing</th><td data-label="AI software vendors">Per seat, per month</td><td data-label="Generic AI consultants">Hourly or "get in touch"</td><td data-label="Courses and workshops">Per ticket</td><td class="rh-us" data-label="TEG">Free assessment, fixed-price builds, $998 agent setup</td></tr>
+              <tr><th>Real estate depth</th><td data-label="AI software vendors">Product-specific</td><td data-label="Generic AI consultants">General AI experience</td><td data-label="Courses and workshops">Instructors</td><td class="rh-us" data-label="TEG">Arthur Andersen commercial real estate roots, since 1999</td></tr>
+              <tr><th>Ends with</th><td data-label="AI software vendors">A login</td><td data-label="Generic AI consultants">A deck</td><td data-label="Courses and workshops">A certificate</td><td class="rh-us" data-label="TEG">A working system and a measured result</td></tr>
             </tbody>
           </table>
         </div>
