@@ -34,6 +34,7 @@
     @keyframes rhDash { to { stroke-dashoffset:-24; } }
     @keyframes rhPulse { 0% { transform:scale(1); opacity:.5; } 100% { transform:scale(1.9); opacity:0; } }
     @keyframes rhPop { 0% { opacity:0; transform:scale(.3); } 70% { opacity:1; transform:scale(1.2); } 100% { opacity:1; transform:scale(1); } }
+    @keyframes rhStep { 0%,2% { opacity:0; transform:translateX(-10px); } 8%,80% { opacity:1; transform:none; } 90%,100% { opacity:0; } }
     @keyframes rhCycle { 0%,3% { opacity:0; transform:translateY(8px); } 8%,28% { opacity:1; transform:none; } 33%,100% { opacity:0; transform:translateY(-8px); } }
     @keyframes rhTile { 0%,8% { background:#e7e2e5; color:transparent; } 16%,84% { background:var(--tint-teal); color:var(--color-teal-dark); } 94%,100% { background:#e7e2e5; color:transparent; } }
     @keyframes rhFlag { 0%,8% { background:#e7e2e5; color:transparent; } 16%,84% { background:rgba(196,94,137,.2); color:var(--color-pink-dark); } 94%,100% { background:#e7e2e5; color:transparent; } }
@@ -53,17 +54,28 @@
     .rh-price { margin-top:16px; font-weight:700; font-size:14px; color:var(--color-lavender); animation:rhRise .7s .8s both; }
     .rh-price a { color:var(--color-pink); }
 
-    .rh-hub { padding:24px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-lg); box-shadow:0 20px 50px -24px rgba(112,66,130,.35); animation:rhRise .8s .2s both; }
-    .rh-hub svg { display:block; width:100%; height:auto; }
-    .rh-node rect { fill:#fff; stroke:var(--border-light); stroke-width:1.5; }
-    .rh-node text { font:700 13px Raleway,sans-serif; fill:var(--color-ink); text-anchor:middle; }
-    .rh-wire { stroke:var(--color-teal); stroke-width:2; stroke-dasharray:6 6; fill:none; animation:rhDash 1.2s linear infinite; }
-    .rh-core-ring { fill:none; stroke:var(--color-pink); stroke-width:2; transform-origin:210px 120px; animation:rhPulse 2.4s ease-out infinite; }
-    .rh-core-ring.r2 { animation-delay:1.2s; }
-    .rh-out { position:relative; height:44px; margin-top:4px; }
-    .rh-out span { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:8px; font-weight:700; font-size:15px; color:var(--color-purple); opacity:0; animation:rhCycle 9s infinite; }
-    .rh-out span::before { content:"\2713"; display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:var(--color-teal); color:#fff; font-size:13px; }
-    .rh-out span:nth-child(2) { animation-delay:3s; } .rh-out span:nth-child(3) { animation-delay:6s; }
+    .rh-switch { display:inline-flex; gap:4px; padding:4px; margin-bottom:20px; border-radius:999px; background:var(--tint-purple); animation:rhRise .6s both; }
+    .rh-switch button { appearance:none; border:none; background:transparent; font:700 14px Raleway,sans-serif; color:var(--color-purple); padding:9px 18px; border-radius:999px; cursor:pointer; transition:background .25s ease, color .25s ease; }
+    .rh-switch button[aria-selected="true"] { background:var(--color-purple); color:#fff; }
+    .rh-aud[hidden] { display:none; }
+    .rh-aud:not([hidden]) { animation:rhRise .45s both; }
+
+    .rh-hub { padding:28px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-lg); box-shadow:0 20px 50px -24px rgba(112,66,130,.35); animation:rhRise .8s .2s both; }
+    .rh-hub-title { margin:0 0 20px; padding:10px 14px; border-radius:10px; background:var(--bg-light); font-weight:800; font-size:15px; }
+    .rh-flow { list-style:none; margin:0; padding:0; position:relative; }
+    .rh-flow::before { content:""; position:absolute; left:13px; top:14px; bottom:14px; width:2px; background:var(--border-light); }
+    .rh-flow li { position:relative; display:grid; grid-template-columns:28px minmax(0,1fr); gap:14px; align-items:center; padding:10px 0; opacity:0; animation:rhStep 10s infinite; animation-delay:calc(var(--i) * 1.5s); }
+    .rh-flow b { font-size:15px; font-weight:700; }
+    .rh-dot { position:relative; z-index:1; width:28px; height:28px; border-radius:50%; background:var(--color-teal); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; }
+    .rh-dot::before { content:"\2713"; }
+    .rh-flagdot { background:var(--color-pink); }
+    .rh-hub-note { margin:18px 0 0; text-align:center; font-size:13px; font-weight:600; color:var(--color-lavender); }
+
+    /* Walk away */
+    .rh-walk { padding-top:0; }
+    .rh-walk-card { display:flex; align-items:center; gap:16px; padding:22px; }
+    .rh-walk-card h3 { margin:0; font-size:18px; }
+    .rh-walk-num { flex-shrink:0; width:40px; height:40px; border-radius:50%; background:var(--color-pink); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; }
 
     /* Roots */
     .rh-jim { display:grid; grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:48px; align-items:center; }
@@ -169,9 +181,9 @@
     }
     @media (prefers-reduced-motion: reduce) {
       .rh-page *, .rh-page *::before, .rh-page *::after { animation:none !important; }
-      .rh-hero h1, .rh-hero .lede, .rh-chips li, .rh-hero .btn-group, .rh-price, .rh-hub, .rh-ic { opacity:1 !important; }
+      .rh-hero h1, .rh-hero .lede, .rh-chips li, .rh-hero .btn-group, .rh-price, .rh-hub, .rh-ic, .rh-switch { opacity:1 !important; }
       .rh-bar i { width:100%; } .rh-shield path { stroke-dashoffset:0; }
-      .rh-out span:first-child { opacity:1; }
+      .rh-flow li { opacity:1 !important; transform:none !important; }
     }
   </style>
 </head>
@@ -219,46 +231,85 @@
         <div class="rh-hero-grid">
           <div>
             <img class="rh-badge" src="images/badges/claude-certified-services-partner-horizontal.png" alt="Claude Certified Services Partner">
-            <h1>AI for real estate that actually gets used and pays off.</h1>
-            <p class="lede">Training, policy or automation. Use one or all three.</p>
+            <div class="rh-switch" role="tablist" aria-label="Who are you?">
+              <button type="button" role="tab" id="rh-tab-firm" aria-selected="true" aria-controls="rh-copy-firm" data-aud="firm">I run a firm</button>
+              <button type="button" role="tab" id="rh-tab-agent" aria-selected="false" aria-controls="rh-copy-agent" data-aud="agent">I'm an agent or broker</button>
+            </div>
+            <div class="rh-aud" data-aud="firm" id="rh-copy-firm" role="tabpanel" aria-labelledby="rh-tab-firm">
+              <h1>AI for real estate that actually gets used and pays off.</h1>
+              <p class="lede">Training, policy or automation. Use one or all three.</p>
+            </div>
+            <div class="rh-aud" data-aud="agent" id="rh-copy-agent" role="tabpanel" aria-labelledby="rh-tab-agent" hidden>
+              <h1>Get hours back every week. Your own AI, built for you.</h1>
+              <p class="lede">Listings, follow-up and admin on autopilot. A real person builds it.</p>
+            </div>
             <ul class="rh-chips">
               <li>Arthur Andersen CRE roots</li>
               <li>Since 1999</li>
               <li>Commercial and residential</li>
               <li>Claude certified</li>
             </ul>
-            <div class="btn-group">
-              <a class="btn btn-primary" href="book-value-assessment.html">Book a free AI Value Assessment</a>
-              <a class="btn btn-secondary" href="#proof">See results</a>
+            <div class="rh-aud" data-aud="firm">
+              <div class="btn-group">
+                <a class="btn btn-primary" href="book-value-assessment.html">Get your top 5 AI opportunities, free</a>
+                <a class="btn btn-secondary" href="#proof">See results</a>
+              </div>
+              <p class="rh-price">Free assessment. Fixed-price builds.</p>
             </div>
-            <p class="rh-price">Free assessment. Fixed-price builds. <a href="ai-for-agents-and-brokers.html">Agent setup $998 &rarr;</a></p>
+            <div class="rh-aud" data-aud="agent" hidden>
+              <div class="btn-group">
+                <a class="btn btn-primary" href="ai-for-agents-and-brokers.html">Get your top 5 AI opportunities, free</a>
+                <a class="btn btn-secondary" href="ai-for-agents-and-brokers.html">See what we build</a>
+              </div>
+              <p class="rh-price">Free first call. $998 only if you proceed.</p>
+            </div>
           </div>
-          <div class="rh-hub" aria-label="Claude connects your CRM, email, documents and deal data into finished work">
-            <svg viewBox="0 0 420 250" role="img" aria-hidden="true">
-              <path class="rh-wire" d="M80 40 L210 120"/>
-              <path class="rh-wire" d="M340 40 L210 120"/>
-              <path class="rh-wire" d="M80 200 L210 120"/>
-              <path class="rh-wire" d="M340 200 L210 120"/>
-              <circle r="5" fill="var(--color-pink)"><animateMotion dur="2.4s" repeatCount="indefinite" path="M80 40 L210 120"/></circle>
-              <circle r="5" fill="var(--color-pink)"><animateMotion dur="2.4s" begin=".6s" repeatCount="indefinite" path="M340 40 L210 120"/></circle>
-              <circle r="5" fill="var(--color-pink)"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M80 200 L210 120"/></circle>
-              <circle r="5" fill="var(--color-pink)"><animateMotion dur="2.4s" begin="1.8s" repeatCount="indefinite" path="M340 200 L210 120"/></circle>
-              <circle class="rh-core-ring" cx="210" cy="120" r="34"/>
-              <circle class="rh-core-ring r2" cx="210" cy="120" r="34"/>
-              <circle cx="210" cy="120" r="34" fill="#fff" stroke="var(--color-pink)" stroke-width="2"/>
-              <image href="images/tools/claude.png" x="194" y="104" width="32" height="32"/>
-              <g class="rh-node"><rect x="20" y="22" width="120" height="36" rx="10"/><text x="80" y="45">CRM</text></g>
-              <g class="rh-node"><rect x="280" y="22" width="120" height="36" rx="10"/><text x="340" y="45">Email</text></g>
-              <g class="rh-node"><rect x="20" y="182" width="120" height="36" rx="10"/><text x="80" y="205">Documents</text></g>
-              <g class="rh-node"><rect x="280" y="182" width="120" height="36" rx="10"/><text x="340" y="205">Deal data</text></g>
-            </svg>
-            <div class="rh-out" aria-hidden="true">
-              <span>Follow-up sent</span>
-              <span>Investment memo drafted</span>
-              <span>Invoice matched to property</span>
+          <div class="rh-hub" aria-label="Example of AI working in the background">
+            <div class="rh-aud" data-aud="firm">
+              <p class="rh-hub-title">Deal documents arrive</p>
+              <ol class="rh-flow">
+                <li style="--i:0"><span class="rh-dot"></span><b>Documents land in the shared inbox</b></li>
+                <li style="--i:1"><span class="rh-dot"></span><b>Claude checks them against your records</b></li>
+                <li style="--i:2"><span class="rh-dot rh-flagdot"></span><b>One exception flagged for review</b></li>
+                <li style="--i:3"><span class="rh-dot"></span><b>Investment memo drafted</b></li>
+              </ol>
             </div>
+            <div class="rh-aud" data-aud="agent" hidden>
+              <p class="rh-hub-title">New lead: 3 bed, Cape Elizabeth</p>
+              <ol class="rh-flow">
+                <li style="--i:0"><span class="rh-dot"></span><b>Lead arrives on a Sunday night</b></li>
+                <li style="--i:1"><span class="rh-dot"></span><b>Personal reply sent in 30 seconds</b></li>
+                <li style="--i:2"><span class="rh-dot"></span><b>CRM updated, follow-up scheduled</b></li>
+                <li style="--i:3"><span class="rh-dot rh-flagdot"></span><b>Showing booked for Saturday</b></li>
+              </ol>
+            </div>
+            <p class="rh-hub-note">Runs in the background. You review the result.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section rh-walk">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">After a free 30-minute call</span>
+          <h2>You walk away with.</h2>
+        </div>
+        <div class="grid grid--3 reveal reveal--stagger" style="margin-top:28px;">
+          <article class="feature-card rh-walk-card">
+            <span class="rh-walk-num">1</span>
+            <h3>Your top 5 AI opportunities, ranked</h3>
+          </article>
+          <article class="feature-card rh-walk-card">
+            <span class="rh-walk-num">2</span>
+            <h3>A written scope and a fixed price</h3>
+          </article>
+          <article class="feature-card rh-walk-card">
+            <span class="rh-walk-num">3</span>
+            <h3>A working first build, if you proceed</h3>
+          </article>
+        </div>
+        <p class="rh-note reveal">The plan is yours to keep either way. You only pay if you proceed.</p>
       </div>
     </section>
 
@@ -548,6 +599,18 @@
   </footer>
 
   <script src="js/main.js?v=20260930" defer></script>
+  <script>
+    /* Audience switch: swaps hero copy, buttons and example. Deep link with #agent. */
+    (function () {
+      var tabs = document.querySelectorAll('.rh-switch button');
+      function pick(aud) {
+        tabs.forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-aud') === aud ? 'true' : 'false'); });
+        document.querySelectorAll('.rh-aud').forEach(function (el) { el.hidden = el.getAttribute('data-aud') !== aud; });
+      }
+      tabs.forEach(function (b) { b.addEventListener('click', function () { pick(b.getAttribute('data-aud')); }); });
+      if (location.hash === '#agent') pick('agent');
+    })();
+  </script>
   <script>
     /* Count-up for stat numbers when they scroll into view. Final value is the HTML default. */
     (function () {
