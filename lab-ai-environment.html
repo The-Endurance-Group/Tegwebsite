@@ -220,7 +220,9 @@
 .lab .quote blockquote { font-family: var(--font-head); font-size: clamp(1.1rem, 2.3vw, 1.3rem); line-height: 1.45; color: var(--plum); }
 .lab .quote figcaption { margin-top: auto; }
 .lab .quote cite { font-style: normal; font-weight: 700; font-size: .92rem; color: var(--plum-soft); }
-@media (min-width: 720px) { .lab .quotes { grid-template-columns: 1fr 1fr; } }
+.lab .quotes-one { max-width: 760px; margin-inline: auto; }
+.lab .quote .stars { color: var(--gold); font-size: 1.3rem; letter-spacing: .12em; line-height: 1; margin: 0; }
+.lab .quote .src { font-size: .85rem; color: var(--plum-soft); margin-left: .5em; }
 .lab .partner { margin-top: 28px; text-align: center; }
 .lab .partner img { height: 64px; width: auto; max-width: 100%; display: block; margin-inline: auto; }
 .lab .more { margin-top: 26px; }
@@ -386,6 +388,21 @@
   </div>
 </section>
 
+<!-- 1d. TESTIMONIAL -->
+<section class="alt">
+  <div class="container">
+    <p class="eyebrow">What people say</p>
+    <div class="quotes quotes-one">
+      <figure class="quote">
+        <img src="images/clients/bayleaf-wellness.webp?v=20261124" alt="Bayleaf Wellness" loading="lazy">
+        <p class="stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        <blockquote>&ldquo;I enjoyed working with the team at TEG. Simon and Connor were very easy to work with, very accommodating and they delivered on what was promised (and in a fast and efficient manner). [They] gave good insight, suggestions and technical assistance to someone new to AI.&rdquo;</blockquote>
+        <figcaption><cite>Duncan Fraser-Smith, Bayleaf Wellness</cite> <span class="src">Google review</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- 2. FAMILIAR -->
 <section id="familiar">
   <div class="container">
@@ -500,26 +517,6 @@
     </ul>
     <div class="member-note">
       <p><strong>Not a Lab member yet?</strong> This offer is designed for members of Megan Walker's Healthcare Thought Leaders' Lab. You can <a href="https://www.meganwalker.com/healthcare-thought-leaders-lab-Registration" rel="noopener">find out about joining the Lab here</a>.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 6b. TESTIMONIALS -->
-<section class="alt">
-  <div class="container">
-    <p class="eyebrow">What people say</p>
-    <h2>Real people. Real time saved.</h2>
-    <div class="quotes">
-      <figure class="quote">
-        <img src="images/clients/market-savvy.webp?v=20260930" alt="Market Savvy" loading="lazy">
-        <blockquote>&ldquo;TEG has helped us create a high-powered, unique and time-saving tool for our health and medical clients worldwide. With HealthPost Genius, practices can create a month's worth of compliant social media posts in minutes.&rdquo;</blockquote>
-        <figcaption><cite>Megan Walker, Founder, Market Savvy</cite></figcaption>
-      </figure>
-      <figure class="quote">
-        <img src="images/clients/maine-technology-institute.webp?v=20260930" alt="Maine Technology Institute" loading="lazy">
-        <blockquote>&ldquo;[They] have made me more effective and efficient at work and have already saved me untold hours.&rdquo;</blockquote>
-        <figcaption><cite>Scott Bursey, Investment Officer, Maine Technology Institute</cite></figcaption>
-      </figure>
     </div>
   </div>
 </section>
