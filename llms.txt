@@ -55,6 +55,7 @@ TEG offers a fixed-price, done-for-you AI setup for $998 (US dollars, one time, 
 ## Blog
 
 - [Blog index](https://www.theendurancegroup.com/blog.html): Guides on AI automation, strategy, and client engagement, organized by solution and by industry.
+- [How to Automate Business Introductions With Claude](https://www.theendurancegroup.com/blog/automate-business-introductions-with-claude.html): Claude reviews your calendar, researches who you met, checks email for existing ties and drafts one introduction in Gmail. Here is how our Weekly Intro Matchmaker skill works.
 - [Why We Price AI Projects Based on Value, Not Hours](https://www.theendurancegroup.com/blog/why-we-price-ai-projects-based-on-value.html): How TEG agrees on expected 12-month economic value and a fixed upfront build price, with separate ongoing management and clear scope.
 - [How to Calculate the ROI of an AI Workflow](https://www.theendurancegroup.com/blog/how-to-calculate-roi-ai-workflow.html): Calculating AI workflow ROI from volume, time, costs and expected improvement, separating capacity from cash savings and including full cost of ownership.
 - [Saving Time Isn't the Same as Creating ROI](https://www.theendurancegroup.com/blog/saving-time-isnt-the-same-as-creating-roi.html): Distinguishing time savings from cash savings, avoided hiring, capacity, vendor savings and revenue, without double counting.

@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-24",
+    "title": "How to Automate Business Introductions With Claude",
+    "slug": "automate-business-introductions-with-claude",
+    "url": "https://www.theendurancegroup.com/blog/automate-business-introductions-with-claude.html",
+    "path": "manual-request",
+    "angle_summary": "How the Weekly Intro Matchmaker Claude skill picks one pair to introduce from two weeks of meetings, with the email-check-first rule, tracking sheet and no-match behavior.",
+    "deploy_verified": false,
+    "related_post_updated": "referral-identifier-with-claude.html"
+  },
+  {
     "date": "2026-11-05",
     "title": "What Is a Claude Extension? (And How It Reads Your Texts)",
     "slug": "what-is-a-claude-extension",
