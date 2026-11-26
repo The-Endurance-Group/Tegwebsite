@@ -1,0 +1,77 @@
+/* Concept real estate pages: brand match with ai-for-agents-and-brokers.html
+   (dark plum sections, Georgia headings, gold accent, pill buttons). Load last. */
+.rh-page {
+  --plum:#201c22; --plum-soft:#4a4350; --gold:#c9a24b; --gold-tint:#f7efd9;
+  --pink-dark:#a8446f; --rh-bg:#faf7f4; --rh-alt:#f1ebee;
+  background:var(--rh-bg);
+}
+.rh-page h1, .rh-page h2, .rh-page h3 { font-family:Georgia,"Times New Roman",serif; line-height:1.2; }
+.rh-page h1 { font-size:clamp(2.1rem,6.5vw,3.6rem); }
+.rh-page .section { padding-block:clamp(52px,9vw,96px); }
+.rh-page .eyebrow { color:#3a6360; letter-spacing:.14em; }
+.rh-page .section-head h2::after { background:var(--gold); }
+
+/* Buttons */
+.rh-page .btn { border-radius:999px; padding:17px 30px; }
+.rh-page .btn-primary { background:var(--pink-dark); color:#fff; border-color:var(--pink-dark); }
+.rh-page .btn-primary:hover { background:var(--plum); border-color:var(--plum); color:#fff; }
+.rh-page .btn-secondary { background:transparent; color:var(--plum); border:2px solid var(--plum); }
+.rh-page .btn-secondary:hover { background:var(--plum); color:#fff; }
+
+/* Dark: hero, alt sections, closing CTA */
+.rh-page .hero--page, .rh-page .section--alt, .rh-page .section--dark {
+  background:radial-gradient(900px 400px at 85% -10%, rgba(196,92,138,.35), transparent 60%), radial-gradient(700px 400px at 0% 110%, rgba(74,124,120,.5), transparent 60%), var(--plum);
+  color:#f4eff2; border:0;
+}
+.rh-page .section--alt:not(.rh-hero) { background:var(--plum); }
+.rh-page .hero--page h1, .rh-page .section--alt h2, .rh-page .section--dark h2 { color:#fff; }
+.rh-page .hero--page .lede, .rh-page .section--alt .lede, .rh-page .section--dark .lede { color:#e9e1e6; }
+.rh-page .hero--page .eyebrow, .rh-page .section--alt .eyebrow, .rh-page .section--dark .eyebrow { color:var(--gold); }
+.rh-page .hero--page .btn-secondary, .rh-page .section--dark .btn-secondary, .rh-page .section--alt .btn-secondary { color:#fff; border-color:#fff; }
+.rh-page .hero--page .btn-secondary:hover, .rh-page .section--dark .btn-secondary:hover, .rh-page .section--alt .btn-secondary:hover { background:#fff; color:var(--plum); }
+.rh-page .hero--page .btn-primary:hover, .rh-page .section--dark .btn-primary:hover, .rh-page .section--alt .btn-primary:hover { background:var(--gold); border-color:var(--gold); color:var(--plum); }
+.rh-page .rh-chips li { background:rgba(201,162,75,.16); color:#f1dfb0; border:1px solid rgba(201,162,75,.6); }
+.rh-page .rh-price { color:var(--gold); }
+.rh-page .rh-price a { color:#f1dfb0; }
+.rh-page .section--alt .rh-note, .rh-page .section--alt .rh-built, .rh-page .section--alt p.rh-cap { color:#e9e1e6; }
+.rh-page .section--alt .rh-note a, .rh-page .section--alt .rh-badges a { color:var(--gold); }
+.rh-page .section--alt .rh-jim p { color:#e9e1e6; }
+.rh-page .section--alt .rh-person b { color:#fff; }
+.rh-page .section--alt .rh-person small { color:var(--gold); }
+.rh-page .section--alt .rh-person img { border:2px solid var(--gold); }
+.rh-page .section--alt .rh-timeline i { color:var(--gold); }
+.rh-page .section--alt .rh-badges img { background:#fff; border-radius:8px; padding:4px 8px; }
+.rh-page .section--alt .rh-door .go, .rh-page .section--alt .rh-door-sub { color:var(--pink-dark); }
+.rh-page .section--alt .rh-door-sub { color:var(--gold); }
+.rh-page .section--alt .rh-track h3 { color:#fff; }
+.rh-page .section--alt .rh-track p { color:#e9e1e6; }
+.rh-page .section--alt .rh-track::before { background:rgba(255,255,255,.25); }
+.rh-page .section--alt .rh-track .rh-walk-num { background:#5a5060; }
+.rh-page .section--alt .rh-track.is-visible .rh-walk-num { background:var(--gold); color:var(--plum); }
+.rh-page .section--alt .rh-track::after { background:var(--gold); }
+.rh-page .section--alt .rh-track li:last-child .rh-walk-num::after, .rh-page .section--alt .rh-ping::after { border-color:var(--gold); }
+.rh-page .section--alt .rh-ping { background:var(--gold); }
+.rh-page .section--dark.gradient-accent { background:radial-gradient(900px 400px at 85% -10%, rgba(196,92,138,.35), transparent 60%), var(--plum); }
+.rh-page .rh-cta .btn-primary { animation:none; }
+
+/* Light sections alternate with a warm tint */
+.rh-page #deal-sourcing, .rh-page #compare { background:var(--rh-alt); }
+.rh-page .rh-walk-num { background:var(--pink-dark); }
+.rh-page .rh-pillar li { background:#f8e9f0; color:#a8446f; }
+.rh-page .rh-door .go, .rh-page a.go { color:var(--pink-dark); }
+.rh-page .feature-card { border-radius:14px; }
+.rh-page .rh-pcard strong, .rh-page .rh-stat strong { font-family:Georgia,"Times New Roman",serif; color:var(--plum); }
+.rh-page .rh-worth { background:var(--gold-tint); border:1px solid var(--gold); }
+.rh-page .rh-worth strong { color:#5c4410; }
+.rh-page .rh-fit-us { background:var(--plum); border-color:var(--gold); }
+.rh-page .rh-fit-us .rh-fit-tag { color:var(--gold); }
+.rh-page .rh-fit-us li::before { background:var(--gold); color:var(--plum); }
+.rh-page .rh-guarantee span { background:var(--plum); }
+.rh-page .rh-risks span { background:#f8e9f0; color:#a8446f; }
+
+/* Text inside white cards stays dark, even within dark sections */
+.rh-page .feature-card, .rh-page .rh-hub, .rh-page .rh-stay-card, .rh-page .rh-timeline span, .rh-page .rh-fit-card:not(.rh-fit-us), .rh-page .rh-meet, .rh-page .rh-walk-card { color:var(--plum); }
+.rh-page .rh-hub .rh-flow b { color:var(--plum); }
+.rh-page .rh-ds-close .rh-price { color:#5c4410; }
+.rh-page .rh-ds-close p:not(.rh-price) { color:var(--plum-soft); }
+.rh-page .rh-hub-note { color:var(--plum-soft); }
