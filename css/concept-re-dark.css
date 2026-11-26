@@ -75,3 +75,15 @@
 .rh-page .rh-ds-close .rh-price { color:#5c4410; }
 .rh-page .rh-ds-close p:not(.rh-price) { color:var(--plum-soft); }
 .rh-page .rh-hub-note { color:var(--plum-soft); }
+
+/* Hero: audience chooser and proof strip */
+.rh-page .rh-who { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:24px; }
+.rh-page .rh-who-label { font-weight:700; font-size:.85rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-right:4px; }
+.rh-page .rh-who a { padding:9px 16px; border-radius:999px; border:1.5px solid rgba(201,162,75,.7); background:rgba(201,162,75,.12); color:#f6ecd0; font-weight:700; font-size:.92rem; text-decoration:none; transition:background .2s, color .2s; }
+.rh-page .rh-who a:hover, .rh-page .rh-who a:focus-visible { background:var(--gold); color:var(--plum); }
+.rh-page .rh-hero .btn-group { margin-top:22px; }
+.rh-page .rh-proofstrip { display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin-top:22px; }
+.rh-page .rh-proofstrip span { font-size:.8rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#cfc4cb; }
+.rh-page .rh-proofstrip img { height:26px; width:auto; padding:6px 10px; box-sizing:content-box; background:#fff; border-radius:8px; }
+.rh-page .rh-proofstrip small { color:#cfc4cb; font-size:.85rem; font-weight:600; }
+@media (max-width:640px) { .rh-page .rh-who a { flex:1 1 100%; text-align:center; } }
