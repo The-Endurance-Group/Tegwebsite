@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20261120-chat">
+  <link rel="stylesheet" href="css/concept-re-motion.css">
   <style>
     .rh-banner { background:var(--color-ink); color:#fff; text-align:center; font-size:13px; font-weight:600; padding:8px 16px; letter-spacing:.02em; }
     .rh-page .btn { white-space:normal; text-align:center; }
@@ -556,7 +557,7 @@
         </div>
         <div class="grid grid--3 reveal reveal--stagger" style="margin-top:32px;">
           <article class="feature-card rh-pcard">
-            <strong>$998</strong>
+            <strong data-rh-count="998" data-rh-prefix="$">$998</strong>
             <h3>Agents and brokers</h3>
             <p>Fixed and one time. You pay only if you proceed.</p>
           </article>
@@ -567,55 +568,10 @@
             <small>Example: a $10,000 build is $2,500 a month over four months.</small>
           </article>
           <article class="feature-card rh-pcard">
-            <strong>From $1,500/mo</strong>
+            <strong data-rh-count="1500" data-rh-prefix="From $" data-rh-suffix="/mo">From $1,500/mo</strong>
             <h3>Managed Claude</h3>
             <p>Ongoing support, training and improvement.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="worries" class="section section--alt">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Common worries</span>
-          <h2>Four things firms ask first.</h2>
-        </div>
-        <div class="grid grid--4 reveal reveal--stagger" style="margin-top:32px;">
-          <article class="feature-card rh-obj"><h3>"We tried AI. Nobody used it."</h3><p>We build around real work, train your team, and pilot first.</p></article>
-          <article class="feature-card rh-obj"><h3>"Our agents won't adopt it."</h3><p>Agents volunteer. Adoption by staff can be required.</p></article>
-          <article class="feature-card rh-obj"><h3>"Is our data safe?"</h3><p>Policy and permissions come first.</p></article>
-          <article class="feature-card rh-obj"><h3>"Who owns what you build?"</h3><p>You do. Reasonable fixes are included.</p></article>
-        </div>
-        <div class="rh-guarantee reveal reveal--stagger">
-          <span>Scope in writing first</span><span>You own what we build</span><span>Reasonable fixes and refinements included</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">How we work</span>
-          <h2>Start anywhere. Use one or all.</h2>
-        </div>
-        <div class="process-track reveal">
-          <div class="process-step">
-            <div class="process-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg></div>
-            <div class="process-step-body"><h3>Govern</h3><p>Policy and platform</p></div>
-          </div>
-          <div class="process-step">
-            <div class="process-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2 9 2 12 0v-5"/></svg></div>
-            <div class="process-step-body"><h3>Train</h3><p>Team training</p></div>
-          </div>
-          <div class="process-step">
-            <div class="process-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 7 3-3 3 3-3 3M3 21l9-9M12 12l3 3"/></svg></div>
-            <div class="process-step-body"><h3>Build</h3><p>Automations, fixed price</p></div>
-          </div>
-          <div class="process-step">
-            <div class="process-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 9a8 8 0 0 0-14-4L3 8m0-5v5h5M4 15a8 8 0 0 0 14 4l3-3m0 5v-5h-5"/></svg></div>
-            <div class="process-step-body"><h3>Manage</h3><p>From $1,500/mo</p></div>
-          </div>
         </div>
       </div>
     </section>
@@ -722,6 +678,7 @@
   </footer>
 
   <script src="js/main.js?v=20260930" defer></script>
+  <script src="js/concept-re-motion.js" defer></script>
   <script>
     /* Hero example rotates between the firm and agent scenarios every 10 seconds. */
     (function () {

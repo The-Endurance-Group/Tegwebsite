@@ -207,9 +207,6 @@
       .rh-fit-us { order:-1; }
     }
     /* Deal sourcing example */
-    .rh-steps { list-style:none; margin-bottom:0; padding:0; }
-    .rh-steps .rh-walk-card { align-items:flex-start; }
-    .rh-steps .rh-walk-card p { margin:4px 0 0; color:var(--color-lavender); font-size:15px; }
     .rh-ds-close h3 { margin:0 0 6px; font-size:20px; }
     .rh-ds-close p { margin:0; color:var(--color-lavender); }
     .rh-ds-close .rh-price { margin-top:14px; color:var(--color-ink); animation:none; opacity:1; }

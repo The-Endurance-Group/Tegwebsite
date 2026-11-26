@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20261120-chat">
   <link rel="stylesheet" href="css/concept-re.css">
+  <link rel="stylesheet" href="css/concept-re-motion.css">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who is this for?", "acceptedAnswer": {"@type": "Answer", "text": "Owners, investors, developers, lenders and property managers."}}, {"@type": "Question", "name": "Do we keep control?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Approvals are built in, and your team reviews the result."}}, {"@type": "Question", "name": "Which systems do you connect to?", "acceptedAnswer": {"@type": "Answer", "text": "Your CRM, documents, spreadsheets and property data. We scope it in the intro meeting."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "The intro meeting is free. Builds are value-priced and fixed before work begins."}}]}</script>
 </head>
 <body class="rh-page">
@@ -106,11 +107,11 @@
           <p class="lede">Find sites worth a closer look.</p>
         </div>
         <p class="reveal" style="max-width:720px;">We build a workflow around your territory, your approach to value and your outreach style.</p>
-        <ol class="grid grid--2 rh-steps reveal reveal--stagger" style="margin-top:28px;">
-          <li class="feature-card rh-walk-card"><span class="rh-walk-num">1</span><div><h3>Scan</h3><p>Review public property records in your area.</p></div></li>
-          <li class="feature-card rh-walk-card"><span class="rh-walk-num">2</span><div><h3>Shortlist</h3><p>Flag sites that match your criteria, with the reasons why.</p></div></li>
-          <li class="feature-card rh-walk-card"><span class="rh-walk-num">3</span><div><h3>Research</h3><p>Pull ownership records and a first look at value.</p></div></li>
-          <li class="feature-card rh-walk-card"><span class="rh-walk-num">4</span><div><h3>Draft</h3><p>Prepare outreach for your broker to review and send.</p></div></li>
+        <ol class="rh-track reveal">
+          <li style="--i:0"><span class="rh-walk-num">1</span><div><h3>Scan</h3><p>Review public property records in your area.</p></div></li>
+          <li style="--i:1"><span class="rh-walk-num">2</span><div><h3>Shortlist</h3><p>Flag sites that match your criteria, with the reasons why.</p></div></li>
+          <li style="--i:2"><span class="rh-walk-num">3</span><div><h3>Research</h3><p>Pull ownership records and a first look at value.</p></div></li>
+          <li style="--i:3"><span class="rh-walk-num">4</span><div><h3>Draft</h3><p>Prepare outreach for your broker to review and send.</p></div></li>
         </ol>
         <div class="feature-card rh-ds-close reveal" style="margin-top:28px;">
           <h3>We stay with you.</h3>
@@ -146,20 +147,6 @@
             <p style="margin:0;color:var(--color-lavender);font-size:15px;">Impact Atlas, built alongside the team.</p>
             <blockquote>"TEG is the team to call."<cite>Vin Ferrara, CEO</cite></blockquote>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Our thinking</span>
-          <h2>See how we work through real deals.</h2>
-        </div>
-        <div class="grid grid--3 reveal reveal--stagger" style="margin-top:32px;">
-          <a class="feature-card rh-door" href="blog/multifamily-valuation-cap-rate-claude.html"><span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg></span><h3>Multifamily valuation</h3><p>In-place and normalized NOI, cap rates</p><span class="go">Read &rarr;</span></a>
-          <a class="feature-card rh-door" href="blog/1031-exchange-replacement-property-claude.html"><span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg></span><h3>1031 exchanges</h3><p>Compare replacement properties in the 45-day window</p><span class="go">Read &rarr;</span></a>
-          <a class="feature-card rh-door" href="blog/boston-permit-lookup-tool.html"><span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h9l5 5v15H6zM14 2v6h6M9 13h8M9 17h8"/></svg></span><h3>Permit lookup</h3><p>Type an address, get every permit by unit</p><span class="go">Read &rarr;</span></a>
         </div>
       </div>
     </section>
@@ -243,6 +230,7 @@
   </footer>
 
   <script src="js/main.js?v=20260930" defer></script>
+  <script src="js/concept-re-motion.js" defer></script>
   <script>
     /* Conversion tracking hook: fires a Clarity event per CTA once the Clarity tag is installed at launch. */
     document.addEventListener('click', function (e) {
