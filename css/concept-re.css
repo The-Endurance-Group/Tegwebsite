@@ -206,6 +206,20 @@
       .rh-fit { grid-template-columns:1fr; }
       .rh-fit-us { order:-1; }
     }
+    /* Deal sourcing example */
+    .rh-steps { list-style:none; margin-bottom:0; padding:0; }
+    .rh-steps .rh-walk-card { align-items:flex-start; }
+    .rh-steps .rh-walk-card p { margin:4px 0 0; color:var(--color-lavender); font-size:15px; }
+    .rh-ds-close h3 { margin:0 0 6px; font-size:20px; }
+    .rh-ds-close p { margin:0; color:var(--color-lavender); }
+    .rh-ds-close .rh-price { margin-top:14px; color:var(--color-ink); animation:none; opacity:1; }
+    .rh-ds-close .btn-group { margin-top:20px; }
+    .rh-inline { color:inherit; text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--color-pink); text-decoration-thickness:2px; }
+    .rh-inline:hover { color:var(--color-pink-dark); }
+    .rh-door-wrap { display:flex; flex-direction:column; gap:8px; }
+    .rh-door-wrap .rh-door { flex:1; }
+    .rh-door-sub { font-weight:700; font-size:13px; color:var(--color-pink); text-decoration:underline; text-underline-offset:3px; padding:8px 4px; }
+
     @media (prefers-reduced-motion: reduce) {
       .rh-page *, .rh-page *::before, .rh-page *::after { animation:none !important; }
       .rh-hero h1, .rh-hero .lede, .rh-chips li, .rh-hero .btn-group, .rh-price, .rh-hub { opacity:1 !important; }

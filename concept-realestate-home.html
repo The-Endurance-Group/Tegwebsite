@@ -122,6 +122,9 @@
     .rh-fit-us li::before { content:"\2713"; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; width:22px; height:22px; border-radius:50%; background:var(--color-pink); color:#fff; font-size:12px; font-weight:800; }
 
     /* Doors */
+    .rh-door-wrap { display:flex; flex-direction:column; gap:8px; }
+    .rh-door-wrap .rh-door { flex:1; }
+    .rh-door-sub { font-weight:700; font-size:13px; color:var(--color-pink); text-decoration:underline; text-underline-offset:3px; padding:8px 4px; }
     .rh-door { display:flex; flex-direction:column; gap:10px; color:inherit; transition:transform .25s ease, box-shadow .25s ease; }
     .rh-door:hover { transform:translateY(-4px); box-shadow:0 14px 30px -14px rgba(112,66,130,.4); }
     .rh-door-icon { width:48px; height:48px; border-radius:50%; background:var(--tint-purple); color:var(--color-purple); display:flex; align-items:center; justify-content:center; transition:background .25s ease, color .25s ease; }
@@ -483,12 +486,15 @@
           <h2>Pick your starting point.</h2>
         </div>
         <div class="grid grid--4 reveal reveal--stagger" style="margin-top:32px;">
-          <a class="feature-card rh-door" href="real-estate-commercial.html">
-            <span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2"/></svg></span>
-            <h3>Commercial</h3>
-            <p>Owners, investors, developers</p>
-            <span class="go">Deal lifecycle &rarr;</span>
-          </a>
+          <div class="rh-door-wrap">
+            <a class="feature-card rh-door" href="real-estate-commercial.html">
+              <span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2"/></svg></span>
+              <h3>Commercial</h3>
+              <p>Owners, investors, developers</p>
+              <span class="go">Deal lifecycle &rarr;</span>
+            </a>
+            <a class="rh-door-sub" href="real-estate-commercial.html#deal-sourcing">Deal sourcing example</a>
+          </div>
           <a class="feature-card rh-door" href="real-estate-brokerages.html">
             <span class="rh-door-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg></span>
             <h3>Brokerage</h3>
