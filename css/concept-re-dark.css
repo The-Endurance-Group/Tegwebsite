@@ -87,3 +87,4 @@
 .rh-page .rh-proofstrip img { height:26px; width:auto; padding:6px 10px; box-sizing:content-box; background:#fff; border-radius:8px; }
 .rh-page .rh-proofstrip small { color:#cfc4cb; font-size:.85rem; font-weight:600; }
 @media (max-width:640px) { .rh-page .rh-who a { flex:1 1 100%; text-align:center; } }
+.rh-page .rh-who a[aria-current="page"] { background:var(--gold); color:var(--plum); border-color:var(--gold); }
