@@ -21,3 +21,16 @@
   }, { threshold: 0.6 });
   els.forEach(function (el) { io.observe(el); });
 })();
+
+/* Play the "Not a product" animation when it scrolls into view (ported from the landing page). */
+(function () {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var s = document.getElementById('premium');
+  if (!s) return;
+  s.classList.add('pm-ready');
+  new IntersectionObserver(function (e) {
+    var r = e[0].intersectionRatio;
+    if (r >= 0.35) s.classList.add('pm-play');
+    else if (r === 0) s.classList.remove('pm-play');
+  }, { threshold: [0, 0.35] }).observe(s);
+})();
