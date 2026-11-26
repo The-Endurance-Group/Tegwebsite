@@ -1,0 +1,52 @@
+/* Concept real estate pages: shared scroll motion. Runs when .reveal parents get .is-visible. */
+.rh-page .section-head h2::after { content:""; display:block; width:0; height:4px; margin-top:14px; border-radius:2px; background:var(--color-pink); transition:width .7s .25s ease-out; }
+.rh-page .section-head.is-visible h2::after { width:56px; }
+.rh-page .section-head .eyebrow { display:inline-block; transform:translateX(-12px); opacity:0; transition:transform .5s ease-out, opacity .5s ease-out; }
+.rh-page .section-head.is-visible .eyebrow { transform:none; opacity:1; }
+
+/* Pills pop in one by one */
+.rh-pillar li, .rh-risks span, .rh-guarantee span { opacity:0; transform:scale(.7); }
+.is-visible .rh-pillar li, .is-visible.rh-risks span, .is-visible .rh-risks span { animation:rhPop .5s calc(.35s + var(--p, 0) * .12s) both; }
+.rh-pillar li:nth-child(2), .rh-risks span:nth-child(2) { --p:1; }
+.rh-pillar li:nth-child(3), .rh-risks span:nth-child(3) { --p:2; }
+
+/* Icons and avatars */
+.rh-door-icon, .rh-person img { transform:scale(.6); opacity:0; }
+.is-visible .rh-door-icon, .is-visible .rh-person img { animation:rhPop .6s .2s both; }
+.is-visible .rh-person:nth-child(2) img { animation-delay:.3s; }
+.is-visible .rh-person:nth-child(3) img { animation-delay:.4s; }
+.is-visible .rh-person:nth-child(4) img { animation-delay:.5s; }
+
+/* Our card in the comparison glows */
+@keyframes rhGlow { 0%,100% { box-shadow:0 18px 40px -20px rgba(112,66,130,.6), 0 0 0 0 rgba(196,94,137,0); } 50% { box-shadow:0 18px 40px -20px rgba(112,66,130,.6), 0 0 0 8px rgba(196,94,137,.28); } }
+.is-visible .rh-fit-us { animation:rhGlow 2.6s 1s infinite; }
+
+/* Deal sourcing flow */
+.rh-track { list-style:none; margin:32px 0 0; padding:0; position:relative; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; }
+.rh-track::before, .rh-track::after { content:""; position:absolute; top:19px; left:20px; right:20px; height:2px; background:var(--border-light); }
+.rh-track::after { background:var(--color-pink); transform:scaleX(0); transform-origin:left; transition:transform 2s .3s ease-in-out; }
+.rh-track.is-visible::after { transform:scaleX(1); }
+.rh-track li { position:relative; opacity:0; transform:translateY(14px); transition:opacity .5s, transform .5s; transition-delay:calc(.3s + var(--i) * .5s); }
+.rh-track.is-visible li { opacity:1; transform:none; }
+.rh-track .rh-walk-num { position:relative; z-index:1; background:var(--color-lavender); transition:background .4s; transition-delay:calc(.3s + var(--i) * .5s); }
+.rh-track.is-visible .rh-walk-num { background:var(--color-pink); }
+.rh-track li:last-child .rh-walk-num::after { content:""; position:absolute; inset:0; border-radius:50%; border:2px solid var(--color-pink); opacity:0; }
+.rh-track.is-visible li:last-child .rh-walk-num::after { animation:rhPulse 1.8s 2.4s infinite; }
+.rh-track h3 { margin:14px 0 4px; font-size:19px; }
+.rh-track p { margin:0; color:var(--color-lavender); font-size:15px; }
+@media (max-width:767px) {
+  .rh-track { grid-template-columns:1fr; gap:22px; }
+  .rh-track::before, .rh-track::after { top:20px; bottom:20px; left:19px; right:auto; width:2px; height:auto; }
+  .rh-track::after { transform:scaleY(0); transform-origin:top; }
+  .rh-track.is-visible::after { transform:scaleY(1); }
+  .rh-track li { display:grid; grid-template-columns:40px minmax(0,1fr); column-gap:16px; align-items:start; }
+  .rh-track li > div { grid-column:2; }
+  .rh-track h3 { margin-top:0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rh-pillar li, .rh-risks span, .rh-guarantee span, .rh-door-icon, .rh-person img, .rh-track li, .rh-page .section-head .eyebrow { opacity:1 !important; transform:none !important; }
+  .rh-track::after { transform:none !important; }
+  .rh-page .section-head h2::after { width:56px; transition:none; }
+  .rh-track .rh-walk-num { background:var(--color-pink); }
+}
