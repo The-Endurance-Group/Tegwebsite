@@ -44,6 +44,15 @@
   .rh-track h3 { margin-top:0; }
 }
 
+/* Stay current cards */
+.rh-stay { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:32px; }
+.rh-stay-card { display:flex; align-items:center; gap:16px; padding:18px 22px; background:var(--color-white); border:1px solid var(--border-light); border-radius:var(--radius-md); }
+.rh-stay-card b { display:block; font-size:17px; }
+.rh-stay-card span:not(.rh-ping) { color:var(--color-lavender); font-size:15px; }
+.rh-ping { position:relative; flex-shrink:0; width:14px; height:14px; border-radius:50%; background:var(--color-pink); }
+.rh-ping::after { content:""; position:absolute; inset:0; border-radius:50%; border:2px solid var(--color-pink); animation:rhPulse 1.8s infinite; }
+@media (max-width:640px) { .rh-stay { grid-template-columns:1fr; } }
+
 @media (prefers-reduced-motion: reduce) {
   .rh-pillar li, .rh-risks span, .rh-guarantee span, .rh-door-icon, .rh-person img, .rh-track li, .rh-page .section-head .eyebrow { opacity:1 !important; transform:none !important; }
   .rh-track::after { transform:none !important; }
